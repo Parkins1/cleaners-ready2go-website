@@ -120,7 +120,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button
               onClick={() => setIsBookingModalOpen(true)}
-              className="btn-primary text-lg"
+              className="btn-primary text-lg pt-[24px] pb-[24px]"
             >
               Book a Cleaning
             </Button>
