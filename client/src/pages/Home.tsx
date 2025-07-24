@@ -126,7 +126,7 @@ export default function Home() {
             </Button>
             <a 
               href="tel:+1234567890" 
-              className="btn-secondary text-lg inline-block text-center"
+              className="btn-secondary text-lg"
             >
               Call (123) 456-7890
             </a>

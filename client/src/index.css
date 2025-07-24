@@ -165,7 +165,7 @@
 /* Modern button styles with glassy texture */
 @layer components {
   .btn-primary {
-    @apply bg-brand-gold hover:bg-brand-gold-dark text-brand-black hover:text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:ring-4 relative overflow-hidden;
+    @apply bg-brand-gold hover:bg-brand-gold-dark text-brand-black hover:text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:ring-4 relative overflow-hidden w-64 h-16 flex items-center justify-center;
     backdrop-filter: blur(10px);
     background: linear-gradient(135deg, rgba(255, 193, 7, 0.9) 0%, rgba(255, 193, 7, 0.7) 100%);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -187,7 +187,7 @@
   }
   
   .btn-secondary {
-    @apply bg-white hover:bg-brand-gray-light text-brand-black border-2 border-brand-gold hover:border-brand-gold font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 relative overflow-hidden;
+    @apply bg-white hover:bg-brand-gray-light text-brand-black border-2 border-brand-gold hover:border-brand-gold font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 relative overflow-hidden w-64 h-16 flex items-center justify-center;
     backdrop-filter: blur(10px);
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
     border: 1px solid rgba(255, 193, 7, 0.3);
@@ -209,7 +209,7 @@
   }
   
   .btn-outline {
-    @apply border-2 border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-black font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 relative overflow-hidden;
+    @apply border-2 border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-black font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 relative overflow-hidden w-64 h-16 flex items-center justify-center;
     backdrop-filter: blur(10px);
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
   }
