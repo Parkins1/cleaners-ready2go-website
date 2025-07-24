@@ -111,7 +111,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
           <Button
             type="submit"
             disabled={bookingMutation.isPending}
-            className="w-full bg-brand-gold hover:bg-yellow-500 text-white py-3 rounded-lg font-semibold transition-colors"
+            className="btn-primary w-full py-3"
           >
             {bookingMutation.isPending ? "Scheduling..." : "Schedule Cleaning"}
           </Button>

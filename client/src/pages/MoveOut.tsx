@@ -46,7 +46,7 @@ export default function MoveOut() {
               </div>
               <button
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="bg-brand-gold hover:bg-yellow-500 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
+                className="btn-primary text-lg"
               >
                 Get Quote
               </button>
@@ -82,7 +82,7 @@ export default function MoveOut() {
               </div>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="w-full bg-brand-gold hover:bg-yellow-500 text-white py-3 rounded-lg font-semibold transition-colors mt-6"
+                className="btn-primary w-full py-3 mt-6"
               >
                 Book Package
               </button>
@@ -113,7 +113,7 @@ export default function MoveOut() {
               </ul>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="w-full bg-brand-gold hover:bg-yellow-500 text-white py-3 rounded-lg font-semibold transition-colors"
+                className="btn-primary w-full py-3"
               >
                 Book Hourly
               </button>

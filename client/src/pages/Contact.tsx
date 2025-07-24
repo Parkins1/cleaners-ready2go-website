@@ -177,12 +177,7 @@ export default function Contact() {
                 <Button
                   type="submit"
                   disabled={contactMutation.isPending}
-                  className="w-full bg-brand-gold hover:bg-brand-gold-dark text-brand-black hover:text-white py-4 rounded-lg text-lg font-semibold transition-colors relative overflow-hidden"
-                  style={{
-                    backdropFilter: 'blur(10px)',
-                    background: 'linear-gradient(135deg, rgba(255, 193, 7, 0.9) 0%, rgba(255, 193, 7, 0.7) 100%)',
-                    border: '1px solid rgba(255, 255, 255, 0.2)'
-                  }}
+                  className="btn-primary text-lg w-full py-4"
                 >
                   {contactMutation.isPending ? "Sending..." : "Send Message"}
                 </Button>

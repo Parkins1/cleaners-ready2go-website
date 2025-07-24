@@ -115,7 +115,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
           <Button
             type="submit"
             disabled={quoteMutation.isPending}
-            className="w-full bg-brand-gold hover:bg-yellow-500 text-white py-3 rounded-lg font-semibold transition-colors"
+            className="btn-primary w-full py-3"
           >
             {quoteMutation.isPending ? "Submitting..." : "Get My Quote"}
           </Button>

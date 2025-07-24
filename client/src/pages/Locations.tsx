@@ -111,7 +111,7 @@ export default function Locations() {
               </p>
               <button
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="bg-brand-gold hover:bg-yellow-500 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                className="btn-primary px-6 py-3"
               >
                 Request Service Quote
               </button>
