@@ -3,6 +3,7 @@ import { Home as HomeIcon, CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import BookingModal from "@/components/BookingModal";
 import QuoteModal from "@/components/QuoteModal";
+import logoImage from "@assets/cleaners_ready2go_logo_transparent_1753378992010.png";
 
 export default function Home() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
@@ -19,6 +20,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
             <div className="mb-8 lg:mb-0">
+              <div className="flex items-center justify-center lg:justify-start mb-6">
+                <img 
+                  src={logoImage} 
+                  alt="Cleaners Ready 2Go Logo" 
+                  className="h-20 w-auto"
+                />
+              </div>
               <div className="flex items-center mb-4">
                 <div className="flex space-x-1 mr-3">
                   <div className="w-2 h-2 bg-brand-gold rounded-full"></div>

@@ -1,15 +1,13 @@
-import { Home } from "lucide-react";
+import logoImage from "@assets/cleaners_ready2go_logo_transparent_1753378992010.png";
 
 export default function Logo() {
   return (
     <div className="flex items-center">
-      <div className="w-10 h-10 bg-brand-gold rounded-lg flex items-center justify-center mr-3">
-        <Home className="w-6 h-6 text-white" />
-      </div>
-      <div>
-        <div className="text-lg font-bold text-brand-black">Cleaners</div>
-        <div className="text-xs text-brand-gray font-medium tracking-wider">READY 2GO</div>
-      </div>
+      <img 
+        src={logoImage} 
+        alt="Cleaners Ready 2Go - Professional Cleaning Services" 
+        className="h-12 w-auto"
+      />
     </div>
   );
 }
