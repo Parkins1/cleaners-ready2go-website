@@ -35,10 +35,10 @@ export default function About() {
             </div>
             <div>
               <h2 className="text-2xl font-bold text-brand-black mb-6">Our Story</h2>
-              <p className="text-brand-gray mb-6 leading-relaxed">
+              <p className="text-brand-gray font-medium mb-6 leading-relaxed">
                 Founded with a simple mission: to provide reliable, professional cleaning services that give you more time to focus on what matters most. We understand that a clean home is more than just appearance—it's about creating a healthy, comfortable environment for you and your family.
               </p>
-              <p className="text-brand-gray mb-6 leading-relaxed">
+              <p className="text-brand-gray font-medium mb-6 leading-relaxed">
                 Serving the Spokane Valley, Liberty Lake, and Greenacres communities, we've built our reputation on trust, quality, and consistent results. Our team of trained professionals brings the same attention to detail to every home we clean.
               </p>
               <div className="flex items-center">
@@ -56,21 +56,21 @@ export default function About() {
                 <Award className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-brand-black mb-2">Quality Guaranteed</h3>
-              <p className="text-brand-gray">100% satisfaction guarantee on every cleaning service</p>
+              <p className="text-brand-gray font-medium">100% satisfaction guarantee on every cleaning service</p>
             </div>
             <div className="text-center">
               <div className="bg-brand-gold p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <Clock className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-brand-black mb-2">Always On Time</h3>
-              <p className="text-brand-gray">Reliable scheduling that fits your busy lifestyle</p>
+              <p className="text-brand-gray font-medium">Reliable scheduling that fits your busy lifestyle</p>
             </div>
             <div className="text-center">
               <div className="bg-brand-gold p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <Shield className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-brand-black mb-2">Fully Insured</h3>
-              <p className="text-brand-gray">Complete peace of mind with full insurance coverage</p>
+              <p className="text-brand-gray font-medium">Complete peace of mind with full insurance coverage</p>
             </div>
           </div>
 

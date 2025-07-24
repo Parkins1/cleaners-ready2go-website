@@ -16,31 +16,31 @@ export default function Residential() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-brand-black mb-6">Residential Cleaning Services</h1>
-            <p className="text-xl text-brand-gray">Regular cleaning services to keep your home spotless</p>
+            <p className="text-xl text-brand-gray font-medium">Regular cleaning services to keep your home spotless</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <h2 className="text-2xl font-bold text-brand-black mb-6">Recurring Service Focus</h2>
-              <p className="text-brand-gray mb-6 leading-relaxed">
+              <p className="text-brand-gray font-medium mb-6 leading-relaxed">
                 Our residential cleaning services are designed around consistency and reliability. We understand that maintaining a clean home is an ongoing process, which is why we specialize in recurring cleaning schedules that work with your lifestyle.
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
-                  <span className="text-brand-gray">Weekly, bi-weekly, or monthly schedules</span>
+                  <span className="text-brand-gray font-medium">Weekly, bi-weekly, or monthly schedules</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
-                  <span className="text-brand-gray">Same team for consistency</span>
+                  <span className="text-brand-gray font-medium">Same team for consistency</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
-                  <span className="text-brand-gray">Customizable cleaning checklist</span>
+                  <span className="text-brand-gray font-medium">Customizable cleaning checklist</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
-                  <span className="text-brand-gray">Eco-friendly cleaning products</span>
+                  <span className="text-brand-gray font-medium">Eco-friendly cleaning products</span>
                 </div>
               </div>
               <button
@@ -64,19 +64,19 @@ export default function Residential() {
             <div className="bg-gray-50 p-8 rounded-xl text-center">
               <h3 className="text-xl font-bold text-brand-black mb-4">Weekly</h3>
               <div className="text-3xl font-bold text-brand-gold mb-2">$120</div>
-              <div className="text-brand-gray mb-6">per cleaning</div>
+              <div className="text-brand-gray font-medium mb-6">per cleaning</div>
               <ul className="text-left space-y-2 mb-8">
                 <li className="flex items-center">
                   <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
-                  <span className="text-sm text-brand-gray">All rooms cleaned</span>
+                  <span className="text-sm text-brand-gray font-medium">All rooms cleaned</span>
                 </li>
                 <li className="flex items-center">
                   <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
-                  <span className="text-sm text-brand-gray">Kitchen & bathrooms</span>
+                  <span className="text-sm text-brand-gray font-medium">Kitchen & bathrooms</span>
                 </li>
                 <li className="flex items-center">
                   <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
-                  <span className="text-sm text-brand-gray">Vacuum & mop</span>
+                  <span className="text-sm text-brand-gray font-medium">Vacuum & mop</span>
                 </li>
               </ul>
               <button 
@@ -121,15 +121,15 @@ export default function Residential() {
             <div className="bg-gray-50 p-8 rounded-xl text-center">
               <h3 className="text-xl font-bold text-brand-black mb-4">Monthly</h3>
               <div className="text-3xl font-bold text-brand-gold mb-2">$180</div>
-              <div className="text-brand-gray mb-6">per cleaning</div>
+              <div className="text-brand-gray font-medium mb-6">per cleaning</div>
               <ul className="text-left space-y-2 mb-8">
                 <li className="flex items-center">
                   <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
-                  <span className="text-sm text-brand-gray">Deep cleaning</span>
+                  <span className="text-sm text-brand-gray font-medium">Deep cleaning</span>
                 </li>
                 <li className="flex items-center">
                   <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
-                  <span className="text-sm text-brand-gray">All rooms + extras</span>
+                  <span className="text-sm text-brand-gray font-medium">All rooms + extras</span>
                 </li>
                 <li className="flex items-center">
                   <CheckCircle className="w-4 h-4 text-green-600 mr-2" />

@@ -83,7 +83,7 @@ export default function Contact() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-brand-black mb-6">Contact Us</h1>
-            <p className="text-xl text-brand-gray">Get in touch for a free quote or to schedule your cleaning service</p>
+            <p className="text-xl text-brand-gray font-medium">Get in touch for a free quote or to schedule your cleaning service</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
