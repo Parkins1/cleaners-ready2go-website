@@ -19,7 +19,7 @@ function Router() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <Navigation />
-      <main className="pt-20 flex-1">
+      <main className="pt-24 flex-1">
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/about" component={About} />

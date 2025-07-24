@@ -16,18 +16,29 @@ export default function Home() {
       <meta name="description" content="Professional residential and move-out cleaning services in Spokane Valley, Liberty Lake, and Greenacres. Book your cleaning today!" />
       
       {/* Hero Section */}
-      <section className="gradient-subtle py-16 lg:py-24 animate-fade-in">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+      <section 
+        className="relative min-h-screen flex items-center animate-fade-in"
+        style={{
+          backgroundImage: 'url(https://images.pexels.com/photos/4239035/pexels-photo-4239035.jpeg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
             <div className="mb-12 lg:mb-0 animate-slide-up">
-              <div className="flex items-center justify-center lg:justify-start mb-10">
+              <div className="flex items-center justify-center lg:justify-start mb-12">
                 <img 
                   src={logoImage} 
                   alt="Cleaners Ready 2Go Logo" 
-                  className="h-36 w-auto"
+                  className="h-40 w-auto filter drop-shadow-2xl"
                 />
               </div>
-              <div className="flex items-center mb-6">
+              <div className="flex items-center mb-8">
                 <div className="flex space-x-1 mr-4">
                   <div className="w-2 h-2 bg-brand-gold rounded-full animate-pulse"></div>
                   <div className="w-3 h-3 bg-brand-gold rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
@@ -35,42 +46,42 @@ export default function Home() {
                 </div>
                 <span className="text-brand-gold font-semibold text-sm tracking-wider uppercase">Professional Cleaning</span>
               </div>
-              <h1 className="text-5xl lg:text-7xl font-bold text-heading mb-8 leading-tight">
+              <h1 className="text-5xl lg:text-8xl font-bold text-white mb-10 leading-tight drop-shadow-lg">
                 Your Home, <span className="text-brand-gold">Spotless</span> and Ready to Go
               </h1>
-              <p className="text-xl lg:text-2xl text-body mb-10 leading-relaxed">
+              <p className="text-xl lg:text-2xl text-gray-200 mb-12 leading-relaxed drop-shadow-md">
                 Professional cleaning services in Spokane Valley, Liberty Lake, and Greenacres. 
                 From weekly maintenance to deep move-out cleans, we're ready when you are.
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
                 <Button
                   onClick={() => setIsBookingModalOpen(true)}
-                  className="btn-primary text-lg"
+                  className="btn-primary text-lg shadow-2xl"
                 >
                   Book a Cleaning
                 </Button>
                 <Button
                   onClick={() => setIsQuoteModalOpen(true)}
-                  className="btn-outline text-lg"
+                  className="btn-secondary text-lg shadow-2xl"
                 >
                   Get a Quote
                 </Button>
               </div>
             </div>
-            <div className="relative animate-slide-up">
-              <div className="card-modern p-10 text-center">
-                <div className="gradient-gold rounded-full w-32 h-32 mx-auto mb-8 flex items-center justify-center shadow-lg">
-                  <HomeIcon className="w-16 h-16 text-white" />
+            <div className="relative animate-slide-up lg:flex lg:justify-end">
+              <div className="card-modern p-12 text-center backdrop-blur-sm bg-white/95 max-w-md">
+                <div className="gradient-gold rounded-full w-36 h-36 mx-auto mb-10 flex items-center justify-center shadow-2xl">
+                  <HomeIcon className="w-20 h-20 text-white" />
                 </div>
-                <h3 className="text-3xl font-bold text-heading mb-4">Ready When You Are</h3>
-                <p className="text-body text-lg mb-6">Professional, reliable, and thorough cleaning services for your home</p>
+                <h3 className="text-3xl font-bold text-heading mb-6">Ready When You Are</h3>
+                <p className="text-body text-lg mb-8 leading-relaxed">Professional, reliable, and thorough cleaning services for your home</p>
                 <div className="flex items-center justify-center">
-                  <div className="bg-green-100 p-3 rounded-full mr-4">
-                    <CheckCircle className="w-8 h-8 text-green-600" />
+                  <div className="bg-green-100 p-4 rounded-full mr-6">
+                    <CheckCircle className="w-10 h-10 text-green-600" />
                   </div>
                   <div className="text-left">
-                    <div className="font-bold text-heading text-lg">100% Satisfaction</div>
-                    <div className="text-subheading">Guaranteed Results</div>
+                    <div className="font-bold text-heading text-xl">100% Satisfaction</div>
+                    <div className="text-subheading text-lg">Guaranteed Results</div>
                   </div>
                 </div>
               </div>
