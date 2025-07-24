@@ -45,7 +45,7 @@ export default function Residential() {
               </div>
               <button
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="bg-brand-gold hover:bg-yellow-500 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
+                className="bg-brand-gold hover:bg-brand-gold-dark text-brand-black hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
               >
                 Get a Quote
               </button>
@@ -81,7 +81,7 @@ export default function Residential() {
               </ul>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="w-full bg-brand-gold hover:bg-yellow-500 text-white py-3 rounded-lg font-semibold transition-colors"
+                className="w-full bg-brand-gold hover:bg-brand-gold-dark text-brand-black hover:text-white py-3 rounded-lg font-semibold transition-colors"
               >
                 Choose Plan
               </button>
@@ -133,12 +133,12 @@ export default function Residential() {
                 </li>
                 <li className="flex items-center">
                   <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
-                  <span className="text-sm text-brand-gray">Appliances inside</span>
+                  <span className="text-sm text-brand-gray font-medium">Appliances inside</span>
                 </li>
               </ul>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="w-full bg-brand-gold hover:bg-yellow-500 text-white py-3 rounded-lg font-semibold transition-colors"
+                className="w-full bg-brand-gold hover:bg-brand-gold-dark text-brand-black hover:text-white py-3 rounded-lg font-semibold transition-colors"
               >
                 Choose Plan
               </button>

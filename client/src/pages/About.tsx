@@ -77,7 +77,7 @@ export default function About() {
           <div className="text-center">
             <button
               onClick={() => setIsBookingModalOpen(true)}
-              className="bg-brand-gold hover:bg-yellow-500 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
+              className="bg-brand-gold hover:bg-brand-gold-dark text-brand-black hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
             >
               Book a Cleaning
             </button>
