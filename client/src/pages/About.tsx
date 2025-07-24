@@ -11,18 +11,18 @@ export default function About() {
       <title>About Us - Cleaners Ready 2Go | Professional Cleaning Team</title>
       <meta name="description" content="Learn about our professional cleaning team serving Spokane Valley, Liberty Lake, and Greenacres. Trusted by 500+ local families." />
       
-      <section className="py-16 bg-white">
+      <section className="gradient-subtle py-20 animate-fade-in">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="flex justify-center mb-8">
+          <div className="text-center mb-16 animate-slide-up">
+            <div className="flex justify-center mb-10">
               <img 
                 src={logoImage} 
                 alt="Cleaners Ready 2Go Logo" 
-                className="h-24 w-auto"
+                className="h-28 w-auto"
               />
             </div>
-            <h1 className="text-4xl font-bold text-brand-black mb-6">About Cleaners Ready 2Go</h1>
-            <p className="text-xl text-brand-gray">Professional cleaning services you can trust</p>
+            <h1 className="text-5xl lg:text-6xl font-bold text-heading mb-8 leading-tight">About Cleaners Ready 2Go</h1>
+            <p className="text-xl lg:text-2xl text-body">Professional cleaning services you can trust</p>
           </div>
           
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">

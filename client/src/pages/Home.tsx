@@ -16,62 +16,61 @@ export default function Home() {
       <meta name="description" content="Professional residential and move-out cleaning services in Spokane Valley, Liberty Lake, and Greenacres. Book your cleaning today!" />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-white to-gray-50 py-12 lg:py-20">
+      <section className="gradient-subtle py-16 lg:py-24 animate-fade-in">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
-            <div className="mb-8 lg:mb-0">
-              <div className="flex items-center justify-center lg:justify-start mb-8">
+          <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+            <div className="mb-12 lg:mb-0 animate-slide-up">
+              <div className="flex items-center justify-center lg:justify-start mb-10">
                 <img 
                   src={logoImage} 
                   alt="Cleaners Ready 2Go Logo" 
-                  className="h-32 w-auto"
+                  className="h-36 w-auto"
                 />
               </div>
-              <div className="flex items-center mb-4">
-                <div className="flex space-x-1 mr-3">
-                  <div className="w-2 h-2 bg-brand-gold rounded-full"></div>
-                  <div className="w-3 h-3 bg-brand-gold rounded-full"></div>
-                  <div className="w-2 h-2 bg-brand-gold rounded-full"></div>
+              <div className="flex items-center mb-6">
+                <div className="flex space-x-1 mr-4">
+                  <div className="w-2 h-2 bg-brand-gold rounded-full animate-pulse"></div>
+                  <div className="w-3 h-3 bg-brand-gold rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                  <div className="w-2 h-2 bg-brand-gold rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
                 </div>
-                <span className="text-brand-gold font-medium text-sm tracking-wide">PROFESSIONAL CLEANING</span>
+                <span className="text-brand-gold font-semibold text-sm tracking-wider uppercase">Professional Cleaning</span>
               </div>
-              <h1 className="text-4xl lg:text-5xl font-bold text-brand-black mb-6 leading-tight">
+              <h1 className="text-5xl lg:text-7xl font-bold text-heading mb-8 leading-tight">
                 Your Home, <span className="text-brand-gold">Spotless</span> and Ready to Go
               </h1>
-              <p className="text-xl text-brand-gray mb-8 leading-relaxed">
+              <p className="text-xl lg:text-2xl text-body mb-10 leading-relaxed">
                 Professional cleaning services in Spokane Valley, Liberty Lake, and Greenacres. 
                 From weekly maintenance to deep move-out cleans, we're ready when you are.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-6">
                 <Button
                   onClick={() => setIsBookingModalOpen(true)}
-                  className="bg-brand-gold hover:bg-yellow-500 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors shadow-lg"
+                  className="btn-primary text-lg"
                 >
                   Book a Cleaning
                 </Button>
                 <Button
                   onClick={() => setIsQuoteModalOpen(true)}
-                  variant="outline"
-                  className="border-2 border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
+                  className="btn-outline text-lg"
                 >
                   Get a Quote
                 </Button>
               </div>
             </div>
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                alt="Modern clean living room interior" 
-                className="rounded-2xl shadow-2xl w-full h-auto" 
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
-                <div className="flex items-center">
-                  <div className="bg-green-100 p-2 rounded-lg mr-4">
-                    <CheckCircle className="w-6 h-6 text-green-600" />
+            <div className="relative animate-slide-up">
+              <div className="card-modern p-10 text-center">
+                <div className="gradient-gold rounded-full w-32 h-32 mx-auto mb-8 flex items-center justify-center shadow-lg">
+                  <HomeIcon className="w-16 h-16 text-white" />
+                </div>
+                <h3 className="text-3xl font-bold text-heading mb-4">Ready When You Are</h3>
+                <p className="text-body text-lg mb-6">Professional, reliable, and thorough cleaning services for your home</p>
+                <div className="flex items-center justify-center">
+                  <div className="bg-green-100 p-3 rounded-full mr-4">
+                    <CheckCircle className="w-8 h-8 text-green-600" />
                   </div>
-                  <div>
-                    <div className="font-semibold text-brand-black">100% Satisfaction</div>
-                    <div className="text-sm text-brand-gray">Guaranteed Results</div>
+                  <div className="text-left">
+                    <div className="font-bold text-heading text-lg">100% Satisfaction</div>
+                    <div className="text-subheading">Guaranteed Results</div>
                   </div>
                 </div>
               </div>
@@ -81,45 +80,45 @@ export default function Home() {
       </section>
 
       {/* Services Overview */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-brand-black mb-4">Our Cleaning Services</h2>
-            <p className="text-xl text-brand-gray">Professional, reliable, and ready when you need us</p>
+          <div className="text-center mb-16 animate-slide-up">
+            <h2 className="text-4xl lg:text-5xl font-bold text-heading mb-6">Our Cleaning Services</h2>
+            <p className="text-xl lg:text-2xl text-body">Professional, reliable, and ready when you need us</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-shadow">
-              <div className="bg-brand-gold p-3 rounded-lg w-fit mb-6">
-                <HomeIcon className="w-6 h-6 text-white" />
+            <div className="card-modern p-8 text-center group">
+              <div className="gradient-gold rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <HomeIcon className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-brand-black mb-3">Residential Cleaning</h3>
-              <p className="text-brand-gray mb-4">Regular weekly, bi-weekly, or monthly cleaning to keep your home spotless.</p>
-              <a href="/residential" className="text-brand-gold font-medium hover:text-yellow-600 flex items-center">
-                Learn More <ArrowRight className="w-4 h-4 ml-1" />
+              <h3 className="text-2xl font-bold text-heading mb-4">Residential Cleaning</h3>
+              <p className="text-body mb-6 leading-relaxed">Regular weekly, bi-weekly, or monthly cleaning to keep your home spotless and welcoming.</p>
+              <a href="/residential" className="text-brand-gold font-semibold hover:text-brand-gold-dark flex items-center justify-center transition-colors">
+                Learn More <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
-            <div className="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-shadow">
-              <div className="bg-brand-gold p-3 rounded-lg w-fit mb-6">
-                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"/>
+            <div className="card-modern p-8 text-center group">
+              <div className="gradient-gold rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-brand-black mb-3">Move-Out Cleaning</h3>
-              <p className="text-brand-gray mb-4">Deep cleaning for apartment cleanouts and move-out situations. Hourly services available.</p>
-              <a href="/move-out" className="text-brand-gold font-medium hover:text-yellow-600 flex items-center">
-                Learn More <ArrowRight className="w-4 h-4 ml-1" />
+              <h3 className="text-2xl font-bold text-heading mb-4">Move-Out Cleaning</h3>
+              <p className="text-body mb-6 leading-relaxed">Deep cleaning for apartment cleanouts and move-out situations. Hourly services available.</p>
+              <a href="/move-out" className="text-brand-gold font-semibold hover:text-brand-gold-dark flex items-center justify-center transition-colors">
+                Learn More <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
-            <div className="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-shadow">
-              <div className="bg-brand-gold p-3 rounded-lg w-fit mb-6">
-                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <div className="card-modern p-8 text-center group">
+              <div className="gradient-gold rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-brand-black mb-3">Service Areas</h3>
-              <p className="text-brand-gray mb-4">Serving Spokane Valley, Liberty Lake, and Greenacres with reliable cleaning services.</p>
-              <a href="/locations" className="text-brand-gold font-medium hover:text-yellow-600 flex items-center">
-                View Areas <ArrowRight className="w-4 h-4 ml-1" />
+              <h3 className="text-2xl font-bold text-heading mb-4">Service Areas</h3>
+              <p className="text-body mb-6 leading-relaxed">Serving Spokane Valley, Liberty Lake, and Greenacres with reliable cleaning services.</p>
+              <a href="/locations" className="text-brand-gold font-semibold hover:text-brand-gold-dark flex items-center justify-center transition-colors">
+                View Areas <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
           </div>
@@ -127,20 +126,21 @@ export default function Home() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-16 bg-brand-black">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Ready for a Spotless Home?</h2>
-          <p className="text-xl text-gray-300 mb-8">Book your cleaning service today and experience the difference professional cleaning makes.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      <section className="py-20 bg-brand-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-black to-brand-teal opacity-90"></div>
+        <div className="relative max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 animate-slide-up">
+          <h2 className="text-4xl lg:text-6xl font-bold text-white mb-8 leading-tight">Ready for a <span className="text-brand-gold">Spotless</span> Home?</h2>
+          <p className="text-xl lg:text-2xl text-gray-300 mb-12 leading-relaxed">Book your cleaning service today and experience the difference professional cleaning makes.</p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button
               onClick={() => setIsBookingModalOpen(true)}
-              className="bg-brand-gold hover:bg-yellow-500 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
+              className="btn-primary text-lg"
             >
               Book a Cleaning
             </Button>
             <a 
               href="tel:+1234567890" 
-              className="border-2 border-white text-white hover:bg-white hover:text-brand-black px-8 py-4 rounded-lg text-lg font-semibold transition-colors inline-block"
+              className="btn-secondary text-lg inline-block text-center"
             >
               Call (123) 456-7890
             </a>

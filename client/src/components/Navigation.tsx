@@ -60,7 +60,7 @@ export default function Navigation() {
             <div className="hidden md:block">
               <button
                 onClick={() => setIsBookingModalOpen(true)}
-                className="bg-brand-gold hover:bg-yellow-500 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors shadow-sm"
+                className="bg-brand-gold hover:bg-brand-gold-dark text-white px-6 py-2 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
               >
                 Book Now
               </button>
