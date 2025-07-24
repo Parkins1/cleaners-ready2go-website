@@ -45,7 +45,12 @@ export default function Residential() {
               </div>
               <button
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="bg-brand-gold hover:bg-brand-gold-dark text-brand-black hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
+                className="bg-brand-gold hover:bg-brand-gold-dark text-brand-black hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors relative overflow-hidden"
+                style={{
+                  backdropFilter: 'blur(10px)',
+                  background: 'linear-gradient(135deg, rgba(255, 193, 7, 0.9) 0%, rgba(255, 193, 7, 0.7) 100%)',
+                  border: '1px solid rgba(255, 255, 255, 0.2)'
+                }}
               >
                 Get a Quote
               </button>
@@ -81,7 +86,12 @@ export default function Residential() {
               </ul>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="w-full bg-brand-gold hover:bg-brand-gold-dark text-brand-black hover:text-white py-3 rounded-lg font-semibold transition-colors"
+                className="w-full bg-brand-gold hover:bg-brand-gold-dark text-brand-black hover:text-white py-3 rounded-lg font-semibold transition-colors relative overflow-hidden"
+                style={{
+                  backdropFilter: 'blur(10px)',
+                  background: 'linear-gradient(135deg, rgba(255, 193, 7, 0.9) 0%, rgba(255, 193, 7, 0.7) 100%)',
+                  border: '1px solid rgba(255, 255, 255, 0.2)'
+                }}
               >
                 Choose Plan
               </button>
@@ -113,7 +123,12 @@ export default function Residential() {
               </ul>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="w-full bg-white text-brand-gold py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                className="w-full bg-white text-brand-gold py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors relative overflow-hidden"
+                style={{
+                  backdropFilter: 'blur(10px)',
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%)',
+                  border: '1px solid rgba(255, 193, 7, 0.3)'
+                }}
               >
                 Choose Plan
               </button>
@@ -138,7 +153,12 @@ export default function Residential() {
               </ul>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="w-full bg-brand-gold hover:bg-brand-gold-dark text-brand-black hover:text-white py-3 rounded-lg font-semibold transition-colors"
+                className="w-full bg-brand-gold hover:bg-brand-gold-dark text-brand-black hover:text-white py-3 rounded-lg font-semibold transition-colors relative overflow-hidden"
+                style={{
+                  backdropFilter: 'blur(10px)',
+                  background: 'linear-gradient(135deg, rgba(255, 193, 7, 0.9) 0%, rgba(255, 193, 7, 0.7) 100%)',
+                  border: '1px solid rgba(255, 255, 255, 0.2)'
+                }}
               >
                 Choose Plan
               </button>

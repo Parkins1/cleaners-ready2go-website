@@ -53,7 +53,12 @@ export default function Home() {
           {/* Single CTA Button */}
           <Button
             onClick={() => setIsBookingModalOpen(true)}
-            className="bg-brand-gold hover:bg-brand-gold-dark text-brand-black hover:text-white font-semibold px-12 py-6 text-xl rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            className="bg-brand-gold hover:bg-brand-gold-dark text-brand-black hover:text-white font-semibold px-12 py-6 text-xl rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 relative overflow-hidden"
+            style={{
+              backdropFilter: 'blur(10px)',
+              background: 'linear-gradient(135deg, rgba(255, 193, 7, 0.9) 0%, rgba(255, 193, 7, 0.7) 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.2)'
+            }}
           >
             Book Your Cleaning
           </Button>
