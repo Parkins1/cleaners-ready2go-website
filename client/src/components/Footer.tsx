@@ -8,11 +8,11 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <div className="mb-4">
+            <div className="mb-6">
               <img 
                 src={logoImage} 
                 alt="Cleaners Ready 2Go Logo" 
-                className="h-16 w-auto filter brightness-0 invert"
+                className="h-24 w-auto filter brightness-0 invert"
               />
             </div>
             <p className="text-gray-300 mb-4 leading-relaxed">

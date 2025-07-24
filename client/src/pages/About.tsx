@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CheckCircle, Award, Clock, Shield } from "lucide-react";
 import BookingModal from "@/components/BookingModal";
+import logoImage from "@assets/cleaners_ready2go_logo_transparent_1753378992010.png";
 
 export default function About() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
@@ -13,6 +14,13 @@ export default function About() {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
+            <div className="flex justify-center mb-8">
+              <img 
+                src={logoImage} 
+                alt="Cleaners Ready 2Go Logo" 
+                className="h-24 w-auto"
+              />
+            </div>
             <h1 className="text-4xl font-bold text-brand-black mb-6">About Cleaners Ready 2Go</h1>
             <p className="text-xl text-brand-gray">Professional cleaning services you can trust</p>
           </div>

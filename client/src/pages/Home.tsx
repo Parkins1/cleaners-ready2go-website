@@ -20,11 +20,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
             <div className="mb-8 lg:mb-0">
-              <div className="flex items-center justify-center lg:justify-start mb-6">
+              <div className="flex items-center justify-center lg:justify-start mb-8">
                 <img 
                   src={logoImage} 
                   alt="Cleaners Ready 2Go Logo" 
-                  className="h-20 w-auto"
+                  className="h-32 w-auto"
                 />
               </div>
               <div className="flex items-center mb-4">
