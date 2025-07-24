@@ -17,7 +17,7 @@ export default function Home() {
       
       {/* Hero Section */}
       <section 
-        className="relative min-h-screen flex items-center animate-fade-in"
+        className="relative min-h-screen flex items-center justify-center"
         style={{
           backgroundImage: 'url(https://images.pexels.com/photos/4239035/pexels-photo-4239035.jpeg)',
           backgroundSize: 'cover',
@@ -25,68 +25,38 @@ export default function Home() {
           backgroundRepeat: 'no-repeat'
         }}
       >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
+        {/* Clean White Overlay */}
+        <div className="absolute inset-0 bg-white/85"></div>
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-            <div className="mb-12 lg:mb-0 animate-slide-up">
-              <div className="flex items-center justify-center lg:justify-start mb-12">
-                <img 
-                  src={logoImage} 
-                  alt="Cleaners Ready 2Go Logo" 
-                  className="h-40 w-auto filter drop-shadow-2xl"
-                />
-              </div>
-              <div className="flex items-center mb-8">
-                <div className="flex space-x-1 mr-4">
-                  <div className="w-2 h-2 bg-brand-gold rounded-full animate-pulse"></div>
-                  <div className="w-3 h-3 bg-brand-gold rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                  <div className="w-2 h-2 bg-brand-gold rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
-                </div>
-                <span className="text-brand-gold font-semibold text-sm tracking-wider uppercase">Professional Cleaning</span>
-              </div>
-              <h1 className="text-5xl lg:text-8xl font-bold text-white mb-10 leading-tight drop-shadow-lg">
-                Your Home, <span className="text-brand-gold">Spotless</span> and Ready to Go
-              </h1>
-              <p className="text-xl lg:text-2xl text-gray-200 mb-12 leading-relaxed drop-shadow-md">
-                Professional cleaning services in Spokane Valley, Liberty Lake, and Greenacres. 
-                From weekly maintenance to deep move-out cleans, we're ready when you are.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6">
-                <Button
-                  onClick={() => setIsBookingModalOpen(true)}
-                  className="btn-primary text-lg shadow-2xl"
-                >
-                  Book a Cleaning
-                </Button>
-                <Button
-                  onClick={() => setIsQuoteModalOpen(true)}
-                  className="btn-secondary text-lg shadow-2xl"
-                >
-                  Get a Quote
-                </Button>
-              </div>
-            </div>
-            <div className="relative animate-slide-up lg:flex lg:justify-end">
-              <div className="card-modern p-12 text-center backdrop-blur-sm bg-white/95 max-w-md">
-                <div className="gradient-gold rounded-full w-36 h-36 mx-auto mb-10 flex items-center justify-center shadow-2xl">
-                  <HomeIcon className="w-20 h-20 text-white" />
-                </div>
-                <h3 className="text-3xl font-bold text-heading mb-6">Ready When You Are</h3>
-                <p className="text-body text-lg mb-8 leading-relaxed">Professional, reliable, and thorough cleaning services for your home</p>
-                <div className="flex items-center justify-center">
-                  <div className="bg-green-100 p-4 rounded-full mr-6">
-                    <CheckCircle className="w-10 h-10 text-green-600" />
-                  </div>
-                  <div className="text-left">
-                    <div className="font-bold text-heading text-xl">100% Satisfaction</div>
-                    <div className="text-subheading text-lg">Guaranteed Results</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        {/* Centered Content */}
+        <div className="relative text-center max-w-4xl mx-auto px-6 py-20">
+          {/* Subtle Logo */}
+          <div className="mb-12">
+            <img 
+              src={logoImage} 
+              alt="Cleaners Ready 2Go" 
+              className="h-16 w-auto mx-auto opacity-90"
+            />
           </div>
+          
+          {/* Main Headline */}
+          <h1 className="text-5xl lg:text-7xl font-bold text-brand-black mb-8 leading-tight">
+            Professional Cleaning<br />
+            <span className="text-brand-gold">Made Simple</span>
+          </h1>
+          
+          {/* Subheadline */}
+          <p className="text-xl lg:text-2xl text-gray-700 mb-16 leading-relaxed max-w-2xl mx-auto">
+            Trusted cleaning services for Spokane Valley, Liberty Lake, and Greenacres
+          </p>
+          
+          {/* Single CTA Button */}
+          <Button
+            onClick={() => setIsBookingModalOpen(true)}
+            className="bg-brand-gold hover:bg-brand-gold-dark text-white font-semibold px-12 py-6 text-xl rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          >
+            Book Your Cleaning
+          </Button>
         </div>
       </section>
 
