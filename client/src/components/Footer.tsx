@@ -15,7 +15,7 @@ export default function Footer() {
                 className="h-24 w-auto filter brightness-0 invert"
               />
             </div>
-            <p className="text-gray-300 mb-4 leading-relaxed">
+            <p className="text-white mb-4 leading-relaxed">
               Professional cleaning services in Spokane Valley, Liberty Lake, and Greenacres. 
               Your home, spotless and ready to go.
             </p>
@@ -27,19 +27,19 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center">
                 <Phone className="w-4 h-4 text-brand-gold mr-3" />
-                <a href="tel:+1234567890" className="text-gray-300 hover:text-white transition-colors">
+                <a href="tel:+1234567890" className="text-white hover:text-brand-secondary transition-colors">
                   (123) 456-7890
                 </a>
               </div>
               <div className="flex items-center">
                 <Mail className="w-4 h-4 text-brand-gold mr-3" />
-                <a href="mailto:info@cleanersready2go.com" className="text-gray-300 hover:text-white transition-colors">
+                <a href="mailto:info@cleanersready2go.com" className="text-white hover:text-brand-secondary transition-colors">
                   info@cleanersready2go.com
                 </a>
               </div>
               <div className="flex items-start">
                 <MapPin className="w-4 h-4 text-brand-gold mr-3 mt-1" />
-                <div className="text-gray-300">
+                <div className="text-white">
                   Spokane Valley, Liberty Lake,<br />
                   and Greenacres, WA
                 </div>
@@ -52,22 +52,22 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-brand-gold mb-4">Our Services</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/residential" className="text-gray-300 hover:text-white transition-colors">
+                <a href="/residential" className="text-white hover:text-brand-secondary transition-colors">
                   Residential Cleaning
                 </a>
               </li>
               <li>
-                <a href="/move-out" className="text-gray-300 hover:text-white transition-colors">
+                <a href="/move-out" className="text-white hover:text-brand-secondary transition-colors">
                   Move-Out Cleaning
                 </a>
               </li>
               <li>
-                <a href="/contact" className="text-gray-300 hover:text-white transition-colors">
+                <a href="/contact" className="text-white hover:text-brand-secondary transition-colors">
                   Get a Quote
                 </a>
               </li>
               <li>
-                <a href="/about" className="text-gray-300 hover:text-white transition-colors">
+                <a href="/about" className="text-white hover:text-brand-secondary transition-colors">
                   About Us
                 </a>
               </li>
@@ -77,7 +77,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 pt-8 text-center">
-          <p className="text-gray-300">
+          <p className="text-white">
             © 2024 Cleaners Ready 2Go. All rights reserved. | Professional cleaning services in Washington State.
           </p>
         </div>

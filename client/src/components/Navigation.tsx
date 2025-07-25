@@ -60,7 +60,7 @@ export default function Navigation() {
             <div className="hidden md:block">
               <button
                 onClick={() => setIsBookingModalOpen(true)}
-                className="btn-glass btn-glass--light px-6 py-2 text-sm"
+                className="btn-glass btn-glass--secondary px-6 py-2 text-sm font-bold"
               >
                 Book Now
               </button>
@@ -105,7 +105,7 @@ export default function Navigation() {
                   setIsBookingModalOpen(true);
                   setIsMobileMenuOpen(false);
                 }}
-                className="btn-glass btn-glass--light w-full mt-2 px-3 py-2 text-sm"
+                className="btn-glass btn-glass--secondary w-full mt-2 px-3 py-2 text-sm font-bold"
               >
                 Book Now
               </button>

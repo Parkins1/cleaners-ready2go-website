@@ -18,35 +18,35 @@ export default function Locations() {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8 mb-12">
-            <div className="bg-gray-50 p-8 rounded-xl text-center">
+            <div className="btn-glass btn-glass--light p-8 rounded-xl text-center">
               <div className="bg-brand-gold p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <MapPin className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-brand-black mb-3">Spokane Valley</h3>
-              <p className="text-brand-gray mb-4">Our primary service area with full availability for all cleaning services.</p>
-              <div className="text-sm text-brand-gray">
+              <h3 className="text-xl font-bold text-brand-primary mb-3">Spokane Valley</h3>
+              <p className="text-brand-primary mb-4">Our primary service area with full availability for all cleaning services.</p>
+              <div className="text-sm text-brand-primary">
                 <div className="font-medium">ZIP Codes:</div>
                 <div>99206, 99212, 99216</div>
               </div>
             </div>
-            <div className="bg-gray-50 p-8 rounded-xl text-center">
+            <div className="btn-glass btn-glass--light p-8 rounded-xl text-center">
               <div className="bg-brand-gold p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <MapPin className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-brand-black mb-3">Liberty Lake</h3>
-              <p className="text-brand-gray mb-4">Comprehensive residential and move-out cleaning services available.</p>
-              <div className="text-sm text-brand-gray">
+              <h3 className="text-xl font-bold text-brand-primary mb-3">Liberty Lake</h3>
+              <p className="text-brand-primary mb-4">Comprehensive residential and move-out cleaning services available.</p>
+              <div className="text-sm text-brand-primary">
                 <div className="font-medium">ZIP Codes:</div>
                 <div>99019</div>
               </div>
             </div>
-            <div className="bg-gray-50 p-8 rounded-xl text-center">
+            <div className="btn-glass btn-glass--light p-8 rounded-xl text-center">
               <div className="bg-brand-gold p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <MapPin className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-brand-black mb-3">Greenacres</h3>
-              <p className="text-brand-gray mb-4">Full-service cleaning solutions for residential and commercial properties.</p>
-              <div className="text-sm text-brand-gray">
+              <h3 className="text-xl font-bold text-brand-primary mb-3">Greenacres</h3>
+              <p className="text-brand-primary mb-4">Full-service cleaning solutions for residential and commercial properties.</p>
+              <div className="text-sm text-brand-primary">
                 <div className="font-medium">ZIP Codes:</div>
                 <div>99016</div>
               </div>
