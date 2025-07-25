@@ -50,4 +50,27 @@ export type InsertQuote = z.infer<typeof insertQuoteSchema>;
 
 export type Contact = typeof contacts.$inferSelect;
 export type Booking = typeof bookings.$inferSelect;
+export const blogPosts = pgTable("blog_posts", {
+  id: serial("id").primaryKey(),
+  title: text("title").notNull(),
+  excerpt: text("excerpt").notNull(),
+  content: text("content").notNull(),
+  category: text("category").notNull(),
+  date: text("date").notNull(),
+  imageUrl: text("image_url").notNull(),
+  altText: text("alt_text").notNull(),
+  slug: text("slug").notNull().unique(),
+  published: boolean("published").default(false).notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+export const insertBlogPostSchema = createInsertSchema(blogPosts).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+});
+
+export type InsertBlogPost = z.infer<typeof insertBlogPostSchema>;
+export type BlogPost = typeof blogPosts.$inferSelect;
 export type Quote = typeof quotes.$inferSelect;
