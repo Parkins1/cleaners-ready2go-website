@@ -1,36 +1,25 @@
 
 import { ArrowRight } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
-import { supabase, type BlogPost } from "@/lib/supabase";
+import type { BlogPost } from "@shared/schema";
 
 export default function Blog() {
   const { data: blogPosts = [], isLoading, error } = useQuery({
     queryKey: ['blog-posts'],
     queryFn: async (): Promise<BlogPost[]> => {
-      const { data, error } = await supabase
-        .from('blog_posts')
-        .select('*')
-        .eq('published', true)
-        .order('created_at', { ascending: false });
-      
-      if (error) throw error;
-      return data;
+      const response = await fetch('/api/blog-posts?published=true');
+      if (!response.ok) throw new Error('Failed to fetch blog posts');
+      return response.json();
     }
   });
 
   const { data: featuredPost } = useQuery({
     queryKey: ['featured-post'],
     queryFn: async (): Promise<BlogPost | null> => {
-      const { data, error } = await supabase
-        .from('blog_posts')
-        .select('*')
-        .eq('published', true)
-        .order('created_at', { ascending: false })
-        .limit(1)
-        .single();
-      
-      if (error) return null;
-      return data;
+      const response = await fetch('/api/blog-posts?published=true');
+      if (!response.ok) return null;
+      const posts: BlogPost[] = await response.json();
+      return posts.length > 0 ? posts[0] : null;
     }
   });
 
