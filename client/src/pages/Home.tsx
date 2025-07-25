@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "wouter";
 import { Home as HomeIcon, CheckCircle, ArrowRight, Clock, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import BookingModal from "@/components/BookingModal";
@@ -75,12 +76,12 @@ export default function Home() {
               <p className="text-white text-opacity-90 mb-4 text-center text-sm sm:text-base leading-relaxed flex-grow">
                 Regular weekly, bi-weekly, or monthly cleaning to keep your home spotless and welcoming.
               </p>
-              <button 
-                onClick={() => setIsBookingModalOpen(true)}
-                className="btn-glass btn-glass--primary font-bold mt-auto text-sm sm:text-base px-4 py-2 w-full sm:w-auto"
+              <Link 
+                href="/residential"
+                className="btn-glass btn-glass--primary font-bold mt-auto text-sm sm:text-base px-4 py-2 w-full sm:w-auto text-center no-underline"
               >
-                Book Now
-              </button>
+                Learn More
+              </Link>
             </div>
             <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center glass-card min-h-[280px] sm:min-h-[320px]">
               <div className="icon-container mb-3 sm:mb-4 flex-shrink-0">
@@ -92,12 +93,12 @@ export default function Home() {
               <p className="text-white text-opacity-90 mb-4 text-center text-sm sm:text-base leading-relaxed flex-grow">
                 Deep cleaning for apartment cleanouts and move-out situations. Hourly services available.
               </p>
-              <button 
-                onClick={() => setIsBookingModalOpen(true)}
-                className="btn-glass btn-glass--primary font-bold mt-auto text-sm sm:text-base px-4 py-2 w-full sm:w-auto"
+              <Link 
+                href="/move-out"
+                className="btn-glass btn-glass--primary font-bold mt-auto text-sm sm:text-base px-4 py-2 w-full sm:w-auto text-center no-underline"
               >
-                Book Now
-              </button>
+                Learn More
+              </Link>
             </div>
             <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center glass-card min-h-[280px] sm:min-h-[320px]">
               <div className="icon-container mb-3 sm:mb-4 flex-shrink-0">
@@ -107,12 +108,12 @@ export default function Home() {
               <p className="text-white text-opacity-90 mb-4 text-center text-sm sm:text-base leading-relaxed flex-grow">
                 Comprehensive 4-6 hour deep cleaning service that covers every corner of your home.
               </p>
-              <a 
+              <Link 
                 href="/deep-cleaning"
-                className="btn-glass btn-glass--primary font-bold mt-auto text-sm sm:text-base px-4 py-2 w-full sm:w-auto"
+                className="btn-glass btn-glass--primary font-bold mt-auto text-sm sm:text-base px-4 py-2 w-full sm:w-auto text-center no-underline"
               >
                 Learn More
-              </a>
+              </Link>
             </div>
           </div>
         </div>
