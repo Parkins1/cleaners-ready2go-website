@@ -112,13 +112,13 @@ export default function Home() {
         <div className="relative max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 animate-slide-up">
           <h2 className="text-4xl lg:text-6xl font-bold text-white mb-8 leading-tight">Ready for a <span className="text-brand-gold">Spotless</span> Home?</h2>
           <p className="text-xl lg:text-2xl text-gray-300 mb-12 leading-relaxed">Book your cleaning service today and experience the difference professional cleaning makes.</p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <button
               onClick={() => setIsBookingModalOpen(true)}
               className="btn-primary text-lg"
             >
               Book a Cleaning
-            </Button>
+            </button>
             <a 
               href="tel:+1234567890" 
               className="btn-secondary text-lg"

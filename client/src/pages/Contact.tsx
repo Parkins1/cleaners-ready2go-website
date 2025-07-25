@@ -264,7 +264,7 @@ export default function Contact() {
           <div className="mt-16 bg-brand-black rounded-xl p-8 text-center">
             <h3 className="text-2xl font-bold text-white mb-4">Need Immediate Service?</h3>
             <p className="text-gray-300 mb-6">Call us now for same-day cleaning or emergency service</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a 
                 href="tel:+1234567890" 
                 className="btn-primary text-lg"
