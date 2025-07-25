@@ -98,7 +98,7 @@ export default function Blog() {
           {/* Blog Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {blogPosts.slice(1).map((post) => (
-              <article key={post.id} className="group bg-gradient-to-br from-white via-white to-gray-50 rounded-2xl shadow-lg hover:shadow-2xl border border-gray-100 hover:border-gray-200 transition-all duration-300 ease-out transform hover:-translate-y-2 hover:scale-[1.02] overflow-hidden">
+              <article key={post.id} className="group glass-card bg-gradient-to-br from-white via-white to-gray-50 rounded-2xl shadow-lg hover:shadow-2xl border border-gray-100 hover:border-gray-200 transition-all duration-300 ease-out transform hover:-translate-y-2 hover:scale-[1.02] overflow-hidden">
                 <div className="relative overflow-hidden">
                   <img 
                     src={post.imageUrl} 

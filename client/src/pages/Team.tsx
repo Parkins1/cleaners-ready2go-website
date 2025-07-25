@@ -92,7 +92,7 @@ export default function Team() {
           {/* Team Members */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {teamMembers.map((member, index) => (
-              <div key={member.name} className="group bg-gradient-to-br from-white via-white to-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-gray-200 transition-all duration-300 ease-out transform hover:-translate-y-2 hover:scale-[1.02] text-center min-h-[320px] flex flex-col">
+              <div key={member.name} className="group glass-card bg-gradient-to-br from-white via-white to-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-gray-200 transition-all duration-300 ease-out transform hover:-translate-y-2 hover:scale-[1.02] text-center min-h-[320px] flex flex-col">
                 <div className="relative mb-6">
                   <img 
                     src={member.image} 
