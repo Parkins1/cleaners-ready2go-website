@@ -27,7 +27,7 @@ export default function Home() {
         }}
       >
         {/* Semi-transparent white overlay for glass effect */}
-        <div className="absolute inset-0 bg-white/60 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-white/40 backdrop-blur-sm"></div>
         
         {/* Centered Content */}
         <div className="relative text-center max-w-4xl mx-auto px-6 py-20">
