@@ -40,13 +40,13 @@ export default function Home() {
           </div>
           
           {/* Main Headline */}
-          <h1 className="text-5xl lg:text-7xl font-bold text-brand-black mb-8 leading-tight">
+          <h1 className="logo-text text-5xl lg:text-7xl font-bold text-brand-black mb-8 leading-tight">
             Professional Cleaning<br />
             <span className="text-brand-gold">Made Simple</span>
           </h1>
           
           {/* Subheadline */}
-          <p className="text-xl lg:text-2xl text-gray-700 mb-16 leading-relaxed max-w-2xl mx-auto">
+          <p className="tagline-text text-lg lg:text-xl text-gray-700 mb-16 leading-relaxed max-w-2xl mx-auto uppercase tracking-wider">
             Trusted cleaning services for Spokane Valley, Liberty Lake, and Greenacres
           </p>
           

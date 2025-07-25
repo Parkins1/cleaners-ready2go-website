@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&family=Lato:wght@400;700;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -26,13 +26,14 @@
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.75rem;
   
-  /* Enhanced Brand Colors */
-  --brand-gold: hsl(45, 85%, 47%);
-  --brand-gold-light: hsl(45, 85%, 67%);
-  --brand-gold-dark: hsl(45, 85%, 27%);
-  --brand-black: hsl(220, 13%, 9%);
-  --brand-gray: hsl(220, 15%, 25%); /* Much darker for better readability */
-  --brand-gray-light: hsl(220, 14%, 96%);
+  /* Brand Colors - Updated to match brand guidelines */
+  --brand-gold: hsl(40, 45%, 53%); /* #C29B4B */
+  --brand-gold-light: hsl(40, 45%, 63%);
+  --brand-gold-dark: hsl(40, 45%, 43%);
+  --brand-black: hsl(0, 0%, 9%); /* #181818 */
+  --brand-gray: hsl(0, 0%, 38%); /* #616161 */
+  --brand-gray-light: hsl(0, 0%, 96%); /* #F5F5F5 */
+  --brand-white: hsl(0, 0%, 100%); /* #FFFFFF */
   --brand-teal: hsl(180, 25%, 25%);
 }
 
@@ -66,14 +67,30 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Open Sans', 'Montserrat', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
+    letter-spacing: -0.01em;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Cinzel', 'Merriweather', Georgia, serif;
     font-weight: 600;
     line-height: 1.2;
+    letter-spacing: 0.02em;
+  }
+  
+  /* Logo specific styles */
+  .logo-text {
+    font-family: 'Cinzel', 'Merriweather', serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  
+  .tagline-text {
+    font-family: 'Montserrat', 'Lato', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
   }
 }
 
@@ -167,18 +184,18 @@
   .btn-primary {
     @apply text-brand-black hover:text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-500 transform hover:-translate-y-1 hover:scale-105 focus:ring-4 relative overflow-hidden w-64 h-16 flex items-center justify-center;
     backdrop-filter: blur(15px) saturate(150%);
-    background: linear-gradient(135deg, rgba(255, 193, 7, 0.15) 0%, rgba(255, 193, 7, 0.08) 100%);
-    border: 1px solid rgba(255, 193, 7, 0.2);
+    background: linear-gradient(135deg, rgba(194, 155, 75, 0.15) 0%, rgba(194, 155, 75, 0.08) 100%);
+    border: 1px solid rgba(194, 155, 75, 0.2);
     box-shadow: 
-      0 8px 32px rgba(255, 193, 7, 0.1),
+      0 8px 32px rgba(194, 155, 75, 0.1),
       inset 0 1px 0 rgba(255, 255, 255, 0.3),
       inset 0 -1px 0 rgba(0, 0, 0, 0.05);
   }
   
   .btn-primary:hover {
-    background: linear-gradient(135deg, rgba(255, 193, 7, 0.25) 0%, rgba(255, 193, 7, 0.15) 100%);
+    background: linear-gradient(135deg, rgba(194, 155, 75, 0.25) 0%, rgba(194, 155, 75, 0.15) 100%);
     box-shadow: 
-      0 16px 48px rgba(255, 193, 7, 0.2),
+      0 16px 48px rgba(194, 155, 75, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.4),
       inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   }
@@ -202,7 +219,7 @@
     @apply text-brand-black hover:text-brand-gold font-semibold px-8 py-4 rounded-2xl transition-all duration-500 transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden w-64 h-16 flex items-center justify-center;
     backdrop-filter: blur(15px) saturate(150%);
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
-    border: 1px solid rgba(255, 193, 7, 0.3);
+    border: 1px solid rgba(194, 155, 75, 0.3);
     box-shadow: 
       0 8px 32px rgba(0, 0, 0, 0.08),
       inset 0 1px 0 rgba(255, 255, 255, 0.4),
@@ -224,7 +241,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 193, 7, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(194, 155, 75, 0.3), transparent);
     transition: left 0.6s ease-out;
   }
   
@@ -349,5 +366,14 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+  
+  /* Spacing utilities based on brand guidelines */
+  .section-spacing {
+    @apply py-20 md:py-24 lg:py-32;
+  }
+  
+  .content-spacing {
+    @apply px-4 sm:px-6 lg:px-8;
   }
 }
