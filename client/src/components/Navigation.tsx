@@ -29,8 +29,8 @@ export default function Navigation() {
   return (
     <>
       <nav className="bg-white shadow-sm fixed w-full top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-24">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+          <div className="flex justify-between items-center h-20 md:h-18 flex-nowrap">
             <div className="flex items-center">
               <Link href="/">
                 <Logo />
@@ -38,13 +38,13 @@ export default function Navigation() {
             </div>
             
             {/* Desktop Navigation */}
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
+            <div className="hidden lg:block">
+              <div className="ml-4 lg:ml-10 flex items-baseline space-x-2 lg:space-x-4">
                 {navItems.map((item) => (
                   <Link
                     key={item.path}
                     href={item.path}
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    className={`px-2 lg:px-3 py-2 rounded-md text-xs lg:text-sm font-medium transition-colors whitespace-nowrap ${
                       isActiveLink(item.path)
                         ? "text-brand-black"
                         : "text-brand-gray hover:text-brand-gold"
@@ -60,14 +60,14 @@ export default function Navigation() {
             <div className="hidden md:block">
               <button
                 onClick={() => setIsBookingModalOpen(true)}
-                className="btn-glass btn-glass--secondary px-6 py-2 text-sm font-bold"
+                className="btn-glass btn-glass--secondary px-3 md:px-4 lg:px-6 py-2 text-xs md:text-sm font-bold whitespace-nowrap"
               >
                 Book Now
               </button>
             </div>
             
             {/* Mobile menu button */}
-            <div className="md:hidden">
+            <div className="lg:hidden">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="text-brand-gray hover:text-brand-gold p-2"
