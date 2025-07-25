@@ -84,17 +84,17 @@ export default function Navigation() {
         
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-white border-t">
+          <div className="lg:hidden bg-white border-t shadow-lg">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   href={item.path}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block px-3 py-2 font-medium ${
+                  className={`block px-3 py-2 rounded-md font-medium transition-colors ${
                     isActiveLink(item.path)
-                      ? "text-brand-black"
-                      : "text-brand-gray hover:text-brand-gold"
+                      ? "text-brand-black bg-brand-neutral"
+                      : "text-brand-gray hover:text-brand-gold hover:bg-gray-50"
                   }`}
                 >
                   {item.label}
