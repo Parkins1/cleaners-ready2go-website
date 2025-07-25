@@ -17,7 +17,7 @@ export default function Locations() {
             <p className="text-xl text-brand-gray">Proudly serving the greater Spokane area</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-12">
             <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center glass-card min-h-[240px] sm:min-h-[280px]">
               <div className="icon-container mb-3 sm:mb-4 flex-shrink-0">
                 <MapPin className="w-8 h-8 sm:w-10 sm:h-10 text-brand-secondary" />
@@ -40,7 +40,7 @@ export default function Locations() {
                 <div>99019</div>
               </div>
             </div>
-            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center glass-card min-h-[240px] sm:min-h-[280px] md:col-span-2 lg:col-span-1">
+            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center glass-card min-h-[240px] sm:min-h-[280px]">
               <div className="icon-container mb-3 sm:mb-4 flex-shrink-0">
                 <MapPin className="w-8 h-8 sm:w-10 sm:h-10 text-brand-secondary" />
               </div>

@@ -60,7 +60,7 @@ export default function Residential() {
           </div>
 
           {/* Service Plans */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-12">
             <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 text-center glass-card min-h-[320px] sm:min-h-[380px] flex flex-col">
               <h3 className="text-lg sm:text-xl font-bold text-brand-primary mb-3 sm:mb-4">Weekly</h3>
               <div className="text-2xl sm:text-3xl font-bold text-brand-secondary mb-2">$120</div>

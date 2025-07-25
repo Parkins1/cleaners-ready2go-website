@@ -60,7 +60,7 @@ export default function DeepCleaning() {
           </div>
 
           {/* Deep Cleaning Features */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-12">
             <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center glass-card min-h-[280px] sm:min-h-[320px]">
               <div className="icon-container mb-3 sm:mb-4 flex-shrink-0">
                 <Clock className="w-8 h-8 sm:w-10 sm:h-10 text-brand-secondary" />
@@ -91,7 +91,7 @@ export default function DeepCleaning() {
                 Book Now
               </button>
             </div>
-            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center glass-card min-h-[280px] sm:min-h-[320px] md:col-span-2 lg:col-span-1">
+            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center glass-card min-h-[280px] sm:min-h-[320px]">
               <div className="icon-container mb-3 sm:mb-4 flex-shrink-0">
                 <Shield className="w-8 h-8 sm:w-10 sm:h-10 text-brand-secondary" />
               </div>
