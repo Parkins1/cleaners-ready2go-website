@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import BookingModal from "@/components/BookingModal";
 import QuoteModal from "@/components/QuoteModal";
 import logoImage from "@assets/cleaners_ready2go_logo_transparent_1753378992010.png";
+import heroImage from "@assets/hero-cleaning-image.jpeg";
 
 export default function Home() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
@@ -19,7 +20,7 @@ export default function Home() {
       <section 
         className="relative min-h-screen flex items-center justify-center"
         style={{
-          backgroundImage: 'url(https://images.pexels.com/photos/4239035/pexels-photo-4239035.jpeg)',
+          backgroundImage: `url(${heroImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
