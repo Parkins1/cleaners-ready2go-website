@@ -81,7 +81,7 @@ export default function Residential() {
               </ul>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="btn-glass btn-glass--primary w-full py-2 sm:py-3 font-bold text-sm sm:text-base mt-auto"
+                className="btn-glass btn-glass--primary w-full py-2 sm:py-3 font-bold text-sm sm:text-base mt-auto hover:bg-brand-primary hover:text-white transition-colors duration-300"
               >
                 Choose Plan
               </button>
@@ -138,7 +138,7 @@ export default function Residential() {
               </ul>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="btn-glass btn-glass--primary w-full py-2 sm:py-3 font-bold text-sm sm:text-base mt-auto"
+                className="btn-glass btn-glass--primary w-full py-2 sm:py-3 font-bold text-sm sm:text-base mt-auto hover:bg-brand-primary hover:text-white transition-colors duration-300"
               >
                 Choose Plan
               </button>
