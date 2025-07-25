@@ -267,13 +267,13 @@ export default function Contact() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href="tel:+1234567890" 
-                className="bg-brand-gold hover:bg-yellow-500 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors inline-block"
+                className="btn-primary text-lg"
               >
                 Call (123) 456-7890
               </a>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="border-2 border-white text-white hover:bg-white hover:text-brand-black px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
+                className="btn-secondary text-lg"
               >
                 Book Online
               </button>
