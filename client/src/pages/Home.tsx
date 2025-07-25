@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Home as HomeIcon, CheckCircle, ArrowRight } from "lucide-react";
+import { Home as HomeIcon, CheckCircle, ArrowRight, Clock, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import BookingModal from "@/components/BookingModal";
 import QuoteModal from "@/components/QuoteModal";
@@ -101,19 +101,17 @@ export default function Home() {
             </div>
             <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center glass-card min-h-[280px] sm:min-h-[320px]">
               <div className="icon-container mb-3 sm:mb-4 flex-shrink-0">
-                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-brand-secondary" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
-                </svg>
+                <Clock className="w-8 h-8 sm:w-10 sm:h-10 text-brand-secondary" />
               </div>
-              <h3 className="text-brand-primary font-heading text-lg sm:text-xl mb-2 text-center">Service Areas</h3>
+              <h3 className="text-brand-primary font-heading text-lg sm:text-xl mb-2 text-center">Deep Cleaning</h3>
               <p className="text-white text-opacity-90 mb-4 text-center text-sm sm:text-base leading-relaxed flex-grow">
-                Serving Spokane Valley, Liberty Lake, and Greenacres with reliable cleaning services.
+                Comprehensive 4-6 hour deep cleaning service that covers every corner of your home.
               </p>
               <a 
-                href="/locations"
+                href="/deep-cleaning"
                 className="btn-glass btn-glass--primary font-bold mt-auto text-sm sm:text-base px-4 py-2 w-full sm:w-auto"
               >
-                View Areas
+                Learn More
               </a>
             </div>
           </div>
