@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Residential from "@/pages/Residential";
+import DeepCleaning from "@/pages/DeepCleaning";
 import MoveOut from "@/pages/MoveOut";
 import Locations from "@/pages/Locations";
 import Blog from "@/pages/Blog";
@@ -24,6 +25,7 @@ function Router() {
           <Route path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/residential" component={Residential} />
+          <Route path="/deep-cleaning" component={DeepCleaning} />
           <Route path="/move-out" component={MoveOut} />
           <Route path="/locations" component={Locations} />
           <Route path="/blog" component={Blog} />

@@ -13,6 +13,7 @@ export default function Navigation() {
     { path: "/", label: "Home" },
     { path: "/about", label: "About Us" },
     { path: "/residential", label: "Residential" },
+    { path: "/deep-cleaning", label: "Deep Cleaning" },
     { path: "/move-out", label: "Move-Out" },
     { path: "/locations", label: "Locations" },
     { path: "/blog", label: "Blog" },
