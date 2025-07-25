@@ -15,7 +15,6 @@ export default function Home() {
       {/* SEO Meta Tags */}
       <title>Cleaners Ready 2Go - Professional Cleaning Services | Spokane Valley, Liberty Lake, Greenacres</title>
       <meta name="description" content="Professional residential and move-out cleaning services in Spokane Valley, Liberty Lake, and Greenacres. Book your cleaning today!" />
-      
       {/* Hero Section */}
       <section 
         className="relative min-h-screen flex items-center justify-center"
@@ -60,7 +59,6 @@ export default function Home() {
           </Button>
         </div>
       </section>
-
       {/* Services Overview */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -106,11 +104,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Call to Action Section */}
       <section className="py-20 bg-brand-black relative overflow-hidden">
         <div className="relative max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 animate-slide-up">
-          <h2 className="text-4xl lg:text-6xl font-bold text-white mb-8 leading-tight">Ready for a <span className="text-brand-gold">Spotless</span> Home?</h2>
+          <h2 className="text-4xl lg:text-6xl font-bold mb-8 leading-tight text-[#0f171a]">Ready for a <span className="text-brand-gold">Spotless</span> Home?</h2>
           <p className="text-xl lg:text-2xl text-gray-300 mb-12 leading-relaxed">Book your cleaning service today and experience the difference professional cleaning makes.</p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <button
@@ -128,7 +125,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Modals */}
       <BookingModal 
         isOpen={isBookingModalOpen} 
