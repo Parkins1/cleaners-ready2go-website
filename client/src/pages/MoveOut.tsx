@@ -54,66 +54,77 @@ export default function MoveOut() {
           </div>
 
           {/* Service Options */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-12">
-            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 glass-card">
-              <h3 className="text-lg sm:text-xl font-bold text-brand-primary mb-4 sm:mb-6">Fixed-Price Packages</h3>
-              <div className="space-y-4 sm:space-y-6">
-                <div className="border-b border-white/20 pb-3 sm:pb-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            {/* Fixed-Price Packages Card */}
+            <div className="group bg-gradient-to-br from-white via-white to-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-gray-200 transition-all duration-300 ease-out transform hover:-translate-y-2 hover:scale-[1.02] min-h-[480px] flex flex-col">
+              <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                </svg>
+              </div>
+              <h3 className="text-brand-black font-bold text-2xl mb-6 text-center group-hover:text-brand-primary transition-colors duration-300">Fixed-Price Packages</h3>
+              <div className="space-y-6 flex-grow">
+                <div className="border-b border-gray-200 pb-4">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="font-semibold text-brand-primary text-sm sm:text-base">Studio/1BR</span>
-                    <span className="text-brand-secondary font-bold text-lg sm:text-xl">$200</span>
+                    <span className="font-semibold text-brand-black text-lg">Studio/1BR</span>
+                    <span className="text-brand-secondary font-bold text-2xl">$200</span>
                   </div>
-                  <p className="text-xs sm:text-sm text-white text-opacity-90">Complete move-out cleaning for small apartments</p>
+                  <p className="text-brand-gray">Complete move-out cleaning for small apartments</p>
                 </div>
-                <div className="border-b border-white/20 pb-3 sm:pb-4">
+                <div className="border-b border-gray-200 pb-4">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="font-semibold text-brand-primary text-sm sm:text-base">2BR/2BA</span>
-                    <span className="text-brand-secondary font-bold text-lg sm:text-xl">$300</span>
+                    <span className="font-semibold text-brand-black text-lg">2BR/2BA</span>
+                    <span className="text-brand-secondary font-bold text-2xl">$300</span>
                   </div>
-                  <p className="text-xs sm:text-sm text-white text-opacity-90">Comprehensive cleaning for medium apartments</p>
+                  <p className="text-brand-gray">Comprehensive cleaning for medium apartments</p>
                 </div>
-                <div className="pb-3 sm:pb-4">
+                <div className="pb-4">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="font-semibold text-brand-primary text-sm sm:text-base">3BR/2BA+</span>
-                    <span className="text-brand-secondary font-bold text-lg sm:text-xl">$450</span>
+                    <span className="font-semibold text-brand-black text-lg">3BR/2BA+</span>
+                    <span className="text-brand-secondary font-bold text-2xl">$450</span>
                   </div>
-                  <p className="text-xs sm:text-sm text-white text-opacity-90">Full-service cleaning for larger homes</p>
+                  <p className="text-brand-gray">Full-service cleaning for larger homes</p>
                 </div>
               </div>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="btn-glass btn-glass--primary w-full py-2 sm:py-3 mt-4 sm:mt-6 text-sm sm:text-base font-bold"
+                className="bg-brand-primary hover:bg-brand-black text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 text-center shadow-lg hover:shadow-xl mt-6"
               >
                 Book Package
               </button>
             </div>
-            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 glass-card">
-              <h3 className="text-lg sm:text-xl font-bold text-brand-primary mb-4 sm:mb-6">Hourly Services</h3>
-              <div className="mb-4 sm:mb-6">
-                <div className="text-2xl sm:text-3xl font-bold text-brand-secondary mb-2">$45/hour</div>
-                <p className="text-white text-opacity-90 text-sm sm:text-base">Flexible cleaning based on your specific needs</p>
+
+            {/* Hourly Services Card */}
+            <div className="group bg-gradient-to-br from-white via-white to-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-gray-200 transition-all duration-300 ease-out transform hover:-translate-y-2 hover:scale-[1.02] min-h-[480px] flex flex-col">
+              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Clock className="w-10 h-10 text-white" />
               </div>
-              <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
+              <h3 className="text-brand-black font-bold text-2xl mb-6 text-center group-hover:text-brand-primary transition-colors duration-300">Hourly Services</h3>
+              <div className="mb-6">
+                <div className="text-3xl font-bold text-brand-secondary mb-2 text-center">$45/hour</div>
+                <p className="text-brand-gray text-center text-lg">Flexible cleaning based on your specific needs</p>
+              </div>
+              <ul className="space-y-4 mb-8 flex-grow">
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-brand-secondary mr-2 sm:mr-3 flex-shrink-0" />
-                  <span className="text-xs sm:text-sm text-brand-primary font-medium">Minimum 3-hour booking</span>
+                  <CheckCircle className="w-5 h-5 text-brand-secondary mr-3 flex-shrink-0" />
+                  <span className="text-brand-gray font-medium">Minimum 3-hour booking</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-brand-secondary mr-2 sm:mr-3 flex-shrink-0" />
-                  <span className="text-xs sm:text-sm text-brand-primary font-medium">Custom cleaning priorities</span>
+                  <CheckCircle className="w-5 h-5 text-brand-secondary mr-3 flex-shrink-0" />
+                  <span className="text-brand-gray font-medium">Custom cleaning priorities</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-brand-secondary mr-2 sm:mr-3 flex-shrink-0" />
-                  <span className="text-xs sm:text-sm text-brand-primary font-medium">Perfect for partial cleanouts</span>
+                  <CheckCircle className="w-5 h-5 text-brand-secondary mr-3 flex-shrink-0" />
+                  <span className="text-brand-gray font-medium">Perfect for partial cleanouts</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-brand-secondary mr-2 sm:mr-3 flex-shrink-0" />
-                  <span className="text-xs sm:text-sm text-brand-primary font-medium">Same-day availability</span>
+                  <CheckCircle className="w-5 h-5 text-brand-secondary mr-3 flex-shrink-0" />
+                  <span className="text-brand-gray font-medium">Same-day availability</span>
                 </li>
               </ul>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="btn-glass btn-glass--secondary w-full py-2 sm:py-3 text-sm sm:text-base font-bold"
+                className="bg-brand-primary hover:bg-brand-black text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 text-center shadow-lg hover:shadow-xl"
               >
                 Book Hourly
               </button>

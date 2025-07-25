@@ -51,26 +51,31 @@ export default function About() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="text-center">
-              <div className="bg-brand-gold p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <Award className="w-8 h-8 text-white" />
+            {/* Quality Guaranteed Card */}
+            <div className="group bg-gradient-to-br from-white via-white to-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-gray-200 transition-all duration-300 ease-out transform hover:-translate-y-2 hover:scale-[1.02] text-center min-h-[280px] flex flex-col">
+              <div className="w-20 h-20 bg-gradient-to-br from-brand-secondary to-yellow-500 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Award className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-brand-black mb-2">Quality Guaranteed</h3>
-              <p className="text-brand-gray font-medium">100% satisfaction guarantee on every cleaning service</p>
+              <h3 className="text-brand-black font-bold text-xl mb-4 group-hover:text-brand-primary transition-colors duration-300">Quality Guaranteed</h3>
+              <p className="text-brand-gray text-lg leading-relaxed flex-grow">100% satisfaction guarantee on every cleaning service</p>
             </div>
-            <div className="text-center">
-              <div className="bg-brand-gold p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <Clock className="w-8 h-8 text-white" />
+
+            {/* Always On Time Card */}
+            <div className="group bg-gradient-to-br from-white via-white to-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-gray-200 transition-all duration-300 ease-out transform hover:-translate-y-2 hover:scale-[1.02] text-center min-h-[280px] flex flex-col">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Clock className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-brand-black mb-2">Always On Time</h3>
-              <p className="text-brand-gray font-medium">Reliable scheduling that fits your busy lifestyle</p>
+              <h3 className="text-brand-black font-bold text-xl mb-4 group-hover:text-brand-primary transition-colors duration-300">Always On Time</h3>
+              <p className="text-brand-gray text-lg leading-relaxed flex-grow">Reliable scheduling that fits your busy lifestyle</p>
             </div>
-            <div className="text-center">
-              <div className="bg-brand-gold p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <Shield className="w-8 h-8 text-white" />
+
+            {/* Fully Insured Card */}
+            <div className="group bg-gradient-to-br from-white via-white to-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-gray-200 transition-all duration-300 ease-out transform hover:-translate-y-2 hover:scale-[1.02] text-center min-h-[280px] flex flex-col">
+              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Shield className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-brand-black mb-2">Fully Insured</h3>
-              <p className="text-brand-gray font-medium">Complete peace of mind with full insurance coverage</p>
+              <h3 className="text-brand-black font-bold text-xl mb-4 group-hover:text-brand-primary transition-colors duration-300">Fully Insured</h3>
+              <p className="text-brand-gray text-lg leading-relaxed flex-grow">Complete peace of mind with full insurance coverage</p>
             </div>
           </div>
 

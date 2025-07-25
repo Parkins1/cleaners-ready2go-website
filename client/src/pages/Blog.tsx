@@ -98,29 +98,37 @@ export default function Blog() {
           {/* Blog Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {blogPosts.slice(1).map((post) => (
-              <article key={post.id} className="bg-white rounded-xl shadow-sm border overflow-hidden hover:shadow-lg transition-shadow">
-                <img 
-                  src={post.imageUrl} 
-                  alt={post.altText} 
-                  className="w-full h-48 object-cover" 
-                />
+              <article key={post.id} className="group bg-gradient-to-br from-white via-white to-gray-50 rounded-2xl shadow-lg hover:shadow-2xl border border-gray-100 hover:border-gray-200 transition-all duration-300 ease-out transform hover:-translate-y-2 hover:scale-[1.02] overflow-hidden">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={post.imageUrl} 
+                    alt={post.altText} 
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300" 
+                  />
+                  <div className="absolute top-4 left-4">
+                    <div className="bg-gradient-to-r from-brand-secondary to-yellow-500 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
+                      {post.category}
+                    </div>
+                  </div>
+                </div>
                 <div className="p-6">
-                  <div className="text-brand-gold text-sm font-medium mb-2">{post.category}</div>
-                  <h3 className="text-lg font-semibold text-brand-black mb-3">
+                  <h3 className="text-xl font-bold text-brand-black mb-3 group-hover:text-brand-primary transition-colors duration-300">
                     {post.title}
                   </h3>
-                  <p className="text-brand-gray text-sm mb-4">
+                  <p className="text-brand-gray text-base mb-6 leading-relaxed">
                     {post.excerpt}
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className="text-xs text-brand-gray">
+                    <span className="text-sm text-brand-gray">
                       {new Date(post.date).toLocaleDateString('en-US', { 
                         year: 'numeric', 
                         month: 'long', 
                         day: 'numeric' 
                       })}
                     </span>
-                    <button className="text-brand-gold text-sm font-medium hover:text-yellow-600">Read More</button>
+                    <button className="bg-brand-primary hover:bg-brand-black text-white font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-sm hover:shadow-lg flex items-center">
+                      Read More <ArrowRight className="w-4 h-4 ml-2" />
+                    </button>
                   </div>
                 </div>
               </article>

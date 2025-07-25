@@ -17,38 +17,43 @@ export default function Locations() {
             <p className="text-xl text-brand-gray">Proudly serving the greater Spokane area</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-12">
-            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center glass-card min-h-[240px] sm:min-h-[280px]">
-              <div className="icon-container mb-3 sm:mb-4 flex-shrink-0">
-                <MapPin className="w-8 h-8 sm:w-10 sm:h-10 text-brand-secondary" />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            {/* Spokane Valley Card */}
+            <div className="group bg-gradient-to-br from-white via-white to-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-gray-200 transition-all duration-300 ease-out transform hover:-translate-y-2 hover:scale-[1.02] min-h-[320px] flex flex-col text-center">
+              <div className="w-20 h-20 bg-gradient-to-br from-brand-secondary to-yellow-500 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <MapPin className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-brand-primary font-heading text-lg sm:text-xl mb-3 text-center">Spokane Valley</h3>
-              <p className="text-white text-opacity-90 mb-4 text-center text-sm sm:text-base leading-relaxed flex-grow">Our primary service area with full availability for all cleaning services.</p>
-              <div className="text-xs sm:text-sm text-white text-opacity-80 text-center">
-                <div className="font-medium">ZIP Codes:</div>
-                <div>99206, 99212, 99216</div>
-              </div>
-            </div>
-            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center glass-card min-h-[240px] sm:min-h-[280px]">
-              <div className="icon-container mb-3 sm:mb-4 flex-shrink-0">
-                <MapPin className="w-8 h-8 sm:w-10 sm:h-10 text-brand-secondary" />
-              </div>
-              <h3 className="text-brand-primary font-heading text-lg sm:text-xl mb-3 text-center">Liberty Lake</h3>
-              <p className="text-white text-opacity-90 mb-4 text-center text-sm sm:text-base leading-relaxed flex-grow">Comprehensive residential and move-out cleaning services available.</p>
-              <div className="text-xs sm:text-sm text-white text-opacity-80 text-center">
-                <div className="font-medium">ZIP Codes:</div>
-                <div>99019</div>
+              <h3 className="text-brand-black font-bold text-2xl mb-4 group-hover:text-brand-primary transition-colors duration-300">Spokane Valley</h3>
+              <p className="text-brand-gray text-lg leading-relaxed flex-grow mb-4">Our primary service area with full availability for all cleaning services.</p>
+              <div className="bg-gray-100 rounded-lg p-4 mt-auto">
+                <div className="font-semibold text-brand-black mb-2">ZIP Codes:</div>
+                <div className="text-brand-gray font-medium">99206, 99212, 99216</div>
               </div>
             </div>
-            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center glass-card min-h-[240px] sm:min-h-[280px]">
-              <div className="icon-container mb-3 sm:mb-4 flex-shrink-0">
-                <MapPin className="w-8 h-8 sm:w-10 sm:h-10 text-brand-secondary" />
+
+            {/* Liberty Lake Card */}
+            <div className="group bg-gradient-to-br from-white via-white to-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-gray-200 transition-all duration-300 ease-out transform hover:-translate-y-2 hover:scale-[1.02] min-h-[320px] flex flex-col text-center">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <MapPin className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-brand-primary font-heading text-lg sm:text-xl mb-3 text-center">Greenacres</h3>
-              <p className="text-white text-opacity-90 mb-4 text-center text-sm sm:text-base leading-relaxed flex-grow">Full-service cleaning solutions for residential and commercial properties.</p>
-              <div className="text-xs sm:text-sm text-white text-opacity-80 text-center">
-                <div className="font-medium">ZIP Codes:</div>
-                <div>99016</div>
+              <h3 className="text-brand-black font-bold text-2xl mb-4 group-hover:text-brand-primary transition-colors duration-300">Liberty Lake</h3>
+              <p className="text-brand-gray text-lg leading-relaxed flex-grow mb-4">Comprehensive residential and move-out cleaning services available.</p>
+              <div className="bg-gray-100 rounded-lg p-4 mt-auto">
+                <div className="font-semibold text-brand-black mb-2">ZIP Codes:</div>
+                <div className="text-brand-gray font-medium">99019</div>
+              </div>
+            </div>
+
+            {/* Greenacres Card */}
+            <div className="group bg-gradient-to-br from-white via-white to-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-gray-200 transition-all duration-300 ease-out transform hover:-translate-y-2 hover:scale-[1.02] min-h-[320px] flex flex-col text-center">
+              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <MapPin className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-brand-black font-bold text-2xl mb-4 group-hover:text-brand-primary transition-colors duration-300">Greenacres</h3>
+              <p className="text-brand-gray text-lg leading-relaxed flex-grow mb-4">Full-service cleaning solutions for residential and commercial properties.</p>
+              <div className="bg-gray-100 rounded-lg p-4 mt-auto">
+                <div className="font-semibold text-brand-black mb-2">ZIP Codes:</div>
+                <div className="text-brand-gray font-medium">99016</div>
               </div>
             </div>
           </div>

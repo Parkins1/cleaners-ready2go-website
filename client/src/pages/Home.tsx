@@ -67,50 +67,55 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-bold text-heading mb-6">Our Cleaning Services</h2>
             <p className="text-xl lg:text-2xl text-body">Professional, reliable, and ready when you need us</p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center glass-card min-h-[280px] sm:min-h-[320px]">
-              <div className="icon-container mb-3 sm:mb-4 flex-shrink-0">
-                <HomeIcon className="w-8 h-8 sm:w-10 sm:h-10 text-brand-secondary" />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Residential Cleaning Card */}
+            <div className="group bg-gradient-to-br from-white via-white to-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-gray-200 transition-all duration-300 ease-out transform hover:-translate-y-2 hover:scale-[1.02] min-h-[380px] flex flex-col">
+              <div className="w-20 h-20 bg-gradient-to-br from-brand-secondary to-yellow-500 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <HomeIcon className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-brand-primary font-heading text-lg sm:text-xl mb-2 text-center">Residential Cleaning</h3>
-              <p className="text-white text-opacity-90 mb-4 text-center text-sm sm:text-base leading-relaxed flex-grow">
+              <h3 className="text-brand-black font-bold text-2xl mb-4 text-center group-hover:text-brand-primary transition-colors duration-300">Residential Cleaning</h3>
+              <p className="text-brand-gray text-center text-lg leading-relaxed flex-grow mb-6">
                 Regular weekly, bi-weekly, or monthly cleaning to keep your home spotless and welcoming.
               </p>
               <Link 
                 href="/residential"
-                className="btn-glass btn-glass--primary font-bold mt-auto text-sm sm:text-base px-4 py-2 w-full sm:w-auto text-center no-underline"
+                className="bg-brand-primary hover:bg-brand-black text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 text-center shadow-lg hover:shadow-xl"
               >
                 Learn More
               </Link>
             </div>
-            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center glass-card min-h-[280px] sm:min-h-[320px]">
-              <div className="icon-container mb-3 sm:mb-4 flex-shrink-0">
-                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-brand-secondary" fill="currentColor" viewBox="0 0 20 20">
+
+            {/* Move-Out Cleaning Card */}
+            <div className="group bg-gradient-to-br from-white via-white to-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-gray-200 transition-all duration-300 ease-out transform hover:-translate-y-2 hover:scale-[1.02] min-h-[380px] flex flex-col">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/>
                 </svg>
               </div>
-              <h3 className="text-brand-primary font-heading text-lg sm:text-xl mb-2 text-center">Move-Out Cleaning</h3>
-              <p className="text-white text-opacity-90 mb-4 text-center text-sm sm:text-base leading-relaxed flex-grow">
+              <h3 className="text-brand-black font-bold text-2xl mb-4 text-center group-hover:text-brand-primary transition-colors duration-300">Move-Out Cleaning</h3>
+              <p className="text-brand-gray text-center text-lg leading-relaxed flex-grow mb-6">
                 Deep cleaning for apartment cleanouts and move-out situations. Hourly services available.
               </p>
               <Link 
                 href="/move-out"
-                className="btn-glass btn-glass--primary font-bold mt-auto text-sm sm:text-base px-4 py-2 w-full sm:w-auto text-center no-underline"
+                className="bg-brand-primary hover:bg-brand-black text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 text-center shadow-lg hover:shadow-xl"
               >
                 Learn More
               </Link>
             </div>
-            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center glass-card min-h-[280px] sm:min-h-[320px]">
-              <div className="icon-container mb-3 sm:mb-4 flex-shrink-0">
-                <Clock className="w-8 h-8 sm:w-10 sm:h-10 text-brand-secondary" />
+
+            {/* Deep Cleaning Card */}
+            <div className="group bg-gradient-to-br from-white via-white to-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-gray-200 transition-all duration-300 ease-out transform hover:-translate-y-2 hover:scale-[1.02] min-h-[380px] flex flex-col">
+              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Clock className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-brand-primary font-heading text-lg sm:text-xl mb-2 text-center">Deep Cleaning</h3>
-              <p className="text-white text-opacity-90 mb-4 text-center text-sm sm:text-base leading-relaxed flex-grow">
+              <h3 className="text-brand-black font-bold text-2xl mb-4 text-center group-hover:text-brand-primary transition-colors duration-300">Deep Cleaning</h3>
+              <p className="text-brand-gray text-center text-lg leading-relaxed flex-grow mb-6">
                 Comprehensive 4-6 hour deep cleaning service that covers every corner of your home.
               </p>
               <Link 
                 href="/deep-cleaning"
-                className="btn-glass btn-glass--primary font-bold mt-auto text-sm sm:text-base px-4 py-2 w-full sm:w-auto text-center no-underline"
+                className="bg-brand-primary hover:bg-brand-black text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 text-center shadow-lg hover:shadow-xl"
               >
                 Learn More
               </Link>

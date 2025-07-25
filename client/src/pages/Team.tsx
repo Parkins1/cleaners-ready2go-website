@@ -91,16 +91,28 @@ export default function Team() {
 
           {/* Team Members */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {teamMembers.map((member) => (
-              <div key={member.name} className="bg-gray-50 rounded-xl p-6 text-center">
-                <img 
-                  src={member.image} 
-                  alt={member.alt} 
-                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" 
-                />
-                <h4 className="text-lg font-semibold text-brand-black mb-2">{member.name}</h4>
-                <div className="text-brand-gold font-medium mb-3">{member.role}</div>
-                <p className="text-sm text-brand-gray leading-relaxed">
+            {teamMembers.map((member, index) => (
+              <div key={member.name} className="group bg-gradient-to-br from-white via-white to-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-gray-200 transition-all duration-300 ease-out transform hover:-translate-y-2 hover:scale-[1.02] text-center min-h-[320px] flex flex-col">
+                <div className="relative mb-6">
+                  <img 
+                    src={member.image} 
+                    alt={member.alt} 
+                    className="w-24 h-24 rounded-full mx-auto object-cover shadow-lg group-hover:scale-110 transition-transform duration-300" 
+                  />
+                  <div className={`absolute -bottom-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg ${
+                    index === 0 ? 'bg-gradient-to-br from-brand-secondary to-yellow-500' :
+                    index === 1 ? 'bg-gradient-to-br from-blue-500 to-indigo-600' :
+                    index === 2 ? 'bg-gradient-to-br from-pink-500 to-rose-600' :
+                    index === 3 ? 'bg-gradient-to-br from-green-500 to-emerald-600' :
+                    index === 4 ? 'bg-gradient-to-br from-purple-500 to-indigo-600' :
+                    'bg-gradient-to-br from-orange-500 to-red-600'
+                  }`}>
+                    {member.name.charAt(0)}
+                  </div>
+                </div>
+                <h4 className="text-xl font-bold text-brand-black mb-2 group-hover:text-brand-primary transition-colors duration-300">{member.name}</h4>
+                <div className="text-brand-secondary font-bold mb-4 text-lg">{member.role}</div>
+                <p className="text-brand-gray leading-relaxed flex-grow">
                   {member.description}
                 </p>
               </div>

@@ -60,48 +60,53 @@ export default function DeepCleaning() {
           </div>
 
           {/* Deep Cleaning Features */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-12">
-            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center glass-card min-h-[280px] sm:min-h-[320px]">
-              <div className="icon-container mb-3 sm:mb-4 flex-shrink-0">
-                <Clock className="w-8 h-8 sm:w-10 sm:h-10 text-brand-secondary" />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            {/* Thorough Process Card */}
+            <div className="group bg-gradient-to-br from-white via-white to-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-gray-200 transition-all duration-300 ease-out transform hover:-translate-y-2 hover:scale-[1.02] min-h-[380px] flex flex-col">
+              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Clock className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-brand-primary font-heading text-lg sm:text-xl mb-2 text-center">Thorough Process</h3>
-              <p className="text-white text-opacity-90 mb-4 text-center text-sm sm:text-base leading-relaxed flex-grow">
+              <h3 className="text-brand-black font-bold text-2xl mb-4 text-center group-hover:text-brand-primary transition-colors duration-300">Thorough Process</h3>
+              <p className="text-brand-gray text-center text-lg leading-relaxed flex-grow mb-6">
                 Our deep cleaning takes 4-8 hours depending on home size, ensuring every detail is addressed.
               </p>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="btn-glass btn-glass--primary font-bold mt-auto text-sm sm:text-base px-4 py-2 w-full sm:w-auto"
+                className="bg-brand-primary hover:bg-brand-black text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 text-center shadow-lg hover:shadow-xl"
               >
                 Book Now
               </button>
             </div>
-            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center glass-card min-h-[280px] sm:min-h-[320px]">
-              <div className="icon-container mb-3 sm:mb-4 flex-shrink-0">
-                <Star className="w-8 h-8 sm:w-10 sm:h-10 text-brand-secondary" />
+
+            {/* Premium Service Card */}
+            <div className="group bg-gradient-to-br from-white via-white to-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-gray-200 transition-all duration-300 ease-out transform hover:-translate-y-2 hover:scale-[1.02] min-h-[380px] flex flex-col">
+              <div className="w-20 h-20 bg-gradient-to-br from-brand-secondary to-yellow-500 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Star className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-brand-primary font-heading text-lg sm:text-xl mb-2 text-center">Premium Service</h3>
-              <p className="text-white text-opacity-90 mb-4 text-center text-sm sm:text-base leading-relaxed flex-grow">
+              <h3 className="text-brand-black font-bold text-2xl mb-4 text-center group-hover:text-brand-primary transition-colors duration-300">Premium Service</h3>
+              <p className="text-brand-gray text-center text-lg leading-relaxed flex-grow mb-6">
                 Professional-grade equipment and eco-friendly products for exceptional results.
               </p>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="btn-glass btn-glass--primary font-bold mt-auto text-sm sm:text-base px-4 py-2 w-full sm:w-auto"
+                className="bg-brand-primary hover:bg-brand-black text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 text-center shadow-lg hover:shadow-xl"
               >
                 Book Now
               </button>
             </div>
-            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center glass-card min-h-[280px] sm:min-h-[320px]">
-              <div className="icon-container mb-3 sm:mb-4 flex-shrink-0">
-                <Shield className="w-8 h-8 sm:w-10 sm:h-10 text-brand-secondary" />
+
+            {/* Satisfaction Guaranteed Card */}
+            <div className="group bg-gradient-to-br from-white via-white to-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-gray-200 transition-all duration-300 ease-out transform hover:-translate-y-2 hover:scale-[1.02] min-h-[380px] flex flex-col">
+              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Shield className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-brand-primary font-heading text-lg sm:text-xl mb-2 text-center">Satisfaction Guaranteed</h3>
-              <p className="text-white text-opacity-90 mb-4 text-center text-sm sm:text-base leading-relaxed flex-grow">
+              <h3 className="text-brand-black font-bold text-2xl mb-4 text-center group-hover:text-brand-primary transition-colors duration-300">Satisfaction Guaranteed</h3>
+              <p className="text-brand-gray text-center text-lg leading-relaxed flex-grow mb-6">
                 100% satisfaction guarantee - we'll return within 24 hours if anything is missed.
               </p>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="btn-glass btn-glass--primary font-bold mt-auto text-sm sm:text-base px-4 py-2 w-full sm:w-auto"
+                className="bg-brand-primary hover:bg-brand-black text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 text-center shadow-lg hover:shadow-xl"
               >
                 Book Now
               </button>
