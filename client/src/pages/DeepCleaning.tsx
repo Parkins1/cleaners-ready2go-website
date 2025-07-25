@@ -60,48 +60,48 @@ export default function DeepCleaning() {
           </div>
 
           {/* Deep Cleaning Features */}
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-xl p-8 flex flex-col items-center glass-card">
-              <div className="icon-container mb-4">
-                <Clock className="w-10 h-10 text-brand-secondary" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-12">
+            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center glass-card min-h-[280px] sm:min-h-[320px]">
+              <div className="icon-container mb-3 sm:mb-4 flex-shrink-0">
+                <Clock className="w-8 h-8 sm:w-10 sm:h-10 text-brand-secondary" />
               </div>
-              <h3 className="text-brand-primary font-heading text-xl mb-2">Thorough Process</h3>
-              <p className="text-white text-opacity-90 mb-4 text-center">
+              <h3 className="text-brand-primary font-heading text-lg sm:text-xl mb-2 text-center">Thorough Process</h3>
+              <p className="text-white text-opacity-90 mb-4 text-center text-sm sm:text-base leading-relaxed flex-grow">
                 Our deep cleaning takes 4-8 hours depending on home size, ensuring every detail is addressed.
               </p>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="btn-glass btn-glass--primary font-bold mt-auto"
+                className="btn-glass btn-glass--primary font-bold mt-auto text-sm sm:text-base px-4 py-2 w-full sm:w-auto"
               >
                 Book Now
               </button>
             </div>
-            <div className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-xl p-8 flex flex-col items-center glass-card">
-              <div className="icon-container mb-4">
-                <Star className="w-10 h-10 text-brand-secondary" />
+            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center glass-card min-h-[280px] sm:min-h-[320px]">
+              <div className="icon-container mb-3 sm:mb-4 flex-shrink-0">
+                <Star className="w-8 h-8 sm:w-10 sm:h-10 text-brand-secondary" />
               </div>
-              <h3 className="text-brand-primary font-heading text-xl mb-2">Premium Service</h3>
-              <p className="text-white text-opacity-90 mb-4 text-center">
+              <h3 className="text-brand-primary font-heading text-lg sm:text-xl mb-2 text-center">Premium Service</h3>
+              <p className="text-white text-opacity-90 mb-4 text-center text-sm sm:text-base leading-relaxed flex-grow">
                 Professional-grade equipment and eco-friendly products for exceptional results.
               </p>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="btn-glass btn-glass--primary font-bold mt-auto"
+                className="btn-glass btn-glass--primary font-bold mt-auto text-sm sm:text-base px-4 py-2 w-full sm:w-auto"
               >
                 Book Now
               </button>
             </div>
-            <div className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-xl p-8 flex flex-col items-center glass-card">
-              <div className="icon-container mb-4">
-                <Shield className="w-10 h-10 text-brand-secondary" />
+            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center glass-card min-h-[280px] sm:min-h-[320px] md:col-span-2 lg:col-span-1">
+              <div className="icon-container mb-3 sm:mb-4 flex-shrink-0">
+                <Shield className="w-8 h-8 sm:w-10 sm:h-10 text-brand-secondary" />
               </div>
-              <h3 className="text-brand-primary font-heading text-xl mb-2">Satisfaction Guaranteed</h3>
-              <p className="text-white text-opacity-90 mb-4 text-center">
+              <h3 className="text-brand-primary font-heading text-lg sm:text-xl mb-2 text-center">Satisfaction Guaranteed</h3>
+              <p className="text-white text-opacity-90 mb-4 text-center text-sm sm:text-base leading-relaxed flex-grow">
                 100% satisfaction guarantee - we'll return within 24 hours if anything is missed.
               </p>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="btn-glass btn-glass--primary font-bold mt-auto"
+                className="btn-glass btn-glass--primary font-bold mt-auto text-sm sm:text-base px-4 py-2 w-full sm:w-auto"
               >
                 Book Now
               </button>

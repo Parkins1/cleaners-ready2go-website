@@ -316,11 +316,31 @@
   
   .glass-card {
     transition: all 0.3s ease;
+    will-change: transform;
   }
   
   .glass-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Responsive glass card improvements */
+  @media (max-width: 640px) {
+    .glass-card {
+      border-radius: 0.5rem;
+    }
+  }
+  
+  @media (min-width: 641px) {
+    .glass-card {
+      border-radius: 0.75rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .glass-card {
+      border-radius: 1rem;
+    }
   }
   
   .icon-container {

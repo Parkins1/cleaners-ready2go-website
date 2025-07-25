@@ -66,52 +66,52 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-bold text-heading mb-6">Our Cleaning Services</h2>
             <p className="text-xl lg:text-2xl text-body">Professional, reliable, and ready when you need us</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-xl p-8 flex flex-col items-center glass-card">
-              <div className="icon-container mb-4">
-                <HomeIcon className="w-10 h-10 text-brand-secondary" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center glass-card min-h-[280px] sm:min-h-[320px]">
+              <div className="icon-container mb-3 sm:mb-4 flex-shrink-0">
+                <HomeIcon className="w-8 h-8 sm:w-10 sm:h-10 text-brand-secondary" />
               </div>
-              <h3 className="text-brand-primary font-heading text-xl mb-2">Residential Cleaning</h3>
-              <p className="text-white text-opacity-90 mb-4 text-center">
+              <h3 className="text-brand-primary font-heading text-lg sm:text-xl mb-2 text-center">Residential Cleaning</h3>
+              <p className="text-white text-opacity-90 mb-4 text-center text-sm sm:text-base leading-relaxed flex-grow">
                 Regular weekly, bi-weekly, or monthly cleaning to keep your home spotless and welcoming.
               </p>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="btn-glass btn-glass--primary font-bold mt-auto"
+                className="btn-glass btn-glass--primary font-bold mt-auto text-sm sm:text-base px-4 py-2 w-full sm:w-auto"
               >
                 Book Now
               </button>
             </div>
-            <div className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-xl p-8 flex flex-col items-center glass-card">
-              <div className="icon-container mb-4">
-                <svg className="w-10 h-10 text-brand-secondary" fill="currentColor" viewBox="0 0 20 20">
+            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center glass-card min-h-[280px] sm:min-h-[320px]">
+              <div className="icon-container mb-3 sm:mb-4 flex-shrink-0">
+                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-brand-secondary" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/>
                 </svg>
               </div>
-              <h3 className="text-brand-primary font-heading text-xl mb-2">Move-Out Cleaning</h3>
-              <p className="text-white text-opacity-90 mb-4 text-center">
+              <h3 className="text-brand-primary font-heading text-lg sm:text-xl mb-2 text-center">Move-Out Cleaning</h3>
+              <p className="text-white text-opacity-90 mb-4 text-center text-sm sm:text-base leading-relaxed flex-grow">
                 Deep cleaning for apartment cleanouts and move-out situations. Hourly services available.
               </p>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="btn-glass btn-glass--primary font-bold mt-auto"
+                className="btn-glass btn-glass--primary font-bold mt-auto text-sm sm:text-base px-4 py-2 w-full sm:w-auto"
               >
                 Book Now
               </button>
             </div>
-            <div className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-xl p-8 flex flex-col items-center glass-card">
-              <div className="icon-container mb-4">
-                <svg className="w-10 h-10 text-brand-secondary" fill="currentColor" viewBox="0 0 20 20">
+            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center glass-card min-h-[280px] sm:min-h-[320px] md:col-span-2 lg:col-span-1">
+              <div className="icon-container mb-3 sm:mb-4 flex-shrink-0">
+                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-brand-secondary" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
                 </svg>
               </div>
-              <h3 className="text-brand-primary font-heading text-xl mb-2">Service Areas</h3>
-              <p className="text-white text-opacity-90 mb-4 text-center">
+              <h3 className="text-brand-primary font-heading text-lg sm:text-xl mb-2 text-center">Service Areas</h3>
+              <p className="text-white text-opacity-90 mb-4 text-center text-sm sm:text-base leading-relaxed flex-grow">
                 Serving Spokane Valley, Liberty Lake, and Greenacres with reliable cleaning services.
               </p>
               <a 
                 href="/locations"
-                className="btn-glass btn-glass--primary font-bold mt-auto"
+                className="btn-glass btn-glass--primary font-bold mt-auto text-sm sm:text-base px-4 py-2 w-full sm:w-auto"
               >
                 View Areas
               </a>
