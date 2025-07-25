@@ -6,7 +6,7 @@ export default function Logo() {
       <img 
         src={logoImage} 
         alt="Cleaners Ready 2Go - Professional Cleaning Services" 
-        className="h-20 w-auto"
+        className="h-40 w-40"
       />
     </div>
   );
