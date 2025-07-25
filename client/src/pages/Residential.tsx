@@ -86,7 +86,7 @@ export default function Residential() {
                 Choose Plan
               </button>
             </div>
-            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 text-center glass-card min-h-[320px] sm:min-h-[380px] flex flex-col relative md:col-span-2 lg:col-span-1">
+            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 text-center glass-card min-h-[320px] sm:min-h-[380px] flex flex-col relative">
               <div className="absolute -top-2 sm:-top-3 left-1/2 transform -translate-x-1/2 bg-brand-primary text-white px-3 sm:px-4 py-1 rounded-full text-xs sm:text-sm font-medium">
                 Most Popular
               </div>
