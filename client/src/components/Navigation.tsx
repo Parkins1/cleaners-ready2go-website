@@ -60,7 +60,7 @@ export default function Navigation() {
             <div className="hidden md:block">
               <button
                 onClick={() => setIsBookingModalOpen(true)}
-                className="text-blue-600 hover:text-black px-6 py-2 rounded-lg text-sm font-semibold transition-all duration-300 transform hover:-translate-y-0.5 backdrop-blur-md bg-white/90 border border-white/50 shadow-lg hover:shadow-xl hover:bg-white/95"
+                className="text-brand-primary hover:text-brand-secondary px-6 py-2 rounded-lg text-sm font-semibold transition-all duration-300 transform hover:-translate-y-0.5 backdrop-blur-md bg-white/90 border border-white/50 shadow-lg hover:shadow-xl hover:bg-white/95 ui-text"
               >
                 Book Now
               </button>
@@ -105,7 +105,7 @@ export default function Navigation() {
                   setIsBookingModalOpen(true);
                   setIsMobileMenuOpen(false);
                 }}
-                className="w-full text-left text-blue-600 hover:text-black px-3 py-2 rounded-lg font-medium mt-2 backdrop-blur-md bg-white/90 border border-white/50 shadow-lg hover:shadow-xl hover:bg-white/95 transition-all duration-300"
+                className="w-full text-left text-brand-primary hover:text-brand-secondary px-3 py-2 rounded-lg font-medium mt-2 backdrop-blur-md bg-white/90 border border-white/50 shadow-lg hover:shadow-xl hover:bg-white/95 transition-all duration-300 ui-text"
               >
                 Book Now
               </button>

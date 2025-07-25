@@ -61,6 +61,18 @@ export default {
           border: "var(--sidebar-border)",
           ring: "var(--sidebar-ring)",
         },
+        // New brand colors
+        brand: {
+          primary: "var(--brand-primary)",
+          secondary: "var(--brand-secondary)",
+          neutral: "var(--brand-neutral)",
+          accent: "var(--brand-accent)",
+          white: "var(--brand-white)",
+          // Legacy support
+          gold: "var(--brand-gold)",
+          black: "var(--brand-black)",
+          gray: "var(--brand-gray)",
+        },
       },
       keyframes: {
         "accordion-down": {

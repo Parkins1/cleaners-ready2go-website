@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&family=Lato:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -26,15 +26,17 @@
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.75rem;
   
-  /* Brand Colors - Updated to match brand guidelines */
-  --brand-gold: hsl(40, 45%, 53%); /* #C29B4B */
-  --brand-gold-light: hsl(40, 45%, 63%);
-  --brand-gold-dark: hsl(40, 45%, 43%);
-  --brand-black: hsl(0, 0%, 9%); /* #181818 */
-  --brand-gray: hsl(0, 0%, 38%); /* #616161 */
-  --brand-gray-light: hsl(0, 0%, 96%); /* #F5F5F5 */
+  /* Brand Colors - Updated to match new brand guidelines */
+  --brand-primary: hsl(200, 78%, 6%); /* #101820 */
+  --brand-secondary: hsl(46, 60%, 55%); /* #CFAE51 */
+  --brand-neutral: hsl(60, 30%, 96%); /* #F5F4F0 */
+  --brand-accent: hsl(200, 2%, 47%); /* #747879 */
   --brand-white: hsl(0, 0%, 100%); /* #FFFFFF */
-  --brand-teal: hsl(180, 25%, 25%);
+  
+  /* Legacy support for existing classes */
+  --brand-gold: hsl(46, 60%, 55%); /* #CFAE51 */
+  --brand-black: hsl(200, 78%, 6%); /* #101820 */
+  --brand-gray: hsl(200, 2%, 47%); /* #747879 */
 }
 
 .dark {
@@ -67,13 +69,13 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
-    font-family: 'Open Sans', 'Montserrat', system-ui, -apple-system, sans-serif;
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
     letter-spacing: -0.01em;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cinzel', 'Merriweather', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-weight: 600;
     line-height: 1.2;
     letter-spacing: 0.02em;
@@ -81,16 +83,21 @@
   
   /* Logo specific styles */
   .logo-text {
-    font-family: 'Cinzel', 'Merriweather', serif;
-    font-weight: 600;
-    letter-spacing: 0.05em;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 0.02em;
   }
   
   .tagline-text {
-    font-family: 'Montserrat', 'Lato', sans-serif;
-    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
+  }
+  
+  /* UI elements */
+  .ui-text, button, input, select {
+    font-family: 'Inter', sans-serif;
   }
 }
 
@@ -182,7 +189,7 @@
 /* Modern frosted glass button and card styles */
 @layer components {
   .btn-primary {
-    @apply text-blue-600 hover:text-black font-semibold px-8 py-4 rounded-2xl transition-all duration-500 transform hover:-translate-y-1 hover:scale-105 focus:ring-4 relative overflow-hidden w-64 h-16 flex items-center justify-center;
+    @apply text-brand-primary hover:text-brand-secondary font-semibold px-8 py-4 rounded-2xl transition-all duration-500 transform hover:-translate-y-1 hover:scale-105 focus:ring-4 relative overflow-hidden w-64 h-16 flex items-center justify-center;
     backdrop-filter: blur(15px) saturate(150%);
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.8) 100%);
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -216,7 +223,7 @@
   }
   
   .btn-secondary {
-    @apply text-blue-600 hover:text-black font-semibold px-8 py-4 rounded-2xl transition-all duration-500 transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden w-64 h-16 flex items-center justify-center;
+    @apply text-brand-primary hover:text-brand-secondary font-semibold px-8 py-4 rounded-2xl transition-all duration-500 transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden w-64 h-16 flex items-center justify-center;
     backdrop-filter: blur(15px) saturate(150%);
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.8) 100%);
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -250,7 +257,7 @@
   }
   
   .btn-outline {
-    @apply text-blue-600 hover:text-black font-semibold px-8 py-4 rounded-2xl transition-all duration-500 transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden w-64 h-16 flex items-center justify-center;
+    @apply text-brand-primary hover:text-brand-secondary font-semibold px-8 py-4 rounded-2xl transition-all duration-500 transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden w-64 h-16 flex items-center justify-center;
     backdrop-filter: blur(20px) saturate(180%);
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.8) 100%);
     border: 2px solid rgba(59, 130, 246, 0.3);

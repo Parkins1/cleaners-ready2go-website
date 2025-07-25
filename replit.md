@@ -8,6 +8,20 @@ This is a professional cleaning services website built for "Cleaners Ready 2Go,"
 
 Preferred communication style: Simple, everyday language.
 
+## Brand Guidelines (Updated January 2025)
+
+### Color Palette
+- **Primary**: #101820 (Dark navy blue)
+- **Secondary**: #CFAE51 (Gold)
+- **Neutral**: #F5F4F0 (Light cream)
+- **Accent**: #747879 (Gray)
+- **White**: #FFFFFF
+
+### Typography
+- **Headings**: Playfair Display (elegant serif for headlines and logo)
+- **Body Text**: Montserrat (clean sans-serif for content)
+- **UI Elements**: Inter (modern sans-serif for buttons, forms, navigation)
+
 ## System Architecture
 
 The application follows a modern full-stack architecture with clear separation between frontend and backend concerns:
