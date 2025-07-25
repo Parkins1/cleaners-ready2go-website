@@ -60,85 +60,85 @@ export default function Residential() {
           </div>
 
           {/* Service Plans */}
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="btn-glass btn-glass--light p-8 rounded-xl text-center">
-              <h3 className="text-xl font-bold text-brand-primary mb-4">Weekly</h3>
-              <div className="text-3xl font-bold text-brand-secondary mb-2">$120</div>
-              <div className="text-brand-primary font-medium mb-6">per cleaning</div>
-              <ul className="text-left space-y-2 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-12">
+            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 text-center glass-card min-h-[320px] sm:min-h-[380px] flex flex-col">
+              <h3 className="text-lg sm:text-xl font-bold text-brand-primary mb-3 sm:mb-4">Weekly</h3>
+              <div className="text-2xl sm:text-3xl font-bold text-brand-secondary mb-2">$120</div>
+              <div className="text-brand-primary font-medium mb-4 sm:mb-6 text-sm sm:text-base">per cleaning</div>
+              <ul className="text-left space-y-2 mb-6 sm:mb-8 flex-grow">
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-brand-secondary mr-2" />
-                  <span className="text-sm text-brand-primary font-medium">All rooms cleaned</span>
+                  <CheckCircle className="w-4 h-4 text-brand-secondary mr-2 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm text-brand-primary font-medium">All rooms cleaned</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-brand-secondary mr-2" />
-                  <span className="text-sm text-brand-primary font-medium">Kitchen & bathrooms</span>
+                  <CheckCircle className="w-4 h-4 text-brand-secondary mr-2 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm text-brand-primary font-medium">Kitchen & bathrooms</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-brand-secondary mr-2" />
-                  <span className="text-sm text-brand-primary font-medium">Vacuum & mop</span>
+                  <CheckCircle className="w-4 h-4 text-brand-secondary mr-2 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm text-brand-primary font-medium">Vacuum & mop</span>
                 </li>
               </ul>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="btn-glass btn-glass--primary w-full py-3 font-bold"
+                className="btn-glass btn-glass--primary w-full py-2 sm:py-3 font-bold text-sm sm:text-base mt-auto"
               >
                 Choose Plan
               </button>
             </div>
-            <div className="btn-glass btn-glass--secondary p-8 rounded-xl text-center relative">
-              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-brand-primary text-white px-4 py-1 rounded-full text-sm font-medium">
+            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 text-center glass-card min-h-[320px] sm:min-h-[380px] flex flex-col relative md:col-span-2 lg:col-span-1">
+              <div className="absolute -top-2 sm:-top-3 left-1/2 transform -translate-x-1/2 bg-brand-primary text-white px-3 sm:px-4 py-1 rounded-full text-xs sm:text-sm font-medium">
                 Most Popular
               </div>
-              <h3 className="text-xl font-bold text-white mb-4">Bi-Weekly</h3>
-              <div className="text-3xl font-bold text-white mb-2">$140</div>
-              <div className="text-white text-opacity-80 mb-6">per cleaning</div>
-              <ul className="text-left space-y-2 mb-8">
+              <h3 className="text-lg sm:text-xl font-bold text-brand-primary mb-3 sm:mb-4 mt-2 sm:mt-3">Bi-Weekly</h3>
+              <div className="text-2xl sm:text-3xl font-bold text-brand-secondary mb-2">$140</div>
+              <div className="text-brand-primary font-medium mb-4 sm:mb-6 text-sm sm:text-base">per cleaning</div>
+              <ul className="text-left space-y-2 mb-6 sm:mb-8 flex-grow">
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-white mr-2" />
-                  <span className="text-sm text-white">All rooms cleaned</span>
+                  <CheckCircle className="w-4 h-4 text-brand-secondary mr-2 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm text-brand-primary font-medium">All rooms cleaned</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-white mr-2" />
-                  <span className="text-sm text-white">Kitchen & bathrooms</span>
+                  <CheckCircle className="w-4 h-4 text-brand-secondary mr-2 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm text-brand-primary font-medium">Kitchen & bathrooms</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-white mr-2" />
-                  <span className="text-sm text-white">Vacuum & mop</span>
+                  <CheckCircle className="w-4 h-4 text-brand-secondary mr-2 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm text-brand-primary font-medium">Vacuum & mop</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-white mr-2" />
-                  <span className="text-sm text-white">Dusting & organizing</span>
+                  <CheckCircle className="w-4 h-4 text-brand-secondary mr-2 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm text-brand-primary font-medium">Dusting & organizing</span>
                 </li>
               </ul>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="btn-glass btn-glass--light w-full py-3 font-bold"
+                className="btn-glass btn-glass--secondary w-full py-2 sm:py-3 font-bold text-sm sm:text-base mt-auto"
               >
                 Choose Plan
               </button>
             </div>
-            <div className="btn-glass btn-glass--light p-8 rounded-xl text-center">
-              <h3 className="text-xl font-bold text-brand-primary mb-4">Monthly</h3>
-              <div className="text-3xl font-bold text-brand-secondary mb-2">$180</div>
-              <div className="text-brand-primary font-medium mb-6">per cleaning</div>
-              <ul className="text-left space-y-2 mb-8">
+            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 text-center glass-card min-h-[320px] sm:min-h-[380px] flex flex-col">
+              <h3 className="text-lg sm:text-xl font-bold text-brand-primary mb-3 sm:mb-4">Monthly</h3>
+              <div className="text-2xl sm:text-3xl font-bold text-brand-secondary mb-2">$180</div>
+              <div className="text-brand-primary font-medium mb-4 sm:mb-6 text-sm sm:text-base">per cleaning</div>
+              <ul className="text-left space-y-2 mb-6 sm:mb-8 flex-grow">
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-brand-secondary mr-2" />
-                  <span className="text-sm text-brand-primary font-medium">Deep cleaning</span>
+                  <CheckCircle className="w-4 h-4 text-brand-secondary mr-2 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm text-brand-primary font-medium">Deep cleaning</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-brand-secondary mr-2" />
-                  <span className="text-sm text-brand-primary font-medium">All rooms + extras</span>
+                  <CheckCircle className="w-4 h-4 text-brand-secondary mr-2 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm text-brand-primary font-medium">All rooms + extras</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-brand-secondary mr-2" />
-                  <span className="text-sm text-brand-primary font-medium">Appliances inside</span>
+                  <CheckCircle className="w-4 h-4 text-brand-secondary mr-2 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm text-brand-primary font-medium">Appliances inside</span>
                 </li>
               </ul>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="btn-glass btn-glass--primary w-full py-3 font-bold"
+                className="btn-glass btn-glass--primary w-full py-2 sm:py-3 font-bold text-sm sm:text-base mt-auto"
               >
                 Choose Plan
               </button>

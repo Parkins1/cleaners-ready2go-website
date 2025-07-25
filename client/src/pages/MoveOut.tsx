@@ -54,66 +54,66 @@ export default function MoveOut() {
           </div>
 
           {/* Service Options */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-gray-50 p-8 rounded-xl">
-              <h3 className="text-xl font-bold text-brand-black mb-6">Fixed-Price Packages</h3>
-              <div className="space-y-6">
-                <div className="border-b border-gray-200 pb-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-12">
+            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 glass-card">
+              <h3 className="text-lg sm:text-xl font-bold text-brand-primary mb-4 sm:mb-6">Fixed-Price Packages</h3>
+              <div className="space-y-4 sm:space-y-6">
+                <div className="border-b border-white/20 pb-3 sm:pb-4">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="font-semibold text-brand-black">Studio/1BR</span>
-                    <span className="text-brand-gold font-bold">$200</span>
+                    <span className="font-semibold text-brand-primary text-sm sm:text-base">Studio/1BR</span>
+                    <span className="text-brand-secondary font-bold text-lg sm:text-xl">$200</span>
                   </div>
-                  <p className="text-sm text-brand-gray">Complete move-out cleaning for small apartments</p>
+                  <p className="text-xs sm:text-sm text-white text-opacity-90">Complete move-out cleaning for small apartments</p>
                 </div>
-                <div className="border-b border-gray-200 pb-4">
+                <div className="border-b border-white/20 pb-3 sm:pb-4">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="font-semibold text-brand-black">2BR/2BA</span>
-                    <span className="text-brand-gold font-bold">$300</span>
+                    <span className="font-semibold text-brand-primary text-sm sm:text-base">2BR/2BA</span>
+                    <span className="text-brand-secondary font-bold text-lg sm:text-xl">$300</span>
                   </div>
-                  <p className="text-sm text-brand-gray">Comprehensive cleaning for medium apartments</p>
+                  <p className="text-xs sm:text-sm text-white text-opacity-90">Comprehensive cleaning for medium apartments</p>
                 </div>
-                <div className="pb-4">
+                <div className="pb-3 sm:pb-4">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="font-semibold text-brand-black">3BR/2BA+</span>
-                    <span className="text-brand-gold font-bold">$450</span>
+                    <span className="font-semibold text-brand-primary text-sm sm:text-base">3BR/2BA+</span>
+                    <span className="text-brand-secondary font-bold text-lg sm:text-xl">$450</span>
                   </div>
-                  <p className="text-sm text-brand-gray">Full-service cleaning for larger homes</p>
+                  <p className="text-xs sm:text-sm text-white text-opacity-90">Full-service cleaning for larger homes</p>
                 </div>
               </div>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="btn-primary w-full py-3 mt-6"
+                className="btn-glass btn-glass--primary w-full py-2 sm:py-3 mt-4 sm:mt-6 text-sm sm:text-base font-bold"
               >
                 Book Package
               </button>
             </div>
-            <div className="bg-brand-black p-8 rounded-xl text-white">
-              <h3 className="text-xl font-bold mb-6">Hourly Services</h3>
-              <div className="mb-6">
-                <div className="text-3xl font-bold text-brand-gold mb-2">$45/hour</div>
-                <p className="text-gray-300">Flexible cleaning based on your specific needs</p>
+            <div className="w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 glass-card">
+              <h3 className="text-lg sm:text-xl font-bold text-brand-primary mb-4 sm:mb-6">Hourly Services</h3>
+              <div className="mb-4 sm:mb-6">
+                <div className="text-2xl sm:text-3xl font-bold text-brand-secondary mb-2">$45/hour</div>
+                <p className="text-white text-opacity-90 text-sm sm:text-base">Flexible cleaning based on your specific needs</p>
               </div>
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-brand-gold mr-3" />
-                  <span className="text-sm">Minimum 3-hour booking</span>
+                  <CheckCircle className="w-4 h-4 text-brand-secondary mr-2 sm:mr-3 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm text-brand-primary font-medium">Minimum 3-hour booking</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-brand-gold mr-3" />
-                  <span className="text-sm">Custom cleaning priorities</span>
+                  <CheckCircle className="w-4 h-4 text-brand-secondary mr-2 sm:mr-3 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm text-brand-primary font-medium">Custom cleaning priorities</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-brand-gold mr-3" />
-                  <span className="text-sm">Perfect for partial cleanouts</span>
+                  <CheckCircle className="w-4 h-4 text-brand-secondary mr-2 sm:mr-3 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm text-brand-primary font-medium">Perfect for partial cleanouts</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-brand-gold mr-3" />
-                  <span className="text-sm">Same-day availability</span>
+                  <CheckCircle className="w-4 h-4 text-brand-secondary mr-2 sm:mr-3 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm text-brand-primary font-medium">Same-day availability</span>
                 </li>
               </ul>
               <button 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="btn-primary w-full py-3"
+                className="btn-glass btn-glass--secondary w-full py-2 sm:py-3 text-sm sm:text-base font-bold"
               >
                 Book Hourly
               </button>

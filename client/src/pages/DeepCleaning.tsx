@@ -180,23 +180,23 @@ export default function DeepCleaning() {
 
           {/* Pricing */}
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-brand-primary mb-6">Deep Cleaning Investment</h3>
-            <div className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-xl p-8 max-w-md mx-auto glass-card">
-              <div className="text-4xl font-bold text-brand-secondary mb-2">Starting at $299</div>
-              <div className="text-brand-primary mb-4">Based on home size and condition</div>
-              <p className="text-white text-opacity-90 text-sm mb-6">
+            <h3 className="text-xl sm:text-2xl font-bold text-brand-primary mb-4 sm:mb-6">Deep Cleaning Investment</h3>
+            <div className="w-full max-w-sm sm:max-w-md mx-auto bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 glass-card">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-secondary mb-2">Starting at $299</div>
+              <div className="text-brand-primary mb-3 sm:mb-4 text-sm sm:text-base">Based on home size and condition</div>
+              <p className="text-white text-opacity-90 text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed">
                 Final pricing determined after free consultation and walkthrough
               </p>
-              <div className="space-y-3">
+              <div className="space-y-2 sm:space-y-3">
                 <button
                   onClick={() => setIsQuoteModalOpen(true)}
-                  className="btn-glass btn-glass--primary w-full py-3 font-bold"
+                  className="btn-glass btn-glass--primary w-full py-2 sm:py-3 font-bold text-sm sm:text-base"
                 >
                   Get Custom Quote
                 </button>
                 <button
                   onClick={() => setIsBookingModalOpen(true)}
-                  className="btn-glass btn-glass--secondary w-full py-3 font-bold"
+                  className="btn-glass btn-glass--secondary w-full py-2 sm:py-3 font-bold text-sm sm:text-base"
                 >
                   Schedule Consultation
                 </button>
