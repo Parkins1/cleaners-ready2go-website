@@ -62,27 +62,15 @@ app.use((req, res, next) => {
   // It is the only port that is not firewalled.
   const port = parseInt(process.env.PORT || '5000', 10);
   
-  const startServer = (tryPort: number) => {
-    server.listen(tryPort, "0.0.0.0", () => {
-      log(`serving on port ${tryPort}`);
-    }).on('error', (err: any) => {
-      if (err.code === 'EADDRINUSE') {
-        log(`Port ${tryPort} is already in use. Trying next port...`);
-        // Try alternative ports
-        const altPorts = [3000, 3001, 4000, 4001, 8000, 8001];
-        const nextPort = altPorts.find(p => p > tryPort) || altPorts[0];
-        if (nextPort && nextPort !== tryPort) {
-          startServer(nextPort);
-        } else {
-          log(`All alternative ports exhausted. Please check for running processes.`);
-          process.exit(1);
-        }
-      } else {
-        log(`Server error: ${err.message}`);
-        throw err;
-      }
-    });
-  };
-  
-  startServer(port);
+  server.listen(port, "0.0.0.0", () => {
+    log(`serving on port ${port}`);
+  }).on('error', (err: any) => {
+    if (err.code === 'EADDRINUSE') {
+      log(`Port ${port} is already in use. Please kill existing processes.`);
+      process.exit(1);
+    } else {
+      log(`Server error: ${err.message}`);
+      throw err;
+    }
+  });
 })();
