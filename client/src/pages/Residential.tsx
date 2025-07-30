@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CheckCircle, Star, Phone, Mail, MapPin, Clock, Shield, Users, Sparkles, ChevronDown } from "lucide-react";
 import BookingModal from "@/components/BookingModal";
 import QuoteModal from "@/components/QuoteModal";
+import backgroundImage from "@assets/background_1753905280293.webp";
 
 export default function Residential() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
@@ -285,8 +286,17 @@ export default function Residential() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-brand-primary to-brand-secondary text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section 
+        className="py-16 text-white relative overflow-hidden"
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-4xl font-bold mb-6">Book Your Cleaning Service Today!</h2>
           <p className="text-xl mb-8 opacity-90 leading-relaxed">
             Get Your Free Estimate Now! Call (Your Number), email us at (Your Email), or conveniently book online today for fast, easy scheduling and guaranteed satisfaction.
