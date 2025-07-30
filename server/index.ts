@@ -62,47 +62,27 @@ app.use((req, res, next) => {
   // It is the only port that is not firewalled.
   const port = parseInt(process.env.PORT || '5000', 10);
   
-  server.on('error', (err: any) => {
-    if (err.code === 'EADDRINUSE') {
-      log(`Port ${port} is already in use. Trying alternative ports...`);
-      // Try alternative ports
-      const altPorts = [3000, 3001, 4000, 4001, 8000, 8001];
-      let tried = 0;
-      
-      const tryNextPort = () => {
-        if (tried >= altPorts.length) {
+  const startServer = (tryPort: number) => {
+    server.listen(tryPort, "0.0.0.0", () => {
+      log(`serving on port ${tryPort}`);
+    }).on('error', (err: any) => {
+      if (err.code === 'EADDRINUSE') {
+        log(`Port ${tryPort} is already in use. Trying next port...`);
+        // Try alternative ports
+        const altPorts = [3000, 3001, 4000, 4001, 8000, 8001];
+        const nextPort = altPorts.find(p => p > tryPort) || altPorts[0];
+        if (nextPort && nextPort !== tryPort) {
+          startServer(nextPort);
+        } else {
           log(`All alternative ports exhausted. Please check for running processes.`);
           process.exit(1);
         }
-        
-        const altPort = altPorts[tried++];
-        server.listen({
-          port: altPort,
-          host: "0.0.0.0",
-          reusePort: true,
-        }, () => {
-          log(`serving on port ${altPort}`);
-        }).on('error', (altErr: any) => {
-          if (altErr.code === 'EADDRINUSE') {
-            log(`Port ${altPort} also in use, trying next...`);
-            tryNextPort();
-          } else {
-            throw altErr;
-          }
-        });
-      };
-      
-      tryNextPort();
-    } else {
-      throw err;
-    }
-  });
+      } else {
+        log(`Server error: ${err.message}`);
+        throw err;
+      }
+    });
+  };
   
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
-    log(`serving on port ${port}`);
-  });
+  startServer(port);
 })();
