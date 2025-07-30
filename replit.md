@@ -4,6 +4,8 @@
 
 This is a professional cleaning services website built for "Cleaners Ready 2Go," a cleaning company serving Spokane Valley, Liberty Lake, and Greenacres. The application is a full-stack web solution with a React frontend and Express.js backend, designed to showcase services and handle customer inquiries, bookings, and quote requests.
 
+**Status**: Client presentation completed January 2025. Server kept offline unless needed for development.
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
