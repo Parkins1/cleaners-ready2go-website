@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -69,27 +69,38 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
-    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
-    line-height: 1.6;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.7;
     letter-spacing: -0.01em;
+    font-weight: 400;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-weight: 600;
     line-height: 1.2;
-    letter-spacing: 0.02em;
+    letter-spacing: -0.02em;
+  }
+  
+  h1 {
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+  
+  h2 {
+    font-weight: 600;
+    letter-spacing: -0.025em;
   }
   
   /* Logo specific styles */
   .logo-text {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
-    letter-spacing: 0.02em;
+    letter-spacing: -0.02em;
   }
   
   .tagline-text {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -308,20 +319,39 @@
   }
 }
 
-/* Enhanced card styles */
+/* Modern card layouts with generous spacing */
 @layer components {
   .card-modern {
-    @apply bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100;
+    @apply bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-gray-200/50;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+  }
+  
+  .card-container {
+    @apply grid gap-8 md:gap-10 lg:gap-12;
+    margin-bottom: 4rem;
+  }
+  
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 sm:px-8 lg:px-12;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
   
   .glass-card {
     transition: all 0.3s ease;
     will-change: transform;
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
   }
   
   .glass-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.98);
   }
 
   /* Responsive glass card improvements */
@@ -424,13 +454,29 @@
     }
   }
   
-  /* Spacing utilities based on brand guidelines */
+  /* Modern spacing utilities with generous white space */
   .section-spacing {
-    @apply py-20 md:py-24 lg:py-32;
+    @apply py-24 md:py-32 lg:py-40;
   }
   
   .content-spacing {
-    @apply px-4 sm:px-6 lg:px-8;
+    @apply px-6 sm:px-8 lg:px-12;
+  }
+  
+  .container-spacing {
+    @apply max-w-7xl mx-auto px-6 sm:px-8 lg:px-12;
+  }
+  
+  .card-grid {
+    @apply grid gap-8 md:gap-10 lg:gap-12;
+  }
+  
+  .text-spacing {
+    @apply space-y-6;
+  }
+  
+  .generous-spacing {
+    @apply p-8 md:p-10 lg:p-12;
   }
 }
 

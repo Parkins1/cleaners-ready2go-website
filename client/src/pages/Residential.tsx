@@ -76,25 +76,25 @@ export default function Residential() {
       <meta name="description" content="Professional, eco-friendly residential house cleaning services in Spokane, Spokane Valley, Liberty Lake, and surrounding areas. Insured, bonded, and satisfaction guaranteed." />
       
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold text-brand-black mb-6 leading-tight">
+      <section className="section-spacing bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+        <div className="container-spacing">
+          <div className="text-center text-spacing">
+            <h1 className="text-6xl md:text-7xl font-display font-bold text-brand-black mb-8 leading-tight tracking-tight">
               Expert House Cleaning in Spokane, WA
             </h1>
-            <p className="text-xl text-brand-gray font-medium max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-brand-gray font-medium max-w-5xl mx-auto leading-relaxed">
               Welcome to Spokane's most trusted residential cleaning service! Proudly serving Spokane, Spokane Valley, Liberty Lake, and surrounding neighborhoods, we provide detailed, reliable, and eco-friendly cleaning tailored to your needs. Our commitment to customer satisfaction ensures your home sparkles every visit, freeing you from household chores so you can enjoy more family and leisure time.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="mt-12 flex flex-col sm:flex-row gap-6 justify-center">
               <button
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="btn-glass btn-glass--primary text-lg font-bold px-8 py-4"
+                className="btn-glass btn-glass--primary text-lg font-ui font-semibold px-10 py-5 rounded-2xl"
               >
                 Get Free Quote
               </button>
               <button
                 onClick={() => setIsBookingModalOpen(true)}
-                className="btn-glass btn-glass--secondary text-lg font-bold px-8 py-4"
+                className="btn-glass btn-glass--secondary text-lg font-ui font-semibold px-10 py-5 rounded-2xl"
               >
                 Book Now
               </button>
@@ -104,58 +104,58 @@ export default function Residential() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-brand-black mb-6">Why Choose Our House Cleaners Near You?</h2>
-            <p className="text-lg text-brand-gray max-w-4xl mx-auto leading-relaxed">
-              Choosing a cleaning service is about trust and reliability. Our Spokane house cleaners are fully insured, bonded, and rigorously trained to deliver the highest cleaning standards. We exclusively use eco-friendly, pet-safe products, providing peace of mind and a healthier home environment for your family. Our satisfaction guarantee means if you're not completely happy with our cleaning, we'll promptly return to address any concerns at no extra charge.
+      <section className="section-spacing bg-white">
+        <div className="container-spacing">
+          <div className="text-center text-spacing mb-16">
+            <h2 className="text-5xl md:text-6xl font-display font-bold text-brand-black mb-8">Why Choose Our House Cleaners Near You?</h2>
+            <p className="text-xl md:text-2xl text-brand-gray max-w-5xl mx-auto leading-relaxed font-medium">
+              Choosing a cleaning service is about trust and reliability. Our Spokane house cleaners are fully insured, bonded, and rigorously trained to deliver the highest cleaning standards. We exclusively use eco-friendly, pet-safe products, providing peace of mind and a healthier home environment for your family.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-brand-primary to-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-white" />
+          <div className="card-grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="card-modern text-center group">
+              <div className="w-20 h-20 bg-gradient-to-br from-brand-primary to-brand-secondary rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <Shield className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-brand-black mb-3">Fully Insured & Bonded</h3>
-              <p className="text-brand-gray">Background-checked professionals you can trust in your home.</p>
+              <h3 className="text-2xl font-display font-bold text-brand-black mb-4">Fully Insured & Bonded</h3>
+              <p className="text-brand-gray leading-relaxed font-medium">Background-checked professionals you can trust in your home with complete peace of mind.</p>
             </div>
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Sparkles className="w-8 h-8 text-white" />
+            <div className="card-modern text-center group">
+              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <Sparkles className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-brand-black mb-3">Eco-Friendly Products</h3>
-              <p className="text-brand-gray">Safe for your family, pets, and the environment.</p>
+              <h3 className="text-2xl font-display font-bold text-brand-black mb-4">Eco-Friendly Products</h3>
+              <p className="text-brand-gray leading-relaxed font-medium">Safe, natural cleaning solutions that protect your family, pets, and the environment.</p>
             </div>
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Star className="w-8 h-8 text-white" />
+            <div className="card-modern text-center group">
+              <div className="w-20 h-20 bg-gradient-to-br from-brand-secondary to-yellow-500 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <Star className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-brand-black mb-3">Satisfaction Guaranteed</h3>
-              <p className="text-brand-gray">Not thrilled? We'll come back and fix it—no questions asked.</p>
+              <h3 className="text-2xl font-display font-bold text-brand-black mb-4">Satisfaction Guaranteed</h3>
+              <p className="text-brand-gray leading-relaxed font-medium">Not completely satisfied? We'll return to make it right—no questions asked, guaranteed.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-brand-black mb-6">Comprehensive Residential Cleaning Services</h2>
+      <section className="section-spacing bg-gray-50">
+        <div className="container-spacing">
+          <div className="text-center text-spacing mb-16">
+            <h2 className="text-5xl md:text-6xl font-display font-bold text-brand-black mb-8">Comprehensive Residential Cleaning Services</h2>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="card-grid grid-cols-1 lg:grid-cols-2 gap-10">
             {services.map((service, index) => (
-              <div key={index} className="glass-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="flex items-start mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-brand-primary to-brand-secondary rounded-lg flex items-center justify-center mr-4 text-white">
+              <div key={index} className="card-modern group">
+                <div className="flex items-start mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-brand-primary to-brand-secondary rounded-2xl flex items-center justify-center mr-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
                     {service.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-brand-black">{service.title}</h3>
+                  <h3 className="text-2xl font-display font-bold text-brand-black leading-tight">{service.title}</h3>
                 </div>
-                <p className="text-brand-gray leading-relaxed">{service.description}</p>
+                <p className="text-brand-gray leading-relaxed font-medium text-lg">{service.description}</p>
               </div>
             ))}
           </div>
@@ -163,29 +163,29 @@ export default function Residential() {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-brand-black mb-6">Our Simple House Cleaning Process</h2>
-            <p className="text-lg text-brand-gray max-w-4xl mx-auto leading-relaxed">
-              Getting your Spokane home professionally cleaned is straightforward with our seamless process. Begin by requesting your free, customized quote via phone or online. We'll tailor your cleaning service to fit your specific requirements and schedule preferences. On the scheduled day, our experienced, punctual cleaning team arrives fully equipped and ready to work. After thorough cleaning, we'll follow up to ensure you're completely satisfied.
+      <section className="section-spacing bg-white">
+        <div className="container-spacing">
+          <div className="text-center text-spacing mb-16">
+            <h2 className="text-5xl md:text-6xl font-display font-bold text-brand-black mb-8">Our Simple House Cleaning Process</h2>
+            <p className="text-xl md:text-2xl text-brand-gray max-w-5xl mx-auto leading-relaxed font-medium">
+              Getting your Spokane home professionally cleaned is straightforward with our seamless process. Begin by requesting your free, customized quote via phone or online. We'll tailor your cleaning service to fit your specific requirements and schedule preferences.
             </p>
           </div>
         </div>
       </section>
 
       {/* Pricing Section */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-brand-black mb-6">Transparent Pricing & Free Estimates</h2>
-            <p className="text-lg text-brand-gray max-w-4xl mx-auto leading-relaxed">
-              Curious about house cleaning costs in Spokane? We provide transparent, competitive pricing with no hidden fees. Costs vary based on home size, cleaning type, and frequency. Typically, standard cleaning services start around $110 per visit, while deep or move-out cleanings are individually quoted. Our affordable recurring cleaning plans offer significant savings.
+      <section className="section-spacing bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div className="container-spacing">
+          <div className="text-center text-spacing mb-16">
+            <h2 className="text-5xl md:text-6xl font-display font-bold text-brand-black mb-8">Transparent Pricing & Free Estimates</h2>
+            <p className="text-xl md:text-2xl text-brand-gray max-w-5xl mx-auto leading-relaxed font-medium">
+              Curious about house cleaning costs in Spokane? We provide transparent, competitive pricing with no hidden fees. Costs vary based on home size, cleaning type, and frequency.
             </p>
-            <div className="mt-8">
-              <div className="inline-block bg-white rounded-2xl p-8 shadow-lg">
-                <div className="text-4xl font-bold text-brand-secondary mb-2">Starting at $110</div>
-                <div className="text-brand-gray">per standard cleaning visit</div>
+            <div className="mt-12">
+              <div className="card-modern inline-block bg-white">
+                <div className="text-5xl font-display font-bold text-brand-secondary mb-4">Starting at $110</div>
+                <div className="text-xl text-brand-gray font-medium">per standard cleaning visit</div>
               </div>
             </div>
           </div>
@@ -193,29 +193,29 @@ export default function Residential() {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-brand-black mb-6">Meet Our Trusted Spokane Cleaning Team</h2>
-            <p className="text-lg text-brand-gray max-w-4xl mx-auto leading-relaxed">
-              Our professional cleaning team members are Spokane locals, fully vetted through extensive background checks and professionally trained to deliver exceptional cleaning services. We're insured, bonded, and committed to delivering consistently high-quality results. Our strong community reputation is built upon trust, reliability, and excellent customer service.
+      <section className="section-spacing bg-white">
+        <div className="container-spacing">
+          <div className="text-center text-spacing">
+            <h2 className="text-5xl md:text-6xl font-display font-bold text-brand-black mb-8">Meet Our Trusted Spokane Cleaning Team</h2>
+            <p className="text-xl md:text-2xl text-brand-gray max-w-5xl mx-auto leading-relaxed font-medium">
+              Our professional cleaning team members are Spokane locals, fully vetted through extensive background checks and professionally trained to deliver exceptional cleaning services. We're insured, bonded, and committed to delivering consistently high-quality results.
             </p>
           </div>
         </div>
       </section>
 
       {/* Service Areas Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-brand-black mb-6">Our Spokane Area Service Locations</h2>
-            <p className="text-lg text-brand-gray max-w-4xl mx-auto leading-relaxed mb-8">
-              We proudly serve Spokane and surrounding communities including Spokane Valley, Liberty Lake, Millwood, Mead, Dishman, Greenacres, Veradale, Otis Orchards, and surrounding ZIP codes like 99201, 99206, 99208, and 99037. Not sure if your neighborhood is covered? Simply contact us! Whether you reside in downtown Spokane, suburbs, or nearby areas, we're here to provide convenient, professional cleaning services.
+      <section className="section-spacing bg-gray-50">
+        <div className="container-spacing">
+          <div className="text-center text-spacing mb-16">
+            <h2 className="text-5xl md:text-6xl font-display font-bold text-brand-black mb-8">Our Spokane Area Service Locations</h2>
+            <p className="text-xl md:text-2xl text-brand-gray max-w-5xl mx-auto leading-relaxed font-medium mb-12">
+              We proudly serve Spokane and surrounding communities including Spokane Valley, Liberty Lake, Millwood, Mead, Dishman, Greenacres, Veradale, Otis Orchards, and surrounding ZIP codes. Whether you reside in downtown Spokane, suburbs, or nearby areas, we're here to provide convenient, professional cleaning services.
             </p>
-            <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
+            <div className="card-grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {["Spokane", "Spokane Valley", "Liberty Lake", "Millwood", "Greenacres", "Mead", "Dishman", "Veradale", "Otis Orchards"].map((city) => (
-                <div key={city} className="bg-white rounded-lg p-4 shadow-md">
-                  <span className="font-medium text-brand-black">{city}</span>
+                <div key={city} className="card-modern text-center bg-white">
+                  <span className="font-display font-semibold text-brand-black text-lg">{city}</span>
                 </div>
               ))}
             </div>
@@ -224,59 +224,59 @@ export default function Residential() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-brand-black mb-6">Real Customer Reviews & Testimonials</h2>
+      <section className="section-spacing bg-white">
+        <div className="container-spacing">
+          <div className="text-center text-spacing mb-16">
+            <h2 className="text-5xl md:text-6xl font-display font-bold text-brand-black mb-8">Real Customer Reviews & Testimonials</h2>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="card-grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="glass-card bg-white rounded-2xl p-8 shadow-lg">
-                <div className="flex mb-4">
+              <div key={index} className="card-modern group">
+                <div className="flex justify-center mb-6">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-brand-gray italic mb-4 leading-relaxed">"{testimonial.quote}"</p>
-                <div className="font-bold text-brand-black">{testimonial.name}</div>
-                <div className="text-brand-gray text-sm">{testimonial.location}</div>
+                <p className="text-brand-gray italic mb-6 leading-relaxed text-lg font-medium">"{testimonial.quote}"</p>
+                <div className="font-display font-bold text-brand-black text-xl">{testimonial.name}</div>
+                <div className="text-brand-gray font-medium">{testimonial.location}</div>
               </div>
             ))}
           </div>
           
           <div className="text-center">
-            <p className="text-brand-gray">
-              See more five-star reviews on Google and Facebook. We're proud to maintain a 4.9-star average with hundreds of happy customers. Real names, real cities, real results!
+            <p className="text-brand-gray text-lg font-medium">
+              See more five-star reviews on Google and Facebook. We're proud to maintain a 4.9-star average with hundreds of happy customers.
             </p>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-brand-black mb-6">Frequently Asked Questions (FAQ)</h2>
+      <section className="section-spacing bg-gray-50">
+        <div className="container-spacing max-w-4xl">
+          <div className="text-center text-spacing mb-16">
+            <h2 className="text-5xl md:text-6xl font-display font-bold text-brand-black mb-8">Frequently Asked Questions</h2>
           </div>
           
-          <div className="space-y-4">
+          <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="glass-card bg-white rounded-xl shadow-md overflow-hidden">
+              <div key={index} className="card-modern bg-white overflow-hidden">
                 <button
                   onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
-                  className="w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors duration-200"
+                  className="w-full text-left p-8 flex justify-between items-center hover:bg-gray-50 transition-colors duration-200"
                 >
-                  <span className="font-bold text-brand-black">{faq.question}</span>
+                  <span className="font-display font-bold text-brand-black text-xl">{faq.question}</span>
                   <ChevronDown 
-                    className={`w-5 h-5 text-brand-gray transition-transform duration-200 ${
+                    className={`w-6 h-6 text-brand-gray transition-transform duration-200 ${
                       expandedFaq === index ? 'rotate-180' : ''
                     }`} 
                   />
                 </button>
                 {expandedFaq === index && (
-                  <div className="px-6 pb-6">
-                    <p className="text-brand-gray leading-relaxed">{faq.answer}</p>
+                  <div className="px-8 pb-8">
+                    <p className="text-brand-gray leading-relaxed text-lg font-medium">{faq.answer}</p>
                   </div>
                 )}
               </div>
@@ -296,46 +296,46 @@ export default function Residential() {
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-4xl font-bold mb-6">Book Your Cleaning Service Today!</h2>
-          <p className="text-xl mb-8 opacity-90 leading-relaxed">
-            Get Your Free Estimate Now! Call (Your Number), email us at (Your Email), or conveniently book online today for fast, easy scheduling and guaranteed satisfaction.
+        <div className="container-spacing text-center relative z-10">
+          <h2 className="text-5xl md:text-6xl font-display font-bold mb-8">Book Your Cleaning Service Today!</h2>
+          <p className="text-xl md:text-2xl mb-12 opacity-90 leading-relaxed font-medium max-w-4xl mx-auto">
+            Get Your Free Estimate Now! Call us, email us, or conveniently book online today for fast, easy scheduling and guaranteed satisfaction.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
             <button
               onClick={() => setIsQuoteModalOpen(true)}
-              className="bg-white text-brand-primary font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
+              className="bg-white text-brand-primary font-ui font-bold px-10 py-5 rounded-2xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 text-lg"
             >
               Get Free Quote
             </button>
             <button
               onClick={() => setIsBookingModalOpen(true)}
-              className="bg-brand-secondary text-white font-bold px-8 py-4 rounded-xl hover:bg-yellow-600 transition-all duration-300 transform hover:scale-105"
+              className="bg-brand-secondary text-white font-ui font-bold px-10 py-5 rounded-2xl hover:bg-yellow-600 transition-all duration-300 transform hover:scale-105 text-lg"
             >
               Book Cleaning
             </button>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-lg opacity-90">
+          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center text-xl opacity-90">
             <div className="flex items-center">
-              <Phone className="w-5 h-5 mr-2" />
-              <span>(509) 123-4567</span>
+              <Phone className="w-6 h-6 mr-3" />
+              <span className="font-medium">(509) 123-4567</span>
             </div>
             <div className="flex items-center">
-              <Mail className="w-5 h-5 mr-2" />
-              <span>info@cleanersready2go.com</span>
+              <Mail className="w-6 h-6 mr-3" />
+              <span className="font-medium">info@cleanersready2go.com</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Brand Promise Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-brand-black mb-6">Our Cleaning Promise to You</h2>
-          <div className="glass-card bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8">
-            <p className="text-lg text-brand-gray leading-relaxed">
+      <section className="section-spacing bg-white">
+        <div className="container-spacing max-w-4xl text-center">
+          <h2 className="text-5xl md:text-6xl font-display font-bold text-brand-black mb-12">Our Cleaning Promise to You</h2>
+          <div className="card-modern bg-gradient-to-br from-blue-50 to-indigo-50">
+            <p className="text-xl md:text-2xl text-brand-gray leading-relaxed font-medium">
               We promise reliable, thorough, and eco-friendly cleaning services that exceed your expectations. Experience our unmatched commitment to quality and customer satisfaction—book your service and reclaim your time today.
             </p>
           </div>
