@@ -11,86 +11,78 @@ export default function Residential() {
   const services = [
     {
       title: "Standard/Recurring House Cleaning",
-      description: "Our recurring house cleaning service is perfect for busy families and professionals who want a consistently tidy home. Enjoy regular visits (weekly, bi-weekly, or monthly) that cover dusting, vacuuming, kitchen and bath cleaning, trash removal, and more. We keep your home healthy and comfortable, so you can relax and focus on life—not chores.",
+      description: "Our standard house cleaning includes routine tasks such as dusting, vacuuming, mopping, bathroom sanitization, and kitchen cleaning. Ideal for weekly, bi-weekly, or monthly service, it ensures your home remains tidy and welcoming without effort on your part. Enjoy a consistently clean home and the peace of mind that comes with our trusted cleaning professionals.",
       icon: <Clock className="w-8 h-8" />
     },
     {
       title: "Deep Cleaning",
-      description: "Deep cleaning is our specialty for homes that need some extra TLC. We scrub all the nooks and crannies, including baseboards, behind appliances, light fixtures, and neglected corners. Perfect for spring cleaning, post-renovation, or prepping for guests. This comprehensive service tackles built-up grime and restores your space to its best.",
+      description: "Choose our deep cleaning service when your home needs meticulous care beyond regular maintenance. We address often-overlooked areas like baseboards, blinds, behind appliances, and grout cleaning. Recommended seasonally, before hosting guests, or after renovations, our deep cleaning ensures your home feels refreshed, sanitized, and looks its absolute best.",
       icon: <Sparkles className="w-8 h-8" />
     },
     {
       title: "Move-in/Move-out Cleaning",
-      description: "Moving? Leave the stress—and the mess—to us! Our move-in/move-out cleaning service is ideal for renters, landlords, and homeowners. We ensure every surface is spotless for the next occupant, including inside cabinets, appliances, closets, and more. Impress landlords or buyers and secure your deposit with our detailed approach.",
+      description: "Our move-in/move-out cleaning is perfect for renters, property managers, and homeowners transitioning between homes. We perform comprehensive cleaning covering cabinets, appliances, fixtures, floors, and surfaces. This meticulous service ensures your property is spotless, helping you secure deposits or prepare your new space for comfortable living right from the start.",
       icon: <MapPin className="w-8 h-8" />
     },
     {
       title: "Apartment Cleaning",
-      description: "Apartment dwellers get the same five-star treatment as homeowners, with service tailored for smaller spaces and unique building requirements. We're flexible to fit around busy schedules, HOA rules, or pet needs. Our apartment cleaning is perfect for urban professionals, students, and anyone who values a sparkling retreat.",
+      description: "Our apartment cleaning service is specially designed for smaller spaces and busy lifestyles. We provide flexible scheduling, tailored cleaning packages, and efficient service customized to apartment living. Experience stress-free apartment upkeep that fits seamlessly into your lifestyle, ensuring a consistently tidy and enjoyable living space.",
       icon: <Users className="w-8 h-8" />
     },
     {
-      title: "One-Time/Specialty/Eco-Friendly Cleanings",
-      description: "Have a special project, allergy concern, or big event? Our one-time and specialty cleanings are fully customizable. We offer green cleaning with hypoallergenic, fragrance-free, and pet-safe products. Whether you're prepping for a party or need post-construction cleaning, just tell us what you need—we'll make it happen.",
+      title: "One-Time & Eco-Friendly Cleaning",
+      description: "Need specialized or eco-friendly cleaning? Our one-time, green, and specialty cleanings cater to your unique needs. Perfect for allergy sufferers, pet owners, or environmentally conscious households, we use natural, hypoallergenic products and customizable cleaning plans. Trust our detailed attention to transform your home environment safely, sustainably, and comfortably.",
       icon: <Shield className="w-8 h-8" />
     }
   ];
 
   const testimonials = [
     {
-      quote: "I've never seen my house so clean! The team was friendly, professional, and right on time.",
-      name: "Sarah P.",
+      quote: "Exceptional cleaning service! Reliable and thorough every time.",
+      name: "Emily S.",
       location: "Spokane Valley"
     },
     {
-      quote: "They worked magic on my rental. I got my whole deposit back!",
-      name: "Tom B.",
+      quote: "Fantastic move-out cleaning. Got my full deposit back!",
+      name: "David L.",
       location: "Liberty Lake"
     },
     {
-      quote: "Love their eco-friendly products. My allergies are finally under control.",
-      name: "Nina K.",
+      quote: "Their eco-friendly products are perfect for my allergies. Highly recommend!",
+      name: "Rachel M.",
       location: "Millwood"
     }
   ];
 
   const faqs = [
     {
-      question: "What cleaning products do you use?",
-      answer: "We use eco-friendly, family- and pet-safe products. If you have allergies or special requests, just let us know!"
-    },
-    {
       question: "Are you insured and bonded?",
-      answer: "Absolutely. Every cleaner is insured, bonded, and background-checked."
+      answer: "Yes, all our cleaners are fully insured, bonded, and background-checked."
     },
     {
-      question: "What's included in a standard clean?",
-      answer: "Kitchens, bathrooms, living areas, bedrooms—dusting, floors, surfaces, trash, and more. We'll customize for your needs!"
+      question: "What products do you use?",
+      answer: "We use safe, eco-friendly, and hypoallergenic cleaning products."
     },
     {
-      question: "Do I need to be home?",
-      answer: "No need. Many clients provide entry instructions. We'll secure your home before leaving."
-    },
-    {
-      question: "How do I book or reschedule?",
-      answer: "Book online, call, or email—whatever's easiest. We offer flexible rescheduling with 24 hours' notice."
+      question: "How do I book services?",
+      answer: "You can book via phone, email, or online form."
     }
   ];
 
   return (
     <>
-      <title>Residential House Cleaning Spokane, WA | Spotless Results, Easy Booking</title>
-      <meta name="description" content="Top-rated residential cleaning in Spokane, Spokane Valley, Liberty Lake, and more. Eco-friendly, insured, and satisfaction guaranteed. Get a fast quote!" />
+      <title>Top Residential House Cleaning Services in Spokane, WA</title>
+      <meta name="description" content="Professional, eco-friendly residential house cleaning services in Spokane, Spokane Valley, Liberty Lake, and surrounding areas. Insured, bonded, and satisfaction guaranteed." />
       
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h1 className="text-5xl font-bold text-brand-black mb-6 leading-tight">
-              Residential House Cleaning in Spokane, WA
+              Expert House Cleaning in Spokane, WA
             </h1>
             <p className="text-xl text-brand-gray font-medium max-w-4xl mx-auto leading-relaxed">
-              Welcome to the trusted name in residential house cleaning for Spokane and the surrounding areas! Our mission is simple: give busy homeowners a cleaner, healthier, and stress-free home—without lifting a finger. Whether you're in downtown Spokane, Spokane Valley, Liberty Lake, or nearby, our professional cleaning team is ready to deliver five-star service with every visit.
+              Welcome to Spokane's most trusted residential cleaning service! Proudly serving Spokane, Spokane Valley, Liberty Lake, and surrounding neighborhoods, we provide detailed, reliable, and eco-friendly cleaning tailored to your needs. Our commitment to customer satisfaction ensures your home sparkles every visit, freeing you from household chores so you can enjoy more family and leisure time.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <button
@@ -114,9 +106,9 @@ export default function Residential() {
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-brand-black mb-6">Why Choose Our House Cleaners Near Me?</h2>
+            <h2 className="text-4xl font-bold text-brand-black mb-6">Why Choose Our House Cleaners Near You?</h2>
             <p className="text-lg text-brand-gray max-w-4xl mx-auto leading-relaxed">
-              Trust is at the heart of everything we do. All of our house cleaners are thoroughly background-checked, fully insured, and professionally trained for your complete peace of mind. We're a locally owned team—not a franchise—so every client is a neighbor, not a number. Our cleaners use eco-friendly products that are tough on dirt but safe for your family and pets.
+              Choosing a cleaning service is about trust and reliability. Our Spokane house cleaners are fully insured, bonded, and rigorously trained to deliver the highest cleaning standards. We exclusively use eco-friendly, pet-safe products, providing peace of mind and a healthier home environment for your family. Our satisfaction guarantee means if you're not completely happy with our cleaning, we'll promptly return to address any concerns at no extra charge.
             </p>
           </div>
           
@@ -150,7 +142,7 @@ export default function Residential() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-brand-black mb-6">Our Residential Cleaning Services</h2>
+            <h2 className="text-4xl font-bold text-brand-black mb-6">Comprehensive Residential Cleaning Services</h2>
           </div>
           
           <div className="grid lg:grid-cols-2 gap-8">
@@ -173,9 +165,9 @@ export default function Residential() {
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-brand-black mb-6">Cleaning Process & What to Expect</h2>
+            <h2 className="text-4xl font-bold text-brand-black mb-6">Our Simple House Cleaning Process</h2>
             <p className="text-lg text-brand-gray max-w-4xl mx-auto leading-relaxed">
-              Booking with us is easy! Start with a quick phone call or online quote. We'll discuss your needs, answer questions, and provide a clear estimate with no hidden fees. Pick a date and time that fits your life—we work weekends and evenings too. On cleaning day, our uniformed team arrives on time, with all supplies. We'll walk through your home, confirm your preferences, and get to work.
+              Getting your Spokane home professionally cleaned is straightforward with our seamless process. Begin by requesting your free, customized quote via phone or online. We'll tailor your cleaning service to fit your specific requirements and schedule preferences. On the scheduled day, our experienced, punctual cleaning team arrives fully equipped and ready to work. After thorough cleaning, we'll follow up to ensure you're completely satisfied.
             </p>
           </div>
         </div>
@@ -185,9 +177,9 @@ export default function Residential() {
       <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-brand-black mb-6">Pricing, Estimates & How Much Do House Cleaners Cost?</h2>
+            <h2 className="text-4xl font-bold text-brand-black mb-6">Transparent Pricing & Free Estimates</h2>
             <p className="text-lg text-brand-gray max-w-4xl mx-auto leading-relaxed">
-              We believe in upfront, transparent pricing—no surprises. Cleaning costs depend on your home's size, condition, and the level of service you choose. Standard cleaning for a typical Spokane-area home starts at just $110 per visit; deep cleans or move-in/move-out jobs are quoted individually based on your needs.
+              Curious about house cleaning costs in Spokane? We provide transparent, competitive pricing with no hidden fees. Costs vary based on home size, cleaning type, and frequency. Typically, standard cleaning services start around $110 per visit, while deep or move-out cleanings are individually quoted. Our affordable recurring cleaning plans offer significant savings.
             </p>
             <div className="mt-8">
               <div className="inline-block bg-white rounded-2xl p-8 shadow-lg">
@@ -203,9 +195,9 @@ export default function Residential() {
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-brand-black mb-6">Our Team & Trust Signals</h2>
+            <h2 className="text-4xl font-bold text-brand-black mb-6">Meet Our Trusted Spokane Cleaning Team</h2>
             <p className="text-lg text-brand-gray max-w-4xl mx-auto leading-relaxed">
-              Meet Spokane's most trusted cleaning team! Our staff are carefully selected, extensively trained, and undergo thorough background checks for your peace of mind. We're bonded, insured, and locally operated—no faceless out-of-town franchise. You'll see familiar faces at each visit, and we treat your home with the same care as our own.
+              Our professional cleaning team members are Spokane locals, fully vetted through extensive background checks and professionally trained to deliver exceptional cleaning services. We're insured, bonded, and committed to delivering consistently high-quality results. Our strong community reputation is built upon trust, reliability, and excellent customer service.
             </p>
           </div>
         </div>
@@ -215,9 +207,9 @@ export default function Residential() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-brand-black mb-6">Service Areas: Spokane & Surrounding Cities</h2>
+            <h2 className="text-4xl font-bold text-brand-black mb-6">Our Spokane Area Service Locations</h2>
             <p className="text-lg text-brand-gray max-w-4xl mx-auto leading-relaxed mb-8">
-              We're proud to serve Spokane and all surrounding communities, including Spokane Valley, Liberty Lake, Millwood, Greenacres, Mead, Dishman, Veradale, Otis Orchards, and nearby zip codes: 99201, 99202, 99203, 99204, 99205, 99206, 99207, 99208, 99037, and more.
+              We proudly serve Spokane and surrounding communities including Spokane Valley, Liberty Lake, Millwood, Mead, Dishman, Greenacres, Veradale, Otis Orchards, and surrounding ZIP codes like 99201, 99206, 99208, and 99037. Not sure if your neighborhood is covered? Simply contact us! Whether you reside in downtown Spokane, suburbs, or nearby areas, we're here to provide convenient, professional cleaning services.
             </p>
             <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
               {["Spokane", "Spokane Valley", "Liberty Lake", "Millwood", "Greenacres", "Mead", "Dishman", "Veradale", "Otis Orchards"].map((city) => (
@@ -234,7 +226,7 @@ export default function Residential() {
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-brand-black mb-6">Customer Reviews & Testimonials</h2>
+            <h2 className="text-4xl font-bold text-brand-black mb-6">Real Customer Reviews & Testimonials</h2>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 mb-8">
@@ -295,9 +287,9 @@ export default function Residential() {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-br from-brand-primary to-brand-secondary text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">Get Your Free Estimate & Book Now</h2>
+          <h2 className="text-4xl font-bold mb-6">Book Your Cleaning Service Today!</h2>
           <p className="text-xl mb-8 opacity-90 leading-relaxed">
-            Ready for a spotless home—without the hassle? Click below for a free, no-obligation estimate, or call us now to book your cleaning.
+            Get Your Free Estimate Now! Call (Your Number), email us at (Your Email), or conveniently book online today for fast, easy scheduling and guaranteed satisfaction.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -325,20 +317,16 @@ export default function Residential() {
               <span>info@cleanersready2go.com</span>
             </div>
           </div>
-          
-          <p className="mt-6 opacity-80">
-            Experience the Spokane cleaning service everyone's talking about—fast quotes, easy scheduling, and guaranteed satisfaction.
-          </p>
         </div>
       </section>
 
       {/* Brand Promise Section */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-brand-black mb-6">Our Brand Promise</h2>
+          <h2 className="text-4xl font-bold text-brand-black mb-6">Our Cleaning Promise to You</h2>
           <div className="glass-card bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8">
             <p className="text-lg text-brand-gray leading-relaxed">
-              We believe everyone deserves to come home to clean. From our family to yours, we promise honest pricing, respectful service, and sparkling results—every time. Life's too short to spend it cleaning. Let us do the dirty work, so you can get back to what matters. Book your free estimate today and discover the difference local care makes.
+              We promise reliable, thorough, and eco-friendly cleaning services that exceed your expectations. Experience our unmatched commitment to quality and customer satisfaction—book your service and reclaim your time today.
             </p>
           </div>
         </div>
