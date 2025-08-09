@@ -1,0 +1,55 @@
+{
+  "defaultModel": "azure://openai/o4",
+  "tools": {
+    "lint": "bash://npm run lint",
+    "typeck": "bash://tsc -p tsconfig.json --noEmit",
+    "test": "bash://npm run test -- --watchAll=false",
+    "build": "bash://npm run build"
+  },
+  "mcpServers": {
+    "brave-search": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-brave-search"
+      ],
+      "env": {
+        "BRAVE_API_KEY": "BSAbU46gHOyo-d7eRgkpXO7eBTfnNLU"
+      }
+    },
+    "firecrawl": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "firecrawl-mcp"
+      ],
+      "env": {
+        "FIRECRAWL_API_KEY": "fc-5195cf0aca9d4c6d9cab5cfad75d15b4"
+      },
+      "alwaysAllow": [
+        "firecrawl_scrape"
+      ]
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "alwaysAllow": [
+        "sequentialthinking"
+      ]
+    },
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp@latest"
+      ],
+      "alwaysAllow": [
+        "resolve-library-id",
+        "get-library-docs"
+      ]
+    }
+  }
+}

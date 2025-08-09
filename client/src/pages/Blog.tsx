@@ -66,31 +66,35 @@ export default function Blog() {
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-brand-black mb-6">Cleaning Tips & Insights</h1>
-            <p className="text-xl text-brand-gray">Expert advice to keep your home spotless between professional cleanings</p>
+            <h1 className="text-4xl font-bold text-text mb-6">Cleaning Tips & Insights</h1>
+            <p className="text-xl text-text">Expert advice to keep your home spotless between professional cleanings</p>
           </div>
 
           {/* Featured Article */}
-          <article className="mb-12 bg-gray-50 rounded-xl overflow-hidden">
+          <article className="mb-12 bg-surface rounded-xl overflow-hidden">
             <div className="lg:grid lg:grid-cols-2">
               <div>
                 <img 
                   src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
                   alt="Clean organized home office workspace" 
                   className="w-full h-64 lg:h-full object-cover" 
+                  width="800"
+                  height="600"
+                  loading="eager"
+                  decoding="async"
                 />
               </div>
               <div className="p-8 lg:p-12">
-                <div className="text-brand-gold text-sm font-medium mb-2">FEATURED ARTICLE</div>
-                <h2 className="text-2xl lg:text-3xl font-bold text-brand-black mb-4">
+                <div className="text-accent text-sm font-medium mb-2">FEATURED ARTICLE</div>
+                <h2 className="text-2xl lg:text-3xl font-bold text-text mb-4">
                   10 Daily Habits for a Consistently Clean Home
                 </h2>
-                <p className="text-brand-gray mb-6 leading-relaxed">
+                <p className="text-text mb-6 leading-relaxed">
                   Discover simple daily routines that professional cleaners use to maintain spotless homes. These habits take just minutes but make a huge difference in keeping your space organized and clean between professional services.
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-brand-gray">Published March 15, 2024</span>
-                  <button className="text-brand-gold font-medium hover:text-yellow-600 flex items-center">
+                  <span className="text-sm text-text">Published March 15, 2024</span>
+                  <button className="text-accent font-medium hover:text-accent-dark flex items-center">
                     Read More <ArrowRight className="w-4 h-4 ml-1" />
                   </button>
                 </div>
@@ -101,23 +105,27 @@ export default function Blog() {
           {/* Blog Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {blogPosts.map((post) => (
-              <article key={post.id} className="bg-white rounded-xl shadow-sm border overflow-hidden hover:shadow-lg transition-shadow">
+              <article key={post.id} className="card">
                 <img 
                   src={post.image} 
                   alt={post.alt} 
-                  className="w-full h-48 object-cover" 
+                  className="w-full h-48 object-cover"
+                  width="800"
+                  height="400"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="p-6">
-                  <div className="text-brand-gold text-sm font-medium mb-2">{post.category}</div>
-                  <h3 className="text-lg font-semibold text-brand-black mb-3">
+                  <div className="text-accent text-sm font-medium mb-2">{post.category}</div>
+                  <h3 className="text-lg font-semibold text-text mb-3">
                     {post.title}
                   </h3>
-                  <p className="text-brand-gray text-sm mb-4">
+                  <p className="text-text text-sm mb-4">
                     {post.excerpt}
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className="text-xs text-brand-gray">{post.date}</span>
-                    <button className="text-brand-gold text-sm font-medium hover:text-yellow-600">Read More</button>
+                    <span className="text-xs text-text">{post.date}</span>
+                    <button className="text-accent text-sm font-medium hover:text-accent-dark">Read More</button>
                   </div>
                 </div>
               </article>
@@ -125,16 +133,16 @@ export default function Blog() {
           </div>
 
           {/* Newsletter Signup */}
-          <div className="bg-brand-black rounded-xl p-8 text-center">
+          <div className="bg-text rounded-xl p-8 text-center">
             <h3 className="text-2xl font-bold text-white mb-4">Get Weekly Cleaning Tips</h3>
             <p className="text-gray-300 mb-6">Subscribe to our newsletter for expert cleaning advice delivered to your inbox</p>
             <div className="max-w-md mx-auto flex gap-4">
               <input 
                 type="email" 
                 placeholder="Enter your email" 
-                className="flex-1 px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-brand-gold" 
+                className="flex-1 px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-accent"
               />
-              <button className="bg-brand-gold hover:bg-yellow-500 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+              <button className="btn-primary">
                 Subscribe
               </button>
             </div>

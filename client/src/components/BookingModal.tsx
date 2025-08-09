@@ -7,17 +7,18 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useMutation } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
+import { useModalA11y } from "@/components/modal/useModalA11y";
 
 interface BookingModalProps {
-  isOpen: boolean;
-  onClose: () => void;
+  onClose?: () => void;
 }
 
-export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
+export default function BookingModal({ onClose }: BookingModalProps) {
   const [serviceType, setServiceType] = useState("");
   const [preferredDate, setPreferredDate] = useState("");
   const [phone, setPhone] = useState("");
   const { toast } = useToast();
+  const { dialogRef } = useModalA11y(onClose || (() => {}));
 
   const bookingMutation = useMutation({
     mutationFn: async (data: { serviceType: string; preferredDate: string; phone: string }) => {
@@ -29,7 +30,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
         title: "Booking Submitted!",
         description: "We'll contact you shortly to confirm your cleaning appointment.",
       });
-      onClose();
+      onClose && onClose();
       setServiceType("");
       setPreferredDate("");
       setPhone("");
@@ -55,25 +56,33 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
     }
     bookingMutation.mutate({ serviceType, preferredDate, phone });
   };
-
-  if (!isOpen) return null;
-
+  
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-xl max-w-md w-full p-6">
+    <div onClick={onClose} className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4" aria-hidden="true">
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="booking-modal-title"
+        aria-describedby="booking-modal-description"
+        ref={dialogRef}
+        tabIndex={-1}
+      >
         <div className="flex justify-between items-center mb-4">
-          <h3 className="text-xl font-bold text-brand-black">Book a Cleaning</h3>
-          <button onClick={onClose} className="text-brand-gray hover:text-brand-black">
+          <h3 id="booking-modal-title" className="text-xl font-bold text-text">Book a Cleaning</h3>
+          <button type="button" onClick={onClose} className="text-text hover:text-accent">
             <X className="w-6 h-6" />
           </button>
         </div>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4" aria-describedby="booking-modal-description">
+          <p id="booking-modal-description" className="sr-only">Select a service, preferred date, and enter your phone to book.</p>
           <div>
-            <Label htmlFor="service-type" className="text-sm font-medium text-brand-black mb-1">
+            <Label htmlFor="service-type" className="text-sm font-medium text-text mb-1">
               Service Type
             </Label>
             <Select value={serviceType} onValueChange={setServiceType}>
-              <SelectTrigger>
+              <SelectTrigger id="service-type">
                 <SelectValue placeholder="Select a service..." />
               </SelectTrigger>
               <SelectContent>
@@ -84,7 +93,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
             </Select>
           </div>
           <div>
-            <Label htmlFor="preferred-date" className="text-sm font-medium text-brand-black mb-1">
+            <Label htmlFor="preferred-date" className="text-sm font-medium text-text mb-1">
               Preferred Date
             </Label>
             <Input
@@ -92,11 +101,11 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               type="date"
               value={preferredDate}
               onChange={(e) => setPreferredDate(e.target.value)}
-              className="focus:ring-brand-gold focus:border-transparent"
+              className="focus:ring-accent focus:border-transparent"
             />
           </div>
           <div>
-            <Label htmlFor="phone" className="text-sm font-medium text-brand-black mb-1">
+            <Label htmlFor="phone" className="text-sm font-medium text-text mb-1">
               Phone Number
             </Label>
             <Input
@@ -105,13 +114,14 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               placeholder="(123) 456-7890"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              className="focus:ring-brand-gold focus:border-transparent"
+              autoComplete="tel"
+              className="focus:ring-accent focus:border-transparent"
             />
           </div>
           <Button
             type="submit"
             disabled={bookingMutation.isPending}
-            className="btn-primary w-full py-3"
+            className="btn-primary w-full"
           >
             {bookingMutation.isPending ? "Scheduling..." : "Schedule Cleaning"}
           </Button>

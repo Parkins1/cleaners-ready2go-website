@@ -1,0 +1,9 @@
+
+:root {
+  --color-accent: #C8A44A;       /* brand gold               */
+  --color-accent-dark: #AD8F3F;  /* accent hover             */
+  --color-text: #1E1E1E;         /* primary body/head text   */
+  --color-surface: #F9FAFB;      /* light section background */
+  --color-white: #FFFFFF;
+  --color-teal: #0E8177;         /* optional secondary accent */
+}

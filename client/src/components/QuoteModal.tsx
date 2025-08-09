@@ -7,17 +7,18 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useMutation } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
+import { useModalA11y } from "@/components/modal/useModalA11y";
 
 interface QuoteModalProps {
-  isOpen: boolean;
-  onClose: () => void;
+  onClose?: () => void;
 }
 
-export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
+export default function QuoteModal({ onClose }: QuoteModalProps) {
   const [homeSize, setHomeSize] = useState("");
   const [serviceFrequency, setServiceFrequency] = useState("");
   const [email, setEmail] = useState("");
   const { toast } = useToast();
+  const { dialogRef } = useModalA11y(onClose || (() => {}));
 
   const quoteMutation = useMutation({
     mutationFn: async (data: { homeSize: string; serviceFrequency: string; email: string }) => {
@@ -29,7 +30,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
         title: "Quote Requested!",
         description: "We'll send your personalized quote to your email within 24 hours.",
       });
-      onClose();
+      onClose && onClose(); // Use onClose directly
       setHomeSize("");
       setServiceFrequency("");
       setEmail("");
@@ -56,20 +57,28 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
     quoteMutation.mutate({ homeSize, serviceFrequency, email });
   };
 
-  if (!isOpen) return null;
-
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-xl max-w-md w-full p-6">
+      <div onClick={onClose} className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4" aria-hidden="true">
+        <div
+          onClick={(e) => e.stopPropagation()}
+          className="card"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="quote-modal-title"
+          aria-describedby="quote-modal-description"
+          ref={dialogRef}
+          tabIndex={-1}
+        >
         <div className="flex justify-between items-center mb-4">
-          <h3 className="text-xl font-bold text-brand-black">Get a Quote</h3>
-          <button onClick={onClose} className="text-brand-gray hover:text-brand-black">
+          <h3 id="quote-modal-title" className="text-xl font-bold text-text">Get a Quote</h3>
+          <button type="button" onClick={onClose} className="text-text hover:text-accent">
             <X className="w-6 h-6" />
           </button>
         </div>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4" aria-describedby="quote-modal-description">
+          <p id="quote-modal-description" className="sr-only">Fill out your home size, service frequency, and email to request a quote.</p>
           <div>
-            <Label htmlFor="home-size" className="text-sm font-medium text-brand-black mb-1">
+            <Label htmlFor="home-size" className="text-sm font-medium text-text mb-1">
               Home Size
             </Label>
             <Select value={homeSize} onValueChange={setHomeSize}>
@@ -84,7 +93,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
             </Select>
           </div>
           <div>
-            <Label htmlFor="service-frequency" className="text-sm font-medium text-brand-black mb-1">
+            <Label htmlFor="service-frequency" className="text-sm font-medium text-text mb-1">
               Service Frequency
             </Label>
             <Select value={serviceFrequency} onValueChange={setServiceFrequency}>
@@ -100,7 +109,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
             </Select>
           </div>
           <div>
-            <Label htmlFor="email" className="text-sm font-medium text-brand-black mb-1">
+            <Label htmlFor="email" className="text-sm font-medium text-text mb-1">
               Email Address
             </Label>
             <Input
@@ -109,13 +118,13 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
               placeholder="john@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="focus:ring-brand-gold focus:border-transparent"
+              className="focus:ring-accent focus:border-transparent"
             />
           </div>
           <Button
             type="submit"
             disabled={quoteMutation.isPending}
-            className="btn-primary w-full py-3"
+            className="btn-primary w-full"
           >
             {quoteMutation.isPending ? "Submitting..." : "Get My Quote"}
           </Button>

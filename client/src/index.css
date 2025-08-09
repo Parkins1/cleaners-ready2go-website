@@ -1,379 +1,80 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&family=Lato:wght@400;700;900&display=swap');
+@import "../../styles/variables.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: hsl(0, 0%, 100%);
-  --foreground: hsl(20, 14.3%, 4.1%);
-  --muted: hsl(60, 4.8%, 95.9%);
-  --muted-foreground: hsl(25, 5.3%, 44.7%);
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(20, 14.3%, 4.1%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(20, 14.3%, 4.1%);
-  --border: hsl(20, 5.9%, 90%);
-  --input: hsl(20, 5.9%, 90%);
-  --primary: hsl(207, 90%, 54%);
-  --primary-foreground: hsl(211, 100%, 99%);
-  --secondary: hsl(60, 4.8%, 95.9%);
-  --secondary-foreground: hsl(24, 9.8%, 10%);
-  --accent: hsl(60, 4.8%, 95.9%);
-  --accent-foreground: hsl(24, 9.8%, 10%);
-  --destructive: hsl(0, 84.2%, 60.2%);
-  --destructive-foreground: hsl(60, 9.1%, 97.8%);
-  --ring: hsl(20, 14.3%, 4.1%);
-  --radius: 0.75rem;
-  
-  /* Brand Colors - Updated to match brand guidelines */
-  --brand-gold: hsl(40, 45%, 53%); /* #C29B4B */
-  --brand-gold-light: hsl(40, 45%, 63%);
-  --brand-gold-dark: hsl(40, 45%, 43%);
-  --brand-black: hsl(0, 0%, 9%); /* #181818 */
-  --brand-gray: hsl(0, 0%, 38%); /* #616161 */
-  --brand-gray-light: hsl(0, 0%, 96%); /* #F5F5F5 */
-  --brand-white: hsl(0, 0%, 100%); /* #FFFFFF */
-  --brand-teal: hsl(180, 25%, 25%);
-}
-
-.dark {
-  --background: hsl(240, 10%, 3.9%);
-  --foreground: hsl(0, 0%, 98%);
-  --muted: hsl(240, 3.7%, 15.9%);
-  --muted-foreground: hsl(240, 5%, 64.9%);
-  --popover: hsl(240, 10%, 3.9%);
-  --popover-foreground: hsl(0, 0%, 98%);
-  --card: hsl(240, 10%, 3.9%);
-  --card-foreground: hsl(0, 0%, 98%);
-  --border: hsl(240, 3.7%, 15.9%);
-  --input: hsl(240, 3.7%, 15.9%);
-  --primary: hsl(207, 90%, 54%);
-  --primary-foreground: hsl(211, 100%, 99%);
-  --secondary: hsl(240, 3.7%, 15.9%);
-  --secondary-foreground: hsl(0, 0%, 98%);
-  --accent: hsl(240, 3.7%, 15.9%);
-  --accent-foreground: hsl(0, 0%, 98%);
-  --destructive: hsl(0, 62.8%, 30.6%);
-  --destructive-foreground: hsl(0, 0%, 98%);
-  --ring: hsl(240, 4.9%, 83.9%);
-  --radius: 0.75rem;
-}
-
 @layer base {
-  * {
-    @apply border-border;
+  html {
+    font-size: 100%;
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
-    font-family: 'Open Sans', 'Montserrat', system-ui, -apple-system, sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
     line-height: 1.6;
-    letter-spacing: -0.01em;
+    color: var(--color-text);
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cinzel', 'Merriweather', Georgia, serif;
-    font-weight: 600;
-    line-height: 1.2;
-    letter-spacing: 0.02em;
-  }
-  
-  /* Logo specific styles */
-  .logo-text {
-    font-family: 'Cinzel', 'Merriweather', serif;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-  }
-  
-  .tagline-text {
-    font-family: 'Montserrat', 'Lato', sans-serif;
+
+  h1, h2, h3, h4 {
+    font-family: "Outfit", sans-serif;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    line-height: 1.2;
+    color: var(--color-text);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
   }
 }
 
-/* Enhanced brand color utilities */
-.text-brand-gold {
-  color: hsl(var(--brand-gold));
-}
-
-.bg-brand-gold {
-  background-color: hsl(var(--brand-gold));
-}
-
-.text-brand-gold-light {
-  color: hsl(var(--brand-gold-light));
-}
-
-.bg-brand-gold-light {
-  background-color: hsl(var(--brand-gold-light));
-}
-
-.text-brand-gold-dark {
-  color: hsl(var(--brand-gold-dark));
-}
-
-.bg-brand-gold-dark {
-  background-color: hsl(var(--brand-gold-dark));
-}
-
-.text-brand-black {
-  color: hsl(var(--brand-black));
-}
-
-.bg-brand-black {
-  background-color: hsl(var(--brand-black));
-}
-
-.text-brand-gray {
-  color: hsl(var(--brand-gray));
-}
-
-.bg-brand-gray {
-  background-color: hsl(var(--brand-gray));
-}
-
-.bg-brand-gray-light {
-  background-color: hsl(var(--brand-gray-light));
-}
-
-.text-brand-teal {
-  color: hsl(var(--brand-teal));
-}
-
-.bg-brand-teal {
-  background-color: hsl(var(--brand-teal));
-}
-
-.border-brand-gold {
-  border-color: hsl(var(--brand-gold));
-}
-
-.hover\:bg-brand-gold:hover {
-  background-color: hsl(var(--brand-gold));
-}
-
-.hover\:text-brand-gold:hover {
-  color: hsl(var(--brand-gold));
-}
-
-.hover\:bg-brand-gold-dark:hover {
-  background-color: hsl(var(--brand-gold-dark));
-}
-
-.hover\:text-brand-gold-dark:hover {
-  color: hsl(var(--brand-gold-dark));
-}
-
-.hover\:bg-brand-gray-light:hover {
-  background-color: hsl(var(--brand-gray-light));
-}
-
-.hover\:border-brand-gold:hover {
-  border-color: hsl(var(--brand-gold));
-}
-
-.focus\:ring-brand-gold:focus {
-  --tw-ring-color: hsl(var(--brand-gold));
-}
-
-/* Modern frosted glass button and card styles */
 @layer components {
   .btn-primary {
-    @apply text-blue-600 hover:text-black font-semibold px-8 py-4 rounded-2xl transition-all duration-500 transform hover:-translate-y-1 hover:scale-105 focus:ring-4 relative overflow-hidden w-64 h-16 flex items-center justify-center;
-    backdrop-filter: blur(15px) saturate(150%);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.8) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.9),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+    background: var(--color-accent);
+    color: var(--color-white);
+    padding: .75rem 1.5rem;
+    border-radius: .5rem;
+    font-weight: 600;
+    transition: .2s;
   }
-  
+
   .btn-primary:hover {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
-    box-shadow: 
-      0 16px 48px rgba(0, 0, 0, 0.12),
-      inset 0 1px 0 rgba(255, 255, 255, 1),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.08);
+    background: var(--color-accent-dark);
   }
-  
-  .btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transition: left 0.6s ease-out;
-  }
-  
-  .btn-primary:hover::before {
-    left: 100%;
-  }
-  
+
   .btn-secondary {
-    @apply text-blue-600 hover:text-black font-semibold px-8 py-4 rounded-2xl transition-all duration-500 transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden w-64 h-16 flex items-center justify-center;
-    backdrop-filter: blur(15px) saturate(150%);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.8) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.9),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+    background: transparent;
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+    padding: .75rem 1.5rem;
+    border-radius: .5rem;
+    font-weight: 600;
+    transition: .2s;
   }
-  
+
   .btn-secondary:hover {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
-    box-shadow: 
-      0 16px 48px rgba(0, 0, 0, 0.12),
-      inset 0 1px 0 rgba(255, 255, 255, 1),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.08);
-  }
-  
-  .btn-secondary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
-    transition: left 0.6s ease-out;
-  }
-  
-  .btn-secondary:hover::before {
-    left: 100%;
-  }
-  
-  .btn-outline {
-    @apply text-blue-600 hover:text-black font-semibold px-8 py-4 rounded-2xl transition-all duration-500 transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden w-64 h-16 flex items-center justify-center;
-    backdrop-filter: blur(20px) saturate(180%);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.8) 100%);
-    border: 2px solid rgba(59, 130, 246, 0.3);
-    box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.9),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.05);
-  }
-  
-  .btn-outline:hover {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
-    border-color: rgba(59, 130, 246, 0.5);
-    box-shadow: 
-      0 16px 48px rgba(0, 0, 0, 0.12),
-      inset 0 1px 0 rgba(255, 255, 255, 1),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.08);
-  }
-  
-  .btn-outline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.6s ease-out;
-  }
-  
-  .btn-outline:hover::before {
-    left: 100%;
+    background: rgba(200, 164, 74, .08);
   }
 
-  /* Frosted glass card styles */
-  .card-modern {
-    backdrop-filter: blur(12px) saturate(140%);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 1.5rem;
-    box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.25),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.03);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  .card {
+    background: var(--color-white);
+    box-shadow: 0 2px 12px rgba(0,0,0,.04);
+    border-radius: .75rem;
+    padding: 2rem;
   }
-  
-  .card-modern:hover {
-    transform: translateY(-8px) scale(1.02);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
-    box-shadow: 
-      0 20px 60px rgba(0, 0, 0, 0.12),
-      inset 0 1px 0 rgba(255, 255, 255, 0.3),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.05);
-    border-color: rgba(255, 255, 255, 0.25);
-  }
-}
 
-/* Enhanced card styles */
-@layer components {
-  .card-modern {
-    @apply bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100;
+  .card h3 {
+    color: var(--color-text);
+    font-weight: 700;
   }
-  
-  .gradient-gold {
-    background: linear-gradient(135deg, hsl(var(--brand-gold)) 0%, hsl(var(--brand-gold-light)) 100%);
-  }
-  
-  .gradient-subtle {
-    background: linear-gradient(135deg, #ffffff 0%, hsl(var(--brand-gray-light)) 100%);
-  }
-}
 
-/* Text improvements */
-@layer components {
-  .text-heading {
-    @apply text-brand-black font-bold tracking-tight;
+  .card .step-number {
+    color: var(--color-accent);
+    font-size: 2rem;
+    font-weight: 700;
   }
-  
-  .text-subheading {
-    @apply text-brand-gray font-semibold; /* Increased font weight for better visibility */
-  }
-  
-  .text-body {
-    @apply text-brand-gray font-medium leading-relaxed; /* Increased font weight for better readability */
-  }
-}
 
-/* Animation utilities */
-@layer utilities {
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-in-out;
-  }
-  
-  .animate-slide-up {
-    animation: slideUp 0.6s ease-out;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Spacing utilities based on brand guidelines */
-  .section-spacing {
-    @apply py-20 md:py-24 lg:py-32;
-  }
-  
-  .content-spacing {
-    @apply px-4 sm:px-6 lg:px-8;
+  .hero, .footer {
+    background: radial-gradient(circle at top left, #FFF9F2 0%, #FDF1D9 60%, #FFFFFF 100%);
   }
 }

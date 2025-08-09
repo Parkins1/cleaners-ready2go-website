@@ -3,7 +3,7 @@ import logoImage from "@assets/cleaners_ready2go_logo_transparent_1753378992010.
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-black text-white py-12">
+    <footer className="footer text-white py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Company Info */}
@@ -13,6 +13,10 @@ export default function Footer() {
                 src={logoImage} 
                 alt="Cleaners Ready 2Go Logo" 
                 className="h-24 w-auto filter brightness-0 invert"
+                width="512"
+                height="256"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <p className="text-gray-300 mb-4 leading-relaxed">
@@ -23,22 +27,22 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold text-brand-gold mb-4">Contact Us</h3>
+            <h3 className="text-lg font-semibold text-accent mb-4">Contact Us</h3>
             <div className="space-y-3">
               <div className="flex items-center">
-                <Phone className="w-4 h-4 text-brand-gold mr-3" />
+                <Phone className="w-4 h-4 text-accent mr-3" />
                 <a href="tel:+1234567890" className="text-gray-300 hover:text-white transition-colors">
                   (123) 456-7890
                 </a>
               </div>
               <div className="flex items-center">
-                <Mail className="w-4 h-4 text-brand-gold mr-3" />
+                <Mail className="w-4 h-4 text-accent mr-3" />
                 <a href="mailto:info@cleanersready2go.com" className="text-gray-300 hover:text-white transition-colors">
                   info@cleanersready2go.com
                 </a>
               </div>
               <div className="flex items-start">
-                <MapPin className="w-4 h-4 text-brand-gold mr-3 mt-1" />
+                <MapPin className="w-4 h-4 text-accent mr-3 mt-1" />
                 <div className="text-gray-300">
                   Spokane Valley, Liberty Lake,<br />
                   and Greenacres, WA
@@ -49,7 +53,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold text-brand-gold mb-4">Our Services</h3>
+            <h3 className="text-lg font-semibold text-accent mb-4">Our Services</h3>
             <ul className="space-y-2">
               <li>
                 <a href="/residential" className="text-gray-300 hover:text-white transition-colors">

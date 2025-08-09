@@ -1,11 +1,9 @@
-import { useState } from "react";
 import { Clock, CheckCircle } from "lucide-react";
-import BookingModal from "@/components/BookingModal";
-import QuoteModal from "@/components/QuoteModal";
+import { Button } from "@/components/ui/button";
+import { useModal } from "@/components/modal/ModalProvider";
 
 export default function MoveOut() {
-  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
-  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const { open } = useModal();
 
   return (
     <>
@@ -15,24 +13,28 @@ export default function MoveOut() {
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-brand-black mb-6">Move-Out Cleaning Services</h1>
-            <p className="text-xl text-brand-gray">Deep cleaning for apartment cleanouts and moving situations</p>
+            <h1 className="text-4xl font-bold text-text mb-6">Move-Out Cleaning Services</h1>
+            <p className="text-xl text-text">Deep cleaning for apartment cleanouts and moving situations</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                src="https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
                 alt="Empty apartment living room ready for move-out cleaning" 
                 className="rounded-xl shadow-lg w-full h-auto" 
+                width="800"
+                height="600"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div>
-              <h2 className="text-2xl font-bold text-brand-black mb-6">Apartment Cleanouts & Hourly Services</h2>
-              <p className="text-brand-gray mb-6 leading-relaxed">
+              <h2 className="text-2xl font-bold text-text mb-6">Apartment Cleanouts & Hourly Services</h2>
+              <p className="text-text mb-6 leading-relaxed">
                 Moving out? Our specialized move-out cleaning service ensures you get your full security deposit back. We understand the specific requirements landlords expect and provide thorough, detailed cleaning that exceeds move-out standards.
               </p>
-              <p className="text-brand-gray mb-8 leading-relaxed">
+              <p className="text-text mb-8 leading-relaxed">
                 Available as both fixed-price packages and flexible hourly services to meet your specific needs and timeline.
               </p>
               <div className="flex items-center mb-8">
@@ -40,13 +42,15 @@ export default function MoveOut() {
                   <Clock className="w-6 h-6 text-blue-600" />
                 </div>
                 <div>
-                  <div className="font-semibold text-brand-black">Same-Day Service Available</div>
-                  <div className="text-sm text-brand-gray">For urgent move-out situations</div>
+                  <div className="font-semibold text-text">Same-Day Service Available</div>
+                  <div className="text-sm text-text">For urgent move-out situations</div>
                 </div>
               </div>
               <button
-                onClick={() => setIsQuoteModalOpen(true)}
-                className="btn-primary text-lg"
+                onClick={() => open("quote")}
+                className="btn-primary"
+                type="button"
+                aria-label="Get Quote"
               >
                 Get Quote
               </button>
@@ -55,65 +59,69 @@ export default function MoveOut() {
 
           {/* Service Options */}
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-gray-50 p-8 rounded-xl">
-              <h3 className="text-xl font-bold text-brand-black mb-6">Fixed-Price Packages</h3>
+            <div className="card">
+              <h3 className="text-xl font-bold text-text mb-6">Fixed-Price Packages</h3>
               <div className="space-y-6">
                 <div className="border-b border-gray-200 pb-4">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="font-semibold text-brand-black">Studio/1BR</span>
-                    <span className="text-brand-gold font-bold">$200</span>
+                    <span className="font-semibold text-text">Studio/1BR</span>
+                    <span className="text-accent font-bold">$200</span>
                   </div>
-                  <p className="text-sm text-brand-gray">Complete move-out cleaning for small apartments</p>
+                  <p className="text-sm text-text">Complete move-out cleaning for small apartments</p>
                 </div>
                 <div className="border-b border-gray-200 pb-4">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="font-semibold text-brand-black">2BR/2BA</span>
-                    <span className="text-brand-gold font-bold">$300</span>
+                    <span className="font-semibold text-text">2BR/2BA</span>
+                    <span className="text-accent font-bold">$300</span>
                   </div>
-                  <p className="text-sm text-brand-gray">Comprehensive cleaning for medium apartments</p>
+                  <p className="text-sm text-text">Comprehensive cleaning for medium apartments</p>
                 </div>
                 <div className="pb-4">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="font-semibold text-brand-black">3BR/2BA+</span>
-                    <span className="text-brand-gold font-bold">$450</span>
+                    <span className="font-semibold text-text">3BR/2BA+</span>
+                    <span className="text-accent font-bold">$450</span>
                   </div>
-                  <p className="text-sm text-brand-gray">Full-service cleaning for larger homes</p>
+                  <p className="text-sm text-text">Full-service cleaning for larger homes</p>
                 </div>
               </div>
-              <button 
-                onClick={() => setIsBookingModalOpen(true)}
-                className="btn-primary w-full py-3 mt-6"
+              <button
+                onClick={() => open("booking")}
+                className="btn-primary w-full mt-6"
+                type="button"
+                aria-label="Book Package"
               >
                 Book Package
               </button>
             </div>
-            <div className="bg-brand-black p-8 rounded-xl text-white">
-              <h3 className="text-xl font-bold mb-6">Hourly Services</h3>
+            <div className="card bg-text text-white">
+              <h3 className="text-xl font-bold mb-6 text-white">Hourly Services</h3>
               <div className="mb-6">
-                <div className="text-3xl font-bold text-brand-gold mb-2">$45/hour</div>
+                <div className="text-3xl font-bold text-accent mb-2">$45/hour</div>
                 <p className="text-gray-300">Flexible cleaning based on your specific needs</p>
               </div>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-brand-gold mr-3" />
+                  <CheckCircle className="w-4 h-4 text-accent mr-3" />
                   <span className="text-sm">Minimum 3-hour booking</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-brand-gold mr-3" />
+                  <CheckCircle className="w-4 h-4 text-accent mr-3" />
                   <span className="text-sm">Custom cleaning priorities</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-brand-gold mr-3" />
+                  <CheckCircle className="w-4 h-4 text-accent mr-3" />
                   <span className="text-sm">Perfect for partial cleanouts</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-brand-gold mr-3" />
+                  <CheckCircle className="w-4 h-4 text-accent mr-3" />
                   <span className="text-sm">Same-day availability</span>
                 </li>
               </ul>
-              <button 
-                onClick={() => setIsBookingModalOpen(true)}
-                className="btn-primary w-full py-3"
+              <button
+                onClick={() => open("booking")}
+                className="btn-primary w-full"
+                type="button"
+                aria-label="Book Hourly"
               >
                 Book Hourly
               </button>
@@ -121,12 +129,12 @@ export default function MoveOut() {
           </div>
 
           {/* What's Included */}
-          <div className="bg-gray-50 p-8 rounded-xl">
-            <h3 className="text-xl font-bold text-brand-black mb-6 text-center">What's Included in Move-Out Cleaning</h3>
+          <div className="card">
+            <h3 className="text-xl font-bold text-text mb-6 text-center">What's Included in Move-Out Cleaning</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div>
-                <h4 className="font-semibold text-brand-black mb-3">Kitchen</h4>
-                <ul className="space-y-2 text-sm text-brand-gray">
+                <h4 className="font-semibold text-text mb-3">Kitchen</h4>
+                <ul className="space-y-2 text-sm text-text">
                   <li>• Deep clean appliances inside & out</li>
                   <li>• Scrub cabinets & drawers</li>
                   <li>• Degrease all surfaces</li>
@@ -134,8 +142,8 @@ export default function MoveOut() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold text-brand-black mb-3">Bathrooms</h4>
-                <ul className="space-y-2 text-sm text-brand-gray">
+                <h4 className="font-semibold text-text mb-3">Bathrooms</h4>
+                <ul className="space-y-2 text-sm text-text">
                   <li>• Scrub tub/shower thoroughly</li>
                   <li>• Disinfect toilet completely</li>
                   <li>• Clean mirrors & fixtures</li>
@@ -143,8 +151,8 @@ export default function MoveOut() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold text-brand-black mb-3">Throughout</h4>
-                <ul className="space-y-2 text-sm text-brand-gray">
+                <h4 className="font-semibold text-text mb-3">Throughout</h4>
+                <ul className="space-y-2 text-sm text-text">
                   <li>• Vacuum all carpets</li>
                   <li>• Mop all hard floors</li>
                   <li>• Wipe down all surfaces</li>
@@ -156,14 +164,6 @@ export default function MoveOut() {
         </div>
       </section>
 
-      <BookingModal 
-        isOpen={isBookingModalOpen} 
-        onClose={() => setIsBookingModalOpen(false)} 
-      />
-      <QuoteModal 
-        isOpen={isQuoteModalOpen} 
-        onClose={() => setIsQuoteModalOpen(false)} 
-      />
     </>
   );
 }

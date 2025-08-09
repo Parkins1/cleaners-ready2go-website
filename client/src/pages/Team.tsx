@@ -58,26 +58,26 @@ export default function Team() {
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-brand-black mb-4">Meet the Team</h1>
-            <h2 className="text-xl text-brand-gold font-medium mb-6">Cleaners Ready to Go</h2>
-            <p className="text-xl text-brand-gray">The dedicated professionals who make your home spotless</p>
+            <h1 className="text-4xl font-bold text-text mb-4">Meet the Team</h1>
+            <h2 className="text-xl text-accent font-medium mb-6">Cleaners Ready to Go</h2>
+            <p className="text-xl text-text">The dedicated professionals who make your home spotless</p>
           </div>
 
           {/* Team Introduction */}
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
-              <h3 className="text-2xl font-bold text-brand-black mb-6">Our Cleaning Family</h3>
-              <p className="text-brand-gray mb-6 leading-relaxed">
+              <h3 className="text-2xl font-bold text-text mb-6">Our Cleaning Family</h3>
+              <p className="text-text mb-6 leading-relaxed">
                 Every member of our team is carefully selected, thoroughly trained, and passionate about delivering exceptional cleaning services. We believe that great cleaning starts with great people, and we're proud of the dedicated professionals who represent Cleaners Ready 2Go in your home.
               </p>
-              <p className="text-brand-gray mb-8 leading-relaxed">
+              <p className="text-text mb-8 leading-relaxed">
                 Our team undergoes comprehensive background checks, professional training, and ongoing education to ensure they deliver the highest standards of service, safety, and reliability.
               </p>
               <div className="flex items-center">
-                <div className="bg-brand-gold p-2 rounded-lg mr-4">
+                <div className="bg-accent p-2 rounded-lg mr-4">
                   <Award className="w-6 h-6 text-white" />
                 </div>
-                <span className="font-semibold text-brand-black">Fully Trained & Background Checked</span>
+                <span className="font-semibold text-text">Fully Trained & Background Checked</span>
               </div>
             </div>
             <div>
@@ -92,15 +92,15 @@ export default function Team() {
           {/* Team Members */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {teamMembers.map((member) => (
-              <div key={member.name} className="bg-gray-50 rounded-xl p-6 text-center">
+              <div key={member.name} className="card text-center">
                 <img 
                   src={member.image} 
                   alt={member.alt} 
-                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" 
+                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
                 />
-                <h4 className="text-lg font-semibold text-brand-black mb-2">{member.name}</h4>
-                <div className="text-brand-gold font-medium mb-3">{member.role}</div>
-                <p className="text-sm text-brand-gray leading-relaxed">
+                <h4 className="text-lg font-semibold text-text mb-2">{member.name}</h4>
+                <div className="text-accent font-medium mb-3">{member.role}</div>
+                <p className="text-sm text-text leading-relaxed">
                   {member.description}
                 </p>
               </div>
@@ -108,28 +108,28 @@ export default function Team() {
           </div>
 
           {/* Team Values */}
-          <div className="bg-brand-black rounded-xl p-8 lg:p-12">
+          <div className="bg-text rounded-xl p-8 lg:p-12">
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold text-white mb-4">Our Team Values</h3>
               <p className="text-gray-300">What drives us to deliver exceptional service every day</p>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="bg-brand-gold p-3 rounded-lg w-fit mx-auto mb-4">
+                <div className="bg-accent p-3 rounded-lg w-fit mx-auto mb-4">
                   <Award className="w-6 h-6 text-white" />
                 </div>
                 <h4 className="text-lg font-semibold text-white mb-2">Reliability</h4>
                 <p className="text-gray-300 text-sm">We show up on time, every time, and deliver consistent quality you can count on.</p>
               </div>
               <div className="text-center">
-                <div className="bg-brand-gold p-3 rounded-lg w-fit mx-auto mb-4">
+                <div className="bg-accent p-3 rounded-lg w-fit mx-auto mb-4">
                   <Heart className="w-6 h-6 text-white" />
                 </div>
                 <h4 className="text-lg font-semibold text-white mb-2">Care</h4>
                 <p className="text-gray-300 text-sm">We treat your home with the same care and respect we'd give our own family.</p>
               </div>
               <div className="text-center">
-                <div className="bg-brand-gold p-3 rounded-lg w-fit mx-auto mb-4">
+                <div className="bg-accent p-3 rounded-lg w-fit mx-auto mb-4">
                   <Zap className="w-6 h-6 text-white" />
                 </div>
                 <h4 className="text-lg font-semibold text-white mb-2">Excellence</h4>
@@ -140,11 +140,11 @@ export default function Team() {
 
           {/* CTA Section */}
           <div className="text-center mt-12">
-            <h3 className="text-2xl font-bold text-brand-black mb-4">Ready to Meet Our Team?</h3>
-            <p className="text-brand-gray mb-8">Experience the difference that professional, caring service makes in your home.</p>
+            <h3 className="text-2xl font-bold text-text mb-4">Ready to Meet Our Team?</h3>
+            <p className="text-text mb-8">Experience the difference that professional, caring service makes in your home.</p>
             <button
               onClick={() => setIsBookingModalOpen(true)}
-              className="bg-brand-gold hover:bg-yellow-500 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
+              className="btn-primary"
             >
               Book Your First Cleaning
             </button>
