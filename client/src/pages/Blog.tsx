@@ -1,4 +1,6 @@
+// llm:content-card-migrated
 import { ArrowRight } from "lucide-react";
+import ContentCard from "@/components/ContentCard/ContentCard";
 
 export default function Blog() {
   const blogPosts = [
@@ -105,7 +107,7 @@ export default function Blog() {
           {/* Blog Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {blogPosts.map((post) => (
-              <article key={post.id} className="card">
+              <ContentCard key={post.id} as="article">
                 <img 
                   src={post.image} 
                   alt={post.alt} 
@@ -128,7 +130,7 @@ export default function Blog() {
                     <button className="text-accent text-sm font-medium hover:text-accent-dark">Read More</button>
                   </div>
                 </div>
-              </article>
+              </ContentCard>
             ))}
           </div>
 

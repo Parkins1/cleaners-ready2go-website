@@ -1,5 +1,5 @@
+ // llm:modal-migrated
 import { useState } from "react";
-import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -8,6 +8,7 @@ import { useMutation } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { useModalA11y } from "@/components/modal/useModalA11y";
+import DialogHeader from "@/components/modal/DialogHeader";
 
 interface BookingModalProps {
   onClose?: () => void;
@@ -58,10 +59,10 @@ export default function BookingModal({ onClose }: BookingModalProps) {
   };
   
   return (
-    <div onClick={onClose} className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4" aria-hidden="true">
+    <div onClick={onClose} className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" aria-hidden="true">
       <div
         onClick={(e) => e.stopPropagation()}
-        className="card"
+        className="relative rounded-xl border border-slate-300 bg-white p-6 sm:p-8 shadow"
         role="dialog"
         aria-modal="true"
         aria-labelledby="booking-modal-title"
@@ -69,12 +70,7 @@ export default function BookingModal({ onClose }: BookingModalProps) {
         ref={dialogRef}
         tabIndex={-1}
       >
-        <div className="flex justify-between items-center mb-4">
-          <h3 id="booking-modal-title" className="text-xl font-bold text-text">Book a Cleaning</h3>
-          <button type="button" onClick={onClose} className="text-text hover:text-accent">
-            <X className="w-6 h-6" />
-          </button>
-        </div>
+        <DialogHeader title="Book a Cleaning" onClose={onClose} titleId="booking-modal-title" />
         <form onSubmit={handleSubmit} className="space-y-4" aria-describedby="booking-modal-description">
           <p id="booking-modal-description" className="sr-only">Select a service, preferred date, and enter your phone to book.</p>
           <div>
@@ -82,7 +78,7 @@ export default function BookingModal({ onClose }: BookingModalProps) {
               Service Type
             </Label>
             <Select value={serviceType} onValueChange={setServiceType}>
-              <SelectTrigger id="service-type">
+              <SelectTrigger id="service-type" className="h-11">
                 <SelectValue placeholder="Select a service..." />
               </SelectTrigger>
               <SelectContent>
@@ -101,7 +97,7 @@ export default function BookingModal({ onClose }: BookingModalProps) {
               type="date"
               value={preferredDate}
               onChange={(e) => setPreferredDate(e.target.value)}
-              className="focus:ring-accent focus:border-transparent"
+              className="focus:ring-accent focus:border-transparent w-full h-11"
             />
           </div>
           <div>
@@ -115,7 +111,7 @@ export default function BookingModal({ onClose }: BookingModalProps) {
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               autoComplete="tel"
-              className="focus:ring-accent focus:border-transparent"
+              className="focus:ring-accent focus:border-transparent w-full h-11"
             />
           </div>
           <Button

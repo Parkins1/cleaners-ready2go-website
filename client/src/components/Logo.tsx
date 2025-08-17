@@ -1,10 +1,8 @@
-import logoImage from "@/assets/cleaners_ready2go_logo_transparent_1753378992010.png";
-
-export default function Logo() {
+function Logo() {
   return (
     <div className="flex items-center">
       <img
-        src={logoImage}
+        src="/logo.png"
         alt="Cleaners Ready 2Go - Professional Cleaning Services"
         className="h-32 w-auto drop-shadow-lg"
         width="512"
@@ -15,3 +13,7 @@ export default function Logo() {
     </div>
   );
 }
+
+Logo.displayName = "Logo";
+
+export default Logo;

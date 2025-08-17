@@ -1,6 +1,6 @@
 import LocationPageTemplate from './LocationPageTemplate';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import ContentCard from '@/components/ContentCard/ContentCard';
 
 export default function Spokane() {
   const pageDetails = {
@@ -22,6 +22,7 @@ export default function Spokane() {
         description: 'A thorough cleaning to ensure you get your deposit back and leave your old space spotless.',
       },
     ],
+    serviceCardIds: ['residential','deep-cleaning','move-out','apartment-cleaning'] as const,
     testimonial: {
       quote: 'Cleaners Ready 2Go is the best cleaning service in Spokane! They are always professional and do an amazing job.',
       name: 'John D.',
@@ -34,7 +35,7 @@ export default function Spokane() {
             <p>
               For over <strong>[X] years</strong>, <strong>Cleaners Ready 2Go</strong> has been a trusted presence in Spokane,
               serving families and homeowners with dependable, top‑quality cleaning services. We are deeply familiar with the
-              unique needs of homes in the Inland Northwest — from the dust and pollen brought on by our dry summers to the mud and
+              unique needs of homes in the Inland Northwest   from the dust and pollen brought on by our dry summers to the mud and
               slush that come with snowy winters.
             </p>
             <p>
@@ -78,32 +79,18 @@ export default function Spokane() {
         content: (
           <>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              <Card className="card">
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-xl">1) Request Your Free Quote</CardTitle>
-                </CardHeader>
-                <CardContent className="text-text">
-                  Contact us for a free quote – we’ll ask about your home’s size, cleaning frequency, and any special requests.
-                </CardContent>
-              </Card>
-
-              <Card className="card">
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-xl">2) Choose Your Schedule</CardTitle>
-                </CardHeader>
-                <CardContent className="text-text">
-                  Select a convenient day and time – we offer flexible scheduling including weekdays, weekends, mornings or afternoons.
-                </CardContent>
-              </Card>
-
-              <Card className="card">
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-xl">3) Sit Back and Relax</CardTitle>
-                </CardHeader>
-                <CardContent className="text-text">
-                  Relax while our team arrives on time, cleans with precision, and leaves your home sparkling.
-                </CardContent>
-              </Card>
+              <ContentCard>
+                <h3 className="text-xl font-semibold mb-2">1) Request Your Free Quote</h3>
+                <p className="text-text">Contact us for a free quote – we’ll ask about your home’s size, cleaning frequency, and any special requests.</p>
+              </ContentCard>
+              <ContentCard>
+                <h3 className="text-xl font-semibold mb-2">2) Choose Your Schedule</h3>
+                <p className="text-text">Select a convenient day and time – we offer flexible scheduling including weekdays, weekends, mornings or afternoons.</p>
+              </ContentCard>
+              <ContentCard>
+                <h3 className="text-xl font-semibold mb-2">3) Sit Back and Relax</h3>
+                <p className="text-text">Relax while our team arrives on time, cleans with precision, and leaves your home sparkling.</p>
+              </ContentCard>
             </div>
           </>
         ),
@@ -112,17 +99,17 @@ export default function Spokane() {
         title: 'What Spokane Residents Say',
         content: (
           <>
-            <blockquote className="card">
+            <ContentCard as="blockquote">
               “After trying three other companies, Cleaners Ready 2Go is the best. They’re detail‑oriented, friendly, and always on time.” – Amanda
               P., Spokane Valley
-            </blockquote>
-            <blockquote className="card">
+            </ContentCard>
+            <ContentCard as="blockquote">
               “We hired them for a deep clean before putting our South Hill home on the market. The buyers commented on how fresh it felt, and we sold within a week.” –
               Daniel M.
-            </blockquote>
-            <blockquote className="card">
+            </ContentCard>
+            <ContentCard as="blockquote">
               “I love their green cleaning option. My allergies have improved and the house smells amazing without harsh chemicals.” – Lisa K., Liberty Lake
-            </blockquote>
+            </ContentCard>
           </>
         ),
       },
@@ -186,7 +173,7 @@ export default function Spokane() {
               <AccordionTrigger>Trained, screened technicians</AccordionTrigger>
               <AccordionContent>
                 Every technician completes a structured skills program covering surfaces, products, safety, and customer courtesy. A third‑party
-                criminal background screen—current as of the employee’s hire date—adds another layer of peace of mind.
+                criminal background screen current as of the employee’s hire date adds another layer of peace of mind.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="eco-products">
@@ -199,7 +186,7 @@ export default function Spokane() {
             <AccordionItem value="equipment-supplies">
               <AccordionTrigger>All equipment and supplies provided</AccordionTrigger>
               <AccordionContent>
-                From HEPA vacuums to microfiber cloths, we arrive with the tools needed for most residential jobs—no last‑minute store runs or
+                From HEPA vacuums to microfiber cloths, we arrive with the tools needed for most residential jobs no last‑minute store runs or
                 storage hassles for you.
               </AccordionContent>
             </AccordionItem>

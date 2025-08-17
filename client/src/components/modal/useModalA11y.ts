@@ -7,6 +7,9 @@ export function useModalA11y(onClose: () => void) {
     const el = dialogRef.current;
     if (!el) return;
 
+    // Remember the element that had focus before opening to restore it on close
+    const previouslyFocused = (document.activeElement as HTMLElement | null) || null;
+
     const focusableSelectors = [
       'a[href]','area[href]','input:not([disabled])','select:not([disabled])',
       'textarea:not([disabled])','button:not([disabled])','[tabindex]:not([tabindex="-1"])'
@@ -62,6 +65,11 @@ export function useModalA11y(onClose: () => void) {
       // Restore body scroll and padding
       body.style.overflow = prevOverflow;
       body.style.paddingRight = prevPaddingRight;
+
+      // Return focus to the previously focused trigger element
+      if (previouslyFocused && typeof previouslyFocused.focus === 'function') {
+        previouslyFocused.focus({ preventScroll: true });
+      }
     };
   }, [onClose]);
 

@@ -1,3 +1,6 @@
+// llm:brand-config-migrated
+// llm:callout-banner-migrated
+// llm:cta-migrated
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useModal } from "@/components/modal/ModalProvider";
@@ -6,6 +9,8 @@ import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import ContactForm from "@/components/ContactForm/ContactForm";
 import { ContactFormData } from "@/components/ContactForm/schema";
+import CalloutBanner from "@/components/CalloutBanner/CalloutBanner";
+import { brand } from "@/config/brand";
 
 export default function Contact() {
   const { open, close } = useModal();
@@ -45,7 +50,7 @@ export default function Contact() {
   return (
     <>
       <title>Contact Us - Cleaners Ready 2Go | Get Your Free Quote Today</title>
-      <meta name="description" content="Contact Cleaners Ready 2Go for professional cleaning services in Spokane Valley, Liberty Lake, and Greenacres. Call (123) 456-7890 or request a free quote online." />
+      <meta name="description" content={`Contact Cleaners Ready 2Go for professional cleaning services in Spokane Valley, Liberty Lake, and Greenacres. Call ${brand.phone} or request a free quote online.`} />
       
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,7 +63,7 @@ export default function Contact() {
             {/* Contact Form */}
             <div className="bg-surface p-8 rounded-xl">
               <h2 className="text-2xl font-bold text-text mb-6">Send Us a Message</h2>
-              <Button onClick={openContactModal} className="btn-primary w-full sm:w-72 mx-auto">
+              <Button onClick={openContactModal} variant="primary" className="w-full sm:w-72 mx-auto">
                 Contact Us
               </Button>
             </div>
@@ -80,8 +85,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="font-semibold text-text">Phone</div>
-                    <a href="tel:+1234567890" className="text-text hover:text-accent transition-colors">
-                      (123) 456-7890
+                    <a href={`tel:${brand.phone}`} className="text-text hover:text-accent transition-colors">
+                      {brand.phone}
                     </a>
                   </div>
                 </div>
@@ -92,8 +97,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="font-semibold text-text">Email</div>
-                    <a href="mailto:info@cleanersready2go.com" className="text-text hover:text-accent transition-colors">
-                      info@cleanersready2go.com
+                    <a href={`mailto:${brand.email}`} className="text-text hover:text-accent transition-colors">
+                      {brand.email}
                     </a>
                   </div>
                 </div>
@@ -105,8 +110,8 @@ export default function Contact() {
                   <div>
                     <div className="font-semibold text-text">Service Areas</div>
                     <div className="text-text">
-                      Spokane Valley, Liberty Lake,<br />
-                      and Greenacres, WA
+                      {brand.serviceAreas.cities.slice(1, 4).join(', ')},<br />
+                      and {brand.serviceAreas.cities[8]}, WA
                     </div>
                   </div>
                 </div>
@@ -118,8 +123,7 @@ export default function Contact() {
                   <div>
                     <div className="font-semibold text-text">Hours</div>
                     <div className="text-text">
-                      Monday - Saturday: 8AM - 6PM<br />
-                      Sunday: 10AM - 4PM
+                      {brand.hours}
                     </div>
                   </div>
                 </div>
@@ -139,28 +143,32 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Quick Contact CTA */}
-          <div className="mt-16 footer p-8 rounded-xl text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">Need Immediate Service?</h3>
-            <p className="text-gray-300 mb-6">Call us now for same-day cleaning or emergency service</p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
-              <a href="tel:+1234567890" aria-label="Call (123) 456-7890" className="inline-flex">
+          <CalloutBanner
+            title="Need Immediate Service?"
+            body="Call us now for same-day cleaning or emergency service"
+            variant="gold"
+            className="mt-16"
+            actions={
+              <>
+                <a href={`tel:${brand.phone}`} aria-label={`Call ${brand.phone}`} className="inline-flex">
+                  <Button
+                    variant="primary"
+                    className="w-full sm:w-72"
+                  >
+                    Call {brand.phone}
+                  </Button>
+                </a>
                 <Button
-                  className="btn-primary w-full sm:w-72"
+                  onClick={() => open("booking")}
+                  variant="primary"
+                  className="w-full sm:w-72"
+                  aria-label="Book Online"
                 >
-                  Call (123) 456-7890
+                  Book Online
                 </Button>
-              </a>
-              <Button
-                onClick={() => open("booking")}
-                className="btn-secondary w-full sm:w-72"
-                type="button"
-                aria-label="Book Online"
-              >
-                Book Online
-              </Button>
-            </div>
-          </div>
+              </>
+            }
+          />
         </div>
       </section>
 

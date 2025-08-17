@@ -16,9 +16,11 @@ import Blog from "@/pages/Blog";
 import Team from "@/pages/Team";
 import Contact from "@/pages/Contact";
 import DeepCleaning from "@/pages/DeepCleaning"; // Import the new DeepCleaning page
+import ApartmentCleaning from "@/pages/ApartmentCleaning";
 import Spokane from "@/pages/Spokane";
 import SpokaneValley from "@/pages/SpokaneValley";
 import LibertyLake from "@/pages/LibertyLake";
+import Greenacres from "@/pages/Greenacres";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -32,10 +34,12 @@ function Router() {
           <Route path="/residential" component={Residential} />
           <Route path="/move-out" component={MoveOut} />
           <Route path="/deep-cleaning" component={DeepCleaning} /> {/* Add the new route */}
+          <Route path="/apartment-cleaning" component={ApartmentCleaning} />
           <Route path="/locations" component={Locations} />
           <Route path="/locations/spokane" component={Spokane} />
           <Route path="/locations/spokane-valley" component={SpokaneValley} />
           <Route path="/locations/liberty-lake" component={LibertyLake} />
+          <Route path="/locations/greenacres" component={Greenacres} />
           <Route path="/blog" component={Blog} />
           <Route path="/team" component={Team} />
           <Route path="/contact" component={Contact} />

@@ -1,9 +1,12 @@
+
+// llm:modal-migrated
 import React, { createContext, useCallback, useContext, useMemo, useState } from "react";
 import type { ModalContextValue, ModalId, ModalPayload } from "./types";
 import BookingModal from "@/components/BookingModal";
 import QuoteModal from "@/components/QuoteModal";
 import ContactForm from "@/components/ContactForm/ContactForm";
 import { useModalA11y } from "@/components/modal/useModalA11y";
+import DialogHeader from "@/components/modal/DialogHeader";
 
 const ModalContext = createContext<ModalContextValue | undefined>(undefined);
 
@@ -17,10 +20,9 @@ export const ModalProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   }, []);
 
   const close = useCallback(() => {
-    console.log("ModalProvider: closing modal", id);
     setId(null);
     setPayload(undefined);
-  }, [id]);
+  }, []);
 
   const isOpen = useCallback((checkId: Exclude<ModalId, null>) => id === checkId, [id]);
 
@@ -33,31 +35,27 @@ export const ModalProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     <ModalContext.Provider value={value}>
       {children}
       {/* Centralized modal host */}
-      {id === "booking" && (
-        <BookingModal
-          onClose={close}
-        />
-      )}
-      {id === "quote" && (
-        <QuoteModal
-          onClose={close}
-        />
-      )}
+      {id === "booking" && <BookingModal onClose={close} />}
+      {id === "quote" && <QuoteModal onClose={close} />}
       {id === "contact" && payload && (
-        <div onClick={close} className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4" aria-hidden="true">
-          <ContactDialog onClose={close} payload={payload} />
+        <div
+          onClick={close}
+          className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+          aria-hidden="true"
+        >
+          <ContactDialog onClose={close} payload={payload as NonNullable<ModalPayload>} />
         </div>
       )}
     </ModalContext.Provider>
   );
 };
 
-function ContactDialog({ onClose, payload }: { onClose: () => void; payload: ModalPayload }) {
+function ContactDialog({ onClose, payload }: { onClose: () => void; payload: NonNullable<ModalPayload> }) {
   const { dialogRef } = useModalA11y(onClose);
   return (
     <div
       onClick={(e) => e.stopPropagation()}
-      className="card"
+      className="relative rounded-xl border border-slate-300 bg-white p-6 sm:p-8 shadow"
       role="dialog"
       aria-modal="true"
       aria-labelledby="contact-modal-title"
@@ -65,14 +63,7 @@ function ContactDialog({ onClose, payload }: { onClose: () => void; payload: Mod
       ref={dialogRef}
       tabIndex={-1}
     >
-      <div className="flex justify-between items-center mb-4">
-        <h3 id="contact-modal-title" className="text-xl font-bold text-text">{payload.title}</h3>
-        <button type="button" onClick={onClose} className="text-text hover:text-accent">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
+      <DialogHeader title={payload.title ?? "Contact"} onClose={onClose} titleId="contact-modal-title" />
       <p id="contact-modal-description" className="text-text mb-4">{payload.description}</p>
       {payload.form}
     </div>

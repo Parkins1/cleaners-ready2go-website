@@ -1,9 +1,9 @@
+
 import { useState } from "react";
 import { CheckCircle, Award, Clock, Shield } from "lucide-react";
 import BookingModal from "@/components/BookingModal";
-import logoImage from "@/assets/cleaners_ready2go_logo_transparent_1753378992010.png";
 
-export default function About() {
+function About() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
   return (
@@ -16,7 +16,7 @@ export default function About() {
           <div className="text-center mb-16 animate-slide-up">
             <div className="flex justify-center mb-10">
               <img 
-                src={logoImage} 
+                src="/logo.png" 
                 alt="Cleaners Ready 2Go Logo" 
                 className="h-28 w-auto"
               />
@@ -36,7 +36,7 @@ export default function About() {
             <div>
               <h2 className="text-2xl font-bold text-text mb-6">Our Story</h2>
               <p className="text-text font-medium mb-6 leading-relaxed">
-                Founded with a simple mission: to provide reliable, professional cleaning services that give you more time to focus on what matters most. We understand that a clean home is more than just appearance—it's about creating a healthy, comfortable environment for you and your family.
+                Founded with a simple mission: to provide reliable, professional cleaning services that give you more time to focus on what matters most. We understand that a clean home is more than just appearance it's about creating a healthy, comfortable environment for you and your family.
               </p>
               <p className="text-text font-medium mb-6 leading-relaxed">
                 Serving the Spokane Valley, Liberty Lake, and Greenacres communities, we've built our reputation on trust, quality, and consistent results. Our team of trained professionals brings the same attention to detail to every home we clean.
@@ -92,3 +92,7 @@ export default function About() {
     </>
   );
 }
+
+About.displayName = "About";
+
+export default About;

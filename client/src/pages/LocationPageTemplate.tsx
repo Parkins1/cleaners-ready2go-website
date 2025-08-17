@@ -1,13 +1,18 @@
-import { ArrowRight, CheckCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+ // llm:callout-banner-migrated
+// llm:cta-migrated
+import { Button } from "@/components/ui/button";
+import ContentCard from '@/components/ContentCard/ContentCard';
+import ServiceGrid from '@/components/ServiceCard/ServiceGrid';
 import { useModal } from '@/components/modal/ModalProvider';
 import React from 'react';
+import CalloutBanner from "@/components/CalloutBanner/CalloutBanner";
+import { ServicesSection, ProcessSection } from "@/components/Sections";
 
 interface LocationPageTemplateProps {
   locationName: string;
   heroImage: string;
   introText: string;
-  services: {
+  services?: {
     title: string;
     description: string;
   }[];
@@ -19,6 +24,8 @@ interface LocationPageTemplateProps {
     title: string;
     content: React.ReactNode;
   }[];
+  // Optional: service card IDs to render standardized ServiceCards
+  serviceCardIds?: import("@/components/ServiceCard/catalog").ServiceCatalogId[];
 }
 
 export default function LocationPageTemplate({
@@ -28,6 +35,7 @@ export default function LocationPageTemplate({
   services,
   testimonial,
   extraSections,
+  serviceCardIds,
 }: LocationPageTemplateProps) {
   const { open } = useModal();
 
@@ -49,15 +57,15 @@ export default function LocationPageTemplate({
         }}
         aria-label={`${locationName} Hero`}
       >
-        <div className="absolute inset-0 bg-white/60 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-white/95 backdrop-blur-sm" />
         <div className="relative text-center max-w-4xl mx-auto px-6 py-20">
           <h1 className="text-4xl lg:text-6xl font-bold text-text mb-4">{`House Cleaning in ${locationName}`}</h1>
           <p className="text-lg lg:text-xl text-text mb-8">
             Your trusted local cleaning experts.
           </p>
-          <button onClick={() => open('quote')} className="btn-primary" type="button">
+          <Button onClick={() => open('quote')} variant="primary">
             Get a Free Quote
-          </button>
+          </Button>
         </div>
       </section>
 
@@ -69,20 +77,11 @@ export default function LocationPageTemplate({
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-16 bg-surface">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-text mb-12 text-center">Our Services</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="card">
-                <h3 className="text-xl font-bold text-text mb-4">{service.title}</h3>
-                <p className="text-text">{service.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Services (standardized, identical to Home) */}
+      <ServicesSection ids={serviceCardIds ?? (["residential","deep-cleaning","move-out","apartment-cleaning"] as const)} />
+
+      {/* Process (standardized, identical to Home) */}
+      <ProcessSection />
 
       {/* Image Placeholder Section */}
       <section className="py-16 bg-white">
@@ -112,16 +111,19 @@ export default function LocationPageTemplate({
         </section>
       ))}
 
-      {/* CTA Section */}
-      <section className="footer py-20 relative overflow-hidden">
-        <div className="max-w-4mx mx-auto text-center px-6">
-          <h2 className="text-3xl lg:text-5xl font-bold text-text mb-6">Ready for a Cleaner Home?</h2>
-          <p className="text-lg text-text mb-8">Let us handle the cleaning so you enjoy your time.</p>
-          <button onClick={() => open('quote')} className="btn-primary" type="button">
+      <CalloutBanner
+        title="Ready for a Cleaner Home?"
+        body="Let us handle the cleaning so you enjoy your time."
+        variant="gold"
+        actions={
+          <Button
+            onClick={() => open('quote')}
+            variant="primary"
+          >
             Request a Free Quote
-          </button>
-        </div>
-      </section>
+          </Button>
+        }
+      />
     </>
   );
 }

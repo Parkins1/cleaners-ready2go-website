@@ -4,6 +4,8 @@
 A modern, responsive web app for a professional cleaning business. Uses React + Vite (frontend), Express (backend), in-memory storage, and progressive conversion paths. The codebase aims for a premium, trustworthy look with a gold/serif brand motif and scalable, maintainable architecture.
 
 ---
+## Be the Best
+yolo mode engaged! 
 
 ## Content Hierarchy & Routing
 
@@ -94,7 +96,7 @@ A modern, responsive web app for a professional cleaning business. Uses React + 
 2. **Content/Copy**
    - Tone: Friendly, professional, trustworthy.
    - Avoid jargon; favor brevity in hero/CTA text.
-   - No “content for content’s sake” — Blog stubs allowed but mark as such.
+   - No “content for content’s sake”   Blog stubs allowed but mark as such.
 
 3. **Do Not**
    - **Do NOT** touch `.env`/configs in prod.

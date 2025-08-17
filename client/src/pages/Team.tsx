@@ -1,8 +1,9 @@
+
 import { useState } from "react";
 import { Award, Heart, Zap } from "lucide-react";
 import BookingModal from "@/components/BookingModal";
 
-export default function Team() {
+function Team() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
   const teamMembers = [
@@ -159,3 +160,7 @@ export default function Team() {
     </>
   );
 }
+
+Team.displayName = "Team";
+
+export default Team;

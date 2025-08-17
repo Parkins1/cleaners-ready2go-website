@@ -1,6 +1,8 @@
+// llm:cta-migrated
 import { CheckCircle } from "lucide-react";
-import residentialCardImg from "@/assets/residential-cleaning-card.jpeg";
+import residentialCardImg from "@assets/residential-cleaning-card.jpeg";
 import { Button } from "@/components/ui/button";
+import ContentCard from "@/components/ContentCard/ContentCard";
 import { useModal } from "@/components/modal/ModalProvider";
 
 export default function Residential() {
@@ -14,32 +16,33 @@ export default function Residential() {
         content="Professional residential cleaning services in Spokane Valley. Weekly, bi-weekly, and monthly cleaning schedules available. Book your recurring service today!"
       />
 
-      {/* Full-Window Hero Section */}
-      <section aria-label="Cozy, clean residential living room." className="hero relative min-h-screen flex items-center justify-center group overflow-hidden"
-        style={{
-          backgroundImage: `url(${residentialCardImg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          width: "100vw",
-          height: "100vh",
-        }}
-      >
+      {/* Full-Window Hero Section with image layer + overlay for contrast */}
+      <section aria-label="Cozy, clean residential living room." className="hero relative min-h-screen flex items-center justify-center group overflow-hidden">
+        {/* Media */}
+        <img
+          src={residentialCardImg}
+          alt=""
+          aria-hidden
+          className="absolute inset-0 h-full w-full object-cover brightness-[.85] object-center sm:object-[center_30%]"
+          style={{ width: "100vw", height: "100vh" }}
+        />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/35 to-transparent" />
+        {/* Text */}
         <div className="relative z-10 text-center max-w-4xl mx-auto px-6 py-4">
-          <h1 className="text-5xl lg:text-7xl font-bold text-white mb-4">
+          <h1 className="text-5xl lg:text-7xl font-bold text-white drop-shadow-sm mb-4">
             Residential Cleaning Services
           </h1>
-          <p className="text-xl lg:text-2xl text-white mb-8">
+          <p className="text-xl lg:text-2xl text-slate-100/95 leading-snug sm:leading-normal mb-8 max-w-[36ch] mx-auto">
             Regular cleaning services to keep your home spotless
           </p>
-          <button
+          <Button
             onClick={() => open("quote")}
-            className="btn-primary"
-            type="button"
             aria-label="Get a Quote"
+            variant="primary"
           >
             Get a Quote
-          </button>
+          </Button>
         </div>
       </section>
 
@@ -47,7 +50,7 @@ export default function Residential() {
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="card text-center">
+            <ContentCard className="text-center">
               <h3 className="text-xl font-bold text-text mb-4">Weekly</h3>
               <div className="text-3xl font-bold text-accent mb-2">$120</div>
               <div className="text-text font-medium mb-6">per cleaning</div>
@@ -71,16 +74,16 @@ export default function Residential() {
                   </span>
                 </li>
               </ul>
-              <button
+              <Button
                 onClick={() => open("booking")}
-                className="btn-primary w-full"
-                type="button"
+                variant="primary"
+                className="w-full"
                 aria-label="Choose Weekly Plan"
               >
                 Choose Plan
-              </button>
-            </div>
-            <div className="card bg-accent text-white relative">
+              </Button>
+            </ContentCard>
+            <ContentCard className="bg-accent text-white relative">
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-text text-white px-4 py-1 rounded-full text-sm font-medium">
                 Most Popular
               </div>
@@ -105,16 +108,16 @@ export default function Residential() {
                   <span className="text-sm">Dusting & organizing</span>
                 </li>
               </ul>
-              <button
+              <Button
                 onClick={() => open("booking")}
-                className="btn-primary w-full"
-                type="button"
+                variant="primary"
+                className="w-full"
                 aria-label="Choose Bi-Weekly Plan"
               >
                 Choose Plan
-              </button>
-            </div>
-            <div className="card text-center">
+              </Button>
+            </ContentCard>
+            <ContentCard className="text-center">
               <h3 className="text-xl font-bold text-text mb-4">Monthly</h3>
               <div className="text-3xl font-bold text-accent mb-2">$180</div>
               <div className="text-text font-medium mb-6">
@@ -140,15 +143,15 @@ export default function Residential() {
                   </span>
                 </li>
               </ul>
-              <button
+              <Button
                 onClick={() => open("booking")}
-                className="btn-primary w-full"
-                type="button"
+                variant="primary"
+                className="w-full"
                 aria-label="Choose Monthly Plan"
               >
                 Choose Plan
-              </button>
-            </div>
+              </Button>
+            </ContentCard>
           </div>
         </div>
       </section>

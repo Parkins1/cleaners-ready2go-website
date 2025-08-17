@@ -136,6 +136,33 @@ Marketing hub-and-spoke anchored by Home with clear paths to key service categor
 - API endpoints are validated via Zod, returning consistent JSON envelopes. Even with in-memory storage, the schema-driven approach (drizzle-orm + drizzle-zod) makes database integration straightforward (Neon-compatible).
 - TanStack Query centralizes data interactions, setting the stage for richer features (admin views, booking management, analytics) with minimal refactoring.
 
+## Service Cards: Central Catalog & Grid
+
+Use a single source of truth for service teaser cards and render them consistently across pages.
+
+- Files
+  - Catalog: `client/src/components/ServiceCard/catalog.tsx`   defines each card (id, title, blurb, href, img, icon).
+  - Grid: `client/src/components/ServiceCard/ServiceGrid.tsx`   renders a responsive grid from a list of catalog ids.
+  - Card: `client/src/components/ServiceCard/ServiceCard.tsx`   contrast-first overlay, constrained text width, strong focus/hover states.
+
+- In Pages
+  - Home: uses `<ServiceGrid ids={["residential","deep-cleaning","move-out","apartment-cleaning"]} />`.
+  - Location pages: `LocationPageTemplate` accepts `serviceCardIds` and will render the same grid automatically.
+    - Example in a location page’s `pageDetails`: `serviceCardIds: ['residential','deep-cleaning','move-out','apartment-cleaning'] as const`.
+
+- Add a New Service
+  1) Add an entry in `catalog.tsx` with a stable `id`, copy, link, image, and icon.
+  2) Use the new id in `ServiceGrid` or add it to a location page’s `serviceCardIds`.
+  3) If the service needs its own page, create it in `client/src/pages/`, register its route in `client/src/App.tsx`, and set the catalog `href` to that path.
+
+- Apartment Cleaning
+  - Page: `client/src/pages/ApartmentCleaning.tsx`
+  - Route: `/apartment-cleaning` (added in `client/src/App.tsx`)
+  - Catalog id: `apartment-cleaning`   used on Home and all location pages via `serviceCardIds`.
+
+- New Location Pages
+  - When adding a location page, pass `serviceCardIds` to `LocationPageTemplate` to render the standardized service grid with zero duplication.
+
 ## Future Roadmap
 - **Wire PostgreSQL via Neon**: The primary next step is to replace the in-memory `MemStorage` with a Drizzle ORM-based implementation that connects to a PostgreSQL database (e.g., Neon). This will involve:
     - Creating a `PgStorage` class that implements `IStorage` and uses Drizzle to interact with the database.
