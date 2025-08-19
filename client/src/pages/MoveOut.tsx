@@ -2,7 +2,6 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useModal } from "@/components/modal/ModalProvider";
-import HeroSection from "@/components/HeroSection/HeroSection";
 import ContentCard from "@/components/ContentCard/ContentCard";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import heroMove from "@assets/move-out-hero-image.jpeg";
@@ -13,9 +12,9 @@ import iconBaseboards from "@/assets/icon_baseboards.png";
 import iconBlinds from "@/assets/icon_blinds.png";
 import iconInsideOven from "@/assets/icon_inside_oven.png";
 import iconInsideFridge from "@/assets/icon_inside_fridge.png";
-import photoEntryHandleSanitizing from "@/assets/photo_entry_handle_sanitizing_1024x1792.png";
 import iconWindowTracks from "@/assets/icon_window_tracks.png";
 import { brand } from "@/config/brand";
+import { ShieldCheck, Leaf, Users, Sparkles } from "lucide-react";
 
 export default function MoveOut() {
   const { open } = useModal();
@@ -71,29 +70,6 @@ export default function MoveOut() {
     },
   ];
 
-  const packages = [
-    {
-      name: "Essentials",
-      highlights: "Kitchen + baths deep clean, baseboards, blinds, floors, high-touch points",
-      greatFor: "Smaller spaces in good condition",
-      note: "Starting at studio/1-bedroom; final price after scope",
-    },
-    {
-      name: "Deluxe",
-      highlights:
-        "Essentials + inside fridge/oven, window tracks (accessible), closet interiors",
-      greatFor: "Most standard move-outs",
-      note: "Starting at typical 2–3 bedroom homes",
-    },
-    {
-      name: "Restoration",
-      highlights:
-        "Deluxe + heavy buildup focus, hard-water/soap-scum treatment, extra time",
-      greatFor: "Long-term tenancies, tougher soils",
-      note: "Custom quote after photos/walk-through",
-    },
-  ];
-
   return (
     <>
       <title>Move-Out Cleaning in Spokane Valley, WA | Cleaners Ready 2 GO</title>
@@ -102,43 +78,48 @@ export default function MoveOut() {
         content="Keep your deposit. Pass inspection. Move-out cleaning in Spokane Valley, Spokane, and Liberty Lake—inspection-ready, checklist-driven cleaning."
       />
 
-      <HeroSection
-        image={heroMove}
-        darkOverlay
-        focal="center"
-        title={
-          <>
-            Move-Out Cleaning in Spokane Valley, WA
-            <span className="sr-only">
-              Professional cleaner finishing a sparkling, empty apartment kitchen in Spokane Valley
-            </span>
-          </>
-        }
-        subtitle={
-          <>
+      {/* HERO */}
+      <section
+        className="hero relative min-h-[70vh] flex items-center justify-center"
+        style={{
+          backgroundImage: `url(${heroMove})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+        aria-label="Move-Out Cleaning Hero"
+      >
+        <div className="absolute inset-0 bg-white/95 backdrop-blur-sm" />
+        <div className="relative text-center max-w-4xl mx-auto px-6 py-20">
+          <div className="mb-6">
+          </div>
+          <h1 className="text-4xl lg:text-6xl font-bold text-text mb-4">Move-Out Cleaning in Spokane Valley, WA</h1>
+          <p className="text-lg lg:text-xl text-text mb-8">
             Keep your deposit. Pass inspection. Move on. Licensed local pros delivering fast, inspection-ready results for your home.
-          </>
-        }
-        actions={
-          <>
-            <Button onClick={() => open("quote")} variant="primary" aria-label="Get a free move-out cleaning quote">
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              onClick={() => open("quote")}
+              variant="primary"
+            >
               Get My Free Quote
             </Button>
-            <a href="#includes" aria-label="Jump to what's included" className="inline-flex">
-              <Button variant="secondary">
-                See What’s Included <ArrowRight className="w-4 h-4 ml-2" />
+            <a href="#includes" aria-label="See What's Included" className="inline-flex items-center justify-center">
+              <Button
+                variant="primary"
+              >
+                See What’s Included <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </a>
-          </>
-        }
-      />
+          </div>
+        </div>
+      </section>
 
       <section className="py-12 bg-white">
         <div className="max-w-5xl mx-auto px-6 space-y-6">
-          <p>
+          <p className="text-lg text-text">
             Moving out shouldn’t mean spending your last night scrubbing oven racks. Cleaners Ready 2 GO delivers a modern, no-nonsense move-out cleaning that fits your timeline and protects your budget. We align with manager and landlord checklists so your home looks inspection-ready—baseboards to blinds, bathrooms to the inside of appliances.
           </p>
-          <p>
+          <p className="text-lg text-text">
             Our approach is built for real life in the Inland Northwest: winter grit, summer dust, pet hair, and everything in between. You’ll get a precise scope, on-time arrival, eco- and pet-safe products, and a final shine that makes your home feel brand new for the next resident (and your rental history). The result? Less stress, more deposit back, and a smoother hand-off so you can focus on your next place.
           </p>
         </div>
@@ -198,20 +179,6 @@ export default function MoveOut() {
                 <li>Final walkthrough to catch missed smudges or debris</li>
               </ul>
             </ContentCard>
-
-            <ContentCard>
-              <h3 className="font-semibold text-lg mb-2">High-Touch Areas</h3>
-              <ul className="list-disc list-inside space-y-2 text-sm">
-                <li>
-                  Sanitize high-touch points
-                  <img
-                    src={photoEntryHandleSanitizing}
-                    alt="Sanitizing door handle at entry"
-                    className="w-full h-auto mt-4 rounded-lg object-cover"
-                  />
-                </li>
-              </ul>
-            </ContentCard>
           </div>
 
           <div className="mt-6">
@@ -261,52 +228,59 @@ export default function MoveOut() {
         </div>
       </section>
 
-      <section className="py-12 bg-surface">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">Packages / Pricing Overview</h2>
-          <div className="overflow-x-auto">
-            <table className="min-w-full border text-left text-sm">
-              <thead className="bg-gray-100">
-                <tr>
-                  <th className="p-3 border">Package</th>
-                  <th className="p-3 border">Highlights</th>
-                  <th className="p-3 border">Great For</th>
-                </tr>
-              </thead>
-              <tbody>
-                {packages.map((p) => (
-                  <tr key={p.name} className="bg-white">
-                    <td className="p-3 border font-semibold">{p.name}</td>
-                    <td className="p-3 border">{p.highlights}</td>
-                    <td className="p-3 border">{p.greatFor}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="mt-4 text-sm text-text">Pricing guidance: final cost depends on size, condition, add-ons, and urgency. Minimum booking applies. Share photos for the most accurate estimate.</p>
-        </div>
-      </section>
-
       <section className="py-12 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">Why Choose Us</h2>
-          <ul className="grid md:grid-cols-2 gap-4 text-text">
-            <li>Locally owned and active across Spokane Valley, Spokane, and Liberty Lake</li>
-            <li>Licensed & insured; vetted, background-checked pros</li>
-            <li>Eco- & pet-safe products; HEPA filtration</li>
-            <li>Checklist-driven for inspection-ready results</li>
-            <li>On-time arrivals with live updates and photo documentation</li>
-            <li>Satisfaction-first policy (flag issues within 24 hours and we’ll make it right)</li>
-            <li>Clear scopes & no surprises on quotes and timelines</li>
-          </ul>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <ContentCard className="flex items-center gap-3 min-h-[44px] py-2">
+              <ShieldCheck className="text-teal" />
+              <span className="font-medium">Licensed & Insured</span>
+            </ContentCard>
+            <ContentCard className="flex items-center gap-3 min-h-[44px] py-2">
+              <Leaf className="text-teal" />
+              <span className="font-medium">Eco & Pet-Safe</span>
+            </ContentCard>
+            <ContentCard className="flex items-center gap-3 min-h-[44px] py-2">
+              <Users className="text-teal" />
+              <span className="font-medium">Vetted Local Pros</span>
+            </ContentCard>
+            <ContentCard className="flex items-center gap-3 min-h-[44px] py-2">
+              <Sparkles className="text-teal" />
+              <span className="font-medium">Satisfaction Guaranteed</span>
+            </ContentCard>
+          </div>
+          <p className="text-lg text-text max-w-3xl mx-auto text-center">
+            Choosing a cleaning service is about trust and reliability. Our Spokane house cleaners are fully insured, bonded,
+            and rigorously trained. We use eco-friendly, pet-safe products and back every visit with a satisfaction guarantee.
+            As a local business, we prioritize personalized care and exceptional results.
+          </p>
         </div>
       </section>
 
       <section className="py-12 bg-service-band">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-2">Service Area</h2>
-          <p>We serve Spokane Valley, Spokane, and Liberty Lake, including nearby neighborhoods and communities along I-90. If you’re just outside these areas, ask—we can often accommodate with a small travel fee.</p>
+          <p className="text-lg text-text max-w-3xl mx-auto">We serve Spokane Valley, Spokane, and Liberty Lake, including nearby neighborhoods and communities along I-90. If you’re just outside these areas, ask—we can often accommodate with a small travel fee.</p>
+          
+          {/* Exactly four location cards linking to the four location pages */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+            <ContentCard as="a" href="/locations/spokane" interactive className="text-center">
+              <h3 className="text-lg font-semibold">Spokane</h3>
+              <p className="text-sm text-text">Citywide coverage</p>
+            </ContentCard>
+            <ContentCard as="a" href="/locations/spokane-valley" interactive className="text-center">
+              <h3 className="text-lg font-semibold">Spokane Valley</h3>
+              <p className="text-sm text-text">From Opportunity to Veradale</p>
+            </ContentCard>
+            <ContentCard as="a" href="/locations/liberty-lake" interactive className="text-center">
+              <h3 className="text-lg font-semibold">Liberty Lake</h3>
+              <p className="text-sm text-text">Lakefront to town center</p>
+            </ContentCard>
+            <ContentCard as="a" href="/locations/greenacres" interactive className="text-center">
+              <h3 className="text-lg font-semibold">Greenacres</h3>
+              <p className="text-sm text-text">River-adjacent & neighborhoods</p>
+            </ContentCard>
+          </div>
         </div>
       </section>
 
