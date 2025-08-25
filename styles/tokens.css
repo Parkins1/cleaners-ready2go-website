@@ -1,0 +1,55 @@
+
+:root {
+  /* Brand palette (OKLCH values for Tailwind alpha support) */
+  --brand-gold: 0.76 0.12 89.8;
+  --brand-gold-light: 0.81 0.12 89.8;
+  --brand-gold-dark: 0.71 0.12 89.8;
+  --brand-black: 0.21 0.02 248.83;
+  --brand-gray: 0.57 0.01 214.34;
+  --brand-gray-light: 0.97 0.01 95.1;
+  --brand-white: 1.0 0.0 89.88;
+  --brand-teal: 180 25% 25%; /* HSL */
+
+  /* Legacy color variables still used in CSS/utilities */
+  --color-accent: oklch(0.76 0.12 89.8);
+  --color-accent-dark: oklch(0.70 0.12 89.8);
+  --color-text: oklch(0.21 0.02 248.83);
+  --color-surface: oklch(0.97 0.01 95.1);
+  --color-white: oklch(1.0 0.0 89.88);
+  --color-teal: #0E8177;
+
+  /* Spacing scale */
+  --spacing-xs: 0.25rem; /* 4px */
+  --spacing-sm: 0.5rem;  /* 8px */
+  --spacing-md: 1rem;    /* 16px */
+  --spacing-lg: 1.5rem;  /* 24px */
+  --spacing-xl: 2rem;    /* 32px */
+  --spacing-section: 5rem; /* 80px */
+
+  /* Radii */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-pill: 9999px;
+
+  /* ShadCN Colors */
+  --background: 0.97 0.01 95.1;
+  --foreground: 0.21 0.02 248.83;
+  --card: 1.0 0.0 89.88;
+  --card-foreground: 0.21 0.02 248.83;
+  --popover: 1.0 0.0 89.88;
+  --popover-foreground: 0.21 0.02 248.83;
+  --primary: 0.21 0.02 248.83;
+  --primary-foreground: 1.0 0.0 89.88;
+  --secondary: 0.76 0.12 89.8;
+  --secondary-foreground: 0.21 0.02 248.83;
+  --muted: 0.97 0.01 95.1;
+  --muted-foreground: 0.57 0.01 214.34;
+  --accent: 0.76 0.12 89.8;
+  --accent-foreground: 0.21 0.02 248.83;
+  --destructive: 0.57 0.01 214.34;
+  --destructive-foreground: 1.0 0.0 89.88;
+  --border: 0.57 0.01 214.34;
+  --input: 0.71 0.0 174.43;
+  --ring: 0.76 0.12 89.8;
+}

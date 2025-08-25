@@ -9,10 +9,10 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="mb-6">
-              <img 
-                src="/logo.png" 
-                alt="Cleaners Ready 2Go Logo" 
-                className="h-24 w-auto"
+              <img
+                src="/logo.png"
+                alt="Cleaners Ready 2Go Logo"
+                className="h-28 w-auto"
                 width="512"
                 height="256"
                 loading="lazy"
@@ -27,22 +27,22 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold text-accent mb-4">Contact Us</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Contact Us</h3>
             <div className="space-y-3">
               <div className="flex items-center">
-                <Phone className="w-4 h-4 text-accent mr-3" />
+                <Phone className="w-4 h-4 text-text mr-3" />
                 <a href="tel:+1234567890" className="footer-link">
                   (123) 456-7890
                 </a>
               </div>
               <div className="flex items-center">
-                <Mail className="w-4 h-4 text-accent mr-3" />
+                <Mail className="w-4 h-4 text-text mr-3" />
                 <a href="mailto:info@cleanersready2go.com" className="footer-link">
                   info@cleanersready2go.com
                 </a>
               </div>
               <div className="flex items-start">
-                <MapPin className="w-4 h-4 text-accent mr-3 mt-1" />
+                <MapPin className="w-4 h-4 text-text mr-3 mt-1" />
                 <div className="text-text">
                   Spokane Valley, Liberty Lake,<br />
                   and Greenacres, WA
@@ -53,7 +53,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold text-accent mb-4">Our Services</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Our Services</h3>
             <ul className="space-y-2">
               <li>
                 <a href="/residential" className="footer-link">
@@ -82,7 +82,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 pt-8 text-center">
           <p className="text-text">
-            © 2024 Cleaners Ready 2Go. All rights reserved. | Professional cleaning services in Washington State.
+            © 2025 Cleaners Ready 2Go. All rights reserved. | Professional cleaning services in Washington State.
           </p>
         </div>
       </div>

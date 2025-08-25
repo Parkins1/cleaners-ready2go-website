@@ -4,7 +4,7 @@ function Logo() {
       <img
         src="/logo.png"
         alt="Cleaners Ready 2Go - Professional Cleaning Services"
-        className="h-32 w-auto drop-shadow-lg"
+        className="h-20 w-auto drop-shadow-lg"
         width="512"
         height="256"
         loading="eager"

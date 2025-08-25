@@ -1,15 +1,45 @@
  // llm:spokane-valley-migrated
-import { Button } from "@/components/ui/button";
-import { useModal } from "@/components/modal/ModalProvider";
-import HeroSection from "@/components/HeroSection/HeroSection";
-import heroImage from "@assets/spokane-house-cleaning.jpeg"; // Using an existing image for now
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import ContentCard from "@/components/ContentCard/ContentCard";
-import { CheckCircle, ShieldCheck, Leaf, Users, Sparkles } from "lucide-react";
-import { ServicesSection, ProcessSection } from "@/components/Sections";
+ import React, { useCallback, useEffect, useState } from 'react';
+ import { Button } from "@/components/ui/button";
+ import { useModal } from "@/components/modal/ModalProvider";
+ import HeroSection from "@/components/HeroSection/HeroSection";
+ import heroImage from "@assets/spokane-house-cleaning.webp"; // Using an existing image for now
+ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+ import ContentCard from "@/components/ContentCard/ContentCard";
+ import { CheckCircle, ShieldCheck, Leaf, Users, Sparkles } from "lucide-react";
+ import { ServicesSection, ProcessSection } from "@/components/Sections";
+ import {
+   Carousel,
+   CarouselContent,
+   CarouselItem,
+   CarouselNext,
+   CarouselPrevious,
+   type CarouselApi,
+ } from "@/components/ui/carousel";
 
 export default function SpokaneValley() {
   const { open } = useModal();
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
+  const isActive = useCallback(
+    (index: number) => {
+      return current === index;
+    },
+    [current]
+  );
 
   const faqs = [
     { q: "Do I need to be home?", a: "No. Provide a code or key; we text arrival and departure photos for your records." },
@@ -47,6 +77,113 @@ export default function SpokaneValley() {
       {/* Standardized sections to match Home placement: Services then Process */}
       <ServicesSection />
       <ProcessSection />
+
+      {/* Spokane Valley Services Carousel */}
+      <section className="py-8 bg-white">
+        <div className="py-8">
+          <Carousel
+            opts={{
+              align: "center",
+              loop: true,
+            }}
+            setApi={setApi}
+            className="w-full max-w-6xl mx-auto"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              <CarouselItem
+                className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                data-active={isActive(0)}
+              >
+                <ContentCard className="p-8 md:p-10">
+                  <h3 className="text-xl md:text-2xl font-bold mb-4 text-brand-gold">
+                    Spokane Valley Cleaning, Matched To Your Routine
+                  </h3>
+                  <p className="text-base text-gray-600 leading-relaxed">
+                    Professional cleaning services tailored to Valley commuter schedules, pets, and yard-work dust. Your dedicated Team Lead maintains consistent standards.
+                  </p>
+                </ContentCard>
+              </CarouselItem>
+
+              <CarouselItem
+                className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                data-active={isActive(1)}
+              >
+                <ContentCard className="p-6 md:p-8">
+                  <h3 className="text-lg font-semibold mb-3 text-brand-gold">
+                    Effortless Upkeep
+                  </h3>
+                  <div className="space-y-2 text-sm">
+                    <p className="text-gray-600 mb-2">
+                      Weekly, bi-weekly, or monthly service to handle commuter schedules, pets, and yard-work dust.
+                    </p>
+                    <ul className="space-y-1 text-xs">
+                      <li><strong>Weekly:</strong> Best for busy families and allergy-prone homes</li>
+                      <li><strong>Bi-weekly:</strong> Our most requested mix of value and consistency</li>
+                      <li><strong>Monthly:</strong> A reliable reset that keeps freshness on track</li>
+                    </ul>
+                  </div>
+                </ContentCard>
+              </CarouselItem>
+
+              <CarouselItem
+                className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                data-active={isActive(2)}
+              >
+                <ContentCard className="p-6 md:p-8">
+                  <h3 className="text-lg font-semibold mb-3 text-brand-gold">
+                    The Valley Deep Reset
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-2">
+                    Ideal for seasonal deep cleans, pre-market prep, or post-event recovery. Includes kitchen/bath degrease with targeted descaling.
+                  </p>
+                  <ul className="text-xs space-y-1">
+                    <li>• Detailed baseboards, switches, and door frames</li>
+                    <li>• Interior glass and mirrors polished to clarity</li>
+                  </ul>
+                </ContentCard>
+              </CarouselItem>
+
+              <CarouselItem
+                className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                data-active={isActive(3)}
+              >
+                <ContentCard className="p-6 md:p-8">
+                  <h3 className="text-lg font-semibold mb-3 text-brand-gold">
+                    Checklist-Guided Move-Outs
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-2">
+                    Built around Spokane Valley landlord and broker standards. We focus on "show well" touches.
+                  </p>
+                  <ul className="text-xs space-y-1">
+                    <li>• Book 48–72 hours before your final walkthrough</li>
+                    <li>• Ensure utilities remain on for light and hot water</li>
+                  </ul>
+                </ContentCard>
+              </CarouselItem>
+
+              <CarouselItem
+                className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                data-active={isActive(4)}
+              >
+                <ContentCard className="p-6 md:p-8">
+                  <h3 className="text-lg font-semibold mb-3 text-brand-gold">
+                    STR Turnovers, On Schedule
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-2">
+                    We sync with Airbnb/VRBO to keep your place guest-ready between bookings off I‑90.
+                  </p>
+                  <ul className="text-xs space-y-1">
+                    <li>• Toiletry and supply inventory confirmation</li>
+                    <li>• Photo notes for damage or forgotten items</li>
+                  </ul>
+                </ContentCard>
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+      </section>
 
       <section className="py-8 bg-surface">
         <div className="max-w-5xl mx-auto px-6">
@@ -274,7 +411,7 @@ export default function SpokaneValley() {
       <section className="py-16 bg-surface">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-text mb-6 text-center">Frequently Asked Questions</h2>
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion type="single" collapsible className="w-full rounded-xl bg-gradient-to-b from-white/95 to-white/90 backdrop-blur-sm shadow-sm border border-white/20">
             {faqs.map((faq, i) => (
               <AccordionItem value={`item-${i}`} key={i}>
                 <AccordionTrigger>{faq.q}</AccordionTrigger>
@@ -284,6 +421,48 @@ export default function SpokaneValley() {
           </Accordion>
         </div>
       </section>
+      <style>{`
+        [data-active="true"] {
+          transform: scale(1.08);
+          opacity: 1;
+          z-index: 10;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(197, 155, 75, 0.3);
+          border: 2px solid rgba(197, 155, 75, 0.4);
+          background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(197, 155, 75, 0.02));
+          padding: 2rem 2.5rem;
+        }
+        [data-active="true"] .text-brand-gold {
+          font-weight: 800;
+          text-shadow: 0 1px 2px rgba(197, 155, 75, 0.3);
+        }
+        [data-active="true"] .text-gray-600 {
+          font-weight: 600;
+          color: #374151;
+        }
+        [data-active="false"] {
+          transform: scale(0.92);
+          opacity: 0.5;
+          z-index: 1;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+          padding: 1.5rem 2rem;
+        }
+        [data-active="false"] .text-brand-gold {
+          font-weight: 600;
+        }
+        [data-active="false"] .text-gray-600 {
+          font-weight: 400;
+          color: #6b7280;
+        }
+
+        @media (min-width: 768px) {
+          [data-active="true"] {
+            padding: 2.5rem 3rem;
+          }
+          [data-active="false"] {
+            padding: 2rem 2.5rem;
+          }
+        }
+      `}</style>
     </>
   );
 }

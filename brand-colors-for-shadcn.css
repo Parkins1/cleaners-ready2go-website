@@ -1,0 +1,11 @@
+:root {
+  /* Brand palette (HSL values for Tailwind alpha support) */
+  --brand-gold: 40 45% 53%;       /* #C29B4B */
+  --brand-gold-light: 40 45% 63%;
+  --brand-gold-dark: 40 45% 43%;
+  --brand-black: 0 0% 9%;         /* #181818 */
+  --brand-gray: 0 0% 38%;         /* #616161 */
+  --brand-gray-light: 0 0% 96%;   /* #F5F5F5 */
+  --brand-white: 0 0% 100%;       /* #FFFFFF */
+  --brand-teal: 180 25% 25%;
+}

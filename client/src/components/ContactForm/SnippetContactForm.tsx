@@ -104,8 +104,8 @@ export default function SnippetContactForm({ onSubmit, isLoading = false }: Snip
           <p>Your message has been sent successfully. We'll get back to you within 24 hours.</p>
         </div>
         <button
-          onClick={() => setIsSubmitted(false)}
           className="btn-primary"
+          onClick={() => setIsSubmitted(false)}
         >
           Send Another Message
         </button>
@@ -242,8 +242,8 @@ export default function SnippetContactForm({ onSubmit, isLoading = false }: Snip
 
           <button
             type="submit"
-            disabled={isLoading}
             className="btn-primary w-full flex items-center justify-center"
+            disabled={isLoading}
           >
             {isLoading ? (
               <>

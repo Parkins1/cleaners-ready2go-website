@@ -1,14 +1,15 @@
 // llm:content-card-migrated
 // llm:cta-migrated
-import { ArrowRight, ShieldCheck, Leaf, Users, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useModal } from "@/components/modal/ModalProvider";
-import heroImage from "@assets/spokane-house-cleaning.jpeg";
+import heroImage from "@assets/spokane-house-cleaning.webp";
 // images now centralized via ServiceCard catalog
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ServiceGrid from "@/components/ServiceCard/ServiceGrid";
 import ContentCard from "@/components/ContentCard/ContentCard";
 import HeroSection from "@/components/HeroSection/HeroSection";
+import { Icon } from "@/components/ui/icon";
+import { SEO } from "@/components/seo/SEO";
 
 export default function Home() {
   const { open } = useModal();
@@ -29,17 +30,15 @@ export default function Home() {
 
   return (
     <>
-      {/* SEO Meta Tags */}
-      <title>Top Residential House Cleaning Services in Spokane, WA</title>
-      <meta
-        name="description"
-        content="Professional, eco-friendly residential house cleaning services in Spokane, Spokane Valley, Liberty Lake, and surrounding areas. Insured, bonded, and satisfaction guaranteed."
+      <SEO
+        title="Top Residential House Cleaning Services in Spokane, WA"
+        description="Professional, eco-friendly residential house cleaning services in Spokane, Spokane Valley, Liberty Lake, and surrounding areas. Insured, bonded, and satisfaction guaranteed."
       />
 
       <HeroSection
         image={heroImage}
         title={
-          <h1 className="text-5xl lg:text-7xl font-bold text-text mb-6 leading-tight">
+          <h1 className="font-bold text-text mb-6 leading-tight inline-block">
             Expert House Cleaning in Spokane, WA
           </h1>
         }
@@ -64,7 +63,7 @@ export default function Home() {
                 variant="primary"
               >
                 See Services
-                <ArrowRight className="w-5 h-5 ml-2" />
+                <Icon name="ArrowRight" className="w-5 h-5 ml-2" />
               </Button>
             </a>
           </>
@@ -80,19 +79,19 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
             <ContentCard className="flex items-center gap-3 min-h-[44px] py-2">
-              <ShieldCheck className="text-teal" />
+              <Icon name="ShieldCheck" className="text-teal" />
               <span className="font-medium">Insured & Bonded</span>
             </ContentCard>
             <ContentCard className="flex items-center gap-3 min-h-[44px] py-2">
-              <Leaf className="text-teal" />
+              <Icon name="Leaf" className="text-teal" />
               <span className="font-medium">Eco & Pet-Safe</span>
             </ContentCard>
             <ContentCard className="flex items-center gap-3 min-h-[44px] py-2">
-              <Users className="text-teal" />
+              <Icon name="Users" className="text-teal" />
               <span className="font-medium">Vetted Local Pros</span>
             </ContentCard>
             <ContentCard className="flex items-center gap-3 min-h-[44px] py-2">
-              <Sparkles className="text-teal" />
+              <Icon name="Sparkles" className="text-teal" />
               <span className="font-medium">Satisfaction Guaranteed</span>
             </ContentCard>
           </div>
@@ -108,7 +107,7 @@ export default function Home() {
       <section id="services" className="py-20 bg-white scroll-mt-24" aria-labelledby="services-title">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 animate-slide-up">
-            <h2 id="services-title" className="text-4xl lg:text-5xl font-bold text-text mb-4">
+            <h2 id="services-title" className="font-bold text-text mb-4">
               Comprehensive Residential Cleaning Services
             </h2>
             <p className="text-xl text-text">Professional, reliable, and tailored to your home</p>
@@ -171,48 +170,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Team & Trust */}
-      <section id="team" className="py-16 bg-white scroll-mt-24" aria-labelledby="team-title">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-slide-up">
-          <h2 id="team-title" className="text-3xl lg:text-4xl font-bold text-text mb-4 text-center">Meet Our Trusted Spokane Cleaning Team</h2>
-          <p className="text-lg text-text max-w-3xl mx-auto text-center">
-            Our local team is fully vetted, background-checked, insured, bonded, and professionally trained to deliver consistent,
-            high-quality results built on trust, reliability, and excellent customer service.
-          </p>
-        </div>
-      </section>
-
       {/* Service Areas */}
-      <section id="areas" className="py-16 bg-surface scroll-mt-24" aria-labelledby="areas-title">
+      <section id="areas" className="py-16 bg-gradient-to-b from-surface via-surface/95 to-white scroll-mt-24" aria-labelledby="areas-title">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-slide-up">
           <h2 id="areas-title" className="text-3xl lg:text-4xl font-bold text-text mb-4 text-center">Our Spokane Area Service Locations</h2>
-          <p className="text-lg text-text max-w-3xl mx-auto text-center">
+          <p className="text-lg text-text max-w-3xl mx-auto text-center mb-8">
             Spokane, Spokane Valley, Liberty Lake, and Greenacres.
           </p>
 
           {/* Exactly four location cards linking to the four location pages */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-            <ContentCard as="a" href="/locations/spokane" interactive className="text-center">
-              <h3 className="text-lg font-semibold">Spokane</h3>
-              <p className="text-sm text-text">Citywide coverage</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+            <ContentCard as="a" href="/locations/spokane" interactive className="group text-center transition-all duration-300 hover:scale-[1.01] hover:shadow-lg bg-gray-50/80 border border-gray-200/60 rounded-xl p-6 hover:bg-white">
+              <h3 className="text-base font-bold mb-2 text-gray-900">Spokane</h3>
+              <p className="text-xs text-gray-600 max-w-[120px] mx-auto leading-relaxed">Citywide coverage</p>
             </ContentCard>
-            <ContentCard as="a" href="/locations/spokane-valley" interactive className="text-center">
-              <h3 className="text-lg font-semibold">Spokane Valley</h3>
-              <p className="text-sm text-text">From Opportunity to Veradale</p>
+            <ContentCard as="a" href="/locations/spokane-valley" interactive className="group text-center transition-all duration-300 hover:scale-[1.01] hover:shadow-lg bg-gray-50/80 border border-gray-200/60 rounded-xl p-6 hover:bg-white">
+              <h3 className="text-base font-bold mb-2 text-gray-900">Spokane Valley</h3>
+              <p className="text-xs text-gray-600 max-w-[120px] mx-auto leading-relaxed">From Opportunity to Veradale</p>
             </ContentCard>
-            <ContentCard as="a" href="/locations/liberty-lake" interactive className="text-center">
-              <h3 className="text-lg font-semibold">Liberty Lake</h3>
-              <p className="text-sm text-text">Lakefront to town center</p>
+            <ContentCard as="a" href="/locations/liberty-lake" interactive className="group text-center transition-all duration-300 hover:scale-[1.01] hover:shadow-lg bg-gray-50/80 border border-gray-200/60 rounded-xl p-6 hover:bg-white">
+              <h3 className="text-base font-bold mb-2 text-gray-900">Liberty Lake</h3>
+              <p className="text-xs text-gray-600 max-w-[120px] mx-auto leading-relaxed">Lakefront to town center</p>
             </ContentCard>
-            <ContentCard as="a" href="/locations/greenacres" interactive className="text-center">
-              <h3 className="text-lg font-semibold">Greenacres</h3>
-              <p className="text-sm text-text">River-adjacent & neighborhoods</p>
+            <ContentCard as="a" href="/locations/greenacres" interactive className="group text-center transition-all duration-300 hover:scale-[1.01] hover:shadow-lg bg-gray-50/80 border border-gray-200/60 rounded-xl p-6 hover:bg-white">
+              <h3 className="text-base font-bold mb-2 text-gray-900">Greenacres</h3>
+              <p className="text-xs text-gray-600 max-w-[120px] mx-auto leading-relaxed">River-adjacent & neighborhoods</p>
             </ContentCard>
           </div>
 
           <div className="mt-8 text-center">
-            <a href="/locations" className="inline-flex">
-              <Button variant="secondary" className="w-full sm:w-72 mx-auto">View full service area</Button>
+            <a href="/locations" className="inline-flex w-full sm:w-auto sm:justify-center">
+              <Button
+                variant="secondary"
+                className="w-full sm:w-72 mx-auto rounded-lg hover:bg-gray-100 transition-colors duration-200"
+              >
+                View full service area
+              </Button>
             </a>
           </div>
         </div>
@@ -237,12 +230,18 @@ export default function Home() {
       </section>
 
       {/* FAQs */}
-      <section id="faqs" className="py-16 bg-surface scroll-mt-24" aria-labelledby="faqs-title">
+      <section id="faqs" className="py-32 bg-surface scroll-mt-24" aria-labelledby="faqs-title">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 animate-slide-up">
-          <h2 id="faqs-title" className="text-3xl lg:text-4xl font-bold text-text mb-4 text-center">
-            Frequently Asked Questions (FAQs)
-          </h2>
-          <Accordion type="single" collapsible className="w-full rounded-xl bg-white shadow-sm divide-y divide-gray-200">
+          <div className="text-center mb-12">
+            <h2 id="faqs-title" className="text-3xl lg:text-4xl font-bold text-text mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-text max-w-2xl mx-auto">
+              Get answers to common questions about our cleaning services
+            </p>
+          </div>
+          <div className="rounded-2xl bg-gradient-to-b from-white/95 to-white/90 backdrop-blur-sm shadow-lg border border-white/20 p-2">
+            <Accordion type="single" collapsible className="w-full rounded-xl bg-white/50 shadow-sm divide-y divide-gray-100">
             {faqs.map((f, i) => (
               <AccordionItem key={i} value={`item-${i + 1}`}>
                 <AccordionTrigger className="text-left py-4 px-4">{f.q}</AccordionTrigger>
@@ -313,6 +312,7 @@ export default function Home() {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+          </div>
         </div>
       </section>
 

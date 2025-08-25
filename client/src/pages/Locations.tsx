@@ -17,40 +17,43 @@ export default function Locations() {
             <p className="text-xl text-text">Proudly serving the greater Spokane area</p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 mb-12">
-            <a href="/locations/spokane" className="card text-center block">
-              <div className="bg-accent p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <MapPin className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-text mb-3">Spokane</h3>
-              <p className="text-text mb-4">Our primary service area with full availability for all cleaning services.</p>
-              <div className="text-sm text-text">
-                <div className="font-medium">ZIP Codes:</div>
-                <div>99201, 99202, 99203, 99205, 99207, 99208, 99223, 99224</div>
-              </div>
-            </a>
-            <a href="/locations/spokane-valley" className="card text-center block">
-              <div className="bg-accent p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <MapPin className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-text mb-3">Spokane Valley</h3>
-              <p className="text-text mb-4">Comprehensive residential and move-out cleaning services available.</p>
-              <div className="text-sm text-text">
-                <div className="font-medium">ZIP Codes:</div>
-                <div>99206, 99212, 99216</div>
-              </div>
-            </a>
-            <a href="/locations/liberty-lake" className="card text-center block">
-              <div className="bg-accent p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <MapPin className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-text mb-3">Liberty Lake</h3>
-              <p className="text-text mb-4">Full-service cleaning solutions for residential and commercial properties.</p>
-              <div className="text-sm text-text">
-                <div className="font-medium">ZIP Codes:</div>
-                <div>99019</div>
-              </div>
-            </a>
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50/30 to-gray-100/20 rounded-2xl"></div>
+            <div className="relative grid lg:grid-cols-3 gap-8 mb-12 p-8 rounded-2xl">
+              <a href="/locations/spokane" className="card text-center block">
+                <div className="bg-accent p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <MapPin className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-text mb-3">Spokane</h3>
+                <p className="text-text mb-4">Our primary service area with full availability for all cleaning services.</p>
+                <div className="text-sm text-text">
+                  <div className="font-medium">ZIP Codes:</div>
+                  <div>99201, 99202, 99203, 99205, 99207, 99208, 99223, 99224</div>
+                </div>
+              </a>
+              <a href="/locations/spokane-valley" className="card text-center block">
+                <div className="bg-accent p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <MapPin className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-text mb-3">Spokane Valley</h3>
+                <p className="text-text mb-4">Comprehensive residential and move-out cleaning services available.</p>
+                <div className="text-sm text-text">
+                  <div className="font-medium">ZIP Codes:</div>
+                  <div>99206, 99212, 99216</div>
+                </div>
+              </a>
+              <a href="/locations/liberty-lake" className="card text-center block">
+                <div className="bg-accent p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <MapPin className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-text mb-3">Liberty Lake</h3>
+                <p className="text-text mb-4">Full-service cleaning solutions for residential and commercial properties.</p>
+                <div className="text-sm text-text">
+                  <div className="font-medium">ZIP Codes:</div>
+                  <div>99019</div>
+                </div>
+              </a>
+            </div>
           </div>
 
           {/* Service Radius Map Placeholder */}

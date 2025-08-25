@@ -3,7 +3,7 @@ import { CheckCircle, Home as HomeIcon, Building2, ArrowRight } from "lucide-rea
 import { useModal } from "@/components/modal/ModalProvider";
 import { Button } from "@/components/ui/button";
 import ContentCard from "@/components/ContentCard/ContentCard";
-import residentialCardImg from "@assets/residential-cleaning-card.jpeg";
+import residentialCardImg from "@assets/residential-cleaning-card.webp";
 
 export default function ApartmentCleaning() {
   const { open } = useModal();
@@ -201,4 +201,3 @@ export default function ApartmentCleaning() {
     </>
   );
 }
-

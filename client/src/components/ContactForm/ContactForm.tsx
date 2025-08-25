@@ -125,7 +125,8 @@ export default function ContactForm({ onSubmit, isLoading }: ContactFormProps) {
       <Button
         type="submit"
         disabled={isLoading}
-        className="btn-primary w-full"
+        variant="primary"
+        className="w-full"
       >
         {isLoading ? "Sending..." : "Send Message"}
       </Button>

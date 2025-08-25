@@ -1,7 +1,33 @@
+import React, { useCallback, useEffect, useState } from 'react';
 import LocationPageTemplate from './LocationPageTemplate';
 import ContentCard from '@/components/ContentCard/ContentCard';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from '@/components/ui/carousel';
 
 export default function Greenacres() {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+    setCurrent(api.selectedScrollSnap());
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
+  const isActive = useCallback(
+    (index: number) => current === index,
+    [current]
+  );
   const pageDetails = {
     locationName: 'Greenacres',
     heroImage: 'https://via.placeholder.com/1920x1080',
@@ -13,6 +39,110 @@ export default function Greenacres() {
       name: 'Amanda H.',
     },
     extraSections: [
+      {
+        title: 'Greenacres Services',
+        content: (
+          <div className="py-8">
+            <Carousel
+              opts={{
+                align: 'center',
+                loop: true,
+              }}
+              setApi={setApi}
+              className="w-full max-w-6xl mx-auto"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                <CarouselItem
+                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  data-active={isActive(0)}
+                >
+                  <ContentCard className="p-8 md:p-10">
+                    <h3 className="text-xl md:text-2xl font-bold mb-4 text-brand-gold">
+                      Greenacres Cleaning, Matched To Your Routine
+                    </h3>
+                    <p className="text-base text-gray-600 leading-relaxed">
+                      Professional cleaning services designed around Greenacres living near the river, trails, and parks. Our dedicated Team Lead ensures consistent, premium care.
+                    </p>
+                  </ContentCard>
+                </CarouselItem>
+                <CarouselItem
+                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  data-active={isActive(1)}
+                >
+                  <ContentCard className="p-6 md:p-8">
+                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
+                      Effortless Upkeep
+                    </h3>
+                    <div className="space-y-2 text-sm">
+                      <p className="text-gray-600 mb-2">
+                        Weekly, bi-weekly, or monthly plans to keep your home guest-ready for river days or trail outings.
+                      </p>
+                      <ul className="space-y-1 text-xs">
+                        <li><strong>Weekly:</strong> Best for active households and allergy concerns</li>
+                        <li><strong>Bi-weekly:</strong> A popular balance of consistency and value</li>
+                        <li><strong>Monthly:</strong> A reliable reset that restores freshness</li>
+                      </ul>
+                    </div>
+                  </ContentCard>
+                </CarouselItem>
+                <CarouselItem
+                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  data-active={isActive(2)}
+                >
+                  <ContentCard className="p-6 md:p-8">
+                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
+                      The Greenacres Deep Reset
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-2">
+                      Ideal for seasonal deep cleans or post-event recovery. Includes targeted descaling and detailed baseboards.
+                    </p>
+                    <ul className="text-xs space-y-1">
+                      <li>• Interior glass and mirrors polished to clarity</li>
+                      <li>• Baseboards, switches, and frames detailed</li>
+                    </ul>
+                  </ContentCard>
+                </CarouselItem>
+                <CarouselItem
+                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  data-active={isActive(3)}
+                >
+                  <ContentCard className="p-6 md:p-8">
+                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
+                      Checklist-Guided Move-Outs
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-2">
+                      We follow landlord checklists for stress-free move-outs, focusing on "show well" details.
+                    </p>
+                    <ul className="text-xs space-y-1">
+                      <li>• Book 48–72 hours before your final walkthrough</li>
+                      <li>• Keep utilities on for light and hot water</li>
+                    </ul>
+                  </ContentCard>
+                </CarouselItem>
+                <CarouselItem
+                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  data-active={isActive(4)}
+                >
+                  <ContentCard className="p-6 md:p-8">
+                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
+                      STR Turnovers, On Schedule
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-2">
+                      We sync with Airbnb/VRBO calendars for smooth guest changeovers near the Spokane River.
+                    </p>
+                    <ul className="text-xs space-y-1">
+                      <li>• Supply inventory confirmation</li>
+                      <li>• Photo notes for damage or left items</li>
+                    </ul>
+                  </ContentCard>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </div>
+        ),
+      },
       {
         title: 'A Fresh, Healthy Home Without Lifting a Finger',
         content: (
@@ -158,5 +288,51 @@ export default function Greenacres() {
     ],
   };
 
-  return <LocationPageTemplate {...pageDetails} />;
+    return (
+      <>
+        <style>{`
+          [data-active="true"] {
+            transform: scale(1.08);
+            opacity: 1;
+            z-index: 10;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(197, 155, 75, 0.3);
+            border: 2px solid rgba(197, 155, 75, 0.4);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(197, 155, 75, 0.02));
+            padding: 2rem 2.5rem;
+          }
+          [data-active="true"] .text-brand-gold {
+            font-weight: 800;
+            text-shadow: 0 1px 2px rgba(197, 155, 75, 0.3);
+          }
+          [data-active="true"] .text-gray-600 {
+            font-weight: 600;
+            color: #374151;
+          }
+          [data-active="false"] {
+            transform: scale(0.92);
+            opacity: 0.5;
+            z-index: 1;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 1.5rem 2rem;
+          }
+          [data-active="false"] .text-brand-gold {
+            font-weight: 600;
+          }
+          [data-active="false"] .text-gray-600 {
+            font-weight: 400;
+            color: #6b7280;
+          }
+  
+          @media (min-width: 768px) {
+            [data-active="true"] {
+              padding: 2.5rem 3rem;
+            }
+            [data-active="false"] {
+              padding: 2rem 2.5rem;
+            }
+          }
+        `}</style>
+        <LocationPageTemplate {...pageDetails} />
+      </>
+    );
 }

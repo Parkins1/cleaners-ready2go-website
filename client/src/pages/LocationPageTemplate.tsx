@@ -7,6 +7,7 @@ import { useModal } from '@/components/modal/ModalProvider';
 import React from 'react';
 import CalloutBanner from "@/components/CalloutBanner/CalloutBanner";
 import { ServicesSection, ProcessSection } from "@/components/Sections";
+import { SEO } from "@/components/seo/SEO";
 
 interface LocationPageTemplateProps {
   locationName: string;
@@ -41,10 +42,9 @@ export default function LocationPageTemplate({
 
   return (
     <>
-      <title>{`Cleaning Services in ${locationName} - Cleaners Ready 2Go`}</title>
-      <meta
-        name="description"
-        content={`Professional cleaning services in ${locationName}. We offer residential, commercial, and move-out cleaning. Book your service today!`}
+      <SEO
+        title={`Cleaning Services in ${locationName} - Cleaners Ready 2Go`}
+        description={`Professional cleaning services in ${locationName}. We offer residential, commercial, and move-out cleaning. Book your service today!`}
       />
 
       {/* Hero Section */}
@@ -59,7 +59,7 @@ export default function LocationPageTemplate({
       >
         <div className="absolute inset-0 bg-white/95 backdrop-blur-sm" />
         <div className="relative text-center max-w-4xl mx-auto px-6 py-20">
-          <h1 className="text-4xl lg:text-6xl font-bold text-text mb-4">{`House Cleaning in ${locationName}`}</h1>
+          <h1 className="font-bold text-text mb-4">{`House Cleaning in ${locationName}`}</h1>
           <p className="text-lg lg:text-xl text-text mb-8">
             Your trusted local cleaning experts.
           </p>

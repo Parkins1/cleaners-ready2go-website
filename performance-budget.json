@@ -1,0 +1,80 @@
+{
+  "name": "Cleaners Ready 2Go Performance Budget",
+  "version": "1.0.0",
+  "description": "Performance budget guidelines for the cleaning services website",
+  "budgets": [
+    {
+      "path": "/",
+      "resourceSizes": [
+        {
+          "resourceType": "document",
+          "budget": 20
+        },
+        {
+          "resourceType": "script",
+          "budget": 150
+        },
+        {
+          "resourceType": "stylesheet",
+          "budget": 50
+        },
+        {
+          "resourceType": "image",
+          "budget": 500
+        },
+        {
+          "resourceType": "font",
+          "budget": 100
+        }
+      ],
+      "resourceCounts": [
+        {
+          "resourceType": "total",
+          "budget": 50
+        }
+      ],
+      "timings": [
+        {
+          "metric": "firstContentfulPaint",
+          "budget": 1800,
+          "tolerance": 200
+        },
+        {
+          "metric": "largestContentfulPaint",
+          "budget": 2500,
+          "tolerance": 200
+        },
+        {
+          "metric": "firstInputDelay",
+          "budget": 100,
+          "tolerance": 50
+        },
+        {
+          "metric": "cumulativeLayoutShift",
+          "budget": 0.1,
+          "tolerance": 0.05
+        }
+      ]
+    }
+  ],
+  "coreWebVitals": {
+    "lcp": {
+      "good": 2500,
+      "needsImprovement": 4000
+    },
+    "fid": {
+      "good": 100,
+      "needsImprovement": 300
+    },
+    "cls": {
+      "good": 0.1,
+      "needsImprovement": 0.25
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "logLevel": "warn",
+    "trackThirdParty": true,
+    "reportTo": "console"
+  }
+}

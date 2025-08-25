@@ -1,18 +1,10 @@
 import React from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useModal } from "@/components/modal/ModalProvider";
 import ContentCard from "@/components/ContentCard/ContentCard";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
-import heroMove from "@assets/move-out-hero-image.jpeg";
-import iconKitchenDegrease from "@/assets/icon_kitchen_degrease.png";
-import iconCabinetInteriors from "@/assets/icon_cabinet_interiors.png";
-import iconBathroomDescaling from "@/assets/icon_bathroom_descaling.png";
-import iconBaseboards from "@/assets/icon_baseboards.png";
-import iconBlinds from "@/assets/icon_blinds.png";
-import iconInsideOven from "@/assets/icon_inside_oven.png";
-import iconInsideFridge from "@/assets/icon_inside_fridge.png";
-import iconWindowTracks from "@/assets/icon_window_tracks.png";
+import heroMove from "@assets/move-out-hero-image.webp";
 import { brand } from "@/config/brand";
 import { ShieldCheck, Leaf, Users, Sparkles } from "lucide-react";
 
@@ -125,7 +117,7 @@ export default function MoveOut() {
         </div>
       </section>
 
-      <section id="includes" className="py-12 bg-surface">
+      <section id="includes" className="py-12 bg-gradient-to-b from-surface to-white">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">
             What Our Move-Out Cleaning Includes
@@ -134,69 +126,73 @@ export default function MoveOut() {
           <div className="grid gap-6 md:grid-cols-2">
             <ContentCard>
               <h3 className="font-semibold text-lg mb-2">Kitchen</h3>
-              <ul className="list-disc list-inside space-y-2 text-sm">
+              <ul className="list-none space-y-2 text-sm">
                 <li>
-                  <img src={iconKitchenDegrease} alt="Degrease icon" aria-hidden className="w-5 h-5 mr-2 inline-block align-middle" />
-                  <img src={iconCabinetInteriors} alt="Cabinet interiors icon" aria-hidden className="w-5 h-5 mr-2 inline-block align-middle" />
+                  <CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />
+                  <CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />
                   Degrease backsplash and cabinet fronts; wipe interiors (emptied)
                 </li>
-                <li>Clean inside oven and stovetop; detail hood/extractor</li>
-                <li>Clean inside fridge/freezer (defrost if needed); sanitize shelves and drawers</li>
-                <li>Sanitize sinks, faucet, and garbage disposal; polish stainless</li>
-                <li>Wipe light switches, outlets, door handles; remove reachable cobwebs</li>
-                <li>Vacuum and mop floors with pH-balanced solution</li>
+                <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Clean inside oven and stovetop; detail hood/extractor</li>
+                <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Clean inside fridge/freezer (defrost if needed); sanitize shelves and drawers</li>
+                <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Sanitize sinks, faucet, and garbage disposal; polish stainless</li>
+                <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Wipe light switches, outlets, door handles; remove reachable cobwebs</li>
+                <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Vacuum and mop floors with pH-balanced solution</li>
               </ul>
             </ContentCard>
 
             <ContentCard>
               <h3 className="font-semibold text-lg mb-2">Bathrooms</h3>
-              <ul className="list-disc list-inside space-y-2 text-sm">
-                <li><img src={iconBathroomDescaling} alt="Descale and clean icon" aria-hidden className="w-5 h-5 mr-2 inline-block align-middle" />Descale and clean shower/tub; polish glass and fixtures</li>
-                <li>Disinfect toilets (inside/out), base, hinges, and surrounding floor area</li>
-                <li>Clean vanities, mirrors, lighting; wipe drawers and cabinets (emptied)</li>
-                <li>Spot-treat grout where feasible; remove soap scum and water spots</li>
-                <li>Sanitize high-touch points; vacuum and mop floors</li>
+              <ul className="list-none space-y-2 text-sm">
+                <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Descale and clean shower/tub; polish glass and fixtures</li>
+                <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Disinfect toilets (inside/out), base, hinges, and surrounding floor area</li>
+                <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Clean vanities, mirrors, lighting; wipe drawers and cabinets (emptied)</li>
+                <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Spot-treat grout where feasible; remove soap scum and water spots</li>
+                <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Sanitize high-touch points; vacuum and mop floors</li>
               </ul>
             </ContentCard>
 
             <ContentCard>
               <h3 className="font-semibold text-lg mb-2">Whole-Home</h3>
-              <ul className="list-disc list-inside space-y-2 text-sm">
-                <li>Dust ceiling fans, vents, and light fixtures within safe reach</li>
-                <li><img src={iconBaseboards} alt="Baseboards icon" aria-hidden className="w-5 h-5 mr-2 inline-block align-middle" />Wipe baseboards, trim, doors, and door frames</li>
-                <li><img src={iconBlinds} alt="Blinds icon" aria-hidden className="w-5 h-5 mr-2 inline-block align-middle" />Clean interior windows and sills (accessible), blinds, and tracks</li>
-                <li>Remove marks on walls where possible without damaging paint</li>
-                <li>Detail switch plates, outlet covers, and door hardware</li>
-                <li>HEPA-filter vacuum for all floors; edge clean along baseboards</li>
+              <ul className="list-none space-y-2 text-sm">
+                <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Dust ceiling fans, vents, and light fixtures within safe reach</li>
+                <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Wipe baseboards, trim, doors, and door frames</li>
+                <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Clean interior windows and sills (accessible), blinds, and tracks</li>
+                <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Remove marks on walls where possible without damaging paint</li>
+                <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Detail switch plates, outlet covers, and door hardware</li>
+                <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />HEPA-filter vacuum for all floors; edge clean along baseboards</li>
               </ul>
             </ContentCard>
 
             <ContentCard>
               <h3 className="font-semibold text-lg mb-2">Bedrooms & Living Areas</h3>
-              <ul className="list-disc list-inside space-y-2 text-sm">
-                <li>Dust ledges, shelves, and closet interiors (emptied)</li>
-                <li>Wipe closet rods and tracks; vacuum closet floors</li>
-                <li>Final walkthrough to catch missed smudges or debris</li>
+              <ul className="list-none space-y-2 text-sm">
+                <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Dust ledges, shelves, and closet interiors (emptied)</li>
+                <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Wipe closet rods and tracks; vacuum closet floors</li>
+                <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Final walkthrough to catch missed smudges or debris</li>
               </ul>
             </ContentCard>
           </div>
 
           <div className="mt-6">
-            <ContentCard>
-              <h3 className="font-semibold text-lg mb-2">Optional Add-Ons (by request)</h3>
-              <ul className="list-disc list-inside space-y-2 text-sm">
-                <li><img src={iconInsideOven} alt="Inside oven icon" aria-hidden className="w-5 h-5 mr-2 inline-block align-middle" />Inside cabinet degunking (sticky residue treatment)</li>
-                <li><img src={iconInsideFridge} alt="Inside appliance drum icon" aria-hidden className="w-5 h-5 mr-2 inline-block align-middle" />Inside dishwasher / washer / dryer drum wipe</li>
-                <li>Balcony/patio sweep and glass clean (accessible)</li>
-                <li><img src={iconWindowTracks} alt="Window tracks icon" aria-hidden className="w-5 h-5 mr-2 inline-block align-middle" />Inside window track deep-detail</li>
-                <li>Spot wall wash or paint touch-ups (light; case-by-case)</li>
-                <li>Carpet shampoo / steam (via partner; schedule-dependent)</li>
-                <li>Urgent / same-day upgrade (capacity-dependent)</li>
-              </ul>
-              <p className="mt-3 text-sm text-muted-foreground">
-                Note: We don’t remove large junk or furniture. For apartment cleanout (trash-out) services, we can refer a trusted partner.
-              </p>
-            </ContentCard>
+            <Accordion type="single" collapsible className="w-full rounded-xl bg-gradient-to-b from-white/95 to-white/90 backdrop-blur-sm shadow-sm border border-white/20">
+              <AccordionItem value="optional-addons">
+                <AccordionTrigger className="text-left font-semibold text-lg">Optional Add-Ons (by request)</AccordionTrigger>
+                <AccordionContent>
+                  <ul className="list-none space-y-2 text-sm">
+                    <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Inside cabinet degunking (sticky residue treatment)</li>
+                    <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Inside dishwasher / washer / dryer drum wipe</li>
+                    <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Balcony/patio sweep and glass clean (accessible)</li>
+                    <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Inside window track deep-detail</li>
+                    <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Spot wall wash or paint touch-ups (light; case-by-case)</li>
+                    <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Carpet shampoo / steam (via partner; schedule-dependent)</li>
+                    <li><CheckCircle className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Urgent / same-day upgrade (capacity-dependent)</li>
+                  </ul>
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    Note: We don’t remove large junk or furniture. For apartment cleanout (trash-out) services, we can refer a trusted partner.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>
@@ -305,7 +301,7 @@ export default function MoveOut() {
       <section className="py-12 bg-surface">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-3xl lg:text-4xl font-bold text-text text-center mb-6">FAQ</h2>
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion type="single" collapsible className="w-full rounded-xl bg-gradient-to-b from-white/95 to-white/90 backdrop-blur-sm shadow-sm border border-white/20">
             {faqs.map((f, i) => (
               <AccordionItem key={i} value={`faq-${i + 1}`}>
                 <AccordionTrigger className="text-left">{f.q}</AccordionTrigger>
@@ -316,15 +312,6 @@ export default function MoveOut() {
         </div>
       </section>
 
-      <section className="py-12 bg-white">
-        <div className="max-w-5xl mx-auto px-6 text-sm text-gray-700 space-y-1">
-          <p><strong>Cleaners Ready 2 GO</strong></p>
-          <p>{brand.address.street}, {brand.address.city}, {brand.address.state} {brand.address.zip}</p>
-          <p>Phone: <a className="underline" href={`tel:${brand.phone}`}>{brand.phone}</a> · Email: <a className="underline" href={`mailto:${brand.email}`}>{brand.email}</a></p>
-          <p>Hours: {brand.hours}</p>
-          <p>© 2025 Cleaners Ready 2 GO. All rights reserved.</p>
-        </div>
-      </section>
     </>
   );
 }

@@ -114,13 +114,13 @@ export default function BookingModal({ onClose }: BookingModalProps) {
               className="focus:ring-accent focus:border-transparent w-full h-11"
             />
           </div>
-          <Button
+          <button
             type="submit"
-            disabled={bookingMutation.isPending}
             className="btn-primary w-full"
+            disabled={bookingMutation.isPending}
           >
             {bookingMutation.isPending ? "Scheduling..." : "Schedule Cleaning"}
-          </Button>
+          </button>
         </form>
       </div>
     </div>

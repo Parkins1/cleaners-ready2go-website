@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import LocationPageTemplate from "./LocationPageTemplate";
-import heroLiberty from "@assets/spokane-house-cleaning.jpeg";
+import heroLiberty from "@assets/spokane-house-cleaning.webp";
+import ContentCard from "@/components/ContentCard/ContentCard";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 
 /**
  * Liberty Lake location page
@@ -10,6 +19,28 @@ import heroLiberty from "@assets/spokane-house-cleaning.jpeg";
  * - Adds Liberty Lake specific copy and extra sections without duplicating standard sections
  */
 export default function LibertyLake() {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
+  const isActive = useCallback(
+    (index: number) => {
+      return current === index;
+    },
+    [current]
+  );
+
   const pageDetails = {
     locationName: "Liberty Lake",
     heroImage: heroLiberty,
@@ -41,6 +72,116 @@ export default function LibertyLake() {
     },
     // Liberty Lake specific long-form sections (doesn't duplicate ProcessSection or ServicesSection)
     extraSections: [
+      {
+        title: "Liberty Lake Services",
+        content: (
+          <div className="py-8">
+            <Carousel
+              opts={{
+                align: "center",
+                loop: true,
+              }}
+              setApi={setApi}
+              className="w-full max-w-6xl mx-auto"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                <CarouselItem
+                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  data-active={isActive(0)}
+                >
+                  <ContentCard className="p-8 md:p-10">
+                    <h3 className="text-xl md:text-2xl font-bold mb-4 text-brand-gold">
+                      Liberty Lake Home Care, Tuned To Your Weekends
+                    </h3>
+                    <p className="text-base text-gray-600 leading-relaxed">
+                      Professional cleaning services designed around your Liberty Lake lifestyle. From lake days to weekend gatherings, we keep your home ready for the moments that matter.
+                    </p>
+                  </ContentCard>
+                </CarouselItem>
+
+                <CarouselItem
+                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  data-active={isActive(1)}
+                >
+                  <ContentCard className="p-6 md:p-8">
+                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
+                      Keep-It-Clean Routine
+                    </h3>
+                    <div className="space-y-2 text-sm">
+                      <p className="text-gray-600 mb-2">
+                        Opt for weekly, bi-weekly, or monthly visits to stay guest-ready for lake days and impromptu gatherings.
+                      </p>
+                      <ul className="space-y-1 text-xs">
+                        <li><strong>Weekly:</strong> Perfect for active, gear-heavy homes and pets</li>
+                        <li><strong>Bi-weekly:</strong> Our most chosen balance of polish and price</li>
+                        <li><strong>Monthly:</strong> A thorough refresh that restores that just-cleaned feel</li>
+                      </ul>
+                    </div>
+                  </ContentCard>
+                </CarouselItem>
+
+                <CarouselItem
+                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  data-active={isActive(2)}
+                >
+                  <ContentCard className="p-6 md:p-8">
+                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
+                      The Liberty Lake Refresh
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-2">
+                      Great before summer season or after a busy holiday stretch. Includes hand-wiping cabinet fronts, detailing door tracks, washing interior windows, degreasing range hoods, and spot-treating fixtures.
+                    </p>
+                    <ul className="text-xs space-y-1">
+                      <li>• Focused kitchen/bath degrease and scale removal</li>
+                      <li>• Detailed baseboards, switch plates, and door frames</li>
+                      <li>• Streak-free interior glass and mirrors</li>
+                    </ul>
+                  </ContentCard>
+                </CarouselItem>
+
+                <CarouselItem
+                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  data-active={isActive(3)}
+                >
+                  <ContentCard className="p-6 md:p-8">
+                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
+                      Turnovers That Pass Muster
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-2">
+                      We align with Liberty Lake landlord and agent expectations, emphasizing show-ready details.
+                    </p>
+                    <ul className="text-xs space-y-1">
+                      <li>• Schedule 48–72 hours before the final walkthrough</li>
+                      <li>• Leave utilities on for full lighting and warm water</li>
+                      <li>• Cabinet/drawer interiors and oven/fridge on request</li>
+                    </ul>
+                  </ContentCard>
+                </CarouselItem>
+
+                <CarouselItem
+                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  data-active={isActive(4)}
+                >
+                  <ContentCard className="p-6 md:p-8">
+                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
+                      Vacation Rental Turnarounds
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-2">
+                      We integrate with Airbnb/VRBO for predictable changeovers between lake weekends. Fresh linens, amenity restock, and timestamped photos keep your ratings strong.
+                    </p>
+                    <ul className="text-xs space-y-1">
+                      <li>• Supply and toiletry inventory tracking</li>
+                      <li>• Immediate photo-noted damage or left items</li>
+                    </ul>
+                  </ContentCard>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </div>
+        ),
+      },
       {
         title: "Liberty Lake's Premier House Cleaning Service",
         content: (
@@ -157,6 +298,51 @@ export default function LibertyLake() {
       },
     ],
   };
+  return (
+    <>
+      <style>{`
+        [data-active="true"] {
+          transform: scale(1.08);
+          opacity: 1;
+          z-index: 10;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(197, 155, 75, 0.3);
+          border: 2px solid rgba(197, 155, 75, 0.4);
+          background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(197, 155, 75, 0.02));
+          padding: 2rem 2.5rem;
+        }
+        [data-active="true"] .text-brand-gold {
+          font-weight: 800;
+          text-shadow: 0 1px 2px rgba(197, 155, 75, 0.3);
+        }
+        [data-active="true"] .text-gray-600 {
+          font-weight: 600;
+          color: #374151;
+        }
+        [data-active="false"] {
+          transform: scale(0.92);
+          opacity: 0.5;
+          z-index: 1;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+          padding: 1.5rem 2rem;
+        }
+        [data-active="false"] .text-brand-gold {
+          font-weight: 600;
+        }
+        [data-active="false"] .text-gray-600 {
+          font-weight: 400;
+          color: #6b7280;
+        }
 
-  return <LocationPageTemplate {...pageDetails} />;
+        @media (min-width: 768px) {
+          [data-active="true"] {
+            padding: 2.5rem 3rem;
+          }
+          [data-active="false"] {
+            padding: 2rem 2.5rem;
+          }
+        }
+      `}</style>
+      <LocationPageTemplate {...pageDetails} />
+    </>
+  );
 }

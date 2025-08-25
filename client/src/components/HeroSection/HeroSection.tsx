@@ -1,6 +1,7 @@
 // llm:hero-section-migrated
 import React from 'react';
 import { cn } from '@/lib/utils';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 
 interface HeroSectionProps {
   image: string;
@@ -35,15 +36,18 @@ export default function HeroSection({
       style={{ minHeight }}
       aria-label="Hero Section"
     >
-      <img
+      <OptimizedImage
         src={image}
         alt=""
-        aria-hidden
         className="absolute inset-0 h-full w-full object-cover"
         style={{
           objectPosition: focal,
           filter: `brightness(${brightness})`,
         }}
+        priority={true}
+        lazy={false}
+        sizes="100vw"
+        placeholder="blur"
       />
       <div className={cn('absolute inset-0', overlayClass)} />
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6 py-20">

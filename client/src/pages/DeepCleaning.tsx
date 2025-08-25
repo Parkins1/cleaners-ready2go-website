@@ -5,7 +5,7 @@
 import { ArrowRight, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useModal } from "@/components/modal/ModalProvider";
-import heroDeep from "@assets/move-out-hero-image.jpeg";
+import heroDeep from "@assets/move-out-hero-image.webp";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ContentCard from "@/components/ContentCard/ContentCard";
 import CalloutBanner from "@/components/CalloutBanner/CalloutBanner";
@@ -147,7 +147,7 @@ export default function DeepCleaning() {
       <section id="includes" className="py-16 bg-surface">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">What Our Spokane Deep Clean Includes</h2>
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion type="single" collapsible className="w-full rounded-xl bg-gradient-to-b from-white/95 to-white/90 backdrop-blur-sm shadow-sm border border-white/20">
             <AccordionItem value="kitchen-revival">
               <AccordionTrigger className="text-left"><strong>Kitchen revival</strong></AccordionTrigger>
               <AccordionContent>degrease backsplashes, scrub stovetops, clean inside ovens, microwaves, and refrigerators, sanitize sinks & faucets.</AccordionContent>
@@ -209,7 +209,6 @@ export default function DeepCleaning() {
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">Why Spokane Homeowners Trust Cleaners Ready 2 GO</h2>
           <ul className="grid md:grid-cols-2 gap-4 text-text">
-            <li className="border-l-4 border-[var(--color-accent)] bg-[rgba(200,164,74,0.06)] rounded-sm pl-4 py-2"><strong className="text-accent">True locals</strong> – We’ve served Spokane County for 15+ years; we know the hard-water quirks and seasonal allergy spikes.</li>
             <li className="border-l-4 border-[var(--color-accent)] bg-[rgba(200,164,74,0.06)] rounded-sm pl-4 py-2"><strong className="text-accent">Licensed, bonded & insured</strong> – Peace of mind while we’re on your property.</li>
             <li className="border-l-4 border-[var(--color-accent)] bg-[rgba(200,164,74,0.06)] rounded-sm pl-4 py-2"><strong className="text-accent">Green cleaning, healthier air</strong> – Kid-safe, pet-safe solutions and HEPA filtration reduce indoor allergens by up to 75%.</li>
             <li className="border-l-4 border-[var(--color-accent)] bg-[rgba(200,164,74,0.06)] rounded-sm pl-4 py-2"><strong className="text-accent">Transparent pricing</strong> – Flat-rate quotes and digital invoices no surprises.</li>
@@ -291,47 +290,7 @@ export default function DeepCleaning() {
         </div>
       </section>
 
-
-
-
-      {/* BOOKING */}
-      <section className="py-16 bg-surface">
-        <div className="max-w-5xl mx-auto px-6 text-center space-y-4">
-          <h2 className="text-3xl lg:text-4xl font-bold text-text">Book Your Spokane Deep Clean in 60 Seconds</h2>
-          <p>Use our streamlined booking form to choose your date, package, and any add-ons (carpet shampoo, inside windows, oven detailing). You’ll receive instant confirmation plus SMS reminders. Need help? Our live Spokane-based support answers calls in under 25 seconds.</p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
-            <Button onClick={() => open("quote")} variant="primary">Get My Free Quote</Button>
-            <a href={`tel:${brand.phone}`} aria-label={`Call ${brand.phone}`} className="inline-flex contact-link">
-              <Button variant="secondary">{brand.phone}</Button>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <CalloutBanner
-        title="Ready for a Dust-Free, Healthier Home?"
-        variant="default"
-        className="bg-process-radial bg-white"
-        actions={
-          <>
-            <Button
-              onClick={() => open("quote")}
-              variant="primary"
-            >
-              Schedule My Deep Clean
-            </Button>
-            <a href={`tel:${brand.phone}`} aria-label={`Call ${brand.phone}`} className="inline-flex contact-link">
-              <Button
-                variant="primary"
-              >
-                {brand.phone}
-              </Button>
-            </a>
-          </>
-        }
-      />
-
-
+      
       {/* JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 

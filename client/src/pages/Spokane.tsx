@@ -1,8 +1,39 @@
+import React, { useCallback, useEffect, useState } from 'react';
 import LocationPageTemplate from './LocationPageTemplate';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import ContentCard from '@/components/ContentCard/ContentCard';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from '@/components/ui/carousel';
 
 export default function Spokane() {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
+  const isActive = useCallback(
+    (index: number) => {
+      return current === index;
+    },
+    [current]
+  );
+
   const pageDetails = {
     locationName: 'Spokane',
     heroImage: 'https://via.placeholder.com/1920x1080',
@@ -22,55 +53,131 @@ export default function Spokane() {
         description: 'A thorough cleaning to ensure you get your deposit back and leave your old space spotless.',
       },
     ],
-    serviceCardIds: ['residential','deep-cleaning','move-out','apartment-cleaning'] as const,
+    serviceCardIds: ['residential','deep-cleaning','move-out','apartment-cleaning'],
     testimonial: {
       quote: 'Cleaners Ready 2Go is the best cleaning service in Spokane! They are always professional and do an amazing job.',
       name: 'John D.',
     },
     extraSections: [
       {
+        title: 'Spokane Services',
+        content: (
+          <div className="py-8">
+            <Carousel
+              opts={{
+                align: "center",
+                loop: true,
+              }}
+              setApi={setApi}
+              className="w-full max-w-6xl mx-auto"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                <CarouselItem
+                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  data-active={isActive(0)}
+                >
+                  <ContentCard className="p-8 md:p-10">
+                    <h3 className="text-xl md:text-2xl font-bold mb-4 text-brand-gold">
+                      Cleaning Plans Built For Spokane Homes
+                    </h3>
+                    <p className="text-base text-gray-600 leading-relaxed">
+                      Professional cleaning services designed for Spokane's unique climate and lifestyle. From pollen season to wildfire dust, we keep your home fresh year-round.
+                    </p>
+                  </ContentCard>
+                </CarouselItem>
+
+                <CarouselItem
+                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  data-active={isActive(1)}
+                >
+                  <ContentCard className="p-6 md:p-8">
+                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
+                      Ongoing Upkeep
+                    </h3>
+                    <div className="space-y-2 text-sm">
+                      <p className="text-gray-600 mb-2">
+                        Choose weekly, bi-weekly, or monthly service to stay ahead of pollen spikes, wildfire dust, and surprise drop-ins.
+                      </p>
+                      <ul className="space-y-1 text-xs">
+                        <li><strong>Weekly:</strong> Great for busy households, pets, and allergy season</li>
+                        <li><strong>Bi-weekly:</strong> Spokane's sweet spot for value and consistency</li>
+                        <li><strong>Monthly:</strong> A reliable reset that keeps things feeling new</li>
+                      </ul>
+                    </div>
+                  </ContentCard>
+                </CarouselItem>
+
+                <CarouselItem
+                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  data-active={isActive(2)}
+                >
+                  <ContentCard className="p-6 md:p-8">
+                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
+                      The Spokane Reset Clean
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-2">
+                      Ideal for seasonal transitions or post-holiday clutter. We hand-wipe cabinet fronts, clear door tracks, wash interior glass, degrease the range hood, and spot-treat fixtures.
+                    </p>
+                    <ul className="text-xs space-y-1">
+                      <li>• Kitchen/bath degrease and mineral buildup removal</li>
+                      <li>• Baseboards, switches, and frames detailed</li>
+                      <li>• Interior glass and mirrors polished clear</li>
+                    </ul>
+                  </ContentCard>
+                </CarouselItem>
+
+                <CarouselItem
+                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  data-active={isActive(3)}
+                >
+                  <ContentCard className="p-6 md:p-8">
+                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
+                      Move-Out & Listing Turnovers
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-2">
+                      Built around checklists used by Spokane landlords and Realtors. We zero in on "show well" details inside cabinets/drawers, oven/fridge by request, and dust-catching edges.
+                    </p>
+                    <ul className="text-xs space-y-1">
+                      <li>• Book 48–72 hours before your final walkthrough</li>
+                      <li>• Keep power and water on for light and hot water</li>
+                    </ul>
+                  </ContentCard>
+                </CarouselItem>
+
+                <CarouselItem
+                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  data-active={isActive(4)}
+                >
+                  <ContentCard className="p-6 md:p-8">
+                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
+                      Short-Term Rental Ready
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-2">
+                      Synced with Airbnb/VRBO calendars for smooth turnovers. We replace linens, restock essentials, and send timestamped photos so you have stay-by-stay documentation.
+                    </p>
+                    <ul className="text-xs space-y-1">
+                      <li>• Inventory checks for toiletries/supplies</li>
+                      <li>• Notes and photos of damage or left items</li>
+                    </ul>
+                  </ContentCard>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </div>
+        ),
+      },
+      {
         title: 'Proudly Serving Spokane & Nearby Communities',
         content: (
           <>
             <p>
-              For over <strong>[X] years</strong>, <strong>Cleaners Ready 2Go</strong> has been a trusted presence in Spokane,
-              serving families and homeowners with dependable, top‑quality cleaning services. We are deeply familiar with the
-              unique needs of homes in the Inland Northwest   from the dust and pollen brought on by our dry summers to the mud and
-              slush that come with snowy winters.
+              Cleaners Ready 2Go is  a trusted presence in Spokane, serving families and homeowners with dependable, top‑quality cleaning services. We are deeply familiar with the unique needs of homes in the Inland Northwest from the dust and pollen brought on by our dry summers to the mud and slush that come with snowy winters.
             </p>
             <p>
-              Our service area covers the greater Spokane region, including Spokane Valley, Liberty Lake, Airway Heights, Cheney,
-              and North Idaho communities such as Post Falls and Coeur d’Alene.
+              Our service area covers the greater Spokane region, including Spokane Valley, Liberty Lake, Airway Heights, Cheney, and North Idaho communities such as Post Falls and Coeur d’Alene.
             </p>
-          </>
-        ),
-      },
-      {
-        title: 'House Cleaning Services We Offer in Spokane',
-        content: (
-          <>
-            <ul>
-              <li><strong>Recurring Cleaning</strong> – weekly, bi‑weekly, or monthly visits.</li>
-              <li><strong>Deep Cleaning</strong> – thorough cleaning of baseboards, behind appliances, inside cabinets, ceiling fans, etc.</li>
-              <li><strong>Move‑In / Move‑Out Cleaning</strong> – perfect for rentals and new homeowners.</li>
-              <li><strong>Apartment & Condo Cleaning</strong> – tailored for high‑rise or low‑rise units.</li>
-              <li><strong>Specialty Services</strong> – office cleaning, post‑construction cleaning, green cleaning.</li>
-            </ul>
-          </>
-        ),
-      },
-      {
-        title: 'Why Spokane Homeowners Choose Us',
-        content: (
-          <>
-            <ul>
-              <li>Bonded and Insured Service</li>
-              <li>Satisfaction Guarantee</li>
-              <li>Professionally Trained and Background‑Checked Staff</li>
-              <li>Eco‑Friendly, Safe Products</li>
-              <li>All Equipment and Supplies Provided</li>
-              <li>Locally Owned and Operated</li>
-            </ul>
           </>
         ),
       },
@@ -96,56 +203,7 @@ export default function Spokane() {
         ),
       },
       {
-        title: 'What Spokane Residents Say',
-        content: (
-          <>
-            <ContentCard as="blockquote">
-              “After trying three other companies, Cleaners Ready 2Go is the best. They’re detail‑oriented, friendly, and always on time.” – Amanda
-              P., Spokane Valley
-            </ContentCard>
-            <ContentCard as="blockquote">
-              “We hired them for a deep clean before putting our South Hill home on the market. The buyers commented on how fresh it felt, and we sold within a week.” –
-              Daniel M.
-            </ContentCard>
-            <ContentCard as="blockquote">
-              “I love their green cleaning option. My allergies have improved and the house smells amazing without harsh chemicals.” – Lisa K., Liberty Lake
-            </ContentCard>
-          </>
-        ),
-      },
-      {
-        title: 'Meet Our Spokane Cleaning Team',
-        content: (
-          <>
-            <p>
-              Our team members have years of experience, are background‑checked, and love serving the Spokane community.
-            </p>
-          </>
-        ),
-      },
-      {
-        title: 'FAQ',
-        content: (
-          <>
-            <ul>
-              <li>
-                <strong>What’s included in your cleaning service?</strong> Dusting, vacuuming, mopping, bathroom and kitchen cleaning, and optional add‑ons.
-              </li>
-              <li>
-                <strong>Are you insured?</strong> Yes, we are fully insured and bonded.
-              </li>
-              <li>
-                <strong>Do I need to provide cleaning supplies?</strong> No, we bring everything needed.
-              </li>
-              <li>
-                <strong>What about pets?</strong> We’re pet‑friendly – just let us know any special instructions.
-              </li>
-            </ul>
-          </>
-        ),
-      },
-      {
-        title: 'Service Details for Spokane Homeowners',
+        title: 'Why your neighbors choose us for spokane house cleaning',
         content: (
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="local-expertise">
@@ -194,6 +252,47 @@ export default function Spokane() {
         ),
       },
       {
+        title: 'What Spokane Residents Say',
+        content: (
+          <>
+            <ContentCard as="blockquote">
+              “After trying three other companies, Cleaners Ready 2Go is the best. They’re detail‑oriented, friendly, and always on time.” – Amanda
+              P., Spokane Valley
+            </ContentCard>
+            <ContentCard as="blockquote">
+              “We hired them for a deep clean before putting our South Hill home on the market. The buyers commented on how fresh it felt, and we sold within a week.” –
+              Daniel M.
+            </ContentCard>
+            <ContentCard as="blockquote">
+              “I love their green cleaning option. My allergies have improved and the house smells amazing without harsh chemicals.” – Lisa K., Liberty Lake
+            </ContentCard>
+          </>
+        ),
+      },
+      {
+        title: 'FAQ',
+        content: (
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="included">
+              <AccordionTrigger>What’s included in your cleaning service?</AccordionTrigger>
+              <AccordionContent>Dusting, vacuuming, mopping, bathroom and kitchen cleaning, and optional add‑ons.</AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="insured">
+              <AccordionTrigger>Are you insured?</AccordionTrigger>
+              <AccordionContent>Yes, we are fully insured and bonded.</AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="supplies">
+              <AccordionTrigger>Do I need to provide cleaning supplies?</AccordionTrigger>
+              <AccordionContent>No, we bring everything needed.</AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="pets">
+              <AccordionTrigger>What about pets?</AccordionTrigger>
+              <AccordionContent>We’re pet‑friendly – just let us know any special instructions.</AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        ),
+      },
+      {
         title: 'Business Hours',
         content: (
           <>
@@ -204,5 +303,51 @@ export default function Spokane() {
     ],
   };
 
-  return <LocationPageTemplate {...pageDetails} />;
+  return (
+    <>
+      <style>{`
+        [data-active="true"] {
+          transform: scale(1.08);
+          opacity: 1;
+          z-index: 10;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(197, 155, 75, 0.3);
+          border: 2px solid rgba(197, 155, 75, 0.4);
+          background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(197, 155, 75, 0.02));
+          padding: 2rem 2.5rem;
+        }
+        [data-active="true"] .text-brand-gold {
+          font-weight: 800;
+          text-shadow: 0 1px 2px rgba(197, 155, 75, 0.3);
+        }
+        [data-active="true"] .text-gray-600 {
+          font-weight: 600;
+          color: #374151;
+        }
+        [data-active="false"] {
+          transform: scale(0.92);
+          opacity: 0.5;
+          z-index: 1;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+          padding: 1.5rem 2rem;
+        }
+        [data-active="false"] .text-brand-gold {
+          font-weight: 600;
+        }
+        [data-active="false"] .text-gray-600 {
+          font-weight: 400;
+          color: #6b7280;
+        }
+
+        @media (min-width: 768px) {
+          [data-active="true"] {
+            padding: 2.5rem 3rem;
+          }
+          [data-active="false"] {
+            padding: 2rem 2.5rem;
+          }
+        }
+      `}</style>
+      <LocationPageTemplate {...pageDetails} />
+    </>
+  );
 }

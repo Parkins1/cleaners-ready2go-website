@@ -1,6 +1,6 @@
 // llm:cta-migrated
 import { CheckCircle } from "lucide-react";
-import residentialCardImg from "@assets/residential-cleaning-card.jpeg";
+import residentialCardImg from "@assets/residential-cleaning-card.webp";
 import { Button } from "@/components/ui/button";
 import ContentCard from "@/components/ContentCard/ContentCard";
 import { useModal } from "@/components/modal/ModalProvider";

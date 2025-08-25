@@ -67,7 +67,7 @@ export default function DesktopNavigation({ navItems }: DesktopNavigationProps) 
       {/* CTA */}
       <div className="ml-4">
         <a href="/contact" aria-label="Get a Quote" style={{ display: 'inline-block' }}>
-          <Button className="btn-primary">
+          <Button variant="primary">
             Get a Quote
           </Button>
         </a>

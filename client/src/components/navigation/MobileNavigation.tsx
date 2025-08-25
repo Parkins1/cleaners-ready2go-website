@@ -80,7 +80,7 @@ export default function MobileNavigation({ navItems }: MobileNavigationProps) {
               className="w-full mt-2"
               onClick={() => setIsOpen(false)}
             >
-              <Button className="btn-primary w-full">
+              <Button variant="primary" className="w-full">
                 Get a Quote
               </Button>
             </a>

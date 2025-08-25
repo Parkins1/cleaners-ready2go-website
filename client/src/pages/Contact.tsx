@@ -8,9 +8,11 @@ import { useMutation } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import ContactForm from "@/components/ContactForm/ContactForm";
+import SnippetContactForm from "@/components/ContactForm/SnippetContactForm";
 import { ContactFormData } from "@/components/ContactForm/schema";
 import CalloutBanner from "@/components/CalloutBanner/CalloutBanner";
 import { brand } from "@/config/brand";
+import { SEO } from "@/components/seo/SEO";
 
 export default function Contact() {
   const { open, close } = useModal();
@@ -47,10 +49,14 @@ export default function Contact() {
     });
   };
 
+  const useNewForm = import.meta.env.VITE_USE_NEW_CONTACT_FORM === "true";
+
   return (
     <>
-      <title>Contact Us - Cleaners Ready 2Go | Get Your Free Quote Today</title>
-      <meta name="description" content={`Contact Cleaners Ready 2Go for professional cleaning services in Spokane Valley, Liberty Lake, and Greenacres. Call ${brand.phone} or request a free quote online.`} />
+      <SEO
+        title="Contact Us - Cleaners Ready 2Go | Get Your Free Quote Today"
+        description={`Contact Cleaners Ready 2Go for professional cleaning services in Spokane Valley, Liberty Lake, and Greenacres. Call ${brand.phone} or request a free quote online.`}
+      />
       
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -63,9 +69,11 @@ export default function Contact() {
             {/* Contact Form */}
             <div className="bg-surface p-8 rounded-xl">
               <h2 className="text-2xl font-bold text-text mb-6">Send Us a Message</h2>
-              <Button onClick={openContactModal} variant="primary" className="w-full sm:w-72 mx-auto">
-                Contact Us
-              </Button>
+              {useNewForm ? (
+                <ContactForm onSubmit={handleSubmit} isLoading={isLoading} />
+              ) : (
+                <SnippetContactForm onSubmit={handleSubmit} isLoading={isLoading} />
+              )}
             </div>
 
             {/* Contact Information */}

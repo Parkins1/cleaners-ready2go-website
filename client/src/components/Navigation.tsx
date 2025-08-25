@@ -23,7 +23,7 @@ export default function Navigation() {
         { label: "Spokane", href: "/locations/spokane" },
         { label: "Spokane Valley", href: "/locations/spokane-valley" },
         { label: "Liberty Lake", href: "/locations/liberty-lake" },
-        { label: "Greenacres", href: "/locations#greenacres" },
+        { label: "Greenacres", href: "/locations/greenacres" },
       ],
     },
     {

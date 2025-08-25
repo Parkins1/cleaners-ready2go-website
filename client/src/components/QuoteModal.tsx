@@ -126,7 +126,7 @@ export default function QuoteModal({ onClose, isOpen = true }: QuoteModalProps) 
               className="focus:ring-accent focus:border-transparent"
             />
           </div>
-          <Button type="submit" disabled={quoteMutation.isPending} className="btn-primary w-full">
+          <Button type="submit" disabled={quoteMutation.isPending} variant="primary" className="w-full">
             {quoteMutation.isPending ? "Submitting..." : "Get My Quote"}
           </Button>
         </form>
