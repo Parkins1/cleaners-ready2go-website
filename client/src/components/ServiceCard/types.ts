@@ -6,6 +6,11 @@ export interface ServiceCardProps {
   blurb: string;
   href: string;
   img: string;
+  imgAlt?: string;
+  /** Optional responsive srcset for the image */
+  imgSrcSet?: string;
+  /** Optional <picture> sources (e.g., AVIF) */
+  sources?: { type: string; srcSet: string; sizes?: string }[];
   icon: React.ReactNode;
   className?: string;
 }

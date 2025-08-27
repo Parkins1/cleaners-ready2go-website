@@ -90,6 +90,14 @@
     background: radial-gradient(circle at top left, #FFF9F2 0%, #FDF1D9 60%, #FFFFFF 100%);
   }
 
+  /* HOM-001: Reserve hero media space using CSS aspect-ratio to prevent CLS
+     Updated: Use a single consistent 16/9 ratio across breakpoints to avoid
+     media-query-induced early layout shift on first paint. */
+  .hero-media {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
   .footer {
     background-image: linear-gradient(to right, #CFAE51, #e6c972);
     color: #111827;

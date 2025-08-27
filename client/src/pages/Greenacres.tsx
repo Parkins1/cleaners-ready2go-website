@@ -1,5 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import LocationPageTemplate from './LocationPageTemplate';
+import heroImage from "@assets/greenacres-wa-house-cleaning-hero.webp";
+import hero480 from "@assets/greenacres-wa-house-cleaning-hero-480.webp";
+import hero768 from "@assets/greenacres-wa-house-cleaning-hero-768.webp";
+import hero1024 from "@assets/greenacres-wa-house-cleaning-hero-1024.webp";
+import hero480Avif from "@assets/greenacres-wa-house-cleaning-hero-480.avif";
+import hero768Avif from "@assets/greenacres-wa-house-cleaning-hero-768.avif";
+import hero1024Avif from "@assets/greenacres-wa-house-cleaning-hero-1024.avif";
 import ContentCard from '@/components/ContentCard/ContentCard';
 import {
   Carousel,
@@ -30,7 +37,12 @@ export default function Greenacres() {
   );
   const pageDetails = {
     locationName: 'Greenacres',
-    heroImage: 'https://via.placeholder.com/1920x1080',
+    heroImage: heroImage,
+    heroAlt: 'House cleaning services in Greenacres, WA — Cleaners Ready 2Go',
+    heroImgSrcSet: `${hero480} 480w, ${hero768} 768w, ${hero1024} 1024w`,
+    heroSources: [{ type: 'image/avif', srcSet: `${hero480Avif} 480w, ${hero768Avif} 768w, ${hero1024Avif} 1024w` }],
+    heroWidth: 1392,
+    heroHeight: 752,
     introText:
       "We proudly serve Greenacres with reliable, satisfaction-focused house cleaning. From river-adjacent townhomes to family homes near Greenacres Middle School, our team delivers consistent, repeatable results.",
     serviceCardIds: (['residential','deep-cleaning','move-out','apartment-cleaning'] as import("@/components/ServiceCard/catalog").ServiceCatalogId[]),

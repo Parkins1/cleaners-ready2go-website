@@ -7,4 +7,11 @@ export interface SEOProps {
   ogDescription?: string;
   ogImage?: string;
   ogUrl?: string;
+  /**
+   * When true, renders robots noindex meta tags:
+   * <meta name="robots" content="noindex, nofollow" />
+   * <meta name="googlebot" content="noindex, nofollow" />
+   * Defaults to undefined (no robots meta rendered).
+   */
+  noindex?: boolean;
 }

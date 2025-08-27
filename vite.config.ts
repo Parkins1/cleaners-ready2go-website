@@ -1,25 +1,25 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
-import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 import { visualizer } from "rollup-plugin-visualizer";
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import { VitePWA } from 'vite-plugin-pwa';
 
 const isDev = process.env.NODE_ENV !== "production";
+const usePwa = process.env.PWA === 'true';
 
 export default defineConfig({
   plugins: [
     react(),
-    ...(isDev ? [runtimeErrorOverlay()] : []),
     ...(process.env.ANALYZE ? [visualizer({ filename: "dist/stats.html", open: true })] : []),
     ViteImageOptimizer({
       jpg: { quality: 85 },
       jpeg: { quality: 85 },
       png: { quality: 90 },
-      webp: { quality: 85 },
+      webp: { quality: 80 },
+      avif: { quality: 50 },
     }),
-    VitePWA({
+    ...(usePwa ? [VitePWA({
       registerType: 'autoUpdate',
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,jpg,jpeg}'],
@@ -72,7 +72,7 @@ export default defineConfig({
           }
         ]
       }
-    }),
+    })] : []),
   ],
   optimizeDeps: {
     include: ["react-hook-form"],

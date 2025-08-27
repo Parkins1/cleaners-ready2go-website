@@ -1,13 +1,27 @@
 import { Helmet } from 'react-helmet-async';
 import { SEOProps } from './types';
 
-export function SEO({ title, description, canonical, keywords, ogTitle, ogDescription, ogImage, ogUrl }: SEOProps) {
+export function SEO({
+  title,
+  description,
+  canonical,
+  keywords,
+  ogTitle,
+  ogDescription,
+  ogImage,
+  ogUrl,
+  noindex,
+}: SEOProps) {
   return (
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
       {canonical && <link rel="canonical" href={canonical} />}
       {keywords && <meta name="keywords" content={keywords} />}
+
+      {/* Optional robots control */}
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
+      {noindex && <meta name="googlebot" content="noindex, nofollow" />}
 
       {/* Open Graph Tags */}
       {ogUrl && <meta property="og:url" content={ogUrl} />}

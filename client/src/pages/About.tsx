@@ -29,7 +29,7 @@ function About() {
             <div>
               <img 
                 src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                alt="Professional cleaning team working in a home" 
+                alt="Professional house cleaning team in a Spokane Valley home" 
                 className="rounded-xl shadow-lg w-full h-auto" 
               />
             </div>

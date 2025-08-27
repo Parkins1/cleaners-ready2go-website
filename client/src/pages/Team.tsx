@@ -12,42 +12,42 @@ function Team() {
       role: "Team Leader & Founder",
       description: "With 8 years in professional cleaning, Sarah founded Cleaners Ready 2Go to bring reliable, quality service to the Spokane Valley community.",
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-      alt: "Professional woman team leader smiling in business attire"
+      alt: "Spokane cleaning team leader smiling in business attire"
     },
     {
       name: "Mike Thompson",
       role: "Senior Cleaning Specialist",
       description: "Mike specializes in deep cleaning and move-out services. His attention to detail ensures every corner meets our high standards.",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-      alt: "Professional man in cleaning uniform smiling confidently"
+      alt: "Spokane cleaning specialist in uniform smiling confidently"
     },
     {
       name: "Lisa Chen",
       role: "Residential Specialist",
       description: "Lisa loves helping families maintain beautiful homes. She's known for her efficiency and friendly demeanor with clients.",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b47c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-      alt: "Professional woman with friendly smile wearing cleaning uniform"
+      alt: "Spokane residential cleaner with friendly smile wearing uniform"
     },
     {
       name: "David Rodriguez",
       role: "Quality Control Manager",
       description: "David ensures every cleaning meets our quality standards. He oversees training and maintains our commitment to excellence.",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-      alt: "Professional man in business casual attire with confident smile"
+      alt: "Spokane quality manager in business casual attire with confident smile"
     },
     {
       name: "Emma Wilson",
       role: "Customer Success",
       description: "Emma coordinates schedules and ensures seamless communication between our team and clients for the best experience.",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-      alt: "Professional woman with warm smile in business attire"
+      alt: "Spokane customer success specialist with warm smile in business attire"
     },
     {
       name: "Carlos Gutierrez",
       role: "Eco-Friendly Specialist",
       description: "Carlos leads our green cleaning initiatives, specializing in eco-friendly products and sustainable cleaning practices.",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-      alt: "Professional man with friendly demeanor in work attire"
+      alt: "Spokane eco-friendly cleaning specialist with friendly demeanor in work attire"
     }
   ];
 
@@ -84,7 +84,7 @@ function Team() {
             <div>
               <img 
                 src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-                alt="Professional cleaning team in uniform with cleaning supplies" 
+                alt="Spokane house cleaning team in uniform with cleaning supplies" 
                 className="rounded-xl shadow-lg w-full h-auto" 
               />
             </div>

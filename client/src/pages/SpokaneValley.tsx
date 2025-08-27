@@ -3,7 +3,13 @@
  import { Button } from "@/components/ui/button";
  import { useModal } from "@/components/modal/ModalProvider";
  import HeroSection from "@/components/HeroSection/HeroSection";
- import heroImage from "@assets/spokane-house-cleaning.webp"; // Using an existing image for now
+import heroImage from "@assets/spokane-valley-wa-house-cleaning-hero.webp";
+import hero480 from "@assets/spokane-valley-wa-house-cleaning-hero-480.webp";
+import hero768 from "@assets/spokane-valley-wa-house-cleaning-hero-768.webp";
+import hero1024 from "@assets/spokane-valley-wa-house-cleaning-hero-1024.webp";
+import hero480Avif from "@assets/spokane-valley-wa-house-cleaning-hero-480.avif";
+import hero768Avif from "@assets/spokane-valley-wa-house-cleaning-hero-768.avif";
+import hero1024Avif from "@assets/spokane-valley-wa-house-cleaning-hero-1024.avif";
  import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
  import ContentCard from "@/components/ContentCard/ContentCard";
  import { CheckCircle, ShieldCheck, Leaf, Users, Sparkles } from "lucide-react";
@@ -59,6 +65,7 @@ export default function SpokaneValley() {
 
       <HeroSection
         image={heroImage}
+        imageAlt="House cleaning services in Spokane Valley, WA — Cleaners Ready 2Go"
         title="Professional House Cleaning in Spokane Valley, WA"
         subtitle={
           <>
@@ -72,6 +79,11 @@ export default function SpokaneValley() {
             Request Your FREE Quote
           </Button>
         }
+        useAspect
+        imageWidth={1392}
+        imageHeight={752}
+        imgSrcSet={`${hero480} 480w, ${hero768} 768w, ${hero1024} 1024w`}
+        sources={[{ type: 'image/avif', srcSet: `${hero480Avif} 480w, ${hero768Avif} 768w, ${hero1024Avif} 1024w` }]}
       />
 
       {/* Standardized sections to match Home placement: Services then Process */}

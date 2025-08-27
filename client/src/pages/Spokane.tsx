@@ -1,5 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import LocationPageTemplate from './LocationPageTemplate';
+import heroImage from "@assets/spokane-wa-house-cleaning-hero.webp";
+import hero480 from "@assets/spokane-wa-house-cleaning-hero-480.webp";
+import hero768 from "@assets/spokane-wa-house-cleaning-hero-768.webp";
+import hero1024 from "@assets/spokane-wa-house-cleaning-hero-1024.webp";
+import hero480Avif from "@assets/spokane-wa-house-cleaning-hero-480.avif";
+import hero768Avif from "@assets/spokane-wa-house-cleaning-hero-768.avif";
+import hero1024Avif from "@assets/spokane-wa-house-cleaning-hero-1024.avif";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import ContentCard from '@/components/ContentCard/ContentCard';
 import {
@@ -36,7 +43,12 @@ export default function Spokane() {
 
   const pageDetails = {
     locationName: 'Spokane',
-    heroImage: 'https://via.placeholder.com/1920x1080',
+    heroImage: heroImage,
+    heroAlt: 'House cleaning services in Spokane, WA — Cleaners Ready 2Go',
+    heroImgSrcSet: `${hero480} 480w, ${hero768} 768w, ${hero1024} 1024w`,
+    heroSources: [{ type: 'image/avif', srcSet: `${hero480Avif} 480w, ${hero768Avif} 768w, ${hero1024Avif} 1024w` }],
+    heroWidth: 1392,
+    heroHeight: 752,
     introText:
       "We are proud to offer our full range of cleaning services to the vibrant city of Spokane. From the historic Browne's Addition to the bustling downtown core, our team is ready to make your home or business shine.",
     services: [

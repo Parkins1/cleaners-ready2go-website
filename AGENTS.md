@@ -356,3 +356,87 @@ File Changes: [`client/src/pages/Greenacres.tsx:1`](client/src/pages/Greenacres.
 - Verified all images are already in `.webp` format; no conversion needed.
 - Wrapped all `console.log` statements in `client/src/lib/performance.ts` with `process.env.NODE_ENV === 'development'` checks to avoid logging in production.
 - Confirmed all routes in `client/src/routes.ts` use `React.lazy` for code splitting.
+
+2025-08-26 (Bug Bash & Content Cleanup)
+- Contact Page Crash: Fixed a runtime error on the /contact page caused by a `<Select.Item>` with an empty value prop in `SnippetContactForm.tsx`.
+  - File Changes: [`client/src/components/ContactForm/SnippetContactForm.tsx:30`](client/src/components/ContactForm/SnippetContactForm.tsx:30)
+- Modal Functionality:
+  - Ensured BookingModal respects parent-controlled visibility by gating on the `isOpen` prop and unmounting when false.
+  - Defaulted `isOpen` to `false` to prevent unintended auto-open on page load; provider passes `isOpen` explicitly when opening.
+  - File Changes: [`client/src/components/BookingModal.tsx:1`](client/src/components/BookingModal.tsx:1), [`client/src/components/modal/ModalProvider.tsx:1`](client/src/components/modal/ModalProvider.tsx:1)
+- Button & Link Functionality:
+  - Wired non-functional “Get a Quote”/CTA buttons to open the centralized Quote modal; updated Liberty Lake inline CTA to call modal manager.
+  - Repaired Locations page “Spokane” link to navigate via Wouter Link to `/locations/spokane`.
+  - File Changes: [`client/src/pages/LibertyLake.tsx:1`](client/src/pages/LibertyLake.tsx:1), [`client/src/pages/Locations.tsx:1`](client/src/pages/Locations.tsx:1)
+- Content Updates:
+  - 404 page copy replaced with a user-friendly message and a homepage link.
+  - Blog page replaced with a clear “coming soon” message and standardized SEO component usage.
+  - File Changes: [`client/src/pages/not-found.tsx:1`](client/src/pages/not-found.tsx:1), [`client/src/pages/Blog.tsx:1`](client/src/pages/Blog.tsx:1)
+2025-08-26 (HOM-001 Home CLS Remediation)
+- Reduced Home page CLS below 0.1 by reserving hero space and adding intrinsic dimensions.
+- Hero stabilization:
+  - Implemented CSS aspect-ratio reserved container (.hero-media) for the hero (single consistent 16/9 ratio) to prevent pre-image layout shifts.
+  - Inline critical CSS added in HTML head to reserve space before Tailwind/CSS loads.
+  - Fallback minHeight path retained for other pages.
+- Optimized hero image delivery:
+  - Switched hero to use &lt;OptimizedImage&gt; with intrinsic dimensions (1392x752), priority load, sizes="100vw", decoding="sync", fetchpriority="high".
+  - Enhanced OptimizedImage API to accept width, height, fetchpriority, and imgClassName; priority now forces eager loading and sync decoding.
+- Preload:
+  - Added Helmet-based &lt;link rel="preload" as="image"&gt; hint for the critical hero image on Home only.
+- Suspense fallback:
+  - Matched reserved hero space in Suspense fallback to avoid pre-hydration layout shift.
+- Misc:
+  - Gated Replit dev banner injection to only load on Replit hosts, preventing a late top-of-page insert that could cause CLS in local dev.
+
+Files changed:
+- [`client/src/components/ui/optimized-image.tsx:1`](client/src/components/ui/optimized-image.tsx:1) — Added width, height, imgClassName, fetchpriority; priority forces eager+sync; prop forwarding.
+- [`client/src/components/HeroSection/HeroSection.tsx:1`](client/src/components/HeroSection/HeroSection.tsx:1) — Added useAspect path using CSS aspect-ratio; forwards intrinsic width/height; CLS rationale comments.
+- [`client/src/pages/Home.tsx:1`](client/src/pages/Home.tsx:1) — Enabled useAspect; provided imageWidth=1392, imageHeight=752; added Helmet preload.
+- [`client/src/App.tsx:1`](client/src/App.tsx:1) — Suspense fallback reserves hero space; fixed Route typing by rendering Component as child.
+- [`client/src/index.css:1`](client/src/index.css:1) — Added .hero-media aspect-ratio: 16/9 with CLS documentation comment.
+- [`client/index.html:1`](client/index.html:1) — Inline critical CSS for .hero-media; gated Replit banner script to avoid local CLS.
+
+Results:
+- Verified CLS consistently &lt; 0.01 across reloads (target &lt; 0.10). LCP visually stable with no major reflow.
+
+Notes:
+- Service cards already reserve space via min-height; above-the-fold stability is ensured by the hero’s reserved space and the static “Why Choose Us” strip (no image shifts). Future work can add intrinsic dimensions to card media if we surface them above the fold on smaller viewports.
+2025-08-26 (HOM-002: Home FAQ Accordion Fix)
+- Restored FAQ accordion functionality and ARIA semantics on Home page.
+- Root cause: Trigger element in Accordion primitive lacked an explicit type attribute, which can default to "submit" inside form contexts, preventing toggle behavior in some cases.
+- Fixes:
+  - Added explicit button type to Accordion trigger: [client/src/components/ui/accordion.tsx](client/src/components/ui/accordion.tsx:25) — AccordionPrimitive.Trigger now renders with type="button" ensuring click and keyboard toggle work reliably.
+  - Documented accessibility and keyboard behavior in Home FAQ block and verified correct usage with type="single" and collapsible: [client/src/pages/Home.tsx](client/src/pages/Home.tsx:251).
+  - Corrected Helmet preload attribute casing to satisfy TypeScript: imageSizes/fetchPriority: [client/src/pages/Home.tsx](client/src/pages/Home.tsx:40).
+- ARIA/Keyboard:
+  - aria-expanded toggles on the trigger; aria-controls points to the matching content id (managed by Radix).
+  - Space/Enter toggle the focused trigger; focus-visible ring is shown via utilities.
+- Notes:
+  - Tailwind keyframes for accordion transitions already defined and compatible with Radix variables, no changes required.
+  - No CLS-related changes included in this task.
+2025-08-26 (SEO-001 Blog noindex)
+- Added optional robots control to shared SEO component via boolean noindex prop.
+  - Types: [`client/src/components/seo/types.ts:1`](client/src/components/seo/types.ts:1)
+  - Component: [`client/src/components/seo/SEO.tsx:1`](client/src/components/seo/SEO.tsx:1) — when noindex is true, renders:
+    - &lt;meta name="robots" content="noindex, nofollow" /&gt;
+    - &lt;meta name="googlebot" content="noindex, nofollow" /&gt;
+  - Default behavior unchanged: no robots meta rendered unless noindex is set.
+- Blog page wired to unique metadata and noindex:
+  - [`client/src/pages/Blog.tsx:1`](client/src/pages/Blog.tsx:1)
+  - Title: “Blog — Coming Soon | Ready2Go Cleaners”
+  - Description: “Our blog is under construction. New guides and tips are coming soon.”
+  - Inline comment documents temporary noindex until content is published.
+- Scope: Only /blog includes robots noindex; other routes unaffected.
+2025-08-27 (SEO-001 Blog noindex)
+- Extended shared SEO component with optional noindex boolean to render robots directives when true.
+  - Types updated: [`client/src/components/seo/types.ts:1`](client/src/components/seo/types.ts:1)
+  - Component updated: [`client/src/components/seo/SEO.tsx:1`](client/src/components/seo/SEO.tsx:1) — when noindex is true, renders:
+    - &lt;meta name="robots" content="noindex, nofollow" /&gt;
+    - &lt;meta name="googlebot" content="noindex, nofollow" /&gt;
+  - Default behavior unchanged: robots meta not rendered unless explicitly set via noindex.
+- Blog page wired with unique metadata and temporary noindex:
+  - [`client/src/pages/Blog.tsx:1`](client/src/pages/Blog.tsx:1)
+  - Title: “Blog — Coming Soon | Ready2Go Cleaners”
+  - Description: “Our blog is under construction. New guides and tips are coming soon.”
+  - Inline comment documents temporary noindex until content is published.
+- Scope: Only /blog includes robots noindex; other routes remain unaffected.

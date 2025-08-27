@@ -1,6 +1,13 @@
 // llm:cta-migrated
 import { CheckCircle } from "lucide-react";
-import residentialCardImg from "@assets/residential-cleaning-card.webp";
+import residentialCardImg from "@assets/spokane-wa-residential-cleaning-card.webp";
+import res480 from "@assets/spokane-wa-residential-cleaning-card-480.webp";
+import res768 from "@assets/spokane-wa-residential-cleaning-card-768.webp";
+import res1024 from "@assets/spokane-wa-residential-cleaning-card-1024.webp";
+import res480Avif from "@assets/spokane-wa-residential-cleaning-card-480.avif";
+import res768Avif from "@assets/spokane-wa-residential-cleaning-card-768.avif";
+import res1024Avif from "@assets/spokane-wa-residential-cleaning-card-1024.avif";
+import HeroSection from "@/components/HeroSection/HeroSection";
 import { Button } from "@/components/ui/button";
 import ContentCard from "@/components/ContentCard/ContentCard";
 import { useModal } from "@/components/modal/ModalProvider";
@@ -16,35 +23,20 @@ export default function Residential() {
         content="Professional residential cleaning services in Spokane Valley. Weekly, bi-weekly, and monthly cleaning schedules available. Book your recurring service today!"
       />
 
-      {/* Full-Window Hero Section with image layer + overlay for contrast */}
-      <section aria-label="Cozy, clean residential living room." className="hero relative min-h-screen flex items-center justify-center group overflow-hidden">
-        {/* Media */}
-        <img
-          src={residentialCardImg}
-          alt=""
-          aria-hidden
-          className="absolute inset-0 h-full w-full object-cover brightness-[.85] object-center sm:object-[center_30%]"
-          style={{ width: "100vw", height: "100vh" }}
-        />
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/35 to-transparent" />
-        {/* Text */}
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-6 py-4">
-          <h1 className="text-5xl lg:text-7xl font-bold text-white drop-shadow-sm mb-4">
-            Residential Cleaning Services
-          </h1>
-          <p className="text-xl lg:text-2xl text-slate-100/95 leading-snug sm:leading-normal mb-8 max-w-[36ch] mx-auto">
-            Regular cleaning services to keep your home spotless
-          </p>
-          <Button
-            onClick={() => open("quote")}
-            aria-label="Get a Quote"
-            variant="primary"
-          >
-            Get a Quote
-          </Button>
-        </div>
-      </section>
+      {/* Full-Window Hero Section */}
+      <HeroSection
+        image={residentialCardImg}
+        title={<h1 className="text-5xl lg:text-7xl font-bold text-white drop-shadow-sm mb-4">Residential Cleaning Services</h1>}
+        subtitle={<p className="text-xl lg:text-2xl text-slate-100/95 leading-snug sm:leading-normal mb-8 max-w-[36ch] mx-auto">Regular cleaning services to keep your home spotless</p>}
+        actions={
+          <Button onClick={() => open("quote")} aria-label="Get a Quote" variant="primary">Get a Quote</Button>
+        }
+        useAspect
+        imageWidth={1392}
+        imageHeight={752}
+        imgSrcSet={`${res480} 480w, ${res768} 768w, ${res1024} 1024w`}
+        sources={[{ type: 'image/avif', srcSet: `${res480Avif} 480w, ${res768Avif} 768w, ${res1024Avif} 1024w` }]}
+      />
 
       {/* Service Plans */}
       <section className="py-16 bg-white">

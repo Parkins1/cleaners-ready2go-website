@@ -5,7 +5,14 @@
 import { ArrowRight, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useModal } from "@/components/modal/ModalProvider";
-import heroDeep from "@assets/move-out-hero-image.webp";
+import heroDeep from "@assets/spokane-wa-move-out-cleaning-hero.webp";
+import mv480 from "@assets/spokane-wa-move-out-cleaning-hero-480.webp";
+import mv768 from "@assets/spokane-wa-move-out-cleaning-hero-768.webp";
+import mv1024 from "@assets/spokane-wa-move-out-cleaning-hero-1024.webp";
+import mv480Avif from "@assets/spokane-wa-move-out-cleaning-hero-480.avif";
+import mv768Avif from "@assets/spokane-wa-move-out-cleaning-hero-768.avif";
+import mv1024Avif from "@assets/spokane-wa-move-out-cleaning-hero-1024.avif";
+import HeroSection from "@/components/HeroSection/HeroSection";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ContentCard from "@/components/ContentCard/ContentCard";
 import CalloutBanner from "@/components/CalloutBanner/CalloutBanner";
@@ -91,40 +98,24 @@ export default function DeepCleaning() {
       <meta name="keywords" content="deep cleaning Spokane, Spokane deep cleaning services, Spokane Valley house cleaning, eco-friendly deep clean Spokane, move-out cleaning Spokane WA" />
 
       {/* HERO */}
-      <section
-        className="hero relative min-h-[70vh] flex items-center justify-center"
-        style={{
-          backgroundImage: `url(${heroDeep})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-        aria-label="Deep Cleaning Hero"
-      >
-        <div className="absolute inset-0 bg-white/95 backdrop-blur-sm" />
-        <div className="relative text-center max-w-4xl mx-auto px-6 py-20">
-          <div className="mb-6">
-          </div>
-          <h1 className="text-4xl lg:text-6xl font-bold text-text mb-4">Deep Cleaning Spokane, WA</h1>
-          <p className="text-lg lg:text-xl text-text mb-8">
-            Local, insured pros delivering wall-to-wall shine on your schedule.
-          </p>
+      <HeroSection
+        image={heroDeep}
+        title={<h1 className="text-4xl lg:text-6xl font-bold text-text mb-4">Deep Cleaning Spokane, WA</h1>}
+        subtitle={<p className="text-lg lg:text-xl text-text mb-8">Local, insured pros delivering wall-to-wall shine on your schedule.</p>}
+        actions={
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              onClick={() => open("quote")}
-              variant="primary"
-            >
-              Get My Free Quote
-            </Button>
+            <Button onClick={() => open("quote")} variant="primary">Get My Free Quote</Button>
             <a href="#includes" aria-label="See What's Included" className="inline-flex items-center justify-center">
-              <Button
-                variant="primary"
-              >
-                See What's Included <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
+              <Button variant="primary">See What's Included <ArrowRight className="w-5 h-5 ml-2" /></Button>
             </a>
           </div>
-        </div>
-      </section>
+        }
+        useAspect
+        imageWidth={1392}
+        imageHeight={752}
+        imgSrcSet={`${mv480} 480w, ${mv768} 768w, ${mv1024} 1024w`}
+        sources={[{ type: 'image/avif', srcSet: `${mv480Avif} 480w, ${mv768Avif} 768w, ${mv1024Avif} 1024w` }]}
+      />
 
       {/* INTRO */}
       <section className="py-12 bg-white">

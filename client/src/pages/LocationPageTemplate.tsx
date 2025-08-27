@@ -8,10 +8,16 @@ import React from 'react';
 import CalloutBanner from "@/components/CalloutBanner/CalloutBanner";
 import { ServicesSection, ProcessSection } from "@/components/Sections";
 import { SEO } from "@/components/seo/SEO";
+import HeroSection from "@/components/HeroSection/HeroSection";
 
 interface LocationPageTemplateProps {
   locationName: string;
   heroImage: string;
+  heroAlt?: string;
+  heroImgSrcSet?: string;
+  heroSources?: { type: string; srcSet: string; sizes?: string }[];
+  heroWidth?: number;
+  heroHeight?: number;
   introText: string;
   services?: {
     title: string;
@@ -32,6 +38,11 @@ interface LocationPageTemplateProps {
 export default function LocationPageTemplate({
   locationName,
   heroImage,
+  heroAlt,
+  heroImgSrcSet,
+  heroSources,
+  heroWidth,
+  heroHeight,
   introText,
   services,
   testimonial,
@@ -48,26 +59,18 @@ export default function LocationPageTemplate({
       />
 
       {/* Hero Section */}
-      <section
-        className="hero relative min-h-[70vh] flex items-center justify-center"
-        style={{
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-        aria-label={`${locationName} Hero`}
-      >
-        <div className="absolute inset-0 bg-white/95 backdrop-blur-sm" />
-        <div className="relative text-center max-w-4xl mx-auto px-6 py-20">
-          <h1 className="font-bold text-text mb-4">{`House Cleaning in ${locationName}`}</h1>
-          <p className="text-lg lg:text-xl text-text mb-8">
-            Your trusted local cleaning experts.
-          </p>
-          <Button onClick={() => open('quote')} variant="primary">
-            Get a Free Quote
-          </Button>
-        </div>
-      </section>
+      <HeroSection
+        image={heroImage}
+        imageAlt={heroAlt || `House cleaning in ${locationName}, WA`}
+        title={`House Cleaning in ${locationName}`}
+        subtitle={<p className="text-lg lg:text-xl text-text mb-8">Your trusted local cleaning experts.</p>}
+        actions={<Button onClick={() => open('quote')} variant="primary">Get a Free Quote</Button>}
+        useAspect
+        imageWidth={heroWidth}
+        imageHeight={heroHeight}
+        imgSrcSet={heroImgSrcSet}
+        sources={heroSources}
+      />
 
       {/* Intro Section */}
       <section className="py-16 bg-white">

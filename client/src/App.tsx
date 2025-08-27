@@ -16,13 +16,21 @@ function Router() {
       <Navigation />
       <main className="pt-24 flex-1">
         <Suspense fallback={
-          <div className="flex items-center justify-center min-h-[50vh]">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal"></div>
+          /**
+           * HOM-001: Reserve space with same aspect ratio as hero to avoid CLS pre-hydration.
+           * Uses the same .hero-media CSS (mobile 4/5, md+ 16/9).
+           */
+          <div className="hero-media relative w-full">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal"></div>
+            </div>
           </div>
         }>
           <Switch>
             {routes.map(({ path, component: Component }) => (
-              <Route key={path} path={path} component={Component} />
+              <Route key={path} path={path}>
+                <Component />
+              </Route>
             ))}
           </Switch>
         </Suspense>

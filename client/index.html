@@ -32,11 +32,14 @@
         document.fonts.load('1em Outfit');
       }
     </script>
+    <!-- HOM-001: Inline critical CSS to reserve hero space before JS/CSS load -->
+    <style>
+      .hero-media{width:100%;aspect-ratio:16/9}
+    </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
-    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
+    <!-- HOM-001: Keep hero space reserved to reduce CLS during load. -->
   </body>
 </html>

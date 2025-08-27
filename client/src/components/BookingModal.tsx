@@ -12,14 +12,17 @@ import DialogHeader from "@/components/modal/DialogHeader";
 
 interface BookingModalProps {
   onClose?: () => void;
+  isOpen?: boolean;
 }
-
-export default function BookingModal({ onClose }: BookingModalProps) {
+ 
+export default function BookingModal({ onClose, isOpen = false }: BookingModalProps) {
   const [serviceType, setServiceType] = useState("");
   const [preferredDate, setPreferredDate] = useState("");
   const [phone, setPhone] = useState("");
   const { toast } = useToast();
   const { dialogRef } = useModalA11y(onClose || (() => {}));
+
+  if (!isOpen) return null;
 
   const bookingMutation = useMutation({
     mutationFn: async (data: { serviceType: string; preferredDate: string; phone: string }) => {

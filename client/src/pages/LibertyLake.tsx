@@ -1,6 +1,12 @@
 import React, { useCallback, useEffect, useState } from "react";
 import LocationPageTemplate from "./LocationPageTemplate";
-import heroLiberty from "@assets/spokane-house-cleaning.webp";
+import heroLiberty from "@assets/liberty-lake-wa-house-cleaning-hero.webp";
+import hero480 from "@assets/liberty-lake-wa-house-cleaning-hero-480.webp";
+import hero768 from "@assets/liberty-lake-wa-house-cleaning-hero-768.webp";
+import hero1024 from "@assets/liberty-lake-wa-house-cleaning-hero-1024.webp";
+import hero480Avif from "@assets/liberty-lake-wa-house-cleaning-hero-480.avif";
+import hero768Avif from "@assets/liberty-lake-wa-house-cleaning-hero-768.avif";
+import hero1024Avif from "@assets/liberty-lake-wa-house-cleaning-hero-1024.avif";
 import ContentCard from "@/components/ContentCard/ContentCard";
 import {
   Carousel,
@@ -10,6 +16,7 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
+import { useModal } from "@/components/modal/ModalProvider";
 
 /**
  * Liberty Lake location page
@@ -21,6 +28,7 @@ import {
 export default function LibertyLake() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
+  const { open } = useModal();
 
   useEffect(() => {
     if (!api) {
@@ -44,6 +52,11 @@ export default function LibertyLake() {
   const pageDetails = {
     locationName: "Liberty Lake",
     heroImage: heroLiberty,
+    heroAlt: 'House cleaning services in Liberty Lake, WA — Cleaners Ready 2Go',
+    heroImgSrcSet: `${hero480} 480w, ${hero768} 768w, ${hero1024} 1024w`,
+    heroSources: [{ type: 'image/avif', srcSet: `${hero480Avif} 480w, ${hero768Avif} 768w, ${hero1024Avif} 1024w` }],
+    heroWidth: 1392,
+    heroHeight: 752,
     introText:
       "Professional, Reliable & Eco-Friendly Cleaning for Liberty Lake Homes · Locally Owned • Licensed & Insured • 100% Satisfaction Guaranteed",
     services: [
@@ -261,9 +274,13 @@ export default function LibertyLake() {
 
             <p className="mt-4">
               Ready to reclaim your weekends?{" "}
-              <a className="underline font-semibold" href="#quote">
+              <button
+                type="button"
+                className="underline font-semibold"
+                onClick={() => open("quote")}
+              >
                 Get Your Free Quote Today →
-              </a>
+              </button>
             </p>
           </>
         ),

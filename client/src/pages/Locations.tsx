@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "wouter";
 import { MapPin, CheckCircle } from "lucide-react";
 import QuoteModal from "@/components/QuoteModal";
 
@@ -20,7 +21,7 @@ export default function Locations() {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50/30 to-gray-100/20 rounded-2xl"></div>
             <div className="relative grid lg:grid-cols-3 gap-8 mb-12 p-8 rounded-2xl">
-              <a href="/locations/spokane" className="card text-center block">
+              <Link href="/locations/spokane" className="card text-center block">
                 <div className="bg-accent p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                   <MapPin className="w-8 h-8 text-white" />
                 </div>
@@ -30,7 +31,7 @@ export default function Locations() {
                   <div className="font-medium">ZIP Codes:</div>
                   <div>99201, 99202, 99203, 99205, 99207, 99208, 99223, 99224</div>
                 </div>
-              </a>
+              </Link>
               <a href="/locations/spokane-valley" className="card text-center block">
                 <div className="bg-accent p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                   <MapPin className="w-8 h-8 text-white" />

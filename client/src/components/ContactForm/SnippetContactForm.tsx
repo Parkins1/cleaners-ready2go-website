@@ -28,7 +28,6 @@ export default function SnippetContactForm({ onSubmit, isLoading = false }: Snip
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const cleaningOptions = [
-    { value: "", label: "Select cleaning service..." },
     { value: "residential", label: "Residential Cleaning" },
     { value: "commercial", label: "Commercial Cleaning" },
     { value: "deep", label: "Deep Cleaning" },

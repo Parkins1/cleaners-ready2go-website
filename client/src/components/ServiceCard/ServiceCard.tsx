@@ -10,6 +10,9 @@ export default function ServiceCard({
   blurb,
   href,
   img,
+  imgAlt,
+  imgSrcSet,
+  sources,
   icon,
   className,
 }: ServiceCardProps) {
@@ -23,12 +26,14 @@ export default function ServiceCard({
       {/* Media */}
       <OptimizedImage
         src={img}
-        alt=""
+        alt={imgAlt || `${title} in Spokane area`}
         className="absolute inset-0 h-full w-full object-cover brightness-[.85] object-center sm:object-[center_30%]"
         priority={false}
         lazy={true}
         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         placeholder="blur"
+        imgSrcSet={imgSrcSet}
+        sources={sources}
       />
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/35 to-transparent" />

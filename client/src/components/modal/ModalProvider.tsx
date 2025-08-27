@@ -35,7 +35,7 @@ export const ModalProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     <ModalContext.Provider value={value}>
       {children}
       {/* Centralized modal host */}
-      {id === "booking" && <BookingModal onClose={close} />}
+      {id === "booking" && <BookingModal onClose={close} isOpen={true} />}
       {id === "quote" && <QuoteModal onClose={close} />}
       {id === "contact" && payload && (
         <div
