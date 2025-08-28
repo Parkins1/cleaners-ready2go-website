@@ -8,11 +8,33 @@ import { VitePWA } from 'vite-plugin-pwa';
 const isDev = process.env.NODE_ENV !== "production";
 const usePwa = process.env.PWA === 'true';
 
+// Custom plugin to handle asynchronous CSS loading
+const asyncCssPlugin = () => ({
+  name: 'async-css',
+  transformIndexHtml(html) {
+    // Regex to find the CSS link tag injected by Vite
+    const cssRegex = /<link rel="stylesheet"[^>]*href="(\/assets\/index-[^>]+\.css)"[^>]*>/;
+    const match = html.match(cssRegex);
+
+    if (match) {
+      const cssUrl = match[1];
+      const preloadLink = `
+        <link rel="preload" href="${cssUrl}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="${cssUrl}"></noscript>
+      `;
+      return html.replace(match[0], preloadLink);
+    }
+
+    return html;
+  },
+});
+
 export default defineConfig({
   // Avoid writing cache under node_modules to bypass sandbox/permission issues
   cacheDir: path.resolve(import.meta.dirname, ".vite-cache"),
   plugins: [
     react(),
+    asyncCssPlugin(), // Add the custom plugin
     ...(process.env.ANALYZE ? [visualizer({ filename: "dist/stats.html", open: true })] : []),
     ViteImageOptimizer({
       jpg: { quality: 85 },

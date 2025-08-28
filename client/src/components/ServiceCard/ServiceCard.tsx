@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import React from "react";
 import { ServiceCardProps } from "./types";
 import { OptimizedImage } from "@/components/ui/optimized-image";
-import { Icon } from "@/components/ui/icon";
+import Icon from "@/components/ui/icon";
 
 export default function ServiceCard({
   id,

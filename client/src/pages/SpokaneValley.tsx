@@ -12,7 +12,7 @@ import hero768Avif from "@assets/spokane-valley-wa-house-cleaning-hero-768.avif"
 import hero1024Avif from "@assets/spokane-valley-wa-house-cleaning-hero-1024.avif";
  import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
  import ContentCard from "@/components/ContentCard/ContentCard";
- import { CheckCircle, ShieldCheck, Leaf, Users, Sparkles } from "lucide-react";
+import Icon from "@/components/ui/icon";
  import { ServicesSection, ProcessSection } from "@/components/Sections";
  import {
    Carousel,
@@ -201,12 +201,12 @@ export default function SpokaneValley() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="rounded-xl border border-slate-300 bg-white p-4 sm:p-6 shadow-sm">
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 text-sm">
-              <li className="flex items-start"><CheckCircle className="mt-0.5 mr-2 h-4 w-4 text-accent flex-none" />Instant online pricing   no surprise fees</li>
-              <li className="flex items-start"><CheckCircle className="mt-0.5 mr-2 h-4 w-4 text-accent flex-none" />Color‑coded microfiber system to help reduce cross‑contamination</li>
-              <li className="flex items-start"><CheckCircle className="mt-0.5 mr-2 h-4 w-4 text-accent flex-none" />Photo-verified results after every clean</li>
-              <li className="flex items-start"><CheckCircle className="mt-0.5 mr-2 h-4 w-4 text-accent flex-none" />Background-checked team</li>
-              <li className="flex items-start"><CheckCircle className="mt-0.5 mr-2 h-4 w-4 text-accent flex-none" />EPA-registered options available</li>
-              <li className="flex items-start"><CheckCircle className="mt-0.5 mr-2 h-4 w-4 text-accent flex-none" />Flexible arrival windows</li>
+              <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-accent flex-none" />Instant online pricing   no surprise fees</li>
+              <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-accent flex-none" />Color‑coded microfiber system to help reduce cross‑contamination</li>
+              <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-accent flex-none" />Photo-verified results after every clean</li>
+              <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-accent flex-none" />Background-checked team</li>
+              <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-accent flex-none" />EPA-registered options available</li>
+              <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-accent flex-none" />Flexible arrival windows</li>
             </ul>
           </div>
         </div>
@@ -240,9 +240,9 @@ export default function SpokaneValley() {
                 Recurring visits focus on kitchens, baths, floors, and high-touch areas. We rotate detail tasks so even baseboards, vents, and window sills get regular attention over time.
               </p>
               <ul className="mt-4 space-y-2">
-                <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-600 mr-2" />Weekly: best for busy households, pets, or allergy concerns</li>
-                <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-600 mr-2" />Bi-weekly: our most popular balance of value and upkeep</li>
-                <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-600 mr-2" />Monthly: a reliable reset between deeper refreshes</li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />Weekly: best for busy households, pets, or allergy concerns</li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />Bi-weekly: our most popular balance of value and upkeep</li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />Monthly: a reliable reset between deeper refreshes</li>
               </ul>
             </ContentCard>
             <ContentCard>
@@ -254,9 +254,9 @@ export default function SpokaneValley() {
                 Expect more time invested in build-up areas under appliances (when accessible), tile/grout lines, and hard-to-reach trim. It pairs well with a follow-up recurring plan for easier maintenance.
               </p>
               <ul className="mt-4 space-y-2">
-                <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-600 mr-2" />Thorough bath and kitchen degrease and descale focus</li>
-                <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-600 mr-2" />Baseboards, switch plates, door frames detailed</li>
-                <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-600 mr-2" />Interior glass and mirrors polished for clarity</li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />Thorough bath and kitchen degrease and descale focus</li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />Baseboards, switch plates, door frames detailed</li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />Interior glass and mirrors polished for clarity</li>
               </ul>
             </ContentCard>
             <ContentCard>
@@ -268,8 +268,8 @@ export default function SpokaneValley() {
                 We target “show well” details inside cabinets/drawers, inside oven/fridge (upon request), and edges where dust collects. Add carpet extraction or garage sweep-outs for a complete turnover.
               </p>
               <ul className="mt-4 space-y-2">
-                <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-600 mr-2" />Book 48–72 hours before your final walkthrough</li>
-                <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-600 mr-2" />Leave utilities on for better lighting and warm water</li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />Book 48–72 hours before your final walkthrough</li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />Leave utilities on for better lighting and warm water</li>
               </ul>
             </ContentCard>
             <ContentCard>
@@ -281,8 +281,8 @@ export default function SpokaneValley() {
                 Fast turnarounds, consistent staging, and consumables tracking keep your listing’s cleanliness reviews on point without you being on-site.
               </p>
               <ul className="mt-4 space-y-2">
-                <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-600 mr-2" />Inventory checks for toiletries and supplies</li>
-                <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-600 mr-2" />Damage/left-behind item notes with photos</li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />Inventory checks for toiletries and supplies</li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />Damage/left-behind item notes with photos</li>
               </ul>
             </ContentCard>
           </div>
@@ -294,27 +294,27 @@ export default function SpokaneValley() {
           <h2 className="text-3xl font-bold text-text mb-12 text-center">Why Spokane Valley Chooses Cleaners Ready 2 GO</h2>
           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
             <div>
-              <ShieldCheck className="mx-auto h-12 w-12 text-accent" />
+              <Icon name="ShieldCheck" className="mx-auto h-12 w-12 text-accent" />
               <h3 className="text-lg font-bold mt-4">Local Presence</h3>
               <p className="text-sm">Our office off Sprague Ave lets us reach Greenacres or Veradale quickly.</p>
             </div>
             <div>
-              <Leaf className="mx-auto h-12 w-12 text-accent" />
+              <Icon name="Leaf" className="mx-auto h-12 w-12 text-accent" />
               <h3 className="text-lg font-bold mt-4">Licensed & Insured</h3>
               <p className="text-sm">Proper coverage gives homeowners added peace of mind.</p>
             </div>
             <div>
-              <Sparkles className="mx-auto h-12 w-12 text-accent" />
+              <Icon name="Sparkles" className="mx-auto h-12 w-12 text-accent" />
               <h3 className="text-lg font-bold mt-4">Evidence-Based Products</h3>
               <p className="text-sm">We select EPA-registered or third-party-certified solutions whenever possible and follow manufacturer directions for effective use.</p>
             </div>
             <div>
-              <Users className="mx-auto h-12 w-12 text-accent" />
+              <Icon name="Users" className="mx-auto h-12 w-12 text-accent" />
               <h3 className="text-lg font-bold mt-4">Transparent Pricing</h3>
               <p className="text-sm">Flat rates based on square footage; any add-ons are quoted before work begins.</p>
             </div>
             <div>
-              <CheckCircle className="mx-auto h-12 w-12 text-accent" />
+              <Icon name="CheckCircle" className="mx-auto h-12 w-12 text-accent" />
               <h3 className="text-lg font-bold mt-4">Photo Log</h3>
               <p className="text-sm">Receive before-and-after images for added transparency and easy remote approval.</p>
             </div>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "wouter";
-import { MapPin, CheckCircle } from "lucide-react";
+import Icon from "@/components/ui/icon";
 import QuoteModal from "@/components/QuoteModal";
 
 export default function Locations() {
@@ -23,7 +23,7 @@ export default function Locations() {
             <div className="relative grid lg:grid-cols-3 gap-8 mb-12 p-8 rounded-2xl">
               <Link href="/locations/spokane" className="card text-center block">
                 <div className="bg-accent p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <MapPin className="w-8 h-8 text-white" />
+                  <Icon name="MapPin" className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-text mb-3">Spokane</h3>
                 <p className="text-text mb-4">Our primary service area with full availability for all cleaning services.</p>
@@ -34,7 +34,7 @@ export default function Locations() {
               </Link>
               <a href="/locations/spokane-valley" className="card text-center block">
                 <div className="bg-accent p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <MapPin className="w-8 h-8 text-white" />
+                  <Icon name="MapPin" className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-text mb-3">Spokane Valley</h3>
                 <p className="text-text mb-4">Comprehensive residential and move-out cleaning services available.</p>
@@ -45,7 +45,7 @@ export default function Locations() {
               </a>
               <a href="/locations/liberty-lake" className="card text-center block">
                 <div className="bg-accent p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <MapPin className="w-8 h-8 text-white" />
+                  <Icon name="MapPin" className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-text mb-3">Liberty Lake</h3>
                 <p className="text-text mb-4">Full-service cleaning solutions for residential and commercial properties.</p>
@@ -63,7 +63,7 @@ export default function Locations() {
               <h3 className="text-xl font-bold text-text mb-4">Service Area Map</h3>
               <div className="bg-white rounded-lg p-8 min-h-[400px] flex items-center justify-center">
                 <div className="text-text">
-                  <MapPin className="w-16 h-16 mx-auto mb-4" />
+                  <Icon name="MapPin" className="w-16 h-16 mx-auto mb-4" />
                   <p className="text-lg font-medium">Interactive Service Area Map</p>
                   <p className="text-sm">Map integration available for embedded Google Maps</p>
                 </div>
@@ -78,7 +78,7 @@ export default function Locations() {
               <div className="space-y-4">
                 <div className="flex items-start">
                   <div className="bg-green-100 p-1 rounded mr-3 mt-1">
-                    <CheckCircle className="w-4 h-4 text-green-600" />
+                    <Icon name="CheckCircle" className="w-4 h-4 text-green-600" />
                   </div>
                   <div>
                     <div className="font-medium text-text">Same-Day Service</div>
@@ -87,7 +87,7 @@ export default function Locations() {
                 </div>
                 <div className="flex items-start">
                   <div className="bg-green-100 p-1 rounded mr-3 mt-1">
-                    <CheckCircle className="w-4 h-4 text-green-600" />
+                    <Icon name="CheckCircle" className="w-4 h-4 text-green-600" />
                   </div>
                   <div>
                     <div className="font-medium text-text">No Travel Fees</div>
@@ -96,7 +96,7 @@ export default function Locations() {
                 </div>
                 <div className="flex items-start">
                   <div className="bg-green-100 p-1 rounded mr-3 mt-1">
-                    <CheckCircle className="w-4 h-4 text-green-600" />
+                    <Icon name="CheckCircle" className="w-4 h-4 text-green-600" />
                   </div>
                   <div>
                     <div className="font-medium text-text">Flexible Scheduling</div>

@@ -2,7 +2,7 @@
 // llm:brand-config-migrated
 // llm:callout-banner-migrated
 // llm:cta-migrated
-import { ArrowRight, MapPin } from "lucide-react";
+import Icon from "@/components/ui/icon";
 import { Button } from "@/components/ui/button";
 import { useModal } from "@/components/modal/ModalProvider";
 import heroDeep from "@assets/spokane-wa-move-out-cleaning-hero.webp";
@@ -106,7 +106,7 @@ export default function DeepCleaning() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button onClick={() => open("quote")} variant="primary">Get My Free Quote</Button>
             <a href="#includes" aria-label="See What's Included" className="inline-flex items-center justify-center">
-              <Button variant="primary">See What's Included <ArrowRight className="w-5 h-5 ml-2" /></Button>
+              <Button variant="primary">See What's Included <Icon name="ArrowRight" className="w-5 h-5 ml-2" /></Button>
             </a>
           </div>
         }
@@ -223,7 +223,8 @@ export default function DeepCleaning() {
           <ul className="flex flex-wrap justify-center gap-4 mt-3 text-text">
             {cityList.map((c) => (
               <li key={c} className="flex items-center gap-2 px-2">
-                <MapPin
+                <Icon
+                  name="MapPin"
                   className={`w-4 h-4 ${["Spokane", "Spokane Valley", "Liberty Lake"].includes(c) ? "text-accent" : "text-gray-400"}`}
                   aria-hidden="true"
                 />

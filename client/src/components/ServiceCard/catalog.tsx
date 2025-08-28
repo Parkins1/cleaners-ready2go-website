@@ -1,4 +1,4 @@
-import { Home as HomeIcon, CheckCircle, Send } from "lucide-react";
+import Icon from "@/components/ui/icon";
 import residentialCardImg from "@assets/spokane-wa-residential-cleaning-card.webp";
 import res480 from "@assets/spokane-wa-residential-cleaning-card-480.webp";
 import res768 from "@assets/spokane-wa-residential-cleaning-card-768.webp";
@@ -31,7 +31,7 @@ export const serviceCatalog: Record<string, Omit<ServiceCardProps, "className">>
     sources: [
       { type: 'image/avif', srcSet: `${res480Avif} 480w, ${res768Avif} 768w, ${res1024Avif} 1024w` },
     ],
-    icon: <HomeIcon className="w-2/3 h-2/3 text-white" />,
+    icon: <Icon name="Home" className="w-2/3 h-2/3 text-white" />,
   },
   "deep-cleaning": {
     id: "deep-cleaning",
@@ -45,7 +45,7 @@ export const serviceCatalog: Record<string, Omit<ServiceCardProps, "className">>
     sources: [
       { type: 'image/avif', srcSet: `${res480Avif} 480w, ${res768Avif} 768w, ${res1024Avif} 1024w` },
     ],
-    icon: <CheckCircle className="w-2/3 h-2/3 text-white" />,
+    icon: <Icon name="CheckCircle" className="w-2/3 h-2/3 text-white" />,
   },
   "move-out": {
     id: "move-out",
@@ -59,7 +59,7 @@ export const serviceCatalog: Record<string, Omit<ServiceCardProps, "className">>
     sources: [
       { type: 'image/avif', srcSet: `${mv480Avif} 480w, ${mv768Avif} 768w, ${mv1024Avif} 1024w` },
     ],
-    icon: <CheckCircle className="w-2/3 h-2/3 text-white" />,
+    icon: <Icon name="CheckCircle" className="w-2/3 h-2/3 text-white" />,
   },
   "apartment-cleaning": {
     id: "apartment-cleaning",
@@ -73,7 +73,7 @@ export const serviceCatalog: Record<string, Omit<ServiceCardProps, "className">>
     sources: [
       { type: 'image/avif', srcSet: `${res480Avif} 480w, ${res768Avif} 768w, ${res1024Avif} 1024w` },
     ],
-    icon: <CheckCircle className="w-2/3 h-2/3 text-white" />,
+    icon: <Icon name="CheckCircle" className="w-2/3 h-2/3 text-white" />,
   },
 };
  

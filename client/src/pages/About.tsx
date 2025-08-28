@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { CheckCircle, Award, Clock, Shield } from "lucide-react";
+import Icon from "@/components/ui/icon";
 import BookingModal from "@/components/BookingModal";
 
 function About() {
@@ -43,7 +43,7 @@ function About() {
               </p>
               <div className="flex items-center">
                 <div className="bg-green-100 p-2 rounded-lg mr-4">
-                  <CheckCircle className="w-6 h-6 text-green-600" />
+                  <Icon name="CheckCircle" className="w-6 h-6 text-green-600" />
                 </div>
                 <span className="font-semibold text-text">Trusted by 500+ local families</span>
               </div>
@@ -53,21 +53,21 @@ function About() {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="card text-center">
               <div className="bg-accent p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <Award className="w-8 h-8 text-white" />
+                <Icon name="Award" className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-text mb-2">Quality Guaranteed</h3>
               <p className="text-text font-medium">100% satisfaction guarantee on every cleaning service</p>
             </div>
             <div className="card text-center">
               <div className="bg-accent p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <Clock className="w-8 h-8 text-white" />
+                <Icon name="Clock" className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-text mb-2">Always On Time</h3>
               <p className="text-text font-medium">Reliable scheduling that fits your busy lifestyle</p>
             </div>
             <div className="card text-center">
               <div className="bg-accent p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <Shield className="w-8 h-8 text-white" />
+                <Icon name="Shield" className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-text mb-2">Fully Insured</h3>
               <p className="text-text font-medium">Complete peace of mind with full insurance coverage</p>

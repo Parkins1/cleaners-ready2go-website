@@ -16,7 +16,7 @@ import hero1024Avif from "@assets/spokane-wa-house-cleaning-hero-1024.avif";
  import ServiceGrid from "@/components/ServiceCard/ServiceGrid";
  import ContentCard from "@/components/ContentCard/ContentCard";
  import HeroSection from "@/components/HeroSection/HeroSection";
- import { Icon } from "@/components/ui/icon";
+import Icon from "@/components/ui/icon";
  import { SEO } from "@/components/seo/SEO";
  import { Helmet } from "react-helmet-async";
 
