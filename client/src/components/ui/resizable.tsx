@@ -1,6 +1,6 @@
 "use client"
 
-import Icon from "@/components/ui/Icon"
+import Icon from "@/components/ui/icon"
 import * as ResizablePrimitive from "react-resizable-panels"
 
 import { cn } from "@/lib/utils"

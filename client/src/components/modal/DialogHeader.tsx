@@ -1,5 +1,5 @@
 // llm:modal-migrated
-import Icon from "@/components/ui/Icon";
+import Icon from "@/components/ui/icon";
 
 interface DialogHeaderProps {
   title: string;

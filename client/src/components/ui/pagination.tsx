@@ -1,5 +1,5 @@
 import * as React from "react"
-import Icon from "@/components/ui/Icon"
+import Icon from "@/components/ui/icon"
 
 import { cn } from "@/lib/utils"
 import { ButtonProps, buttonVariants } from "@/components/ui/button"

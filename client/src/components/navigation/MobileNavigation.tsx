@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { useActivePath } from "./useActivePath";
-import Icon from "@/components/ui/Icon";
+import Icon from "@/components/ui/icon";
 import { NavItem, NavChild } from "./types"; // Centralized NavItem and NavChild types
 
 interface MobileNavigationProps {

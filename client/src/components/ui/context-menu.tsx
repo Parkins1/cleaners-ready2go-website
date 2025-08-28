@@ -1,6 +1,6 @@
 import * as React from "react"
 import * as ContextMenuPrimitive from "@radix-ui/react-context-menu"
-import Icon from "@/components/ui/Icon"
+import Icon from "@/components/ui/icon"
 
 import { cn } from "@/lib/utils"
 
