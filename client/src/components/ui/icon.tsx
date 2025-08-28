@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import type { LucideProps } from 'lucide-react';
 
-// A mapping of all used icon names to their dynamic import
+// Centralized lazy-loaded icons to keep bundles small and fast
 const iconImports = {
   Phone: lazy(() => import('lucide-react/dist/esm/icons/phone')),
   Mail: lazy(() => import('lucide-react/dist/esm/icons/mail')),
@@ -39,7 +39,7 @@ const iconImports = {
 
 export type IconName = keyof typeof iconImports;
 
-export interface IconProps extends LucideProps {
+export interface IconProps extends Omit<LucideProps, 'ref'> {
   name: IconName;
 }
 
@@ -47,13 +47,29 @@ const Icon = ({ name, ...props }: IconProps) => {
   const LucideIcon = iconImports[name];
 
   if (!LucideIcon) {
-    // Fallback for missing icon, logs an error.
     console.error(`Icon "${name}" not found.`);
-    return <div style={{ width: props.size || props.width || 24, height: props.size || props.height || 24, backgroundColor: 'rgba(255,0,0,0.2)' }} />;
+    return (
+      <div
+        style={{
+          width: (props as any).size || (props as any).width || 24,
+          height: (props as any).size || (props as any).height || 24,
+          backgroundColor: 'rgba(255,0,0,0.2)',
+        }}
+      />
+    );
   }
 
   return (
-    <Suspense fallback={<div style={{ width: props.size || props.width || 24, height: props.size || props.height || 24 }} />}>
+    <Suspense
+      fallback={
+        <div
+          style={{
+            width: (props as any).size || (props as any).width || 24,
+            height: (props as any).size || (props as any).height || 24,
+          }}
+        />
+      }
+    >
       <LucideIcon {...props} />
     </Suspense>
   );

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useModal } from "@/components/modal/ModalProvider";
 import ContentCard from "@/components/ContentCard/ContentCard";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+// Use centralized lazy-loaded Icon
 import heroMove from "@assets/spokane-wa-move-out-cleaning-hero.webp";
 import mv480 from "@assets/spokane-wa-move-out-cleaning-hero-480.webp";
 import mv768 from "@assets/spokane-wa-move-out-cleaning-hero-768.webp";
@@ -34,7 +35,7 @@ export default function MoveOut() {
         "No. Many clients provide a lockbox/garage code. We send arrival and completion updates, and your lead can walk you through photos if you can’t be onsite.",
     },
     {
-      q: "What’s included inside the kitchen and bathrooms?",
+      q: "What's included inside the kitchen and bathrooms?",
       a:
         "Kitchen: inside oven and fridge (when scoped), cabinet fronts and interiors (emptied), backsplash, sink/faucet, and floors. Bathrooms: descaling, glass polishing, fixture disinfecting, grout touch-ups (where feasible), and floor sanitation.",
     },
@@ -45,16 +46,16 @@ export default function MoveOut() {
     {
       q: "Can you do a same-day or urgent move-out cleaning?",
       a:
-        "Often yes. Choose the Urgent / Same-Day add-on during quoting. Availability depends on crew capacity; we’ll confirm instantly.",
+        "Often yes. Choose the Urgent / Same-Day add-on during quoting. Availability depends on crew capacity; we'll confirm instantly.",
     },
     {
       q: "Do you clean walls or paint?",
       a:
-        "We perform spot wall cleaning where possible without damaging paint. Full repainting isn’t included, but we can refer a painter if needed.",
+        "We perform spot wall cleaning where possible without damaging paint. Full repainting isn't included, but we can refer a painter if needed.",
     },
     {
       q: "Do you handle junk removal or hauling?",
-      a: "We don’t haul large items. We can connect you with a trusted junk-removal partner and coordinate schedules when possible.",
+      a: "We don't haul large items. We can connect you with a trusted junk-removal partner and coordinate schedules when possible.",
     },
     {
       q: "How do you price a move-out clean?",
@@ -85,7 +86,7 @@ export default function MoveOut() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button onClick={() => open("quote")} variant="primary">Get My Free Quote</Button>
             <a href="#includes" aria-label="See What's Included" className="inline-flex items-center justify-center">
-              <Button variant="primary">See What’s Included <Icon name="ArrowRight" className="w-5 h-5 ml-2" /></Button>
+              <Button variant="primary">See What's Included <Icon name="ArrowRight" className="w-5 h-5 ml-2" /></Button>
             </a>
           </div>
         }
@@ -99,10 +100,10 @@ export default function MoveOut() {
       <section className="py-12 bg-white">
         <div className="max-w-5xl mx-auto px-6 space-y-6">
           <p className="text-lg text-text">
-            Moving out shouldn’t mean spending your last night scrubbing oven racks. Cleaners Ready 2 GO delivers a modern, no-nonsense move-out cleaning that fits your timeline and protects your budget. We align with manager and landlord checklists so your home looks inspection-ready—baseboards to blinds, bathrooms to the inside of appliances.
+            Moving out shouldn't mean spending your last night scrubbing oven racks. Cleaners Ready 2 GO delivers a modern, no-nonsense move-out cleaning that fits your timeline and protects your budget. We align with manager and landlord checklists so your home looks inspection-ready—baseboards to blinds, bathrooms to the inside of appliances.
           </p>
           <p className="text-lg text-text">
-            Our approach is built for real life in the Inland Northwest: winter grit, summer dust, pet hair, and everything in between. You’ll get a precise scope, on-time arrival, eco- and pet-safe products, and a final shine that makes your home feel brand new for the next resident (and your rental history). The result? Less stress, more deposit back, and a smoother hand-off so you can focus on your next place.
+            Our approach is built for real life in the Inland Northwest: winter grit, summer dust, pet hair, and everything in between. You'll get a precise scope, on-time arrival, eco- and pet-safe products, and a final shine that makes your home feel brand new for the next resident (and your rental history). The result? Less stress, more deposit back, and a smoother hand-off so you can focus on your next place.
           </p>
         </div>
       </section>
@@ -178,7 +179,7 @@ export default function MoveOut() {
                     <li><Icon name="CheckCircle" className="w-5 h-5 mr-2 inline-block align-middle text-brand-gold" />Urgent / same-day upgrade (capacity-dependent)</li>
                   </ul>
                   <p className="mt-3 text-sm text-muted-foreground">
-                    Note: We don’t remove large junk or furniture. For apartment cleanout (trash-out) services, we can refer a trusted partner.
+                    Note: We don't remove large junk or furniture. For apartment cleanout (trash-out) services, we can refer a trusted partner.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -208,7 +209,7 @@ export default function MoveOut() {
 
             <ContentCard>
               <h3 className="font-semibold">Step 4: Final Walk-Through & Satisfaction</h3>
-              <p className="mt-2 text-sm">We do a quick tour (you or your agent). If something gets flagged within 24 hours, we’ll make it right—satisfaction-first.</p>
+              <p className="mt-2 text-sm">We do a quick tour (you or your agent). If something gets flagged within 24 hours, we'll make it right—satisfaction-first.</p>
             </ContentCard>
           </div>
         </div>
@@ -219,19 +220,19 @@ export default function MoveOut() {
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">Why Choose Us</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
             <ContentCard className="flex items-center gap-3 min-h-[44px] py-2">
-              <ShieldCheck className="text-teal" />
+              <Icon name="ShieldCheck" className="text-teal" />
               <span className="font-medium">Licensed & Insured</span>
             </ContentCard>
             <ContentCard className="flex items-center gap-3 min-h-[44px] py-2">
-              <Leaf className="text-teal" />
+              <Icon name="Leaf" className="text-teal" />
               <span className="font-medium">Eco & Pet-Safe</span>
             </ContentCard>
             <ContentCard className="flex items-center gap-3 min-h-[44px] py-2">
-              <Users className="text-teal" />
+              <Icon name="Users" className="text-teal" />
               <span className="font-medium">Vetted Local Pros</span>
             </ContentCard>
             <ContentCard className="flex items-center gap-3 min-h-[44px] py-2">
-              <Sparkles className="text-teal" />
+              <Icon name="Sparkles" className="text-teal" />
               <span className="font-medium">Satisfaction Guaranteed</span>
             </ContentCard>
           </div>
@@ -246,8 +247,8 @@ export default function MoveOut() {
       <section className="py-12 bg-service-band">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-2">Service Area</h2>
-          <p className="text-lg text-text max-w-3xl mx-auto">We serve Spokane Valley, Spokane, and Liberty Lake, including nearby neighborhoods and communities along I-90. If you’re just outside these areas, ask—we can often accommodate with a small travel fee.</p>
-          
+          <p className="text-lg text-text max-w-3xl mx-auto">We serve Spokane Valley, Spokane, and Liberty Lake, including nearby neighborhoods and communities along I-90. If you're just outside these areas, ask—we can often accommodate with a small travel fee.</p>
+
           {/* Exactly four location cards linking to the four location pages */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
             <ContentCard as="a" href="/locations/spokane" interactive className="text-center">
@@ -274,15 +275,15 @@ export default function MoveOut() {
         <div className="max-w-4xl mx-auto px-6 space-y-6">
           <h2 className="text-3xl lg:text-4xl font-bold text-text text-center">Testimonials</h2>
           <ContentCard as="blockquote">
-            <p>“Flawless move-out clean. The manager said it was the easiest inspection all month. I got my full deposit back.”</p>
+            <p>"Flawless move-out clean. The manager said it was the easiest inspection all month. I got my full deposit back."</p>
             <footer className="mt-3 text-sm text-gray-600">— Lauren K., Spokane Valley</footer>
           </ContentCard>
           <ContentCard as="blockquote">
-            <p>“Booked on short notice and they still nailed the details—oven, fridge, baseboards—everything looked brand new.”</p>
+            <p>"Booked on short notice and they still nailed the details—oven, fridge, baseboards—everything looked brand new."</p>
             <footer className="mt-3 text-sm text-gray-600">— Dan R., Liberty Lake</footer>
           </ContentCard>
           <ContentCard as="blockquote">
-            <p>“Our tenants left the place rough. Cleaners Ready 2 GO got it ready for photos the next day. Highly recommend.”</p>
+            <p>"Our tenants left the place rough. Cleaners Ready 2 GO got it ready for photos the next day. Highly recommend."</p>
             <footer className="mt-3 text-sm text-gray-600">— Melissa P., Property Manager, Spokane</footer>
           </ContentCard>
         </div>
