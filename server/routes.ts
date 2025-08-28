@@ -2,7 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 // Explicit .js extension for Node ESM on Vercel
 import { storage } from "./storage.js";
-import { insertContactSchema, insertBookingSchema, insertQuoteSchema, insertBlogPostSchema } from "@shared/schema";
+import { insertContactSchema, insertBookingSchema, insertQuoteSchema, insertBlogPostSchema } from "../shared/schema.js";
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
