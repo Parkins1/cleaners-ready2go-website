@@ -14,7 +14,6 @@ export function log(message: string, source = "express") {
     second: "2-digit",
     hour12: true,
   });
-
   console.log(`${formattedTime} [${source}] ${message}`);
 }
 
@@ -28,9 +27,11 @@ export async function setupVite(app: Express, server: Server) {
   // Lazy import Vite and its config only in development to avoid bundling them
   const [{ createServer: createViteServer, createLogger }, { default: viteConfig }] = await Promise.all([
     import("vite"),
-    import("../vite.config.ts"),
+    import("../vite.config.js"),
   ]);
+
   viteLogger = createLogger();
+
   const vite = await createViteServer({
     ...viteConfig,
     configFile: false,
@@ -46,6 +47,7 @@ export async function setupVite(app: Express, server: Server) {
   });
 
   app.use(vite.middlewares);
+
   app.use("*", async (req, res, next) => {
     const url = req.originalUrl;
 
@@ -61,8 +63,9 @@ export async function setupVite(app: Express, server: Server) {
       let template = await fs.promises.readFile(clientTemplate, "utf-8");
       template = template.replace(
         `src="/src/main.tsx"`,
-        `src="/src/main.tsx?v=${nanoid()}"`,
+        `src="/src/main.tsx?v=${nanoid()}"`
       );
+
       const page = await vite.transformIndexHtml(url, template);
       res.status(200).set({ "Content-Type": "text/html" }).end(page);
     } catch (e) {
@@ -78,10 +81,12 @@ export function serveStatic(app: Express) {
     path.resolve(import.meta.dirname, "..", "public"),
     path.resolve(import.meta.dirname, "..", "dist", "public"),
   ];
+
   const distPath = candidates.find((p) => fs.existsSync(p));
+
   if (!distPath) {
     throw new Error(
-      `Could not find the build directory. Checked: ${candidates.join(", ")}. Make sure to run 'npm run build' and include assets.`,
+      `Could not find the build directory. Checked: ${candidates.join(", ")}. Make sure to run 'npm run build' and include assets.`
     );
   }
 
