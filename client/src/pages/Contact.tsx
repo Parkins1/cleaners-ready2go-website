@@ -17,7 +17,7 @@ import { SEO } from "@/components/seo/SEO";
 export default function Contact() {
   const { open, close } = useModal();
   const { toast } = useToast();
-  const { mutateAsync, isLoading } = useMutation({
+  const { mutateAsync, isPending } = useMutation({
     mutationFn: async (data: ContactFormData) => {
       const response = await apiRequest("POST", "/api/contacts", data);
       return response.json();
@@ -45,7 +45,7 @@ export default function Contact() {
     open("contact", {
       title: "Send Us a Message",
       description: "Fill out the form below and we'll get back to you as soon as possible.",
-      form: <ContactForm onSubmit={handleSubmit} isLoading={isLoading} />,
+      form: <ContactForm onSubmit={handleSubmit} isLoading={isPending} />,
     });
   };
 
@@ -70,9 +70,9 @@ export default function Contact() {
             <div className="bg-surface p-8 rounded-xl">
               <h2 className="text-2xl font-bold text-text mb-6">Send Us a Message</h2>
               {useNewForm ? (
-                <ContactForm onSubmit={handleSubmit} isLoading={isLoading} />
+                <ContactForm onSubmit={handleSubmit} isLoading={isPending} />
               ) : (
-                <SnippetContactForm onSubmit={handleSubmit} isLoading={isLoading} />
+                <SnippetContactForm onSubmit={handleSubmit} isLoading={isPending} />
               )}
             </div>
 

@@ -30,9 +30,14 @@
     "client", 
     "shared", 
     "components", 
-    "vite.config.ts", 
-    "tailwind.config.ts", 
+    
     "drizzle.config.ts"
   ],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "exclude": [
+    "vite.config.ts",
+    "tailwind.config.ts",
+    "**/*.test.ts",
+    "**/*.test.tsx"
+  ],
+  
 }
