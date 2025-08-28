@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Award, Heart, Zap } from "lucide-react";
+import Icon from "@/components/ui/icon";
 import BookingModal from "@/components/BookingModal";
 
 function Team() {
@@ -76,7 +76,7 @@ function Team() {
               </p>
               <div className="flex items-center">
                 <div className="bg-accent p-2 rounded-lg mr-4">
-                  <Award className="w-6 h-6 text-white" />
+                  <Icon name="Award" className="w-6 h-6 text-white" />
                 </div>
                 <span className="font-semibold text-text">Fully Trained & Background Checked</span>
               </div>
@@ -117,21 +117,21 @@ function Team() {
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="bg-accent p-3 rounded-lg w-fit mx-auto mb-4">
-                  <Award className="w-6 h-6 text-white" />
+                  <Icon name="Award" className="w-6 h-6 text-white" />
                 </div>
                 <h4 className="text-lg font-semibold text-white mb-2">Reliability</h4>
                 <p className="text-gray-300 text-sm">We show up on time, every time, and deliver consistent quality you can count on.</p>
               </div>
               <div className="text-center">
                 <div className="bg-accent p-3 rounded-lg w-fit mx-auto mb-4">
-                  <Heart className="w-6 h-6 text-white" />
+                  <Icon name="Heart" className="w-6 h-6 text-white" />
                 </div>
                 <h4 className="text-lg font-semibold text-white mb-2">Care</h4>
                 <p className="text-gray-300 text-sm">We treat your home with the same care and respect we'd give our own family.</p>
               </div>
               <div className="text-center">
                 <div className="bg-accent p-3 rounded-lg w-fit mx-auto mb-4">
-                  <Zap className="w-6 h-6 text-white" />
+                  <Icon name="Zap" className="w-6 h-6 text-white" />
                 </div>
                 <h4 className="text-lg font-semibold text-white mb-2">Excellence</h4>
                 <p className="text-gray-300 text-sm">We're never satisfied with "good enough" - we strive for perfection in every detail.</p>

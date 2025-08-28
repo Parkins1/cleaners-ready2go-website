@@ -1,5 +1,5 @@
 // llm:cta-migrated
-import { CheckCircle } from "lucide-react";
+import Icon from "@/components/ui/icon";
 import residentialCardImg from "@assets/spokane-wa-residential-cleaning-card.webp";
 import res480 from "@assets/spokane-wa-residential-cleaning-card-480.webp";
 import res768 from "@assets/spokane-wa-residential-cleaning-card-768.webp";
@@ -48,19 +48,19 @@ export default function Residential() {
               <div className="text-text font-medium mb-6">per cleaning</div>
               <ul className="text-left space-y-2 mb-8">
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
+                  <Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />
                   <span className="text-sm text-text font-medium">
                     All rooms cleaned
                   </span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
+                  <Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />
                   <span className="text-sm text-text font-medium">
                     Kitchen & bathrooms
                   </span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
+                  <Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />
                   <span className="text-sm text-text font-medium">
                     Vacuum & mop
                   </span>
@@ -84,19 +84,19 @@ export default function Residential() {
               <div className="text-yellow-100 mb-6">per cleaning</div>
               <ul className="text-left space-y-2 mb-8">
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-white mr-2" />
+                  <Icon name="CheckCircle" className="w-4 h-4 text-white mr-2" />
                   <span className="text-sm">All rooms cleaned</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-white mr-2" />
+                  <Icon name="CheckCircle" className="w-4 h-4 text-white mr-2" />
                   <span className="text-sm">Kitchen & bathrooms</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-white mr-2" />
+                  <Icon name="CheckCircle" className="w-4 h-4 text-white mr-2" />
                   <span className="text-sm">Vacuum & mop</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-white mr-2" />
+                  <Icon name="CheckCircle" className="w-4 h-4 text-white mr-2" />
                   <span className="text-sm">Dusting & organizing</span>
                 </li>
               </ul>
@@ -117,19 +117,19 @@ export default function Residential() {
               </div>
               <ul className="text-left space-y-2 mb-8">
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
+                  <Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />
                   <span className="text-sm text-text font-medium">
                     Deep cleaning
                   </span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
+                  <Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />
                   <span className="text-sm text-text font-medium">
                     All rooms + extras
                   </span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
+                  <Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />
                   <span className="text-sm text-text font-medium">
                     Appliances inside
                   </span>

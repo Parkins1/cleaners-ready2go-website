@@ -108,6 +108,7 @@
     "esbuild": "^0.25.0",
     "jest": "^30.0.5",
     "postcss": "^8.4.47",
+    "rollup-plugin-critical": "^1.0.15",
     "rollup-plugin-visualizer": "^6.0.3",
     "sharp": "^0.34.3",
     "supertest": "^6.3.3",

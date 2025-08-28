@@ -1,7 +1,7 @@
 // llm:brand-config-migrated
 // llm:callout-banner-migrated
 // llm:cta-migrated
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import Icon from "@/components/ui/icon";
 import { Button } from "@/components/ui/button";
 import { useModal } from "@/components/modal/ModalProvider";
 import { useMutation } from "@tanstack/react-query";
@@ -89,7 +89,7 @@ export default function Contact() {
               <div className="space-y-6">
                 <div className="flex items-center">
                   <div className="bg-accent p-3 rounded-lg mr-4">
-                    <Phone className="w-6 h-6 text-white" />
+                    <Icon name="Phone" className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <div className="font-semibold text-text">Phone</div>
@@ -101,7 +101,7 @@ export default function Contact() {
 
                 <div className="flex items-center">
                   <div className="bg-accent p-3 rounded-lg mr-4">
-                    <Mail className="w-6 h-6 text-white" />
+                    <Icon name="Mail" className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <div className="font-semibold text-text">Email</div>
@@ -113,7 +113,7 @@ export default function Contact() {
 
                 <div className="flex items-start">
                   <div className="bg-accent p-3 rounded-lg mr-4 mt-1">
-                    <MapPin className="w-6 h-6 text-white" />
+                    <Icon name="MapPin" className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <div className="font-semibold text-text">Service Areas</div>
@@ -126,7 +126,7 @@ export default function Contact() {
 
                 <div className="flex items-center">
                   <div className="bg-accent p-3 rounded-lg mr-4">
-                    <Clock className="w-6 h-6 text-white" />
+                    <Icon name="Clock" className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <div className="font-semibold text-text">Hours</div>
@@ -142,7 +142,7 @@ export default function Contact() {
                 <h3 className="text-lg font-semibold text-text mb-4">Our Service Area</h3>
                 <div className="bg-white rounded-lg h-64 flex items-center justify-center">
                   <div className="text-center text-text">
-                    <MapPin className="w-12 h-12 mx-auto mb-3" />
+                    <Icon name="MapPin" className="w-12 h-12 mx-auto mb-3" />
                     <p className="font-medium">Interactive Map</p>
                     <p className="text-sm">Embed Google Maps showing service areas</p>
                   </div>

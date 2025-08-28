@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { useActivePath } from "./useActivePath";
-import { Menu, X } from "lucide-react";
+import Icon from "@/components/ui/icon";
 import { NavItem, NavChild } from "./types"; // Centralized NavItem and NavChild types
 
 interface MobileNavigationProps {
@@ -21,7 +21,7 @@ export default function MobileNavigation({ navItems }: MobileNavigationProps) {
         className="text-text hover:text-accent p-2"
         aria-label={isOpen ? "Close menu" : "Open menu"}
       >
-        {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        {isOpen ? <Icon name="X" className="w-6 h-6" /> : <Icon name="Menu" className="w-6 h-6" />}
       </button>
 
       {/* Drawer */}

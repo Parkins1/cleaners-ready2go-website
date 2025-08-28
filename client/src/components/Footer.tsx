@@ -1,5 +1,4 @@
-
-import { Phone, Mail, MapPin } from "lucide-react";
+import Icon from "@/components/ui/icon";
 
 export default function Footer() {
   return (
@@ -30,19 +29,19 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Contact Us</h3>
             <div className="space-y-3">
               <div className="flex items-center">
-                <Phone className="w-4 h-4 text-text mr-3" />
+                <Icon name="Phone" className="w-4 h-4 text-text mr-3" />
                 <a href="tel:+1234567890" className="footer-link">
                   (123) 456-7890
                 </a>
               </div>
               <div className="flex items-center">
-                <Mail className="w-4 h-4 text-text mr-3" />
+                <Icon name="Mail" className="w-4 h-4 text-text mr-3" />
                 <a href="mailto:info@cleanersready2go.com" className="footer-link">
                   info@cleanersready2go.com
                 </a>
               </div>
               <div className="flex items-start">
-                <MapPin className="w-4 h-4 text-text mr-3 mt-1" />
+                <Icon name="MapPin" className="w-4 h-4 text-text mr-3 mt-1" />
                 <div className="text-text">
                   Spokane Valley, Liberty Lake,<br />
                   and Greenacres, WA

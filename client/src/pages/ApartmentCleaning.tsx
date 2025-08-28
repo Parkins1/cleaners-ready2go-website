@@ -1,5 +1,5 @@
 // llm:cta-migrated
-import { CheckCircle, Home as HomeIcon, Building2, ArrowRight } from "lucide-react";
+import Icon from "@/components/ui/icon";
 import { useModal } from "@/components/modal/ModalProvider";
 import { Button } from "@/components/ui/button";
 import ContentCard from "@/components/ContentCard/ContentCard";
@@ -30,7 +30,7 @@ export default function ApartmentCleaning() {
         {/* Copy */}
         <div className="relative z-10 text-center max-w-3xl mx-auto px-6 py-16">
           <div className="mx-auto mb-4 w-16 h-16 rounded-full bg-accent flex items-center justify-center shadow-lg">
-            <Building2 className="w-8 h-8 text-white" />
+            <Icon name="Building2" className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-white text-4xl lg:text-6xl font-bold leading-tight drop-shadow-sm mb-3">Apartment Cleaning</h1>
           <p className="text-slate-100/95 text-lg lg:text-xl leading-snug sm:leading-normal max-w-[36ch] mx-auto">
@@ -50,8 +50,8 @@ export default function ApartmentCleaning() {
               variant="primary"
             >
               Schedule Cleaning
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
+              <Icon name="ArrowRight" className="w-5 h-5 ml-2" />
+              </Button>
           </div>
         </div>
       </section>
@@ -69,9 +69,9 @@ export default function ApartmentCleaning() {
               <div className="text-3xl font-bold text-accent mb-2">$99</div>
               <div className="text-text font-medium mb-6">per cleaning</div>
               <ul className="text-left space-y-2 mb-8">
-                <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-600 mr-2" /><span className="text-sm text-text font-medium">Kitchen & bath refresh</span></li>
-                <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-600 mr-2" /><span className="text-sm text-text font-medium">Dusting, vacuum, mop</span></li>
-                <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-600 mr-2" /><span className="text-sm text-text font-medium">Trash & tidy</span></li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" /><span className="text-sm text-text font-medium">Kitchen & bath refresh</span></li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" /><span className="text-sm text-text font-medium">Dusting, vacuum, mop</span></li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" /><span className="text-sm text-text font-medium">Trash & tidy</span></li>
               </ul>
               <Button onClick={() => open("booking")} variant="primary" className="w-full">Choose Plan</Button>
             </ContentCard>
@@ -81,9 +81,9 @@ export default function ApartmentCleaning() {
               <div className="text-3xl font-bold mb-2">$119</div>
               <div className="text-yellow-100 mb-6">per cleaning</div>
               <ul className="text-left space-y-2 mb-8">
-                <li className="flex items-center"><CheckCircle className="w-4 h-4 text-white mr-2" /><span className="text-sm">Kitchen & bath detail</span></li>
-                <li className="flex items-center"><CheckCircle className="w-4 h-4 text-white mr-2" /><span className="text-sm">Dusting, floors, surfaces</span></li>
-                <li className="flex items-center"><CheckCircle className="w-4 h-4 text-white mr-2" /><span className="text-sm">High-touch sanitizing</span></li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-white mr-2" /><span className="text-sm">Kitchen & bath detail</span></li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-white mr-2" /><span className="text-sm">Dusting, floors, surfaces</span></li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-white mr-2" /><span className="text-sm">High-touch sanitizing</span></li>
               </ul>
               <Button onClick={() => open("booking")} variant="primary" className="w-full">Choose Plan</Button>
             </ContentCard>
@@ -92,9 +92,9 @@ export default function ApartmentCleaning() {
               <div className="text-3xl font-bold text-accent mb-2">$149</div>
               <div className="text-text font-medium mb-6">per cleaning</div>
               <ul className="text-left space-y-2 mb-8">
-                <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-600 mr-2" /><span className="text-sm text-text font-medium">Detail dusting</span></li>
-                <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-600 mr-2" /><span className="text-sm text-text font-medium">Appliance exteriors</span></li>
-                <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-600 mr-2" /><span className="text-sm text-text font-medium">Bathroom shine</span></li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" /><span className="text-sm text-text font-medium">Detail dusting</span></li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" /><span className="text-sm text-text font-medium">Appliance exteriors</span></li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" /><span className="text-sm text-text font-medium">Bathroom shine</span></li>
               </ul>
               <Button onClick={() => open("booking")} variant="primary" className="w-full">Choose Plan</Button>
             </ContentCard>
@@ -112,50 +112,50 @@ export default function ApartmentCleaning() {
             <ContentCard>
               <h3 className="text-lg font-semibold text-text mb-3">Kitchen</h3>
               <ul className="space-y-2 text-text">
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Counters and backsplash wiped and sanitized</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Sink and faucet cleaned; fixtures polished</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Exterior of appliances (fridge, oven/stove, microwave, dishwasher)</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Microwave cleaned inside and out</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Stovetop and hood degreased; burner grates cleaned (as applicable)</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Cabinet fronts and handles wiped</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Small appliance exteriors wiped (toaster, coffee maker)</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Floors vacuumed and mopped; baseboards wiped</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Counters and backsplash wiped and sanitized</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Sink and faucet cleaned; fixtures polished</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Exterior of appliances (fridge, oven/stove, microwave, dishwasher)</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Microwave cleaned inside and out</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Stovetop and hood degreased; burner grates cleaned (as applicable)</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Cabinet fronts and handles wiped</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Small appliance exteriors wiped (toaster, coffee maker)</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Floors vacuumed and mopped; baseboards wiped</span></li>
               </ul>
             </ContentCard>
 
             <ContentCard>
               <h3 className="text-lg font-semibold text-text mb-3">Bathroom</h3>
               <ul className="space-y-2 text-text">
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Toilet cleaned inside/outside, base and hinges sanitized</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Tub/shower scrubbed; tile and grout soap scum removal</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Shower glass and mirrors polished, streak-free</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Sink, faucet, and counters disinfected; fixtures polished</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Cabinet fronts wiped; door/switch touchpoints cleaned</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Floors vacuumed and mopped; baseboards wiped</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Toilet cleaned inside/outside, base and hinges sanitized</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Tub/shower scrubbed; tile and grout soap scum removal</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Shower glass and mirrors polished, streak-free</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Sink, faucet, and counters disinfected; fixtures polished</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Cabinet fronts wiped; door/switch touchpoints cleaned</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Floors vacuumed and mopped; baseboards wiped</span></li>
               </ul>
             </ContentCard>
 
             <ContentCard>
               <h3 className="text-lg font-semibold text-text mb-3">Bedrooms</h3>
               <ul className="space-y-2 text-text">
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Dust furniture, decor, ledges, and reachable vents</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Wipe touchpoints: door handles, switches, rails</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Mirrors and interior glass spot-cleaned</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Floors vacuumed (including edges); hard floors mopped</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Baseboards and window sills wiped where reachable</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Tidy surfaces and empty trash (if present)</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Dust furniture, decor, ledges, and reachable vents</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Wipe touchpoints: door handles, switches, rails</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Mirrors and interior glass spot-cleaned</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Floors vacuumed (including edges); hard floors mopped</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Baseboards and window sills wiped where reachable</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Tidy surfaces and empty trash (if present)</span></li>
               </ul>
             </ContentCard>
 
             <ContentCard>
               <h3 className="text-lg font-semibold text-text mb-3">Other Rooms (Living, Dining, Entry, Hallways)</h3>
               <ul className="space-y-2 text-text">
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>General dusting of furniture, shelves, and decor</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Wipe railings, switch plates, and door handles</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Spot clean walls/doors where washable</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Interior glass and patio door glass spot-cleaned</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Floors vacuumed and mopped; baseboards wiped</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Entryway reset: mats shaken, high-traffic edges detailed</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>General dusting of furniture, shelves, and decor</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Wipe railings, switch plates, and door handles</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Spot clean walls/doors where washable</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Interior glass and patio door glass spot-cleaned</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Floors vacuumed and mopped; baseboards wiped</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-1" /><span>Entryway reset: mats shaken, high-traffic edges detailed</span></li>
               </ul>
             </ContentCard>
           </div>
@@ -165,13 +165,13 @@ export default function ApartmentCleaning() {
             <ContentCard className="w-full">
               <h3 className="text-lg font-semibold text-text mb-3">Optional Add-Ons (by request)</h3>
               <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2 text-text">
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-[2px]" /><span>Inside fridge and oven</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-[2px]" /><span>Inside kitchen/bath cabinets and drawers</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-[2px]" /><span>Interior windows and tracks; blinds dusted</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-[2px]" /><span>Ceiling fans and high-reach dusting beyond standard reach</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-[2px]" /><span>Carpet shampoo/extraction; pet odor treatment</span></li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-[2px]" /><span>Balcony/patio sweep and glass rails</span></li>
-                <li className="flex items-start sm:col-span-2"><CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-[2px]" /><span>Move-in/move-out upgrade for empty units and extra detailing</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-[2px]" /><span>Inside fridge and oven</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-[2px]" /><span>Inside kitchen/bath cabinets and drawers</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-[2px]" /><span>Interior windows and tracks; blinds dusted</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-[2px]" /><span>Ceiling fans and high-reach dusting beyond standard reach</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-[2px]" /><span>Carpet shampoo/extraction; pet odor treatment</span></li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-[2px]" /><span>Balcony/patio sweep and glass rails</span></li>
+                <li className="flex items-start sm:col-span-2"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2 mt-[2px]" /><span>Move-in/move-out upgrade for empty units and extra detailing</span></li>
               </ul>
             </ContentCard>
           </div>
