@@ -1,8 +1,9 @@
 name: CI
 
 on:
-  push:
+  # Run CI on PRs and manual triggers only to avoid duplicate builds with Vercel on push
   pull_request:
+  workflow_dispatch:
 
 jobs:
   build-and-test:
@@ -39,4 +40,3 @@ jobs:
         env:
           BASE_URL: http://localhost:5001
         run: npm test
-
