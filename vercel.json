@@ -3,8 +3,7 @@
   "buildCommand": "npm ci && npm run build",
   "functions": {
     "server/index.ts": {
-      "runtime": "nodejs20.x",
-      "includeFiles": ["dist/public/**"]
+      "runtime": "nodejs20.x"
     }
   },
   "routes": [
