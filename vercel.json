@@ -1,14 +1,9 @@
 {
   "version": 2,
   "buildCommand": "npm ci && npm run build",
-  "functions": {
-    "server/index.ts": {
-      "runtime": "nodejs20.x"
-    }
-  },
+  
   "routes": [
     { "handle": "filesystem" },
-    { "src": "/api/(.*)", "dest": "/server/index.ts" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
