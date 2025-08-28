@@ -1,0 +1,111 @@
+<page>
+  <meta>
+    <title>Residential House Cleaning Spokane, WA | Spotless Results, Easy Booking</title>
+    <description>Top-rated residential cleaning in Spokane, Spokane Valley, Liberty Lake, and more. Eco-friendly, insured, and satisfaction guaranteed. Get a fast quote!</description>
+    <slug>residential-house-cleaning</slug>
+  </meta>
+  <section id="introduction" words="100">
+    <headline>Residential House Cleaning in Spokane, WA</headline>
+    <p>Welcome to the trusted name in residential house cleaning for Spokane and the surrounding areas! Our mission is simple: give busy homeowners a cleaner, healthier, and stress-free home—without lifting a finger. Whether you’re in downtown Spokane, Spokane Valley, Liberty Lake, or nearby, our professional cleaning team is ready to deliver five-star service with every visit. We believe your time is valuable, your home deserves respect, and every detail matters. With flexible scheduling and a 100% satisfaction guarantee, we’re here to make sure your living space sparkles, every time. Let us handle the mess, so you can enjoy what matters most.</p>
+  </section>
+  <section id="why-choose-us" words="120">
+    <headline>Why Choose Our House Cleaners Near Me?</headline>
+    <p>Trust is at the heart of everything we do. All of our house cleaners are thoroughly background-checked, fully insured, and professionally trained for your complete peace of mind. We’re a locally owned team—not a franchise—so every client is a neighbor, not a number. Our cleaners use eco-friendly products that are tough on dirt but safe for your family and pets. If you’re not thrilled with your cleaning, we’ll come back and fix it—no questions asked. From flexible appointments to open communication, we take pride in making every interaction effortless and friendly. When you need “house cleaners near me” in Spokane, choose the team with the reputation to match.</p>
+  </section>
+  <section id="services" words="290">
+    <headline>Our Residential Cleaning Services</headline>
+    <service id="standard-recurring">
+      <title>Standard/Recurring House Cleaning</title>
+      <desc>Our recurring house cleaning service is perfect for busy families and professionals who want a consistently tidy home. Enjoy regular visits (weekly, bi-weekly, or monthly) that cover dusting, vacuuming, kitchen and bath cleaning, trash removal, and more. We keep your home healthy and comfortable, so you can relax and focus on life—not chores.</desc>
+    </service>
+    <service id="deep-cleaning">
+      <title>Deep Cleaning</title>
+      <desc>Deep cleaning is our specialty for homes that need some extra TLC. We scrub all the nooks and crannies, including baseboards, behind appliances, light fixtures, and neglected corners. Perfect for spring cleaning, post-renovation, or prepping for guests. This comprehensive service tackles built-up grime and restores your space to its best.</desc>
+    </service>
+    <service id="move-in-move-out">
+      <title>Move-in/Move-out Cleaning</title>
+      <desc>Moving? Leave the stress—and the mess—to us! Our move-in/move-out cleaning service is ideal for renters, landlords, and homeowners. We ensure every surface is spotless for the next occupant, including inside cabinets, appliances, closets, and more. Impress landlords or buyers and secure your deposit with our detailed approach.</desc>
+    </service>
+    <service id="apartment-cleaning">
+      <title>Apartment Cleaning</title>
+      <desc>Apartment dwellers get the same five-star treatment as homeowners, with service tailored for smaller spaces and unique building requirements. We’re flexible to fit around busy schedules, HOA rules, or pet needs. Our apartment cleaning is perfect for urban professionals, students, and anyone who values a sparkling retreat.</desc>
+    </service>
+    <service id="specialty-eco">
+      <title>One-Time/Specialty/Eco-Friendly Cleanings</title>
+      <desc>Have a special project, allergy concern, or big event? Our one-time and specialty cleanings are fully customizable. We offer green cleaning with hypoallergenic, fragrance-free, and pet-safe products. Whether you’re prepping for a party or need post-construction cleaning, just tell us what you need—we’ll make it happen.</desc>
+    </service>
+  </section>
+  <section id="process" words="110">
+    <headline>Cleaning Process &amp; What to Expect</headline>
+    <p>Booking with us is easy! Start with a quick phone call or online quote. We’ll discuss your needs, answer questions, and provide a clear estimate with no hidden fees. Pick a date and time that fits your life—we work weekends and evenings too. On cleaning day, our uniformed team arrives on time, with all supplies. We’ll walk through your home, confirm your preferences, and get to work. When we’re done, we’ll review everything with you to ensure satisfaction. Have feedback? We follow up after every visit and stand behind every clean. You’re never left guessing—just enjoying a spotless home!</p>
+  </section>
+  <section id="pricing" words="130">
+    <headline>Pricing, Estimates &amp; How Much Do House Cleaners Cost?</headline>
+    <p>We believe in upfront, transparent pricing—no surprises. Cleaning costs depend on your home’s size, condition, and the level of service you choose. Standard cleaning for a typical Spokane-area home starts at just $110 per visit; deep cleans or move-in/move-out jobs are quoted individually based on your needs. We’re happy to provide free, no-obligation estimates—online, by phone, or in person. Looking for ongoing savings? Ask about our recurring cleaning discounts! With flexible options for every budget, we make it easy to keep your home fresh. Ready to discover your custom price? Click “Get a Free Quote” or call us today and see just how affordable professional cleaning can be.</p>
+  </section>
+  <section id="team" words="90">
+    <headline>Our Team &amp; Trust Signals</headline>
+    <p>Meet Spokane’s most trusted cleaning team! Our staff are carefully selected, extensively trained, and undergo thorough background checks for your peace of mind. We’re bonded, insured, and locally operated—no faceless out-of-town franchise. You’ll see familiar faces at each visit, and we treat your home with the same care as our own. Our community reputation means everything to us, and we work hard to earn your five-star review. See our team bios and learn why your neighbors choose us year after year.</p>
+  </section>
+  <section id="service-areas" words="100">
+    <headline>Service Areas: Spokane &amp; Surrounding Cities</headline>
+    <p>We’re proud to serve Spokane and all surrounding communities, including Spokane Valley, Liberty Lake, Millwood, Greenacres, Mead, Dishman, Veradale, Otis Orchards, and nearby zip codes: 99201, 99202, 99203, 99204, 99205, 99206, 99207, 99208, 99037, and more. Not sure if you’re in our service area? Just ask—we’re always expanding! Check our service map or call for personalized assistance. Whether you’re in a city condo, suburban home, or rural retreat, we’ll bring the shine to you. No job too big, too small, or too far!</p>
+  </section>
+  <section id="testimonials" words="100">
+    <headline>Customer Reviews &amp; Testimonials</headline>
+    <testimonial>
+      <quote>“I’ve never seen my house so clean! The team was friendly, professional, and right on time.”</quote>
+      <name>Sarah P.</name>
+      <location>Spokane Valley</location>
+    </testimonial>
+    <testimonial>
+      <quote>“They worked magic on my rental. I got my whole deposit back!”</quote>
+      <name>Tom B.</name>
+      <location>Liberty Lake</location>
+    </testimonial>
+    <testimonial>
+      <quote>“Love their eco-friendly products. My allergies are finally under control.”</quote>
+      <name>Nina K.</name>
+      <location>Millwood</location>
+    </testimonial>
+    <p>See more five-star reviews on Google and Facebook. We’re proud to maintain a 4.9-star average with hundreds of happy customers. Real names, real cities, real results!</p>
+  </section>
+  <section id="faq" words="140">
+    <headline>Frequently Asked Questions (FAQ)</headline>
+    <faq>
+      <q>What cleaning products do you use?</q>
+      <a>We use eco-friendly, family- and pet-safe products. If you have allergies or special requests, just let us know!</a>
+    </faq>
+    <faq>
+      <q>Are you insured and bonded?</q>
+      <a>Absolutely. Every cleaner is insured, bonded, and background-checked.</a>
+    </faq>
+    <faq>
+      <q>What’s included in a standard clean?</q>
+      <a>Kitchens, bathrooms, living areas, bedrooms—dusting, floors, surfaces, trash, and more. We’ll customize for your needs!</a>
+    </faq>
+    <faq>
+      <q>Do I need to be home?</q>
+      <a>No need. Many clients provide entry instructions. We’ll secure your home before leaving.</a>
+    </faq>
+    <faq>
+      <q>How do I book or reschedule?</q>
+      <a>Book online, call, or email—whatever’s easiest. We offer flexible rescheduling with 24 hours’ notice.</a>
+    </faq>
+  </section>
+  <section id="cta" words="70">
+    <headline>Get Your Free Estimate &amp; Book Now</headline>
+    <p>Ready for a spotless home—without the hassle?  
+    Click below for a free, no-obligation estimate, or call us now to book your cleaning.
+    <contact>
+      <phone>[Your Number]</phone>
+      <email>[Your Email]</email>
+      <booking-link>[Booking Link]</booking-link>
+    </contact>
+    Experience the Spokane cleaning service everyone’s talking about—fast quotes, easy scheduling, and guaranteed satisfaction.</p>
+  </section>
+  <section id="closing" words="60">
+    <headline>Our Brand Promise</headline>
+    <p>We believe everyone deserves to come home to clean. From our family to yours, we promise honest pricing, respectful service, and sparkling results—every time. Life’s too short to spend it cleaning. Let us do the dirty work, so you can get back to what matters. Book your free estimate today and discover the difference local care makes.</p>
+  </section>
+</page>

@@ -147,3 +147,95 @@
     background-repeat: no-repeat;
   }
 }
+
+/* Brand utility classes (compatible with tokens.css) */
+.text-brand-gold { color: oklch(var(--brand-gold)); }
+.bg-brand-gold { background-color: oklch(var(--brand-gold)); }
+.text-brand-gold-light { color: oklch(var(--brand-gold-light)); }
+.bg-brand-gold-light { background-color: oklch(var(--brand-gold-light)); }
+.text-brand-gold-dark { color: oklch(var(--brand-gold-dark)); }
+.bg-brand-gold-dark { background-color: oklch(var(--brand-gold-dark)); }
+.text-brand-black { color: oklch(var(--brand-black)); }
+.bg-brand-black { background-color: oklch(var(--brand-black)); }
+.text-brand-gray { color: oklch(var(--brand-gray)); }
+.bg-brand-gray { background-color: oklch(var(--brand-gray)); }
+.bg-brand-gray-light { background-color: oklch(var(--brand-gray-light)); }
+.text-brand-teal { color: hsl(var(--brand-teal)); }
+.bg-brand-teal { background-color: hsl(var(--brand-teal)); }
+.border-brand-gold { border-color: oklch(var(--brand-gold)); }
+.hover\:bg-brand-gold:hover { background-color: oklch(var(--brand-gold)); }
+.hover\:text-brand-gold:hover { color: oklch(var(--brand-gold)); }
+.hover\:bg-brand-gold-dark:hover { background-color: oklch(var(--brand-gold-dark)); }
+.hover\:text-brand-gold-dark:hover { color: oklch(var(--brand-gold-dark)); }
+.hover\:bg-brand-gray-light:hover { background-color: oklch(var(--brand-gray-light)); }
+.hover\:border-brand-gold:hover { border-color: oklch(var(--brand-gold)); }
+.focus\:ring-brand-gold:focus { --tw-ring-color: oklch(var(--brand-gold)); }
+
+/* Glass button styles used in legacy pages */
+.btn-glass {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--brand-black);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn-glass:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.btn-glass:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.btn-glass--primary {
+  background: rgba(16, 24, 32, 0.35);
+  border-color: rgba(16, 24, 32, 0.5);
+  color: #fff;
+}
+
+.btn-glass--secondary {
+  background: rgba(207, 174, 81, 0.35);
+  border-color: rgba(207, 174, 81, 0.5);
+  color: var(--brand-black);
+  text-shadow: none;
+}
+
+/* Glass card utility used by several pages */
+.glass-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  will-change: transform;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.07));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: inherit;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glass-card:hover::before { opacity: 1; }
+.glass-card > * { position: relative; z-index: 2; }
+.glass-card:hover { transform: translateY(-4px); }

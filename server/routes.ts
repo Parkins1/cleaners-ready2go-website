@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertContactSchema, insertBookingSchema, insertQuoteSchema } from "@shared/schema";
+import { insertContactSchema, insertBookingSchema, insertQuoteSchema, insertBlogPostSchema } from "@shared/schema";
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -76,6 +76,60 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const contacts = await storage.getContacts();
       res.json(contacts);
+    } catch (error) {
+      res.status(500).json({ 
+        success: false, 
+        message: "Internal server error" 
+      });
+    }
+  });
+
+  // Blog post routes
+  app.post("/api/blog-posts", async (req, res) => {
+    try {
+      const validatedData = insertBlogPostSchema.parse(req.body);
+      const blogPost = await storage.createBlogPost(validatedData);
+      res.json({ success: true, blogPost });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        res.status(400).json({ 
+          success: false, 
+          message: "Validation error", 
+          errors: error.errors 
+        });
+      } else {
+        res.status(500).json({ 
+          success: false, 
+          message: "Internal server error" 
+        });
+      }
+    }
+  });
+
+  app.get("/api/blog-posts", async (req, res) => {
+    try {
+      const published = req.query.published === 'true';
+      const blogPosts = await storage.getBlogPosts(published);
+      res.json(blogPosts);
+    } catch (error) {
+      res.status(500).json({ 
+        success: false, 
+        message: "Internal server error" 
+      });
+    }
+  });
+
+  app.get("/api/blog-posts/:slug", async (req, res) => {
+    try {
+      const blogPost = await storage.getBlogPostBySlug(req.params.slug);
+      if (!blogPost) {
+        res.status(404).json({ 
+          success: false, 
+          message: "Blog post not found" 
+        });
+        return;
+      }
+      res.json(blogPost);
     } catch (error) {
       res.status(500).json({ 
         success: false, 
