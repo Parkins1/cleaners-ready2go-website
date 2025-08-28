@@ -9,6 +9,8 @@ const isDev = process.env.NODE_ENV !== "production";
 const usePwa = process.env.PWA === 'true';
 
 export default defineConfig({
+  // Avoid writing cache under node_modules to bypass sandbox/permission issues
+  cacheDir: path.resolve(import.meta.dirname, ".vite-cache"),
   plugins: [
     react(),
     ...(process.env.ANALYZE ? [visualizer({ filename: "dist/stats.html", open: true })] : []),
