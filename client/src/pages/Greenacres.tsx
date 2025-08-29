@@ -66,29 +66,29 @@ export default function Greenacres() {
             >
               <CarouselContent className="-ml-2 md:-ml-4">
                 <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
                   data-active={isActive(0)}
                 >
-                  <ContentCard className="p-8 md:p-10">
-                    <h3 className="text-xl font-bold mb-4 text-brand-gold">
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">
                       Greenacres Cleaning, Matched To Your Routine
                     </h3>
-                    <p className="text-base text-gray-600 leading-relaxed">
+                    <p className="text-sm text-gray-600 leading-relaxed">
                       Professional cleaning services designed around Greenacres living near the river, trails, and parks. Our dedicated Team Lead ensures consistent, premium care.
                     </p>
                   </ContentCard>
                 </CarouselItem>
                 <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
                   data-active={isActive(1)}
                 >
-                  <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-xl font-bold mb-3 text-brand-gold">Effortless Upkeep</h3>
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">Effortless Upkeep</h3>
                     <div className="space-y-2">
-                      <p className="text-base text-gray-600 mb-2">
+                      <p className="text-sm text-gray-600 mb-2">
                         Weekly, bi-weekly, or monthly plans to keep your home guest-ready for river days or trail outings.
                       </p>
-                      <ul className="space-y-1 text-sm">
+                      <ul className="space-y-1 text-xs">
                         <li><strong>Weekly:</strong> Best for active households and allergy concerns</li>
                         <li><strong>Bi-weekly:</strong> A popular balance of consistency and value</li>
                         <li><strong>Monthly:</strong> A reliable reset that restores freshness</li>
@@ -97,45 +97,45 @@ export default function Greenacres() {
                   </ContentCard>
                 </CarouselItem>
                 <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
                   data-active={isActive(2)}
                 >
-                  <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-xl font-bold mb-3 text-brand-gold">The Greenacres Deep Reset</h3>
-                    <p className="text-base text-gray-600 mb-2">
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">The Greenacres Deep Reset</h3>
+                    <p className="text-sm text-gray-600 mb-2">
                       Ideal for seasonal deep cleans or post-event recovery. Includes targeted descaling and detailed baseboards.
                     </p>
-                    <ul className="text-sm space-y-1">
+                    <ul className="text-xs space-y-1">
                       <li>• Interior glass and mirrors polished to clarity</li>
                       <li>• Baseboards, switches, and frames detailed</li>
                     </ul>
                   </ContentCard>
                 </CarouselItem>
                 <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
                   data-active={isActive(3)}
                 >
-                  <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-xl font-bold mb-3 text-brand-gold">Checklist-Guided Move-Outs</h3>
-                    <p className="text-base text-gray-600 mb-2">
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">Checklist-Guided Move-Outs</h3>
+                    <p className="text-sm text-gray-600 mb-2">
                       We follow landlord checklists for stress-free move-outs, focusing on "show well" details.
                     </p>
-                    <ul className="text-sm space-y-1">
+                    <ul className="text-xs space-y-1">
                       <li>• Book 48–72 hours before your final walkthrough</li>
                       <li>• Keep utilities on for light and hot water</li>
                     </ul>
                   </ContentCard>
                 </CarouselItem>
                 <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
                   data-active={isActive(4)}
                 >
-                  <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-xl font-bold mb-3 text-brand-gold">STR Turnovers, On Schedule</h3>
-                    <p className="text-base text-gray-600 mb-2">
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">STR Turnovers, On Schedule</h3>
+                    <p className="text-sm text-gray-600 mb-2">
                       We sync with Airbnb/VRBO calendars for smooth guest changeovers near the Spokane River.
                     </p>
-                    <ul className="text-sm space-y-1">
+                    <ul className="text-xs space-y-1">
                       <li>• Supply inventory confirmation</li>
                       <li>• Photo notes for damage or left items</li>
                     </ul>

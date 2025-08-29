@@ -101,30 +101,30 @@ export default function LibertyLake() {
             >
               <CarouselContent className="-ml-2 md:-ml-4">
                 <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
                   data-active={isActive(0)}
                 >
-                  <ContentCard className="p-8 md:p-10">
-                    <h3 className="text-xl font-bold mb-4 text-brand-gold">
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">
                       Liberty Lake Home Care, Tuned To Your Weekends
                     </h3>
-                    <p className="text-base text-gray-600 leading-relaxed">
+                    <p className="text-sm text-gray-600 leading-relaxed">
                       Professional cleaning services designed around your Liberty Lake lifestyle. From lake days to weekend gatherings, we keep your home ready for the moments that matter.
                     </p>
                   </ContentCard>
                 </CarouselItem>
 
                 <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
                   data-active={isActive(1)}
                 >
-                  <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-xl font-bold mb-3 text-brand-gold">Keep-It-Clean Routine</h3>
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">Keep-It-Clean Routine</h3>
                     <div className="space-y-2">
-                      <p className="text-base text-gray-600 mb-2">
+                      <p className="text-sm text-gray-600 mb-2">
                         Opt for weekly, bi-weekly, or monthly visits to stay guest-ready for lake days and impromptu gatherings.
                       </p>
-                      <ul className="space-y-1 text-sm">
+                      <ul className="space-y-1 text-xs">
                         <li><strong>Weekly:</strong> Perfect for active, gear-heavy homes and pets</li>
                         <li><strong>Bi-weekly:</strong> Our most chosen balance of polish and price</li>
                         <li><strong>Monthly:</strong> A thorough refresh that restores that just-cleaned feel</li>
@@ -134,15 +134,15 @@ export default function LibertyLake() {
                 </CarouselItem>
 
                 <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
                   data-active={isActive(2)}
                 >
-                  <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-xl font-bold mb-3 text-brand-gold">The Liberty Lake Deep Reset</h3>
-                    <p className="text-base text-gray-600 mb-2">
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">The Liberty Lake Deep Reset</h3>
+                    <p className="text-sm text-gray-600 mb-2">
                       Great before summer season or after a busy holiday stretch. Includes hand-wiping cabinet fronts, detailing door tracks, washing interior windows, degreasing range hoods, and spot-treating fixtures.
                     </p>
-                    <ul className="text-sm space-y-1">
+                    <ul className="text-xs space-y-1">
                       <li>• Focused kitchen/bath degrease and scale removal</li>
                       <li>• Detailed baseboards, switch plates, and door frames</li>
                       <li>• Streak-free interior glass and mirrors</li>
@@ -151,15 +151,15 @@ export default function LibertyLake() {
                 </CarouselItem>
 
                 <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
                   data-active={isActive(3)}
                 >
-                  <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-xl font-bold mb-3 text-brand-gold">Turnovers That Pass Muster</h3>
-                    <p className="text-base text-gray-600 mb-2">
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">Turnovers That Pass Muster</h3>
+                    <p className="text-sm text-gray-600 mb-2">
                       We align with Liberty Lake landlord and agent expectations, emphasizing show-ready details.
                     </p>
-                    <ul className="text-sm space-y-1">
+                    <ul className="text-xs space-y-1">
                       <li>• Schedule 48–72 hours before the final walkthrough</li>
                       <li>• Leave utilities on for full lighting and warm water</li>
                       <li>• Cabinet/drawer interiors and oven/fridge on request</li>
@@ -168,15 +168,15 @@ export default function LibertyLake() {
                 </CarouselItem>
 
                 <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
                   data-active={isActive(4)}
                 >
-                  <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-xl font-bold mb-3 text-brand-gold">Vacation Rental Turnarounds</h3>
-                    <p className="text-base text-gray-600 mb-2">
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">Vacation Rental Turnarounds</h3>
+                    <p className="text-sm text-gray-600 mb-2">
                       We integrate with Airbnb/VRBO for predictable changeovers between lake weekends. Fresh linens, amenity restock, and timestamped photos keep your ratings strong.
                     </p>
-                    <ul className="text-sm space-y-1">
+                    <ul className="text-xs space-y-1">
                       <li>• Supply and toiletry inventory tracking</li>
                       <li>• Immediate photo-noted damage or left items</li>
                     </ul>

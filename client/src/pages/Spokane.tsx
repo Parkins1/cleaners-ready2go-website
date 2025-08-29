@@ -100,30 +100,30 @@ export default function Spokane() {
             >
               <CarouselContent className="-ml-2 md:-ml-4">
                 <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
                   data-active={isActive(0)}
                 >
-                  <ContentCard className="p-8 md:p-10">
-                    <h3 className="text-xl font-bold mb-4 text-brand-gold">
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-3 text-brand-gold">
                       Cleaning Plans Built For Spokane Homes
                     </h3>
-                    <p className="text-base text-gray-600 leading-relaxed">
+                    <p className="text-sm text-gray-600 leading-relaxed">
                       Professional cleaning services designed for Spokane's unique climate and lifestyle. From pollen season to wildfire dust, we keep your home fresh year-round.
                     </p>
                   </ContentCard>
                 </CarouselItem>
 
                 <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
                   data-active={isActive(1)}
                 >
-                  <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-xl font-bold mb-3 text-brand-gold">Ongoing Upkeep</h3>
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">Ongoing Upkeep</h3>
                     <div className="space-y-2">
-                      <p className="text-base text-gray-600 mb-2">
+                      <p className="text-sm text-gray-600 mb-2">
                         Choose weekly, bi-weekly, or monthly service to stay ahead of pollen spikes, wildfire dust, and surprise drop-ins.
                       </p>
-                      <ul className="space-y-1 text-sm">
+                      <ul className="space-y-1 text-xs">
                         <li><strong>Weekly:</strong> Great for busy households, pets, and allergy season</li>
                         <li><strong>Bi-weekly:</strong> Spokane's sweet spot for value and consistency</li>
                         <li><strong>Monthly:</strong> A reliable reset that keeps things feeling new</li>
@@ -133,15 +133,15 @@ export default function Spokane() {
                 </CarouselItem>
 
                 <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
                   data-active={isActive(2)}
                 >
-                  <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-xl font-bold mb-3 text-brand-gold">The Spokane Reset Clean</h3>
-                    <p className="text-base text-gray-600 mb-2">
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">The Spokane Reset Clean</h3>
+                    <p className="text-sm text-gray-600 mb-2">
                       Ideal for seasonal transitions or post-holiday clutter. We hand-wipe cabinet fronts, clear door tracks, wash interior glass, degrease the range hood, and spot-treat fixtures.
                     </p>
-                    <ul className="text-sm space-y-1">
+                    <ul className="text-xs space-y-1">
                       <li>• Kitchen/bath degrease and mineral buildup removal</li>
                       <li>• Baseboards, switches, and frames detailed</li>
                       <li>• Interior glass and mirrors polished clear</li>
@@ -150,15 +150,15 @@ export default function Spokane() {
                 </CarouselItem>
 
                 <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
                   data-active={isActive(3)}
                 >
-                  <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-xl font-bold mb-3 text-brand-gold">Move-Out & Listing Turnovers</h3>
-                    <p className="text-base text-gray-600 mb-2">
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">Move-Out & Listing Turnovers</h3>
+                    <p className="text-sm text-gray-600 mb-2">
                       Built around checklists used by Spokane landlords and Realtors. We zero in on "show well" details inside cabinets/drawers, oven/fridge by request, and dust-catching edges.
                     </p>
-                    <ul className="text-sm space-y-1">
+                    <ul className="text-xs space-y-1">
                       <li>• Book 48–72 hours before your final walkthrough</li>
                       <li>• Keep power and water on for light and hot water</li>
                     </ul>
@@ -166,15 +166,15 @@ export default function Spokane() {
                 </CarouselItem>
 
                 <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
+                  className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
                   data-active={isActive(4)}
                 >
-                  <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-xl font-bold mb-3 text-brand-gold">Short-Term Rental Ready</h3>
-                    <p className="text-base text-gray-600 mb-2">
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">Short-Term Rental Ready</h3>
+                    <p className="text-sm text-gray-600 mb-2">
                       Synced with Airbnb/VRBO calendars for smooth turnovers. We replace linens, restock essentials, and send timestamped photos so you have stay-by-stay documentation.
                     </p>
-                    <ul className="text-sm space-y-1">
+                    <ul className="text-xs space-y-1">
                       <li>• Inventory checks for toiletries/supplies</li>
                       <li>• Notes and photos of damage or left items</li>
                     </ul>
