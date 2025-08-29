@@ -33,6 +33,8 @@ interface LocationPageTemplateProps {
   }[];
   // Optional: service card IDs to render standardized ServiceCards
   serviceCardIds?: import("@/components/ServiceCard/catalog").ServiceCatalogId[];
+  // Optional: override CTA banner color variant (default | gold)
+  ctaVariant?: 'default' | 'gold';
 }
 
 export default function LocationPageTemplate({
@@ -48,6 +50,7 @@ export default function LocationPageTemplate({
   testimonial,
   extraSections,
   serviceCardIds,
+  ctaVariant = 'gold',
 }: LocationPageTemplateProps) {
   const { open } = useModal();
 
@@ -88,7 +91,7 @@ export default function LocationPageTemplate({
 
       {/* Image Placeholder Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-6mx mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="bg-gray-200 h-96 rounded-xl flex items-center justify-center">
             <p className="text-gray-500">Image / Map Placeholder</p>
           </div>
@@ -97,7 +100,7 @@ export default function LocationPageTemplate({
 
       {/* Testimonial Section */}
       <section className="py-16 bg-surface">
-        <div className="max-w-4mx mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-text mb-6">What Our Clients Say</h2>
           <blockquote className="text-xl text-text italic mb-4">{`"${testimonial.quote}"`}</blockquote>
           <cite className="text-text font-semibold">{`- ${testimonial.name}, ${locationName}`}</cite>
@@ -107,7 +110,7 @@ export default function LocationPageTemplate({
       {/* Extra Sections */}
       {extraSections && extraSections.map((section, idx) => (
         <section key={idx} className="py-16 bg-white">
-          <div className="max-w-4mx mx-auto px-6">
+          <div className="max-w-4xl mx-auto px-6">
             <h2 className="text-3xl font-bold text-text mb-6">{section.title}</h2>
             <div className="text-text leading-relaxed">{section.content}</div>
           </div>
@@ -117,7 +120,7 @@ export default function LocationPageTemplate({
       <CalloutBanner
         title="Ready for a Cleaner Home?"
         body="Let us handle the cleaning so you enjoy your time."
-        variant="gold"
+        variant={ctaVariant}
         actions={
           <Button
             onClick={() => open('quote')}
