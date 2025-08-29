@@ -92,7 +92,7 @@ export default function LibertyLake() {
       {
         title: "Liberty Lake Services",
         content: (
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto flex flex-col items-center gap-3">
             <Tabs defaultValue="upkeep" className="w-full">
               <TabsList className="mb-4 grid grid-cols-2 sm:inline-flex gap-2 bg-transparent p-0">
                 <TabsTrigger value="upkeep">Upkeep</TabsTrigger>
@@ -102,53 +102,53 @@ export default function LibertyLake() {
               </TabsList>
 
               <TabsContent value="upkeep">
-                <ContentCard>
+                <ContentCard className="max-w-3xl mx-auto p-8 md:p-10 text-center">
                   <h3 className="text-lg font-bold mb-2 text-brand-gold">Keep‑It‑Clean Routine</h3>
                   <p className="text-sm text-gray-700 mb-3">Weekly, bi‑weekly, or monthly visits tuned to lake‑day schedules and busy weeks.</p>
-                  <ul className="text-sm space-y-1 mb-3">
+                  <ul className="mt-3 w-fit mx-auto text-left text-sm space-y-1">
                     <li>• Kitchen, baths, floors, and high‑touch points</li>
                     <li>• Rotating detail tasks to keep baseboards and vents in check</li>
                     <li>• Same vetted technicians whenever possible</li>
                   </ul>
-                  <Button variant="primary" onClick={() => open("quote")}>Get My Free Quote</Button>
+                  <Button variant="primary" className="block mx-auto mt-6 md:mt-7" onClick={() => open("quote")}>Get My Free Quote</Button>
                 </ContentCard>
               </TabsContent>
 
               <TabsContent value="deep">
-                <ContentCard>
+                <ContentCard className="max-w-3xl mx-auto p-8 md:p-10 text-center">
                   <h3 className="text-lg font-bold mb-2 text-brand-gold">The Liberty Lake Deep Reset</h3>
                   <p className="text-sm text-gray-700 mb-3">Ideal before summer or after holidays. Focused degrease/descale and hand detail.</p>
-                  <ul className="text-sm space-y-1 mb-3">
+                  <ul className="mt-3 w-fit mx-auto text-left text-sm space-y-1">
                     <li>• Cabinet fronts, door tracks, switches, and trim</li>
                     <li>• Interior glass, mirrors, and range‑hood degrease</li>
                     <li>• Grout touch‑ups where feasible</li>
                   </ul>
-                  <Button variant="primary" onClick={() => open("quote")}>Plan My Deep Clean</Button>
+                  <Button variant="primary" className="block mx-auto mt-6 md:mt-7" onClick={() => open("quote")}>Plan My Deep Clean</Button>
                 </ContentCard>
               </TabsContent>
 
               <TabsContent value="moveout">
-                <ContentCard>
+                <ContentCard className="max-w-3xl mx-auto p-8 md:p-10 text-center">
                   <h3 className="text-lg font-bold mb-2 text-brand-gold">Move‑In / Move‑Out</h3>
                   <p className="text-sm text-gray-700 mb-3">Checklist‑guided service aligned with landlord and agent expectations.</p>
-                  <ul className="text-sm space-y-1 mb-3">
+                  <ul className="mt-3 w-fit mx-auto text-left text-sm space-y-1">
                     <li>• Book 48–72 hours before the final walkthrough</li>
                     <li>• Utilities on for full lighting and hot water</li>
                     <li>• Inside oven/fridge and cabinets by request</li>
                   </ul>
-                  <Button variant="primary" onClick={() => open("quote")}>Schedule My Move‑Out</Button>
+                  <Button variant="primary" className="block mx-auto mt-6 md:mt-7" onClick={() => open("quote")}>Schedule My Move‑Out</Button>
                 </ContentCard>
               </TabsContent>
 
               <TabsContent value="turnover">
-                <ContentCard>
+                <ContentCard className="max-w-3xl mx-auto p-8 md:p-10 text-center">
                   <h3 className="text-lg font-bold mb-2 text-brand-gold">Vacation Rental Turnovers</h3>
                   <p className="text-sm text-gray-700 mb-3">Airbnb/VRBO‑friendly changeovers between lake‑weekend guests.</p>
-                  <ul className="text-sm space-y-1 mb-3">
+                  <ul className="mt-3 w-fit mx-auto text-left text-sm space-y-1">
                     <li>• Linen change, amenity restock, and supply inventory</li>
                     <li>• Timestamped photos; notes for damage or left items</li>
                   </ul>
-                  <Button variant="primary" onClick={() => open("quote")}>Get Turnover Pricing</Button>
+                  <Button variant="primary" className="block mx-auto mt-6 md:mt-7" onClick={() => open("quote")}>Get Turnover Pricing</Button>
                 </ContentCard>
               </TabsContent>
             </Tabs>
