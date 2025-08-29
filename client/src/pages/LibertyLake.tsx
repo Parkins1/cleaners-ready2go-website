@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/carousel";
 import { useModal } from "@/components/modal/ModalProvider";
 import Icon from "@/components/ui/icon";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 /**
  * Liberty Lake location page
@@ -416,13 +417,98 @@ export default function LibertyLake() {
         title: "Frequently Asked Questions",
         content: (
           <>
-            <h4 className="font-semibold">Do you provide all supplies and equipment?</h4>
-            <p className="mb-3">Yes. Our teams bring professional-grade, eco-friendly products and HEPA-filtered vacuums.</p>
-
-            <h4 className="font-semibold">Can you service short-term rentals?</h4>
-            <p className="mb-3">
-              Yes — we offer checklist-driven turnover cleanings with fast turnarounds for Airbnb and VRBO hosts.
-            </p>
+            <Accordion type="single" collapsible className="w-full rounded-xl bg-gradient-to-b from-white/95 to-white/90 backdrop-blur-sm shadow-sm border border-white/20">
+              <AccordionItem value="ll-faq-1">
+                <AccordionTrigger>What types of house cleaning services do you offer in Liberty Lake?</AccordionTrigger>
+                <AccordionContent>
+                  We offer standard/recurring cleaning, deep cleaning, move-in/move-out cleaning, and specialized services like post-construction cleanup and vacation rental turnovers, all tailored for Liberty Lake homes.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="ll-faq-2">
+                <AccordionTrigger>Do you use eco-friendly cleaning products?</AccordionTrigger>
+                <AccordionContent>
+                  Yes, we use professional-grade, eco-friendly cleaning products and HEPA-filtered vacuums for a safer and healthier home environment.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="ll-faq-3">
+                <AccordionTrigger>Are your cleaners background-checked and insured?</AccordionTrigger>
+                <AccordionContent>
+                  Absolutely! Our team members are background-checked, bonded, insured, and trained for consistent, trustworthy service.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="ll-faq-4">
+                <AccordionTrigger>Can I schedule weekly, bi-weekly, or monthly cleaning?</AccordionTrigger>
+                <AccordionContent>
+                  Yes, choose from weekly, bi-weekly, or monthly service to match your home’s needs and lifestyle. Many clients prefer bi-weekly as the perfect balance.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="ll-faq-5">
+                <AccordionTrigger>What is included in your standard house cleaning service?</AccordionTrigger>
+                <AccordionContent>
+                  Standard cleaning covers dusting, vacuuming, mopping, sanitizing bathrooms, and cleaning kitchens—ideal for regular upkeep.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="ll-faq-6">
+                <AccordionTrigger>Do you provide deep cleaning or seasonal cleaning options?</AccordionTrigger>
+                <AccordionContent>
+                  Yes, our deep cleaning covers baseboards, blinds, grout, and behind appliances—great for spring cleaning or before special events.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="ll-faq-7">
+                <AccordionTrigger>How do I book a cleaning appointment for my Liberty Lake home?</AccordionTrigger>
+                <AccordionContent>
+                  Simply request a quote online or call us. We’ll customize a plan and schedule a convenient appointment that fits your needs.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="ll-faq-8">
+                <AccordionTrigger>Do I need to provide any cleaning supplies or equipment?</AccordionTrigger>
+                <AccordionContent>
+                  No, we bring all necessary supplies and equipment, including eco-friendly products and advanced vacuums.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="ll-faq-9">
+                <AccordionTrigger>Can you clean my home while I am not there?</AccordionTrigger>
+                <AccordionContent>
+                  Yes, we can clean your home while you’re away. Just share access instructions when scheduling and return to a spotless space.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="ll-faq-10">
+                <AccordionTrigger>How do you handle special requests or customized cleaning plans?</AccordionTrigger>
+                <AccordionContent>
+                  We customize every cleaning plan to fit your preferences and home’s layout. Just let us know your specific needs or requests during booking.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="ll-faq-11">
+                <AccordionTrigger>What should I do to prepare my home for a cleaning visit?</AccordionTrigger>
+                <AccordionContent>
+                  Just tidy up any personal items or valuables you'd like secured; otherwise, we handle all cleaning preparations and equipment setup.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="ll-faq-12">
+                <AccordionTrigger>Is your service suitable for vacation homes or Airbnb/VRBO properties?</AccordionTrigger>
+                <AccordionContent>
+                  Yes, we offer comprehensive turnover services for short-term rentals, including fresh linens, supply restock, and prompt changeover cleaning.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="ll-faq-13">
+                <AccordionTrigger>What is your satisfaction guarantee policy?</AccordionTrigger>
+                <AccordionContent>
+                  If you’re not completely satisfied, let us know—we’ll return promptly and ensure your cleaning meets our high standards, guaranteed.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="ll-faq-14">
+                <AccordionTrigger>Do you offer move-in or move-out cleaning for renters and homeowners?</AccordionTrigger>
+                <AccordionContent>
+                  Yes, our move-in/move-out service follows detailed checklists to meet landlord or property manager requirements and help secure deposits.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="ll-faq-15">
+                <AccordionTrigger>Which Liberty Lake neighborhoods do you serve?</AccordionTrigger>
+                <AccordionContent>
+                  We serve all Liberty Lake neighborhoods, including River District, Rocky Hill, Legacy Ridge, and Meadowwood, plus nearby areas like Greenacres and Otis Orchards.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </>
         ),
       },
