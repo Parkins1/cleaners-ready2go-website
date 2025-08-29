@@ -18,7 +18,6 @@ import {
 } from "@/components/ui/carousel";
 import { useModal } from "@/components/modal/ModalProvider";
 import Icon from "@/components/ui/icon";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -92,66 +91,97 @@ export default function LibertyLake() {
       {
         title: "Liberty Lake Services",
         content: (
-          <div className="max-w-4xl mx-auto flex flex-col items-center gap-3">
-            <Tabs defaultValue="upkeep" className="w-full">
-              <TabsList className="mb-4 grid grid-cols-2 sm:inline-flex gap-2 bg-transparent p-0">
-                <TabsTrigger value="upkeep">Upkeep</TabsTrigger>
-                <TabsTrigger value="deep">Deep Reset</TabsTrigger>
-                <TabsTrigger value="moveout">Move‑Out</TabsTrigger>
-                <TabsTrigger value="turnover">STR Turnovers</TabsTrigger>
-              </TabsList>
+          <div className="py-8">
+            <Carousel
+              opts={{ align: "center", loop: true }}
+              setApi={setApi}
+              className="w-full max-w-6xl mx-auto"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                <CarouselItem
+                  className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
+                  data-active={isActive(0)}
+                >
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">Liberty Lake Home Care, Tuned To Your Weekends</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      Professional cleaning services designed around your Liberty Lake lifestyle. From lake days to weekend gatherings, we keep your home ready for the moments that matter.
+                    </p>
+                  </ContentCard>
+                </CarouselItem>
 
-              <TabsContent value="upkeep">
-                <ContentCard className="max-w-3xl mx-auto p-8 md:p-10 text-center">
-                  <h3 className="text-lg font-bold mb-2 text-brand-gold">Keep‑It‑Clean Routine</h3>
-                  <p className="text-sm text-gray-700 mb-3">Weekly, bi‑weekly, or monthly visits tuned to lake‑day schedules and busy weeks.</p>
-                  <ul className="mt-3 w-fit mx-auto text-left text-sm space-y-1">
-                    <li>• Kitchen, baths, floors, and high‑touch points</li>
-                    <li>• Rotating detail tasks to keep baseboards and vents in check</li>
-                    <li>• Same vetted technicians whenever possible</li>
-                  </ul>
-                  <Button variant="primary" className="block mx-auto mt-6 md:mt-7" onClick={() => open("quote")}>Get My Free Quote</Button>
-                </ContentCard>
-              </TabsContent>
+                <CarouselItem
+                  className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
+                  data-active={isActive(1)}
+                >
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">Keep‑It‑Clean Routine</h3>
+                    <div className="space-y-2">
+                      <p className="text-sm text-gray-600 mb-2">
+                        Opt for weekly, bi‑weekly, or monthly visits to stay guest‑ready for lake days and impromptu gatherings.
+                      </p>
+                      <ul className="space-y-1 text-xs">
+                        <li><strong>Weekly:</strong> Perfect for active, gear‑heavy homes and pets</li>
+                        <li><strong>Bi‑weekly:</strong> Our most chosen balance of polish and price</li>
+                        <li><strong>Monthly:</strong> A thorough refresh that restores that just‑cleaned feel</li>
+                      </ul>
+                    </div>
+                  </ContentCard>
+                </CarouselItem>
 
-              <TabsContent value="deep">
-                <ContentCard className="max-w-3xl mx-auto p-8 md:p-10 text-center">
-                  <h3 className="text-lg font-bold mb-2 text-brand-gold">The Liberty Lake Deep Reset</h3>
-                  <p className="text-sm text-gray-700 mb-3">Ideal before summer or after holidays. Focused degrease/descale and hand detail.</p>
-                  <ul className="mt-3 w-fit mx-auto text-left text-sm space-y-1">
-                    <li>• Cabinet fronts, door tracks, switches, and trim</li>
-                    <li>• Interior glass, mirrors, and range‑hood degrease</li>
-                    <li>• Grout touch‑ups where feasible</li>
-                  </ul>
-                  <Button variant="primary" className="block mx-auto mt-6 md:mt-7" onClick={() => open("quote")}>Plan My Deep Clean</Button>
-                </ContentCard>
-              </TabsContent>
+                <CarouselItem
+                  className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
+                  data-active={isActive(2)}
+                >
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">The Liberty Lake Deep Reset</h3>
+                    <p className="text-sm text-gray-600 mb-2">
+                      Great before summer season or after a busy holiday stretch. Includes hand‑wiping cabinet fronts, detailing door tracks, washing interior windows, degreasing range hoods, and spot‑treating fixtures.
+                    </p>
+                    <ul className="text-xs space-y-1">
+                      <li>• Focused kitchen/bath degrease and scale removal</li>
+                      <li>• Detailed baseboards, switch plates, and door frames</li>
+                      <li>• Streak‑free interior glass and mirrors</li>
+                    </ul>
+                  </ContentCard>
+                </CarouselItem>
 
-              <TabsContent value="moveout">
-                <ContentCard className="max-w-3xl mx-auto p-8 md:p-10 text-center">
-                  <h3 className="text-lg font-bold mb-2 text-brand-gold">Move‑In / Move‑Out</h3>
-                  <p className="text-sm text-gray-700 mb-3">Checklist‑guided service aligned with landlord and agent expectations.</p>
-                  <ul className="mt-3 w-fit mx-auto text-left text-sm space-y-1">
-                    <li>• Book 48–72 hours before the final walkthrough</li>
-                    <li>• Utilities on for full lighting and hot water</li>
-                    <li>• Inside oven/fridge and cabinets by request</li>
-                  </ul>
-                  <Button variant="primary" className="block mx-auto mt-6 md:mt-7" onClick={() => open("quote")}>Schedule My Move‑Out</Button>
-                </ContentCard>
-              </TabsContent>
+                <CarouselItem
+                  className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
+                  data-active={isActive(3)}
+                >
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">Turnovers That Pass Muster</h3>
+                    <p className="text-sm text-gray-600 mb-2">
+                      We align with Liberty Lake landlord and agent expectations, emphasizing show‑ready details.
+                    </p>
+                    <ul className="text-xs space-y-1">
+                      <li>• Schedule 48–72 hours before the final walkthrough</li>
+                      <li>• Leave utilities on for full lighting and warm water</li>
+                      <li>• Cabinet/drawer interiors and oven/fridge on request</li>
+                    </ul>
+                  </ContentCard>
+                </CarouselItem>
 
-              <TabsContent value="turnover">
-                <ContentCard className="max-w-3xl mx-auto p-8 md:p-10 text-center">
-                  <h3 className="text-lg font-bold mb-2 text-brand-gold">Vacation Rental Turnovers</h3>
-                  <p className="text-sm text-gray-700 mb-3">Airbnb/VRBO‑friendly changeovers between lake‑weekend guests.</p>
-                  <ul className="mt-3 w-fit mx-auto text-left text-sm space-y-1">
-                    <li>• Linen change, amenity restock, and supply inventory</li>
-                    <li>• Timestamped photos; notes for damage or left items</li>
-                  </ul>
-                  <Button variant="primary" className="block mx-auto mt-6 md:mt-7" onClick={() => open("quote")}>Get Turnover Pricing</Button>
-                </ContentCard>
-              </TabsContent>
-            </Tabs>
+                <CarouselItem
+                  className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
+                  data-active={isActive(4)}
+                >
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">Vacation Rental Turnarounds</h3>
+                    <p className="text-sm text-gray-600 mb-2">
+                      We integrate with Airbnb/VRBO for predictable changeovers between lake weekends. Fresh linens, amenity restock, and timestamped photos keep your ratings strong.
+                    </p>
+                    <ul className="text-xs space-y-1">
+                      <li>• Supply and toiletry inventory tracking</li>
+                      <li>• Immediate photo‑noted damage or left items</li>
+                    </ul>
+                  </ContentCard>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         ),
       },
