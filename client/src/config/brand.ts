@@ -1,6 +1,6 @@
 // llm:brand-config-migrated
 export const brand = {
-  phone: "(509) 555-0123",
+  phone: "509-232-9810",
   email: "info@cleanersready2go.com",
   address: {
     street: "123 E Sprague Ave",

@@ -30,8 +30,8 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center">
                 <Icon name="Phone" className="w-4 h-4 text-text mr-3" />
-                <a href="tel:+1234567890" className="footer-link">
-                  (123) 456-7890
+                <a href="tel:+15092329810" className="footer-link">
+                  509-232-9810
                 </a>
               </div>
               <div className="flex items-center">

@@ -14,6 +14,7 @@ import hero1024Avif from "@assets/spokane-valley-wa-house-cleaning-hero-1024.avi
  import ContentCard from "@/components/ContentCard/ContentCard";
 import Icon from "@/components/ui/icon";
  import { ServicesSection, ProcessSection } from "@/components/Sections";
+ import CalloutBanner from "@/components/CalloutBanner/CalloutBanner";
  import {
    Carousel,
    CarouselContent,
@@ -412,7 +413,7 @@ export default function SpokaneValley() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-text mb-6">Your Spotless Valley Home Starts Here</h2>
           <p className="text-lg text-text leading-relaxed mb-8">
-            Click “Request My Quote” or call 509-555-0123. Weekend slots fill fast book today and enjoy more time for life’s adventures.
+            Click “Request My Quote” or call 509-232-9810. Weekend slots fill fast—book today and enjoy more time for life’s adventures.
           </p>
           <Button onClick={() => open("quote")} variant="primary" size="lg">
             Request My Quote
@@ -433,6 +434,14 @@ export default function SpokaneValley() {
           </Accordion>
         </div>
       </section>
+
+      {/* Bottom CTA */}
+      <CalloutBanner
+        title="Make Your Spokane Valley Home Shine"
+        body="Request a free quote and let our licensed, local team handle the rest."
+        variant="gold"
+        actions={<Button onClick={() => open("quote")} variant="primary">Request My Quote</Button>}
+      />
       <style>{`
         [data-active="true"] {
           transform: scale(1.08);
