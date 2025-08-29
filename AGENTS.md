@@ -198,6 +198,24 @@ Full-card <a> link for large tap target.
 Strong keyboard focus ring (WCAG 2.1 compliant).
 Usage
 Render with <ServiceCard {...item} /> from client/src/components/ServiceCard/catalog.tsx.
+
+Recent Changes (2025-08-28)
+- Icon lazy-loading: Introduced centralized `Icon` component at `client/src/components/ui/icon.tsx` that lazy-loads individual Lucide icons via dynamic imports. Replaced all direct `lucide-react` imports in pages and UI components with `<Icon name="..." />` for better code-splitting and reduced unused JS.
+- Case-sensitive paths: Normalized all imports to use `@/components/ui/icon` (lowercase) to avoid Linux/Vercel case-sensitivity issues. If adding new references, always use lowercase `icon` in the path.
+- Build verification: `ANALYZE=true npm run build` produces split icon chunks under `dist/public/assets` (tiny `.js` files per icon). Full bundle report at `dist/stats.html`.
+- Smoke tests: Production server validated locally with `npm run build && npm start` and `scripts/smoke-tests.sh` (homepage 200 OK, contact API POST success).
+- Deploy flow: Merged `feature/lazy-icons` into `main`. Vercel auto-deploys from `main`. For rollback, use Vercel Deployments → Promote previous deployment, or GitHub Revert on the merge commit.
+
+Developer Notes
+- When adding a new icon: update `client/src/components/ui/icon.tsx` to include a new `name → lazy(import(...))` entry. Use the exact Lucide ESM icon path (e.g., `lucide-react/dist/esm/icons/chevron-right`).
+- Suspense fallback: The `Icon` component uses a small block fallback while loading. If inline alignment issues appear in text, consider switching the fallback to a `span` with `display:inline-block`.
+- Paths and assets: Prefer `@assets/*` for images (mapped to `attached_assets/*`). Ensure any added assets exist at those paths; build fails if paths are missing.
+
+CI/CD & Commands
+- CI (PRs only): `.github/workflows/ci.yml` builds, type-checks, then boots the server and runs smoke tests.
+- Local build: `npm run check && ANALYZE=true npm run build` (opens `dist/stats.html`).
+- Local prod run: `NODE_ENV=production PORT=5001 npm start`.
+- Lighthouse: `npx lighthouse http://localhost:5001 --view --only-categories=performance,accessibility,best-practices,seo`.
 Use ServiceGrid (client/src/components/ServiceCard/ServiceGrid.tsx) for responsive 2-column layouts.
 ContentCard
 Purpose: Text-first cards for pricing, features, testimonials, etc.
@@ -288,6 +306,29 @@ Example Prompts (for AI use)
 "Suggest CTA copy that matches the home hero's tone and length."
 "List all file paths where typography guidelines are enforced."
 Recent Updates & Edit Log
+2025-08-29 (Icons, Layout, Locations)
+- Icons: Restored centralized lazy-loaded `<Icon>` with per‑icon dynamic ESM imports; removed page‑level direct `lucide-react` icon imports. Added ambient types for ESM icon paths.
+  - Files: `client/src/components/ui/icon.tsx`, `client/src/types/lucide-exports.d.ts`
+- Accordion spacing: Ensured FAQs align by adding horizontal padding to content.
+  - File: `client/src/components/ui/accordion.tsx`
+- Business phone: Standardized to `509-232-9810` across brand config and footer; updated Spokane Valley CTA copy.
+  - Files: `client/src/config/brand.ts`, `client/src/components/Footer.tsx`, `client/src/pages/SpokaneValley.tsx`
+- Location template polish: Fixed container width typos (`max-w-4xl/6xl`), updated hero and CTA copy to spec.
+  - File: `client/src/pages/LocationPageTemplate.tsx`
+- Location content standardization: Added “Local Cleaning Challenges” (4 items) and “Neighborhoods We Serve” sections with cohesive styling across Spokane, Spokane Valley, Liberty Lake, and Greenacres. Added ZIPs section to Greenacres.
+  - Files: `client/src/pages/Spokane.tsx`, `client/src/pages/SpokaneValley.tsx`, `client/src/pages/LibertyLake.tsx`, `client/src/pages/Greenacres.tsx`
+- Liberty Lake enhancements: Added Highlights, Value Prop, Packages, Testimonials, Satisfaction Promise. Replaced minimal FAQ with full accordion (15 Q&A), styled like Home.
+  - File: `client/src/pages/LibertyLake.tsx`
+- Carousel UX (default style): Unified location page carousels to a compact style (from Spokane Valley):
+  - Card typography: `h3` text-lg, body text-sm, lists text-xs; paddings `p-5 md:p-6`.
+  - Desktop layout: fewer/wider visible slides (`md:basis-2/3`, `lg:basis-1/2`, `xl:basis-1/3`).
+  - Focus: active slide scale ≈1.12, side slides ≈0.85, with desktop flex-basis to widen center and minimize sides.
+  - Files: `client/src/pages/Spokane.tsx`, `client/src/pages/SpokaneValley.tsx`, `client/src/pages/LibertyLake.tsx`, `client/src/pages/Greenacres.tsx`
+- ServiceCard navigation: Switched from `wouter` `<Link>` to `<a>` with `useLocation()` programmatic navigate to preserve middle/modified-click behavior while keeping full-card link semantics.
+  - File: `client/src/components/ServiceCard/ServiceCard.tsx`
+- Vite typing: Annotated `transformIndexHtml(html: string)` for clarity.
+  - File: `vite.config.ts`
+
 2025-08-19
 Added HelmetProvider in main.tsx; migrated pages to <SEO>.
 Centralized routes in routes.tsx.
