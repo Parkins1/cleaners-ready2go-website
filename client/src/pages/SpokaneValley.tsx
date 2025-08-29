@@ -435,6 +435,42 @@ export default function SpokaneValley() {
         </div>
       </section>
 
+      {/* Local Challenges */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-text mb-6 text-center">Local Cleaning Challenges</h2>
+          <ul className="list-none space-y-2 text-sm md:text-base">
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
+              <span><strong>I‑90 Corridor Dust</strong> — Extra attention to window tracks and sills in road‑adjacent homes.</span>
+            </li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
+              <span><strong>Hard‑Water on Glass</strong> — Gentle descalers to keep shower doors and fixtures spot‑free.</span>
+            </li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
+              <span><strong>Pine Pollen Drifts</strong> — Seasonal damp dusting to remove the yellow film from spring winds.</span>
+            </li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
+              <span><strong>Entryway Grit</strong> — Mat care and hard‑floor detailing to contain sand and de‑icer in winter.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Neighborhoods */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-text mb-6 text-center">Neighborhoods We Serve</h2>
+          <ul className="grid md:grid-cols-2 gap-2 list-none text-sm md:text-base">
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Opportunity</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Veradale</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Ponderosa</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Dishman</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Trentwood</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Greenacres</li>
+          </ul>
+        </div>
+      </section>
+
       {/* Bottom CTA */}
       <CalloutBanner
         title="Make Your Spokane Valley Home Shine"

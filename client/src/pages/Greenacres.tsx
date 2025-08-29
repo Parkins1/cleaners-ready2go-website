@@ -8,6 +8,7 @@ import hero480Avif from "@assets/greenacres-wa-house-cleaning-hero-480.avif";
 import hero768Avif from "@assets/greenacres-wa-house-cleaning-hero-768.avif";
 import hero1024Avif from "@assets/greenacres-wa-house-cleaning-hero-1024.avif";
 import ContentCard from '@/components/ContentCard/ContentCard';
+import Icon from "@/components/ui/icon";
 import {
   Carousel,
   CarouselContent,
@@ -239,23 +240,35 @@ export default function Greenacres() {
         ),
       },
       {
-        title: 'Cleaning Challenges Unique to Greenacres',
+        title: 'Local Cleaning Challenges',
         content: (
-          <ul className="space-y-2">
-            <li><strong>Pine Pollen Surges</strong> — Quarterly pollen‑flush damp‑wipe to trap particulates.</li>
-            <li><strong>Wood & Pellet Heat Residue</strong> — Anti‑static cloths followed by microfiber rinses for mantels and beams.</li>
-            <li><strong>Hard‑Water Mineral Buildup</strong> — Mild descalers to restore clarity without harsh acids.</li>
-            <li><strong>Trail & River Residue</strong> — Extra entryway focus to keep grit at the threshold.</li>
+          <ul className="list-none space-y-2 text-sm md:text-base">
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
+              <span><strong>Pine Pollen Surges</strong> — Quarterly pollen‑flush damp‑wipe to trap particulates.</span>
+            </li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
+              <span><strong>Wood & Pellet Heat Residue</strong> — Anti‑static cloths followed by microfiber rinses for mantels and beams.</span>
+            </li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
+              <span><strong>Hard‑Water Mineral Buildup</strong> — Mild descalers to restore clarity without harsh acids.</span>
+            </li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
+              <span><strong>Trail & River Residue</strong> — Extra entryway focus to keep grit at the threshold.</span>
+            </li>
           </ul>
         ),
       },
       {
-        title: 'Proudly Serving Greenacres and Nearby Communities',
+        title: 'Neighborhoods We Serve',
         content: (
-          <>
-            <p>Greenacres — Liberty Lake — Veradale — Opportunity — Trentwood — Ponderosa</p>
-            <p className="mt-2">ZIP codes: 99016 — 99019 — 99037 — 99206 — 99216</p>
-          </>
+          <ul className="grid md:grid-cols-2 gap-2 list-none text-sm md:text-base">
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Greenacres (Sprague/Appleway Corridor)</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Ponderosa</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Trentwood</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Opportunity</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Veradale</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Saltese Flats / Upriver</li>
+          </ul>
         ),
       },
       {

@@ -17,6 +17,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { useModal } from "@/components/modal/ModalProvider";
+import Icon from "@/components/ui/icon";
 
 /**
  * Liberty Lake location page
@@ -297,6 +298,36 @@ export default function LibertyLake() {
               receives the right level of care.
             </p>
           </>
+        ),
+      },
+      {
+        title: "Local Cleaning Challenges",
+        content: (
+          <ul className="list-none space-y-2 text-sm md:text-base">
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
+              <span><strong>Lake Humidity & Mineral Mist</strong> — Spot prevention on glass and fixtures in lake‑adjacent homes.</span>
+            </li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
+              <span><strong>Pollen & Tree Debris</strong> — Seasonal window‑track and sill detailing to manage wind‑blown pollen.</span>
+            </li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
+              <span><strong>Trail & Beach Sand</strong> — Entryway mat care and hard‑floor resets after lake days.</span>
+            </li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
+              <span><strong>Vacation Turnover Timing</strong> — Checklist‑driven turnovers for Airbnb/VRBO near peak weekends.</span>
+            </li>
+          </ul>
+        ),
+      },
+      {
+        title: "Neighborhoods We Serve",
+        content: (
+          <ul className="grid md:grid-cols-2 gap-2 list-none text-sm md:text-base">
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />River District</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Rocky Hill</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Legacy Ridge</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Meadowwood</li>
+          </ul>
         ),
       },
       {
