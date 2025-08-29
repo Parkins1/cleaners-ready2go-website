@@ -104,7 +104,7 @@ export default function Spokane() {
                   data-active={isActive(0)}
                 >
                   <ContentCard className="p-8 md:p-10">
-                    <h3 className="text-xl md:text-2xl font-bold mb-4 text-brand-gold">
+                    <h3 className="text-xl font-bold mb-4 text-brand-gold">
                       Cleaning Plans Built For Spokane Homes
                     </h3>
                     <p className="text-base text-gray-600 leading-relaxed">
@@ -118,14 +118,12 @@ export default function Spokane() {
                   data-active={isActive(1)}
                 >
                   <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
-                      Ongoing Upkeep
-                    </h3>
-                    <div className="space-y-2 text-sm">
-                      <p className="text-gray-600 mb-2">
+                    <h3 className="text-xl font-bold mb-3 text-brand-gold">Ongoing Upkeep</h3>
+                    <div className="space-y-2">
+                      <p className="text-base text-gray-600 mb-2">
                         Choose weekly, bi-weekly, or monthly service to stay ahead of pollen spikes, wildfire dust, and surprise drop-ins.
                       </p>
-                      <ul className="space-y-1 text-xs">
+                      <ul className="space-y-1 text-sm">
                         <li><strong>Weekly:</strong> Great for busy households, pets, and allergy season</li>
                         <li><strong>Bi-weekly:</strong> Spokane's sweet spot for value and consistency</li>
                         <li><strong>Monthly:</strong> A reliable reset that keeps things feeling new</li>
@@ -139,13 +137,11 @@ export default function Spokane() {
                   data-active={isActive(2)}
                 >
                   <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
-                      The Spokane Reset Clean
-                    </h3>
-                    <p className="text-sm text-gray-600 mb-2">
+                    <h3 className="text-xl font-bold mb-3 text-brand-gold">The Spokane Reset Clean</h3>
+                    <p className="text-base text-gray-600 mb-2">
                       Ideal for seasonal transitions or post-holiday clutter. We hand-wipe cabinet fronts, clear door tracks, wash interior glass, degrease the range hood, and spot-treat fixtures.
                     </p>
-                    <ul className="text-xs space-y-1">
+                    <ul className="text-sm space-y-1">
                       <li>• Kitchen/bath degrease and mineral buildup removal</li>
                       <li>• Baseboards, switches, and frames detailed</li>
                       <li>• Interior glass and mirrors polished clear</li>
@@ -158,13 +154,11 @@ export default function Spokane() {
                   data-active={isActive(3)}
                 >
                   <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
-                      Move-Out & Listing Turnovers
-                    </h3>
-                    <p className="text-sm text-gray-600 mb-2">
+                    <h3 className="text-xl font-bold mb-3 text-brand-gold">Move-Out & Listing Turnovers</h3>
+                    <p className="text-base text-gray-600 mb-2">
                       Built around checklists used by Spokane landlords and Realtors. We zero in on "show well" details inside cabinets/drawers, oven/fridge by request, and dust-catching edges.
                     </p>
-                    <ul className="text-xs space-y-1">
+                    <ul className="text-sm space-y-1">
                       <li>• Book 48–72 hours before your final walkthrough</li>
                       <li>• Keep power and water on for light and hot water</li>
                     </ul>
@@ -176,13 +170,11 @@ export default function Spokane() {
                   data-active={isActive(4)}
                 >
                   <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
-                      Short-Term Rental Ready
-                    </h3>
-                    <p className="text-sm text-gray-600 mb-2">
+                    <h3 className="text-xl font-bold mb-3 text-brand-gold">Short-Term Rental Ready</h3>
+                    <p className="text-base text-gray-600 mb-2">
                       Synced with Airbnb/VRBO calendars for smooth turnovers. We replace linens, restock essentials, and send timestamped photos so you have stay-by-stay documentation.
                     </p>
-                    <ul className="text-xs space-y-1">
+                    <ul className="text-sm space-y-1">
                       <li>• Inventory checks for toiletries/supplies</li>
                       <li>• Notes and photos of damage or left items</li>
                     </ul>
@@ -432,7 +424,7 @@ export default function Spokane() {
     <>
       <style>{`
         [data-active="true"] {
-          transform: scale(1.08);
+          transform: scale(1.12);
           opacity: 1;
           z-index: 10;
           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(197, 155, 75, 0.3);
@@ -449,7 +441,7 @@ export default function Spokane() {
           color: #374151;
         }
         [data-active="false"] {
-          transform: scale(0.92);
+          transform: scale(0.85);
           opacity: 0.5;
           z-index: 1;
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -470,6 +462,10 @@ export default function Spokane() {
           [data-active="false"] {
             padding: 2rem 2.5rem;
           }
+        }
+        @media (min-width: 1024px) {
+          [data-active="true"] { flex: 0 0 48%; max-width: 48%; }
+          [data-active="false"] { flex: 0 0 26%; max-width: 26%; }
         }
       `}</style>
       <LocationPageTemplate {...pageDetails} />

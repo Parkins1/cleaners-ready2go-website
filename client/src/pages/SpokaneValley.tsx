@@ -108,7 +108,7 @@ export default function SpokaneValley() {
                 data-active={isActive(0)}
               >
                 <ContentCard className="p-8 md:p-10">
-                  <h3 className="text-xl md:text-2xl font-bold mb-4 text-brand-gold">
+                  <h3 className="text-xl font-bold mb-4 text-brand-gold">
                     Spokane Valley Cleaning, Matched To Your Routine
                   </h3>
                   <p className="text-base text-gray-600 leading-relaxed">
@@ -122,14 +122,12 @@ export default function SpokaneValley() {
                 data-active={isActive(1)}
               >
                 <ContentCard className="p-6 md:p-8">
-                  <h3 className="text-lg font-semibold mb-3 text-brand-gold">
-                    Effortless Upkeep
-                  </h3>
-                  <div className="space-y-2 text-sm">
-                    <p className="text-gray-600 mb-2">
+                  <h3 className="text-xl font-bold mb-3 text-brand-gold">Effortless Upkeep</h3>
+                  <div className="space-y-2">
+                    <p className="text-base text-gray-600 mb-2">
                       Weekly, bi-weekly, or monthly service to handle commuter schedules, pets, and yard-work dust.
                     </p>
-                    <ul className="space-y-1 text-xs">
+                    <ul className="space-y-1 text-sm">
                       <li><strong>Weekly:</strong> Best for busy families and allergy-prone homes</li>
                       <li><strong>Bi-weekly:</strong> Our most requested mix of value and consistency</li>
                       <li><strong>Monthly:</strong> A reliable reset that keeps freshness on track</li>
@@ -143,13 +141,11 @@ export default function SpokaneValley() {
                 data-active={isActive(2)}
               >
                 <ContentCard className="p-6 md:p-8">
-                  <h3 className="text-lg font-semibold mb-3 text-brand-gold">
-                    The Valley Deep Reset
-                  </h3>
-                  <p className="text-sm text-gray-600 mb-2">
+                  <h3 className="text-xl font-bold mb-3 text-brand-gold">The Valley Deep Reset</h3>
+                  <p className="text-base text-gray-600 mb-2">
                     Ideal for seasonal deep cleans, pre-market prep, or post-event recovery. Includes kitchen/bath degrease with targeted descaling.
                   </p>
-                  <ul className="text-xs space-y-1">
+                  <ul className="text-sm space-y-1">
                     <li>• Detailed baseboards, switches, and door frames</li>
                     <li>• Interior glass and mirrors polished to clarity</li>
                   </ul>
@@ -161,13 +157,11 @@ export default function SpokaneValley() {
                 data-active={isActive(3)}
               >
                 <ContentCard className="p-6 md:p-8">
-                  <h3 className="text-lg font-semibold mb-3 text-brand-gold">
-                    Checklist-Guided Move-Outs
-                  </h3>
-                  <p className="text-sm text-gray-600 mb-2">
+                  <h3 className="text-xl font-bold mb-3 text-brand-gold">Checklist-Guided Move-Outs</h3>
+                  <p className="text-base text-gray-600 mb-2">
                     Built around Spokane Valley landlord and broker standards. We focus on "show well" touches.
                   </p>
-                  <ul className="text-xs space-y-1">
+                  <ul className="text-sm space-y-1">
                     <li>• Book 48–72 hours before your final walkthrough</li>
                     <li>• Ensure utilities remain on for light and hot water</li>
                   </ul>
@@ -179,13 +173,11 @@ export default function SpokaneValley() {
                 data-active={isActive(4)}
               >
                 <ContentCard className="p-6 md:p-8">
-                  <h3 className="text-lg font-semibold mb-3 text-brand-gold">
-                    STR Turnovers, On Schedule
-                  </h3>
-                  <p className="text-sm text-gray-600 mb-2">
+                  <h3 className="text-xl font-bold mb-3 text-brand-gold">STR Turnovers, On Schedule</h3>
+                  <p className="text-base text-gray-600 mb-2">
                     We sync with Airbnb/VRBO to keep your place guest-ready between bookings off I‑90.
                   </p>
-                  <ul className="text-xs space-y-1">
+                  <ul className="text-sm space-y-1">
                     <li>• Toiletry and supply inventory confirmation</li>
                     <li>• Photo notes for damage or forgotten items</li>
                   </ul>
@@ -480,7 +472,7 @@ export default function SpokaneValley() {
       />
       <style>{`
         [data-active="true"] {
-          transform: scale(1.08);
+          transform: scale(1.12);
           opacity: 1;
           z-index: 10;
           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(197, 155, 75, 0.3);
@@ -497,7 +489,7 @@ export default function SpokaneValley() {
           color: #374151;
         }
         [data-active="false"] {
-          transform: scale(0.92);
+          transform: scale(0.85);
           opacity: 0.5;
           z-index: 1;
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -518,6 +510,10 @@ export default function SpokaneValley() {
           [data-active="false"] {
             padding: 2rem 2.5rem;
           }
+        }
+        @media (min-width: 1024px) {
+          [data-active="true"] { flex: 0 0 48%; max-width: 48%; }
+          [data-active="false"] { flex: 0 0 26%; max-width: 26%; }
         }
       `}</style>
     </>

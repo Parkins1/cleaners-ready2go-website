@@ -70,7 +70,7 @@ export default function Greenacres() {
                   data-active={isActive(0)}
                 >
                   <ContentCard className="p-8 md:p-10">
-                    <h3 className="text-xl md:text-2xl font-bold mb-4 text-brand-gold">
+                    <h3 className="text-xl font-bold mb-4 text-brand-gold">
                       Greenacres Cleaning, Matched To Your Routine
                     </h3>
                     <p className="text-base text-gray-600 leading-relaxed">
@@ -83,14 +83,12 @@ export default function Greenacres() {
                   data-active={isActive(1)}
                 >
                   <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
-                      Effortless Upkeep
-                    </h3>
-                    <div className="space-y-2 text-sm">
-                      <p className="text-gray-600 mb-2">
+                    <h3 className="text-xl font-bold mb-3 text-brand-gold">Effortless Upkeep</h3>
+                    <div className="space-y-2">
+                      <p className="text-base text-gray-600 mb-2">
                         Weekly, bi-weekly, or monthly plans to keep your home guest-ready for river days or trail outings.
                       </p>
-                      <ul className="space-y-1 text-xs">
+                      <ul className="space-y-1 text-sm">
                         <li><strong>Weekly:</strong> Best for active households and allergy concerns</li>
                         <li><strong>Bi-weekly:</strong> A popular balance of consistency and value</li>
                         <li><strong>Monthly:</strong> A reliable reset that restores freshness</li>
@@ -103,13 +101,11 @@ export default function Greenacres() {
                   data-active={isActive(2)}
                 >
                   <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
-                      The Greenacres Deep Reset
-                    </h3>
-                    <p className="text-sm text-gray-600 mb-2">
+                    <h3 className="text-xl font-bold mb-3 text-brand-gold">The Greenacres Deep Reset</h3>
+                    <p className="text-base text-gray-600 mb-2">
                       Ideal for seasonal deep cleans or post-event recovery. Includes targeted descaling and detailed baseboards.
                     </p>
-                    <ul className="text-xs space-y-1">
+                    <ul className="text-sm space-y-1">
                       <li>• Interior glass and mirrors polished to clarity</li>
                       <li>• Baseboards, switches, and frames detailed</li>
                     </ul>
@@ -120,13 +116,11 @@ export default function Greenacres() {
                   data-active={isActive(3)}
                 >
                   <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
-                      Checklist-Guided Move-Outs
-                    </h3>
-                    <p className="text-sm text-gray-600 mb-2">
+                    <h3 className="text-xl font-bold mb-3 text-brand-gold">Checklist-Guided Move-Outs</h3>
+                    <p className="text-base text-gray-600 mb-2">
                       We follow landlord checklists for stress-free move-outs, focusing on "show well" details.
                     </p>
-                    <ul className="text-xs space-y-1">
+                    <ul className="text-sm space-y-1">
                       <li>• Book 48–72 hours before your final walkthrough</li>
                       <li>• Keep utilities on for light and hot water</li>
                     </ul>
@@ -137,13 +131,11 @@ export default function Greenacres() {
                   data-active={isActive(4)}
                 >
                   <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
-                      STR Turnovers, On Schedule
-                    </h3>
-                    <p className="text-sm text-gray-600 mb-2">
+                    <h3 className="text-xl font-bold mb-3 text-brand-gold">STR Turnovers, On Schedule</h3>
+                    <p className="text-base text-gray-600 mb-2">
                       We sync with Airbnb/VRBO calendars for smooth guest changeovers near the Spokane River.
                     </p>
-                    <ul className="text-xs space-y-1">
+                    <ul className="text-sm space-y-1">
                       <li>• Supply inventory confirmation</li>
                       <li>• Photo notes for damage or left items</li>
                     </ul>
@@ -321,9 +313,9 @@ export default function Greenacres() {
 
     return (
       <>
-        <style>{`
+      <style>{`
           [data-active="true"] {
-            transform: scale(1.08);
+            transform: scale(1.12);
             opacity: 1;
             z-index: 10;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(197, 155, 75, 0.3);
@@ -340,7 +332,7 @@ export default function Greenacres() {
             color: #374151;
           }
           [data-active="false"] {
-            transform: scale(0.92);
+            transform: scale(0.85);
             opacity: 0.5;
             z-index: 1;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -361,6 +353,10 @@ export default function Greenacres() {
             [data-active="false"] {
               padding: 2rem 2.5rem;
             }
+          }
+          @media (min-width: 1024px) {
+            [data-active="true"] { flex: 0 0 48%; max-width: 48%; }
+            [data-active="false"] { flex: 0 0 26%; max-width: 26%; }
           }
         `}</style>
         <LocationPageTemplate {...pageDetails} />
