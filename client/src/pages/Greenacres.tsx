@@ -272,6 +272,12 @@ export default function Greenacres() {
         ),
       },
       {
+        title: 'Service Area (ZIP Codes)',
+        content: (
+          <p className="text-sm">ZIP codes: 99016 — 99019 — 99037 — 99206 — 99212 — 99216 — 99217</p>
+        ),
+      },
+      {
         title: 'Satisfaction Promise',
         content: (
           <>

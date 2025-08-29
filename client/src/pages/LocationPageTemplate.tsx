@@ -9,6 +9,7 @@ import CalloutBanner from "@/components/CalloutBanner/CalloutBanner";
 import { ServicesSection, ProcessSection } from "@/components/Sections";
 import { SEO } from "@/components/seo/SEO";
 import HeroSection from "@/components/HeroSection/HeroSection";
+import { brand } from "@/config/brand";
 
 interface LocationPageTemplateProps {
   locationName: string;
@@ -65,9 +66,9 @@ export default function LocationPageTemplate({
       <HeroSection
         image={heroImage}
         imageAlt={heroAlt || `House cleaning in ${locationName}, WA`}
-        title={`House Cleaning in ${locationName}`}
-        subtitle={<p className="text-lg lg:text-xl text-text mb-8">Your trusted local cleaning experts.</p>}
-        actions={<Button onClick={() => open('quote')} variant="primary">Get a Free Quote</Button>}
+        title={`Professional House Cleaning in ${locationName}, WA`}
+        subtitle={<p className="text-lg lg:text-xl text-text mb-8">Locally owned — Licensed & insured — Satisfaction-focused service</p>}
+        actions={<Button onClick={() => open('quote')} variant="primary">Request Your FREE Quote</Button>}
         useAspect
         imageWidth={heroWidth}
         imageHeight={heroHeight}
@@ -118,15 +119,15 @@ export default function LocationPageTemplate({
       ))}
 
       <CalloutBanner
-        title="Ready for a Cleaner Home?"
-        body="Let us handle the cleaning so you enjoy your time."
+        title={`Your Spotless ${locationName} Home Starts Here`}
+        body={`Request a free quote — or call ${brand.phone}`}
         variant={ctaVariant}
         actions={
           <Button
             onClick={() => open('quote')}
             variant="primary"
           >
-            Request a Free Quote
+            Request My Quote
           </Button>
         }
       />

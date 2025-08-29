@@ -140,7 +140,7 @@ export default function LibertyLake() {
                 >
                   <ContentCard className="p-6 md:p-8">
                     <h3 className="text-lg font-semibold mb-3 text-brand-gold">
-                      The Liberty Lake Refresh
+                      The Liberty Lake Deep Reset
                     </h3>
                     <p className="text-sm text-gray-600 mb-2">
                       Great before summer season or after a busy holiday stretch. Includes hand-wiping cabinet fronts, detailing door tracks, washing interior windows, degreasing range hoods, and spot-treating fixtures.
@@ -297,6 +297,7 @@ export default function LibertyLake() {
               We tailor our approach for lakefront homes, rural acreage, and newer planned neighborhoods so every property
               receives the right level of care.
             </p>
+            <p className="mt-2 text-sm">ZIP codes: 99019 — 99016 — 99037 — 99206</p>
           </>
         ),
       },
@@ -328,6 +329,87 @@ export default function LibertyLake() {
             <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Legacy Ridge</li>
             <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Meadowwood</li>
           </ul>
+        ),
+      },
+      {
+        title: "Highlights",
+        content: (
+          <ul className="list-none space-y-2 text-sm md:text-base">
+            <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />Instant online pricing</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />Color‑coded microfiber system</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />Photo‑verified results</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />Background‑checked team</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />EPA‑registered options available</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />Flexible arrival windows</li>
+          </ul>
+        ),
+      },
+      {
+        title: "A Fresh, Healthy Home Without Lifting a Finger",
+        content: (
+          <>
+            <p className="mb-3">Weekend plans shouldn’t be lost to chores. We bring a friendly, professional team and a proven checklist so your home feels fresh without the hassle.</p>
+            <ul className="list-disc list-inside space-y-1 text-sm">
+              <li>67‑point checklist for consistent results</li>
+              <li>Low‑odor, low‑VOC options; SDS available on request</li>
+            </ul>
+          </>
+        ),
+      },
+      {
+        title: "Packages",
+        content: (
+          <div className="grid md:grid-cols-2 gap-4">
+            <ContentCard>
+              <h4 className="font-semibold">Set‑It‑and‑Forget‑It Maintenance</h4>
+              <ul className="list-inside mt-2 text-sm space-y-1">
+                <li>Weekly</li>
+                <li>Bi‑weekly</li>
+                <li>Monthly</li>
+              </ul>
+            </ContentCard>
+            <ContentCard>
+              <h4 className="font-semibold">The Liberty Lake Deep Reset</h4>
+              <ul className="list-inside mt-2 text-sm space-y-1">
+                <li>Degrease/descale focus</li>
+                <li>Baseboards and trim detailing</li>
+                <li>Interior glass and mirrors</li>
+              </ul>
+            </ContentCard>
+            <ContentCard>
+              <h4 className="font-semibold">Checklist‑Driven Turnovers</h4>
+              <ul className="list-inside mt-2 text-sm space-y-1">
+                <li>Book 48–72 hours ahead</li>
+                <li>Utilities on for full walkthrough</li>
+              </ul>
+            </ContentCard>
+            <ContentCard>
+              <h4 className="font-semibold">Guest‑Ready in Record Time</h4>
+              <ul className="list-inside mt-2 text-sm space-y-1">
+                <li>Inventory checks</li>
+                <li>Damage/photo notes</li>
+              </ul>
+            </ContentCard>
+          </div>
+        ),
+      },
+      {
+        title: "Liberty Lake Residents Share Their Experience",
+        content: (
+          <div className="grid md:grid-cols-3 gap-6">
+            <ContentCard as="blockquote">“Sparkling before a lakeside birthday—they handled details we’d miss.” — Jenna P., River District</ContentCard>
+            <ContentCard as="blockquote">“Bi‑weekly routine keeps our gear‑heavy home under control.” — David R., Rocky Hill</ContentCard>
+            <ContentCard as="blockquote">“Turnover cleans are punctual and thorough—our ratings stay strong.” — Aaron M., Legacy Ridge</ContentCard>
+          </div>
+        ),
+      },
+      {
+        title: "Satisfaction Promise",
+        content: (
+          <>
+            <p>If an area listed on your cleaning checklist appears missed, contact us within 24 hours. We’ll schedule a touch‑up visit at no added labor cost, provided reasonable access is granted.</p>
+            <p className="mt-2 text-sm text-gray-600">Note: Promise limited to areas explicitly included in the agreed scope. Pre‑existing damage or excessive wear may limit results.</p>
+          </>
         ),
       },
       {
