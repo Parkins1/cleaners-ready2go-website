@@ -243,6 +243,68 @@ export default function Spokane() {
         ),
       },
       {
+        title: 'Highlights',
+        content: (
+          <ul className="list-none space-y-2 text-sm md:text-base">
+            <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />Instant online pricing</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />Color‑coded microfiber system</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />Photo‑verified results</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />Background‑checked team</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />EPA‑registered options available</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />Flexible arrival windows</li>
+          </ul>
+        ),
+      },
+      {
+        title: 'A Fresh, Healthy Home Without Lifting a Finger',
+        content: (
+          <>
+            <p className="mb-3">Weeknights and weekends are better spent around Riverfront Park, neighborhood eateries, and Gonzaga games — not chasing dust. Our uniformed technicians follow a proven checklist so your Spokane home feels fresh without the hassle.</p>
+            <ul className="list-disc list-inside space-y-1 text-sm">
+              <li>67‑point checklist for consistent results</li>
+              <li>Low‑odor, low‑VOC options; SDS available on request</li>
+            </ul>
+          </>
+        ),
+      },
+      {
+        title: 'Packages',
+        content: (
+          <div className="grid md:grid-cols-2 gap-4">
+            <ContentCard>
+              <h4 className="font-semibold">Set‑It‑and‑Forget‑It Maintenance</h4>
+              <ul className="list-inside mt-2 text-sm space-y-1">
+                <li>Weekly</li>
+                <li>Bi‑weekly</li>
+                <li>Monthly</li>
+              </ul>
+            </ContentCard>
+            <ContentCard>
+              <h4 className="font-semibold">The Spokane Deep Reset</h4>
+              <ul className="list-inside mt-2 text-sm space-y-1">
+                <li>Degrease/descale focus</li>
+                <li>Baseboards and trim detailing</li>
+                <li>Interior glass and mirrors</li>
+              </ul>
+            </ContentCard>
+            <ContentCard>
+              <h4 className="font-semibold">Checklist‑Driven Turnovers</h4>
+              <ul className="list-inside mt-2 text-sm space-y-1">
+                <li>Book 48–72 hours ahead</li>
+                <li>Utilities on for full walkthrough</li>
+              </ul>
+            </ContentCard>
+            <ContentCard>
+              <h4 className="font-semibold">Guest‑Ready in Record Time</h4>
+              <ul className="list-inside mt-2 text-sm space-y-1">
+                <li>Inventory checks</li>
+                <li>Damage/photo notes</li>
+              </ul>
+            </ContentCard>
+          </div>
+        ),
+      },
+      {
         title: 'Our Simple Cleaning Process',
         content: (
           <>
