@@ -4,16 +4,16 @@ import { useModal } from "@/components/modal/ModalProvider";
 import { Button } from "@/components/ui/button";
 import ContentCard from "@/components/ContentCard/ContentCard";
 import residentialCardImg from "@assets/spokane-wa-residential-cleaning-card.webp";
+import { SEO } from "@/components/seo/SEO";
 
 export default function ApartmentCleaning() {
   const { open } = useModal();
 
   return (
     <>
-      <title>Apartment Cleaning Services - Cleaners Ready 2 GO | Efficient, Flexible Plans</title>
-      <meta
-        name="description"
-        content="Efficient, flexible apartment cleaning in Spokane, Spokane Valley, and Liberty Lake. Recurring, deep clean, and move-out options available. Get your free quote."
+      <SEO
+        title="Apartment Cleaning Services - Cleaners Ready 2 GO | Efficient, Flexible Plans"
+        description="Efficient, flexible apartment cleaning in Spokane, Spokane Valley, and Liberty Lake. Recurring, deep clean, and move-out options available. Get your free quote."
       />
 
       {/* Hero with image layer + overlay for contrast */}

@@ -1,8 +1,9 @@
  // llm:spokane-valley-migrated
- import React, { useCallback, useEffect, useState } from 'react';
+ import React from 'react';
  import { Button } from "@/components/ui/button";
  import { useModal } from "@/components/modal/ModalProvider";
- import HeroSection from "@/components/HeroSection/HeroSection";
+import HeroSection from "@/components/HeroSection/HeroSection";
+import { SEO } from "@/components/seo/SEO";
 import heroImage from "@assets/spokane-valley-wa-house-cleaning-hero.webp";
 import hero480 from "@assets/spokane-valley-wa-house-cleaning-hero-480.webp";
 import hero768 from "@assets/spokane-valley-wa-house-cleaning-hero-768.webp";
@@ -15,38 +16,10 @@ import hero1024Avif from "@assets/spokane-valley-wa-house-cleaning-hero-1024.avi
 import Icon from "@/components/ui/icon";
  import { ServicesSection, ProcessSection } from "@/components/Sections";
  import CalloutBanner from "@/components/CalloutBanner/CalloutBanner";
- import {
-   Carousel,
-   CarouselContent,
-   CarouselItem,
-   CarouselNext,
-   CarouselPrevious,
-   type CarouselApi,
- } from "@/components/ui/carousel";
+ import CarouselCompact from "@/components/Carousel/CarouselCompact";
 
 export default function SpokaneValley() {
   const { open } = useModal();
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    setCurrent(api.selectedScrollSnap());
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap());
-    });
-  }, [api]);
-
-  const isActive = useCallback(
-    (index: number) => {
-      return current === index;
-    },
-    [current]
-  );
 
   const faqs = [
     { q: "Do I need to be home?", a: "No. Provide a code or key; we text arrival and departure photos for your records." },
@@ -61,8 +34,10 @@ export default function SpokaneValley() {
 
   return (
     <>
-      <title>Professional House Cleaning in Spokane Valley, WA</title>
-      <meta name="description" content="Locally owned, licensed & insured, satisfaction-focused house cleaning services in Spokane Valley, WA. Request your FREE quote today!" />
+      <SEO
+        title="Professional House Cleaning in Spokane Valley, WA"
+        description="Locally owned, licensed & insured, satisfaction-focused house cleaning services in Spokane Valley, WA. Request your FREE quote today!"
+      />
 
       <HeroSection
         image={heroImage}
@@ -94,33 +69,17 @@ export default function SpokaneValley() {
       {/* Spokane Valley Services Carousel */}
       <section className="py-8 bg-white">
         <div className="py-8">
-          <Carousel
-            opts={{
-              align: "center",
-              loop: true,
-            }}
-            setApi={setApi}
-            className="w-full max-w-6xl mx-auto"
-          >
-            <CarouselContent className="-ml-2 md:-ml-4">
-              <CarouselItem
-                className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
-                data-active={isActive(0)}
-              >
+          <CarouselCompact
+            items={[
+              (
                 <ContentCard className="p-5 md:p-6">
-                  <h3 className="text-lg font-bold mb-2 text-brand-gold">
-                    Spokane Valley Cleaning, Matched To Your Routine
-                  </h3>
+                  <h3 className="text-lg font-bold mb-2 text-brand-gold">Spokane Valley Cleaning, Matched To Your Routine</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
                     Professional cleaning services tailored to Valley commuter schedules, pets, and yard-work dust. Your dedicated Team Lead maintains consistent standards.
                   </p>
                 </ContentCard>
-              </CarouselItem>
-
-              <CarouselItem
-                className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
-                data-active={isActive(1)}
-              >
+              ),
+              (
                 <ContentCard className="p-5 md:p-6">
                   <h3 className="text-lg font-bold mb-2 text-brand-gold">Effortless Upkeep</h3>
                   <div className="space-y-2">
@@ -134,12 +93,8 @@ export default function SpokaneValley() {
                     </ul>
                   </div>
                 </ContentCard>
-              </CarouselItem>
-
-              <CarouselItem
-                className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
-                data-active={isActive(2)}
-              >
+              ),
+              (
                 <ContentCard className="p-5 md:p-6">
                   <h3 className="text-lg font-bold mb-2 text-brand-gold">The Valley Deep Reset</h3>
                   <p className="text-sm text-gray-600 mb-2">
@@ -150,12 +105,8 @@ export default function SpokaneValley() {
                     <li>• Interior glass and mirrors polished to clarity</li>
                   </ul>
                 </ContentCard>
-              </CarouselItem>
-
-              <CarouselItem
-                className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
-                data-active={isActive(3)}
-              >
+              ),
+              (
                 <ContentCard className="p-5 md:p-6">
                   <h3 className="text-lg font-bold mb-2 text-brand-gold">Checklist-Guided Move-Outs</h3>
                   <p className="text-sm text-gray-600 mb-2">
@@ -166,12 +117,8 @@ export default function SpokaneValley() {
                     <li>• Ensure utilities remain on for light and hot water</li>
                   </ul>
                 </ContentCard>
-              </CarouselItem>
-
-              <CarouselItem
-                className="pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 transition-all duration-300"
-                data-active={isActive(4)}
-              >
+              ),
+              (
                 <ContentCard className="p-5 md:p-6">
                   <h3 className="text-lg font-bold mb-2 text-brand-gold">STR Turnovers, On Schedule</h3>
                   <p className="text-sm text-gray-600 mb-2">
@@ -182,11 +129,9 @@ export default function SpokaneValley() {
                     <li>• Photo notes for damage or forgotten items</li>
                   </ul>
                 </ContentCard>
-              </CarouselItem>
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+              ),
+            ]}
+          />
         </div>
       </section>
 
@@ -470,52 +415,7 @@ export default function SpokaneValley() {
         variant="gold"
         actions={<Button onClick={() => open("quote")} variant="primary">Request My Quote</Button>}
       />
-      <style>{`
-        [data-active="true"] {
-          transform: scale(1.12);
-          opacity: 1;
-          z-index: 10;
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(197, 155, 75, 0.3);
-          border: 2px solid rgba(197, 155, 75, 0.4);
-          background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(197, 155, 75, 0.02));
-          padding: 2rem 2.5rem;
-        }
-        [data-active="true"] .text-brand-gold {
-          font-weight: 800;
-          text-shadow: 0 1px 2px rgba(197, 155, 75, 0.3);
-        }
-        [data-active="true"] .text-gray-600 {
-          font-weight: 600;
-          color: #374151;
-        }
-        [data-active="false"] {
-          transform: scale(0.85);
-          opacity: 0.5;
-          z-index: 1;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-          padding: 1.5rem 2rem;
-        }
-        [data-active="false"] .text-brand-gold {
-          font-weight: 600;
-        }
-        [data-active="false"] .text-gray-600 {
-          font-weight: 400;
-          color: #6b7280;
-        }
-
-        @media (min-width: 768px) {
-          [data-active="true"] {
-            padding: 2.5rem 3rem;
-          }
-          [data-active="false"] {
-            padding: 2rem 2.5rem;
-          }
-        }
-        @media (min-width: 1024px) {
-          [data-active="true"] { flex: 0 0 48%; max-width: 48%; }
-          [data-active="false"] { flex: 0 0 26%; max-width: 26%; }
-        }
-      `}</style>
+      {/* Compact carousel styles centralized in CarouselCompact */}
     </>
   );
 }

@@ -1,9 +1,12 @@
 import React, { useId } from "react";
 import { cn } from "@/lib/utils";
+import Icon from "@/components/ui/icon";
+import type { IconName } from "@/components/ui/icon";
 
 export interface TrustSignalItem {
   highlight?: string;
   text: string;
+ icon?: IconName;
 }
 
 interface TrustSignalsSectionProps {
@@ -41,14 +44,21 @@ export default function TrustSignalsSection({
               key={idx}
               className="border-l-4 border-brand-gold bg-brand-gold/5 rounded-sm pl-4 py-2"
             >
-              {item.highlight ? (
-                <>
-                  <strong className="text-brand-gold">{item.highlight}</strong>
-                  {" "}– {item.text}
-                </>
-              ) : (
-                item.text
-              )}
+              <div className="flex items-start gap-2">
+                {item.icon && (
+                  <Icon name={item.icon} className="w-4 h-4 mt-1 text-brand-gold flex-shrink-0" />
+                )}
+                <div>
+                  {item.highlight ? (
+                    <>
+                      <strong className="text-brand-gold">{item.highlight}</strong>
+                      {" "}– {item.text}
+                    </>
+                  ) : (
+                    item.text
+                  )}
+                </div>
+              </div>
             </li>
           ))}
         </ul>
@@ -56,4 +66,3 @@ export default function TrustSignalsSection({
     </section>
   );
 }
-

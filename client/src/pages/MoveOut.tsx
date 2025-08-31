@@ -1,4 +1,5 @@
 import React from "react";
+import { SEO } from "@/components/seo/SEO";
 import Icon from "@/components/ui/icon";
 import { Button } from "@/components/ui/button";
 import { useModal } from "@/components/modal/ModalProvider";
@@ -71,7 +72,10 @@ export default function MoveOut() {
 
   return (
     <>
-      <title>Move-Out Cleaning in Spokane Valley, WA | Cleaners Ready 2 GO</title>
+      <SEO
+        title="Move-Out Cleaning in Spokane Valley, WA | Cleaners Ready 2 GO"
+        description="Trusted move-out cleaning in Spokane Valley. Checklist-driven, detail-focused cleans that align with local landlord expectations. Get your free quote."
+      />
       <meta
         name="description"
         content="Keep your deposit. Pass inspection. Move-out cleaning in Spokane Valley, Spokane, and Liberty Lake—inspection-ready, checklist-driven cleaning."

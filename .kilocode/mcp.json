@@ -35,7 +35,7 @@
       "alwaysAllow": [
         "sequentialthinking"
       ],
-      "disabled": true
+      "disabled": false
     },
     "context7": {
       "command": "npx",
@@ -47,7 +47,7 @@
         "resolve-library-id",
         "get-library-docs"
       ],
-      "disabled": true
+      "disabled": false
     }
   }
 }

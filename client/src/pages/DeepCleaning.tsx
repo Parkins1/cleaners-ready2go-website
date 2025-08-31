@@ -15,12 +15,14 @@ import mv1024Avif from "@assets/spokane-wa-move-out-cleaning-hero-1024.avif";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ContentCard from "@/components/ContentCard/ContentCard";
+import TrustSignalsSection from "@/components/TrustSignals/TrustSignalsSection";
 import CalloutBanner from "@/components/CalloutBanner/CalloutBanner";
 import { brand } from "@/config/brand";
+import { SEO } from "@/components/seo/SEO";
 
 export default function DeepCleaning() {
   const { open } = useModal();
-
+  
 
   const cityList = brand.serviceAreas.cities;
 
@@ -91,11 +93,12 @@ export default function DeepCleaning() {
 
   return (
     <>
-      {/* SEO */}
-      <title>Deep Cleaning Spokane, WA | Cleaners Ready 2 GO</title>
-      <meta name="description" content="Cleaners Ready 2 GO delivers eco-friendly, detail-oriented deep cleaning in Spokane & Spokane Valley. Get your free quote today and enjoy a healthier, spotless home." />
-      <link rel="canonical" href="https://cleanersready2go.com/deep-cleaning-spokane" />
-      <meta name="keywords" content="deep cleaning Spokane, Spokane deep cleaning services, Spokane Valley house cleaning, eco-friendly deep clean Spokane, move-out cleaning Spokane WA" />
+      <SEO
+        title="Deep Cleaning Spokane, WA | Cleaners Ready 2 GO"
+        description="Cleaners Ready 2 GO delivers eco-friendly, detail-oriented deep cleaning in Spokane & Spokane Valley. Get your free quote today and enjoy a healthier, spotless home."
+        canonical="https://cleanersready2go.com/deep-cleaning-spokane"
+        keywords="deep cleaning Spokane, Spokane deep cleaning services, Spokane Valley house cleaning, eco-friendly deep clean Spokane, move-out cleaning Spokane WA"
+      />
 
       {/* HERO */}
       <HeroSection
@@ -196,17 +199,31 @@ export default function DeepCleaning() {
       </section>
 
       {/* WHY US */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">Why Spokane Homeowners Trust Cleaners Ready 2 GO</h2>
-          <ul className="grid md:grid-cols-2 gap-4 text-text">
-            <li className="border-l-4 border-[var(--color-accent)] bg-[rgba(200,164,74,0.06)] rounded-sm pl-4 py-2"><strong className="text-accent">Licensed, bonded & insured</strong> – Peace of mind while we’re on your property.</li>
-            <li className="border-l-4 border-[var(--color-accent)] bg-[rgba(200,164,74,0.06)] rounded-sm pl-4 py-2"><strong className="text-accent">Green cleaning, healthier air</strong> – Kid-safe, pet-safe solutions and HEPA filtration reduce indoor allergens by up to 75%.</li>
-            <li className="border-l-4 border-[var(--color-accent)] bg-[rgba(200,164,74,0.06)] rounded-sm pl-4 py-2"><strong className="text-accent">Transparent pricing</strong> – Flat-rate quotes and digital invoices no surprises.</li>
-            <li className="border-l-4 border-[var(--color-accent)] bg-[rgba(200,164,74,0.06)] rounded-sm pl-4 py-2"><strong className="text-accent">5-star reputation</strong> – A+ BBB rating and hundreds of Google reviews averaging 4.9 stars.</li>
-          </ul>
-        </div>
-      </section>
+      <TrustSignalsSection
+        title={
+          <>Why Spokane Homeowners Trust Cleaners Ready 2 GO</>
+        }
+        items={[
+          {
+            highlight: "Licensed, bonded & insured",
+            text: "Peace of mind while we’re on your property.",
+          },
+          {
+            highlight: "Green cleaning, healthier air",
+            text:
+              "Kid-safe, pet-safe solutions and HEPA filtration reduce indoor allergens by up to 75%.",
+          },
+          {
+            highlight: "Transparent pricing",
+            text: "Flat-rate quotes and digital invoices — no surprises.",
+          },
+          {
+            highlight: "5-star reputation",
+            text:
+              "A+ BBB rating and hundreds of Google reviews averaging 4.9 stars.",
+          },
+        ]}
+      />
 
       {/* SERVICE AREA */}
       <section className="py-16 bg-service-band">
@@ -285,6 +302,20 @@ export default function DeepCleaning() {
       
       {/* JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* Bottom CTA */}
+      <CalloutBanner
+        title="Ready for a True Deep Clean?"
+        body={<>
+          Enjoy a fresher, healthier home with detailed, eco‑conscious deep cleaning. Get a fast, tailored quote.
+        </>}
+        variant="gold"
+        actions={
+          <Button onClick={() => open("quote")} variant="primary">
+            Get My Free Quote
+          </Button>
+        }
+      />
 
     </>
   );

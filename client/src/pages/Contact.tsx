@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useModal } from "@/components/modal/ModalProvider";
 import { useMutation } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
+import { submitContact } from "@/lib/api";
 import ContactForm from "@/components/ContactForm/ContactForm";
 import SnippetContactForm from "@/components/ContactForm/SnippetContactForm";
 import { ContactFormData } from "@/components/ContactForm/schema";
@@ -18,10 +18,7 @@ export default function Contact() {
   const { open, close } = useModal();
   const { toast } = useToast();
   const { mutateAsync, isPending } = useMutation({
-    mutationFn: async (data: ContactFormData) => {
-      const response = await apiRequest("POST", "/api/contacts", data);
-      return response.json();
-    },
+    mutationFn: async (data: ContactFormData) => submitContact(data),
     onSuccess: () => {
       toast({
         title: "Message Sent!",

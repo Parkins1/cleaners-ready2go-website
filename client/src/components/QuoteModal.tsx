@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useMutation } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
+import { submitQuote } from "@/lib/api";
 import { useModalA11y } from "@/components/modal/useModalA11y";
 import DialogHeader from "@/components/modal/DialogHeader";
 
@@ -26,8 +26,7 @@ export default function QuoteModal({ onClose, isOpen = true }: QuoteModalProps) 
 
   const quoteMutation = useMutation({
     mutationFn: async (data: { homeSize: string; serviceFrequency: string; email: string }) => {
-      const response = await apiRequest("POST", "/api/quotes", data);
-      return response.json();
+      return submitQuote(data);
     },
     onSuccess: () => {
       toast({

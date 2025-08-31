@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { useLocation } from "wouter";
 import React from "react";
 import { ServiceCardProps } from "./types";
 import { OptimizedImage } from "@/components/ui/optimized-image";
@@ -16,10 +16,19 @@ export default function ServiceCard({
   icon,
   className,
 }: ServiceCardProps) {
+  const [, navigate] = useLocation();
+  const onClick: React.MouseEventHandler<HTMLAnchorElement> = (e) => {
+    // Allow new-tab/middle-click/modified clicks to behave normally
+    if (e.defaultPrevented) return;
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+    e.preventDefault();
+    navigate(href);
+  };
   return (
-    <Link
+    <a
       key={id}
       href={href}
+      onClick={onClick}
       className={`relative group block overflow-hidden rounded-xl border border-slate-300 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-transparent min-h-[240px] sm:min-h-[280px] ${className || ""}`}
       aria-label={`${title} - Learn more`}
     >
@@ -50,6 +59,6 @@ export default function ServiceCard({
           </span>
         </div>
       </div>
-    </Link>
+    </a>
   );
 }

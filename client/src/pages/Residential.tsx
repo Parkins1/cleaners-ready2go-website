@@ -1,5 +1,6 @@
 // llm:cta-migrated
 import Icon from "@/components/ui/icon";
+import OptimizedImage from "@/components/ui/optimized-image";
 import residentialCardImg from "@assets/spokane-wa-residential-cleaning-card.webp";
 import res480 from "@assets/spokane-wa-residential-cleaning-card-480.webp";
 import res768 from "@assets/spokane-wa-residential-cleaning-card-768.webp";
@@ -10,11 +11,26 @@ import res1024Avif from "@assets/spokane-wa-residential-cleaning-card-1024.avif"
 import HeroSection from "@/components/HeroSection/HeroSection";
 import { Button } from "@/components/ui/button";
 import ContentCard from "@/components/ContentCard/ContentCard";
+import IconCard from "@/components/IconCard/IconCard";
 import { useModal } from "@/components/modal/ModalProvider";
 import { SEO } from "@/components/seo/SEO";
 import TrustSignalsSection from "@/components/TrustSignals/TrustSignalsSection";
 import { brand } from "@/config/brand";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
+// Icon imports (these will need to be added to the project)
+import livingRoomIcon from "@assets/icon_living_room.webp";
+import kitchenIcon from "@assets/icon_kitchen.webp";
+import bathroomIcon from "@assets/icon_bathroom.webp";
+import bedroomIcon from "@assets/icon_bedroom.webp";
+import hallwayStairsIcon from "@assets/icon_hallway_stairs.webp";
+import laundryRoomIcon from "@assets/icon_laundry_room.webp";
+import weeklyRefreshIcon from "@assets/icon_weekly_refresh.webp";
+import monthlyResetIcon from "@assets/icon_monthly_reset.webp";
+
+import ecoFriendlyIcon from "@assets/icon_eco_friendly.webp";
+import consistentTeamLeadIcon from "@assets/icon_consistent_team_lead.webp";
+import digitalChecklistIcon from "@assets/icon_digital_checklist.webp";
 
 export default function Residential() {
   const { open } = useModal();
@@ -64,9 +80,18 @@ export default function Residential() {
       <section className="py-10 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <ul className="grid gap-3 text-sm text-text md:grid-cols-3">
-            <li className="border-l-4 border-brand-gold bg-brand-gold/5 rounded-sm pl-4 py-2">Licensed & insured • 100% Satisfaction Promise</li>
-            <li className="border-l-4 border-brand-gold bg-brand-gold/5 rounded-sm pl-4 py-2">Pro-grade tools (HEPA, microfiber systems) • Eco-friendly options</li>
-            <li className="border-l-4 border-brand-gold bg-brand-gold/5 rounded-sm pl-4 py-2">Digital checklists • Consistent teams • Clear, honest scope</li>
+            <li className="border-l-4 border-brand-gold bg-brand-gold/5 rounded-sm pl-4 py-2 flex items-start gap-2">
+              <Icon name="Sparkles" className="w-4 h-4 mt-1 text-brand-gold flex-shrink-0" />
+              <span>Licensed & insured • 100% Satisfaction Promise</span>
+            </li>
+            <li className="border-l-4 border-brand-gold bg-brand-gold/5 rounded-sm pl-4 py-2 flex items-start gap-2">
+              <Icon name="Sparkles" className="w-4 h-4 mt-1 text-brand-gold flex-shrink-0" />
+              <span>Pro-grade tools (HEPA, microfiber systems) • Eco-friendly options</span>
+            </li>
+            <li className="border-l-4 border-brand-gold bg-brand-gold/5 rounded-sm pl-4 py-2 flex items-start gap-2">
+              <Icon name="Sparkles" className="w-4 h-4 mt-1 text-brand-gold flex-shrink-0" />
+              <span>Digital checklists • Consistent teams • Clear, honest scope</span>
+            </li>
           </ul>
         </div>
       </section>
@@ -75,12 +100,12 @@ export default function Residential() {
       <TrustSignalsSection
         title={<>What “Done Right” Looks Like <span className="text-brand-gold">(Our Quality Benchmark)</span></>}
         items={[
-          { highlight: "Surfaces", text: "Ceiling fans, light fixtures, and high areas are dust‑free." },
-          { highlight: "Glass", text: "Windows (inside only), mirrors, and glass are streak‑free and spotless." },
-          { highlight: "Hard Floors", text: "Vacuumed, mopped, dry, and no streaks or residue." },
-          { highlight: "Carpets & Rugs", text: "Thoroughly vacuumed—no visible dirt or debris." },
-          { highlight: "High‑Touch Points", text: "Door handles/knobs, switches, and wall plates are clean and smudge‑free." },
-          { highlight: "Overall", text: "Spaces look tidy and organized—nothing out of place." },
+          { highlight: "Surfaces", text: "Ceiling fans, light fixtures, and high areas are dust‑free.", icon: "CheckCircle" },
+          { highlight: "Glass", text: "Windows (inside only), mirrors, and glass are streak‑free and spotless.", icon: "CheckCircle" },
+          { highlight: "Hard Floors", text: "Vacuumed, mopped, dry, and no streaks or residue.", icon: "CheckCircle" },
+          { highlight: "Carpets & Rugs", text: "Thoroughly vacuumed—no visible dirt or debris.", icon: "CheckCircle" },
+          { highlight: "High‑Touch Points", text: "Door handles/knobs, switches, and wall plates are clean and smudge‑free.", icon: "CheckCircle" },
+          { highlight: "Overall", text: "Spaces look tidy and organized—nothing out of place.", icon: "CheckCircle" },
         ]}
         columns={2}
         className="bg-white"
@@ -91,116 +116,87 @@ export default function Residential() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-8">Exactly What We Clean (Room‑by‑Room Scope)</h2>
           <div className="grid gap-6 md:grid-cols-2">
-            <ContentCard>
-              <h3 className="text-xl font-semibold text-text mb-3">Living Room / Family Spaces</h3>
-              <ul className="space-y-2 text-sm text-text">
-                {[
-                  "Wipe wood and hard surfaces until smudge‑free with a residue‑free cleaner.",
-                  "Dust flat surfaces and decorative items (frames, shelves, vases).",
-                  "Remove cobwebs/lint from corners and reachable high areas.",
-                  "Tidy resets: pillows fluffed, throws folded, items straightened.",
-                  "Glass/mirrors cleaned to a streak‑free finish.",
-                  "Floors vacuumed and (if hard surfaces) mopped dry and streak‑less.",
-                ].map((t, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <Icon name="CheckCircle" className="w-4 h-4 mt-1 text-brand-gold" />
-                    <span>{t}</span>
-                  </li>
-                ))}
-              </ul>
-            </ContentCard>
+            {/* Living Room / Family Spaces */}
+            <IconCard
+              iconSrc={livingRoomIcon}
+              title="Living Room / Family Spaces"
+              items={[
+                "Wipe wood and hard surfaces until smudge‑free with a residue‑free cleaner.",
+                "Dust flat surfaces and decorative items (frames, shelves, vases).",
+                "Remove cobwebs/lint from corners and reachable high areas.",
+                "Tidy resets: pillows fluffed, throws folded, items straightened.",
+                "Glass/mirrors cleaned to a streak‑free finish.",
+                "Floors vacuumed and (if hard surfaces) mopped dry and streak‑less.",
+              ]}
+            />
 
-            <ContentCard>
-              <h3 className="text-xl font-semibold text-text mb-3">Kitchen</h3>
-              <ul className="space-y-2 text-sm text-text">
-                {[
-                  "Fridge exterior scrubbed clean—no streaks or fingerprints.",
-                  "Stovetop cleaned and debris removed; surface polished as appropriate.",
-                  "Microwave inside & out cleaned and degreased.",
-                  "Countertops scrubbed; items lifted and replaced; no residue.",
-                  "Sink & faucet cleaned and polished; metal shines where applicable.",
-                  "Dishwasher exterior wiped free of smudges.",
-                  "Floors swept/vacuumed, then mopped; dry and streak‑free.",
-                ].map((t, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <Icon name="CheckCircle" className="w-4 h-4 mt-1 text-brand-gold" />
-                    <span>{t}</span>
-                  </li>
-                ))}
-              </ul>
-            </ContentCard>
+            {/* Kitchen */}
+            <IconCard
+              iconSrc={kitchenIcon}
+              title="Kitchen"
+              items={[
+                "Fridge exterior scrubbed clean—no streaks or fingerprints.",
+                "Stovetop cleaned and debris removed; surface polished as appropriate.",
+                "Microwave inside & out cleaned and degreased.",
+                "Countertops scrubbed; items lifted and replaced; no residue.",
+                "Sink & faucet cleaned and polished; metal shines where applicable.",
+                "Dishwasher exterior wiped free of smudges.",
+                "Floors swept/vacuumed, then mopped; dry and streak‑free.",
+              ]}
+            />
 
-            <ContentCard>
-              <h3 className="text-xl font-semibold text-text mb-3">Bathrooms</h3>
-              <ul className="space-y-2 text-sm text-text">
-                {[
-                  "Toilets cleaned and disinfected; no stains or buildup.",
-                  "Tub/shower cleaned; soap scum and water spots removed.",
-                  "Sinks & counters scrubbed; residue‑free.",
-                  "Mirrors crystal clear, streak‑free.",
-                  "Faucets/fixtures polished.",
-                  "Floors swept/mopped; dry, residue‑free.",
-                  "Trash emptied.",
-                ].map((t, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <Icon name="CheckCircle" className="w-4 h-4 mt-1 text-brand-gold" />
-                    <span>{t}</span>
-                  </li>
-                ))}
-              </ul>
-            </ContentCard>
+            {/* Bathrooms */}
+            <IconCard
+              iconSrc={bathroomIcon}
+              title="Bathrooms"
+              items={[
+                "Toilets cleaned and disinfected; no stains or buildup.",
+                "Tub/shower cleaned; soap scum and water spots removed.",
+                "Sinks & counters scrubbed; residue‑free.",
+                "Mirrors crystal clear, streak‑free.",
+                "Faucets/fixtures polished.",
+                "Floors swept/mopped; dry, residue‑free.",
+                "Trash emptied.",
+              ]}
+            />
 
-            <ContentCard>
-              <h3 className="text-xl font-semibold text-text mb-3">Bedrooms</h3>
-              <ul className="space-y-2 text-sm text-text">
-                {[
-                  "Mirrors streak‑free.",
-                  "Carpets/rugs vacuumed thoroughly; no visible dirt.",
-                  "Light fixtures & ceiling fans dust‑free.",
-                  "Window sills wiped; no dust/debris.",
-                  "Tidy reset: surfaces straightened; obvious floor items organized.",
-                ].map((t, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <Icon name="CheckCircle" className="w-4 h-4 mt-1 text-brand-gold" />
-                    <span>{t}</span>
-                  </li>
-                ))}
-              </ul>
-            </ContentCard>
+            {/* Bedrooms */}
+            <IconCard
+              iconSrc={bedroomIcon}
+              title="Bedrooms"
+              items={[
+                "Mirrors streak‑free.",
+                "Carpets/rugs vacuumed thoroughly; no visible dirt.",
+                "Light fixtures & ceiling fans dust‑free.",
+                "Window sills wiped; no dust/debris.",
+                "Tidy reset: surfaces straightened; obvious floor items organized.",
+              ]}
+            />
 
-            <ContentCard>
-              <h3 className="text-xl font-semibold text-text mb-3">Hallways & Stairs</h3>
-              <ul className="space-y-2 text-sm text-text">
-                {[
-                  "Handrails, switches, and plates cleaned (smudge‑free).",
-                  "Floors vacuumed; hard surfaces mopped clean and dry.",
-                  "Frames, art, and wall hangings dusted.",
-                ].map((t, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <Icon name="CheckCircle" className="w-4 h-4 mt-1 text-brand-gold" />
-                    <span>{t}</span>
-                  </li>
-                ))}
-              </ul>
-            </ContentCard>
+            {/* Hallways & Stairs */}
+            <IconCard
+              iconSrc={hallwayStairsIcon}
+              title="Hallways & Stairs"
+              items={[
+                "Handrails, switches, and plates cleaned (smudge‑free).",
+                "Floors vacuumed; hard surfaces mopped clean and dry.",
+                "Frames, art, and wall hangings dusted.",
+              ]}
+            />
 
-            <ContentCard>
-              <h3 className="text-xl font-semibold text-text mb-3">Laundry Room (if applicable)</h3>
-              <ul className="space-y-2 text-sm text-text">
-                {[
-                  "Washer/dryer exteriors wiped free of lint/residue.",
-                  "Counters/shelving dusted and wiped.",
-                  "Floors vacuumed and mopped; dry and streak‑free.",
-                ].map((t, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <Icon name="CheckCircle" className="w-4 h-4 mt-1 text-brand-gold" />
-                    <span>{t}</span>
-                  </li>
-                ))}
-              </ul>
-            </ContentCard>
+            {/* Laundry Room (if applicable) */}
+            <IconCard
+              iconSrc={laundryRoomIcon}
+              title="Laundry Room (if applicable)"
+              items={[
+                "Washer/dryer exteriors wiped free of lint/residue.",
+                "Counters/shelving dusted and wiped.",
+                "Floors vacuumed and mopped; dry and streak‑free.",
+              ]}
+            />
 
-            <ContentCard>
+            {/* Whole‑Home Final Check */}
+            <ContentCard className="md:col-span-2">
               <h3 className="text-xl font-semibold text-text mb-3">Whole‑Home Final Check</h3>
               <ul className="space-y-2 text-sm text-text">
                 {[
@@ -316,60 +312,69 @@ export default function Residential() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-8">Packages for <span className="text-brand-gold">Your Home</span></h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                title: "Weekly Refresh",
-                note: "Best for busy homes, pets, or allergies",
-                items: [
-                  "A full standard clean with high‑traffic areas prioritized.",
-                  "Built‑in rotations: baseboards, vents, door frames, reachable blinds.",
-                  "Optional quarterly add‑ons (inside oven/fridge, detailed blinds).",
-                ],
-              },
-              {
-                title: "Bi‑Weekly Balance",
-                note: "Most popular",
-                items: [
-                  "Predictable upkeep: bathrooms shine, kitchen reset, floors and dust.",
-                  "Rotational detailing prevents buildup on trim and fixtures.",
-                  "Easy to add seasonal extras when needed.",
-                ],
-              },
-              {
-                title: "Monthly Reset",
-                note: "Lower‑traffic homes",
-                items: [
-                  "Thorough dust and surface pass to catch what accumulates.",
-                  "Bathrooms, kitchen, and floors refreshed; detail focus monthly.",
-                  "Often paired with 2–3 Deep Cleans per year.",
-                ],
-              },
-              {
-                title: "Seasonal Deep Clean",
-                note: "Top‑to‑bottom focus",
-                items: [
-                  "Hand‑wipe reachable baseboards/trim, detail blinds/vents/fixtures.",
-                  "Kitchen degrease; bath descale; grout focus where needed.",
-                  "Under/behind items; edge vacuuming; glass/polish attention.",
-                ],
-              },
-            ].map((pkg, i) => (
-              <ContentCard key={i} className="h-full">
-                <h3 className="text-xl font-semibold text-text">{pkg.title}</h3>
-                <p className="text-sm text-brand-gold mb-3">{pkg.note}</p>
-                <ul className="space-y-2 text-sm text-text mb-4">
-                  {pkg.items.map((t, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <Icon name="CheckCircle" className="w-4 h-4 mt-1 text-brand-gold" />
-                      <span>{t}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex gap-3">
-                  <Button onClick={() => open("quote")} aria-label={`Get a Quote for ${pkg.title}`} variant="primary">Get a Quote</Button>
-                </div>
-              </ContentCard>
-            ))}
+            {/* Weekly Refresh */}
+            <IconCard
+              iconSrc={weeklyRefreshIcon}
+              title="Weekly Refresh"
+              items={[
+                "A full standard clean with high‑traffic areas prioritized.",
+                "Built‑in rotations: baseboards, vents, door frames, reachable blinds.",
+                "Optional quarterly add‑ons (inside oven/fridge, detailed blinds).",
+              ]}
+              className="h-full flex flex-col"
+            >
+              <div className="mt-auto pt-4">
+                <Button onClick={() => open("quote")} aria-label="Get a Quote for Weekly Refresh" variant="primary" className="w-full">Get a Quote</Button>
+              </div>
+            </IconCard>
+
+            {/* Bi‑Weekly Balance */}
+            <IconCard
+              iconSrc={monthlyResetIcon} // Placeholder until icon is available
+              title="Bi‑Weekly Balance"
+              items={[
+                "Predictable upkeep: bathrooms shine, kitchen reset, floors and dust.",
+                "Rotational detailing prevents buildup on trim and fixtures.",
+                "Easy to add seasonal extras when needed.",
+              ]}
+              className="h-full flex flex-col"
+            >
+              <div className="mt-auto pt-4">
+                <Button onClick={() => open("quote")} aria-label="Get a Quote for Bi‑Weekly Balance" variant="primary" className="w-full">Get a Quote</Button>
+              </div>
+            </IconCard>
+
+            {/* Monthly Reset */}
+            <IconCard
+              iconSrc={monthlyResetIcon}
+              title="Monthly Reset"
+              items={[
+                "Thorough dust and surface pass to catch what accumulates.",
+                "Bathrooms, kitchen, and floors refreshed; detail focus monthly.",
+                "Often paired with 2–3 Deep Cleans per year.",
+              ]}
+              className="h-full flex flex-col"
+            >
+              <div className="mt-auto pt-4">
+                <Button onClick={() => open("quote")} aria-label="Get a Quote for Monthly Reset" variant="primary" className="w-full">Get a Quote</Button>
+              </div>
+            </IconCard>
+
+            {/* Seasonal Deep Clean */}
+            <IconCard
+              iconSrc={monthlyResetIcon} // Placeholder until icon is available
+              title="Seasonal Deep Clean"
+              items={[
+                "Hand‑wipe reachable baseboards/trim, detail blinds/vents/fixtures.",
+                "Kitchen degrease; bath descale; grout focus where needed.",
+                "Under/behind items; edge vacuuming; glass/polish attention.",
+              ]}
+              className="h-full flex flex-col"
+            >
+              <div className="mt-auto pt-4">
+                <Button onClick={() => open("quote")} aria-label="Get a Quote for Seasonal Deep Clean" variant="primary" className="w-full">Get a Quote</Button>
+              </div>
+            </IconCard>
           </div>
           <p className="text-sm text-text mt-4">
             <strong>Note:</strong> Move‑In/Move‑Out is a separate service with cabinet/appliance interiors and turnover‑ready detailing. We’ll point you to that scope if it’s a better fit.
@@ -382,21 +387,53 @@ export default function Residential() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6">Add‑Ons & Upgrades (Customize Your Clean)</h2>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-sm text-text">
-            {[
-              "Inside oven or refrigerator",
-              "Interior windows/glass (inside only)",
-              "Cabinet‑front hand wipe; baseboard deep pass",
-              "Detailed blinds (material‑appropriate)",
-              "Window tracks and sliding door rails",
-              "Range‑hood/backsplash degrease",
-              "Pet zones (kennels, feeding areas)",
-              "Finished basements and garage sweep",
-            ].map((t, i) => (
-              <div key={i} className="flex items-start gap-2">
-                <Icon name="CheckCircle" className="w-4 h-4 mt-1 text-brand-gold" />
-                <span>{t}</span>
-              </div>
-            ))}
+            {/* Inside oven or refrigerator */}
+            <div className="flex items-center gap-3">
+              <Icon name="Sparkles" className="w-5 h-5 md:w-6 md:h-6 text-brand-gold flex-shrink-0 mt-1" aria-hidden="true" />
+              <span>Inside oven or refrigerator</span>
+            </div>
+            
+            {/* Interior windows/glass (inside only) */}
+            <div className="flex items-center gap-3">
+              <Icon name="Sparkles" className="w-5 h-5 md:w-6 md:h-6 text-brand-gold flex-shrink-0 mt-1" aria-hidden="true" />
+              <span>Interior windows/glass (inside only)</span>
+            </div>
+            
+            {/* Cabinet‑front hand wipe; baseboard deep pass */}
+            <div className="flex items-center gap-3">
+              <Icon name="Sparkles" className="w-5 h-5 md:w-6 md:h-6 text-brand-gold flex-shrink-0 mt-1" aria-hidden="true" />
+              <span>Cabinet‑front hand wipe; baseboard deep pass</span>
+            </div>
+            
+            {/* Detailed blinds (material‑appropriate) */}
+            <div className="flex items-center gap-3">
+              <Icon name="Sparkles" className="w-5 h-5 md:w-6 md:h-6 text-brand-gold flex-shrink-0 mt-1" aria-hidden="true" />
+              <span>Detailed blinds (material‑appropriate)</span>
+            </div>
+            
+            {/* Window tracks and sliding door rails */}
+            <div className="flex items-center gap-3">
+              <Icon name="Sparkles" className="w-5 h-5 md:w-6 md:h-6 text-brand-gold flex-shrink-0 mt-1" aria-hidden="true" />
+              <span>Window tracks and sliding door rails</span>
+            </div>
+            
+            {/* Range‑hood/backsplash degrease */}
+            <div className="flex items-center gap-3">
+              <Icon name="Sparkles" className="w-5 h-5 md:w-6 md:h-6 text-brand-gold flex-shrink-0 mt-1" aria-hidden="true" />
+              <span>Range‑hood/backsplash degrease</span>
+            </div>
+            
+            {/* Pet zones (kennels, feeding areas) */}
+            <div className="flex items-center gap-3">
+              <Icon name="Sparkles" className="w-5 h-5 md:w-6 md:h-6 text-brand-gold flex-shrink-0 mt-1" aria-hidden="true" />
+              <span>Pet zones (kennels, feeding areas)</span>
+            </div>
+            
+            {/* Finished basements and garage sweep */}
+            <div className="flex items-center gap-3">
+              <Icon name="Sparkles" className="w-5 h-5 md:w-6 md:h-6 text-brand-gold flex-shrink-0 mt-1" aria-hidden="true" />
+              <span>Finished basements and garage sweep</span>
+            </div>
           </div>
         </div>
       </section>
@@ -406,19 +443,59 @@ export default function Residential() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-8">The Ready2Go Difference</h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {[
-              { title: "Outcome‑First Standards", body: "We train to a visible result: dust‑free, streak‑free, residue‑free. If it doesn’t meet the outcome, we’re not done." },
-              { title: "Chemistry That Protects Surfaces", body: "Granite, marble, quartz, stainless, oiled wood—we match products and processes to protect finishes long‑term." },
-              { title: "Allergy‑Aware Dust Control", body: "HEPA filtration + microfiber = less airborne dust, better capture, cleaner air feel in your home." },
-              { title: "Cross‑Contamination Controls", body: "Bathroom to kitchen? Never the same cloths. Color coding and tool sequencing keep clean zones clean." },
-              { title: "Predictable Time & Scope", body: "Digital checklists, realistic windows, and consistent teams reduce surprises and deliver repeatable quality." },
-              { title: "Friendly, Professional Teams", body: "Background‑checked, uniformed, coached for hospitality as well as skill." },
-            ].map((f, i) => (
-              <ContentCard key={i}>
-                <h3 className="text-lg font-semibold text-text mb-2">{f.title}</h3>
-                <p className="text-sm text-text/90">{f.body}</p>
-              </ContentCard>
-            ))}
+            {/* Outcome‑First Standards */}
+            <IconCard
+              iconSrc={monthlyResetIcon} // Placeholder until icon is available
+              title="Outcome‑First Standards"
+              items={[
+                "We train to a visible result: dust‑free, streak‑free, residue‑free. If it doesn't meet the outcome, we're not done."
+              ]}
+            />
+            
+            {/* Chemistry That Protects Surfaces */}
+            <IconCard
+              iconSrc={monthlyResetIcon} // Placeholder until icon is available
+              title="Chemistry That Protects Surfaces"
+              items={[
+                "Granite, marble, quartz, stainless, oiled wood—we match products and processes to protect finishes long‑term."
+              ]}
+            />
+            
+            {/* Allergy‑Aware Dust Control */}
+            <IconCard
+              iconSrc={monthlyResetIcon} // Placeholder until icon is available
+              title="Allergy‑Aware Dust Control"
+              items={[
+                "HEPA filtration + microfiber = less airborne dust, better capture, cleaner air feel in your home."
+              ]}
+            />
+            
+            {/* Cross‑Contamination Controls */}
+            <IconCard
+              iconSrc={monthlyResetIcon} // Placeholder until icon is available
+              title="Cross‑Contamination Controls"
+              items={[
+                "Bathroom to kitchen? Never the same cloths. Color coding and tool sequencing keep clean zones clean."
+              ]}
+            />
+            
+            {/* Predictable Time & Scope */}
+            <IconCard
+              iconSrc={monthlyResetIcon} // Placeholder until icon is available
+              title="Predictable Time & Scope"
+              items={[
+                "Digital checklists, realistic windows, and consistent teams reduce surprises and deliver repeatable quality."
+              ]}
+            />
+            
+            {/* Friendly, Professional Teams */}
+            <IconCard
+              iconSrc={monthlyResetIcon} // Placeholder until icon is available
+              title="Friendly, Professional Teams"
+              items={[
+                "Background‑checked, uniformed, coached for hospitality as well as skill."
+              ]}
+            />
           </div>
         </div>
       </section>

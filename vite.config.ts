@@ -11,7 +11,7 @@ const usePwa = process.env.PWA === 'true';
 // Custom plugin to handle asynchronous CSS loading
 const asyncCssPlugin = () => ({
   name: 'async-css',
-  transformIndexHtml(html) {
+  transformIndexHtml(html: string) {
     // Regex to find the CSS link tag injected by Vite
     const cssRegex = /<link rel="stylesheet"[^>]*href="(\/assets\/index-[^>]+\.css)"[^>]*>/;
     const match = html.match(cssRegex);

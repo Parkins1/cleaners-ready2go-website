@@ -1,5 +1,7 @@
 
 import { useState } from "react";
+import { SEO } from "@/components/seo/SEO";
+import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 import BookingModal from "@/components/BookingModal";
 
@@ -53,8 +55,10 @@ function Team() {
 
   return (
     <>
-      <title>Meet the Team - Cleaners Ready 2Go | Professional Cleaning Staff</title>
-      <meta name="description" content="Meet our dedicated professional cleaning team serving Spokane Valley, Liberty Lake, and Greenacres. Fully trained, background checked, and ready to go!" />
+      <SEO
+        title="Meet the Team - Cleaners Ready 2Go | Professional Cleaning Staff"
+        description="Meet our dedicated professional cleaning team serving Spokane Valley, Liberty Lake, and Greenacres. Fully trained, background checked, and ready to go!"
+      />
       
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -143,12 +147,9 @@ function Team() {
           <div className="text-center mt-12">
             <h3 className="text-2xl font-bold text-text mb-4">Ready to Meet Our Team?</h3>
             <p className="text-text mb-8">Experience the difference that professional, caring service makes in your home.</p>
-            <button
-              onClick={() => setIsBookingModalOpen(true)}
-              className="btn-primary"
-            >
+            <Button onClick={() => setIsBookingModalOpen(true)} variant="primary">
               Book Your First Cleaning
-            </button>
+            </Button>
           </div>
         </div>
       </section>

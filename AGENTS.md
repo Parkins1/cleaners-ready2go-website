@@ -1,5 +1,4 @@
-Here's the complete merged repository guidelines document that combines both the original technical guidelines and the GEMINI.md content:
-
+always communicate with the user in plain english. avoid technical terms. user is non-technical. 
 Comprehensive Repository Guidelines
 Project Overview
 A modern, responsive web app for a professional cleaning business. Uses React + Vite (frontend), Express (backend), in-memory storage, and progressive conversion paths. The codebase aims for a premium, trustworthy look with a gold/serif brand motif and scalable, maintainable architecture.
@@ -48,6 +47,9 @@ Nav and Footer fixed globally, with dominant "Book Now" CTA in Nav.
 Main content starts after 24px top pad (to clear nav).
 Each page uses a single H1, then h2/h3 as needed for logical sections.
 Page patterns:
+
+always communicate with the user in plain english. avoid technical terms. user is non-technical. 
+
 
 Page	1st Section	Highlights
 Home	Hero (bg image, h1)	Main CTA, 3-card services, dual CTA stripe+modals for Book/Quote
@@ -481,3 +483,30 @@ Notes:
   - Description: “Our blog is under construction. New guides and tips are coming soon.”
   - Inline comment documents temporary noindex until content is published.
 - Scope: Only /blog includes robots noindex; other routes remain unaffected.
+
+2025-08-29 (TrustSignals Section Extraction)
+- Extracted reusable TrustSignalsSection to standardize “Why Choose Us / Trust Signals” blocks across service pages.
+  - Component: [`client/src/components/TrustSignals/TrustSignalsSection.tsx`](client/src/components/TrustSignals/TrustSignalsSection.tsx:1)
+  - Props: `title`, `items: { highlight?: string; text: string }[]`, `columns` (default 2), `className`, `containerClassName`, `id`.
+  - Styling: Uses token utilities (`border-brand-gold`, `bg-brand-gold/5`, `text-brand-gold`) instead of inline rgba / raw CSS vars.
+- Refactor: Replaced custom “Why Spokane Homeowners Trust…” section in Deep Cleaning page with the new component.
+  - File Changes: [`client/src/pages/DeepCleaning.tsx:1`](client/src/pages/DeepCleaning.tsx:1)
+- Tests: Added RTL test for rendering and semantics.
+  - File: [`client/src/components/TrustSignals/TrustSignalsSection.test.tsx:1`](client/src/components/TrustSignals/TrustSignalsSection.test.tsx:1)
+- Docs: Documented component API and usage under reusable components design.
+  - File: [`docs/reusable_components_design.md:1`](docs/reusable_components_design.md:1)
+
+2025-08-30 (IconCard Component & Residential Page Iconography)
+- Created a new reusable IconCard component to display an icon, title, and list of items.
+  - Component: [`client/src/components/IconCard/IconCard.tsx`](client/src/components/IconCard/IconCard.tsx:1)
+  - Props: `iconSrc`, `title`, `items`, `className`, `children`.
+  - Styling: Uses `OptimizedImage` for the icon and follows the project's design tokens.
+- Updated the Residential Cleaning page to use iconography throughout key sections:
+  - "Exactly What We Clean" section now uses IconCard components with room-specific icons.
+  - "Packages" section now uses IconCard components with package-specific icons.
+  - "Add-Ons & Upgrades" section now displays icons next to each add-on.
+  - "The Ready2Go Difference" section now uses IconCard components.
+- Ran `scripts/optimize-images.mjs` to compress and generate responsive variants of all icons.
+- Files Changed: 
+  - [`client/src/pages/Residential.tsx:1`](client/src/pages/Residential.tsx:1)
+  - [`client/src/components/IconCard/IconCard.tsx:1`](client/src/components/IconCard/IconCard.tsx:1)

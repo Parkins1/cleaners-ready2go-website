@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
 import { useModal } from "@/components/modal/ModalProvider";
 
 export default function FloatingCTA() {
@@ -20,14 +21,15 @@ export default function FloatingCTA() {
   return (
     <div className="md:hidden fixed inset-x-0 bottom-0 z-50 pb-[max(env(safe-area-inset-bottom),0.75rem)] px-4">
       <div className="bg-white/95 backdrop-blur rounded-t-xl shadow-xl border border-black/10 p-3">
-        <button
-          className="btn-primary w-full"
+        <Button
+          className="w-full"
           type="button"
           aria-label="Get Free Estimate"
           onClick={() => open("quote")}
+          variant="primary"
         >
           Get Free Estimate
-        </button>
+        </Button>
       </div>
     </div>
   );

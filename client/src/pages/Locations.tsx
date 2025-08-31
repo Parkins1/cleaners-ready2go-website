@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { SEO } from "@/components/seo/SEO";
+import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import Icon from "@/components/ui/icon";
 import QuoteModal from "@/components/QuoteModal";
@@ -8,8 +10,10 @@ export default function Locations() {
 
   return (
     <>
-      <title>Service Areas - Cleaners Ready 2Go | Spokane Valley, Liberty Lake, Greenacres</title>
-      <meta name="description" content="Professional cleaning services in Spokane Valley, Liberty Lake, and Greenacres. Same-day service available. No travel fees within our service areas." />
+      <SEO
+        title="Service Areas - Cleaners Ready 2Go | Spokane Valley, Liberty Lake, Greenacres"
+        description="Professional cleaning services in Spokane Valley, Liberty Lake, and Greenacres. Same-day service available. No travel fees within our service areas."
+      />
       
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -113,12 +117,9 @@ export default function Locations() {
               <p className="text-text mb-6 leading-relaxed">
                 Contact us to discuss your specific location and cleaning needs. We're always looking to expand our service to help more families in the greater Spokane area.
               </p>
-              <button
-                onClick={() => setIsQuoteModalOpen(true)}
-                className="btn-primary"
-              >
+              <Button onClick={() => setIsQuoteModalOpen(true)} variant="primary">
                 Request Service Quote
-              </button>
+              </Button>
             </div>
           </div>
         </div>

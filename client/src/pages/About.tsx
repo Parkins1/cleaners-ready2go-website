@@ -1,5 +1,7 @@
 
 import { useState } from "react";
+import { SEO } from "@/components/seo/SEO";
+import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 import BookingModal from "@/components/BookingModal";
 
@@ -8,8 +10,10 @@ function About() {
 
   return (
     <>
-      <title>About Us - Cleaners Ready 2Go | Professional Cleaning Team</title>
-      <meta name="description" content="Learn about our professional cleaning team serving Spokane Valley, Liberty Lake, and Greenacres. Trusted by 500+ local families." />
+      <SEO
+        title="About Us - Cleaners Ready 2Go | Professional Cleaning Team"
+        description="Learn about our professional cleaning team serving Spokane Valley, Liberty Lake, and Greenacres. Trusted by 500+ local families."
+      />
       
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,12 +79,9 @@ function About() {
           </div>
 
           <div className="text-center">
-            <button
-              onClick={() => setIsBookingModalOpen(true)}
-              className="btn-primary"
-            >
+            <Button onClick={() => setIsBookingModalOpen(true)} variant="primary">
               Book a Cleaning
-            </button>
+            </Button>
           </div>
         </div>
       </section>
