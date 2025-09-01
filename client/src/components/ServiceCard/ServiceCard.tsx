@@ -15,6 +15,7 @@ export default function ServiceCard({
   sources,
   icon,
   className,
+  hideIcon,
 }: ServiceCardProps) {
   const [, navigate] = useLocation();
   const onClick: React.MouseEventHandler<HTMLAnchorElement> = (e) => {
@@ -49,9 +50,11 @@ export default function ServiceCard({
       {/* Text block */}
       <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5 text-center backdrop-blur-[2px] [text-shadow:0_1px_1px_rgba(0,0,0,0.45)]">
         <div className="max-w-[28ch] sm:max-w-[36ch] mx-auto">
-          <div className="bg-accent rounded-full w-12 h-12 xs:w-14 xs:h-14 md:w-16 md:h-16 mx-auto mt-2 mb-3 sm:mb-4 flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 overflow-hidden">
-            {icon}
-          </div>
+          {!hideIcon && (
+            <div className="bg-accent rounded-full w-12 h-12 xs:w-14 xs:h-14 md:w-16 md:h-16 mx-auto mt-4 mb-3 sm:mb-4 flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
+              {icon}
+            </div>
+          )}
           <h3 className="text-white text-lg sm:text-xl font-semibold leading-tight drop-shadow-sm mb-2">{title}</h3>
           <p className="mt-1.5 text-slate-100/95 text-sm sm:text-base leading-snug">{blurb}</p>
           <span className="mt-4 inline-flex items-center font-semibold text-white underline underline-offset-4 decoration-white/40 hover:decoration-white">

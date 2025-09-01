@@ -52,7 +52,7 @@ export default function Home() {
         image={heroImage}
         title={
           <h1 className="font-bold text-text mb-6 leading-tight inline-block">
-            Expert House Cleaning in Spokane, WA
+            Expert <span className="text-brand-gold">House Cleaning</span> in Spokane, WA
           </h1>
         }
         subtitle={
@@ -132,7 +132,7 @@ export default function Home() {
             </h2>
             <p className="text-xl text-text">Professional, reliable, and tailored to your home</p>
           </div>
-          <ServiceGrid ids={["residential","deep-cleaning","move-out","apartment-cleaning"]} />
+          <ServiceGrid ids={["residential","deep-cleaning","move-out","apartment-cleaning"]} hideIcon />
         </div>
       </section>
 
