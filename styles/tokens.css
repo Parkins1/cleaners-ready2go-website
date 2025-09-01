@@ -52,4 +52,12 @@
   --border: 0.57 0.01 214.34;
   --input: 0.71 0.0 174.43;
   --ring: 0.76 0.12 89.8;
+  /* Hero Title */
+  .hero-title {
+    font-weight: 700; /* Bold - matches font-bold */
+    color: oklch(0.21 0.02 248.83); /* text-text color */
+    margin-bottom: 1.5rem; /* mb-6 equivalent */
+    line-height: 1.25; /* leading-tight equivalent */
+    display: inline-block;
+  }
 }

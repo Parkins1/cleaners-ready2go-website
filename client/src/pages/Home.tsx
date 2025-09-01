@@ -51,7 +51,7 @@ export default function Home() {
       <HeroSection
         image={heroImage}
         title={
-          <h1 className="font-bold text-text mb-6 leading-tight inline-block">
+          <h1 className="hero-title">
             Expert <span className="text-brand-gold">House Cleaning</span> in Spokane, WA
           </h1>
         }
