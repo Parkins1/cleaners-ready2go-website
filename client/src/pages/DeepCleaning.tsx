@@ -19,6 +19,7 @@ import TrustSignalsSection from "@/components/TrustSignals/TrustSignalsSection";
 import CalloutBanner from "@/components/CalloutBanner/CalloutBanner";
 import { brand } from "@/config/brand";
 import { SEO } from "@/components/seo/SEO";
+import IconCard from "@/components/IconCard/IconCard";
 
 export default function DeepCleaning() {
   const { open } = useModal();
@@ -140,30 +141,82 @@ export default function DeepCleaning() {
       {/* INCLUDES */}
       <section id="includes" className="py-16 bg-surface">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">What Our Spokane Deep Clean Includes</h2>
-          <Accordion type="single" collapsible className="w-full rounded-xl bg-gradient-to-b from-white/95 to-white/90 backdrop-blur-sm shadow-sm border border-white/20">
-            <AccordionItem value="kitchen-revival">
-              <AccordionTrigger className="text-left"><strong>Kitchen revival</strong></AccordionTrigger>
-              <AccordionContent>degrease backsplashes, scrub stovetops, clean inside ovens, microwaves, and refrigerators, sanitize sinks & faucets.</AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="bathroom-detox">
-              <AccordionTrigger className="text-left"><strong>Bathroom detox</strong></AccordionTrigger>
-              <AccordionContent>power-clean tile & grout, remove hard-water stains, polish chrome, disinfect tubs, showers, and toilets.</AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="whole-home-detailing">
-              <AccordionTrigger className="text-left"><strong>Whole-home detailing</strong></AccordionTrigger>
-              <AccordionContent>hand-wipe baseboards, window sills, door frames, switch plates, and vents; dust ceiling fans and light fixtures up to 12 ft.</AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="floor-refresh">
-              <AccordionTrigger className="text-left"><strong>Floor refresh</strong></AccordionTrigger>
-              <AccordionContent>HEPA vacuum carpets & upholstery, edge-vacuum along trim, mop hard floors with pH-balanced solutions, and spot-treat high-traffic stains.</AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="cabinets-storage">
-              <AccordionTrigger className="text-left"><strong>Cabinets & storage</strong></AccordionTrigger>
-              <AccordionContent>wipe down doors and clean inside drawers & shelves so you start with a truly blank slate.</AccordionContent>
-            </AccordionItem>
-          </Accordion>
-          <p className="mt-6">
+          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">What's Included in Our Spokane Deep Cleaning</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            <IconCard
+              iconSrc="@assets/icon_kitchen.webp"
+              title="Kitchen Revival"
+              items={[
+                "Meticulously clean appliance interiors and exteriors including refrigerator, stove, and microwave",
+                "Remove grime, sticky spills, and unpleasant odors",
+                "Countertops, backsplashes, cabinet faces, and sink fixtures shine",
+                "Cabinet interiors and top shelves cleared of dust and debris",
+                "Tackle hard water stains, tile grout with specialized tools",
+                "Floors left dry, streak-free, and fresh"
+              ]}
+            />
+            <IconCard
+              iconSrc="@assets/icon_bathroom.png"
+              title="Bathroom Detox"
+              items={[
+                "Sanitize toilets including hard-to-reach hinges",
+                "Scrub bathtubs, showers, tracks, doors, and glass until free of soap scum",
+                "Vanity tops, sinks, mirrors, and fixtures polished to a streak-free shine",
+                "Cabinets and shelving dust-free inside and out",
+                "Tile grout cleaned as close to new as possible",
+                "Trash cans emptied and sanitized",
+                "Every floor left gleaming"
+              ]}
+            />
+            <IconCard
+              iconSrc="@assets/icon_dust_free_fan.webp"
+              title="Whole-Home Detailing"
+              items={[
+                "Remove dust, pollen, and cobwebs from ceiling fans, light fixtures, high corners, and all surfaces",
+                "Walls spot-cleaned for marks and scuffs",
+                "Mirrors and glass throughout left streak-free",
+                "Window sills, baseboards, door frames, knobs, and light switches scrubbed until spotless",
+                "HEPA vacuuming and eco-friendly mopping leave floors, carpets, and rugs fresh and allergen-free",
+                "Create a healthier home environment for your family"
+              ]}
+            />
+            <IconCard
+              iconSrc="@assets/icon_vacuumed_carpet.webp"
+              title="Floor Refresh"
+              items={[
+                "Hard floors vacuumed, mopped, and polished to remove residue and streaks",
+                "Carpets and rugs rigorously vacuumed for dirt and allergens",
+                "Even hard-to-reach areas near baseboards cleaned",
+                "Restore hardwood, tile, or carpet to look like new",
+                "Specialized treatments for different flooring types"
+              ]}
+            />
+            <IconCard
+              iconSrc="@assets/icon_cabinet_interiors.webp"
+              title="Cabinet & Storage Cleaning"
+              items={[
+                "Remove built-up dust, crumbs, and debris from both interiors and exteriors",
+                "Pay special attention to storage spaces, drawers, closets, and cabinet surfaces",
+                "Ensure they're organized and sanitized",
+                "Handles, knobs, and hardware wiped clean and polished",
+                "Shelves left ready for your belongings",
+                "Contribute to a clutter-free, hygienic home"
+              ]}
+            />
+            <IconCard
+              iconSrc="@assets/icon_baseboards.webp"
+              title="All Surfaces and Detailed Areas"
+              items={[
+                "Attention to baseboards, moldings, vents, registers, doorknobs, electrical plates, and high-traffic touchpoints",
+                "Living rooms, bedrooms, hallways, and laundry rooms refreshed",
+                "Wood and flat surfaces wiped down",
+                "Decorative items dusted",
+                "Corners cleared of lint",
+                "Everything tidied for lasting comfort and peace of mind"
+              ]}
+            />
+          </div>
+          <p className="mt-8 text-center">
             Need something special like post-renovation dust removal or appliance restoration? Just ask. We love custom projects and bring the right tools for every challenge.
           </p>
         </div>
@@ -206,7 +259,7 @@ export default function DeepCleaning() {
         items={[
           {
             highlight: "Licensed, bonded & insured",
-            text: "Peace of mind while we’re on your property.",
+            text: "Peace of mind while we're on your property.",
           },
           {
             highlight: "Green cleaning, healthier air",
@@ -215,12 +268,12 @@ export default function DeepCleaning() {
           },
           {
             highlight: "Transparent pricing",
-            text: "Flat-rate quotes and digital invoices — no surprises.",
+            text: "Flat-rate quotes and digital invoices—no surprises.",
           },
           {
-            highlight: "5-star reputation",
+            highlight: "Trusted locally",
             text:
-              "A+ BBB rating and hundreds of Google reviews averaging 4.9 stars.",
+              "One of the highest rated Spokane cleaners trusted by your neighbors and friends.",
           },
         ]}
       />

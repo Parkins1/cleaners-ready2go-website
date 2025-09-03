@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import Icon from "@/components/ui/icon";
 import QuoteModal from "@/components/QuoteModal";
+import ContentCard from "@/components/ContentCard/ContentCard";
 
 export default function Locations() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
@@ -14,7 +15,7 @@ export default function Locations() {
         title="Service Areas - Cleaners Ready 2Go | Spokane Valley, Liberty Lake, Greenacres"
         description="Professional cleaning services in Spokane Valley, Liberty Lake, and Greenacres. Same-day service available. No travel fees within our service areas."
       />
-      
+
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -25,39 +26,23 @@ export default function Locations() {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50/30 to-gray-100/20 rounded-2xl"></div>
             <div className="relative grid lg:grid-cols-3 gap-8 mb-12 p-8 rounded-2xl">
-              <Link href="/locations/spokane" className="card text-center block">
-                <div className="bg-accent p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <Icon name="MapPin" className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-text mb-3">Spokane</h3>
-                <p className="text-text mb-4">Our primary service area with full availability for all cleaning services.</p>
-                <div className="text-sm text-text">
-                  <div className="font-medium">ZIP Codes:</div>
-                  <div>99201, 99202, 99203, 99205, 99207, 99208, 99223, 99224</div>
-                </div>
+              <Link href="/locations/spokane" className="block">
+                <ContentCard interactive className="flex items-center justify-center h-40 sm:h-48 p-8 text-center">
+                  <h3 className="text-2xl sm:text-3xl font-serif font-semibold text-brand-gold">Spokane</h3>
+                </ContentCard>
               </Link>
-              <a href="/locations/spokane-valley" className="card text-center block">
-                <div className="bg-accent p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <Icon name="MapPin" className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-text mb-3">Spokane Valley</h3>
-                <p className="text-text mb-4">Comprehensive residential and move-out cleaning services available.</p>
-                <div className="text-sm text-text">
-                  <div className="font-medium">ZIP Codes:</div>
-                  <div>99206, 99212, 99216</div>
-                </div>
-              </a>
-              <a href="/locations/liberty-lake" className="card text-center block">
-                <div className="bg-accent p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <Icon name="MapPin" className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-text mb-3">Liberty Lake</h3>
-                <p className="text-text mb-4">Full-service cleaning solutions for residential and commercial properties.</p>
-                <div className="text-sm text-text">
-                  <div className="font-medium">ZIP Codes:</div>
-                  <div>99019</div>
-                </div>
-              </a>
+
+              <Link href="/locations/spokane-valley" className="block">
+                <ContentCard interactive className="flex items-center justify-center h-40 sm:h-48 p-8 text-center">
+                  <h3 className="text-2xl sm:text-3xl font-serif font-semibold text-brand-gold">Spokane Valley</h3>
+                </ContentCard>
+              </Link>
+
+              <Link href="/locations/liberty-lake" className="block">
+                <ContentCard interactive className="flex items-center justify-center h-40 sm:h-48 p-8 text-center">
+                  <h3 className="text-2xl sm:text-3xl font-serif font-semibold text-brand-gold">Liberty Lake</h3>
+                </ContentCard>
+              </Link>
             </div>
           </div>
 

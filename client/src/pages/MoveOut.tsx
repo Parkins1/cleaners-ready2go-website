@@ -194,7 +194,7 @@ export default function MoveOut() {
 
       <section className="py-12 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">Process — Our 4-Step Breakdown</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">Process—Our 4-Step Breakdown</h2>
           <div className="grid gap-6 md:grid-cols-2">
             <ContentCard>
               <h3 className="font-semibold">Step 1: Fast Quote (Virtual or On‑Site)</h3>
@@ -280,15 +280,15 @@ export default function MoveOut() {
           <h2 className="text-3xl lg:text-4xl font-bold text-text text-center">Testimonials</h2>
           <ContentCard as="blockquote">
             <p>"Flawless move-out clean. The manager said it was the easiest inspection all month. I got my full deposit back."</p>
-            <footer className="mt-3 text-sm text-gray-600">— Lauren K., Spokane Valley</footer>
+            <footer className="mt-3 text-sm text-gray-600">—Lauren K., Spokane Valley</footer>
           </ContentCard>
           <ContentCard as="blockquote">
             <p>"Booked on short notice and they still nailed the details—oven, fridge, baseboards—everything looked brand new."</p>
-            <footer className="mt-3 text-sm text-gray-600">— Dan R., Liberty Lake</footer>
+            <footer className="mt-3 text-sm text-gray-600">—Dan R., Liberty Lake</footer>
           </ContentCard>
           <ContentCard as="blockquote">
             <p>"Our tenants left the place rough. Cleaners Ready 2 GO got it ready for photos the next day. Highly recommend."</p>
-            <footer className="mt-3 text-sm text-gray-600">— Melissa P., Property Manager, Spokane</footer>
+            <footer className="mt-3 text-sm text-gray-600">—Melissa P., Property Manager, Spokane</footer>
           </ContentCard>
         </div>
       </section>

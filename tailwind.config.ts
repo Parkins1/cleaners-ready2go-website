@@ -2,6 +2,7 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
+  // content is no longer required by v4, but keeping it is harmless and can help some editors/tools
   content: [
     "./client/src/pages/**/*.{ts,tsx}",
     "./client/src/components/**/*.{ts,tsx}",
@@ -10,19 +11,14 @@ export default {
     "./components/**/*.{js,jsx}",
     "./client/index.html",
   ],
-  future: {
-    hoverOnlyWhenSupported: true,
-  },
-  experimental: {
-    optimizeUniversalDefaults: true,
-  },
+
   theme: {
     extend: {
       screens: {
         xs: "375px",
       },
       colors: {
-        // Legacy, token-based colors
+        // Legacy tokens
         accent: "var(--color-accent)",
         "accent-dark": "var(--color-accent-dark)",
         text: "var(--color-text)",
@@ -30,7 +26,7 @@ export default {
         white: "var(--color-white)",
         teal: "var(--color-teal)",
 
-        // Brand tokens mapped for alpha support
+        // Brand tokens (OKLCH triples stored in CSS variables)
         "brand-gold": "oklch(var(--brand-gold) / <alpha-value>)",
         "brand-gold-light": "oklch(var(--brand-gold-light) / <alpha-value>)",
         "brand-gold-dark": "oklch(var(--brand-gold-dark) / <alpha-value>)",
@@ -40,7 +36,7 @@ export default {
         "brand-white": "oklch(var(--brand-white) / <alpha-value>)",
         "brand-teal": "hsl(var(--brand-teal) / <alpha-value>)",
 
-        // ShadCN palette mapped to tokens
+        // ShadCN-style palette mapped to tokens
         background: "oklch(var(--background) / <alpha-value>)",
         foreground: "oklch(var(--foreground) / <alpha-value>)",
         card: "oklch(var(--card) / <alpha-value>)",
@@ -60,7 +56,6 @@ export default {
         input: "oklch(var(--input) / <alpha-value>)",
         ring: "oklch(var(--ring) / <alpha-value>)",
 
-        // Nested brand object to enable classes like text-brand-primary
         brand: {
           primary: "oklch(var(--brand-black) / <alpha-value>)",
           secondary: "oklch(var(--brand-gold) / <alpha-value>)",
@@ -79,8 +74,9 @@ export default {
         pill: "var(--radius-pill)",
       },
       fontFamily: {
-        sans: '"Inter", system-ui, sans-serif',
-        serif: '"Outfit", sans-serif',
+        // Note: "serif" here points to a sans face ("Outfit") by design—OK if intentional
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        serif: ['Outfit', 'ui-sans-serif', 'sans-serif'],
         display: ['Space Grotesk', 'Inter', 'sans-serif'],
         ui: ['IBM Plex Sans', 'Inter', 'sans-serif'],
       },
@@ -108,5 +104,6 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  // JS plugins removed for v4; use CSS imports instead
+  plugins: [],
 } satisfies Config;

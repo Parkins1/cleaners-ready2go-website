@@ -26,12 +26,18 @@ export default function Spokane() {
     services: { title: string; description: string }[];
     serviceCardIds: string[];
     testimonial: { quote: string; name: string };
-    extraSections: { title: string; content: React.ReactNode }[];
+    extraSections: {
+      title: string;
+      content: React.ReactNode;
+      sectionClassName?: string;
+      noContainer?: boolean;
+      hideTitle?: boolean;
+    }[];
     ctaVariant: 'default' | 'gold';
   } = {
     locationName: 'Spokane',
     heroImage: heroImage,
-    heroAlt: 'House cleaning services in Spokane, WA — Cleaners Ready 2Go',
+    heroAlt: 'House cleaning services in Spokane, WA—Cleaners Ready 2Go',
     heroImgSrcSet: `${hero480} 480w, ${hero768} 768w, ${hero1024} 1024w`,
     heroSources: [{ type: 'image/avif', srcSet: `${hero480Avif} 480w, ${hero768Avif} 768w, ${hero1024Avif} 1024w` }],
     heroWidth: 1392,
@@ -60,6 +66,9 @@ export default function Spokane() {
     extraSections: [
       {
         title: 'Spokane Services',
+        sectionClassName: 'py-8 bg-white',
+        noContainer: true,
+        hideTitle: true,
         content: (
           <div className="py-8">
             <CarouselCompact
@@ -131,6 +140,7 @@ export default function Spokane() {
       },
       {
         title: 'Proudly Serving Spokane & Nearby Communities',
+        sectionClassName: 'py-16 bg-surface',
         content: (
           <>
             <p>
@@ -144,29 +154,31 @@ export default function Spokane() {
       },
       {
         title: 'Local Cleaning Challenges',
+        sectionClassName: 'py-16 bg-white',
         content: (
           <ul className="list-none space-y-2 text-sm md:text-base">
             <li className="flex items-start">
               <Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
-              <span><strong>Wildfire Smoke & Ash</strong> — Extra HEPA vacuuming and microfiber wipe‑downs to capture fine particulates during late‑summer smoke events.</span>
+              <span><strong>Wildfire Smoke & Ash</strong>—Extra HEPA vacuuming and microfiber wipe‑downs to capture fine particulates during late‑summer smoke events.</span>
             </li>
             <li className="flex items-start">
               <Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
-              <span><strong>Pine Pollen Season</strong> — Targeted damp dusting of sills, vents, and high ledges to reduce yellow pollen film in spring.</span>
+              <span><strong>Pine Pollen Season</strong>—Targeted damp dusting of sills, vents, and high ledges to reduce yellow pollen film in spring.</span>
             </li>
             <li className="flex items-start">
               <Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
-              <span><strong>Winter Slush & Grit</strong> — Entryway focus with mat care and hard‑floor detailing to contain sand and de‑icer residue.</span>
+              <span><strong>Winter Slush & Grit</strong>—Entryway focus with mat care and hard‑floor detailing to contain sand and de‑icer residue.</span>
             </li>
             <li className="flex items-start">
               <Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
-              <span><strong>Hard‑Water Spots</strong> — Gentle descaling on glass and fixtures common in older Spokane plumbing.</span>
+              <span><strong>Hard‑Water Spots</strong>—Gentle descaling on glass and fixtures common in older Spokane plumbing.</span>
             </li>
           </ul>
         ),
       },
       {
         title: 'Neighborhoods We Serve',
+        sectionClassName: 'py-16 bg-white',
         content: (
           <ul className="grid md:grid-cols-2 gap-2 list-none text-sm md:text-base">
             <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />South Hill & Perry District</li>
@@ -178,6 +190,7 @@ export default function Spokane() {
       },
       {
         title: 'Highlights',
+        sectionClassName: 'py-8 bg-white',
         content: (
           <ul className="list-none space-y-2 text-sm md:text-base">
             <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />Instant online pricing</li>
@@ -191,9 +204,10 @@ export default function Spokane() {
       },
       {
         title: 'A Fresh, Healthy Home Without Lifting a Finger',
+        sectionClassName: 'py-16 bg-surface',
         content: (
           <>
-            <p className="mb-3">Weeknights and weekends are better spent around Riverfront Park, neighborhood eateries, and Gonzaga games — not chasing dust. Our uniformed technicians follow a proven checklist so your Spokane home feels fresh without the hassle.</p>
+            <p className="mb-3">Weeknights and weekends are better spent around Riverfront Park, neighborhood eateries, and Gonzaga games—not chasing dust. Our uniformed technicians follow a proven checklist so your Spokane home feels fresh without the hassle.</p>
             <ul className="list-disc list-inside space-y-1 text-sm">
               <li>67‑point checklist for consistent results</li>
               <li>Low‑odor, low‑VOC options; SDS available on request</li>
@@ -203,6 +217,7 @@ export default function Spokane() {
       },
       {
         title: 'Packages',
+        sectionClassName: 'py-16 bg-white',
         content: (
           <div className="grid md:grid-cols-2 gap-4">
             <ContentCard>
@@ -240,6 +255,7 @@ export default function Spokane() {
       },
       {
         title: 'Our Simple Cleaning Process',
+        sectionClassName: 'py-16 bg-surface',
         content: (
           <>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -261,6 +277,7 @@ export default function Spokane() {
       },
       {
         title: 'Why your neighbors choose us for spokane house cleaning',
+        sectionClassName: 'py-16 bg-surface',
         content: (
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="local-expertise">
@@ -310,6 +327,7 @@ export default function Spokane() {
       },
       {
         title: 'What Spokane Residents Say',
+        sectionClassName: 'py-16 bg-white',
         content: (
           <>
             <ContentCard as="blockquote">
@@ -328,6 +346,7 @@ export default function Spokane() {
       },
       {
         title: 'FAQ',
+        sectionClassName: 'py-16 bg-surface',
         content: (
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="included">
@@ -351,6 +370,7 @@ export default function Spokane() {
       },
       {
         title: 'Business Hours',
+        sectionClassName: 'py-16 bg-white',
         content: (
           <>
             <p>Monday–Friday 8 am–6 pm | Saturday 9 am–2 pm</p>

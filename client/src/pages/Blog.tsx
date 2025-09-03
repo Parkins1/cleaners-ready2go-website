@@ -5,7 +5,7 @@ export default function Blog() {
     <>
       {/* Temporary noindex: Prevent indexing until real content is published (SEO-001) */}
       <SEO
-        title="Blog — Coming Soon | Ready2Go Cleaners"
+        title="Blog—Coming Soon | Ready2Go Cleaners"
         description="Our blog is under construction. New guides and tips are coming soon."
         noindex
       />

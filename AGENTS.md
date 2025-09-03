@@ -507,6 +507,15 @@ Notes:
   - "Add-Ons & Upgrades" section now displays icons next to each add-on.
   - "The Ready2Go Difference" section now uses IconCard components.
 - Ran `scripts/optimize-images.mjs` to compress and generate responsive variants of all icons.
-- Files Changed: 
+- Files Changed:
   - [`client/src/pages/Residential.tsx:1`](client/src/pages/Residential.tsx:1)
   - [`client/src/components/IconCard/IconCard.tsx:1`](client/src/components/IconCard/IconCard.tsx:1)
+
+2025-09-02 (Global Punctuation, Locations Redesign, Deep Cleaning Updates)
+- Global Punctuation: Standardized dash punctuation ("—") across all text content for consistent, professional typography.
+- Locations Page Redesign:
+  - Updated the main /locations page to remove descriptive text and restyle the city cards for a cleaner appearance.
+  - Standardized the Spokane, Spokane Valley, Liberty Lake, and Greenacres pages by refactoring them to use a consistent LocationPageTemplate, unifying section background colors, and ensuring all carousels use the same CarouselCompact style.
+- Deep Cleaning Page Content:
+  - Replaced the accordion on the /deep-cleaning page with a more visual IconCard layout for the "What's Included" section.
+  - Updated the "Trust Signals" section with new text.

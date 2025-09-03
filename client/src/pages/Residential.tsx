@@ -544,7 +544,7 @@ export default function Residential() {
             ].map((t, i) => (
               <ContentCard key={i} as="blockquote" className="h-full">
                 <p className="text-text/90">“{t.quote}”</p>
-                <footer className="mt-3 font-semibold">— {t.author}</footer>
+                <footer className="mt-3 font-semibold">—{t.author}</footer>
               </ContentCard>
             ))}
           </div>

@@ -1,4 +1,4 @@
- // llm:callout-banner-migrated
+// llm:callout-banner-migrated
 // llm:cta-migrated
 import { Button } from "@/components/ui/button";
 import ContentCard from '@/components/ContentCard/ContentCard';
@@ -31,6 +31,7 @@ interface LocationPageTemplateProps {
   extraSections?: {
     title: string;
     content: React.ReactNode;
+    sectionClassName?: string;
   }[];
   // Optional: service card IDs to render standardized ServiceCards
   serviceCardIds?: import("@/components/ServiceCard/catalog").ServiceCatalogId[];
@@ -67,7 +68,7 @@ export default function LocationPageTemplate({
         image={heroImage}
         imageAlt={heroAlt || `House cleaning in ${locationName}, WA`}
         title={<h1 className="hero-title">Professional <span className="text-brand-gold">House Cleaning</span> in {locationName}, WA</h1>}
-        subtitle={<p className="text-lg lg:text-xl text-text mb-8">Locally owned — Licensed & insured — Satisfaction-focused service</p>}
+        subtitle={<p className="text-lg lg:text-xl text-text mb-8">Locally owned—Licensed & insured—Satisfaction-focused service</p>}
         actions={<Button onClick={() => open('quote')} variant="primary">Request Your FREE Quote</Button>}
         useAspect
         imageWidth={heroWidth}
@@ -109,18 +110,21 @@ export default function LocationPageTemplate({
       </section>
 
       {/* Extra Sections */}
-      {extraSections && extraSections.map((section, idx) => (
-        <section key={idx} className="py-16 bg-white">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-text mb-6">{section.title}</h2>
-            <div className="text-text leading-relaxed">{section.content}</div>
-          </div>
-        </section>
-      ))}
+      {extraSections && extraSections.map((section, idx) => {
+        const secClass = section.sectionClassName ?? 'py-16 bg-white';
+        return (
+          <section key={idx} className={secClass}>
+            <div className="max-w-4xl mx-auto px-6">
+              <h2 className="text-3xl font-bold text-text mb-6">{section.title}</h2>
+              <div className="text-text leading-relaxed">{section.content}</div>
+            </div>
+          </section>
+        );
+      })}
 
       <CalloutBanner
         title={`Your Spotless ${locationName} Home Starts Here`}
-        body={`Request a free quote — or call ${brand.phone}`}
+        body={`Request a free quote—or call ${brand.phone}`}
         variant={ctaVariant}
         actions={
           <Button
