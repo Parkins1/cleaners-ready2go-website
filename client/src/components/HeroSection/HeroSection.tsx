@@ -44,7 +44,7 @@ interface HeroSectionProps {
 export default function HeroSection({
   image,
   imageAlt,
-  darkOverlay = false,
+  darkOverlay = true,
   title,
   subtitle,
   actions,
