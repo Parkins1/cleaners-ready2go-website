@@ -172,6 +172,9 @@ Monitor with Lighthouse and browser dev tools.
 Performance Monitoring
 Dev-only console logging for Core Web Vitals and bundle sizes.
 Location: client/src/lib/performance.ts.
+
+Troubleshooting
+- Hero photo missing: Check that the hero image path exists under `@assets`, and that the overlay isn’t set to a solid white. By default, the hero uses a dark gradient; set `darkOverlay=false` for a lighter look. When using CLS stabilization, pass `useAspect`, `imageWidth`, and `imageHeight`.
 Security & Configuration
 Environment Variables
 Required: PORT (default: 5001), DATABASE_URL for Drizzle.
@@ -207,6 +210,12 @@ Recent Changes (2025-08-28)
 - Build verification: `ANALYZE=true npm run build` produces split icon chunks under `dist/public/assets` (tiny `.js` files per icon). Full bundle report at `dist/stats.html`.
 - Smoke tests: Production server validated locally with `npm run build && npm start` and `scripts/smoke-tests.sh` (homepage 200 OK, contact API POST success).
 - Deploy flow: Merged `feature/lazy-icons` into `main`. Vercel auto-deploys from `main`. For rollback, use Vercel Deployments → Promote previous deployment, or GitHub Revert on the merge commit.
+
+2025-09-03 (Build Fix + Hero Overlay)
+- Build: Set React and React DOM to 18.3.x to match `react-helmet-async@2.x`. This fixes the install failure on Vercel caused by version mismatch.
+- Types: Set `@types/react` and `@types/react-dom` to the React 18 line to stay consistent.
+- Hero overlay: Changed the hero’s default overlay to a gentle dark fade so hero photos are visible behind the text. To use a light look, pass `darkOverlay={false}` to `HeroSection`.
+- Vercel note: Vercel uses Node 20 because `package.json` declares `engines: { node: "20.x" }`. That’s expected and okay.
 
 Developer Notes
 - When adding a new icon: update `client/src/components/ui/icon.tsx` to include a new `name → lazy(import(...))` entry. Use the exact Lucide ESM icon path (e.g., `lucide-react/dist/esm/icons/chevron-right`).
@@ -248,7 +257,7 @@ Location Pages: LocationPageTemplate accepts serviceCardIds for standardized car
 Docs: See docs/project.md for service catalog and routing details.
 Contrast & Accessibility
 Modals: Use bg-white/95 backdrop-blur-sm with bg-black/50 scrim.
-Heroes: Use <img> with dark gradient (from-black/55 via-black/35 to-transparent) or light overlay (bg-white/90) for text legibility.
+Heroes: Default to a dark gradient (from-black/55 via-black/35 to-transparent) so photos show clearly under headlines. You can switch to a light overlay (bg-white/90) if needed by setting darkOverlay=false.
 Buttons: Ensure high contrast (e.g., navy #003366 with white text, ≥ 4.5:1 ratio).
 Text: Apply subtle text-shadow on h1, h2 for contrast over imagery.
 SEO & Routing
