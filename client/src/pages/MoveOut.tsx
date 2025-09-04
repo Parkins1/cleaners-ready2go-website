@@ -111,8 +111,8 @@ export default function MoveOut() {
       {/* HERO */}
       <HeroSection
         image={heroMove}
-        title={<h1 className="text-4xl lg:text-6xl font-bold text-text mb-4">Move-Out Cleaning in Spokane Valley, WA</h1>}
-        subtitle={<p className="text-lg lg:text-xl text-text mb-8">Keep your deposit. Pass inspection. Move on. Licensed local pros delivering fast, inspection-ready results for your home.</p>}
+        title={<h1 className="text-4xl lg:text-6xl font-bold text-white drop-shadow-sm mb-4">Move-Out Cleaning in Spokane Valley, WA</h1>}
+        subtitle={<p className="text-lg lg:text-xl text-slate-100/95 mb-8">Keep your deposit. Pass inspection. Move on. Licensed local pros delivering fast, inspection-ready results for your home.</p>}
         actions={
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button onClick={() => open("quote")} variant="primary">Get My Free Quote</Button>

@@ -99,12 +99,12 @@ export default function ApartmentCleaning() {
         image={heroApartmentWebp}
         imageAlt="Apartment cleaning in Spokane, WA"
         title={
-          <h1 className="text-4xl lg:text-6xl font-bold text-text mb-4">
+          <h1 className="text-4xl lg:text-6xl font-bold text-white drop-shadow-sm mb-4">
             <span className="text-brand-gold">Apartment Cleaning</span> in Spokane That Fits Your Life
           </h1>
         }
         subtitle={
-          <p>Locally owned • Licensed & insured • Apartment-focused cleaning experts</p>
+          <p className="text-slate-100/95">Locally owned • Licensed & insured • Apartment-focused cleaning experts</p>
         }
         actions={
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
@@ -357,8 +357,8 @@ export default function ApartmentCleaning() {
       <HeroSection
         image={heroApartmentWebp}
         imageAlt="Request a free apartment cleaning quote in Spokane"
-        title={<h2 className="text-3xl lg:text-5xl font-bold text-text mb-4">Ready for a Consistently Clean Apartment?</h2>}
-        subtitle={<p>Call, text, or request your free quote now.</p>}
+        title={<h2 className="text-3xl lg:text-5xl font-bold text-white drop-shadow-sm mb-4">Ready for a Consistently Clean Apartment?</h2>}
+        subtitle={<p className="text-slate-100/95">Call, text, or request your free quote now.</p>}
         actions={
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
             <Button onClick={() => open("quote")} variant="primary">Request My Free Quote</Button>

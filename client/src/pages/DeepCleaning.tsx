@@ -89,8 +89,8 @@ export default function DeepCleaning() {
       {/* HERO */}
       <HeroSection
         image={heroDeep}
-        title={<h1 className="text-4xl lg:text-6xl font-bold text-text mb-4">Deep Cleaning Spokane, WA</h1>}
-        subtitle={<p className="text-lg lg:text-xl text-text mb-8">Local, insured pros delivering wall-to-wall shine on your schedule.</p>}
+        title={<h1 className="text-4xl lg:text-6xl font-bold text-white drop-shadow-sm mb-4">Deep Cleaning Spokane, WA</h1>}
+        subtitle={<p className="text-lg lg:text-xl text-slate-100/95 mb-8">Local, insured pros delivering wall-to-wall shine on your schedule.</p>}
         actions={
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button onClick={() => open("quote")} variant="primary">Get My Free Quote</Button>

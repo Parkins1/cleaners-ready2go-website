@@ -101,7 +101,7 @@ export default function LocationPageTemplate({
         image={heroImage}
         imageAlt={heroAlt || `House cleaning in ${locationName}, WA`}
         title={<h1 className="hero-title">Professional <span className="text-brand-gold">House Cleaning</span> in {locationName}, WA</h1>}
-        subtitle={<p className="text-lg lg:text-xl text-text mb-8">Locally owned—Licensed & insured—Satisfaction-focused service</p>}
+        subtitle={<p className="text-lg lg:text-xl text-slate-100/95 mb-8">Locally owned—Licensed & insured—Satisfaction-focused service</p>}
         actions={<Button onClick={() => open('quote')} variant="primary">Request Your FREE Quote</Button>}
         useAspect
         imageWidth={heroWidth}

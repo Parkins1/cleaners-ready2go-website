@@ -78,7 +78,7 @@ export default function Home() {
           </h1>
         }
         subtitle={
-          <p className="text-lg lg:text-xl text-text mb-10 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg lg:text-xl text-slate-100/95 mb-10 leading-relaxed max-w-2xl mx-auto">
             Welcome to Spokane's most trusted residential cleaning service! We provide detailed, reliable, and eco-friendly
             cleaning throughout Spokane, Spokane Valley, Liberty Lake, and nearby areas so you can enjoy more time while we
             make your home sparkle.

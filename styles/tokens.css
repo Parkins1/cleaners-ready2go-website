@@ -57,7 +57,7 @@
 /* Moved from :root — component class should not be nested inside :root */
 .hero-title {
   font-weight: 700; /* Bold - matches font-bold */
-  color: oklch(0.21 0.02 248.83); /* text-text color */
+  color: #ffffff; /* Match Residential hero text color */
   margin-bottom: 1.5rem; /* mb-6 equivalent */
   line-height: 1.25; /* leading-tight equivalent */
   display: inline-block;
