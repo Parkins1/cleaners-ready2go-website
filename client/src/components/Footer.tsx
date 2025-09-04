@@ -1,5 +1,10 @@
 import Icon from "@/components/ui/icon";
 import { brand } from "@/config/brand";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import logo128Avif from "@/assets/icon_logo-128.avif";
+import logo256Avif from "@/assets/icon_logo-256.avif";
+import logo128Webp from "@/assets/icon_logo-128.webp";
+import logo256Webp from "@/assets/icon_logo-256.webp";
 
 export default function Footer() {
   return (
@@ -9,14 +14,20 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="mb-6">
-              <img
-                src="/logo.png"
+              <OptimizedImage
+                src={logo128Webp}
+                imgSrcSet={`${logo128Webp} 128w, ${logo256Webp} 256w`}
+                sources={[
+                  {
+                    type: "image/avif",
+                    srcSet: `${logo128Avif} 128w, ${logo256Avif} 256w`,
+                  },
+                ]}
+                sizes="112px"
+                width={112}
+                height={112}
                 alt="Cleaners Ready 2Go Logo"
-                className="h-28 w-auto"
-                width="512"
-                height="256"
-                loading="lazy"
-                decoding="async"
+                imgClassName="h-28 w-auto"
               />
             </div>
             <p className="text-text mb-4 leading-relaxed">

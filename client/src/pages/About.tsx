@@ -7,6 +7,11 @@ import BookingModal from "@/components/BookingModal";
 import JsonLd from "@/components/seo/JsonLd";
 import { makeLocalBusiness, makeWebPage, makeBreadcrumb } from "@/components/seo/schema";
 import { site } from "@/config/site";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import logo128Avif from "@/assets/icon_logo-128.avif";
+import logo256Avif from "@/assets/icon_logo-256.avif";
+import logo128Webp from "@/assets/icon_logo-128.webp";
+import logo256Webp from "@/assets/icon_logo-256.webp";
 
 function About() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
@@ -38,14 +43,20 @@ function About() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-slide-up">
             <div className="flex justify-center mb-10">
-              <img 
-                src="/logo.png" 
-                alt="Cleaners Ready 2Go Logo" 
-                className="h-28 w-auto"
-                width="512"
-                height="256"
-                loading="lazy"
-                decoding="async"
+              <OptimizedImage
+                src={logo128Webp}
+                imgSrcSet={`${logo128Webp} 128w, ${logo256Webp} 256w`}
+                sources={[
+                  {
+                    type: "image/avif",
+                    srcSet: `${logo128Avif} 128w, ${logo256Avif} 256w`,
+                  },
+                ]}
+                sizes="112px"
+                width={112}
+                height={112}
+                alt="Cleaners Ready 2Go Logo"
+                imgClassName="h-28 w-auto"
               />
             </div>
             <h1 className="text-5xl lg:text-6xl font-bold text-text mb-8 leading-tight">About Cleaners Ready 2Go</h1>
