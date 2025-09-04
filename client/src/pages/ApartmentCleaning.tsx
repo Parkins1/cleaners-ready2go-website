@@ -15,22 +15,22 @@ import { site } from "@/config/site";
 
 // Visuals provided by user (moved into @assets)
 // Hero variants (optimized)
-import heroApartmentWebp from "@assets/hero_apartment_cleaning_spokane.webp";
-import heroApartment480Webp from "@assets/hero_apartment_cleaning_spokane-480.webp";
-import heroApartment768Webp from "@assets/hero_apartment_cleaning_spokane-768.webp";
-import heroApartment1024Webp from "@assets/hero_apartment_cleaning_spokane-1024.webp";
-import heroApartment480Avif from "@assets/hero_apartment_cleaning_spokane-480.avif";
-import heroApartment768Avif from "@assets/hero_apartment_cleaning_spokane-768.avif";
-import heroApartment1024Avif from "@assets/hero_apartment_cleaning_spokane-1024.avif";
+import heroApartmentWebp from "@/assets/spokane-house-cleaning.webp";
+import heroApartment480Webp from "@/assets/spokane-house-cleaning-480.webp";
+import heroApartment768Webp from "@/assets/spokane-house-cleaning-768.webp";
+import heroApartment1024Webp from "@/assets/spokane-house-cleaning-1024.webp";
+import heroApartment480Avif from "@/assets/spokane-house-cleaning-480.avif";
+import heroApartment768Avif from "@/assets/spokane-house-cleaning-768.avif";
+import heroApartment1024Avif from "@/assets/spokane-house-cleaning-1024.avif";
 // Replaced PNG icon usage with vector Lucide icons via IconCard.iconName
 // Lifestyle variants (optimized)
-import lifestylePhotoWebp from "@assets/photo_spokane_apartment_lifestyle.webp";
-import lifestylePhoto480Webp from "@assets/photo_spokane_apartment_lifestyle-480.webp";
-import lifestylePhoto768Webp from "@assets/photo_spokane_apartment_lifestyle-768.webp";
-import lifestylePhoto1024Webp from "@assets/photo_spokane_apartment_lifestyle-1024.webp";
-import lifestylePhoto480Avif from "@assets/photo_spokane_apartment_lifestyle-480.avif";
-import lifestylePhoto768Avif from "@assets/photo_spokane_apartment_lifestyle-768.avif";
-import lifestylePhoto1024Avif from "@assets/photo_spokane_apartment_lifestyle-1024.avif";
+import lifestylePhotoWebp from "@/assets/spokane-house-cleaning.webp";
+import lifestylePhoto480Webp from "@/assets/spokane-house-cleaning-480.webp";
+import lifestylePhoto768Webp from "@/assets/spokane-house-cleaning-768.webp";
+import lifestylePhoto1024Webp from "@/assets/spokane-house-cleaning-1024.webp";
+import lifestylePhoto480Avif from "@/assets/spokane-house-cleaning-480.avif";
+import lifestylePhoto768Avif from "@/assets/spokane-house-cleaning-768.avif";
+import lifestylePhoto1024Avif from "@/assets/spokane-house-cleaning-1024.avif";
 
 export default function ApartmentCleaning() {
   const { open } = useModal();
@@ -278,12 +278,12 @@ export default function ApartmentCleaning() {
           <div className="grid md:grid-cols-3 gap-6 mt-8">
             <ContentCard>
               <OptimizedImage
-                src={require("@assets/photo_spokane_apartment_kitchen.webp").default}
-                alt="Spokane apartment kitchen cleaning"
+                src={lifestylePhotoWebp}
+                alt="Apartment kitchen cleaning"
                 className="w-full h-40 md:h-48 rounded-lg object-cover"
                 sizes="(max-width: 768px) 100vw, 33vw"
-                imgSrcSet={`${require("@assets/photo_spokane_apartment_kitchen-480.webp").default} 480w, ${require("@assets/photo_spokane_apartment_kitchen-768.webp").default} 768w, ${require("@assets/photo_spokane_apartment_kitchen-1024.webp").default} 1024w`}
-                sources={[{ type: 'image/avif', srcSet: `${require("@assets/photo_spokane_apartment_kitchen-480.avif").default} 480w, ${require("@assets/photo_spokane_apartment_kitchen-768.avif").default} 768w, ${require("@assets/photo_spokane_apartment_kitchen-1024.avif").default} 1024w` }]}
+                imgSrcSet={`${lifestylePhoto480Webp} 480w, ${lifestylePhoto768Webp} 768w, ${lifestylePhoto1024Webp} 1024w`}
+                sources={[{ type: 'image/avif', srcSet: `${lifestylePhoto480Avif} 480w, ${lifestylePhoto768Avif} 768w, ${lifestylePhoto1024Avif} 1024w` }]}
               />
               <h3 className="text-lg font-semibold text-text mt-4 mb-2">Kitchen</h3>
               <ul className="list-none space-y-2 text-sm">
@@ -296,12 +296,12 @@ export default function ApartmentCleaning() {
 
             <ContentCard>
               <OptimizedImage
-                src={require("@assets/photo_spokane_apartment_bathroom.webp").default}
-                alt="Spokane apartment bathroom cleaning"
+                src={lifestylePhotoWebp}
+                alt="Apartment bathroom cleaning"
                 className="w-full h-40 md:h-48 rounded-lg object-cover"
                 sizes="(max-width: 768px) 100vw, 33vw"
-                imgSrcSet={`${require("@assets/photo_spokane_apartment_bathroom-480.webp").default} 480w, ${require("@assets/photo_spokane_apartment_bathroom-768.webp").default} 768w, ${require("@assets/photo_spokane_apartment_bathroom-1024.webp").default} 1024w`}
-                sources={[{ type: 'image/avif', srcSet: `${require("@assets/photo_spokane_apartment_bathroom-480.avif").default} 480w, ${require("@assets/photo_spokane_apartment_bathroom-768.avif").default} 768w, ${require("@assets/photo_spokane_apartment_bathroom-1024.avif").default} 1024w` }]}
+                imgSrcSet={`${lifestylePhoto480Webp} 480w, ${lifestylePhoto768Webp} 768w, ${lifestylePhoto1024Webp} 1024w`}
+                sources={[{ type: 'image/avif', srcSet: `${lifestylePhoto480Avif} 480w, ${lifestylePhoto768Avif} 768w, ${lifestylePhoto1024Avif} 1024w` }]}
               />
               <h3 className="text-lg font-semibold text-text mt-4 mb-2">Bathroom</h3>
               <ul className="list-none space-y-2 text-sm">
@@ -314,12 +314,12 @@ export default function ApartmentCleaning() {
 
             <ContentCard>
               <OptimizedImage
-                src={require("@assets/photo_spokane_apartment_bedroom.webp").default}
-                alt="Spokane apartment bedroom cleaning"
+                src={lifestylePhotoWebp}
+                alt="Apartment bedroom cleaning"
                 className="w-full h-40 md:h-48 rounded-lg object-cover"
                 sizes="(max-width: 768px) 100vw, 33vw"
-                imgSrcSet={`${require("@assets/photo_spokane_apartment_bedroom-480.webp").default} 480w, ${require("@assets/photo_spokane_apartment_bedroom-768.webp").default} 768w, ${require("@assets/photo_spokane_apartment_bedroom-1024.webp").default} 1024w`}
-                sources={[{ type: 'image/avif', srcSet: `${require("@assets/photo_spokane_apartment_bedroom-480.avif").default} 480w, ${require("@assets/photo_spokane_apartment_bedroom-768.avif").default} 768w, ${require("@assets/photo_spokane_apartment_bedroom-1024.avif").default} 1024w` }]}
+                imgSrcSet={`${lifestylePhoto480Webp} 480w, ${lifestylePhoto768Webp} 768w, ${lifestylePhoto1024Webp} 1024w`}
+                sources={[{ type: 'image/avif', srcSet: `${lifestylePhoto480Avif} 480w, ${lifestylePhoto768Avif} 768w, ${lifestylePhoto1024Avif} 1024w` }]}
               />
               <h3 className="text-lg font-semibold text-text mt-4 mb-2">Bedroom</h3>
               <ul className="list-none space-y-2 text-sm">

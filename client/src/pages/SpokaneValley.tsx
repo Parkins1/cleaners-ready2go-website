@@ -7,13 +7,13 @@ import ContentCard from "@/components/ContentCard/ContentCard";
 import Icon from "@/components/ui/icon";
 import CarouselCompact from "@/components/Carousel/CarouselCompact";
 import LocationPageTemplate from './LocationPageTemplate';
-import heroImage from "@assets/spokane-valley-wa-house-cleaning-hero.webp";
-import hero480 from "@assets/spokane-valley-wa-house-cleaning-hero-480.webp";
-import hero768 from "@assets/spokane-valley-wa-house-cleaning-hero-768.webp";
-import hero1024 from "@assets/spokane-valley-wa-house-cleaning-hero-1024.webp";
-import hero480Avif from "@assets/spokane-valley-wa-house-cleaning-hero-480.avif";
-import hero768Avif from "@assets/spokane-valley-wa-house-cleaning-hero-768.avif";
-import hero1024Avif from "@assets/spokane-valley-wa-house-cleaning-hero-1024.avif";
+import heroImage from "@/assets/spokane-house-cleaning.webp";
+import hero480 from "@/assets/spokane-house-cleaning-480.webp";
+import hero768 from "@/assets/spokane-house-cleaning-768.webp";
+import hero1024 from "@/assets/spokane-house-cleaning-1024.webp";
+import hero480Avif from "@/assets/spokane-house-cleaning-480.avif";
+import hero768Avif from "@/assets/spokane-house-cleaning-768.avif";
+import hero1024Avif from "@/assets/spokane-house-cleaning-1024.avif";
 
 export default function SpokaneValley() {
   const { open } = useModal();

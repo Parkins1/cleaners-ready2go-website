@@ -1,13 +1,13 @@
 // llm:cta-migrated
 import Icon from "@/components/ui/icon";
 import OptimizedImage from "@/components/ui/optimized-image";
-import residentialCardImg from "@assets/spokane-wa-residential-cleaning-card.webp";
-import res480 from "@assets/spokane-wa-residential-cleaning-card-480.webp";
-import res768 from "@assets/spokane-wa-residential-cleaning-card-768.webp";
-import res1024 from "@assets/spokane-wa-residential-cleaning-card-1024.webp";
-import res480Avif from "@assets/spokane-wa-residential-cleaning-card-480.avif";
-import res768Avif from "@assets/spokane-wa-residential-cleaning-card-768.avif";
-import res1024Avif from "@assets/spokane-wa-residential-cleaning-card-1024.avif";
+import residentialCardImg from "@/assets/residential-cleaning-card.webp";
+import res480 from "@/assets/residential-cleaning-card-480.webp";
+import res768 from "@/assets/residential-cleaning-card-768.webp";
+import res1024 from "@/assets/residential-cleaning-card-1024.webp";
+import res480Avif from "@/assets/residential-cleaning-card-480.avif";
+import res768Avif from "@/assets/residential-cleaning-card-768.avif";
+import res1024Avif from "@/assets/residential-cleaning-card-1024.avif";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import { Button } from "@/components/ui/button";
 import ContentCard from "@/components/ContentCard/ContentCard";
