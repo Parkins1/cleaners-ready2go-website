@@ -86,7 +86,7 @@ export default function Locations() {
               <div className="space-y-4">
                 <div className="flex items-start">
                   <div className="bg-green-100 p-1 rounded mr-3 mt-1">
-                    <Icon name="CheckCircle" className="w-4 h-4 text-green-600" />
+                    <Icon name="CheckCircle" className="w-4 h-4 text-brand-gold" />
                   </div>
                   <div>
                     <div className="font-medium text-text">Same-Day Service</div>
@@ -95,7 +95,7 @@ export default function Locations() {
                 </div>
                 <div className="flex items-start">
                   <div className="bg-green-100 p-1 rounded mr-3 mt-1">
-                    <Icon name="CheckCircle" className="w-4 h-4 text-green-600" />
+                    <Icon name="CheckCircle" className="w-4 h-4 text-brand-gold" />
                   </div>
                   <div>
                     <div className="font-medium text-text">No Travel Fees</div>
@@ -104,7 +104,7 @@ export default function Locations() {
                 </div>
                 <div className="flex items-start">
                   <div className="bg-green-100 p-1 rounded mr-3 mt-1">
-                    <Icon name="CheckCircle" className="w-4 h-4 text-green-600" />
+                    <Icon name="CheckCircle" className="w-4 h-4 text-brand-gold" />
                   </div>
                   <div>
                     <div className="font-medium text-text">Flexible Scheduling</div>

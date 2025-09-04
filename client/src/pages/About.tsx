@@ -70,7 +70,7 @@ function About() {
               </p>
               <div className="flex items-center">
                 <div className="bg-green-100 p-2 rounded-lg mr-4">
-                  <Icon name="CheckCircle" className="w-6 h-6 text-green-600" />
+                  <Icon name="CheckCircle" className="w-6 h-6 text-brand-gold" />
                 </div>
                 <span className="font-semibold text-text">Trusted by 500+ local families</span>
               </div>

@@ -167,9 +167,9 @@ export default function SpokaneValley() {
                 Recurring visits focus on kitchens, baths, floors, and high-touch areas. We rotate detail tasks so even baseboards, vents, and window sills get regular attention over time.
               </p>
               <ul className="mt-4 space-y-2">
-                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />Weekly: best for busy households, pets, or allergy concerns</li>
-                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />Bi-weekly: our most popular balance of value and upkeep</li>
-                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />Monthly: a reliable reset between deeper refreshes</li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-brand-gold mr-2" />Weekly: best for busy households, pets, or allergy concerns</li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-brand-gold mr-2" />Bi-weekly: our most popular balance of value and upkeep</li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-brand-gold mr-2" />Monthly: a reliable reset between deeper refreshes</li>
               </ul>
             </ContentCard>
             <ContentCard>
@@ -181,9 +181,9 @@ export default function SpokaneValley() {
                 Expect more time invested in build-up areas under appliances (when accessible), tile/grout lines, and hard-to-reach trim. It pairs well with a follow-up recurring plan for easier maintenance.
               </p>
               <ul className="mt-4 space-y-2">
-                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />Thorough bath and kitchen degrease and descale focus</li>
-                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />Baseboards, switch plates, door frames detailed</li>
-                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />Interior glass and mirrors polished for clarity</li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-brand-gold mr-2" />Thorough bath and kitchen degrease and descale focus</li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-brand-gold mr-2" />Baseboards, switch plates, door frames detailed</li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-brand-gold mr-2" />Interior glass and mirrors polished for clarity</li>
               </ul>
             </ContentCard>
             <ContentCard>
@@ -195,8 +195,8 @@ export default function SpokaneValley() {
                 We target “show well” details inside cabinets/drawers, inside oven/fridge (upon request), and edges where dust collects. Add carpet extraction or garage sweep-outs for a complete turnover.
               </p>
               <ul className="mt-4 space-y-2">
-                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />Book 48–72 hours before your final walkthrough</li>
-                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />Leave utilities on for better lighting and warm water</li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-brand-gold mr-2" />Book 48–72 hours before your final walkthrough</li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-brand-gold mr-2" />Leave utilities on for better lighting and warm water</li>
               </ul>
             </ContentCard>
             <ContentCard>
@@ -208,8 +208,8 @@ export default function SpokaneValley() {
                 Fast turnarounds, consistent staging, and consumables tracking keep your listing’s cleanliness reviews on point without you being on-site.
               </p>
               <ul className="mt-4 space-y-2">
-                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />Inventory checks for toiletries and supplies</li>
-                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-green-600 mr-2" />Damage/left-behind item notes with photos</li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-brand-gold mr-2" />Inventory checks for toiletries and supplies</li>
+                <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-brand-gold mr-2" />Damage/left-behind item notes with photos</li>
               </ul>
             </ContentCard>
           </div>
@@ -242,7 +242,7 @@ export default function SpokaneValley() {
                 <p className="text-sm">Flat rates based on square footage; any add-ons are quoted before work begins.</p>
               </div>
               <div>
-                <Icon name="CheckCircle" className="mx-auto h-12 w-12 text-accent" />
+                <Icon name="CheckCircle" className="mx-auto h-12 w-12 text-brand-gold" />
                 <h3 className="text-lg font-bold mt-4">Photo Log</h3>
                 <p className="text-sm">Receive before-and-after images for added transparency and easy remote approval.</p>
               </div>
