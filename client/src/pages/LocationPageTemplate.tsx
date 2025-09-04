@@ -10,6 +10,9 @@ import { ServicesSection, ProcessSection } from "@/components/Sections";
 import { SEO } from "@/components/seo/SEO";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import { brand } from "@/config/brand";
+import JsonLd from "@/components/seo/JsonLd";
+import { makeWebPage, makeBreadcrumb, makeService, makeLocalBusiness } from "@/components/seo/schema";
+import { site } from "@/config/site";
 
 interface LocationPageTemplateProps {
   locationName: string;
@@ -20,6 +23,8 @@ interface LocationPageTemplateProps {
   heroWidth?: number;
   heroHeight?: number;
   introText: string;
+  /** Optional: the route path for this page (e.g. "/locations/spokane"). If omitted, a slug will be inferred. */
+  currentPath?: string;
   services?: {
     title: string;
     description: string;
@@ -53,14 +58,42 @@ export default function LocationPageTemplate({
   extraSections,
   serviceCardIds,
   ctaVariant = 'gold',
+  currentPath,
 }: LocationPageTemplateProps) {
   const { open } = useModal();
+  const inferredPath = `/locations/${locationName.toLowerCase().replace(/\s+/g, '-')}`;
+  const path = currentPath || inferredPath;
 
   return (
     <>
       <SEO
         title={`Cleaning Services in ${locationName} - Cleaners Ready 2Go`}
         description={`Professional cleaning services in ${locationName}. We offer residential, commercial, and move-out cleaning. Book your service today!`}
+      />
+
+      {/* JSON-LD: LocalBusiness, WebPage, Service, Breadcrumbs */}
+      <JsonLd
+        data={[
+          makeLocalBusiness(site.url),
+          makeWebPage({
+            siteUrl: site.url,
+            path,
+            title: `Cleaning Services in ${locationName} - Cleaners Ready 2Go`,
+            description: `Professional cleaning services in ${locationName}. We offer residential, commercial, and move-out cleaning. Book your service today!`,
+          }),
+          makeService({
+            siteUrl: site.url,
+            path,
+            name: `House Cleaning in ${locationName}`,
+            description: `Residential and move-out cleaning services in ${locationName} and nearby areas.`,
+            areaServed: locationName,
+          }),
+          makeBreadcrumb([
+            { name: 'Home', url: `${site.url}/` },
+            { name: 'Locations', url: `${site.url}/locations` },
+            { name: locationName, url: `${site.url}${path}` },
+          ]),
+        ]}
       />
 
       {/* Hero Section */}

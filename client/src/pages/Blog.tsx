@@ -1,4 +1,7 @@
 import { SEO } from "@/components/seo/SEO";
+import JsonLd from "@/components/seo/JsonLd";
+import { makeLocalBusiness, makeWebPage, makeBreadcrumb } from "@/components/seo/schema";
+import { site } from "@/config/site";
 
 export default function Blog() {
   return (
@@ -8,6 +11,21 @@ export default function Blog() {
         title="Blog—Coming Soon | Ready2Go Cleaners"
         description="Our blog is under construction. New guides and tips are coming soon."
         noindex
+      />
+      <JsonLd
+        data={[
+          makeLocalBusiness(site.url),
+          makeWebPage({
+            siteUrl: site.url,
+            path: "/blog",
+            title: "Blog—Coming Soon | Ready2Go Cleaners",
+            description: "Our blog is under construction. New guides and tips are coming soon.",
+          }),
+          makeBreadcrumb([
+            { name: "Home", url: `${site.url}/` },
+            { name: "Blog", url: `${site.url}/blog` },
+          ]),
+        ]}
       />
       <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

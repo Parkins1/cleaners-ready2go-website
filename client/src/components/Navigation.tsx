@@ -15,6 +15,7 @@ export default function Navigation() {
         { label: "Residential Cleaning", href: "/residential" },
         { label: "Deep Cleaning", href: "/deep-cleaning" },
         { label: "Move-Out Cleaning", href: "/move-out" },
+        { label: "Apartment Cleaning", href: "/apartment-cleaning" },
       ],
     },
     {

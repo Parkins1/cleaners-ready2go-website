@@ -5,6 +5,9 @@ import { Link } from "wouter";
 import Icon from "@/components/ui/icon";
 import QuoteModal from "@/components/QuoteModal";
 import ContentCard from "@/components/ContentCard/ContentCard";
+import JsonLd from "@/components/seo/JsonLd";
+import { makeLocalBusiness, makeWebPage, makeBreadcrumb } from "@/components/seo/schema";
+import { site } from "@/config/site";
 
 export default function Locations() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
@@ -14,6 +17,22 @@ export default function Locations() {
       <SEO
         title="Service Areas - Cleaners Ready 2Go | Spokane Valley, Liberty Lake, Greenacres"
         description="Professional cleaning services in Spokane Valley, Liberty Lake, and Greenacres. Same-day service available. No travel fees within our service areas."
+      />
+      <JsonLd
+        data={[
+          makeLocalBusiness(site.url),
+          makeWebPage({
+            siteUrl: site.url,
+            path: "/locations",
+            title: "Service Areas - Cleaners Ready 2Go | Spokane Valley, Liberty Lake, Greenacres",
+            description:
+              "Professional cleaning services in Spokane Valley, Liberty Lake, and Greenacres. Same-day service available. No travel fees within our service areas.",
+          }),
+          makeBreadcrumb([
+            { name: "Home", url: `${site.url}/` },
+            { name: "Locations", url: `${site.url}/locations` },
+          ]),
+        ]}
       />
 
       <section className="py-16 bg-white">

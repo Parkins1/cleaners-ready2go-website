@@ -52,12 +52,18 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        IconLeft: ({ className, ...props }) => (
-          <Icon name="ChevronLeft" className={cn("h-4 w-4", className)} {...props} />
-        ),
-        IconRight: ({ className, ...props }) => (
-          <Icon name="ChevronRight" className={cn("h-4 w-4", className)} {...props} />
-        ),
+        // react-day-picker v9 uses a single Chevron component with orientation
+        Chevron: ({ className, orientation }: { className?: string; orientation?: "up" | "down" | "left" | "right" }) => {
+          const name =
+            orientation === "left"
+              ? "ChevronLeft"
+              : orientation === "right"
+              ? "ChevronRight"
+              : orientation === "up"
+              ? "ChevronUp"
+              : "ChevronDown"
+          return <Icon name={name} className={cn("h-4 w-4", className)} aria-hidden="true" />
+        },
       }}
       {...props}
     />

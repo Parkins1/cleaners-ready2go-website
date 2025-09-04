@@ -14,6 +14,9 @@ import ContentCard from "@/components/ContentCard/ContentCard";
 import IconCard from "@/components/IconCard/IconCard";
 import { useModal } from "@/components/modal/ModalProvider";
 import { SEO } from "@/components/seo/SEO";
+import JsonLd from "@/components/seo/JsonLd";
+import { makeLocalBusiness, makeWebPage, makeService, makeBreadcrumb } from "@/components/seo/schema";
+import { site } from "@/config/site";
 import TrustSignalsSection from "@/components/TrustSignals/TrustSignalsSection";
 import { brand } from "@/config/brand";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -42,6 +45,30 @@ export default function Residential() {
       <SEO
         title="Residential Cleaning That Elevates Your Home | Ready2Go Cleaners"
         description="Modern, consistent home cleaning built around your home—clear scope, trained teams, and results you can see. Weekly, bi‑weekly, monthly, and deep clean options."
+      />
+      <JsonLd
+        data={[
+          makeLocalBusiness(site.url),
+          makeWebPage({
+            siteUrl: site.url,
+            path: "/residential",
+            title: "Residential Cleaning That Elevates Your Home | Ready2Go Cleaners",
+            description:
+              "Modern, consistent home cleaning built around your home—clear scope, trained teams, and results you can see.",
+          }),
+          makeService({
+            siteUrl: site.url,
+            path: "/residential",
+            name: "Residential Cleaning",
+            description:
+              "Recurring and one-time residential house cleaning services in Spokane and nearby areas.",
+            areaServed: ["Spokane", "Spokane Valley", "Liberty Lake", "Greenacres"],
+          }),
+          makeBreadcrumb([
+            { name: "Home", url: `${site.url}/` },
+            { name: "Residential", url: `${site.url}/residential` },
+          ]),
+        ]}
       />
 
       {/* Hero */}

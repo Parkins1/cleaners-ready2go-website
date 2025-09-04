@@ -19,6 +19,9 @@ import hero1024Avif from "@assets/spokane-wa-house-cleaning-hero-1024.avif";
 import Icon from "@/components/ui/icon";
  import { SEO } from "@/components/seo/SEO";
  import { Helmet } from "react-helmet-async";
+ import JsonLd from "@/components/seo/JsonLd";
+ import { makeWebSite, makeWebPage, makeLocalBusiness, makeBreadcrumb, makeFAQPage } from "@/components/seo/schema";
+ import { site } from "@/config/site";
 
 export default function Home() {
   const { open } = useModal();
@@ -47,6 +50,25 @@ export default function Home() {
       <Helmet>
         <link rel="preload" as="image" href={heroImage} imageSizes="100vw" fetchPriority="high" />
       </Helmet>
+
+      {/* JSON-LD: WebSite, LocalBusiness, WebPage, Breadcrumbs, FAQPage */}
+      <JsonLd
+        data={[
+          makeWebSite(site.url),
+          makeLocalBusiness(site.url),
+          makeWebPage({
+            siteUrl: site.url,
+            path: "/",
+            title: "Top Residential House Cleaning Services in Spokane, WA",
+            description:
+              "Professional, eco-friendly residential house cleaning services in Spokane, Spokane Valley, Liberty Lake, and surrounding areas.",
+          }),
+          makeBreadcrumb([
+            { name: "Home", url: `${site.url}/` },
+          ]),
+          makeFAQPage(faqs, `${site.url}/`),
+        ]}
+      />
 
       <HeroSection
         image={heroImage}

@@ -36,6 +36,7 @@
     "vite.config.ts",
     "tailwind.config.ts",
     "**/*.test.ts",
-    "**/*.test.tsx"
+    "**/*.test.tsx",
+    "client/src 2/**"
   ]
 }

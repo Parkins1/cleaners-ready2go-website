@@ -8,15 +8,18 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="mb-6">
-              <img
-                src="/logo.png"
-                alt="Cleaners Ready 2Go Logo"
-                className="h-28 w-auto"
-                width="512"
-                height="256"
-                loading="lazy"
-                decoding="async"
-              />
+              <picture>
+                <source srcSet="/logo.webp" type="image/webp" />
+                <img
+                  src="/logo.png"
+                  alt="Cleaners Ready 2Go Logo"
+                  className="h-28 w-auto"
+                  width="512"
+                  height="256"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
             <p className="text-text mb-4 leading-relaxed">
               Professional cleaning services in Spokane Valley, Liberty Lake, and Greenacres. 

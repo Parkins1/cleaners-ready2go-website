@@ -13,6 +13,9 @@ import { ContactFormData } from "@/components/ContactForm/schema";
 import CalloutBanner from "@/components/CalloutBanner/CalloutBanner";
 import { brand } from "@/config/brand";
 import { SEO } from "@/components/seo/SEO";
+import JsonLd from "@/components/seo/JsonLd";
+import { makeLocalBusiness, makeWebPage, makeBreadcrumb } from "@/components/seo/schema";
+import { site } from "@/config/site";
 
 export default function Contact() {
   const { open, close } = useModal();
@@ -53,6 +56,21 @@ export default function Contact() {
       <SEO
         title="Contact Us - Cleaners Ready 2Go | Get Your Free Quote Today"
         description={`Contact Cleaners Ready 2Go for professional cleaning services in Spokane Valley, Liberty Lake, and Greenacres. Call ${brand.phone} or request a free quote online.`}
+      />
+      <JsonLd
+        data={[
+          makeLocalBusiness(site.url),
+          makeWebPage({
+            siteUrl: site.url,
+            path: "/contact",
+            title: "Contact Us - Cleaners Ready 2Go | Get Your Free Quote Today",
+            description: `Contact Cleaners Ready 2Go for professional cleaning services in Spokane Valley, Liberty Lake, and Greenacres. Call ${brand.phone} or request a free quote online.`,
+          }),
+          makeBreadcrumb([
+            { name: "Home", url: `${site.url}/` },
+            { name: "Contact", url: `${site.url}/contact` },
+          ]),
+        ]}
       />
       
       <section className="py-16 bg-white">

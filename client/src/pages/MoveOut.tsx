@@ -15,6 +15,9 @@ import mv768Avif from "@assets/spokane-wa-move-out-cleaning-hero-768.avif";
 import mv1024Avif from "@assets/spokane-wa-move-out-cleaning-hero-1024.avif";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import { brand } from "@/config/brand";
+import JsonLd from "@/components/seo/JsonLd";
+import { makeLocalBusiness, makeWebPage, makeService, makeBreadcrumb, makeFAQPage } from "@/components/seo/schema";
+import { site } from "@/config/site";
 
 export default function MoveOut() {
   const { open } = useModal();
@@ -75,6 +78,30 @@ export default function MoveOut() {
       <SEO
         title="Move-Out Cleaning in Spokane Valley, WA | Cleaners Ready 2 GO"
         description="Trusted move-out cleaning in Spokane Valley. Checklist-driven, detail-focused cleans that align with local landlord expectations. Get your free quote."
+      />
+      <JsonLd
+        data={[
+          makeLocalBusiness(site.url),
+          makeWebPage({
+            siteUrl: site.url,
+            path: "/move-out",
+            title: "Move-Out Cleaning in Spokane Valley, WA | Cleaners Ready 2 GO",
+            description:
+              "Trusted move-out cleaning in Spokane Valley. Checklist-driven, detail-focused cleans that align with local landlord expectations.",
+          }),
+          makeService({
+            siteUrl: site.url,
+            path: "/move-out",
+            name: "Move-Out Cleaning",
+            description: "Inspection-focused move-out cleaning for Spokane area rentals and homes.",
+            areaServed: ["Spokane Valley", "Spokane", "Liberty Lake", "Greenacres"],
+          }),
+          makeBreadcrumb([
+            { name: "Home", url: `${site.url}/` },
+            { name: "Move-Out Cleaning", url: `${site.url}/move-out` },
+          ]),
+          makeFAQPage(faqs, `${site.url}/move-out`),
+        ]}
       />
       <meta
         name="description"

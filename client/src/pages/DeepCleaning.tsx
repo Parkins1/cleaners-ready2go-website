@@ -20,6 +20,9 @@ import CalloutBanner from "@/components/CalloutBanner/CalloutBanner";
 import { brand } from "@/config/brand";
 import { SEO } from "@/components/seo/SEO";
 import IconCard from "@/components/IconCard/IconCard";
+import JsonLd from "@/components/seo/JsonLd";
+import { makeLocalBusiness, makeWebPage, makeService, makeFAQPage, makeBreadcrumb } from "@/components/seo/schema";
+import { site } from "@/config/site";
 
 export default function DeepCleaning() {
   const { open } = useModal();
@@ -40,65 +43,40 @@ export default function DeepCleaning() {
     { q: "Do you clean offices and commercial spaces?", a: "Yes. We provide deep cleaning for clinics, boutiques, and offices up to 10,000 sq ft." },
   ];
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: "Cleaners Ready 2 GO",
-    image: "https://cleanersready2go.com/logo.png",
-    "@id": "https://cleanersready2go.com",
-    url: "https://cleanersready2go.com/deep-cleaning-spokane",
-    telephone: brand.phone,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: brand.address.street,
-      addressLocality: brand.address.city,
-      addressRegion: brand.address.state,
-      postalCode: brand.address.zip,
-      addressCountry: "US",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 47.6561,
-      longitude: -117.4113,
-    },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        opens: "08:00",
-        closes: "18:00",
-      },
-    ],
-    serviceArea: {
-      "@type": "GeoCircle",
-      geoMidpoint: {
-        "@type": "GeoCoordinates",
-        latitude: 47.6561,
-        longitude: -117.4113,
-      },
-      geoRadius: 40,
-    },
-    makesOffer: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Deep Cleaning",
-        },
-        priceCurrency: "USD",
-        price: "Varies",
-        availability: "https://schema.org/InStock",
-      },
-    ],
-  };
+  const path = "/deep-cleaning";
 
   return (
     <>
       <SEO
         title="Deep Cleaning Spokane, WA | Cleaners Ready 2 GO"
         description="Cleaners Ready 2 GO delivers eco-friendly, detail-oriented deep cleaning in Spokane & Spokane Valley. Get your free quote today and enjoy a healthier, spotless home."
-        canonical="https://cleanersready2go.com/deep-cleaning-spokane"
+        canonical={`${site.url}${path}`}
         keywords="deep cleaning Spokane, Spokane deep cleaning services, Spokane Valley house cleaning, eco-friendly deep clean Spokane, move-out cleaning Spokane WA"
+      />
+      {/* JSON-LD: LocalBusiness, WebPage, Service, Breadcrumbs, FAQPage */}
+      <JsonLd
+        data={[
+          makeLocalBusiness(site.url),
+          makeWebPage({
+            siteUrl: site.url,
+            path,
+            title: "Deep Cleaning Spokane, WA | Cleaners Ready 2 GO",
+            description:
+              "Eco-friendly, detail-oriented deep cleaning in Spokane & Spokane Valley.",
+          }),
+          makeService({
+            siteUrl: site.url,
+            path,
+            name: "Deep Cleaning",
+            description: "Whole-home deep cleaning service for Spokane and Spokane Valley.",
+            areaServed: ["Spokane", "Spokane Valley", "Liberty Lake", "Greenacres"],
+          }),
+          makeBreadcrumb([
+            { name: "Home", url: `${site.url}/` },
+            { name: "Deep Cleaning", url: `${site.url}${path}` },
+          ]),
+          makeFAQPage(faqs, `${site.url}${path}`),
+        ]}
       />
 
       {/* HERO */}
@@ -156,7 +134,7 @@ export default function DeepCleaning() {
               ]}
             />
             <IconCard
-              iconSrc="@assets/icon_bathroom.png"
+              iconSrc="@assets/icon_bathroom.webp"
               title="Bathroom Detox"
               items={[
                 "Sanitize toilets including hard-to-reach hinges",
@@ -353,8 +331,7 @@ export default function DeepCleaning() {
       </section>
 
       
-      {/* JSON-LD */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* end JSON-LD */}
 
       {/* Bottom CTA */}
       <CalloutBanner

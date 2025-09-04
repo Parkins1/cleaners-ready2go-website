@@ -8,3 +8,4 @@ vite.config.ts.*
 .vite-cache
 public
 .vercel
+archive/
