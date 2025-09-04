@@ -1,6 +1,6 @@
 // llm:brand-config-migrated
 export const brand = {
-  phone: "(509) 555-0123",
+  phone: "(509) 210-6800",
   email: "info@cleanersready2go.com",
   address: {
     street: "123 E Sprague Ave",
@@ -8,7 +8,7 @@ export const brand = {
     state: "WA",
     zip: "99202",
   },
-  hours: "Mon–Sat 8 a.m.–6 p.m.",
+  hours: "5:00am to 7:00pm, 7 days a week",
   serviceAreas: {
     cities: [
       "Spokane",

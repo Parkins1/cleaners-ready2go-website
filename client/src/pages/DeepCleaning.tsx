@@ -5,22 +5,35 @@
 import Icon from "@/components/ui/icon";
 import { Button } from "@/components/ui/button";
 import { useModal } from "@/components/modal/ModalProvider";
-import heroDeep from "@assets/spokane-wa-move-out-cleaning-hero.webp";
-import mv480 from "@assets/spokane-wa-move-out-cleaning-hero-480.webp";
-import mv768 from "@assets/spokane-wa-move-out-cleaning-hero-768.webp";
-import mv1024 from "@assets/spokane-wa-move-out-cleaning-hero-1024.webp";
-import mv480Avif from "@assets/spokane-wa-move-out-cleaning-hero-480.avif";
-import mv768Avif from "@assets/spokane-wa-move-out-cleaning-hero-768.avif";
-import mv1024Avif from "@assets/spokane-wa-move-out-cleaning-hero-1024.avif";
+import heroDeep from "@/assets/spokane-house-cleaning.webp";
+import mv480 from "@/assets/spokane-house-cleaning-480.webp";
+import mv768 from "@/assets/spokane-house-cleaning-768.webp";
+import mv1024 from "@/assets/spokane-house-cleaning-1024.webp";
+import mv480Avif from "@/assets/spokane-house-cleaning-480.avif";
+import mv768Avif from "@/assets/spokane-house-cleaning-768.avif";
+import mv1024Avif from "@/assets/spokane-house-cleaning-1024.avif";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ContentCard from "@/components/ContentCard/ContentCard";
+import TrustSignalsSection from "@/components/TrustSignals/TrustSignalsSection";
 import CalloutBanner from "@/components/CalloutBanner/CalloutBanner";
 import { brand } from "@/config/brand";
+import { SEO } from "@/components/seo/SEO";
+import IconCard from "@/components/IconCard/IconCard";
+// Import icon images instead of passing alias strings so Vite resolves URLs
+import iconKitchen from "@/assets/icon_kitchen.webp";
+import iconBathroom from "@/assets/icon_bathroom.webp";
+import iconDustFreeFan from "@/assets/icon_dust_free_fan.webp";
+import iconVacuumedCarpet from "@/assets/icon_vacuumed_carpet.webp";
+import iconCabinetInteriors from "@/assets/icon_cabinet_interiors.webp";
+import iconBaseboards from "@/assets/icon_baseboards.webp";
+import JsonLd from "@/components/seo/JsonLd";
+import { makeLocalBusiness, makeWebPage, makeService, makeFAQPage, makeBreadcrumb } from "@/components/seo/schema";
+import { site } from "@/config/site";
 
 export default function DeepCleaning() {
   const { open } = useModal();
-
+  
 
   const cityList = brand.serviceAreas.cities;
 
@@ -37,71 +50,47 @@ export default function DeepCleaning() {
     { q: "Do you clean offices and commercial spaces?", a: "Yes. We provide deep cleaning for clinics, boutiques, and offices up to 10,000 sq ft." },
   ];
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: "Cleaners Ready 2 GO",
-    image: "https://cleanersready2go.com/logo.png",
-    "@id": "https://cleanersready2go.com",
-    url: "https://cleanersready2go.com/deep-cleaning-spokane",
-    telephone: brand.phone,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: brand.address.street,
-      addressLocality: brand.address.city,
-      addressRegion: brand.address.state,
-      postalCode: brand.address.zip,
-      addressCountry: "US",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 47.6561,
-      longitude: -117.4113,
-    },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        opens: "08:00",
-        closes: "18:00",
-      },
-    ],
-    serviceArea: {
-      "@type": "GeoCircle",
-      geoMidpoint: {
-        "@type": "GeoCoordinates",
-        latitude: 47.6561,
-        longitude: -117.4113,
-      },
-      geoRadius: 40,
-    },
-    makesOffer: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Deep Cleaning",
-        },
-        priceCurrency: "USD",
-        price: "Varies",
-        availability: "https://schema.org/InStock",
-      },
-    ],
-  };
+  const path = "/deep-cleaning";
 
   return (
     <>
-      {/* SEO */}
-      <title>Deep Cleaning Spokane, WA | Cleaners Ready 2 GO</title>
-      <meta name="description" content="Cleaners Ready 2 GO delivers eco-friendly, detail-oriented deep cleaning in Spokane & Spokane Valley. Get your free quote today and enjoy a healthier, spotless home." />
-      <link rel="canonical" href="https://cleanersready2go.com/deep-cleaning-spokane" />
-      <meta name="keywords" content="deep cleaning Spokane, Spokane deep cleaning services, Spokane Valley house cleaning, eco-friendly deep clean Spokane, move-out cleaning Spokane WA" />
+      <SEO
+        title="Deep Cleaning Spokane, WA | Cleaners Ready 2 GO"
+        description="Cleaners Ready 2 GO delivers eco-friendly, detail-oriented deep cleaning in Spokane & Spokane Valley. Get your free quote today and enjoy a healthier, spotless home."
+        canonical={`${site.url}${path}`}
+        keywords="deep cleaning Spokane, Spokane deep cleaning services, Spokane Valley house cleaning, eco-friendly deep clean Spokane, move-out cleaning Spokane WA"
+      />
+      {/* JSON-LD: LocalBusiness, WebPage, Service, Breadcrumbs, FAQPage */}
+      <JsonLd
+        data={[
+          makeLocalBusiness(site.url),
+          makeWebPage({
+            siteUrl: site.url,
+            path,
+            title: "Deep Cleaning Spokane, WA | Cleaners Ready 2 GO",
+            description:
+              "Eco-friendly, detail-oriented deep cleaning in Spokane & Spokane Valley.",
+          }),
+          makeService({
+            siteUrl: site.url,
+            path,
+            name: "Deep Cleaning",
+            description: "Whole-home deep cleaning service for Spokane and Spokane Valley.",
+            areaServed: ["Spokane", "Spokane Valley", "Liberty Lake", "Greenacres"],
+          }),
+          makeBreadcrumb([
+            { name: "Home", url: `${site.url}/` },
+            { name: "Deep Cleaning", url: `${site.url}${path}` },
+          ]),
+          makeFAQPage(faqs, `${site.url}${path}`),
+        ]}
+      />
 
       {/* HERO */}
       <HeroSection
         image={heroDeep}
-        title={<h1 className="text-4xl lg:text-6xl font-bold text-text mb-4">Deep Cleaning Spokane, WA</h1>}
-        subtitle={<p className="text-lg lg:text-xl text-text mb-8">Local, insured pros delivering wall-to-wall shine on your schedule.</p>}
+        title={<h1 className="text-4xl lg:text-6xl font-bold text-white drop-shadow-sm mb-4">Deep Cleaning Spokane, WA</h1>}
+        subtitle={<p className="text-lg lg:text-xl text-slate-100/95 mb-8">Local, insured pros delivering wall-to-wall shine on your schedule.</p>}
         actions={
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button onClick={() => open("quote")} variant="primary">Get My Free Quote</Button>
@@ -137,30 +126,82 @@ export default function DeepCleaning() {
       {/* INCLUDES */}
       <section id="includes" className="py-16 bg-surface">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">What Our Spokane Deep Clean Includes</h2>
-          <Accordion type="single" collapsible className="w-full rounded-xl bg-gradient-to-b from-white/95 to-white/90 backdrop-blur-sm shadow-sm border border-white/20">
-            <AccordionItem value="kitchen-revival">
-              <AccordionTrigger className="text-left"><strong>Kitchen revival</strong></AccordionTrigger>
-              <AccordionContent>degrease backsplashes, scrub stovetops, clean inside ovens, microwaves, and refrigerators, sanitize sinks & faucets.</AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="bathroom-detox">
-              <AccordionTrigger className="text-left"><strong>Bathroom detox</strong></AccordionTrigger>
-              <AccordionContent>power-clean tile & grout, remove hard-water stains, polish chrome, disinfect tubs, showers, and toilets.</AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="whole-home-detailing">
-              <AccordionTrigger className="text-left"><strong>Whole-home detailing</strong></AccordionTrigger>
-              <AccordionContent>hand-wipe baseboards, window sills, door frames, switch plates, and vents; dust ceiling fans and light fixtures up to 12 ft.</AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="floor-refresh">
-              <AccordionTrigger className="text-left"><strong>Floor refresh</strong></AccordionTrigger>
-              <AccordionContent>HEPA vacuum carpets & upholstery, edge-vacuum along trim, mop hard floors with pH-balanced solutions, and spot-treat high-traffic stains.</AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="cabinets-storage">
-              <AccordionTrigger className="text-left"><strong>Cabinets & storage</strong></AccordionTrigger>
-              <AccordionContent>wipe down doors and clean inside drawers & shelves so you start with a truly blank slate.</AccordionContent>
-            </AccordionItem>
-          </Accordion>
-          <p className="mt-6">
+          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">What's Included in Our Spokane Deep Cleaning</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            <IconCard
+              iconSrc={iconKitchen}
+              title="Kitchen Revival"
+              items={[
+                "Meticulously clean appliance interiors and exteriors including refrigerator, stove, and microwave",
+                "Remove grime, sticky spills, and unpleasant odors",
+                "Countertops, backsplashes, cabinet faces, and sink fixtures shine",
+                "Cabinet interiors and top shelves cleared of dust and debris",
+                "Tackle hard water stains, tile grout with specialized tools",
+                "Floors left dry, streak-free, and fresh"
+              ]}
+            />
+            <IconCard
+              iconSrc={iconBathroom}
+              title="Bathroom Detox"
+              items={[
+                "Sanitize toilets including hard-to-reach hinges",
+                "Scrub bathtubs, showers, tracks, doors, and glass until free of soap scum",
+                "Vanity tops, sinks, mirrors, and fixtures polished to a streak-free shine",
+                "Cabinets and shelving dust-free inside and out",
+                "Tile grout cleaned as close to new as possible",
+                "Trash cans emptied and sanitized",
+                "Every floor left gleaming"
+              ]}
+            />
+            <IconCard
+              iconSrc={iconDustFreeFan}
+              title="Whole-Home Detailing"
+              items={[
+                "Remove dust, pollen, and cobwebs from ceiling fans, light fixtures, high corners, and all surfaces",
+                "Walls spot-cleaned for marks and scuffs",
+                "Mirrors and glass throughout left streak-free",
+                "Window sills, baseboards, door frames, knobs, and light switches scrubbed until spotless",
+                "HEPA vacuuming and eco-friendly mopping leave floors, carpets, and rugs fresh and allergen-free",
+                "Create a healthier home environment for your family"
+              ]}
+            />
+            <IconCard
+              iconSrc={iconVacuumedCarpet}
+              title="Floor Refresh"
+              items={[
+                "Hard floors vacuumed, mopped, and polished to remove residue and streaks",
+                "Carpets and rugs rigorously vacuumed for dirt and allergens",
+                "Even hard-to-reach areas near baseboards cleaned",
+                "Restore hardwood, tile, or carpet to look like new",
+                "Specialized treatments for different flooring types"
+              ]}
+            />
+            <IconCard
+              iconSrc={iconCabinetInteriors}
+              title="Cabinet & Storage Cleaning"
+              items={[
+                "Remove built-up dust, crumbs, and debris from both interiors and exteriors",
+                "Pay special attention to storage spaces, drawers, closets, and cabinet surfaces",
+                "Ensure they're organized and sanitized",
+                "Handles, knobs, and hardware wiped clean and polished",
+                "Shelves left ready for your belongings",
+                "Contribute to a clutter-free, hygienic home"
+              ]}
+            />
+            <IconCard
+              iconSrc={iconBaseboards}
+              title="All Surfaces and Detailed Areas"
+              items={[
+                "Attention to baseboards, moldings, vents, registers, doorknobs, electrical plates, and high-traffic touchpoints",
+                "Living rooms, bedrooms, hallways, and laundry rooms refreshed",
+                "Wood and flat surfaces wiped down",
+                "Decorative items dusted",
+                "Corners cleared of lint",
+                "Everything tidied for lasting comfort and peace of mind"
+              ]}
+            />
+          </div>
+          <p className="mt-8 text-center">
             Need something special like post-renovation dust removal or appliance restoration? Just ask. We love custom projects and bring the right tools for every challenge.
           </p>
         </div>
@@ -196,17 +237,31 @@ export default function DeepCleaning() {
       </section>
 
       {/* WHY US */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">Why Spokane Homeowners Trust Cleaners Ready 2 GO</h2>
-          <ul className="grid md:grid-cols-2 gap-4 text-text">
-            <li className="border-l-4 border-[var(--color-accent)] bg-[rgba(200,164,74,0.06)] rounded-sm pl-4 py-2"><strong className="text-accent">Licensed, bonded & insured</strong> – Peace of mind while we’re on your property.</li>
-            <li className="border-l-4 border-[var(--color-accent)] bg-[rgba(200,164,74,0.06)] rounded-sm pl-4 py-2"><strong className="text-accent">Green cleaning, healthier air</strong> – Kid-safe, pet-safe solutions and HEPA filtration reduce indoor allergens by up to 75%.</li>
-            <li className="border-l-4 border-[var(--color-accent)] bg-[rgba(200,164,74,0.06)] rounded-sm pl-4 py-2"><strong className="text-accent">Transparent pricing</strong> – Flat-rate quotes and digital invoices no surprises.</li>
-            <li className="border-l-4 border-[var(--color-accent)] bg-[rgba(200,164,74,0.06)] rounded-sm pl-4 py-2"><strong className="text-accent">5-star reputation</strong> – A+ BBB rating and hundreds of Google reviews averaging 4.9 stars.</li>
-          </ul>
-        </div>
-      </section>
+      <TrustSignalsSection
+        title={
+          <>Why Spokane Homeowners Trust Cleaners Ready 2 GO</>
+        }
+        items={[
+          {
+            highlight: "Licensed, bonded & insured",
+            text: "Peace of mind while we're on your property.",
+          },
+          {
+            highlight: "Green cleaning, healthier air",
+            text:
+              "Kid-safe, pet-safe solutions and HEPA filtration reduce indoor allergens by up to 75%.",
+          },
+          {
+            highlight: "Transparent pricing",
+            text: "Flat-rate quotes and digital invoices—no surprises.",
+          },
+          {
+            highlight: "Trusted locally",
+            text:
+              "One of the highest rated Spokane cleaners trusted by your neighbors and friends.",
+          },
+        ]}
+      />
 
       {/* SERVICE AREA */}
       <section className="py-16 bg-service-band">
@@ -283,8 +338,21 @@ export default function DeepCleaning() {
       </section>
 
       
-      {/* JSON-LD */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* end JSON-LD */}
+
+      {/* Bottom CTA */}
+      <CalloutBanner
+        title="Ready for a True Deep Clean?"
+        body={<>
+          Enjoy a fresher, healthier home with detailed, eco‑conscious deep cleaning. Get a fast, tailored quote.
+        </>}
+        variant="gold"
+        actions={
+          <Button onClick={() => open("quote")} variant="primary">
+            Get My Free Quote
+          </Button>
+        }
+      />
 
     </>
   );

@@ -1,4 +1,5 @@
 import Icon from "@/components/ui/icon";
+import { brand } from "@/config/brand";
 
 export default function Footer() {
   return (
@@ -30,8 +31,12 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center">
                 <Icon name="Phone" className="w-4 h-4 text-text mr-3" />
-                <a href="tel:+1234567890" className="footer-link">
-                  (123) 456-7890
+                <a
+                  href={`tel:${brand.phone.replace(/[^0-9]/g, "")}`}
+                  className="footer-link"
+                  aria-label={`Call ${brand.phone}`}
+                >
+                  {brand.phone}
                 </a>
               </div>
               <div className="flex items-center">
@@ -39,6 +44,12 @@ export default function Footer() {
                 <a href="mailto:info@cleanersready2go.com" className="footer-link">
                   info@cleanersready2go.com
                 </a>
+              </div>
+              <div className="flex items-center">
+                <Icon name="Clock" className="w-4 h-4 text-text mr-3" />
+                <div className="text-text">
+                  {brand.hours}
+                </div>
               </div>
               <div className="flex items-start">
                 <Icon name="MapPin" className="w-4 h-4 text-text mr-3 mt-1" />

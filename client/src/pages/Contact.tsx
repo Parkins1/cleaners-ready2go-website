@@ -6,22 +6,22 @@ import { Button } from "@/components/ui/button";
 import { useModal } from "@/components/modal/ModalProvider";
 import { useMutation } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
+import { submitContact } from "@/lib/api";
 import ContactForm from "@/components/ContactForm/ContactForm";
 import SnippetContactForm from "@/components/ContactForm/SnippetContactForm";
 import { ContactFormData } from "@/components/ContactForm/schema";
 import CalloutBanner from "@/components/CalloutBanner/CalloutBanner";
 import { brand } from "@/config/brand";
 import { SEO } from "@/components/seo/SEO";
+import JsonLd from "@/components/seo/JsonLd";
+import { makeLocalBusiness, makeWebPage, makeBreadcrumb } from "@/components/seo/schema";
+import { site } from "@/config/site";
 
 export default function Contact() {
   const { open, close } = useModal();
   const { toast } = useToast();
   const { mutateAsync, isPending } = useMutation({
-    mutationFn: async (data: ContactFormData) => {
-      const response = await apiRequest("POST", "/api/contacts", data);
-      return response.json();
-    },
+    mutationFn: async (data: ContactFormData) => submitContact(data),
     onSuccess: () => {
       toast({
         title: "Message Sent!",
@@ -56,6 +56,21 @@ export default function Contact() {
       <SEO
         title="Contact Us - Cleaners Ready 2Go | Get Your Free Quote Today"
         description={`Contact Cleaners Ready 2Go for professional cleaning services in Spokane Valley, Liberty Lake, and Greenacres. Call ${brand.phone} or request a free quote online.`}
+      />
+      <JsonLd
+        data={[
+          makeLocalBusiness(site.url),
+          makeWebPage({
+            siteUrl: site.url,
+            path: "/contact",
+            title: "Contact Us - Cleaners Ready 2Go | Get Your Free Quote Today",
+            description: `Contact Cleaners Ready 2Go for professional cleaning services in Spokane Valley, Liberty Lake, and Greenacres. Call ${brand.phone} or request a free quote online.`,
+          }),
+          makeBreadcrumb([
+            { name: "Home", url: `${site.url}/` },
+            { name: "Contact", url: `${site.url}/contact` },
+          ]),
+        ]}
       />
       
       <section className="py-16 bg-white">
@@ -93,7 +108,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="font-semibold text-text">Phone</div>
-                    <a href={`tel:${brand.phone}`} className="text-text hover:text-accent transition-colors">
+                    <a href={`tel:${brand.phone.replace(/[^0-9]/g, "")}`} className="text-text hover:text-accent transition-colors">
                       {brand.phone}
                     </a>
                   </div>
@@ -158,7 +173,7 @@ export default function Contact() {
             className="mt-16"
             actions={
               <>
-                <a href={`tel:${brand.phone}`} aria-label={`Call ${brand.phone}`} className="inline-flex">
+                <a href={`tel:${brand.phone.replace(/[^0-9]/g, "")}`} aria-label={`Call ${brand.phone}`} className="inline-flex">
                   <Button
                     variant="primary"
                     className="w-full sm:w-72"

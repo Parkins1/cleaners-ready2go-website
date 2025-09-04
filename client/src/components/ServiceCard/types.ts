@@ -13,4 +13,6 @@ export interface ServiceCardProps {
   sources?: { type: string; srcSet: string; sizes?: string }[];
   icon: React.ReactNode;
   className?: string;
+  /** Whether to hide the icon - useful for certain layouts */
+  hideIcon?: boolean;
 }

@@ -7,6 +7,7 @@ const exts = new Set(['.jpg', '.jpeg', '.png']);
 const roots = [
   path.resolve('attached_assets'),
   path.resolve('client/src/assets'),
+  path.resolve('public'),
 ];
 
 async function* walk(dir) {

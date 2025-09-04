@@ -1,15 +1,38 @@
 
 import { useState } from "react";
+import { SEO } from "@/components/seo/SEO";
+import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 import BookingModal from "@/components/BookingModal";
+import JsonLd from "@/components/seo/JsonLd";
+import { makeLocalBusiness, makeWebPage, makeBreadcrumb } from "@/components/seo/schema";
+import { site } from "@/config/site";
 
 function About() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
   return (
     <>
-      <title>About Us - Cleaners Ready 2Go | Professional Cleaning Team</title>
-      <meta name="description" content="Learn about our professional cleaning team serving Spokane Valley, Liberty Lake, and Greenacres. Trusted by 500+ local families." />
+      <SEO
+        title="About Us - Cleaners Ready 2Go | Professional Cleaning Team"
+        description="Learn about our professional cleaning team serving Spokane Valley, Liberty Lake, and Greenacres. Trusted by 500+ local families."
+      />
+      <JsonLd
+        data={[
+          makeLocalBusiness(site.url),
+          makeWebPage({
+            siteUrl: site.url,
+            path: "/about",
+            title: "About Us - Cleaners Ready 2Go | Professional Cleaning Team",
+            description:
+              "Learn about our professional cleaning team serving Spokane Valley, Liberty Lake, and Greenacres.",
+          }),
+          makeBreadcrumb([
+            { name: "Home", url: `${site.url}/` },
+            { name: "About", url: `${site.url}/about` },
+          ]),
+        ]}
+      />
       
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,6 +42,10 @@ function About() {
                 src="/logo.png" 
                 alt="Cleaners Ready 2Go Logo" 
                 className="h-28 w-auto"
+                width="512"
+                height="256"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <h1 className="text-5xl lg:text-6xl font-bold text-text mb-8 leading-tight">About Cleaners Ready 2Go</h1>
@@ -43,7 +70,7 @@ function About() {
               </p>
               <div className="flex items-center">
                 <div className="bg-green-100 p-2 rounded-lg mr-4">
-                  <Icon name="CheckCircle" className="w-6 h-6 text-green-600" />
+                  <Icon name="CheckCircle" className="w-6 h-6 text-brand-gold" />
                 </div>
                 <span className="font-semibold text-text">Trusted by 500+ local families</span>
               </div>
@@ -75,12 +102,9 @@ function About() {
           </div>
 
           <div className="text-center">
-            <button
-              onClick={() => setIsBookingModalOpen(true)}
-              className="btn-primary"
-            >
+            <Button onClick={() => setIsBookingModalOpen(true)} variant="primary">
               Book a Cleaning
-            </button>
+            </Button>
           </div>
         </div>
       </section>

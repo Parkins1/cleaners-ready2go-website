@@ -20,8 +20,8 @@
     "paths": {
       "@/*": ["client/src/*"],
       "@shared/*": ["shared/*"],
-      "@assets/*": ["attached_assets/*"],
-      "@components/*": ["components/*"]
+      "@assets/*": ["client/src/assets/*"],
+      "@components/*": ["client/src/components/*"]
     }
   },
   "include": [
@@ -36,6 +36,7 @@
     "vite.config.ts",
     "tailwind.config.ts",
     "**/*.test.ts",
-    "**/*.test.tsx"
+    "**/*.test.tsx",
+    "client/src 2/**"
   ]
 }

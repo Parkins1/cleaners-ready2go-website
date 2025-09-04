@@ -1,5 +1,6 @@
 
 import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
 import {
   Select,
   SelectTrigger,
@@ -102,12 +103,9 @@ export default function SnippetContactForm({ onSubmit, isLoading = false }: Snip
           <h2 className="text-xl font-bold mb-2">Thank You!</h2>
           <p>Your message has been sent successfully. We'll get back to you within 24 hours.</p>
         </div>
-        <button
-          className="btn-primary"
-          onClick={() => setIsSubmitted(false)}
-        >
+        <Button variant="primary" onClick={() => setIsSubmitted(false)}>
           Send Another Message
-        </button>
+        </Button>
       </div>
       </div>
     );
@@ -239,11 +237,7 @@ export default function SnippetContactForm({ onSubmit, isLoading = false }: Snip
             {errors.message && <div className="error-message">{errors.message}</div>}
           </div>
 
-          <button
-            type="submit"
-            className="btn-primary w-full flex items-center justify-center"
-            disabled={isLoading}
-          >
+          <Button type="submit" className="w-full flex items-center justify-center" disabled={isLoading} variant="primary">
             {isLoading ? (
               <>
                 <i className="fas fa-spinner fa-spin mr-2"></i>
@@ -255,7 +249,7 @@ export default function SnippetContactForm({ onSubmit, isLoading = false }: Snip
                 Get My Free Quote
               </>
             )}
-          </button>
+          </Button>
         </form>
 
         <div className="text-center mt-6 text-sm text-text">

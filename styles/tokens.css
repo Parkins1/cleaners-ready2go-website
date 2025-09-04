@@ -53,3 +53,12 @@
   --input: 0.71 0.0 174.43;
   --ring: 0.76 0.12 89.8;
 }
+
+/* Moved from :root — component class should not be nested inside :root */
+.hero-title {
+  font-weight: 700; /* Bold - matches font-bold */
+  color: #ffffff; /* Match Residential hero text color */
+  margin-bottom: 1.5rem; /* mb-6 equivalent */
+  line-height: 1.25; /* leading-tight equivalent */
+  display: inline-block;
+}

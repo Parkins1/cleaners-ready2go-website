@@ -1,40 +1,17 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 import LocationPageTemplate from './LocationPageTemplate';
-import heroImage from "@assets/greenacres-wa-house-cleaning-hero.webp";
-import hero480 from "@assets/greenacres-wa-house-cleaning-hero-480.webp";
-import hero768 from "@assets/greenacres-wa-house-cleaning-hero-768.webp";
-import hero1024 from "@assets/greenacres-wa-house-cleaning-hero-1024.webp";
-import hero480Avif from "@assets/greenacres-wa-house-cleaning-hero-480.avif";
-import hero768Avif from "@assets/greenacres-wa-house-cleaning-hero-768.avif";
-import hero1024Avif from "@assets/greenacres-wa-house-cleaning-hero-1024.avif";
+import heroImage from "@/assets/spokane-house-cleaning.webp";
+import hero480 from "@/assets/spokane-house-cleaning-480.webp";
+import hero768 from "@/assets/spokane-house-cleaning-768.webp";
+import hero1024 from "@/assets/spokane-house-cleaning-1024.webp";
+import hero480Avif from "@/assets/spokane-house-cleaning-480.avif";
+import hero768Avif from "@/assets/spokane-house-cleaning-768.avif";
+import hero1024Avif from "@/assets/spokane-house-cleaning-1024.avif";
 import ContentCard from '@/components/ContentCard/ContentCard';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  type CarouselApi,
-} from '@/components/ui/carousel';
+import Icon from "@/components/ui/icon";
+import CarouselCompact from '@/components/Carousel/CarouselCompact';
 
 export default function Greenacres() {
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
-    setCurrent(api.selectedScrollSnap());
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap());
-    });
-  }, [api]);
-
-  const isActive = useCallback(
-    (index: number) => current === index,
-    [current]
-  );
   const pageDetails = {
     locationName: 'Greenacres',
     heroImage: heroImage,
@@ -53,40 +30,24 @@ export default function Greenacres() {
     extraSections: [
       {
         title: 'Greenacres Services',
+        sectionClassName: "py-8 bg-white",
         content: (
           <div className="py-8">
-            <Carousel
-              opts={{
-                align: 'center',
-                loop: true,
-              }}
-              setApi={setApi}
-              className="w-full max-w-6xl mx-auto"
-            >
-              <CarouselContent className="-ml-2 md:-ml-4">
-                <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
-                  data-active={isActive(0)}
-                >
-                  <ContentCard className="p-8 md:p-10">
-                    <h3 className="text-xl md:text-2xl font-bold mb-4 text-brand-gold">
-                      Greenacres Cleaning, Matched To Your Routine
-                    </h3>
-                    <p className="text-base text-gray-600 leading-relaxed">
+            <CarouselCompact
+              items={[
+                (
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">Greenacres Cleaning, Matched To Your Routine</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
                       Professional cleaning services designed around Greenacres living near the river, trails, and parks. Our dedicated Team Lead ensures consistent, premium care.
                     </p>
                   </ContentCard>
-                </CarouselItem>
-                <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
-                  data-active={isActive(1)}
-                >
-                  <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
-                      Effortless Upkeep
-                    </h3>
-                    <div className="space-y-2 text-sm">
-                      <p className="text-gray-600 mb-2">
+                ),
+                (
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">Effortless Upkeep</h3>
+                    <div className="space-y-2">
+                      <p className="text-sm text-gray-600 mb-2">
                         Weekly, bi-weekly, or monthly plans to keep your home guest-ready for river days or trail outings.
                       </p>
                       <ul className="space-y-1 text-xs">
@@ -96,15 +57,10 @@ export default function Greenacres() {
                       </ul>
                     </div>
                   </ContentCard>
-                </CarouselItem>
-                <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
-                  data-active={isActive(2)}
-                >
-                  <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
-                      The Greenacres Deep Reset
-                    </h3>
+                ),
+                (
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">The Greenacres Deep Reset</h3>
                     <p className="text-sm text-gray-600 mb-2">
                       Ideal for seasonal deep cleans or post-event recovery. Includes targeted descaling and detailed baseboards.
                     </p>
@@ -113,15 +69,10 @@ export default function Greenacres() {
                       <li>• Baseboards, switches, and frames detailed</li>
                     </ul>
                   </ContentCard>
-                </CarouselItem>
-                <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
-                  data-active={isActive(3)}
-                >
-                  <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
-                      Checklist-Guided Move-Outs
-                    </h3>
+                ),
+                (
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">Checklist-Guided Move-Outs</h3>
                     <p className="text-sm text-gray-600 mb-2">
                       We follow landlord checklists for stress-free move-outs, focusing on "show well" details.
                     </p>
@@ -130,15 +81,10 @@ export default function Greenacres() {
                       <li>• Keep utilities on for light and hot water</li>
                     </ul>
                   </ContentCard>
-                </CarouselItem>
-                <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
-                  data-active={isActive(4)}
-                >
-                  <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
-                      STR Turnovers, On Schedule
-                    </h3>
+                ),
+                (
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">STR Turnovers, On Schedule</h3>
                     <p className="text-sm text-gray-600 mb-2">
                       We sync with Airbnb/VRBO calendars for smooth guest changeovers near the Spokane River.
                     </p>
@@ -147,16 +93,15 @@ export default function Greenacres() {
                       <li>• Photo notes for damage or left items</li>
                     </ul>
                   </ContentCard>
-                </CarouselItem>
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
+                ),
+              ]}
+            />
           </div>
         ),
       },
       {
         title: 'A Fresh, Healthy Home Without Lifting a Finger',
+        sectionClassName: "py-16 bg-surface",
         content: (
           <>
             <p>
@@ -174,6 +119,7 @@ export default function Greenacres() {
       },
       {
         title: 'Cleaning Packages Built for Greenacres Lifestyles',
+        sectionClassName: "py-16 bg-white",
         content: (
           <div className="grid md:grid-cols-2 gap-8">
             <ContentCard>
@@ -228,6 +174,7 @@ export default function Greenacres() {
       },
       {
         title: 'Why Greenacres Chooses Cleaners Ready 2 GO',
+        sectionClassName: "py-16 bg-surface",
         content: (
           <ul className="space-y-2">
             <li><strong>Local Presence</strong> — We reach Greenacres, Liberty Lake, and Veradale quickly.</li>
@@ -239,27 +186,49 @@ export default function Greenacres() {
         ),
       },
       {
-        title: 'Cleaning Challenges Unique to Greenacres',
+        title: 'Local Cleaning Challenges',
+        sectionClassName: "py-16 bg-white",
         content: (
-          <ul className="space-y-2">
-            <li><strong>Pine Pollen Surges</strong> — Quarterly pollen‑flush damp‑wipe to trap particulates.</li>
-            <li><strong>Wood & Pellet Heat Residue</strong> — Anti‑static cloths followed by microfiber rinses for mantels and beams.</li>
-            <li><strong>Hard‑Water Mineral Buildup</strong> — Mild descalers to restore clarity without harsh acids.</li>
-            <li><strong>Trail & River Residue</strong> — Extra entryway focus to keep grit at the threshold.</li>
+          <ul className="list-none space-y-2 text-sm md:text-base">
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
+              <span><strong>Pine Pollen Surges</strong> — Quarterly pollen‑flush damp‑wipe to trap particulates.</span>
+            </li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
+              <span><strong>Wood & Pellet Heat Residue</strong> — Anti‑static cloths followed by microfiber rinses for mantels and beams.</span>
+            </li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
+              <span><strong>Hard‑Water Mineral Buildup</strong> — Mild descalers to restore clarity without harsh acids.</span>
+            </li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
+              <span><strong>Trail & River Residue</strong> — Extra entryway focus to keep grit at the threshold.</span>
+            </li>
           </ul>
         ),
       },
       {
-        title: 'Proudly Serving Greenacres and Nearby Communities',
+        title: 'Neighborhoods We Serve',
+        sectionClassName: "py-16 bg-surface",
         content: (
-          <>
-            <p>Greenacres — Liberty Lake — Veradale — Opportunity — Trentwood — Ponderosa</p>
-            <p className="mt-2">ZIP codes: 99016 — 99019 — 99037 — 99206 — 99216</p>
-          </>
+          <ul className="grid md:grid-cols-2 gap-2 list-none text-sm md:text-base">
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Greenacres (Sprague/Appleway Corridor)</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Ponderosa</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Trentwood</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Opportunity</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Veradale</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Saltese Flats / Upriver</li>
+          </ul>
+        ),
+      },
+      {
+        title: 'Service Area (ZIP Codes)',
+        sectionClassName: "py-16 bg-white",
+        content: (
+          <p className="text-sm">ZIP codes: 99016, 99019, 99037, 99206, 99212, 99216, 99217</p>
         ),
       },
       {
         title: 'Satisfaction Promise',
+        sectionClassName: "py-16 bg-surface",
         content: (
           <>
             <p>
@@ -274,6 +243,7 @@ export default function Greenacres() {
       },
       {
         title: 'Greenacres Residents Share Their Experience',
+        sectionClassName: "py-16 bg-white",
         content: (
           <div className="grid md:grid-cols-3 gap-6">
             <ContentCard as="blockquote">“Booked a deep clean before a family reunion—our home felt airy and dust‑free.” — Amanda H., Greenacres</ContentCard>
@@ -284,6 +254,7 @@ export default function Greenacres() {
       },
       {
         title: 'Frequently Asked Questions',
+        sectionClassName: "py-16 bg-surface",
         content: (
           <ul className="list-disc pl-5 space-y-1">
             <li>Do I need to be home?</li>
@@ -300,51 +271,5 @@ export default function Greenacres() {
     ],
   };
 
-    return (
-      <>
-        <style>{`
-          [data-active="true"] {
-            transform: scale(1.08);
-            opacity: 1;
-            z-index: 10;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(197, 155, 75, 0.3);
-            border: 2px solid rgba(197, 155, 75, 0.4);
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(197, 155, 75, 0.02));
-            padding: 2rem 2.5rem;
-          }
-          [data-active="true"] .text-brand-gold {
-            font-weight: 800;
-            text-shadow: 0 1px 2px rgba(197, 155, 75, 0.3);
-          }
-          [data-active="true"] .text-gray-600 {
-            font-weight: 600;
-            color: #374151;
-          }
-          [data-active="false"] {
-            transform: scale(0.92);
-            opacity: 0.5;
-            z-index: 1;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            padding: 1.5rem 2rem;
-          }
-          [data-active="false"] .text-brand-gold {
-            font-weight: 600;
-          }
-          [data-active="false"] .text-gray-600 {
-            font-weight: 400;
-            color: #6b7280;
-          }
-  
-          @media (min-width: 768px) {
-            [data-active="true"] {
-              padding: 2.5rem 3rem;
-            }
-            [data-active="false"] {
-              padding: 2rem 2.5rem;
-            }
-          }
-        `}</style>
-        <LocationPageTemplate {...pageDetails} />
-      </>
-    );
+    return <LocationPageTemplate {...pageDetails} />;
 }

@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useMutation } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
+import { submitBooking } from "@/lib/api";
 import { useModalA11y } from "@/components/modal/useModalA11y";
 import DialogHeader from "@/components/modal/DialogHeader";
 
@@ -26,8 +26,7 @@ export default function BookingModal({ onClose, isOpen = false }: BookingModalPr
 
   const bookingMutation = useMutation({
     mutationFn: async (data: { serviceType: string; preferredDate: string; phone: string }) => {
-      const response = await apiRequest("POST", "/api/bookings", data);
-      return response.json();
+      return submitBooking(data);
     },
     onSuccess: () => {
       toast({
@@ -117,13 +116,9 @@ export default function BookingModal({ onClose, isOpen = false }: BookingModalPr
               className="focus:ring-accent focus:border-transparent w-full h-11"
             />
           </div>
-          <button
-            type="submit"
-            className="btn-primary w-full"
-            disabled={bookingMutation.isPending}
-          >
+          <Button type="submit" className="w-full" disabled={bookingMutation.isPending} variant="primary">
             {bookingMutation.isPending ? "Scheduling..." : "Schedule Cleaning"}
-          </button>
+          </Button>
         </form>
       </div>
     </div>

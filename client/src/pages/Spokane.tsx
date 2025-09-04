@@ -1,50 +1,43 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 import LocationPageTemplate from './LocationPageTemplate';
-import heroImage from "@assets/spokane-wa-house-cleaning-hero.webp";
-import hero480 from "@assets/spokane-wa-house-cleaning-hero-480.webp";
-import hero768 from "@assets/spokane-wa-house-cleaning-hero-768.webp";
-import hero1024 from "@assets/spokane-wa-house-cleaning-hero-1024.webp";
-import hero480Avif from "@assets/spokane-wa-house-cleaning-hero-480.avif";
-import hero768Avif from "@assets/spokane-wa-house-cleaning-hero-768.avif";
-import hero1024Avif from "@assets/spokane-wa-house-cleaning-hero-1024.avif";
+import heroImage from "@/assets/spokane-house-cleaning.webp";
+import hero480 from "@/assets/spokane-house-cleaning-480.webp";
+import hero768 from "@/assets/spokane-house-cleaning-768.webp";
+import hero1024 from "@/assets/spokane-house-cleaning-1024.webp";
+import hero480Avif from "@/assets/spokane-house-cleaning-480.avif";
+import hero768Avif from "@/assets/spokane-house-cleaning-768.avif";
+import hero1024Avif from "@/assets/spokane-house-cleaning-1024.avif";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import ContentCard from '@/components/ContentCard/ContentCard';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  type CarouselApi,
-} from '@/components/ui/carousel';
+import Icon from "@/components/ui/icon";
+import CarouselCompact from '@/components/Carousel/CarouselCompact';
 
 export default function Spokane() {
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
 
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    setCurrent(api.selectedScrollSnap());
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap());
-    });
-  }, [api]);
-
-  const isActive = useCallback(
-    (index: number) => {
-      return current === index;
-    },
-    [current]
-  );
-
-  const pageDetails = {
+  const pageDetails: {
+    locationName: string;
+    heroImage: string;
+    heroAlt: string;
+    heroImgSrcSet: string;
+    heroSources: { type: string; srcSet: string }[];
+    heroWidth: number;
+    heroHeight: number;
+    introText: string;
+    services: { title: string; description: string }[];
+    serviceCardIds: string[];
+    testimonial: { quote: string; name: string };
+    extraSections: {
+      title: string;
+      content: React.ReactNode;
+      sectionClassName?: string;
+      noContainer?: boolean;
+      hideTitle?: boolean;
+    }[];
+    ctaVariant: 'default' | 'gold';
+  } = {
     locationName: 'Spokane',
     heroImage: heroImage,
-    heroAlt: 'House cleaning services in Spokane, WA — Cleaners Ready 2Go',
+    heroAlt: 'House cleaning services in Spokane, WA—Cleaners Ready 2Go',
     heroImgSrcSet: `${hero480} 480w, ${hero768} 768w, ${hero1024} 1024w`,
     heroSources: [{ type: 'image/avif', srcSet: `${hero480Avif} 480w, ${hero768Avif} 768w, ${hero1024Avif} 1024w` }],
     heroWidth: 1392,
@@ -73,41 +66,26 @@ export default function Spokane() {
     extraSections: [
       {
         title: 'Spokane Services',
+        sectionClassName: 'py-8 bg-white',
+        noContainer: true,
+        hideTitle: true,
         content: (
           <div className="py-8">
-            <Carousel
-              opts={{
-                align: "center",
-                loop: true,
-              }}
-              setApi={setApi}
-              className="w-full max-w-6xl mx-auto"
-            >
-              <CarouselContent className="-ml-2 md:-ml-4">
-                <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
-                  data-active={isActive(0)}
-                >
-                  <ContentCard className="p-8 md:p-10">
-                    <h3 className="text-xl md:text-2xl font-bold mb-4 text-brand-gold">
-                      Cleaning Plans Built For Spokane Homes
-                    </h3>
-                    <p className="text-base text-gray-600 leading-relaxed">
+            <CarouselCompact
+              items={[
+                (
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-3 text-brand-gold">Cleaning Plans Built For Spokane Homes</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
                       Professional cleaning services designed for Spokane's unique climate and lifestyle. From pollen season to wildfire dust, we keep your home fresh year-round.
                     </p>
                   </ContentCard>
-                </CarouselItem>
-
-                <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
-                  data-active={isActive(1)}
-                >
-                  <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
-                      Ongoing Upkeep
-                    </h3>
-                    <div className="space-y-2 text-sm">
-                      <p className="text-gray-600 mb-2">
+                ),
+                (
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">Ongoing Upkeep</h3>
+                    <div className="space-y-2">
+                      <p className="text-sm text-gray-600 mb-2">
                         Choose weekly, bi-weekly, or monthly service to stay ahead of pollen spikes, wildfire dust, and surprise drop-ins.
                       </p>
                       <ul className="space-y-1 text-xs">
@@ -117,16 +95,10 @@ export default function Spokane() {
                       </ul>
                     </div>
                   </ContentCard>
-                </CarouselItem>
-
-                <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
-                  data-active={isActive(2)}
-                >
-                  <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
-                      The Spokane Reset Clean
-                    </h3>
+                ),
+                (
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">The Spokane Reset Clean</h3>
                     <p className="text-sm text-gray-600 mb-2">
                       Ideal for seasonal transitions or post-holiday clutter. We hand-wipe cabinet fronts, clear door tracks, wash interior glass, degrease the range hood, and spot-treat fixtures.
                     </p>
@@ -136,16 +108,10 @@ export default function Spokane() {
                       <li>• Interior glass and mirrors polished clear</li>
                     </ul>
                   </ContentCard>
-                </CarouselItem>
-
-                <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
-                  data-active={isActive(3)}
-                >
-                  <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
-                      Move-Out & Listing Turnovers
-                    </h3>
+                ),
+                (
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">Move-Out & Listing Turnovers</h3>
                     <p className="text-sm text-gray-600 mb-2">
                       Built around checklists used by Spokane landlords and Realtors. We zero in on "show well" details inside cabinets/drawers, oven/fridge by request, and dust-catching edges.
                     </p>
@@ -154,16 +120,10 @@ export default function Spokane() {
                       <li>• Keep power and water on for light and hot water</li>
                     </ul>
                   </ContentCard>
-                </CarouselItem>
-
-                <CarouselItem
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300"
-                  data-active={isActive(4)}
-                >
-                  <ContentCard className="p-6 md:p-8">
-                    <h3 className="text-lg font-semibold mb-3 text-brand-gold">
-                      Short-Term Rental Ready
-                    </h3>
+                ),
+                (
+                  <ContentCard className="p-5 md:p-6">
+                    <h3 className="text-lg font-bold mb-2 text-brand-gold">Short-Term Rental Ready</h3>
                     <p className="text-sm text-gray-600 mb-2">
                       Synced with Airbnb/VRBO calendars for smooth turnovers. We replace linens, restock essentials, and send timestamped photos so you have stay-by-stay documentation.
                     </p>
@@ -172,16 +132,15 @@ export default function Spokane() {
                       <li>• Notes and photos of damage or left items</li>
                     </ul>
                   </ContentCard>
-                </CarouselItem>
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
+                ),
+              ]}
+            />
           </div>
         ),
       },
       {
         title: 'Proudly Serving Spokane & Nearby Communities',
+        sectionClassName: 'py-16 bg-surface',
         content: (
           <>
             <p>
@@ -194,7 +153,109 @@ export default function Spokane() {
         ),
       },
       {
+        title: 'Local Cleaning Challenges',
+        sectionClassName: 'py-16 bg-white',
+        content: (
+          <ul className="list-none space-y-2 text-sm md:text-base">
+            <li className="flex items-start">
+              <Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
+              <span><strong>Wildfire Smoke & Ash</strong>—Extra HEPA vacuuming and microfiber wipe‑downs to capture fine particulates during late‑summer smoke events.</span>
+            </li>
+            <li className="flex items-start">
+              <Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
+              <span><strong>Pine Pollen Season</strong>—Targeted damp dusting of sills, vents, and high ledges to reduce yellow pollen film in spring.</span>
+            </li>
+            <li className="flex items-start">
+              <Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
+              <span><strong>Winter Slush & Grit</strong>—Entryway focus with mat care and hard‑floor detailing to contain sand and de‑icer residue.</span>
+            </li>
+            <li className="flex items-start">
+              <Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
+              <span><strong>Hard‑Water Spots</strong>—Gentle descaling on glass and fixtures common in older Spokane plumbing.</span>
+            </li>
+          </ul>
+        ),
+      },
+      {
+        title: 'Neighborhoods We Serve',
+        sectionClassName: 'py-16 bg-white',
+        content: (
+          <ul className="grid md:grid-cols-2 gap-2 list-none text-sm md:text-base">
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />South Hill & Perry District</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Browne’s Addition & Kendall Yards</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />North Spokane & Shadle Park</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Five Mile Prairie & Indian Trail</li>
+          </ul>
+        ),
+      },
+      {
+        title: 'Highlights',
+        sectionClassName: 'py-8 bg-white',
+        content: (
+          <ul className="list-none space-y-2 text-sm md:text-base">
+            <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />Instant online pricing</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />Color‑coded microfiber system</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />Photo‑verified results</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />Background‑checked team</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />EPA‑registered options available</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />Flexible arrival windows</li>
+          </ul>
+        ),
+      },
+      {
+        title: 'A Fresh, Healthy Home Without Lifting a Finger',
+        sectionClassName: 'py-16 bg-surface',
+        content: (
+          <>
+            <p className="mb-3">Weeknights and weekends are better spent around Riverfront Park, neighborhood eateries, and Gonzaga games—not chasing dust. Our uniformed technicians follow a proven checklist so your Spokane home feels fresh without the hassle.</p>
+            <ul className="list-disc list-inside space-y-1 text-sm">
+              <li>67‑point checklist for consistent results</li>
+              <li>Low‑odor, low‑VOC options; SDS available on request</li>
+            </ul>
+          </>
+        ),
+      },
+      {
+        title: 'Packages',
+        sectionClassName: 'py-16 bg-white',
+        content: (
+          <div className="grid md:grid-cols-2 gap-4">
+            <ContentCard>
+              <h4 className="font-semibold">Set‑It‑and‑Forget‑It Maintenance</h4>
+              <ul className="list-inside mt-2 text-sm space-y-1">
+                <li>Weekly</li>
+                <li>Bi‑weekly</li>
+                <li>Monthly</li>
+              </ul>
+            </ContentCard>
+            <ContentCard>
+              <h4 className="font-semibold">The Spokane Deep Reset</h4>
+              <ul className="list-inside mt-2 text-sm space-y-1">
+                <li>Degrease/descale focus</li>
+                <li>Baseboards and trim detailing</li>
+                <li>Interior glass and mirrors</li>
+              </ul>
+            </ContentCard>
+            <ContentCard>
+              <h4 className="font-semibold">Checklist‑Driven Turnovers</h4>
+              <ul className="list-inside mt-2 text-sm space-y-1">
+                <li>Book 48–72 hours ahead</li>
+                <li>Utilities on for full walkthrough</li>
+              </ul>
+            </ContentCard>
+            <ContentCard>
+              <h4 className="font-semibold">Guest‑Ready in Record Time</h4>
+              <ul className="list-inside mt-2 text-sm space-y-1">
+                <li>Inventory checks</li>
+                <li>Damage/photo notes</li>
+              </ul>
+            </ContentCard>
+          </div>
+        ),
+      },
+      {
         title: 'Our Simple Cleaning Process',
+        sectionClassName: 'py-16 bg-surface',
         content: (
           <>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -216,6 +277,7 @@ export default function Spokane() {
       },
       {
         title: 'Why your neighbors choose us for spokane house cleaning',
+        sectionClassName: 'py-16 bg-surface',
         content: (
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="local-expertise">
@@ -265,6 +327,7 @@ export default function Spokane() {
       },
       {
         title: 'What Spokane Residents Say',
+        sectionClassName: 'py-16 bg-white',
         content: (
           <>
             <ContentCard as="blockquote">
@@ -283,6 +346,7 @@ export default function Spokane() {
       },
       {
         title: 'FAQ',
+        sectionClassName: 'py-16 bg-surface',
         content: (
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="included">
@@ -306,6 +370,7 @@ export default function Spokane() {
       },
       {
         title: 'Business Hours',
+        sectionClassName: 'py-16 bg-white',
         content: (
           <>
             <p>Monday–Friday 8 am–6 pm | Saturday 9 am–2 pm</p>
@@ -313,53 +378,9 @@ export default function Spokane() {
         ),
       },
     ],
+    // Use neutral CTA without gold background
+    ctaVariant: 'default',
   };
 
-  return (
-    <>
-      <style>{`
-        [data-active="true"] {
-          transform: scale(1.08);
-          opacity: 1;
-          z-index: 10;
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(197, 155, 75, 0.3);
-          border: 2px solid rgba(197, 155, 75, 0.4);
-          background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(197, 155, 75, 0.02));
-          padding: 2rem 2.5rem;
-        }
-        [data-active="true"] .text-brand-gold {
-          font-weight: 800;
-          text-shadow: 0 1px 2px rgba(197, 155, 75, 0.3);
-        }
-        [data-active="true"] .text-gray-600 {
-          font-weight: 600;
-          color: #374151;
-        }
-        [data-active="false"] {
-          transform: scale(0.92);
-          opacity: 0.5;
-          z-index: 1;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-          padding: 1.5rem 2rem;
-        }
-        [data-active="false"] .text-brand-gold {
-          font-weight: 600;
-        }
-        [data-active="false"] .text-gray-600 {
-          font-weight: 400;
-          color: #6b7280;
-        }
-
-        @media (min-width: 768px) {
-          [data-active="true"] {
-            padding: 2.5rem 3rem;
-          }
-          [data-active="false"] {
-            padding: 2rem 2.5rem;
-          }
-        }
-      `}</style>
-      <LocationPageTemplate {...pageDetails} />
-    </>
-  );
+  return <LocationPageTemplate {...pageDetails} />;
 }

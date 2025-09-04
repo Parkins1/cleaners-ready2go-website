@@ -118,3 +118,90 @@ The `ContactForm` component, its type definitions, and Zod schema will reside in
 6.  Migrate client/src/pages/Home.tsx, client/src/pages/Residential.tsx, client/src/pages/DeepCleaning.tsx to use these new reusable components where applicable. For buttons specifically, as the Button standardization is done, ensure they use `shadcn/ui` buttons and `useModal` for opening modals.
 
 This design provides clear contracts and a path for creating modular, type-safe, and validated form components.
+
+## 4. TrustSignalsSection Component Design
+
+The `TrustSignalsSection` component standardizes the “Why Choose Us / Trust Signals” block used on service pages (initially extracted from `client/src/pages/DeepCleaning.tsx`). It ensures consistent styling using brand token utilities and accessible semantics.
+
+### Prop Interface
+
+```ts
+// client/src/components/TrustSignals/TrustSignalsSection.tsx
+export interface TrustSignalItem {
+  highlight?: string;
+  text: string;
+}
+
+interface TrustSignalsSectionProps {
+  title: React.ReactNode;
+  items: TrustSignalItem[];
+  columns?: 1 | 2; // default 2
+  className?: string;
+  containerClassName?: string;
+  id?: string; // optional custom heading id
+}
+```
+
+### Visual & Accessibility Spec
+
+- Structure: `<section aria-labelledby>` → `<h2 id>` + `<ul role="list">` with list items.
+- Layout: `grid md:grid-cols-2 gap-4` (configurable `columns`).
+- Styling: `border-l-4 border-brand-gold bg-brand-gold/5 rounded-sm pl-4 py-2` per item; highlights use `text-brand-gold`.
+- Tokens: Uses Tailwind token utilities (no inline rgba or raw CSS vars).
+
+### Usage Example
+
+```tsx
+<TrustSignalsSection
+  title="Why Spokane Homeowners Trust Cleaners Ready 2 GO"
+  items=[
+    { highlight: "Licensed, bonded & insured", text: "Peace of mind while we’re on your property." },
+    { highlight: "Green cleaning, healthier air", text: "Kid-safe, pet-safe solutions and HEPA filtration reduce indoor allergens by up to 75%." },
+  ]
+/>
+```
+
+### Notes
+
+- Optional future enhancement: per-item icons via the centralized `<Icon name="..." />` component (`@/components/ui/icon`).
+- Keep spacing aligned to section/page rhythm (`py-16` currently, consider `.section-spacing` in future refactors).
+
+## 5. CarouselCompact Component Design
+
+The `CarouselCompact` component standardizes the compact, focus-centered carousel used on location pages (Spokane, Spokane Valley, Liberty Lake, Greenacres). It wraps the existing Embla-based carousel primitives with consistent layout and scoped styles.
+
+### Prop Interface
+
+```ts
+// client/src/components/Carousel/CarouselCompact.tsx
+export interface CarouselCompactProps {
+  items: React.ReactNode[];
+  className?: string;
+  contentClassName?: string;
+  ariaLabel?: string;
+}
+```
+
+### Behavior & Layout
+
+- Centers the active slide and scales it up, with side slides scaled down and partially faded for focus hierarchy.
+- Desktop sizing: active ~48% width; side ~26% width; paddings `p-5 md:p-6` expected inside cards.
+- Typography: headings `text-lg font-bold`, body `text-sm`, lists `text-xs` in slide content for consistency.
+- Uses a small, component-scoped `<style>` block with `[data-compact-slide]` attributes to avoid global bleed.
+
+### Usage Example
+
+```tsx
+<CarouselCompact
+  items={[
+    <ContentCard className="p-5 md:p-6">...</ContentCard>,
+    <ContentCard className="p-5 md:p-6">...</ContentCard>,
+    // ...
+  ]}
+/>
+```
+
+### Notes
+
+- Always import via `@/components/Carousel/CarouselCompact`.
+- Avoid direct use of `@/components/ui/carousel` for this pattern to ensure consistent UX/styles.
