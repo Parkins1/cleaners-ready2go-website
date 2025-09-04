@@ -78,9 +78,9 @@ export default function Residential() {
             <Button onClick={() => open("quote")} aria-label="Get a Free Quote" variant="primary">
               Get a Free Quote
             </Button>
-            <Button asChild variant="outline" aria-label="Call us">
-              <a href={callHref} className="inline-flex items-center gap-2">
-                <Icon name="Phone" className="w-4 h-4" /> Call {brand.phone}
+            <Button asChild variant="outline" aria-label="See What's Included">
+              <a href="#includes" className="inline-flex items-center gap-2">
+                See What's Included
               </a>
             </Button>
           </>
@@ -128,7 +128,7 @@ export default function Residential() {
       />
 
       {/* Scope: Room by Room */}
-      <section className="py-16 bg-white">
+      <section id="includes" className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-8">Exactly What We Clean (Room‑by‑Room Scope)</h2>
           <div className="grid gap-6 md:grid-cols-2">
