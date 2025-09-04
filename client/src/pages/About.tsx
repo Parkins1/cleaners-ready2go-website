@@ -38,18 +38,15 @@ function About() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-slide-up">
             <div className="flex justify-center mb-10">
-              <picture>
-                <source srcSet="/logo.webp" type="image/webp" />
-                <img 
-                  src="/logo.png" 
-                  alt="Cleaners Ready 2Go Logo" 
-                  className="h-28 w-auto"
-                  width="512"
-                  height="256"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
+              <img 
+                src="/logo.png" 
+                alt="Cleaners Ready 2Go Logo" 
+                className="h-28 w-auto"
+                width="512"
+                height="256"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <h1 className="text-5xl lg:text-6xl font-bold text-text mb-8 leading-tight">About Cleaners Ready 2Go</h1>
             <p className="text-xl lg:text-2xl text-text">Professional cleaning services you can trust</p>

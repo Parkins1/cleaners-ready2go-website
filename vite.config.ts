@@ -2,7 +2,6 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwind from "@tailwindcss/vite";   // ✅ Tailwind v4 Vite plugin
 import path from "path";
-import { visualizer } from "rollup-plugin-visualizer";
 import { VitePWA } from "vite-plugin-pwa";
 
 const isDev = process.env.NODE_ENV !== "production";
@@ -26,13 +25,14 @@ const asyncCssPlugin = () => ({
   },
 });
 
-export default defineConfig({
+export default defineConfig(async () => {
+  return {
   cacheDir: path.resolve(import.meta.dirname, ".vite-cache"),
   plugins: [
     tailwind(),           // ✅ put before react for best DX
     react(),
     asyncCssPlugin(),
-    ...(process.env.ANALYZE ? [visualizer({ filename: "dist/stats.html", open: true })] : []),
+    // Visualizer removed to avoid config resolution failures in some envs
     ...(usePwa
       ? [
           VitePWA({
@@ -85,8 +85,10 @@ export default defineConfig({
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
       "@shared": path.resolve(import.meta.dirname, "shared"),
-      "@assets": path.resolve(import.meta.dirname, "attached_assets"),
-      "@components": path.resolve(import.meta.dirname, "components"),
+      "@assets": path.resolve(import.meta.dirname, "client", "src", "assets"),
+      "@components": path.resolve(import.meta.dirname, "client", "src", "components"),
+      "react-hook-form": path.resolve(import.meta.dirname, "node_modules", "react-hook-form", "dist", "index.esm.mjs"),
+      "embla-carousel-react": path.resolve(import.meta.dirname, "node_modules", "embla-carousel-react", "esm", "embla-carousel-react.esm.js"),
     },
   },
   root: path.resolve(import.meta.dirname, "client"),
@@ -101,4 +103,5 @@ export default defineConfig({
   css: {
     postcss: "./postcss.config.js",
   },
+  };
 });

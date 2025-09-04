@@ -108,7 +108,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="font-semibold text-text">Phone</div>
-                    <a href={`tel:${brand.phone}`} className="text-text hover:text-accent transition-colors">
+                    <a href={`tel:${brand.phone.replace(/[^0-9]/g, "")}`} className="text-text hover:text-accent transition-colors">
                       {brand.phone}
                     </a>
                   </div>
@@ -173,7 +173,7 @@ export default function Contact() {
             className="mt-16"
             actions={
               <>
-                <a href={`tel:${brand.phone}`} aria-label={`Call ${brand.phone}`} className="inline-flex">
+                <a href={`tel:${brand.phone.replace(/[^0-9]/g, "")}`} aria-label={`Call ${brand.phone}`} className="inline-flex">
                   <Button
                     variant="primary"
                     className="w-full sm:w-72"

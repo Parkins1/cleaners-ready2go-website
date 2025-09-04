@@ -30,10 +30,18 @@ export async function setupVite(app: Express, server: Server) {
     import("../vite.config.js"),
   ]);
 
-  viteLogger = createLogger();
+  // Some Vite type versions require a level argument
+  viteLogger = createLogger('info');
+
+  // Resolve Vite config: our config exports an async function (defineConfig(async () => ...))
+  // so we need to call it to obtain the actual object before passing to createServer.
+  const resolvedViteConfig =
+    typeof viteConfig === "function"
+      ? await viteConfig({ command: 'serve', mode: process.env.NODE_ENV || 'development' })
+      : viteConfig;
 
   const vite = await createViteServer({
-    ...viteConfig,
+    ...resolvedViteConfig,
     configFile: false,
     customLogger: {
       ...viteLogger,
@@ -51,6 +59,7 @@ export async function setupVite(app: Express, server: Server) {
   // Catch-all HTML handler for dev (Express 5 compatible)
   app.use(async (req, res, next) => {
     const url = req.originalUrl;
+    console.log("Request URL:", url);
 
     try {
       const clientTemplate = path.resolve(
@@ -61,11 +70,7 @@ export async function setupVite(app: Express, server: Server) {
       );
 
       // always reload the index.html file from disk incase it changes
-      let template = await fs.promises.readFile(clientTemplate, "utf-8");
-      template = template.replace(
-        `src="/src/main.tsx"`,
-        `src="/src/main.tsx?v=${nanoid()}"`
-      );
+      const template = await fs.promises.readFile(clientTemplate, "utf-8");
 
       const page = await vite.transformIndexHtml(url, template);
       res.status(200).set({ "Content-Type": "text/html" }).end(page);

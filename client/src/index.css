@@ -1,5 +1,7 @@
 @import "../../styles/tokens.css";  /* your :root OKLCH vars */
 @import "tailwindcss";              /* Tailwind v4 */
+@plugin "@tailwindcss/typography";  /* Restores .prose styles */
+@plugin "@tailwindcss/forms";       /* Better form controls */
 @import "tailwind-animate";         /* CSS-only animations */
 
 @layer base {

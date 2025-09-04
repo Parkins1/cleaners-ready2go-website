@@ -20,8 +20,8 @@
     "paths": {
       "@/*": ["client/src/*"],
       "@shared/*": ["shared/*"],
-      "@assets/*": ["attached_assets/*"],
-      "@components/*": ["components/*"]
+      "@assets/*": ["client/src/assets/*"],
+      "@components/*": ["client/src/components/*"]
     }
   },
   "include": [

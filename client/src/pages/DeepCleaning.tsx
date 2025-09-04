@@ -20,6 +20,13 @@ import CalloutBanner from "@/components/CalloutBanner/CalloutBanner";
 import { brand } from "@/config/brand";
 import { SEO } from "@/components/seo/SEO";
 import IconCard from "@/components/IconCard/IconCard";
+// Import icon images instead of passing alias strings so Vite resolves URLs
+import iconKitchen from "@/assets/icon_kitchen.webp";
+import iconBathroom from "@/assets/icon_bathroom.webp";
+import iconDustFreeFan from "@/assets/icon_dust_free_fan.webp";
+import iconVacuumedCarpet from "@/assets/icon_vacuumed_carpet.webp";
+import iconCabinetInteriors from "@/assets/icon_cabinet_interiors.webp";
+import iconBaseboards from "@/assets/icon_baseboards.webp";
 import JsonLd from "@/components/seo/JsonLd";
 import { makeLocalBusiness, makeWebPage, makeService, makeFAQPage, makeBreadcrumb } from "@/components/seo/schema";
 import { site } from "@/config/site";
@@ -122,7 +129,7 @@ export default function DeepCleaning() {
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">What's Included in Our Spokane Deep Cleaning</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             <IconCard
-              iconSrc="@assets/icon_kitchen.webp"
+              iconSrc={iconKitchen}
               title="Kitchen Revival"
               items={[
                 "Meticulously clean appliance interiors and exteriors including refrigerator, stove, and microwave",
@@ -134,7 +141,7 @@ export default function DeepCleaning() {
               ]}
             />
             <IconCard
-              iconSrc="@assets/icon_bathroom.webp"
+              iconSrc={iconBathroom}
               title="Bathroom Detox"
               items={[
                 "Sanitize toilets including hard-to-reach hinges",
@@ -147,7 +154,7 @@ export default function DeepCleaning() {
               ]}
             />
             <IconCard
-              iconSrc="@assets/icon_dust_free_fan.webp"
+              iconSrc={iconDustFreeFan}
               title="Whole-Home Detailing"
               items={[
                 "Remove dust, pollen, and cobwebs from ceiling fans, light fixtures, high corners, and all surfaces",
@@ -159,7 +166,7 @@ export default function DeepCleaning() {
               ]}
             />
             <IconCard
-              iconSrc="@assets/icon_vacuumed_carpet.webp"
+              iconSrc={iconVacuumedCarpet}
               title="Floor Refresh"
               items={[
                 "Hard floors vacuumed, mopped, and polished to remove residue and streaks",
@@ -170,7 +177,7 @@ export default function DeepCleaning() {
               ]}
             />
             <IconCard
-              iconSrc="@assets/icon_cabinet_interiors.webp"
+              iconSrc={iconCabinetInteriors}
               title="Cabinet & Storage Cleaning"
               items={[
                 "Remove built-up dust, crumbs, and debris from both interiors and exteriors",
@@ -182,7 +189,7 @@ export default function DeepCleaning() {
               ]}
             />
             <IconCard
-              iconSrc="@assets/icon_baseboards.webp"
+              iconSrc={iconBaseboards}
               title="All Surfaces and Detailed Areas"
               items={[
                 "Attention to baseboards, moldings, vents, registers, doorknobs, electrical plates, and high-traffic touchpoints",

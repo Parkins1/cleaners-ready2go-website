@@ -20,20 +20,9 @@ import { site } from "@/config/site";
 import TrustSignalsSection from "@/components/TrustSignals/TrustSignalsSection";
 import { brand } from "@/config/brand";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import iconKitchen from "@/assets/icon_kitchen.webp";
 
-// Icon imports (these will need to be added to the project)
-import livingRoomIcon from "@assets/icon_living_room.webp";
-import kitchenIcon from "@assets/icon_kitchen.webp";
-import bathroomIcon from "@assets/icon_bathroom.webp";
-import bedroomIcon from "@assets/icon_bedroom.webp";
-import hallwayStairsIcon from "@assets/icon_hallway_stairs.webp";
-import laundryRoomIcon from "@assets/icon_laundry_room.webp";
-import weeklyRefreshIcon from "@assets/icon_weekly_refresh.webp";
-import monthlyResetIcon from "@assets/icon_monthly_reset.webp";
-
-import ecoFriendlyIcon from "@assets/icon_eco_friendly.webp";
-import consistentTeamLeadIcon from "@assets/icon_consistent_team_lead.webp";
-import digitalChecklistIcon from "@assets/icon_digital_checklist.webp";
+// Icons: use centralized Lucide loader via IconCard.iconName
 
 export default function Residential() {
   const { open } = useModal();
@@ -145,7 +134,7 @@ export default function Residential() {
           <div className="grid gap-6 md:grid-cols-2">
             {/* Living Room / Family Spaces */}
             <IconCard
-              iconSrc={livingRoomIcon}
+              iconName="Home"
               title="Living Room / Family Spaces"
               items={[
                 "Wipe wood and hard surfaces until smudge‑free with a residue‑free cleaner.",
@@ -159,7 +148,7 @@ export default function Residential() {
 
             {/* Kitchen */}
             <IconCard
-              iconSrc={kitchenIcon}
+              iconName="Home"
               title="Kitchen"
               items={[
                 "Fridge exterior scrubbed clean—no streaks or fingerprints.",
@@ -174,7 +163,7 @@ export default function Residential() {
 
             {/* Bathrooms */}
             <IconCard
-              iconSrc={bathroomIcon}
+              iconName="Home"
               title="Bathrooms"
               items={[
                 "Toilets cleaned and disinfected; no stains or buildup.",
@@ -189,7 +178,7 @@ export default function Residential() {
 
             {/* Bedrooms */}
             <IconCard
-              iconSrc={bedroomIcon}
+              iconName="Home"
               title="Bedrooms"
               items={[
                 "Mirrors streak‑free.",
@@ -202,7 +191,7 @@ export default function Residential() {
 
             {/* Hallways & Stairs */}
             <IconCard
-              iconSrc={hallwayStairsIcon}
+              iconName="Home"
               title="Hallways & Stairs"
               items={[
                 "Handrails, switches, and plates cleaned (smudge‑free).",
@@ -213,7 +202,7 @@ export default function Residential() {
 
             {/* Laundry Room (if applicable) */}
             <IconCard
-              iconSrc={laundryRoomIcon}
+              iconName="Home"
               title="Laundry Room (if applicable)"
               items={[
                 "Washer/dryer exteriors wiped free of lint/residue.",
@@ -341,7 +330,7 @@ export default function Residential() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {/* Weekly Refresh */}
             <IconCard
-              iconSrc={weeklyRefreshIcon}
+              iconName="Clock"
               title="Weekly Refresh"
               items={[
                 "A full standard clean with high‑traffic areas prioritized.",
@@ -357,7 +346,7 @@ export default function Residential() {
 
             {/* Bi‑Weekly Balance */}
             <IconCard
-              iconSrc={monthlyResetIcon} // Placeholder until icon is available
+              iconName="Sparkles" // Placeholder icon
               title="Bi‑Weekly Balance"
               items={[
                 "Predictable upkeep: bathrooms shine, kitchen reset, floors and dust.",
@@ -373,7 +362,7 @@ export default function Residential() {
 
             {/* Monthly Reset */}
             <IconCard
-              iconSrc={monthlyResetIcon}
+              iconName="Sparkles"
               title="Monthly Reset"
               items={[
                 "Thorough dust and surface pass to catch what accumulates.",
@@ -389,7 +378,7 @@ export default function Residential() {
 
             {/* Seasonal Deep Clean */}
             <IconCard
-              iconSrc={monthlyResetIcon} // Placeholder until icon is available
+              iconName="Sparkles" // Placeholder icon
               title="Seasonal Deep Clean"
               items={[
                 "Hand‑wipe reachable baseboards/trim, detail blinds/vents/fixtures.",
@@ -472,7 +461,7 @@ export default function Residential() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {/* Outcome‑First Standards */}
             <IconCard
-              iconSrc={monthlyResetIcon} // Placeholder until icon is available
+              iconName="Sparkles" // Placeholder icon
               title="Outcome‑First Standards"
               items={[
                 "We train to a visible result: dust‑free, streak‑free, residue‑free. If it doesn't meet the outcome, we're not done."
@@ -481,7 +470,7 @@ export default function Residential() {
             
             {/* Chemistry That Protects Surfaces */}
             <IconCard
-              iconSrc={monthlyResetIcon} // Placeholder until icon is available
+              iconName="Sparkles" // Placeholder icon
               title="Chemistry That Protects Surfaces"
               items={[
                 "Granite, marble, quartz, stainless, oiled wood—we match products and processes to protect finishes long‑term."
@@ -490,7 +479,7 @@ export default function Residential() {
             
             {/* Allergy‑Aware Dust Control */}
             <IconCard
-              iconSrc={monthlyResetIcon} // Placeholder until icon is available
+              iconSrc={iconKitchen} // Placeholder until icon is available
               title="Allergy‑Aware Dust Control"
               items={[
                 "HEPA filtration + microfiber = less airborne dust, better capture, cleaner air feel in your home."
@@ -499,7 +488,7 @@ export default function Residential() {
             
             {/* Cross‑Contamination Controls */}
             <IconCard
-              iconSrc={monthlyResetIcon} // Placeholder until icon is available
+              iconSrc={iconKitchen} // Placeholder until icon is available
               title="Cross‑Contamination Controls"
               items={[
                 "Bathroom to kitchen? Never the same cloths. Color coding and tool sequencing keep clean zones clean."
@@ -508,7 +497,7 @@ export default function Residential() {
             
             {/* Predictable Time & Scope */}
             <IconCard
-              iconSrc={monthlyResetIcon} // Placeholder until icon is available
+              iconSrc={iconKitchen} // Placeholder until icon is available
               title="Predictable Time & Scope"
               items={[
                 "Digital checklists, realistic windows, and consistent teams reduce surprises and deliver repeatable quality."
@@ -517,7 +506,7 @@ export default function Residential() {
             
             {/* Friendly, Professional Teams */}
             <IconCard
-              iconSrc={monthlyResetIcon} // Placeholder until icon is available
+              iconSrc={iconKitchen} // Placeholder until icon is available
               title="Friendly, Professional Teams"
               items={[
                 "Background‑checked, uniformed, coached for hospitality as well as skill."
