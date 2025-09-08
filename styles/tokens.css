@@ -18,13 +18,13 @@
   --color-white: oklch(1.0 0.0 89.88);
   --color-teal: #0E8177;
 
-  /* Spacing scale */
+  /* Spacing scale (responsive via media queries below) */
   --spacing-xs: 0.25rem; /* 4px */
   --spacing-sm: 0.5rem;  /* 8px */
-  --spacing-md: 1rem;    /* 16px */
-  --spacing-lg: 1.5rem;  /* 24px */
-  --spacing-xl: 2rem;    /* 32px */
-  --spacing-section: 5rem; /* 80px */
+  --spacing-md: 1.25rem; /* 20px */
+  --spacing-lg: 2rem;    /* 32px */
+  --spacing-xl: 2.5rem;  /* 40px */
+  --spacing-section: 5.5rem; /* 88px */
 
   /* Radii */
   --radius-sm: 0.25rem;
@@ -52,6 +52,28 @@
   --border: 0.57 0.01 214.34;
   --input: 0.71 0.0 174.43;
   --ring: 0.76 0.12 89.8;
+}
+
+/* Responsive spacing tuning for breathing room */
+@media (min-width: 640px) {
+  :root {
+    --spacing-xl: 3rem;   /* 48px */
+    --spacing-section: 6rem; /* 96px */
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --spacing-lg: 2.25rem;  /* 36px */
+    --spacing-xl: 3.5rem;   /* 56px */
+    --spacing-section: 7rem; /* 112px */
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --spacing-section: 7.5rem; /* 120px */
+  }
 }
 
 /* Moved from :root — component class should not be nested inside :root */
