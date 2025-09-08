@@ -30,7 +30,7 @@ export default function ServiceCard({
       key={id}
       href={href}
       onClick={onClick}
-      className={`relative group block overflow-hidden rounded-xl border border-slate-300 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-transparent min-h-[240px] sm:min-h-[280px] ${className || ""}`}
+      className={`relative group block overflow-hidden rounded-xl border border-slate-300 hover:border-brand-gold shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-gold focus-visible:ring-offset-transparent min-h-[240px] sm:min-h-[280px] ${className || ""}`}
       aria-label={`${title} - Learn more`}
     >
       {/* Media */}
