@@ -1,4 +1,7 @@
 import React from "react";
+import { describe, it, expect, jest } from "@jest/globals";
+import * as matchers from "@testing-library/jest-dom/matchers";
+expect.extend(matchers);
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import ContactForm from "./ContactForm";
 import { ContactFormData } from "./schema";
