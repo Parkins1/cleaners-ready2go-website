@@ -62,7 +62,7 @@ export default function LibertyLake() {
     extraSections: [
       {
         title: "Liberty Lake Services",
-        sectionClassName: "py-8 bg-white",
+        sectionClassName: "py-section bg-white",
         noContainer: true,
         hideTitle: true,
         content: (
@@ -137,7 +137,7 @@ export default function LibertyLake() {
       },
       {
         title: "Liberty Lake's Premier House Cleaning Service",
-        sectionClassName: "py-16 bg-surface",
+        sectionClassName: "py-section bg-surface",
         content: (
           <>
             <p className="mb-4">
@@ -171,7 +171,7 @@ export default function LibertyLake() {
       },
       {
         title: "Why Liberty Lake Homeowners Trust Us",
-        sectionClassName: "py-16 bg-white",
+        sectionClassName: "py-section bg-white",
         content: (
           <>
             <p className="mb-3">
@@ -189,7 +189,7 @@ export default function LibertyLake() {
       },
       {
         title: "Move-In / Move-Out—Transition Made Simple",
-        sectionClassName: "py-16 bg-surface",
+        sectionClassName: "py-section bg-surface",
         content: (
           <>
             <p className="mb-3">
@@ -206,7 +206,7 @@ export default function LibertyLake() {
       },
       {
         title: "Simple Booking—Professional Results",
-        sectionClassName: "py-16 bg-white",
+        sectionClassName: "py-section bg-white",
         content: (
           <>
             <ol className="list-decimal list-inside space-y-2">
@@ -231,7 +231,7 @@ export default function LibertyLake() {
       },
       {
         title: "Service Area & Local Notes",
-        sectionClassName: "py-16 bg-surface",
+        sectionClassName: "py-section bg-surface",
         content: (
           <>
             <p className="mb-2">
@@ -247,7 +247,7 @@ export default function LibertyLake() {
       },
       {
         title: "Local Cleaning Challenges",
-        sectionClassName: "py-16 bg-surface",
+        sectionClassName: "py-section bg-surface",
         content: (
           <ul className="list-none space-y-2 text-sm md:text-base">
             <li className="flex items-start"><Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
@@ -267,9 +267,9 @@ export default function LibertyLake() {
       },
       {
         title: "Neighborhoods We Serve",
-        sectionClassName: "py-16 bg-white",
+        sectionClassName: "py-section bg-white",
         content: (
-          <ul className="grid md:grid-cols-2 gap-2 list-none text-sm md:text-base">
+          <ul className="grid md:grid-cols-2 gap-md list-none text-sm md:text-base">
             <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />River District</li>
             <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Rocky Hill</li>
             <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Legacy Ridge</li>
@@ -293,7 +293,7 @@ export default function LibertyLake() {
       },
       {
         title: "A Fresh, Healthy Home Without Lifting a Finger",
-        sectionClassName: "py-16 bg-surface",
+        sectionClassName: "py-section bg-surface",
         content: (
           <>
             <p>
@@ -311,9 +311,9 @@ export default function LibertyLake() {
       },
       {
         title: "Cleaning Packages Built for Liberty Lake Lifestyles",
-        sectionClassName: "py-16 bg-white",
+        sectionClassName: "py-section bg-white",
         content: (
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-lg">
             <ContentCard>
               <h3 className="text-xl font-bold text-text mb-2">Set‑It‑and‑Forget‑It Maintenance</h3>
               <p>
@@ -366,7 +366,7 @@ export default function LibertyLake() {
       },
       {
         title: 'Why Liberty Lake Chooses Cleaners Ready 2 GO',
-        sectionClassName: 'py-16 bg-surface',
+        sectionClassName: 'py-section bg-surface',
         content: (
           <ul className="space-y-2">
             <li><strong>Local Presence</strong> — We reach Liberty Lake, Greenacres, and Veradale quickly.</li>
@@ -379,14 +379,14 @@ export default function LibertyLake() {
       },
       {
         title: 'Service Area (ZIP Codes)',
-        sectionClassName: 'py-16 bg-white',
+        sectionClassName: 'py-section bg-white',
         content: (
           <p className="text-sm">ZIP codes: 99019—99016—99037—99206</p>
         ),
       },
       {
         title: 'Satisfaction Promise',
-        sectionClassName: 'py-16 bg-surface',
+        sectionClassName: 'py-section bg-surface',
         content: (
           <>
             <p>
@@ -401,9 +401,9 @@ export default function LibertyLake() {
       },
       {
         title: 'Liberty Lake Residents Share Their Experience',
-        sectionClassName: 'py-16 bg-white',
+        sectionClassName: 'py-section bg-white',
         content: (
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-lg">
             <ContentCard as="blockquote">“We've been using Cleaners Ready 2 GO for over two years—reliable, thorough, and respectful of our home.” — Jennifer & Mark Thompson, Liberty Lake</ContentCard>
             <ContentCard as="blockquote">“Our Liberty Lake short‑term rental keeps five‑star cleanliness thanks to Ready 2 GO.” — Chris R., Liberty Lake</ContentCard>
             <ContentCard as="blockquote">“Move‑out clean was thorough—the property manager commented on how great it looked.” — Jordan M., Veradale</ContentCard>
@@ -412,7 +412,7 @@ export default function LibertyLake() {
       },
       {
         title: 'Frequently Asked Questions',
-        sectionClassName: 'py-16 bg-surface',
+        sectionClassName: 'py-section bg-surface',
         content: (
           <ul className="list-disc pl-5 space-y-1">
             <li>Do I need to be home?</li>

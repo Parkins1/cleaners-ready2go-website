@@ -30,7 +30,7 @@ export default function Greenacres() {
     extraSections: [
       {
         title: 'Greenacres Services',
-        sectionClassName: "py-8 bg-white",
+        sectionClassName: "py-section bg-white",
         content: (
           <div className="py-8">
             <CarouselCompact
@@ -101,7 +101,7 @@ export default function Greenacres() {
       },
       {
         title: 'A Fresh, Healthy Home Without Lifting a Finger',
-        sectionClassName: "py-16 bg-surface",
+        sectionClassName: "py-section bg-surface",
         content: (
           <>
             <p>
@@ -119,9 +119,9 @@ export default function Greenacres() {
       },
       {
         title: 'Cleaning Packages Built for Greenacres Lifestyles',
-        sectionClassName: "py-16 bg-white",
+        sectionClassName: "py-section bg-white",
         content: (
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-lg">
             <ContentCard>
               <h3 className="text-xl font-bold text-text mb-2">Set‑It‑and‑Forget‑It Maintenance</h3>
               <p>
@@ -174,7 +174,7 @@ export default function Greenacres() {
       },
       {
         title: 'Why Greenacres Chooses Cleaners Ready 2 GO',
-        sectionClassName: "py-16 bg-surface",
+        sectionClassName: "py-section bg-surface",
         content: (
           <ul className="space-y-2">
             <li><strong>Local Presence</strong> — We reach Greenacres, Liberty Lake, and Veradale quickly.</li>
@@ -187,7 +187,7 @@ export default function Greenacres() {
       },
       {
         title: 'Local Cleaning Challenges',
-        sectionClassName: "py-16 bg-white",
+        sectionClassName: "py-section bg-white",
         content: (
           <ul className="list-none space-y-2 text-sm md:text-base">
             <li className="flex items-start"><Icon name="CheckCircle" className="w-5 h-5 mr-2 mt-0.5 text-brand-gold" />
@@ -207,9 +207,9 @@ export default function Greenacres() {
       },
       {
         title: 'Neighborhoods We Serve',
-        sectionClassName: "py-16 bg-surface",
+        sectionClassName: "py-section bg-surface",
         content: (
-          <ul className="grid md:grid-cols-2 gap-2 list-none text-sm md:text-base">
+          <ul className="grid md:grid-cols-2 gap-md list-none text-sm md:text-base">
             <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Greenacres (Sprague/Appleway Corridor)</li>
             <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Ponderosa</li>
             <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Trentwood</li>
@@ -221,14 +221,14 @@ export default function Greenacres() {
       },
       {
         title: 'Service Area (ZIP Codes)',
-        sectionClassName: "py-16 bg-white",
+        sectionClassName: "py-section bg-white",
         content: (
           <p className="text-sm">ZIP codes: 99016, 99019, 99037, 99206, 99212, 99216, 99217</p>
         ),
       },
       {
         title: 'Satisfaction Promise',
-        sectionClassName: "py-16 bg-surface",
+        sectionClassName: "py-section bg-surface",
         content: (
           <>
             <p>
@@ -243,9 +243,9 @@ export default function Greenacres() {
       },
       {
         title: 'Greenacres Residents Share Their Experience',
-        sectionClassName: "py-16 bg-white",
+        sectionClassName: "py-section bg-white",
         content: (
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-lg">
             <ContentCard as="blockquote">“Booked a deep clean before a family reunion—our home felt airy and dust‑free.” — Amanda H., Greenacres</ContentCard>
             <ContentCard as="blockquote">“Our Liberty Lake short‑term rental keeps five‑star cleanliness thanks to Ready 2 GO.” — Chris R., Liberty Lake</ContentCard>
             <ContentCard as="blockquote">“Move‑out clean was thorough—the property manager commented on how great it looked.” — Jordan M., Veradale</ContentCard>
@@ -254,7 +254,7 @@ export default function Greenacres() {
       },
       {
         title: 'Frequently Asked Questions',
-        sectionClassName: "py-16 bg-surface",
+        sectionClassName: "py-section bg-surface",
         content: (
           <ul className="list-disc pl-5 space-y-1">
             <li>Do I need to be home?</li>

@@ -1,14 +1,21 @@
 import { OptimizedImage } from "@/components/ui/optimized-image";
+import logo64avif from "@/assets/icon_logo-64.avif";
+import logo128avif from "@/assets/icon_logo-128.avif";
+import logo256avif from "@/assets/icon_logo-256.avif";
+import logo64webp from "@/assets/icon_logo-64.webp";
+import logo128webp from "@/assets/icon_logo-128.webp";
+import logo256webp from "@/assets/icon_logo-256.webp";
+
 function Logo() {
   return (
     <div className="flex items-center">
       <OptimizedImage
-        src="/logo-128.webp"
-        imgSrcSet="/logo-64.webp 64w, /logo-128.webp 128w, /logo-256.webp 256w"
+        src={logo128webp}
+        imgSrcSet={`${logo64webp} 64w, ${logo128webp} 128w, ${logo256webp} 256w`}
         sources={[
           {
             type: "image/avif",
-            srcSet: "/logo-64.avif 64w, /logo-128.avif 128w, /logo-256.avif 256w",
+            srcSet: `${logo64avif} 64w, ${logo128avif} 128w, ${logo256avif} 256w`,
           },
         ]}
         sizes="(max-width: 640px) 64px, (max-width: 768px) 128px, 96px"

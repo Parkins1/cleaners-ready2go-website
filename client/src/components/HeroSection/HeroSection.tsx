@@ -82,7 +82,7 @@ export default function HeroSection({
     // CSS aspect-ratio variant: reserves vertical space before image loads (mobile 4/5, md+ 16/9)
     return (
       <section className={cn('hero relative overflow-hidden', className)} aria-label="Hero Section">
-        <div className="hero-media relative overflow-hidden w-full aspect-[4/5] md:aspect-video">
+        <div className="hero-media relative overflow-hidden w-full aspect-[1/1] md:aspect-[16/9]">
           <OptimizedImage
             src={image}
             alt={imageAlt || ""}

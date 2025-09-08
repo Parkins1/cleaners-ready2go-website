@@ -111,7 +111,7 @@ export default function LocationPageTemplate({
       />
 
       {/* Intro Section */}
-      <section className="py-16 bg-white">
+      <section className="py-section bg-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-text mb-6">{`Welcome to Cleaners Ready 2Go ${locationName}`}</h2>
           <p className="text-lg text-text leading-relaxed">{introText}</p>
@@ -125,7 +125,7 @@ export default function LocationPageTemplate({
       <ProcessSection />
 
       {/* Image Placeholder Section */}
-      <section className="py-16 bg-white">
+      <section className="py-section bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="bg-gray-200 h-96 rounded-xl flex items-center justify-center">
             <p className="text-gray-500">Image / Map Placeholder</p>
@@ -134,7 +134,7 @@ export default function LocationPageTemplate({
       </section>
 
       {/* Testimonial Section */}
-      <section className="py-16 bg-surface">
+      <section className="py-section bg-surface">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-text mb-6">What Our Clients Say</h2>
           <blockquote className="text-xl text-text italic mb-4">{`"${testimonial.quote}"`}</blockquote>
@@ -144,7 +144,7 @@ export default function LocationPageTemplate({
 
       {/* Extra Sections */}
       {extraSections && extraSections.map((section, idx) => {
-        const secClass = section.sectionClassName ?? 'py-16 bg-white';
+        const secClass = section.sectionClassName ?? 'py-section bg-white';
         return (
           <section key={idx} className={secClass}>
             <div className="max-w-4xl mx-auto px-6">

@@ -11,8 +11,51 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/
 import ContentCard from '@/components/ContentCard/ContentCard';
 import Icon from "@/components/ui/icon";
 import CarouselCompact from '@/components/Carousel/CarouselCompact';
+import { Card, CardContent } from '@/components/ui/card';
 
 export default function Spokane() {
+
+  const processSteps = [
+    {
+      icon: 'CircleDashed',
+      title: "1) Book & Scope",
+      body: "Tell us about your home, frequency, and priorities. We confirm scope, timing, and a clear price—no ambiguity.",
+    },
+    {
+      icon: 'CircleDotDashed',
+      title: "2) Arrival & Setup",
+      body: "You get an ETA window and Lead Tech name. We align on focus zones, protect floors, and stage supplies.",
+    },
+    {
+      icon: 'CircleDot',
+      title: "3) Clean & Quality Control",
+      body: "We clean to your digital checklist with color‑coded microfiber and HEPA. Lead Tech signs off to our standards.",
+    },
+    {
+      icon: 'CircleCheck',
+      title: "4) Feedback & Optimization",
+      body: "You’ll get a summary. Share preferences—we lock them in so the next visit is even better.",
+    },
+  ];
+
+  const testimonials = [
+    {
+      quote: 'Cleaners Ready 2Go is the best cleaning service in Spokane! They are always professional and do an amazing job.',
+      name: 'John D.',
+    },
+    {
+      quote: 'After trying three other companies, Cleaners Ready 2Go is the best. They’re detail‑oriented, friendly, and always on time.',
+      name: 'Amanda P., Spokane Valley',
+    },
+    {
+      quote: 'We hired them for a deep clean before putting our South Hill home on the market. The buyers commented on how fresh it felt, and we sold within a week.',
+      name: 'Daniel M.',
+    },
+    {
+      quote: 'I love their green cleaning option. My allergies have improved and the house smells amazing without harsh chemicals.',
+      name: 'Lisa K., Liberty Lake',
+    },
+  ];
 
   const pageDetails: {
     locationName: string;
@@ -66,7 +109,7 @@ export default function Spokane() {
     extraSections: [
       {
         title: 'Spokane Services',
-        sectionClassName: 'py-8 bg-white',
+        sectionClassName: 'py-section bg-white',
         noContainer: true,
         hideTitle: true,
         content: (
@@ -139,8 +182,47 @@ export default function Spokane() {
         ),
       },
       {
+        title: 'Our Four-Step System (Built for Consistency)',
+        sectionClassName: 'py-section bg-process-radial',
+        content: (
+          <div className="grid gap-lg md:grid-cols-2 lg:grid-cols-4" style={{'--spacing-lg': '1.5rem'} as React.CSSProperties}>
+            {processSteps.map((step, i) => (
+              <Card key={i} className="h-full">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <Icon name={step.icon as any} className="w-8 h-8 mr-4 text-brand-gold" />
+                    <h3 className="text-lg font-semibold text-text font-outfit">{step.title}</h3>
+                  </div>
+                  <p className="text-sm text-text/90">{step.body}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        ),
+      },
+      {
+        title: 'What Your Spokane Neighbors Are Saying',
+        sectionClassName: 'py-section bg-white',
+        content: (
+          <div className="grid gap-lg md:grid-cols-2 lg:grid-cols-3">
+            {testimonials.map((testimonial, i) => (
+              <Card key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-brand-gray-light'}>
+                <CardContent className="p-6">
+                  <p className="text-sm text-text/90 mb-4">
+                    <span className="text-brand-gold font-bold text-xl">“</span>
+                    {testimonial.quote}
+                    <span className="text-brand-gold font-bold text-xl">”</span>
+                  </p>
+                  <p className="text-sm font-semibold text-text text-right">- {testimonial.name}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        ),
+      },
+      {
         title: 'Proudly Serving Spokane & Nearby Communities',
-        sectionClassName: 'py-16 bg-surface',
+        sectionClassName: 'py-section bg-surface',
         content: (
           <>
             <p>
@@ -154,7 +236,7 @@ export default function Spokane() {
       },
       {
         title: 'Local Cleaning Challenges',
-        sectionClassName: 'py-16 bg-white',
+        sectionClassName: 'py-section bg-white',
         content: (
           <ul className="list-none space-y-2 text-sm md:text-base">
             <li className="flex items-start">
@@ -178,9 +260,9 @@ export default function Spokane() {
       },
       {
         title: 'Neighborhoods We Serve',
-        sectionClassName: 'py-16 bg-white',
+        sectionClassName: 'py-section bg-white',
         content: (
-          <ul className="grid md:grid-cols-2 gap-2 list-none text-sm md:text-base">
+          <ul className="grid md:grid-cols-2 gap-md list-none text-sm md:text-base">
             <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />South Hill & Perry District</li>
             <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />Browne’s Addition & Kendall Yards</li>
             <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 mr-2 mt-1 text-brand-gold" />North Spokane & Shadle Park</li>
@@ -190,13 +272,13 @@ export default function Spokane() {
       },
       {
         title: 'Highlights',
-        sectionClassName: 'py-8 bg-white',
+        sectionClassName: 'py-section bg-white',
         content: (
           <ul className="list-none space-y-2 text-sm md:text-base">
             <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />Instant online pricing</li>
             <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />Color‑coded microfiber system</li>
             <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />Photo‑verified results</li>
-            <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />Background‑checked team</li>
+            <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.s mr-2 h-4 w-4 text-brand-gold" />Background‑checked team</li>
             <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />EPA‑registered options available</li>
             <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold" />Flexible arrival windows</li>
           </ul>
@@ -204,7 +286,7 @@ export default function Spokane() {
       },
       {
         title: 'A Fresh, Healthy Home Without Lifting a Finger',
-        sectionClassName: 'py-16 bg-surface',
+        sectionClassName: 'py-section bg-surface',
         content: (
           <>
             <p className="mb-3">Weeknights and weekends are better spent around Riverfront Park, neighborhood eateries, and Gonzaga games—not chasing dust. Our uniformed technicians follow a proven checklist so your Spokane home feels fresh without the hassle.</p>
@@ -217,9 +299,9 @@ export default function Spokane() {
       },
       {
         title: 'Packages',
-        sectionClassName: 'py-16 bg-white',
+        sectionClassName: 'py-section bg-white',
         content: (
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-md">
             <ContentCard>
               <h4 className="font-semibold">Set‑It‑and‑Forget‑It Maintenance</h4>
               <ul className="list-inside mt-2 text-sm space-y-1">
@@ -254,30 +336,8 @@ export default function Spokane() {
         ),
       },
       {
-        title: 'Our Simple Cleaning Process',
-        sectionClassName: 'py-16 bg-surface',
-        content: (
-          <>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              <ContentCard>
-                <h3 className="text-xl font-semibold mb-2">1) Request Your Free Quote</h3>
-                <p className="text-text">Contact us for a free quote – we’ll ask about your home’s size, cleaning frequency, and any special requests.</p>
-              </ContentCard>
-              <ContentCard>
-                <h3 className="text-xl font-semibold mb-2">2) Choose Your Schedule</h3>
-                <p className="text-text">Select a convenient day and time – we offer flexible scheduling including weekdays, weekends, mornings or afternoons.</p>
-              </ContentCard>
-              <ContentCard>
-                <h3 className="text-xl font-semibold mb-2">3) Sit Back and Relax</h3>
-                <p className="text-text">Relax while our team arrives on time, cleans with precision, and leaves your home sparkling.</p>
-              </ContentCard>
-            </div>
-          </>
-        ),
-      },
-      {
         title: 'Why your neighbors choose us for spokane house cleaning',
-        sectionClassName: 'py-16 bg-surface',
+        sectionClassName: 'py-section bg-surface',
         content: (
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="local-expertise">
@@ -326,27 +386,8 @@ export default function Spokane() {
         ),
       },
       {
-        title: 'What Spokane Residents Say',
-        sectionClassName: 'py-16 bg-white',
-        content: (
-          <>
-            <ContentCard as="blockquote">
-              “After trying three other companies, Cleaners Ready 2Go is the best. They’re detail‑oriented, friendly, and always on time.” – Amanda
-              P., Spokane Valley
-            </ContentCard>
-            <ContentCard as="blockquote">
-              “We hired them for a deep clean before putting our South Hill home on the market. The buyers commented on how fresh it felt, and we sold within a week.” –
-              Daniel M.
-            </ContentCard>
-            <ContentCard as="blockquote">
-              “I love their green cleaning option. My allergies have improved and the house smells amazing without harsh chemicals.” – Lisa K., Liberty Lake
-            </ContentCard>
-          </>
-        ),
-      },
-      {
         title: 'FAQ',
-        sectionClassName: 'py-16 bg-surface',
+        sectionClassName: 'py-section bg-surface',
         content: (
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="included">
@@ -370,14 +411,14 @@ export default function Spokane() {
       },
       {
         title: 'Business Hours',
-        sectionClassName: 'py-16 bg-white',
+        sectionClassName: 'py-section bg-white',
         content: (
           <>
             <p>Monday–Friday 8 am–6 pm | Saturday 9 am–2 pm</p>
           </>
         ),
       },
-    ],
+    ].filter(section => section.title !== 'Our Simple Cleaning Process' && section.title !== 'What Spokane Residents Say'),
     // Use neutral CTA without gold background
     ctaVariant: 'default',
   };

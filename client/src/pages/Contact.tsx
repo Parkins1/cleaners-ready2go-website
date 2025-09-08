@@ -73,14 +73,14 @@ export default function Contact() {
         ]}
       />
       
-      <section className="py-16 bg-white">
+      <section className="py-section bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-xl">
             <h1 className="text-4xl font-bold text-text mb-6">Contact Us</h1>
             <p className="text-xl text-text font-medium">Get in touch for a free quote or to schedule your cleaning service</p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-lg">
             {/* Contact Form */}
             <div className="bg-surface p-8 rounded-xl">
               <h2 className="text-2xl font-bold text-text mb-6">Send Us a Message</h2>
@@ -170,7 +170,7 @@ export default function Contact() {
             title="Need Immediate Service?"
             body="Call us now for same-day cleaning or emergency service"
             variant="gold"
-            className="mt-16"
+            className="mt-xl"
             actions={
               <>
                 <a href={`tel:${brand.phone.replace(/[^0-9]/g, "")}`} aria-label={`Call ${brand.phone}`} className="inline-flex">

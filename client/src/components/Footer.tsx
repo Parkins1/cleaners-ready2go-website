@@ -103,7 +103,11 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 pt-8 text-center">
           <p className="text-text">
-            © 2025 Cleaners Ready 2Go. All rights reserved. | Professional cleaning services in Washington State.
+            © 2025 Cleaners Ready 2Go. All rights reserved. | Professional cleaning services in Washington State. |
+            {" "}
+            <a href="/privacy" className="footer-link" aria-label="Privacy Policy">
+              Privacy Policy
+            </a>
           </p>
         </div>
       </div>

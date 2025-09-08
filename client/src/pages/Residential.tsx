@@ -1,6 +1,6 @@
 // llm:cta-migrated
 import Icon from "@/components/ui/icon";
-import OptimizedImage from "@/components/ui/optimized-image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import residentialCardImg from "@/assets/residential-cleaning-card.webp";
 import res480 from "@/assets/residential-cleaning-card-480.webp";
 import res768 from "@/assets/residential-cleaning-card-768.webp";
@@ -95,7 +95,7 @@ export default function Residential() {
       {/* Quick highlights under hero */}
       <section className="py-10 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ul className="grid gap-3 text-sm text-text md:grid-cols-3">
+          <ul className="grid gap-md text-sm text-text md:grid-cols-3">
             <li className="border-l-4 border-brand-gold bg-brand-gold/5 rounded-sm pl-4 py-2 flex items-start gap-2">
               <Icon name="Sparkles" className="w-4 h-4 mt-1 text-brand-gold flex-shrink-0" />
               <span>Licensed & insured • 100% Satisfaction Promise</span>
@@ -128,10 +128,10 @@ export default function Residential() {
       />
 
       {/* Scope: Room by Room */}
-      <section id="includes" className="py-16 bg-white">
+      <section id="includes" className="py-section bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-8">Exactly What We Clean (Room‑by‑Room Scope)</h2>
-          <div className="grid gap-6 md:grid-cols-2">
+          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-xl">Exactly What We Clean (Room‑by‑Room Scope)</h2>
+          <div className="grid gap-lg md:grid-cols-2">
             {/* Living Room / Family Spaces */}
             <IconCard
               iconName="Home"
@@ -235,10 +235,10 @@ export default function Residential() {
       </section>
 
       {/* Our Four‑Step System */}
-      <section className="py-16 bg-process-radial">
+      <section className="py-section bg-process-radial">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-8">Our Four‑Step System (Built for Consistency)</h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-xl">Our Four‑Step System (Built for Consistency)</h2>
+          <div className="grid gap-lg md:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 title: "1) Book & Scope",
@@ -267,10 +267,10 @@ export default function Residential() {
       </section>
 
       {/* Why We’re Trusted */}
-      <section className="py-16 bg-white">
+      <section className="py-section bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-8">Why We’re Trusted: Expertise You Can See</h2>
-          <div className="grid gap-6 md:grid-cols-2">
+          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-xl">Why We’re Trusted: Expertise You Can See</h2>
+          <div className="grid gap-lg md:grid-cols-2">
             <ContentCard>
               <h3 className="text-xl font-semibold mb-3">Standardized Training (No Guesswork)</h3>
               <ul className="space-y-2 text-sm text-text">
@@ -324,10 +324,10 @@ export default function Residential() {
       </section>
 
       {/* Packages */}
-      <section className="py-16 bg-white">
+      <section className="py-section bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-8">Packages for <span className="text-brand-gold">Your Home</span></h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-xl">Packages for <span className="text-brand-gold">Your Home</span></h2>
+          <div className="grid gap-lg md:grid-cols-2 lg:grid-cols-4">
             {/* Weekly Refresh */}
             <IconCard
               iconName="Clock"
@@ -399,10 +399,10 @@ export default function Residential() {
       </section>
 
       {/* Add‑Ons */}
-      <section className="py-16 bg-white">
+      <section className="py-section bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6">Add‑Ons & Upgrades (Customize Your Clean)</h2>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-sm text-text">
+          <div className="grid gap-md md:grid-cols-2 lg:grid-cols-3 text-sm text-text">
             {/* Inside oven or refrigerator */}
             <div className="flex items-center gap-3">
               <Icon name="Sparkles" className="w-5 h-5 md:w-6 md:h-6 text-brand-gold flex-shrink-0 mt-1" aria-hidden="true" />
@@ -455,10 +455,10 @@ export default function Residential() {
       </section>
 
       {/* Difference grid */}
-      <section className="py-16 bg-white">
+      <section className="py-section bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-8">The Ready2Go Difference</h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-xl">The Ready2Go Difference</h2>
+          <div className="grid gap-lg md:grid-cols-2 lg:grid-cols-3">
             {/* Outcome‑First Standards */}
             <IconCard
               iconName="Sparkles" // Placeholder icon
@@ -517,7 +517,7 @@ export default function Residential() {
       </section>
 
       {/* Pricing & Quotes */}
-      <section className="py-16 bg-white">
+      <section className="py-section bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-4">Pricing & Quotes (Transparent by Design)</h2>
           <p className="text-text/90 mb-6">
@@ -530,7 +530,7 @@ export default function Residential() {
       </section>
 
       {/* Satisfaction Promise */}
-      <section className="py-14 bg-brand-gray-light">
+      <section className="py-section bg-brand-gray-light">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl lg:text-3xl font-bold text-text mb-3">Satisfaction Promise</h2>
           <p className="text-text/90">
@@ -540,10 +540,10 @@ export default function Residential() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 bg-white">
+      <section className="py-section bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-8">Testimonials</h2>
-          <div className="grid gap-6 md:grid-cols-3">
+          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-xl">Testimonials</h2>
+          <div className="grid gap-lg md:grid-cols-3">
             {[
               {
                 quote: "The checklists and Lead Tech notes are a game‑changer. Our kitchen glass is finally streak‑free.",
@@ -568,7 +568,7 @@ export default function Residential() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 bg-white">
+      <section className="py-section bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6">FAQ</h2>
           <Accordion type="single" collapsible className="w-full border rounded-md">
@@ -601,7 +601,7 @@ export default function Residential() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 bg-white">
+      <section className="py-section bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-2">Ready to Transform <span className="text-brand-gold">Your Home</span>?</h2>
           <p className="text-text/90 mb-6">Predictable quality. Professional teams. Results you can see.</p>

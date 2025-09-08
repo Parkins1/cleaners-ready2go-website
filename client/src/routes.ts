@@ -15,6 +15,7 @@ const Greenacres = lazy(() => import('@/pages/Greenacres'));
 const Blog = lazy(() => import('@/pages/Blog'));
 const Team = lazy(() => import('@/pages/Team'));
 const Contact = lazy(() => import('@/pages/Contact'));
+const Privacy = lazy(() => import('@/pages/Privacy'));
 const NotFound = lazy(() => import('@/pages/not-found'));
 
 interface RouteConfig {
@@ -38,6 +39,7 @@ export const routes: RouteConfig[] = [
   { path: '/blog', component: Blog },
   { path: '/team', component: Team },
   { path: '/contact', component: Contact },
+  { path: '/privacy', component: Privacy },
   // A catch-all for 404 must be the last item
   { path: '/:rest*', component: NotFound },
 ];

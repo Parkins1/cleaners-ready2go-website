@@ -11,9 +11,9 @@ export function ServicesSection({
   ids?: ServiceCatalogId[];
 }) {
   return (
-    <section id="services" className="py-20 bg-white scroll-mt-24" aria-labelledby="services-title">
+    <section id="services" className="py-section bg-white scroll-mt-24" aria-labelledby="services-title">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 animate-slide-up">
+        <div className="text-center mb-xl animate-slide-up">
           <h2 id="services-title" className="text-4xl lg:text-5xl font-bold text-text mb-4">
             Comprehensive Residential Cleaning Services
           </h2>
@@ -27,12 +27,12 @@ export function ServicesSection({
 
 export function ProcessSection() {
   return (
-    <section id="process" className="py-16 bg-surface scroll-mt-24" aria-labelledby="process-title">
+    <section id="process" className="py-section bg-surface scroll-mt-24" aria-labelledby="process-title">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-slide-up">
         <h2 id="process-title" className="text-3xl lg:text-4xl font-bold text-text mb-8 text-center">
           Our Simple House Cleaning Process
         </h2>
-        <div className="grid md:grid-cols-4 gap-6 text-center">
+        <div className="grid md:grid-cols-4 gap-lg text-center">
           <ContentCard>
             <span className="step-number">1</span>
             <h3 className="mt-2 font-semibold">Request Your Quote</h3>

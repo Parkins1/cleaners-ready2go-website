@@ -107,7 +107,7 @@ export default function DeepCleaning() {
       />
 
       {/* INTRO */}
-      <section className="py-12 bg-white">
+      <section className="py-section bg-white">
         <div className="max-w-5xl mx-auto px-6 space-y-6">
           <p>
             Life in the Inland Northwest is glorious towering pines, four true seasons, and plenty of pets, gear, and muddy boots to prove it.
@@ -124,10 +124,10 @@ export default function DeepCleaning() {
       </section>
 
       {/* INCLUDES */}
-      <section id="includes" className="py-16 bg-surface">
+      <section id="includes" className="py-section bg-surface">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">What's Included in Our Spokane Deep Cleaning</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-lg mt-8">
             <IconCard
               iconSrc={iconKitchen}
               title="Kitchen Revival"
@@ -208,10 +208,10 @@ export default function DeepCleaning() {
       </section>
 
       {/* PROCESS */}
-      <section className="py-16 bg-white bg-process-radial">
+      <section className="py-section bg-white bg-process-radial">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-8 text-center">Our 4-Step Deep Cleaning Process</h2>
-          <div className="grid md:grid-cols-4 gap-6">
+          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-xl text-center">Our 4-Step Deep Cleaning Process</h2>
+          <div className="grid md:grid-cols-4 gap-lg">
             <ContentCard>
               <span className="step-number">1</span>
               <h3 className="mt-2 font-semibold">Free Local Walk-Through & Quote</h3>
@@ -264,7 +264,7 @@ export default function DeepCleaning() {
       />
 
       {/* SERVICE AREA */}
-      <section className="py-16 bg-service-band">
+      <section className="py-section bg-service-band">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-2 text-center">Proudly Serving Spokane County & Beyond</h2>
 
@@ -275,7 +275,7 @@ export default function DeepCleaning() {
 
           <p className="text-center mt-4">We bring sparkling results to:</p>
 
-          <ul className="flex flex-wrap justify-center gap-4 mt-3 text-text">
+          <ul className="flex flex-wrap justify-center gap-lg mt-3 text-text">
             {cityList.map((c) => (
               <li key={c} className="flex items-center gap-2 px-2">
                 <Icon
@@ -293,7 +293,7 @@ export default function DeepCleaning() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="py-16 bg-white">
+      <section className="py-section bg-white">
         <div className="max-w-4xl mx-auto px-6 space-y-6">
           <h2 className="text-3xl lg:text-4xl font-bold text-text text-center">Real Reviews From Your Neighbors</h2>
           <ContentCard as="blockquote">
@@ -312,7 +312,7 @@ export default function DeepCleaning() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 bg-white">
+      <section className="py-section bg-white">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-3xl lg:text-4xl font-bold text-text text-center mb-6">Deep Cleaning FAQ</h2>
           <Accordion type="single" collapsible className="w-full">
@@ -327,7 +327,7 @@ export default function DeepCleaning() {
       </section>
 
       {/* BENEFITS */}
-      <section className="py-16 bg-surface">
+      <section className="py-section bg-surface">
         <div className="max-w-5xl mx-auto px-6 space-y-4">
           <h2 className="text-3xl lg:text-4xl font-bold text-text">The Benefits of Professional Deep Cleaning</h2>
           <p><strong>Healthier indoor air.</strong> Spokane’s pine pollen season means allergens cling to carpet fibers and HVAC vents. Our HEPA vacuums and microfiber cloths trap microscopic particles before they reach your lungs.</p>

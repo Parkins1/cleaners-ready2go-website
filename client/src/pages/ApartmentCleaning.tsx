@@ -119,7 +119,7 @@ export default function ApartmentCleaning() {
       />
 
       {/* Short intro */}
-      <section className="py-12 bg-white">
+      <section className="py-section bg-white">
         <div className="max-w-4xl mx-auto px-6 space-y-6 text-center">
           <h2 className="text-3xl font-bold text-text">Your Spokane Apartment, Transformed Without the Stress</h2>
           <p>
@@ -129,12 +129,12 @@ export default function ApartmentCleaning() {
       </section>
 
       {/* Services icons grid (5) */}
-      <section className="py-16 bg-surface" aria-labelledby="apt-services-title">
+      <section className="py-section bg-surface" aria-labelledby="apt-services-title">
         <div className="max-w-6xl mx-auto px-6">
           <h2 id="apt-services-title" className="text-3xl lg:text-4xl font-bold text-text text-center mb-10">
             Our Apartment Cleaning Services in Spokane
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-lg">
             <IconCard
               iconSrc={iconMoveOut}
               title="Move-Out & End-of-Lease Cleaning"
@@ -181,12 +181,12 @@ export default function ApartmentCleaning() {
       {/* Plans removed per request */}
 
       {/* What’s Included */}
-      <section className="py-16 bg-white bg-process-radial" aria-labelledby="apartment-includes-title">
+      <section className="py-section bg-white bg-process-radial" aria-labelledby="apartment-includes-title">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 id="apartment-includes-title" className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">What’s Included</h2>
 
           {/* Four rooms in a 2x2 layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
             <ContentCard>
               <h3 className="text-lg font-semibold text-text mb-3">Kitchen</h3>
               <ul className="space-y-2 text-text">
@@ -242,7 +242,7 @@ export default function ApartmentCleaning() {
           <div className="mt-6">
             <ContentCard className="w-full">
               <h3 className="text-lg font-semibold text-text mb-3">Optional Add-Ons (by request)</h3>
-              <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2 text-text">
+              <ul className="grid sm:grid-cols-2 gap-x-lg gap-y-md text-text">
                 <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-brand-gold mr-2 mt-[2px]" /><span>Inside fridge and oven</span></li>
                 <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-brand-gold mr-2 mt-[2px]" /><span>Inside kitchen/bath cabinets and drawers</span></li>
                 <li className="flex items-start"><Icon name="CheckCircle" className="w-4 h-4 text-brand-gold mr-2 mt-[2px]" /><span>Interior windows and tracks; blinds dusted</span></li>
@@ -257,10 +257,10 @@ export default function ApartmentCleaning() {
       </section>
 
       {/* What's Included (room photos + brand-gold checkmarks) */}
-      <section className="py-16 bg-surface" aria-labelledby="includes-title">
+      <section className="py-section bg-surface" aria-labelledby="includes-title">
         <div className="max-w-6xl mx-auto px-6">
           <h2 id="includes-title" className="text-3xl lg:text-4xl font-bold text-text text-center">What’s Included</h2>
-          <div className="grid md:grid-cols-3 gap-6 mt-8">
+          <div className="grid md:grid-cols-3 gap-lg mt-8">
             <ContentCard>
               <OptimizedImage
                 src={photoKitchenWebp}
@@ -322,8 +322,9 @@ export default function ApartmentCleaning() {
       <ProcessSection />
 
       {/* Reviews with lifestyle image */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
+      <section className="py-section bg-white">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-lg items-center">
+          
           <div>
             <OptimizedImage
               src={lifestylePhotoWebp}

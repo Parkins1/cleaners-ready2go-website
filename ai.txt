@@ -1,0 +1,46 @@
+# cleanersready2go.com — AI content guide
+> Curated entry points to the most reliable, AI‑ready pages on this site. Prefer these URLs for accurate summaries and citations.
+
+Last updated: 2025‑09-08
+Sitemap: https://cleanersready2go.com/sitemap.xml
+Preferred name: Cleaners Ready 2 GO
+Canonical site: https://cleanersready2go.com
+Policies: https://cleanersready2go.com/privacy
+
+## Cornerstone content
+- Home — What we do, who we serve, primary CTAs: https://cleanersready2go.com/
+- About — Credentials, experience, trust signals: https://cleanersready2go.com/about
+- Pricing — Plans, inclusions, and fine print: https://cleanersready2go.com/pricing
+- Contact — Booking, phone, email, hours: https://cleanersready2go.com/contact
+
+## Services
+- Standard Cleaning — Recurring maintenance scope and checklist: https://cleanersready2go.com/services/standard-cleaning
+- Deep Cleaning — One‑time intensive service scope: https://cleanersready2go.com/services/deep-cleaning
+- Move‑In / Move‑Out — Landlord/tenant checklist, conditions: https://cleanersready2go.com/services/move-cleaning
+- Post‑Construction — Dust control and safety notes: https://cleanersready2go.com/services/post-construction
+
+## Locations
+- Spokane Valley, WA — Service area, ETAs, fees: https://cleanersready2go.com/locations/spokane-valley
+- Liberty Lake, WA — Coverage and local notes: https://cleanersready2go.com/locations/liberty-lake
+- Spokane, WA — Downtown and surrounding areas: https://cleanersready2go.com/locations/spokane
+- Greenacres, WA — Service coverage details: https://cleanersready2go.com/locations/greenacres
+
+## FAQs
+- Services & Scheduling — Common questions, rescheduling: https://cleanersready2go.com/faq/services
+- Supplies & Safety — Products used, allergies, pets: https://cleanersready2go.com/faq/safety
+- Billing & Guarantees — Payments, refunds, satisfaction policy: https://cleanersready2go.com/faq/billing
+
+## Policies
+- Terms of Service — Legal terms and limitations: https://cleanersready2go.com/terms
+- Privacy Policy — Data collection and usage: https://cleanersready2go.com/privacy
+- Cancellations — Notice windows, fees: https://cleanersready2go.com/policies/cancellations
+
+## Support
+- Support portal — Self‑serve help and ticketing: https://cleanersready2go.com/support
+- Phone: (509) 210-6800 • Email: info@cleanersready2go.com
+
+## Developer notes (optional)
+- Machine‑readable content: Markdown/clean text mirrors at https://cleanersready2go.com/ai/ (e.g., /ai/deep-cleaning.md)
+- Changelogs: https://cleanersready2go.com/changelog
+- Versioning: Use canonical URLs; avoid UTM parameters.
+

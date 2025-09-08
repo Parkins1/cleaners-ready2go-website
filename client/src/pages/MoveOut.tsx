@@ -128,7 +128,7 @@ export default function MoveOut() {
         sources={[{ type: 'image/avif', srcSet: `${mv480Avif} 480w, ${mv768Avif} 768w, ${mv1024Avif} 1024w` }]}
       />
 
-      <section className="py-12 bg-white">
+      <section className="py-section bg-white">
         <div className="max-w-5xl mx-auto px-6 space-y-6">
           <p className="text-lg text-text">
             Moving out shouldn't mean spending your last night scrubbing oven racks. Cleaners Ready 2 GO delivers a modern, no-nonsense move-out cleaning that fits your timeline and protects your budget. We align with manager and landlord checklists so your home looks inspection-ready—baseboards to blinds, bathrooms to the inside of appliances.
@@ -139,13 +139,13 @@ export default function MoveOut() {
         </div>
       </section>
 
-      <section id="includes" className="py-12 bg-gradient-to-b from-surface to-white">
+      <section id="includes" className="py-section bg-gradient-to-b from-surface to-white">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">
             What Our Move-Out Cleaning Includes
           </h2>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-lg md:grid-cols-2">
             <ContentCard>
               <h3 className="font-semibold text-lg mb-2">Kitchen</h3>
               <ul className="list-none space-y-2 text-sm">
@@ -219,10 +219,10 @@ export default function MoveOut() {
         </div>
       </section>
 
-      <section className="py-12 bg-white">
+      <section className="py-section bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">Process—Our 4-Step Breakdown</h2>
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-lg md:grid-cols-2">
             <ContentCard>
               <h3 className="font-semibold">Step 1: Fast Quote (Virtual or On‑Site)</h3>
               <p className="mt-2 text-sm">Send a few photos or schedule a local walk-through. We confirm scope, timing, and any add-ons—no surprises.</p>
@@ -246,10 +246,10 @@ export default function MoveOut() {
         </div>
       </section>
 
-      <section className="py-12 bg-white">
+      <section className="py-section bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">Why Choose Us</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-md mb-8">
             <ContentCard className="flex items-center gap-3 min-h-[44px] py-2">
               <Icon name="ShieldCheck" className="text-teal" />
               <span className="font-medium">Licensed & Insured</span>
@@ -275,13 +275,13 @@ export default function MoveOut() {
         </div>
       </section>
 
-      <section className="py-12 bg-service-band">
+      <section className="py-section bg-service-band">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-2">Service Area</h2>
           <p className="text-lg text-text max-w-3xl mx-auto">We serve Spokane Valley, Spokane, and Liberty Lake, including nearby neighborhoods and communities along I-90. If you're just outside these areas, ask—we can often accommodate with a small travel fee.</p>
 
           {/* Exactly four location cards linking to the four location pages */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-lg mt-8">
             <ContentCard as="a" href="/locations/spokane" interactive className="text-center">
               <h3 className="text-lg font-semibold">Spokane</h3>
               <p className="text-sm text-text">Citywide coverage</p>
@@ -302,7 +302,7 @@ export default function MoveOut() {
         </div>
       </section>
 
-      <section className="py-12 bg-white">
+      <section className="py-section bg-white">
         <div className="max-w-4xl mx-auto px-6 space-y-6">
           <h2 className="text-3xl lg:text-4xl font-bold text-text text-center">Testimonials</h2>
           <ContentCard as="blockquote">
@@ -320,7 +320,7 @@ export default function MoveOut() {
         </div>
       </section>
 
-      <section className="py-12 bg-surface">
+      <section className="py-section bg-surface">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-3xl lg:text-4xl font-bold text-text text-center mb-6">FAQ</h2>
           <Accordion type="single" collapsible className="w-full rounded-xl bg-gradient-to-b from-white/95 to-white/90 backdrop-blur-sm shadow-sm border border-white/20">

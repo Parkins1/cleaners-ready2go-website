@@ -35,16 +35,16 @@ export default function Locations() {
         ]}
       />
 
-      <section className="py-16 bg-white">
+      <section className="py-section bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-xl">
             <h1 className="text-4xl font-bold text-text mb-6">Service Areas</h1>
             <p className="text-xl text-text">Proudly serving the greater Spokane area</p>
           </div>
 
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50/30 to-gray-100/20 rounded-2xl"></div>
-            <div className="relative grid lg:grid-cols-3 gap-8 mb-12 p-8 rounded-2xl">
+            <div className="relative grid lg:grid-cols-3 gap-lg mb-xl p-8 rounded-2xl">
               <Link href="/locations/spokane" className="block">
                 <ContentCard interactive className="flex items-center justify-center h-40 sm:h-48 p-8 text-center">
                   <h3 className="text-2xl sm:text-3xl font-serif font-semibold text-brand-gold">Spokane</h3>
@@ -66,7 +66,7 @@ export default function Locations() {
           </div>
 
           {/* Service Radius Map Placeholder */}
-          <div className="bg-surface rounded-xl p-8 mb-12">
+          <div className="bg-surface rounded-xl p-8 mb-xl">
             <div className="text-center">
               <h3 className="text-xl font-bold text-text mb-4">Service Area Map</h3>
               <div className="bg-white rounded-lg p-8 min-h-[400px] flex items-center justify-center">
@@ -80,7 +80,7 @@ export default function Locations() {
           </div>
 
           {/* Coverage Details */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-lg">
             <div>
               <h3 className="text-xl font-bold text-text mb-4">Service Coverage</h3>
               <div className="space-y-4">
