@@ -56,7 +56,6 @@ export default function Home() {
       <JsonLd
         data={[
           makeWebSite(site.url),
-          makeLocalBusiness(site.url),
           makeWebPage({
             siteUrl: site.url,
             path: "/",

@@ -59,7 +59,6 @@ export default function Contact() {
       />
       <JsonLd
         data={[
-          makeLocalBusiness(site.url),
           makeWebPage({
             siteUrl: site.url,
             path: "/contact",

@@ -38,7 +38,6 @@ export default function Residential() {
       />
       <JsonLd
         data={[
-          makeLocalBusiness(site.url),
           makeWebPage({
             siteUrl: site.url,
             path: "/residential",

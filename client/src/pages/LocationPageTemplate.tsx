@@ -74,7 +74,6 @@ export default function LocationPageTemplate({
       {/* JSON-LD: LocalBusiness, WebPage, Service, Breadcrumbs */}
       <JsonLd
         data={[
-          makeLocalBusiness(site.url),
           makeWebPage({
             siteUrl: site.url,
             path,

@@ -12,7 +12,6 @@ export default function Privacy() {
       />
       <JsonLd
         data={[
-          makeLocalBusiness(site.url),
           makeWebPage({
             siteUrl: site.url,
             path: "/privacy",

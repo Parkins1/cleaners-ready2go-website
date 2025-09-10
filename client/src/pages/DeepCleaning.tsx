@@ -63,7 +63,6 @@ export default function DeepCleaning() {
       {/* JSON-LD: LocalBusiness, WebPage, Service, Breadcrumbs, FAQPage */}
       <JsonLd
         data={[
-          makeLocalBusiness(site.url),
           makeWebPage({
             siteUrl: site.url,
             path,

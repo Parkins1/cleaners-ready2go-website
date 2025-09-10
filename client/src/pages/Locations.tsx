@@ -20,7 +20,6 @@ export default function Locations() {
       />
       <JsonLd
         data={[
-          makeLocalBusiness(site.url),
           makeWebPage({
             siteUrl: site.url,
             path: "/locations",

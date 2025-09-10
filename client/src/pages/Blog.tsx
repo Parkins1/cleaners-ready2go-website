@@ -14,7 +14,6 @@ export default function Blog() {
       />
       <JsonLd
         data={[
-          makeLocalBusiness(site.url),
           makeWebPage({
             siteUrl: site.url,
             path: "/blog",

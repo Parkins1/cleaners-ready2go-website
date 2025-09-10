@@ -72,7 +72,6 @@ export default function ApartmentCleaning() {
       />
       <JsonLd
         data={[
-          makeLocalBusiness(site.url),
           makeWebPage({
             siteUrl: site.url,
             path: "/apartment-cleaning",

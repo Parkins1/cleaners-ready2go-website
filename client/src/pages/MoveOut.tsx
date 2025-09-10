@@ -81,7 +81,6 @@ export default function MoveOut() {
       />
       <JsonLd
         data={[
-          makeLocalBusiness(site.url),
           makeWebPage({
             siteUrl: site.url,
             path: "/move-out",
