@@ -28,7 +28,7 @@ import iconVacuumedCarpet from "@/assets/icon_vacuumed_carpet.webp";
 import iconCabinetInteriors from "@/assets/icon_cabinet_interiors.webp";
 import iconBaseboards from "@/assets/icon_baseboards.webp";
 import JsonLd from "@/components/seo/JsonLd";
-import { makeLocalBusiness, makeWebPage, makeService, makeFAQPage, makeBreadcrumb } from "@/components/seo/schema";
+import { makeWebPage, makeService, makeFAQPage, makeBreadcrumb } from "@/components/seo/schema";
 import { site } from "@/config/site";
 
 export default function DeepCleaning() {

@@ -20,7 +20,7 @@ import Icon from "@/components/ui/icon";
  import { SEO } from "@/components/seo/SEO";
  import { Helmet } from "react-helmet-async";
  import JsonLd from "@/components/seo/JsonLd";
- import { makeWebSite, makeWebPage, makeLocalBusiness, makeBreadcrumb, makeFAQPage } from "@/components/seo/schema";
+ import { makeWebSite, makeWebPage, makeBreadcrumb, makeFAQPage } from "@/components/seo/schema";
  import { site } from "@/config/site";
 
 export default function Home() {

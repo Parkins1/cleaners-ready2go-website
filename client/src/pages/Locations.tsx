@@ -6,7 +6,7 @@ import Icon from "@/components/ui/icon";
 import QuoteModal from "@/components/QuoteModal";
 import ContentCard from "@/components/ContentCard/ContentCard";
 import JsonLd from "@/components/seo/JsonLd";
-import { makeLocalBusiness, makeWebPage, makeBreadcrumb } from "@/components/seo/schema";
+import { makeWebPage, makeBreadcrumb } from "@/components/seo/schema";
 import { site } from "@/config/site";
 
 export default function Locations() {

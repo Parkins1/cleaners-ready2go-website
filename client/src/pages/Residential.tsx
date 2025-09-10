@@ -15,7 +15,7 @@ import IconCard from "@/components/IconCard/IconCard";
 import { useModal } from "@/components/modal/ModalProvider";
 import { SEO } from "@/components/seo/SEO";
 import JsonLd from "@/components/seo/JsonLd";
-import { makeLocalBusiness, makeWebPage, makeService, makeBreadcrumb } from "@/components/seo/schema";
+import { makeWebPage, makeService, makeBreadcrumb } from "@/components/seo/schema";
 import { site } from "@/config/site";
 import TrustSignalsSection from "@/components/TrustSignals/TrustSignalsSection";
 import { brand } from "@/config/brand";

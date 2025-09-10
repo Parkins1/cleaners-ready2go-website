@@ -11,7 +11,7 @@ import { SEO } from "@/components/seo/SEO";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import { brand } from "@/config/brand";
 import JsonLd from "@/components/seo/JsonLd";
-import { makeWebPage, makeBreadcrumb, makeService, makeLocalBusiness } from "@/components/seo/schema";
+import { makeWebPage, makeBreadcrumb, makeService } from "@/components/seo/schema";
 import { site } from "@/config/site";
 
 interface LocationPageTemplateProps {

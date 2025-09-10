@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 import BookingModal from "@/components/BookingModal";
 import JsonLd from "@/components/seo/JsonLd";
-import { makeLocalBusiness, makeWebPage, makeBreadcrumb } from "@/components/seo/schema";
+import { makeWebPage, makeBreadcrumb } from "@/components/seo/schema";
 import { site } from "@/config/site";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import logo128Avif from "@/assets/icon_logo-128.avif";

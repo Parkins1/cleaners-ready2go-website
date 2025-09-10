@@ -16,7 +16,7 @@ import mv1024Avif from "@/assets/spokane-house-cleaning-1024.avif";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import { brand } from "@/config/brand";
 import JsonLd from "@/components/seo/JsonLd";
-import { makeLocalBusiness, makeWebPage, makeService, makeBreadcrumb, makeFAQPage } from "@/components/seo/schema";
+import { makeWebPage, makeService, makeBreadcrumb, makeFAQPage } from "@/components/seo/schema";
 import { site } from "@/config/site";
 
 export default function MoveOut() {

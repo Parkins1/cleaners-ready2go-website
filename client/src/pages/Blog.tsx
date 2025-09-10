@@ -1,6 +1,6 @@
 import { SEO } from "@/components/seo/SEO";
 import JsonLd from "@/components/seo/JsonLd";
-import { makeLocalBusiness, makeWebPage, makeBreadcrumb } from "@/components/seo/schema";
+import { makeWebPage, makeBreadcrumb } from "@/components/seo/schema";
 import { site } from "@/config/site";
 
 export default function Blog() {

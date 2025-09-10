@@ -10,7 +10,7 @@ import IconCard from "@/components/IconCard/IconCard";
 import { ProcessSection } from "@/components/Sections";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import JsonLd from "@/components/seo/JsonLd";
-import { makeLocalBusiness, makeWebPage, makeService, makeBreadcrumb } from "@/components/seo/schema";
+import { makeWebPage, makeService, makeBreadcrumb } from "@/components/seo/schema";
 import { site } from "@/config/site";
 
 // Apartment-specific visuals (optimized by scripts/optimize-images.mjs)
