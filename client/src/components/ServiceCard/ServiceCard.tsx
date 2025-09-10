@@ -13,6 +13,8 @@ export default function ServiceCard({
   imgAlt,
   imgSrcSet,
   sources,
+  imgWidth,
+  imgHeight,
   icon,
   className,
   hideIcon,
@@ -42,6 +44,8 @@ export default function ServiceCard({
         lazy={true}
         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         placeholder="blur"
+        width={imgWidth}
+        height={imgHeight}
         imgSrcSet={imgSrcSet}
         sources={sources}
       />

@@ -74,13 +74,13 @@ export default function Contact() {
       />
       
       <section className="py-section bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-12">
           <div className="text-center mb-xl">
             <h1 className="text-4xl font-bold text-text mb-6">Contact Us</h1>
             <p className="text-xl text-text font-medium">Get in touch for a free quote or to schedule your cleaning service</p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-lg">
+          <div className="grid lg:grid-cols-2 gap-xl">
             {/* Contact Form */}
             <div className="bg-surface p-8 rounded-xl">
               <h2 className="text-2xl font-bold text-text mb-6">Send Us a Message</h2>

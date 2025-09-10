@@ -11,12 +11,13 @@ interface OptimizedImageProps {
   lazy?: boolean;
   sizes?: string;
   placeholder?: 'blur' | 'empty';
-  width?: number;
-  height?: number;
+  width: number;
+  height: number;
   decoding?: 'sync' | 'async' | 'auto';
   fetchpriority?: 'high' | 'low' | 'auto';
   imgSrcSet?: string;
   sources?: { type: string; srcSet: string; sizes?: string }[];
+  onError?: (event: React.SyntheticEvent<HTMLImageElement, Event>) => void;
 }
 
 export function OptimizedImage({
@@ -35,6 +36,7 @@ export function OptimizedImage({
   fetchpriority = 'auto',
   imgSrcSet,
   sources,
+  onError,
 }: OptimizedImageProps) {
   const [isVisible, setIsVisible] = useState(!lazy);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -117,12 +119,13 @@ export function OptimizedImage({
           )}
           loading={priority ? 'eager' : 'lazy'}
           decoding={decoding}
-          fetchPriority={fetchpriority}
           onLoad={handleImageLoad}
+          onError={onError}
           srcSet={imgSrcSet}
           sizes={sizes}
           width={width}
           height={height}
+          {...(fetchpriority !== undefined && { fetchPriority: fetchpriority })}
         />
       </picture>
     </div>

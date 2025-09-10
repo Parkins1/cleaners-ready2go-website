@@ -9,7 +9,7 @@ import logo256Webp from "@/assets/icon_logo-256.webp";
 export default function Footer() {
   return (
     <footer className="footer py-12">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-12">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Company Info */}
           <div>

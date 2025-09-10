@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 
 type JsonLdProps = {
   data: unknown | unknown[];
@@ -9,26 +10,18 @@ type JsonLdProps = {
  * Keeps usage consistent and avoids duplicating Helmet wiring.
  */
 export function JsonLd({ data }: JsonLdProps) {
-  if (Array.isArray(data)) {
-    return (
-      <>
-        {data.map((item, idx) => (
-          <script
-            key={idx}
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(item) }}
-          />
-        ))}
-      </>
-    );
-  }
+  const items = Array.isArray(data) ? data : [data];
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-    />
+    <Helmet>
+      {items.map((item, idx) => (
+        <script
+          key={idx}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(item) }}
+        />
+      ))}
+    </Helmet>
   );
 }
 
 export default JsonLd;
-

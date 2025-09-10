@@ -185,7 +185,7 @@ export default function Spokane() {
         title: 'Our Four-Step System (Built for Consistency)',
         sectionClassName: 'py-section bg-process-radial',
         content: (
-          <div className="grid gap-lg md:grid-cols-2 lg:grid-cols-4" style={{'--spacing-lg': '1.5rem'} as React.CSSProperties}>
+          <div className="grid gap-xl md:grid-cols-2 lg:grid-cols-4" style={{'--spacing-lg': '1.5rem'} as React.CSSProperties}>
             {processSteps.map((step, i) => (
               <Card key={i} className="h-full">
                 <CardContent className="p-6">
@@ -204,7 +204,7 @@ export default function Spokane() {
         title: 'What Your Spokane Neighbors Are Saying',
         sectionClassName: 'py-section bg-white',
         content: (
-          <div className="grid gap-lg md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-xl md:grid-cols-2 lg:grid-cols-3">
             {testimonials.map((testimonial, i) => (
               <Card key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-brand-gray-light'}>
                 <CardContent className="p-6">

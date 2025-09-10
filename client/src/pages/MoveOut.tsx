@@ -145,7 +145,7 @@ export default function MoveOut() {
             What Our Move-Out Cleaning Includes
           </h2>
 
-          <div className="grid gap-lg md:grid-cols-2">
+          <div className="grid gap-xl md:grid-cols-2">
             <ContentCard>
               <h3 className="font-semibold text-lg mb-2">Kitchen</h3>
               <ul className="list-none space-y-2 text-sm">
@@ -222,7 +222,7 @@ export default function MoveOut() {
       <section className="py-section bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">Process—Our 4-Step Breakdown</h2>
-          <div className="grid gap-lg md:grid-cols-2">
+          <div className="grid gap-xl md:grid-cols-2">
             <ContentCard>
               <h3 className="font-semibold">Step 1: Fast Quote (Virtual or On‑Site)</h3>
               <p className="mt-2 text-sm">Send a few photos or schedule a local walk-through. We confirm scope, timing, and any add-ons—no surprises.</p>
@@ -281,7 +281,7 @@ export default function MoveOut() {
           <p className="text-lg text-text max-w-3xl mx-auto">We serve Spokane Valley, Spokane, and Liberty Lake, including nearby neighborhoods and communities along I-90. If you're just outside these areas, ask—we can often accommodate with a small travel fee.</p>
 
           {/* Exactly four location cards linking to the four location pages */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-lg mt-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-xl mt-8">
             <ContentCard as="a" href="/locations/spokane" interactive className="text-center">
               <h3 className="text-lg font-semibold">Spokane</h3>
               <p className="text-sm text-text">Citywide coverage</p>

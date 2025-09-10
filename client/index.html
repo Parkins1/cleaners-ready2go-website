@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3DXP3YGD8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-X3DXP3YGD8');
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <title>Cleaners Ready 2Go - Professional Cleaning Services</title>
@@ -36,6 +45,45 @@
     <style>
       .hero-media{width:100%;aspect-ratio:16/9}
     </style>
+    <!-- Static JSON-LD for non-JS crawlers: LocalBusiness -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": ["LocalBusiness", "CleaningService"],
+        "@id": "https://cleanersready2go.com#business",
+        "name": "Cleaners Ready 2 GO",
+        "url": "https://cleanersready2go.com",
+        "telephone": "(509) 210-6800",
+        "email": "info@cleanersready2go.com",
+        "logo": "https://cleanersready2go.com/logo.png",
+        "image": ["https://cleanersready2go.com/logo.png"],
+        "sameAs": [
+          "https://www.yelp.com/biz/cleaners-ready-2go-spokane-valley?osq=Cleaners+Ready+2GO",
+          "https://pro.porch.com/spokane-valley-wa/home-cleaners/cleaners-ready-2go/pp",
+          "https://homeguide.com/wa/spokane-valley/house-cleaning/cleaners-ready-2go-Sz1J2BzgI",
+          "https://www.facebook.com/profile.php?id=61579665782441",
+          "https://ccfs.sos.wa.gov/#/BusinessSearch/BusinessInformation"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 E Sprague Ave",
+          "addressLocality": "Spokane",
+          "addressRegion": "WA",
+          "postalCode": "99202",
+          "addressCountry": "US"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "05:00",
+            "closes": "19:00"
+          }
+        ]
+      }
+    </script>
+    <!-- Discoverable copy of business schema -->
+    <link rel="alternate" type="application/ld+json" href="/schema/local-business.json" />
   </head>
   <body>
     <div id="root"></div>

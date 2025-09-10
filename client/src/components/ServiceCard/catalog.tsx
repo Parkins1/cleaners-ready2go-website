@@ -31,6 +31,8 @@ export const serviceCatalog: Record<string, Omit<ServiceCardProps, "className">>
     sources: [
       { type: 'image/avif', srcSet: `${res480Avif} 480w, ${res768Avif} 768w, ${res1024Avif} 1024w` },
     ],
+    imgWidth: 400,
+    imgHeight: 300,
     icon: <Icon name="Home" className="w-2/3 h-2/3 text-white" />,
   },
   "deep-cleaning": {
@@ -45,6 +47,8 @@ export const serviceCatalog: Record<string, Omit<ServiceCardProps, "className">>
     sources: [
       { type: 'image/avif', srcSet: `${res480Avif} 480w, ${res768Avif} 768w, ${res1024Avif} 1024w` },
     ],
+    imgWidth: 400,
+    imgHeight: 300,
     icon: <Icon name="CheckCircle" className="w-2/3 h-2/3 text-white" />,
   },
   "move-out": {
@@ -59,6 +63,8 @@ export const serviceCatalog: Record<string, Omit<ServiceCardProps, "className">>
     sources: [
       { type: 'image/avif', srcSet: `${mv480Avif} 480w, ${mv768Avif} 768w, ${mv1024Avif} 1024w` },
     ],
+    imgWidth: 400,
+    imgHeight: 300,
     icon: <Icon name="CheckCircle" className="w-2/3 h-2/3 text-white" />,
   },
   "apartment-cleaning": {
@@ -73,6 +79,8 @@ export const serviceCatalog: Record<string, Omit<ServiceCardProps, "className">>
     sources: [
       { type: 'image/avif', srcSet: `${res480Avif} 480w, ${res768Avif} 768w, ${res1024Avif} 1024w` },
     ],
+    imgWidth: 400,
+    imgHeight: 300,
     icon: <Icon name="CheckCircle" className="w-2/3 h-2/3 text-white" />,
   },
 };

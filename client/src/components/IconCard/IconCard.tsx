@@ -11,9 +11,10 @@ export interface IconCardProps {
   items: string[];
   className?: string;
   children?: React.ReactNode;
+  bulletIcon?: IconName;
 }
 
-export default function IconCard({ iconSrc, iconName, icon, title, items, className, children }: IconCardProps) {
+export default function IconCard({ iconSrc, iconName, icon, title, items, className, children, bulletIcon }: IconCardProps) {
   const iconNode = icon
     ? (
         <div className="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-accent text-white">
@@ -47,7 +48,11 @@ export default function IconCard({ iconSrc, iconName, icon, title, items, classN
       <ul className="space-y-2 text-sm text-text">
         {items.map((item, index) => (
           <li key={index} className="flex items-start gap-2">
-            <span className="w-4 h-4 mt-1 text-brand-gold flex-shrink-0">•</span>
+            {bulletIcon ? (
+              <Icon name={bulletIcon} className="w-4 h-4 mt-1 text-brand-gold flex-shrink-0" />
+            ) : (
+              <span className="w-4 h-4 mt-1 text-brand-gold flex-shrink-0">•</span>
+            )}
             <span>{item}</span>
           </li>
         ))}

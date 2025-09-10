@@ -96,7 +96,7 @@ export default function Home() {
             </Button>
             <a href="#services" aria-label="See Services">
               <Button
-                variant="primary"
+                variant="outline"
               >
                 See Services
                 <Icon name="ArrowRight" className="w-5 h-5 ml-2" />
@@ -116,7 +116,7 @@ export default function Home() {
 
       {/* Why Choose Us */}
       <section id="why" className="py-section bg-surface scroll-mt-24" aria-labelledby="why-title">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-slide-up">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 animate-slide-up">
           <h2 id="why-title" className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">
             Why Choose Our House Cleaners Near You?
           </h2>
@@ -148,7 +148,7 @@ export default function Home() {
 
       {/* Services */}
       <section id="services" className="py-section bg-white scroll-mt-24" aria-labelledby="services-title">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <div className="text-center mb-xl animate-slide-up">
             <h2 id="services-title" className="font-bold text-text mb-4">
               Comprehensive Residential Cleaning Services
@@ -161,11 +161,11 @@ export default function Home() {
 
       {/* Process */}
       <section id="process" className="py-section bg-surface scroll-mt-24" aria-labelledby="process-title">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-slide-up">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 animate-slide-up">
           <h2 id="process-title" className="text-3xl lg:text-4xl font-bold text-text mb-8 text-center">
             Our Simple House Cleaning Process
           </h2>
-          <div className="grid md:grid-cols-4 gap-lg text-center">
+          <div className="grid md:grid-cols-4 gap-xl text-center">
             <ContentCard>
               <span className="step-number">1</span>
               <h3 className="mt-2 font-semibold">Request Your Quote</h3>
@@ -196,7 +196,7 @@ export default function Home() {
 
       {/* Pricing */}
       <section id="pricing" className="py-section bg-white scroll-mt-24" aria-labelledby="pricing-title">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-slide-up">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 text-center animate-slide-up">
           <h2 id="pricing-title" className="text-3xl lg:text-4xl font-bold text-text mb-4">Transparent Pricing & Free Estimates</h2>
           <p className="text-lg text-text max-w-3xl mx-auto mb-6">
             Costs vary by home size, cleaning type, and frequency. Standard services typically start around $110 per visit.
@@ -215,14 +215,14 @@ export default function Home() {
 
       {/* Service Areas */}
       <section id="areas" className="py-section bg-gradient-to-b from-surface via-surface/95 to-white scroll-mt-24" aria-labelledby="areas-title">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-slide-up">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 animate-slide-up">
           <h2 id="areas-title" className="text-3xl lg:text-4xl font-bold text-text mb-4 text-center">Our Spokane Area Service Locations</h2>
           <p className="text-lg text-text max-w-3xl mx-auto text-center mb-8">
             Spokane, Spokane Valley, Liberty Lake, and Greenacres.
           </p>
 
           {/* Exactly four location cards linking to the four location pages */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-lg mt-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-xl mt-8">
             <ContentCard as="a" href="/locations/spokane" interactive className="group text-center transition-all duration-300 hover:scale-[1.01] hover:shadow-lg bg-gray-50/80 border border-gray-200/60 rounded-xl p-6 hover:bg-white">
               <h3 className="text-base font-bold mb-2 text-gray-900">Spokane</h3>
               <p className="text-xs text-gray-600 max-w-[120px] mx-auto leading-relaxed">Citywide coverage</p>
@@ -256,11 +256,11 @@ export default function Home() {
 
       {/* Testimonials */}
       <section id="testimonials" className="py-section bg-white scroll-mt-24" aria-labelledby="testimonials-title">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-slide-up">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 animate-slide-up">
           <h2 id="testimonials-title" className="text-3xl lg:text-4xl font-bold text-text mb-8 text-center">
             Real Customer Reviews & Testimonials
           </h2>
-          <div className="grid md:grid-cols-3 gap-lg">
+          <div className="grid md:grid-cols-3 gap-xl">
             {testimonials.map((t, i) => (
               <ContentCard key={i}>
                 <p className="italic text-text">{t.quote}</p>
@@ -274,7 +274,7 @@ export default function Home() {
 
       {/* FAQs */}
       <section id="faqs" className="py-section bg-surface scroll-mt-24" aria-labelledby="faqs-title">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 animate-slide-up">
+        <div className="max-w-3xl mx-auto px-6 sm:px-10 lg:px-12 animate-slide-up">
           <div className="text-center mb-12">
             <h2 id="faqs-title" className="text-3xl lg:text-4xl font-bold text-text mb-4">
               Frequently Asked Questions
@@ -368,7 +368,7 @@ export default function Home() {
 
       {/* Final CTA / Closing */}
       <section id="cta" className="py-section bg-white relative overflow-hidden scroll-mt-24" aria-labelledby="cta-title">
-        <div className="relative max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 animate-slide-up">
+        <div className="relative max-w-4xl mx-auto text-center px-6 sm:px-10 lg:px-12 animate-slide-up">
           <h2 id="cta-title" className="text-4xl lg:text-6xl font-bold text-text mb-6 leading-tight">
             Book Your Cleaning Service Today!
           </h2>

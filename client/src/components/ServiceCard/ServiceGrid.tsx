@@ -14,7 +14,7 @@ export default function ServiceGrid({ ids, className, hideIcon }: ServiceGridPro
     .filter(Boolean);
 
   return (
-    <div className={`grid grid-cols-1 md:grid-cols-2 gap-lg ${className || ""}`}>
+    <div className={`grid grid-cols-1 md:grid-cols-2 gap-xl ${className || ""}`}>
       {items.map((item) => (
         <ServiceCard key={item.id} {...item} hideIcon={hideIcon} />
       ))}

@@ -61,7 +61,7 @@ function Team() {
       />
       
       <section className="py-section bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-12">
           <div className="text-center mb-xl">
             <h1 className="text-4xl font-bold text-text mb-4">Meet the Team</h1>
             <h2 className="text-xl text-accent font-medium mb-6">Cleaners Ready to Go</h2>
@@ -69,7 +69,7 @@ function Team() {
           </div>
 
           {/* Team Introduction */}
-          <div className="grid lg:grid-cols-2 gap-lg items-center mb-xl">
+          <div className="grid lg:grid-cols-2 gap-xl items-center mb-xl">
             <div>
               <h3 className="text-2xl font-bold text-text mb-6">Our Cleaning Family</h3>
               <p className="text-text mb-6 leading-relaxed">
@@ -95,7 +95,7 @@ function Team() {
           </div>
 
           {/* Team Members */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-lg mb-xl">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-xl mb-xl">
             {teamMembers.map((member) => (
               <div key={member.name} className="card text-center">
                 <img 
@@ -118,7 +118,7 @@ function Team() {
               <h3 className="text-2xl font-bold text-white mb-4">Our Team Values</h3>
               <p className="text-gray-300">What drives us to deliver exceptional service every day</p>
             </div>
-            <div className="grid md:grid-cols-3 gap-lg">
+            <div className="grid md:grid-cols-3 gap-xl">
               <div className="text-center">
                 <div className="bg-accent p-3 rounded-lg w-fit mx-auto mb-4">
                   <Icon name="Award" className="w-6 h-6 text-white" />

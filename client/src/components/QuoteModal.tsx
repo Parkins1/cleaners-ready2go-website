@@ -122,7 +122,7 @@ export default function QuoteModal({
                   <SelectTrigger id="home-size">
                     <SelectValue placeholder="Select home size..." />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="bg-white">
                     <SelectItem value="studio-1br">Studio/1BR</SelectItem>
                     <SelectItem value="2br-2ba">2BR/2BA</SelectItem>
                     <SelectItem value="3br-plus">3BR/2BA+</SelectItem>
@@ -151,7 +151,7 @@ export default function QuoteModal({
                   <SelectTrigger id="service-frequency">
                     <SelectValue placeholder="Select frequency..." />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="bg-white">
                     <SelectItem value="weekly">Weekly</SelectItem>
                     <SelectItem value="bi-weekly">Bi-weekly</SelectItem>
                     <SelectItem value="monthly">Monthly</SelectItem>

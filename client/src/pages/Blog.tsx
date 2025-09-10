@@ -28,7 +28,7 @@ export default function Blog() {
         ]}
       />
       <section className="py-section bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-3xl mx-auto px-6 sm:px-10 lg:px-12 text-center">
           <h1 className="text-4xl font-bold text-text mb-4">Our Blog is Coming Soon</h1>
           <p className="text-lg text-text/90">
             We're currently creating great content for you. Check back soon for articles on cleaning tips, home care, and more.

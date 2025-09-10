@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  darkMode: ["class"],
+  darkMode: "class",
   // content is no longer required by v4, but keeping it is harmless and can help some editors/tools
   content: [
     "./client/src/pages/**/*.{ts,tsx}",
@@ -16,6 +16,7 @@ export default {
     extend: {
       screens: {
         xs: "375px",
+        sm: "480px",
       },
       colors: {
         // Legacy tokens
@@ -74,7 +75,7 @@ export default {
         pill: "var(--radius-pill)",
       },
       fontFamily: {
-        // Note: "serif" here points to a sans face ("Outfit") by design—OK if intentional
+        // Note: "serif" here points to a sans face ("Outfit") by design for consistency across branding
         sans: ['Inter', 'system-ui', 'sans-serif'],
         serif: ['Outfit', 'ui-sans-serif', 'sans-serif'],
         display: ['Space Grotesk', 'Inter', 'sans-serif'],

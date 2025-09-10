@@ -313,7 +313,7 @@ export default function LibertyLake() {
         title: "Cleaning Packages Built for Liberty Lake Lifestyles",
         sectionClassName: "py-section bg-white",
         content: (
-          <div className="grid md:grid-cols-2 gap-lg">
+          <div className="grid md:grid-cols-2 gap-xl">
             <ContentCard>
               <h3 className="text-xl font-bold text-text mb-2">Set‑It‑and‑Forget‑It Maintenance</h3>
               <p>
@@ -403,7 +403,7 @@ export default function LibertyLake() {
         title: 'Liberty Lake Residents Share Their Experience',
         sectionClassName: 'py-section bg-white',
         content: (
-          <div className="grid md:grid-cols-3 gap-lg">
+          <div className="grid md:grid-cols-3 gap-xl">
             <ContentCard as="blockquote">“We've been using Cleaners Ready 2 GO for over two years—reliable, thorough, and respectful of our home.” — Jennifer & Mark Thompson, Liberty Lake</ContentCard>
             <ContentCard as="blockquote">“Our Liberty Lake short‑term rental keeps five‑star cleanliness thanks to Ready 2 GO.” — Chris R., Liberty Lake</ContentCard>
             <ContentCard as="blockquote">“Move‑out clean was thorough—the property manager commented on how great it looked.” — Jordan M., Veradale</ContentCard>

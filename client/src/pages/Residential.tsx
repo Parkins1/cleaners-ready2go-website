@@ -21,6 +21,7 @@ import TrustSignalsSection from "@/components/TrustSignals/TrustSignalsSection";
 import { brand } from "@/config/brand";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import iconKitchen from "@/assets/icon_kitchen.webp";
+import PackagesSection from "@/components/Sections/PackagesSection";
 
 // Icons: use centralized Lucide loader via IconCard.iconName
 
@@ -94,7 +95,7 @@ export default function Residential() {
 
       {/* Quick highlights under hero */}
       <section className="py-10 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-12">
           <ul className="grid gap-md text-sm text-text md:grid-cols-3">
             <li className="border-l-4 border-brand-gold bg-brand-gold/5 rounded-sm pl-4 py-2 flex items-start gap-2">
               <Icon name="Sparkles" className="w-4 h-4 mt-1 text-brand-gold flex-shrink-0" />
@@ -129,9 +130,9 @@ export default function Residential() {
 
       {/* Scope: Room by Room */}
       <section id="includes" className="py-section bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-xl">Exactly What We Clean (Room‑by‑Room Scope)</h2>
-          <div className="grid gap-lg md:grid-cols-2">
+          <div className="grid gap-xl md:grid-cols-2">
             {/* Living Room / Family Spaces */}
             <IconCard
               iconName="Home"
@@ -236,9 +237,9 @@ export default function Residential() {
 
       {/* Our Four‑Step System */}
       <section className="py-section bg-process-radial">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-xl">Our Four‑Step System (Built for Consistency)</h2>
-          <div className="grid gap-lg md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-xl md:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 title: "1) Book & Scope",
@@ -268,9 +269,9 @@ export default function Residential() {
 
       {/* Why We’re Trusted */}
       <section className="py-section bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-xl">Why We’re Trusted: Expertise You Can See</h2>
-          <div className="grid gap-lg md:grid-cols-2">
+          <div className="grid gap-xl md:grid-cols-2">
             <ContentCard>
               <h3 className="text-xl font-semibold mb-3">Standardized Training (No Guesswork)</h3>
               <ul className="space-y-2 text-sm text-text">
@@ -324,83 +325,11 @@ export default function Residential() {
       </section>
 
       {/* Packages */}
-      <section className="py-section bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-xl">Packages for <span className="text-brand-gold">Your Home</span></h2>
-          <div className="grid gap-lg md:grid-cols-2 lg:grid-cols-4">
-            {/* Weekly Refresh */}
-            <IconCard
-              iconName="Clock"
-              title="Weekly Refresh"
-              items={[
-                "A full standard clean with high‑traffic areas prioritized.",
-                "Built‑in rotations: baseboards, vents, door frames, reachable blinds.",
-                "Optional quarterly add‑ons (inside oven/fridge, detailed blinds).",
-              ]}
-              className="h-full flex flex-col"
-            >
-              <div className="mt-auto pt-4">
-                <Button onClick={() => open("quote")} aria-label="Get a Quote for Weekly Refresh" variant="primary" className="w-full">Get a Quote</Button>
-              </div>
-            </IconCard>
-
-            {/* Bi‑Weekly Balance */}
-            <IconCard
-              iconName="Sparkles" // Placeholder icon
-              title="Bi‑Weekly Balance"
-              items={[
-                "Predictable upkeep: bathrooms shine, kitchen reset, floors and dust.",
-                "Rotational detailing prevents buildup on trim and fixtures.",
-                "Easy to add seasonal extras when needed.",
-              ]}
-              className="h-full flex flex-col"
-            >
-              <div className="mt-auto pt-4">
-                <Button onClick={() => open("quote")} aria-label="Get a Quote for Bi‑Weekly Balance" variant="primary" className="w-full">Get a Quote</Button>
-              </div>
-            </IconCard>
-
-            {/* Monthly Reset */}
-            <IconCard
-              iconName="Sparkles"
-              title="Monthly Reset"
-              items={[
-                "Thorough dust and surface pass to catch what accumulates.",
-                "Bathrooms, kitchen, and floors refreshed; detail focus monthly.",
-                "Often paired with 2–3 Deep Cleans per year.",
-              ]}
-              className="h-full flex flex-col"
-            >
-              <div className="mt-auto pt-4">
-                <Button onClick={() => open("quote")} aria-label="Get a Quote for Monthly Reset" variant="primary" className="w-full">Get a Quote</Button>
-              </div>
-            </IconCard>
-
-            {/* Seasonal Deep Clean */}
-            <IconCard
-              iconName="Sparkles" // Placeholder icon
-              title="Seasonal Deep Clean"
-              items={[
-                "Hand‑wipe reachable baseboards/trim, detail blinds/vents/fixtures.",
-                "Kitchen degrease; bath descale; grout focus where needed.",
-                "Under/behind items; edge vacuuming; glass/polish attention.",
-              ]}
-              className="h-full flex flex-col"
-            >
-              <div className="mt-auto pt-4">
-                <Button onClick={() => open("quote")} aria-label="Get a Quote for Seasonal Deep Clean" variant="primary" className="w-full">Get a Quote</Button>
-              </div>
-            </IconCard>
-          </div>
-          <p className="text-sm text-text mt-4">
-            <strong>Note:</strong> Move‑In/Move‑Out is a separate service with cabinet/appliance interiors and turnover‑ready detailing. We’ll point you to that scope if it’s a better fit.
-          </p>
-        </div>
-      </section>
+      <PackagesSection />
 
       {/* Add‑Ons */}
       <section className="py-section bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6">Add‑Ons & Upgrades (Customize Your Clean)</h2>
           <div className="grid gap-md md:grid-cols-2 lg:grid-cols-3 text-sm text-text">
             {/* Inside oven or refrigerator */}
@@ -456,9 +385,9 @@ export default function Residential() {
 
       {/* Difference grid */}
       <section className="py-section bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-xl">The Ready2Go Difference</h2>
-          <div className="grid gap-lg md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-xl md:grid-cols-2 lg:grid-cols-3">
             {/* Outcome‑First Standards */}
             <IconCard
               iconName="Sparkles" // Placeholder icon
@@ -518,7 +447,7 @@ export default function Residential() {
 
       {/* Pricing & Quotes */}
       <section className="py-section bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-3xl mx-auto px-6 sm:px-10 lg:px-12 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-4">Pricing & Quotes (Transparent by Design)</h2>
           <p className="text-text/90 mb-6">
             We price by home size, current condition, and frequency—then hold the scope accountable to our standards. Share a few details (and photos if you’d like) and we’ll provide a precise quote with optional add‑ons. No upsell pressure, ever.
@@ -531,7 +460,7 @@ export default function Residential() {
 
       {/* Satisfaction Promise */}
       <section className="py-section bg-brand-gray-light">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-4xl mx-auto px-6 sm:px-10 lg:px-12 text-center">
           <h2 className="text-2xl lg:text-3xl font-bold text-text mb-3">Satisfaction Promise</h2>
           <p className="text-text/90">
             If anything misses the mark, tell us within 24 hours. We’ll return promptly to fix it—no charge, no friction. Your trust matters, and your home should look exactly the way we promised.
@@ -541,9 +470,9 @@ export default function Residential() {
 
       {/* Testimonials */}
       <section className="py-section bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-6 sm:px-10 lg:px-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-xl">Testimonials</h2>
-          <div className="grid gap-lg md:grid-cols-3">
+          <div className="grid gap-xl md:grid-cols-3">
             {[
               {
                 quote: "The checklists and Lead Tech notes are a game‑changer. Our kitchen glass is finally streak‑free.",
@@ -569,7 +498,7 @@ export default function Residential() {
 
       {/* FAQ */}
       <section className="py-section bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto px-6 sm:px-10 lg:px-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6">FAQ</h2>
           <Accordion type="single" collapsible className="w-full border rounded-md">
             {[
@@ -602,7 +531,7 @@ export default function Residential() {
 
       {/* Final CTA */}
       <section className="py-section bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-4xl mx-auto px-6 sm:px-10 lg:px-12 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-2">Ready to Transform <span className="text-brand-gold">Your Home</span>?</h2>
           <p className="text-text/90 mb-6">Predictable quality. Professional teams. Results you can see.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">

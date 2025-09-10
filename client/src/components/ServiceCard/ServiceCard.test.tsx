@@ -14,6 +14,8 @@ describe('ServiceCard', () => {
     href: '/test-service',
     img: '/test-image.jpg',
     imgAlt: 'Test image alt',
+    imgWidth: 400,
+    imgHeight: 300,
     icon: <div data-testid="test-icon">Icon</div>,
   };
 

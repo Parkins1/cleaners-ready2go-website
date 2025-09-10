@@ -134,7 +134,7 @@ export default function ApartmentCleaning() {
           <h2 id="apt-services-title" className="text-3xl lg:text-4xl font-bold text-text text-center mb-10">
             Our Apartment Cleaning Services in Spokane
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-lg">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-xl">
             <IconCard
               iconSrc={iconMoveOut}
               title="Move-Out & End-of-Lease Cleaning"
@@ -182,11 +182,11 @@ export default function ApartmentCleaning() {
 
       {/* What’s Included */}
       <section className="py-section bg-white bg-process-radial" aria-labelledby="apartment-includes-title">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-12">
           <h2 id="apartment-includes-title" className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">What’s Included</h2>
 
           {/* Four rooms in a 2x2 layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-xl">
             <ContentCard>
               <h3 className="text-lg font-semibold text-text mb-3">Kitchen</h3>
               <ul className="space-y-2 text-text">
@@ -260,7 +260,7 @@ export default function ApartmentCleaning() {
       <section className="py-section bg-surface" aria-labelledby="includes-title">
         <div className="max-w-6xl mx-auto px-6">
           <h2 id="includes-title" className="text-3xl lg:text-4xl font-bold text-text text-center">What’s Included</h2>
-          <div className="grid md:grid-cols-3 gap-lg mt-8">
+          <div className="grid md:grid-cols-3 gap-xl mt-8">
             <ContentCard>
               <OptimizedImage
                 src={photoKitchenWebp}
@@ -269,6 +269,8 @@ export default function ApartmentCleaning() {
                 sizes="(max-width: 768px) 100vw, 33vw"
                 imgSrcSet={`${photoKitchen480Webp} 480w, ${photoKitchen768Webp} 768w, ${photoKitchen1024Webp} 1024w`}
                 sources={[{ type: 'image/avif', srcSet: `${photoKitchen480Avif} 480w, ${photoKitchen768Avif} 768w, ${photoKitchen1024Avif} 1024w` }]}
+                width={1024}
+                height={768}
               />
               <h3 className="text-lg font-semibold text-text mt-4 mb-2">Kitchen</h3>
               <ul className="list-none space-y-2 text-sm">
@@ -287,6 +289,8 @@ export default function ApartmentCleaning() {
                 sizes="(max-width: 768px) 100vw, 33vw"
                 imgSrcSet={`${photoBathroom480Webp} 480w, ${photoBathroom768Webp} 768w, ${photoBathroom1024Webp} 1024w`}
                 sources={[{ type: 'image/avif', srcSet: `${photoBathroom480Avif} 480w, ${photoBathroom768Avif} 768w, ${photoBathroom1024Avif} 1024w` }]}
+                width={1024}
+                height={768}
               />
               <h3 className="text-lg font-semibold text-text mt-4 mb-2">Bathroom</h3>
               <ul className="list-none space-y-2 text-sm">
@@ -305,6 +309,8 @@ export default function ApartmentCleaning() {
                 sizes="(max-width: 768px) 100vw, 33vw"
                 imgSrcSet={`${photoBedroom480Webp} 480w, ${photoBedroom768Webp} 768w, ${photoBedroom1024Webp} 1024w`}
                 sources={[{ type: 'image/avif', srcSet: `${photoBedroom480Avif} 480w, ${photoBedroom768Avif} 768w, ${photoBedroom1024Avif} 1024w` }]}
+                width={1024}
+                height={768}
               />
               <h3 className="text-lg font-semibold text-text mt-4 mb-2">Bedroom</h3>
               <ul className="list-none space-y-2 text-sm">
@@ -323,7 +329,7 @@ export default function ApartmentCleaning() {
 
       {/* Reviews with lifestyle image */}
       <section className="py-section bg-white">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-lg items-center">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-xl items-center">
           
           <div>
             <OptimizedImage
@@ -334,6 +340,8 @@ export default function ApartmentCleaning() {
               sizes="(max-width: 768px) 100vw, 50vw"
               imgSrcSet={`${lifestylePhoto480Webp} 480w, ${lifestylePhoto768Webp} 768w, ${lifestylePhoto1024Webp} 1024w`}
               sources={[{ type: 'image/avif', srcSet: `${lifestylePhoto480Avif} 480w, ${lifestylePhoto768Avif} 768w, ${lifestylePhoto1024Avif} 1024w` }]}
+              width={1024}
+              height={768}
             />
           </div>
           <div className="space-y-6">

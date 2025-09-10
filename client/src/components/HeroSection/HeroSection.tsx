@@ -82,7 +82,7 @@ export default function HeroSection({
     // CSS aspect-ratio variant: reserves vertical space before image loads (mobile 4/5, md+ 16/9)
     return (
       <section className={cn('hero relative overflow-hidden', className)} aria-label="Hero Section">
-        <div className="hero-media relative overflow-hidden w-full aspect-[1/1] md:aspect-[16/9]">
+        <div className="hero-media relative overflow-hidden w-full min-h-screen md:aspect-[16/9]">
           <OptimizedImage
             src={image}
             alt={imageAlt || ""}
@@ -97,8 +97,8 @@ export default function HeroSection({
             lazy={false}
             sizes="100vw"
             placeholder="blur"
-            width={imageWidth}
-            height={imageHeight}
+            width={imageWidth ?? 1920}
+            height={imageHeight ?? 1080}
             decoding="sync"
             fetchpriority="high"
             imgSrcSet={imgSrcSet}
@@ -116,7 +116,7 @@ export default function HeroSection({
   // Fallback: legacy minHeight implementation (kept for other pages)
   return (
     <section
-      className={cn('hero relative flex items-center justify-center overflow-hidden', className)}
+      className={cn('hero relative flex items-center justify-center overflow-hidden !min-h-screen md:min-h-[70vh]', className)}
       style={{ minHeight }}
       aria-label="Hero Section"
     >
@@ -132,8 +132,8 @@ export default function HeroSection({
         lazy={false}
         sizes="100vw"
         placeholder="blur"
-        width={imageWidth}
-        height={imageHeight}
+        width={imageWidth ?? 1920}
+        height={imageHeight ?? 1080}
         decoding="sync"
         fetchpriority="high"
         imgSrcSet={imgSrcSet}

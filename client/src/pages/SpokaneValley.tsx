@@ -124,7 +124,7 @@ export default function SpokaneValley() {
         content: (
           <div className="max-w-5xl mx-auto px-6">
             <div className="rounded-xl border border-slate-300 bg-white p-4 sm:p-6 shadow-sm">
-              <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md sm:gap-lg text-sm">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md sm:gap-xl text-sm">
                 <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-accent flex-none" />Instant online pricing   no surprise fees</li>
                 <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-accent flex-none" />Color‑coded microfiber system to help reduce cross‑contamination</li>
                 <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-accent flex-none" />Photo-verified results after every clean</li>
@@ -157,7 +157,7 @@ export default function SpokaneValley() {
         title: "Cleaning Packages Built for Valley Lifestyles",
         sectionClassName: "py-section bg-surface",
         content: (
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-lg">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-xl">
             <ContentCard>
               <h3 className="text-xl font-bold text-text mb-4">Set-It-and-Forget-It Maintenance</h3>
               <p className="text-text">
@@ -220,7 +220,7 @@ export default function SpokaneValley() {
         sectionClassName: "py-section bg-white",
         content: (
           <div className="max-w-6xl mx-auto px-6">
-            <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-lg text-center">
+            <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-xl text-center">
               <div>
                 <Icon name="ShieldCheck" className="mx-auto h-12 w-12 text-accent" />
                 <h3 className="text-lg font-bold mt-4">Local Presence</h3>
@@ -271,7 +271,7 @@ export default function SpokaneValley() {
         content: (
           <div className="max-w-4xl mx-auto px-6">
             <h2 className="text-3xl font-bold text-text mb-8 text-center">The Four-Step Shine System</h2>
-            <div className="grid md:grid-cols-2 gap-lg">
+            <div className="grid md:grid-cols-2 gap-xl">
               <ContentCard>
                 <h3 className="text-xl font-bold text-text mb-4">1. Instant Quote</h3>
                 <p>Enter square footage, bed/bath count, and frequency online. Our estimator tool provides an instant flat-rate price.</p>
@@ -334,7 +334,7 @@ export default function SpokaneValley() {
         content: (
           <div className="max-w-4xl mx-auto px-6 text-center">
             <h2 className="text-3xl font-bold text-text mb-6">Valley Residents Share Their Experience</h2>
-            <div className="grid md:grid-cols-3 gap-lg">
+            <div className="grid md:grid-cols-3 gap-xl">
               <ContentCard>
                 <p>“Booked a deep clean before Hoopfest weekend. The place felt refreshingly airy, and the pollen dust was gone.”</p>
                 <p className="font-bold mt-4"> Katie L., Greenacres</p>

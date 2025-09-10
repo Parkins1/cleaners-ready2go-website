@@ -40,7 +40,7 @@ function About() {
       />
       
       <section className="py-section">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-6 sm:px-10 lg:px-12">
           <div className="text-center mb-xl animate-slide-up">
             <div className="flex justify-center mb-10">
               <OptimizedImage
@@ -63,7 +63,7 @@ function About() {
             <p className="text-xl lg:text-2xl text-text">Professional cleaning services you can trust</p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-lg items-center mb-xl">
+          <div className="grid lg:grid-cols-2 gap-xl items-center mb-xl">
             <div>
               <img 
                 src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
@@ -88,7 +88,7 @@ function About() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-lg mb-xl">
+          <div className="grid md:grid-cols-3 gap-xl mb-xl">
             <div className="card text-center">
               <div className="bg-accent p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <Icon name="Award" className="w-8 h-8 text-white" />

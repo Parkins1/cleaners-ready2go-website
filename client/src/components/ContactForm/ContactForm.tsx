@@ -93,7 +93,7 @@ export default function ContactForm({ onSubmit, isLoading }: ContactFormProps) {
           onValueChange={(value) => form.setValue("serviceType", value)}
           defaultValue={form.getValues("serviceType")}
         >
-          <SelectTrigger>
+          <SelectTrigger className="w-full">
             <SelectValue placeholder="Select a service..." />
           </SelectTrigger>
           <SelectContent>

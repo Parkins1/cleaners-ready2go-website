@@ -127,7 +127,7 @@ export default function DeepCleaning() {
       <section id="includes" className="py-section bg-surface">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">What's Included in Our Spokane Deep Cleaning</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-lg mt-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-xl mt-8">
             <IconCard
               iconSrc={iconKitchen}
               title="Kitchen Revival"
@@ -211,7 +211,7 @@ export default function DeepCleaning() {
       <section className="py-section bg-white bg-process-radial">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-xl text-center">Our 4-Step Deep Cleaning Process</h2>
-          <div className="grid md:grid-cols-4 gap-lg">
+          <div className="grid md:grid-cols-4 gap-xl">
             <ContentCard>
               <span className="step-number">1</span>
               <h3 className="mt-2 font-semibold">Free Local Walk-Through & Quote</h3>
@@ -275,7 +275,7 @@ export default function DeepCleaning() {
 
           <p className="text-center mt-4">We bring sparkling results to:</p>
 
-          <ul className="flex flex-wrap justify-center gap-lg mt-3 text-text">
+          <ul className="flex flex-wrap justify-center gap-xl mt-3 text-text">
             {cityList.map((c) => (
               <li key={c} className="flex items-center gap-2 px-2">
                 <Icon

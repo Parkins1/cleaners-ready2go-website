@@ -12,7 +12,7 @@ export function ServicesSection({
 }) {
   return (
     <section id="services" className="py-section bg-white scroll-mt-24" aria-labelledby="services-title">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
         <div className="text-center mb-xl animate-slide-up">
           <h2 id="services-title" className="text-4xl lg:text-5xl font-bold text-text mb-4">
             Comprehensive Residential Cleaning Services
@@ -28,11 +28,11 @@ export function ServicesSection({
 export function ProcessSection() {
   return (
     <section id="process" className="py-section bg-surface scroll-mt-24" aria-labelledby="process-title">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-slide-up">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 animate-slide-up">
         <h2 id="process-title" className="text-3xl lg:text-4xl font-bold text-text mb-8 text-center">
           Our Simple House Cleaning Process
         </h2>
-        <div className="grid md:grid-cols-4 gap-lg text-center">
+        <div className="grid md:grid-cols-4 gap-xl text-center">
           <ContentCard>
             <span className="step-number">1</span>
             <h3 className="mt-2 font-semibold">Request Your Quote</h3>
@@ -76,7 +76,7 @@ export function FirstStepProcess({ className = "" }: { className?: string }) {
 
   return (
     <section className={`py-8 ${className}`} aria-label="Request Your Quote">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-3xl mx-auto px-6 sm:px-10 lg:px-12">
         <ContentCard className="p-6 sm:p-8 flex flex-col items-center text-center">
           <span className="step-number">1</span>
           <h3 className="mt-2 text-xl font-semibold">Request Your Quote</h3>
