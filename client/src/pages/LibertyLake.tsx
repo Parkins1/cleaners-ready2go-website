@@ -27,7 +27,7 @@ export default function LibertyLake() {
   const pageDetails = {
     locationName: "Liberty Lake",
     heroImage: heroLiberty,
-    heroAlt: 'House cleaning services in Liberty Lake, WA—Cleaners Ready 2Go',
+    heroAlt: 'House cleaning services in Liberty Lake, WA—Cleaners Ready 2 Go',
     heroImgSrcSet: `${hero480} 480w, ${hero768} 768w, ${hero1024} 1024w`,
     heroSources: [{ type: 'image/avif', srcSet: `${hero480Avif} 480w, ${hero768Avif} 768w, ${hero1024Avif} 1024w` }],
     heroWidth: 1392,
@@ -55,7 +55,7 @@ export default function LibertyLake() {
     serviceCardIds: ["residential", "deep-cleaning", "move-out", "apartment-cleaning"],
     testimonial: {
       quote:
-        "We've been using Cleaners Ready 2 GO for over two years—reliable, thorough, and respectful of our home.",
+        "We've been using Cleaners Ready 2 Go for over two years—reliable, thorough, and respectful of our home.",
       name: "Jennifer & Mark Thompson",
     },
     // Liberty Lake specific long-form sections (doesn't duplicate ProcessSection or ServicesSection)
@@ -146,7 +146,7 @@ export default function LibertyLake() {
             </p>
 
             <p className="mb-4">
-              Cleaners Ready 2 GO provides professional, reliable, and eco-conscious cleaning designed for Liberty Lake
+              Cleaners Ready 2 Go provides professional, reliable, and eco-conscious cleaning designed for Liberty Lake
               homes: background-checked teams, HEPA filtration, biodegradable products, and a consistent approach that
               protects your surfaces and your family.
             </p>
@@ -365,7 +365,7 @@ export default function LibertyLake() {
         ),
       },
       {
-        title: 'Why Liberty Lake Chooses Cleaners Ready 2 GO',
+        title: 'Why Liberty Lake Chooses Cleaners Ready 2 Go',
         sectionClassName: 'py-section bg-surface',
         content: (
           <ul className="space-y-2">
@@ -404,8 +404,8 @@ export default function LibertyLake() {
         sectionClassName: 'py-section bg-white',
         content: (
           <div className="grid md:grid-cols-3 gap-xl">
-            <ContentCard as="blockquote">“We've been using Cleaners Ready 2 GO for over two years—reliable, thorough, and respectful of our home.” — Jennifer & Mark Thompson, Liberty Lake</ContentCard>
-            <ContentCard as="blockquote">“Our Liberty Lake short‑term rental keeps five‑star cleanliness thanks to Ready 2 GO.” — Chris R., Liberty Lake</ContentCard>
+            <ContentCard as="blockquote">“We've been using Cleaners Ready 2 Go for over two years—reliable, thorough, and respectful of our home.” — Jennifer & Mark Thompson, Liberty Lake</ContentCard>
+            <ContentCard as="blockquote">“Our Liberty Lake short‑term rental keeps five‑star cleanliness thanks to Cleaners Ready 2 Go.” — Chris R., Liberty Lake</ContentCard>
             <ContentCard as="blockquote">“Move‑out clean was thorough—the property manager commented on how great it looked.” — Jordan M., Veradale</ContentCard>
           </div>
         ),

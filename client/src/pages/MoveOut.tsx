@@ -76,7 +76,7 @@ export default function MoveOut() {
   return (
     <>
       <SEO
-        title="Move-Out Cleaning in Spokane Valley, WA | Cleaners Ready 2 GO"
+        title="Move-Out Cleaning in Spokane Valley, WA | Cleaners Ready 2 Go"
         description="Trusted move-out cleaning in Spokane Valley. Checklist-driven, detail-focused cleans that align with local landlord expectations. Get your free quote."
       />
       <JsonLd
@@ -84,7 +84,7 @@ export default function MoveOut() {
           makeWebPage({
             siteUrl: site.url,
             path: "/move-out",
-            title: "Move-Out Cleaning in Spokane Valley, WA | Cleaners Ready 2 GO",
+            title: "Move-Out Cleaning in Spokane Valley, WA | Cleaners Ready 2 Go",
             description:
               "Trusted move-out cleaning in Spokane Valley. Checklist-driven, detail-focused cleans that align with local landlord expectations.",
           }),
@@ -130,7 +130,7 @@ export default function MoveOut() {
       <section className="py-section bg-white">
         <div className="max-w-5xl mx-auto px-6 space-y-6">
           <p className="text-lg text-text">
-            Moving out shouldn't mean spending your last night scrubbing oven racks. Cleaners Ready 2 GO delivers a modern, no-nonsense move-out cleaning that fits your timeline and protects your budget. We align with manager and landlord checklists so your home looks inspection-ready—baseboards to blinds, bathrooms to the inside of appliances.
+            Moving out shouldn't mean spending your last night scrubbing oven racks. Cleaners Ready 2 Go delivers a modern, no-nonsense move-out cleaning that fits your timeline and protects your budget. We align with manager and landlord checklists so your home looks inspection-ready—baseboards to blinds, bathrooms to the inside of appliances.
           </p>
           <p className="text-lg text-text">
             Our approach is built for real life in the Inland Northwest: winter grit, summer dust, pet hair, and everything in between. You'll get a precise scope, on-time arrival, eco- and pet-safe products, and a final shine that makes your home feel brand new for the next resident (and your rental history). The result? Less stress, more deposit back, and a smoother hand-off so you can focus on your next place.
@@ -313,7 +313,7 @@ export default function MoveOut() {
             <footer className="mt-3 text-sm text-gray-600">—Dan R., Liberty Lake</footer>
           </ContentCard>
           <ContentCard as="blockquote">
-            <p>"Our tenants left the place rough. Cleaners Ready 2 GO got it ready for photos the next day. Highly recommend."</p>
+            <p>"Our tenants left the place rough. Cleaners Ready 2 Go got it ready for photos the next day. Highly recommend."</p>
             <footer className="mt-3 text-sm text-gray-600">—Melissa P., Property Manager, Spokane</footer>
           </ContentCard>
         </div>

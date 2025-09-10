@@ -8,7 +8,7 @@ export const brand = {
     state: "WA",
     zip: "99202",
   },
-  hours: "5:00am to 7:00pm, 7 days a week",
+  hours: "7 days a week, 5:00am to 7:00pm",
   serviceAreas: {
     cities: [
       "Spokane",

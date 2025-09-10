@@ -3,7 +3,7 @@
 
 Last updated: 2025‑09-08
 Sitemap: https://cleanersready2go.com/sitemap.xml
-Preferred name: Cleaners Ready 2 GO
+Preferred name: Cleaners Ready 2 Go
 Canonical site: https://cleanersready2go.com
 Policies: https://cleanersready2go.com/privacy
 
@@ -43,4 +43,3 @@ Policies: https://cleanersready2go.com/privacy
 - Machine‑readable content: Markdown/clean text mirrors at https://cleanersready2go.com/ai/ (e.g., /ai/deep-cleaning.md)
 - Changelogs: https://cleanersready2go.com/changelog
 - Versioning: Use canonical URLs; avoid UTM parameters.
-

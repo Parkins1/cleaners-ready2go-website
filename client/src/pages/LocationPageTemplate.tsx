@@ -67,7 +67,7 @@ export default function LocationPageTemplate({
   return (
     <>
       <SEO
-        title={`Cleaning Services in ${locationName} - Cleaners Ready 2Go`}
+        title={`Cleaning Services in ${locationName} - Cleaners Ready 2 Go`}
         description={`Professional cleaning services in ${locationName}. We offer residential, commercial, and move-out cleaning. Book your service today!`}
       />
 
@@ -77,7 +77,7 @@ export default function LocationPageTemplate({
           makeWebPage({
             siteUrl: site.url,
             path,
-            title: `Cleaning Services in ${locationName} - Cleaners Ready 2Go`,
+            title: `Cleaning Services in ${locationName} - Cleaners Ready 2 Go`,
             description: `Professional cleaning services in ${locationName}. We offer residential, commercial, and move-out cleaning. Book your service today!`,
           }),
           makeService({
@@ -112,7 +112,7 @@ export default function LocationPageTemplate({
       {/* Intro Section */}
       <section className="py-section bg-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-text mb-6">{`Welcome to Cleaners Ready 2Go ${locationName}`}</h2>
+          <h2 className="text-3xl font-bold text-text mb-6">{`Welcome to Cleaners Ready 2 Go ${locationName}`}</h2>
           <p className="text-lg text-text leading-relaxed">{introText}</p>
         </div>
       </section>

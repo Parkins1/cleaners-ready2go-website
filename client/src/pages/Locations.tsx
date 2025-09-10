@@ -15,7 +15,7 @@ export default function Locations() {
   return (
     <>
       <SEO
-        title="Service Areas - Cleaners Ready 2Go | Spokane Valley, Liberty Lake, Greenacres"
+        title="Service Areas - Cleaners Ready 2 Go | Spokane Valley, Liberty Lake, Greenacres"
         description="Professional cleaning services in Spokane Valley, Liberty Lake, and Greenacres. Same-day service available. No travel fees within our service areas."
       />
       <JsonLd
@@ -23,7 +23,7 @@ export default function Locations() {
           makeWebPage({
             siteUrl: site.url,
             path: "/locations",
-            title: "Service Areas - Cleaners Ready 2Go | Spokane Valley, Liberty Lake, Greenacres",
+            title: "Service Areas - Cleaners Ready 2 Go | Spokane Valley, Liberty Lake, Greenacres",
             description:
               "Professional cleaning services in Spokane Valley, Liberty Lake, and Greenacres. Same-day service available. No travel fees within our service areas.",
           }),

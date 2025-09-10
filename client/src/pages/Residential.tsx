@@ -33,7 +33,7 @@ export default function Residential() {
   return (
     <>
       <SEO
-        title="Residential Cleaning That Elevates Your Home | Ready2Go Cleaners"
+        title="Residential Cleaning That Elevates Your Home | Cleaners Ready 2 Go"
         description="Modern, consistent home cleaning built around your home—clear scope, trained teams, and results you can see. Weekly, bi‑weekly, monthly, and deep clean options."
       />
       <JsonLd
@@ -41,7 +41,7 @@ export default function Residential() {
           makeWebPage({
             siteUrl: site.url,
             path: "/residential",
-            title: "Residential Cleaning That Elevates Your Home | Ready2Go Cleaners",
+            title: "Residential Cleaning That Elevates Your Home | Cleaners Ready 2 Go",
             description:
               "Modern, consistent home cleaning built around your home—clear scope, trained teams, and results you can see.",
           }),
@@ -385,7 +385,7 @@ export default function Residential() {
       {/* Difference grid */}
       <section className="py-section bg-white">
         <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-xl">The Ready2Go Difference</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-xl">The Cleaners Ready 2 Go Difference</h2>
           <div className="grid gap-xl md:grid-cols-2 lg:grid-cols-3">
             {/* Outcome‑First Standards */}
             <IconCard

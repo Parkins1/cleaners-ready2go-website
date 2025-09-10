@@ -32,7 +32,7 @@ export default function SpokaneValley() {
   const pageDetails = {
     locationName: "Spokane Valley",
     heroImage: heroImage,
-    heroAlt: "House cleaning services in Spokane Valley, WA—Cleaners Ready 2Go",
+    heroAlt: "House cleaning services in Spokane Valley, WA—Cleaners Ready 2 Go",
     heroImgSrcSet: `${hero480} 480w, ${hero768} 768w, ${hero1024} 1024w`,
     heroSources: [{ type: 'image/avif', srcSet: `${hero480Avif} 480w, ${hero768Avif} 768w, ${hero1024Avif} 1024w` }],
     heroWidth: 1392,
@@ -142,7 +142,7 @@ export default function SpokaneValley() {
         content: (
           <>
             <p className="text-lg text-text leading-relaxed">
-              Weekends in Spokane Valley are for Centennial Trail rides, float trips on the Spokane River, and grilling at Mirabeau Meadows not scouring grout lines. Cleaners Ready 2 GO bridges the gap between “wish it were clean” and “wow, it is clean.” Our uniformed technicians follow a 67-point checklist and, where appropriate, use EPA-registered products to help reduce common household germs and allergens.*
+              Weekends in Spokane Valley are for Centennial Trail rides, float trips on the Spokane River, and grilling at Mirabeau Meadows not scouring grout lines. Cleaners Ready 2 Go bridges the gap between “wish it were clean” and “wow, it is clean.” Our uniformed technicians follow a 67-point checklist and, where appropriate, use EPA-registered products to help reduce common household germs and allergens.*
             </p>
             <p className="text-lg text-text leading-relaxed mt-4">
               We’re homeowners and renters too we know the difference a professionally cleaned space makes for daily routines, allergies, and peace of mind. From high-touch surfaces to forgotten corners, our process is designed for consistent, repeatable results you can feel the moment you walk in.
@@ -216,7 +216,7 @@ export default function SpokaneValley() {
         ),
       },
       {
-        title: "Why Spokane Valley Chooses Cleaners Ready 2 GO",
+        title: "Why Spokane Valley Chooses Cleaners Ready 2 Go",
         sectionClassName: "py-section bg-white",
         content: (
           <div className="max-w-6xl mx-auto px-6">
@@ -282,7 +282,7 @@ export default function SpokaneValley() {
               </ContentCard>
               <ContentCard>
                 <h3 className="text-xl font-bold text-text mb-4">3. We Clean</h3>
-                <p>Crew arrives in Cleaners Ready 2 GO uniforms and shoe covers, using color-coded microfiber to help prevent cross-contamination.</p>
+                <p>Crew arrives in Cleaners Ready 2 Go uniforms and shoe covers, using color-coded microfiber to help prevent cross-contamination.</p>
               </ContentCard>
               <ContentCard>
                 <h3 className="text-xl font-bold text-text mb-4">4. You Relax</h3>
@@ -340,7 +340,7 @@ export default function SpokaneValley() {
                 <p className="font-bold mt-4"> Katie L., Greenacres</p>
               </ContentCard>
               <ContentCard>
-                <p>“Our Airbnb near Brown’s Park has maintained high cleanliness scores since partnering with Ready 2 GO.”</p>
+                <p>“Our Airbnb near Brown’s Park has maintained high cleanliness scores since partnering with Cleaners Ready 2 Go.”</p>
                 <p className="font-bold mt-4"> Travis S., Trentwood</p>
               </ContentCard>
               <ContentCard>

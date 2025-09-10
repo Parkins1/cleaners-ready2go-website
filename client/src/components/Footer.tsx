@@ -26,7 +26,7 @@ export default function Footer() {
                 sizes="112px"
                 width={112}
                 height={112}
-                alt="Cleaners Ready 2Go Logo"
+                alt="Cleaners Ready 2 Go Logo"
                 imgClassName="h-28 w-auto"
               />
             </div>
@@ -103,7 +103,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 pt-8 text-center">
           <p className="text-text">
-            © 2025 Cleaners Ready 2Go. All rights reserved. | Professional cleaning services in Washington State. |
+            © 2025 Cleaners Ready 2 Go. All rights reserved. | Professional cleaning services in Washington State. |
             {" "}
             <a href="/privacy" className="footer-link" aria-label="Privacy Policy">
               Privacy Policy

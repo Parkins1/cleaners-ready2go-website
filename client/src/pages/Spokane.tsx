@@ -40,11 +40,11 @@ export default function Spokane() {
 
   const testimonials = [
     {
-      quote: 'Cleaners Ready 2Go is the best cleaning service in Spokane! They are always professional and do an amazing job.',
+      quote: 'Cleaners Ready 2 Go is the best cleaning service in Spokane! They are always professional and do an amazing job.',
       name: 'John D.',
     },
     {
-      quote: 'After trying three other companies, Cleaners Ready 2Go is the best. They’re detail‑oriented, friendly, and always on time.',
+      quote: 'After trying three other companies, Cleaners Ready 2 Go is the best. They’re detail‑oriented, friendly, and always on time.',
       name: 'Amanda P., Spokane Valley',
     },
     {
@@ -80,7 +80,7 @@ export default function Spokane() {
   } = {
     locationName: 'Spokane',
     heroImage: heroImage,
-    heroAlt: 'House cleaning services in Spokane, WA—Cleaners Ready 2Go',
+    heroAlt: 'House cleaning services in Spokane, WA—Cleaners Ready 2 Go',
     heroImgSrcSet: `${hero480} 480w, ${hero768} 768w, ${hero1024} 1024w`,
     heroSources: [{ type: 'image/avif', srcSet: `${hero480Avif} 480w, ${hero768Avif} 768w, ${hero1024Avif} 1024w` }],
     heroWidth: 1392,
@@ -103,7 +103,7 @@ export default function Spokane() {
     ],
     serviceCardIds: ['residential','deep-cleaning','move-out','apartment-cleaning'],
     testimonial: {
-      quote: 'Cleaners Ready 2Go is the best cleaning service in Spokane! They are always professional and do an amazing job.',
+      quote: 'Cleaners Ready 2 Go is the best cleaning service in Spokane! They are always professional and do an amazing job.',
       name: 'John D.',
     },
     extraSections: [
@@ -226,7 +226,7 @@ export default function Spokane() {
         content: (
           <>
             <p>
-              Cleaners Ready 2Go is  a trusted presence in Spokane, serving families and homeowners with dependable, top‑quality cleaning services. We are deeply familiar with the unique needs of homes in the Inland Northwest from the dust and pollen brought on by our dry summers to the mud and slush that come with snowy winters.
+              Cleaners Ready 2 Go is  a trusted presence in Spokane, serving families and homeowners with dependable, top‑quality cleaning services. We are deeply familiar with the unique needs of homes in the Inland Northwest from the dust and pollen brought on by our dry summers to the mud and slush that come with snowy winters.
             </p>
             <p>
               Our service area covers the greater Spokane region, including Spokane Valley, Liberty Lake, Airway Heights, Cheney, and North Idaho communities such as Post Falls and Coeur d’Alene.

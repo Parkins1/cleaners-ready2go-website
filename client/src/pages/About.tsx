@@ -19,7 +19,7 @@ function About() {
   return (
     <>
       <SEO
-        title="About Us - Cleaners Ready 2Go | Professional Cleaning Team"
+        title="About Us - Cleaners Ready 2 Go | Professional Cleaning Team"
         description="Learn about our professional cleaning team serving Spokane Valley, Liberty Lake, and Greenacres. Trusted by 500+ local families."
       />
       <JsonLd
@@ -27,7 +27,7 @@ function About() {
           makeWebPage({
             siteUrl: site.url,
             path: "/about",
-            title: "About Us - Cleaners Ready 2Go | Professional Cleaning Team",
+            title: "About Us - Cleaners Ready 2 Go | Professional Cleaning Team",
             description:
               "Learn about our professional cleaning team serving Spokane Valley, Liberty Lake, and Greenacres.",
           }),
@@ -54,11 +54,11 @@ function About() {
                 sizes="112px"
                 width={112}
                 height={112}
-                alt="Cleaners Ready 2Go Logo"
+                alt="Cleaners Ready 2 Go Logo"
                 imgClassName="h-28 w-auto"
               />
             </div>
-            <h1 className="text-5xl lg:text-6xl font-bold text-text mb-8 leading-tight">About Cleaners Ready 2Go</h1>
+            <h1 className="text-5xl lg:text-6xl font-bold text-text mb-8 leading-tight">About Cleaners Ready 2 Go</h1>
             <p className="text-xl lg:text-2xl text-text">Professional cleaning services you can trust</p>
           </div>
           

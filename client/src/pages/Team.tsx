@@ -12,7 +12,7 @@ function Team() {
     {
       name: "Sarah Martinez",
       role: "Team Leader & Founder",
-      description: "With 8 years in professional cleaning, Sarah founded Cleaners Ready 2Go to bring reliable, quality service to the Spokane Valley community.",
+      description: "With 8 years in professional cleaning, Sarah founded Cleaners Ready 2 Go to bring reliable, quality service to the Spokane Valley community.",
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
       alt: "Spokane cleaning team leader smiling in business attire"
     },
@@ -56,7 +56,7 @@ function Team() {
   return (
     <>
       <SEO
-        title="Meet the Team - Cleaners Ready 2Go | Professional Cleaning Staff"
+        title="Meet the Team - Cleaners Ready 2 Go | Professional Cleaning Staff"
         description="Meet our dedicated professional cleaning team serving Spokane Valley, Liberty Lake, and Greenacres. Fully trained, background checked, and ready to go!"
       />
       
@@ -73,7 +73,7 @@ function Team() {
             <div>
               <h3 className="text-2xl font-bold text-text mb-6">Our Cleaning Family</h3>
               <p className="text-text mb-6 leading-relaxed">
-                Every member of our team is carefully selected, thoroughly trained, and passionate about delivering exceptional cleaning services. We believe that great cleaning starts with great people, and we're proud of the dedicated professionals who represent Cleaners Ready 2Go in your home.
+                Every member of our team is carefully selected, thoroughly trained, and passionate about delivering exceptional cleaning services. We believe that great cleaning starts with great people, and we're proud of the dedicated professionals who represent Cleaners Ready 2 Go in your home.
               </p>
               <p className="text-text mb-8 leading-relaxed">
                 Our team undergoes comprehensive background checks, professional training, and ongoing education to ensure they deliver the highest standards of service, safety, and reliability.

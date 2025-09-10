@@ -15,7 +15,7 @@ export default function Greenacres() {
   const pageDetails = {
     locationName: 'Greenacres',
     heroImage: heroImage,
-    heroAlt: 'House cleaning services in Greenacres, WA — Cleaners Ready 2Go',
+    heroAlt: 'House cleaning services in Greenacres, WA — Cleaners Ready 2 Go',
     heroImgSrcSet: `${hero480} 480w, ${hero768} 768w, ${hero1024} 1024w`,
     heroSources: [{ type: 'image/avif', srcSet: `${hero480Avif} 480w, ${hero768Avif} 768w, ${hero1024Avif} 1024w` }],
     heroWidth: 1392,
@@ -173,7 +173,7 @@ export default function Greenacres() {
         ),
       },
       {
-        title: 'Why Greenacres Chooses Cleaners Ready 2 GO',
+        title: 'Why Greenacres Chooses Cleaners Ready 2 Go',
         sectionClassName: "py-section bg-surface",
         content: (
           <ul className="space-y-2">
@@ -247,7 +247,7 @@ export default function Greenacres() {
         content: (
           <div className="grid md:grid-cols-3 gap-xl">
             <ContentCard as="blockquote">“Booked a deep clean before a family reunion—our home felt airy and dust‑free.” — Amanda H., Greenacres</ContentCard>
-            <ContentCard as="blockquote">“Our Liberty Lake short‑term rental keeps five‑star cleanliness thanks to Ready 2 GO.” — Chris R., Liberty Lake</ContentCard>
+            <ContentCard as="blockquote">“Our Liberty Lake short‑term rental keeps five‑star cleanliness thanks to Cleaners Ready 2 Go.” — Chris R., Liberty Lake</ContentCard>
             <ContentCard as="blockquote">“Move‑out clean was thorough—the property manager commented on how great it looked.” — Jordan M., Veradale</ContentCard>
           </div>
         ),

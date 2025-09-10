@@ -55,8 +55,8 @@ export default function DeepCleaning() {
   return (
     <>
       <SEO
-        title="Deep Cleaning Spokane, WA | Cleaners Ready 2 GO"
-        description="Cleaners Ready 2 GO delivers eco-friendly, detail-oriented deep cleaning in Spokane & Spokane Valley. Get your free quote today and enjoy a healthier, spotless home."
+        title="Deep Cleaning Spokane, WA | Cleaners Ready 2 Go"
+        description="Cleaners Ready 2 Go delivers eco-friendly, detail-oriented deep cleaning in Spokane & Spokane Valley. Get your free quote today and enjoy a healthier, spotless home."
         canonical={`${site.url}${path}`}
         keywords="deep cleaning Spokane, Spokane deep cleaning services, Spokane Valley house cleaning, eco-friendly deep clean Spokane, move-out cleaning Spokane WA"
       />
@@ -66,7 +66,7 @@ export default function DeepCleaning() {
           makeWebPage({
             siteUrl: site.url,
             path,
-            title: "Deep Cleaning Spokane, WA | Cleaners Ready 2 GO",
+            title: "Deep Cleaning Spokane, WA | Cleaners Ready 2 Go",
             description:
               "Eco-friendly, detail-oriented deep cleaning in Spokane & Spokane Valley.",
           }),
@@ -112,7 +112,7 @@ export default function DeepCleaning() {
             Life in the Inland Northwest is glorious towering pines, four true seasons, and plenty of pets, gear, and muddy boots to prove it.
             Unfortunately, all that outdoor fun ends up inside your house as dust, pollen, and stubborn grime. A routine tidy keeps surfaces
             looking OK, but a professional <strong>deep cleaning in Spokane</strong> eliminates the hidden allergens and buildup lurking in vents,
-            baseboards, and appliance crevices. Our Spokane-based team at <em>Cleaners Ready 2 GO</em> digs deeper, so you breathe easier and love your space again.
+            baseboards, and appliance crevices. Our Spokane-based team at <em>Cleaners Ready 2 Go</em> digs deeper, so you breathe easier and love your space again.
           </p>
           <p>
             Whether you’re prepping for guests, moving into a new home, or reclaiming weekends from endless scrubbing, our detail-obsessed staff brings
@@ -238,7 +238,7 @@ export default function DeepCleaning() {
       {/* WHY US */}
       <TrustSignalsSection
         title={
-          <>Why Spokane Homeowners Trust Cleaners Ready 2 GO</>
+          <>Why Spokane Homeowners Trust Cleaners Ready 2 Go</>
         }
         items={[
           {

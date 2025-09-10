@@ -67,7 +67,7 @@ export default function ApartmentCleaning() {
   return (
     <>
       <SEO
-        title="Apartment Cleaning in Spokane, WA | Cleaners Ready 2 GO"
+        title="Apartment Cleaning in Spokane, WA | Cleaners Ready 2 Go"
         description="Apartment cleaning in Spokane: move-out, move-in, recurring, and deep cleans. Local, licensed, deposit-friendly. Get a fast flat-rate quote."
       />
       <JsonLd
@@ -75,7 +75,7 @@ export default function ApartmentCleaning() {
           makeWebPage({
             siteUrl: site.url,
             path: "/apartment-cleaning",
-            title: "Apartment Cleaning in Spokane, WA | Cleaners Ready 2 GO",
+            title: "Apartment Cleaning in Spokane, WA | Cleaners Ready 2 Go",
             description:
               "Apartment cleaning in Spokane: move-out, move-in, recurring, and deep cleans.",
           }),
@@ -122,7 +122,7 @@ export default function ApartmentCleaning() {
         <div className="max-w-4xl mx-auto px-6 space-y-6 text-center">
           <h2 className="text-3xl font-bold text-text">Your Spokane Apartment, Transformed Without the Stress</h2>
           <p>
-            At Cleaners Ready 2 GO, we specialize in apartment cleaning in Spokane that keeps your home fresh, inspection-ready, and stress-free. Whether you’re moving out, moving in, or keeping up with everyday life, we make it easy.
+            At Cleaners Ready 2 Go, we specialize in apartment cleaning in Spokane that keeps your home fresh, inspection-ready, and stress-free. Whether you’re moving out, moving in, or keeping up with everyday life, we make it easy.
           </p>
         </div>
       </section>
@@ -165,7 +165,7 @@ export default function ApartmentCleaning() {
 
       {/* Designed for Spokane living (trust signals) */}
       <TrustSignalsSection
-        title={<span>Why Spokane Residents Choose <span className="text-brand-gold">Cleaners Ready 2 GO</span></span>}
+        title={<span>Why Spokane Residents Choose <span className="text-brand-gold">Cleaners Ready 2 Go</span></span>}
         items={[
           { highlight: "Local & Licensed", text: "Spokane-owned, not a franchise.", icon: "CheckCircle" },
           { highlight: "Deposit-Friendly Cleaning", text: "We clean to landlord inspection standards.", icon: "CheckCircle" },
@@ -346,7 +346,7 @@ export default function ApartmentCleaning() {
           <div className="space-y-6">
             <h2 className="text-3xl lg:text-4xl font-bold text-text">Real Feedback from Spokane Apartment Renters</h2>
             <ContentCard as="blockquote">
-              <p>“I booked Cleaners Ready 2 GO before moving out of my South Hill apartment. My landlord said it was the cleanest move-out he’d ever seen. Full deposit returned.”</p>
+              <p>“I booked Cleaners Ready 2 Go before moving out of my South Hill apartment. My landlord said it was the cleanest move-out he’d ever seen. Full deposit returned.”</p>
               <footer className="mt-3 text-sm text-gray-600">— Alex R.</footer>
             </ContentCard>
             <ContentCard as="blockquote">

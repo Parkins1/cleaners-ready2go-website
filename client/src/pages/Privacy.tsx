@@ -7,17 +7,17 @@ export default function Privacy() {
   return (
     <>
       <SEO
-        title="Privacy Policy - Cleaners Ready 2Go"
-        description="How Cleaners Ready 2Go collects, uses, and protects your information in Washington State, including your rights and choices."
+        title="Privacy Policy - Cleaners Ready 2 Go"
+        description="How Cleaners Ready 2 Go collects, uses, and protects your information in Washington State, including your rights and choices."
       />
       <JsonLd
         data={[
           makeWebPage({
             siteUrl: site.url,
             path: "/privacy",
-            title: "Privacy Policy - Cleaners Ready 2Go",
+            title: "Privacy Policy - Cleaners Ready 2 Go",
             description:
-              "How Cleaners Ready 2Go collects, uses, and protects your information in Washington State, including your rights and choices.",
+              "How Cleaners Ready 2 Go collects, uses, and protects your information in Washington State, including your rights and choices.",
           }),
           makeBreadcrumb([
             { name: "Home", url: `${site.url}/` },
@@ -34,7 +34,7 @@ export default function Privacy() {
             <section>
               <h2 className="text-2xl font-semibold mb-3">1. Introduction</h2>
               <p>
-                Cleaners Ready 2 GO (“we,” “us,” “our”) values your privacy. This Privacy Policy explains how we
+                Cleaners Ready 2 Go (“we,” “us,” “our”) values your privacy. This Privacy Policy explains how we
                 collect, use, and share your personal information, with a focus on Washington State laws.
               </p>
             </section>

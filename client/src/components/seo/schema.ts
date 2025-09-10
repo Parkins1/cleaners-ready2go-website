@@ -76,7 +76,7 @@ export function makeWebSite(siteUrl: string, opts: MakeWebSiteOptions = {}) {
     "@context": "https://schema.org",
     "@type": "WebSite",
     url: siteUrl,
-    name: "Cleaners Ready 2 GO",
+    name: "Cleaners Ready 2 Go",
     inLanguage: "en-US",
     ...(potentialAction.length ? { potentialAction } : {}),
   } as const;
@@ -113,7 +113,7 @@ export function makeWebPage({
     isPartOf: {
       "@type": "WebSite",
       url: siteUrl,
-      name: "Cleaners Ready 2 GO",
+      name: "Cleaners Ready 2 Go",
     },
   } as const;
 }
@@ -147,7 +147,7 @@ export function makeLocalBusiness(siteUrl: string, opts: MakeLocalBusinessOption
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "CleaningService"],
     "@id": `${siteUrl}#business`,
-    name: "Cleaners Ready 2 GO",
+    name: "Cleaners Ready 2 Go",
     url: siteUrl,
     ...(opts.description ? { description: opts.description } : {}),
     telephone: brand.phone,
@@ -187,8 +187,8 @@ export function makeLocalBusiness(siteUrl: string, opts: MakeLocalBusinessOption
       {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: openingDays,
-        opens: "08:00",
-        closes: "18:00",
+        opens: "05:00",
+        closes: "19:00",
       },
     ],
   } as const;

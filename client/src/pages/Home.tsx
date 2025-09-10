@@ -52,7 +52,7 @@ export default function Home() {
         <link rel="preload" as="image" href={heroImage} media="(min-width: 481px)" fetchPriority="high" />
       </Helmet>
 
-      {/* JSON-LD: WebSite, LocalBusiness, WebPage, Breadcrumbs, FAQPage */}
+      {/* JSON-LD: WebSite, WebPage, Breadcrumbs, FAQPage */}
       <JsonLd
         data={[
           makeWebSite(site.url),
@@ -322,7 +322,7 @@ export default function Home() {
             <AccordionItem value="item-eco-friendly">
               <AccordionTrigger className="text-left py-4 px-4"><h3>Are there eco-friendly house cleaners in Spokane?</h3></AccordionTrigger>
               <AccordionContent className="px-4 pb-4">
-                Yes, several Spokane cleaning companies offer green cleaning options using non-toxic, eco-friendly products that are safe for kids and pets. Cleaners Ready 2 GO is Spokane’s favorite.
+                Yes, several Spokane cleaning companies offer green cleaning options using non-toxic, eco-friendly products that are safe for kids and pets. Cleaners Ready 2 Go is Spokane’s favorite.
               </AccordionContent>
             </AccordionItem>
 

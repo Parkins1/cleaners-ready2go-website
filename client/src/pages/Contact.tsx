@@ -54,16 +54,16 @@ export default function Contact() {
   return (
     <>
       <SEO
-        title="Contact Us - Cleaners Ready 2Go | Get Your Free Quote Today"
-        description={`Contact Cleaners Ready 2Go for professional cleaning services in Spokane Valley, Liberty Lake, and Greenacres. Call ${brand.phone} or request a free quote online.`}
+        title="Contact Us - Cleaners Ready 2 Go | Get Your Free Quote Today"
+        description={`Contact Cleaners Ready 2 Go for professional cleaning services in Spokane Valley, Liberty Lake, and Greenacres. Call ${brand.phone} or request a free quote online.`}
       />
       <JsonLd
         data={[
           makeWebPage({
             siteUrl: site.url,
             path: "/contact",
-            title: "Contact Us - Cleaners Ready 2Go | Get Your Free Quote Today",
-            description: `Contact Cleaners Ready 2Go for professional cleaning services in Spokane Valley, Liberty Lake, and Greenacres. Call ${brand.phone} or request a free quote online.`,
+            title: "Contact Us - Cleaners Ready 2 Go | Get Your Free Quote Today",
+            description: `Contact Cleaners Ready 2 Go for professional cleaning services in Spokane Valley, Liberty Lake, and Greenacres. Call ${brand.phone} or request a free quote online.`,
           }),
           makeBreadcrumb([
             { name: "Home", url: `${site.url}/` },
