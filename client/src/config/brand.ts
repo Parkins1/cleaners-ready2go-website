@@ -30,4 +30,11 @@ export const brand = {
     zips: ["99016", "99037", "99206", "99212", "99216", "99217", "99201", "99208"],
   },
   logo: "/assets/icon_logo-256.webp",
+  sameAs: [
+    "https://www.yelp.com/biz/cleaners-ready-2go-spokane-valley?osq=Cleaners+Ready+2GO",
+    "https://pro.porch.com/spokane-valley-wa/home-cleaners/cleaners-ready-2go/pp",
+    "https://homeguide.com/wa/spokane-valley/house-cleaning/cleaners-ready-2go-Sz1J2BzgI",
+    "https://www.facebook.com/profile.php?id=61579665782441",
+    "https://ccfs.sos.wa.gov/#/BusinessSearch/BusinessInformation",
+  ],
 };
