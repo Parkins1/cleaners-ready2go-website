@@ -13,7 +13,8 @@
     "stop": "npx kill-port 5001",
     "restart": "npm run stop && npm run dev",
     "smoke-test": "bash scripts/smoke-tests.sh",
-    "test": "npm run build && (NODE_ENV=production PORT=5001 node dist/server/index.js & echo $! > .server_pid && sleep 1 && bash scripts/smoke-tests.sh; rv=$?; kill $(cat .server_pid) 2>/dev/null || true; rm -f .server_pid; exit $rv)"
+    "test": "npm run build && (NODE_ENV=production PORT=5001 node dist/server/index.js & echo $! > .server_pid && sleep 1 && bash scripts/smoke-tests.sh; rv=$?; kill $(cat .server_pid) 2>/dev/null || true; rm -f .server_pid; exit $rv)",
+    "sitemap": "node scripts/generate-sitemap.mjs"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.1",
