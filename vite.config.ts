@@ -28,6 +28,8 @@ const asyncCssPlugin = () => ({
 export default defineConfig(async () => {
   return {
   cacheDir: path.resolve(import.meta.dirname, ".vite-cache"),
+  // Ensure Vite loads .env from the project root, not client/
+  envDir: path.resolve(import.meta.dirname),
   plugins: [
     tailwind(),           // ✅ put before react for best DX
     react(),
