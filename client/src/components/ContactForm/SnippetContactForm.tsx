@@ -112,8 +112,8 @@ export default function SnippetContactForm({ onSubmit, isLoading = false }: Snip
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
-      <div className="card max-w-lg w-full p-8">
+    <div className="w-full">
+      <div className="card w-full p-8">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="bg-accent w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
