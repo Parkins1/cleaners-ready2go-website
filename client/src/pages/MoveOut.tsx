@@ -19,6 +19,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import { makeWebPage, makeService, makeBreadcrumb, makeFAQPage } from "@/components/seo/schema";
 import { site } from "@/config/site";
 import Map from '@/components/Map/Map';
+import { FourStepSection } from "@/components/Sections";
 
 export default function MoveOut() {
   const { open } = useModal();
@@ -219,32 +220,36 @@ export default function MoveOut() {
         </div>
       </section>
 
-      <section className="py-section bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">Process—Our 4-Step Breakdown</h2>
-          <div className="grid gap-xl md:grid-cols-2">
-            <ContentCard>
-              <h3 className="font-semibold">Step 1: Fast Quote (Virtual or On‑Site)</h3>
-              <p className="mt-2 text-sm">Send a few photos or schedule a local walk-through. We confirm scope, timing, and any add-ons—no surprises.</p>
-            </ContentCard>
-
-            <ContentCard>
-              <h3 className="font-semibold">Step 2: Customized Checklist & Schedule</h3>
-              <p className="mt-2 text-sm">We tailor our move-out checklist to your home and lease terms, then lock your time slot—standard, rush, or same-day when available.</p>
-            </ContentCard>
-
-            <ContentCard>
-              <h3 className="font-semibold">Step 3: Service Day Execution</h3>
-              <p className="mt-2 text-sm">We arrive on time with vetted techs, HEPA vacuums, and eco-/pet-safe products. Crew leads verify each checklist section.</p>
-            </ContentCard>
-
-            <ContentCard>
-              <h3 className="font-semibold">Step 4: Final Walk-Through & Satisfaction</h3>
-              <p className="mt-2 text-sm">We do a quick tour (you or your agent). If something gets flagged within 24 hours, we'll make it right—satisfaction-first.</p>
-            </ContentCard>
-          </div>
-        </div>
-      </section>
+      <FourStepSection
+        sectionClassName="py-section bg-process-radial"
+        title="Our Four‑Step System (Built for Consistency)"
+        steps={[
+          {
+            title: "1) Fast Quote (Virtual or On‑Site)",
+            body:
+              "Send a few photos or schedule a local walk-through. We confirm scope, timing, and any add-ons—no surprises.",
+            iconName: "CircleDashed",
+          },
+          {
+            title: "2) Customized Checklist & Schedule",
+            body:
+              "We tailor our move-out checklist to your home and lease terms, then lock your time slot—standard, rush, or same-day when available.",
+            iconName: "CircleDotDashed",
+          },
+          {
+            title: "3) Service Day Execution",
+            body:
+              "We arrive on time with vetted techs, HEPA vacuums, and eco-/pet-safe products. Crew leads verify each checklist section.",
+            iconName: "CircleDot",
+          },
+          {
+            title: "4) Final Walk-Through & Satisfaction",
+            body:
+              "We do a quick tour (you or your agent). If something gets flagged within 24 hours, we'll make it right—satisfaction-first.",
+            iconName: "CircleCheck",
+          },
+        ]}
+      />
 
       <section className="py-section bg-white">
         <div className="max-w-6xl mx-auto px-6">

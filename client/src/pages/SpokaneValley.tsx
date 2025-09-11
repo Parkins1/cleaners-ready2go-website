@@ -7,6 +7,7 @@ import ContentCard from "@/components/ContentCard/ContentCard";
 import Icon from "@/components/ui/icon";
 import CarouselCompact from "@/components/Carousel/CarouselCompact";
 import LocationPageTemplate from './LocationPageTemplate';
+import { FourStepGrid } from "@/components/Sections";
 import heroImage from "@/assets/spokane-house-cleaning.webp";
 import hero480 from "@/assets/spokane-house-cleaning-480.webp";
 import hero768 from "@/assets/spokane-house-cleaning-768.webp";
@@ -266,29 +267,38 @@ export default function SpokaneValley() {
         ),
       },
       {
-        title: "The Four-Step Shine System",
-        sectionClassName: "py-section bg-white",
+        title: "Our Four‑Step System (Built for Consistency)",
+        sectionClassName: "py-section bg-process-radial",
         content: (
-          <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-text mb-8 text-center">The Four-Step Shine System</h2>
-            <div className="grid md:grid-cols-2 gap-xl">
-              <ContentCard>
-                <h3 className="text-xl font-bold text-text mb-4">1. Instant Quote</h3>
-                <p>Enter square footage, bed/bath count, and frequency online. Our estimator tool provides an instant flat-rate price.</p>
-              </ContentCard>
-              <ContentCard>
-                <h3 className="text-xl font-bold text-text mb-4">2. Book Online</h3>
-                <p>Select optional add-ons, choose a two-hour arrival window, sign electronically, and you’re booked.</p>
-              </ContentCard>
-              <ContentCard>
-                <h3 className="text-xl font-bold text-text mb-4">3. We Clean</h3>
-                <p>Crew arrives in Cleaners Ready 2 Go uniforms and shoe covers, using color-coded microfiber to help prevent cross-contamination.</p>
-              </ContentCard>
-              <ContentCard>
-                <h3 className="text-xl font-bold text-text mb-4">4. You Relax</h3>
-                <p>Walk through with the Team Lead or review photos remotely. If something seems off, let us know within 24 hours and we’ll address it at no additional labor cost (access required).</p>
-              </ContentCard>
-            </div>
+          <div className="max-w-6xl mx-auto px-6">
+            <FourStepGrid
+              steps={[
+                {
+                  title: "1) Instant Quote",
+                  body:
+                    "Enter square footage, bed/bath count, and frequency online. Our estimator tool provides an instant flat-rate price.",
+                  iconName: "CircleDashed",
+                },
+                {
+                  title: "2) Book Online",
+                  body:
+                    "Select optional add-ons, choose a two-hour arrival window, sign electronically, and you’re booked.",
+                  iconName: "CircleDotDashed",
+                },
+                {
+                  title: "3) We Clean",
+                  body:
+                    "Crew arrives in Cleaners Ready 2 Go uniforms and shoe covers, using color-coded microfiber to help prevent cross-contamination.",
+                  iconName: "CircleDot",
+                },
+                {
+                  title: "4) You Relax",
+                  body:
+                    "Walk through with the Team Lead or review photos remotely. If something seems off, let us know within 24 hours and we’ll address it at no additional labor cost (access required).",
+                  iconName: "CircleCheck",
+                },
+              ]}
+            />
           </div>
         ),
       },

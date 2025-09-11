@@ -13,6 +13,7 @@ import { useModal } from "@/components/modal/ModalProvider";
 import Icon from "@/components/ui/icon";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { FourStepGrid } from "@/components/Sections";
 
 /**
  * Liberty Lake location page
@@ -205,19 +206,21 @@ export default function LibertyLake() {
         ),
       },
       {
-        title: "Simple Booking—Professional Results",
-        sectionClassName: "py-section bg-white",
+        title: "Our Four‑Step System (Built for Consistency)",
+        sectionClassName: "py-section bg-process-radial",
         content: (
-          <>
-            <ol className="list-decimal list-inside space-y-2">
-              <li>Request your personalized quote online or call us—tell us home size, frequency, and any special requests.</li>
-              <li>Choose the date & time that fits your schedule (weekends available).</li>
-              <li>Our trained team arrives with equipment and supplies and completes a thorough cleaning.</li>
-              <li>Enjoy a spotless home and more free time to enjoy Liberty Lake.</li>
-            </ol>
+          <div className="max-w-6xl mx-auto px-6">
+            <FourStepGrid
+              steps={[
+                { title: "1) Request Your Quote", body: "Tell us home size, frequency, and any special requests.", iconName: "CircleDashed" },
+                { title: "2) Pick Your Date & Time", body: "Choose a convenient window, including select weekends.", iconName: "CircleDotDashed" },
+                { title: "3) We Clean Thoroughly", body: "Trained team arrives with pro-grade equipment and supplies.", iconName: "CircleDot" },
+                { title: "4) You Enjoy", body: "Settle in and enjoy a spotless Liberty Lake home.", iconName: "CircleCheck" },
+              ]}
+            />
 
-            <p className="mt-4">
-              Ready to reclaim your weekends?{" "}
+            <p className="mt-6 text-center">
+              Ready to reclaim your weekends?{' '}
               <button
                 type="button"
                 className="underline font-semibold"
@@ -226,7 +229,7 @@ export default function LibertyLake() {
                 Get Your Free Quote Today →
               </button>
             </p>
-          </>
+          </div>
         ),
       },
       {

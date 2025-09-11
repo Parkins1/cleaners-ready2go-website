@@ -14,14 +14,15 @@ import hero1024Avif from "@/assets/spokane-house-cleaning-1024.avif";
  // images now centralized via ServiceCard catalog
  import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
  import ServiceGrid from "@/components/ServiceCard/ServiceGrid";
- import ContentCard from "@/components/ContentCard/ContentCard";
+import ContentCard from "@/components/ContentCard/ContentCard";
  import HeroSection from "@/components/HeroSection/HeroSection";
 import Icon from "@/components/ui/icon";
  import { SEO } from "@/components/seo/SEO";
  import { Helmet } from "react-helmet-async";
  import JsonLd from "@/components/seo/JsonLd";
  import { makeWebSite, makeWebPage, makeBreadcrumb, makeFAQPage } from "@/components/seo/schema";
- import { site } from "@/config/site";
+import { site } from "@/config/site";
+import { FourStepSection } from "@/components/Sections";
 
 export default function Home() {
   const { open } = useModal();
@@ -159,39 +160,18 @@ export default function Home() {
       </section>
 
       {/* Process */}
-      <section id="process" className="py-section bg-surface scroll-mt-24" aria-labelledby="process-title">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 animate-slide-up">
-          <h2 id="process-title" className="text-3xl lg:text-4xl font-bold text-text mb-8 text-center">
-            Our Simple House Cleaning Process
-          </h2>
-          <div className="grid md:grid-cols-4 gap-xl text-center">
-            <ContentCard>
-              <span className="step-number">1</span>
-              <h3 className="mt-2 font-semibold">Request Your Quote</h3>
-              <p className="text-sm text-text">Call or request online for a fast, customized estimate.</p>
-            </ContentCard>
-            <ContentCard>
-              <span className="step-number">2</span>
-              <h3 className="mt-2 font-semibold">Customize Your Plan</h3>
-              <p className="text-sm text-text">We tailor services to your home, schedule, and preferences.</p>
-            </ContentCard>
-            <ContentCard>
-              <span className="step-number">3</span>
-              <h3 className="mt-2 font-semibold">Pro Clean Day</h3>
-              <p className="text-sm text-text">Our punctual, equipped team delivers a detailed clean.</p>
-            </ContentCard>
-            <ContentCard>
-              <span className="step-number">4</span>
-              <h3 className="mt-2 font-semibold">Follow-up & Satisfaction</h3>
-              <p className="text-sm text-text">We check in to ensure everything’s perfect guaranteed.</p>
-            </ContentCard>
-          </div>
-          <p className="mt-8 text-lg text-text max-w-3xl mx-auto text-center">
-            Getting your Spokane home professionally cleaned is straightforward with our seamless process. Request a free quote,
-            choose your plan and schedule, and enjoy a refreshed home every time.
-          </p>
-        </div>
-      </section>
+      <FourStepSection
+        id="process"
+        sectionClassName="py-section bg-process-radial scroll-mt-24"
+        title="Our Four‑Step System (Built for Consistency)"
+        steps={[
+          { title: "1) Request Your Quote", body: "Call or request online for a fast, customized estimate.", iconName: "CircleDashed" },
+          { title: "2) Customize Your Plan", body: "We tailor services to your home, schedule, and preferences.", iconName: "CircleDotDashed" },
+          { title: "3) Pro Clean Day", body: "Our punctual, equipped team delivers a detailed clean.", iconName: "CircleDot" },
+          { title: "4) Follow‑Up & Satisfaction", body: "We check in to ensure everything’s perfect—guaranteed.", iconName: "CircleCheck" },
+        ]}
+        footerText="Getting your Spokane home professionally cleaned is straightforward with our seamless process. Request a free quote, choose your plan and schedule, and enjoy a refreshed home every time."
+      />
 
       {/* Pricing */}
       <section id="pricing" className="py-section bg-white scroll-mt-24" aria-labelledby="pricing-title">

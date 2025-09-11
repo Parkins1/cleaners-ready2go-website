@@ -22,6 +22,7 @@ import { brand } from "@/config/brand";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import iconKitchen from "@/assets/icon_kitchen.webp";
 import PackagesSection from "@/components/Sections/PackagesSection";
+import { FourStepSection } from "@/components/Sections";
 import Map from '@/components/Map/Map';
 
 // Icons: use centralized Lucide loader via IconCard.iconName
@@ -236,36 +237,31 @@ export default function Residential() {
       </section>
 
       {/* Our Four‑Step System */}
-      <section className="py-section bg-process-radial">
-        <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-xl">Our Four‑Step System (Built for Consistency)</h2>
-          <div className="grid gap-xl md:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                title: "1) Book & Scope",
-                body: "Tell us about your home, frequency, and priorities. We confirm scope, timing, and a clear price—no ambiguity.",
-              },
-              {
-                title: "2) Arrival & Setup",
-                body: "You get an ETA window and Lead Tech name. We align on focus zones, protect floors, and stage supplies.",
-              },
-              {
-                title: "3) Clean & Quality Control",
-                body: "We clean to your digital checklist with color‑coded microfiber and HEPA. Lead Tech signs off to our standards.",
-              },
-              {
-                title: "4) Feedback & Optimization",
-                body: "You’ll get a summary. Share preferences—we lock them in so the next visit is even better.",
-              },
-            ].map((s, i) => (
-              <ContentCard key={i} className="h-full">
-                <h3 className="text-lg font-semibold text-text mb-2">{s.title}</h3>
-                <p className="text-sm text-text/90">{s.body}</p>
-              </ContentCard>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FourStepSection
+        title="Our Four‑Step System (Built for Consistency)"
+        steps={[
+          {
+            title: "1) Book & Scope",
+            body: "Tell us about your home, frequency, and priorities. We confirm scope, timing, and a clear price—no ambiguity.",
+            iconName: "CircleDashed",
+          },
+          {
+            title: "2) Arrival & Setup",
+            body: "You get an ETA window and Lead Tech name. We align on focus zones, protect floors, and stage supplies.",
+            iconName: "CircleDotDashed",
+          },
+          {
+            title: "3) Clean & Quality Control",
+            body: "We clean to your digital checklist with color‑coded microfiber and HEPA. Lead Tech signs off to our standards.",
+            iconName: "CircleDot",
+          },
+          {
+            title: "4) Feedback & Optimization",
+            body: "You’ll get a summary. Share preferences—we lock them in so the next visit is even better.",
+            iconName: "CircleCheck",
+          },
+        ]}
+      />
 
       {/* Why We’re Trusted */}
       <section className="py-section bg-white">

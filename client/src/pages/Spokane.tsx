@@ -12,6 +12,7 @@ import ContentCard from '@/components/ContentCard/ContentCard';
 import Icon from "@/components/ui/icon";
 import CarouselCompact from '@/components/Carousel/CarouselCompact';
 import { Card, CardContent } from '@/components/ui/card';
+import { FourStepGrid } from "@/components/Sections";
 
 export default function Spokane() {
 
@@ -182,21 +183,13 @@ export default function Spokane() {
         ),
       },
       {
-        title: 'Our Four-Step System (Built for Consistency)',
+        title: 'Our Four‑Step System (Built for Consistency)',
         sectionClassName: 'py-section bg-process-radial',
         content: (
-          <div className="grid gap-xl md:grid-cols-2 lg:grid-cols-4" style={{'--spacing-lg': '1.5rem'} as React.CSSProperties}>
-            {processSteps.map((step, i) => (
-              <Card key={i} className="h-full">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <Icon name={step.icon as any} className="w-8 h-8 mr-4 text-brand-gold" />
-                    <h3 className="text-lg font-semibold text-text font-outfit">{step.title}</h3>
-                  </div>
-                  <p className="text-sm text-text/90">{step.body}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-12">
+            <FourStepGrid
+              steps={processSteps.map(({ title, body, icon }) => ({ title, body, iconName: icon as string }))}
+            />
           </div>
         ),
       },

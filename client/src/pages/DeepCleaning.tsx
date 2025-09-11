@@ -31,6 +31,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import { makeWebPage, makeService, makeFAQPage, makeBreadcrumb } from "@/components/seo/schema";
 import { site } from "@/config/site";
 import Map from '@/components/Map/Map';
+import { FourStepSection } from "@/components/Sections";
 
 export default function DeepCleaning() {
   const { open } = useModal();
@@ -208,33 +209,36 @@ export default function DeepCleaning() {
       </section>
 
       {/* PROCESS */}
-      <section className="py-section bg-white bg-process-radial">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl lg:text-4xl font-bold text-text mb-xl text-center">Our 4-Step Deep Cleaning Process</h2>
-          <div className="grid md:grid-cols-4 gap-xl">
-            <ContentCard>
-              <span className="step-number">1</span>
-              <h3 className="mt-2 font-semibold">Free Local Walk-Through & Quote</h3>
-              <p>We schedule a quick on-site visit (or video call) to discuss trouble spots and measure square footage. You’ll have a written quote within 30 minutes no guesswork, no hidden fees.</p>
-            </ContentCard>
-            <ContentCard>
-              <span className="step-number">2</span>
-              <h3 className="mt-2 font-semibold">Customized Cleaning Plan</h3>
-              <p>From South Hill bungalows to Liberty Lake condos, every home is unique. We map a room-by-room checklist prioritizing your goals pet fur, mineral buildup, move-in freshness, you name it.</p>
-            </ContentCard>
-            <ContentCard>
-              <span className="step-number">3</span>
-              <h3 className="mt-2 font-semibold">Eco-Friendly Deep Clean</h3>
-              <p>Our bonded, background-checked specialists arrive with hospital-grade biodegradable products, color-coded microfiber, and sealed HEPA vacuums that trap 99.97% of particles.</p>
-            </ContentCard>
-            <ContentCard>
-              <span className="step-number">4</span>
-              <h3 className="mt-2 font-semibold">Final Walk-Through & 100% Guarantee</h3>
-              <p>You inspect every room before we pack up. If something isn’t five-star perfect, we fix it on the spot or come back within 24 hours free of charge.</p>
-            </ContentCard>
-          </div>
-        </div>
-      </section>
+      <FourStepSection
+        sectionClassName="py-section bg-process-radial"
+        title="Our Four‑Step System (Built for Consistency)"
+        steps={[
+          {
+            title: "1) Free Local Walk-Through & Quote",
+            body:
+              "We schedule a quick on-site visit (or video call) to discuss trouble spots and measure square footage. You’ll have a written quote within 30 minutes—no guesswork, no hidden fees.",
+            iconName: "CircleDashed",
+          },
+          {
+            title: "2) Customized Cleaning Plan",
+            body:
+              "From South Hill bungalows to Liberty Lake condos, every home is unique. We map a room-by-room checklist prioritizing your goals—pet fur, mineral buildup, move-in freshness, you name it.",
+            iconName: "CircleDotDashed",
+          },
+          {
+            title: "3) Eco-Friendly Deep Clean",
+            body:
+              "Our bonded, background-checked specialists arrive with hospital-grade biodegradable products, color-coded microfiber, and sealed HEPA vacuums that trap 99.97% of particles.",
+            iconName: "CircleDot",
+          },
+          {
+            title: "4) Final Walk-Through & 100% Guarantee",
+            body:
+              "You inspect every room before we pack up. If something isn’t five-star perfect, we fix it on the spot or come back within 24 hours—free of charge.",
+            iconName: "CircleCheck",
+          },
+        ]}
+      />
 
       {/* WHY US */}
       <TrustSignalsSection

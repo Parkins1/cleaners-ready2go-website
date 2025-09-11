@@ -1,8 +1,8 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import type { MapProps } from './Map';
 
 // Importing inside this chunk to allow code‑splitting via React.lazy in Map.tsx
-import { GoogleMap, MarkerF, useJsApiLoader } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
 const DEFAULT_CENTER = { lat: 47.6062, lng: -122.3321 }; // Seattle fallback
 const SPOKANE_CENTER = { lat: 47.6588, lng: -117.4260 };
@@ -27,22 +27,24 @@ export default function MapInner({ locationName, zoom = 12 }: MapProps) {
 
   const [center, setCenter] = useState(() => guessCenter(locationName));
 
-  const { isLoaded } = useJsApiLoader({
+  const { isLoaded, loadError } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: apiKey || '',
   });
 
-  // Gold pin as inline SVG (brand gold #CFAE51)
-  const goldIconUrl = useMemo(() => {
-    const svg = `<?xml version="1.0" encoding="UTF-8"?>
+  // Gold pin SVG markup for AdvancedMarkerElement content (brand gold #CFAE51)
+  const pinSvg = useMemo(() => {
+    return `<?xml version="1.0" encoding="UTF-8"?>
     <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
       <g fill="none" fill-rule="evenodd">
         <path d="M24 2C14.611 2 7 9.611 7 19c0 11.25 15.387 26.049 16.039 26.675a1.5 1.5 0 0 0 2.09 0C25.784 45.05 41 30.25 41 19 41 9.611 33.389 2 24 2z" fill="#CFAE51"/>
         <circle cx="24" cy="19" r="7" fill="#fff"/>
       </g>
     </svg>`;
-    return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
   }, []);
+
+  const mapRef = useRef<google.maps.Map | null>(null);
+  const markerRef = useRef<any>(null);
 
   // Geocode the location name once the JS API is loaded
   useEffect(() => {
@@ -61,8 +63,38 @@ export default function MapInner({ locationName, zoom = 12 }: MapProps) {
     }
   }, [isLoaded, locationName]);
 
-  // If no API key is available, fall back to a generic Google Maps embed that does not require a key
-  if (!apiKey) {
+  // Create or update AdvancedMarkerElement when map and center are ready
+  useEffect(() => {
+    let cancelled = false;
+    async function ensureMarker() {
+      if (!isLoaded || !mapRef.current) return;
+      const lib = await (window.google.maps as any).importLibrary?.('marker');
+      const AdvancedMarkerElement = lib?.AdvancedMarkerElement || (window.google?.maps as any)?.marker?.AdvancedMarkerElement;
+      if (!AdvancedMarkerElement || cancelled) return;
+
+      if (!markerRef.current) {
+        const el = document.createElement('div');
+        el.innerHTML = pinSvg;
+        el.style.transform = 'translate(-50%, -100%)';
+        markerRef.current = new AdvancedMarkerElement({
+          map: mapRef.current,
+          position: center,
+          content: el,
+        });
+      } else {
+        markerRef.current.position = center;
+        markerRef.current.map = mapRef.current;
+      }
+    }
+    ensureMarker();
+    return () => {
+      cancelled = true;
+    };
+  }, [isLoaded, center]);
+
+  // If no API key is available OR loading the script failed (e.g., invalid/blocked key),
+  // fall back to a generic Google Maps embed that does not require a key.
+  if (!apiKey || loadError) {
     const q = encodeURIComponent(locationName);
     const z = Math.max(1, Math.min(20, zoom));
     const embedUrl = `https://www.google.com/maps?q=${q}&z=${z}&output=embed`;
@@ -96,11 +128,18 @@ export default function MapInner({ locationName, zoom = 12 }: MapProps) {
             mapTypeControl: false,
             fullscreenControl: false,
           }}
+          onLoad={(map) => {
+            mapRef.current = map;
+          }}
+          onUnmount={() => {
+            mapRef.current = null;
+            if (markerRef.current) {
+              markerRef.current.map = null;
+              markerRef.current = null;
+            }
+          }}
         >
-          <MarkerF
-            position={center}
-            icon={{ url: goldIconUrl }}
-          />
+          {/* AdvancedMarkerElement managed imperatively */}
         </GoogleMap>
       ) : (
         <div className="w-full h-full rounded-xl bg-gradient-to-b from-gray-100 to-gray-50 animate-pulse" />
