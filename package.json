@@ -6,7 +6,7 @@
   "scripts": {
     "pretest": "npm run stop || true",
     "dev": "NODE_ENV=development tsx server/index.ts",
-    "build": "vite build && esbuild server/*.ts server/**/*.ts shared/**/*.ts --platform=node --packages=external --format=esm --outdir=dist --outbase=. && rm -rf public && mkdir -p public && cp -R dist/public/* public/",
+    "build": "vite build && esbuild server/*.ts server/**/*.ts shared/**/*.ts --platform=node --packages=external --format=esm --outdir=dist --outbase=. && rm -rf public && mkdir -p public && cp -R dist/public/* public/ && npm run sitemap && cp client/public/sitemap.xml public/sitemap.xml",
     "start": "NODE_ENV=production node dist/server/index.js",
     "check": "tsc --noEmit",
     "db:push": "drizzle-kit push",
