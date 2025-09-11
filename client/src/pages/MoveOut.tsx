@@ -18,6 +18,7 @@ import { brand } from "@/config/brand";
 import JsonLd from "@/components/seo/JsonLd";
 import { makeWebPage, makeService, makeBreadcrumb, makeFAQPage } from "@/components/seo/schema";
 import { site } from "@/config/site";
+import Map from '@/components/Map/Map';
 
 export default function MoveOut() {
   const { open } = useModal();
@@ -298,6 +299,15 @@ export default function MoveOut() {
               <p className="text-sm text-text">River-adjacent & neighborhoods</p>
             </ContentCard>
           </div>
+        </div>
+      </section>
+
+      <section className="py-section bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl lg:text-4xl font-bold text-text text-center mb-10">
+            Our Service Area
+          </h2>
+          <Map locationName="Spokane, WA" />
         </div>
       </section>
 

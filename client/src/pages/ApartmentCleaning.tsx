@@ -12,6 +12,7 @@ import { OptimizedImage } from "@/components/ui/optimized-image";
 import JsonLd from "@/components/seo/JsonLd";
 import { makeWebPage, makeService, makeBreadcrumb } from "@/components/seo/schema";
 import { site } from "@/config/site";
+import Map from '@/components/Map/Map';
 
 // Apartment-specific visuals (optimized by scripts/optimize-images.mjs)
 // Hero
@@ -358,6 +359,16 @@ export default function ApartmentCleaning() {
               <footer className="mt-3 text-sm text-gray-600">— Marcus L.</footer>
             </ContentCard>
           </div>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="py-section bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl lg:text-4xl font-bold text-text text-center mb-10">
+            Our Service Area
+          </h2>
+          <Map locationName="Spokane, WA" />
         </div>
       </section>
 

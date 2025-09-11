@@ -22,6 +22,7 @@ import { brand } from "@/config/brand";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import iconKitchen from "@/assets/icon_kitchen.webp";
 import PackagesSection from "@/components/Sections/PackagesSection";
+import Map from '@/components/Map/Map';
 
 // Icons: use centralized Lucide loader via IconCard.iconName
 
@@ -525,6 +526,16 @@ export default function Residential() {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="py-section bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl lg:text-4xl font-bold text-text text-center mb-10">
+            Our Service Area
+          </h2>
+          <Map locationName="Spokane, WA" />
         </div>
       </section>
 

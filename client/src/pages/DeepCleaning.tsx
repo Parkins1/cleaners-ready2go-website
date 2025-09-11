@@ -30,6 +30,7 @@ import iconBaseboards from "@/assets/icon_baseboards.webp";
 import JsonLd from "@/components/seo/JsonLd";
 import { makeWebPage, makeService, makeFAQPage, makeBreadcrumb } from "@/components/seo/schema";
 import { site } from "@/config/site";
+import Map from '@/components/Map/Map';
 
 export default function DeepCleaning() {
   const { open } = useModal();
@@ -338,6 +339,16 @@ export default function DeepCleaning() {
 
       
       {/* end JSON-LD */}
+
+      {/* Map Section */}
+      <section className="py-section bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl lg:text-4xl font-bold text-text text-center mb-10">
+            Our Service Area
+          </h2>
+          <Map locationName="Spokane, WA" />
+        </div>
+      </section>
 
       {/* Bottom CTA */}
       <CalloutBanner

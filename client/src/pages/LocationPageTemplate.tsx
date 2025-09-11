@@ -13,6 +13,7 @@ import { brand } from "@/config/brand";
 import JsonLd from "@/components/seo/JsonLd";
 import { makeWebPage, makeBreadcrumb, makeService } from "@/components/seo/schema";
 import { site } from "@/config/site";
+import Map from '@/components/Map/Map';
 
 interface LocationPageTemplateProps {
   locationName: string;
@@ -123,12 +124,10 @@ export default function LocationPageTemplate({
       {/* Process (standardized, identical to Home) */}
       <ProcessSection />
 
-      {/* Image Placeholder Section */}
+      {/* Map Section */}
       <section className="py-section bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="bg-gray-200 h-96 rounded-xl flex items-center justify-center">
-            <p className="text-gray-500">Image / Map Placeholder</p>
-          </div>
+          <Map locationName={locationName} />
         </div>
       </section>
 
