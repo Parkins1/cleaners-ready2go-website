@@ -1,7 +1,7 @@
 # Code Quality Guidelines
 
 ## Purpose
-This file defines standards for linting, error handling, and refactoring patterns to maintain high code quality, readability, and maintainability in the Cleaners Ready2Go website project.
+This file defines standards for linting, error handling, and refactoring patterns to maintain high code quality, readability, and maintainability in the Cleaners Ready 2 Go website project.
 
 ## Overview
 Consistent code quality ensures the full-stack application (React frontend, Node.js backend) is robust, scalable, and easy to collaborate on. Enforce these via pre-commit hooks (Husky) and CI/CD pipelines (e.g., GitHub Actions). Use TypeScript for type safety where possible.

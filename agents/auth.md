@@ -1,7 +1,7 @@
 # Authentication Guidelines
 
 ## Purpose
-This file outlines rules for handling authentication in the Cleaners Ready2Go website project to ensure secure user sessions, API access, and data protection for features like booking cleaning services and user accounts.
+This file outlines rules for handling authentication in the Cleaners Ready 2 Go website project to ensure secure user sessions, API access, and data protection for features like booking cleaning services and user accounts.
 
 ## Overview
 Authentication is primarily managed on the server-side using JWT (JSON Web Tokens) for stateless API authentication. The project uses Node.js/Express for the backend, with potential integration of OAuth for third-party logins (e.g., Google for customer sign-up). All auth-related code should prioritize security, following OWASP guidelines.

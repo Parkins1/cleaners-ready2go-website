@@ -1,7 +1,7 @@
 # Testing Guidelines
 
 ## Purpose
-This file specifies testing protocols for the Cleaners Ready2Go website, emphasizing unit and integration tests with Jest, aiming for 100% coverage on critical paths like authentication and booking flows to ensure reliability.
+This file specifies testing protocols for the Cleaners Ready 2 Go website, emphasizing unit and integration tests with Jest, aiming for 100% coverage on critical paths like authentication and booking flows to ensure reliability.
 
 ## Overview
 Testing is integral for the React/Node.js stack. Use Jest as the primary framework for unit and integration tests, React Testing Library for frontend components, and Supertest for backend APIs. Run tests in CI/CD (e.g., GitHub Actions) and require passing tests for PR merges. Target 80%+ overall coverage, 100% for critical paths (auth, bookings).

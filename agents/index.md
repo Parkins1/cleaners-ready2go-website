@@ -1,7 +1,7 @@
 # Agents Guidelines Overview
 
 ## Purpose
-Break down instructions by area to avoid a "one giant file" that's hard to maintain or token-inefficient. This directory provides specialized guidelines for AI agents (modes) working on the Cleaners Ready2Go website project, a full-stack web application for a cleaning service in Spokane, built with React (client-side), Node.js (server-side), and Vite for development.
+Break down instructions by area to avoid a "one giant file" that's hard to maintain or token-inefficient. This directory provides specialized guidelines for AI agents (modes) working on the Cleaners Ready 2 Go website project, a full-stack web application for a cleaning service in Spokane, built with React (client-side), Node.js (server-side), and Vite for development.
 
 ## Available Agents/Modes
 These modes guide how AI agents operate on the project:

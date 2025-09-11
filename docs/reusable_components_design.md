@@ -153,7 +153,7 @@ interface TrustSignalsSectionProps {
 
 ```tsx
 <TrustSignalsSection
-  title="Why Spokane Homeowners Trust Cleaners Ready 2 GO"
+  title="Why Spokane Homeowners Trust Cleaners Ready 2 Go"
   items=[
     { highlight: "Licensed, bonded & insured", text: "Peace of mind while we’re on your property." },
     { highlight: "Green cleaning, healthier air", text: "Kid-safe, pet-safe solutions and HEPA filtration reduce indoor allergens by up to 75%." },

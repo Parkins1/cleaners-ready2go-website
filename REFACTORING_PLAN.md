@@ -1,4 +1,4 @@
-# Refactoring Plan: Performance Optimizations for Cleaners Ready2Go Website
+# Refactoring Plan: Performance Optimizations for Cleaners Ready 2 Go Website
 
 Based on the user's focus on performance optimizations (lazy loading components and optimizing image assets), and guided by `performance.md` and other agents docs.
 

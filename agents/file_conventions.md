@@ -1,7 +1,7 @@
 # File Naming and Structure Conventions
 
 ## Purpose
-This file ensures consistency in how AI agents generate or modify files in the Cleaners Ready2Go website project, promoting maintainability, collaboration, and adherence to the React/Node.js/Vite stack standards.
+This file ensures consistency in how AI agents generate or modify files in the Cleaners Ready 2 Go website project, promoting maintainability, collaboration, and adherence to the React/Node.js/Vite stack standards.
 
 ## Overview
 Follow these conventions for all new or refactored code. Use TypeScript (.ts/.tsx) where possible for type safety. Enforce via linting rules (see code_quality.md). Always include a clear description of changes in commits/PRs, referencing related issues (e.g., "Addresses #456").

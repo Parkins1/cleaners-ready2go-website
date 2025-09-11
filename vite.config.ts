@@ -60,8 +60,8 @@ export default defineConfig(async () => {
             },
             includeAssets: ["favicon.ico", "apple-touch-icon.png", "masked-icon.svg"],
             manifest: {
-              name: "Cleaners Ready 2Go",
-              short_name: "Cleaners Ready 2Go",
+              name: "Cleaners Ready 2 Go",
+              short_name: "Cleaners Ready 2 Go",
               description: "Professional cleaning services in Spokane area",
               theme_color: "#CFAE51",
               background_color: "#ffffff",

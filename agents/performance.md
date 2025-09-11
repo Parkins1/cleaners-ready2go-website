@@ -1,7 +1,7 @@
 # Performance Guidelines
 
 ## Purpose
-This file provides optimization tips for the Cleaners Ready2Go website to ensure fast load times, efficient resource usage, and scalability, especially for image-heavy assets and dynamic booking features.
+This file provides optimization tips for the Cleaners Ready 2 Go website to ensure fast load times, efficient resource usage, and scalability, especially for image-heavy assets and dynamic booking features.
 
 ## Overview
 Performance is critical for user experience in a web app handling cleaning service bookings. Focus on frontend (React/Vite) and backend (Node.js) optimizations. Use tools like Lighthouse for audits and aim for scores >90 in performance metrics.
