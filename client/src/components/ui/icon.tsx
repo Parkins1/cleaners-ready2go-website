@@ -35,6 +35,11 @@ const iconImports = {
   Heart: lazy(() => import('lucide-react/dist/esm/icons/heart')),
   Zap: lazy(() => import('lucide-react/dist/esm/icons/zap')),
   AlertCircle: lazy(() => import('lucide-react/dist/esm/icons/alert-circle')),
+  // Added circle variants used in 4-step grids
+  CircleDashed: lazy(() => import('lucide-react/dist/esm/icons/circle-dashed')),
+  CircleDotDashed: lazy(() => import('lucide-react/dist/esm/icons/circle-dot-dashed')),
+  CircleDot: lazy(() => import('lucide-react/dist/esm/icons/circle-dot')),
+  CircleCheck: lazy(() => import('lucide-react/dist/esm/icons/circle-check')),
 };
 
 export type IconName = keyof typeof iconImports;

@@ -97,19 +97,34 @@ export type FourStepItem = { title: string; body: string; iconName?: string };
 export function FourStepGrid({ steps, cardClassName = "h-full" }: { steps: FourStepItem[]; cardClassName?: string }) {
   return (
     <div className="grid gap-xl md:grid-cols-2 lg:grid-cols-4">
-      {steps.map((s, i) => (
-        <Card key={i} className={cardClassName}>
-          <CardContent className="p-6">
-            <div className="flex items-center mb-4">
-              {s.iconName ? (
-                <Icon name={s.iconName as any} className="w-8 h-8 mr-4 text-brand-gold" />
-              ) : null}
-              <h3 className="text-lg font-semibold text-text font-outfit">{s.title}</h3>
-            </div>
-            <p className="text-sm text-text/90">{s.body}</p>
-          </CardContent>
-        </Card>
-      ))}
+      {steps.map((s, i) => {
+        const m = s.title.match(/^\s*(\d+)([)\.]?)\s*(.*)$/);
+        const numberPart = m ? `${m[1]}${m[2] || ''}` : null;
+        const restTitle = m ? m[3] : s.title;
+
+        return (
+          <Card key={i} className={cardClassName}>
+            <CardContent className="p-6">
+              <div className="flex items-center mb-4">
+                {s.iconName ? (
+                  <Icon name={s.iconName as any} className="w-8 h-8 mr-4 text-brand-gold" />
+                ) : null}
+                <h3 className="text-lg font-semibold text-text font-outfit">
+                  {numberPart ? (
+                    <>
+                      <span className="text-brand-gold mr-1">{numberPart}</span>
+                      <span>{restTitle}</span>
+                    </>
+                  ) : (
+                    s.title
+                  )}
+                </h3>
+              </div>
+              <p className="text-sm text-text/90">{s.body}</p>
+            </CardContent>
+          </Card>
+        );
+      })}
     </div>
   );
 }
