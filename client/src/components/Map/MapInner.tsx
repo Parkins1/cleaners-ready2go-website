@@ -17,7 +17,13 @@ function guessCenter(name: string) {
 }
 
 export default function MapInner({ locationName, zoom = 12 }: MapProps) {
-  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY as string | undefined;
+  // Try multiple ways to obtain an API key; if all fail, we gracefully fall back to a no‑key iframe embed
+  const envKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY as string | undefined;
+  const metaKey = typeof document !== 'undefined'
+    ? (document.querySelector('meta[name="maps-api-key"]') as HTMLMetaElement | null)?.content || undefined
+    : undefined;
+  const winKey = typeof window !== 'undefined' ? (window as any).__MAPS_API_KEY__ : undefined;
+  const apiKey = envKey || metaKey || winKey;
 
   const [center, setCenter] = useState(() => guessCenter(locationName));
 
@@ -55,10 +61,23 @@ export default function MapInner({ locationName, zoom = 12 }: MapProps) {
     }
   }, [isLoaded, locationName]);
 
+  // If no API key is available, fall back to a generic Google Maps embed that does not require a key
   if (!apiKey) {
+    const q = encodeURIComponent(locationName);
+    const z = Math.max(1, Math.min(20, zoom));
+    const embedUrl = `https://www.google.com/maps?q=${q}&z=${z}&output=embed`;
     return (
-      <div className="w-full h-full rounded-xl bg-yellow-50 text-yellow-800 flex items-center justify-center text-sm">
-        Missing VITE_GOOGLE_MAPS_API_KEY
+      <div className="w-full h-full rounded-xl overflow-hidden">
+        <iframe
+          title={`Map of ${locationName}`}
+          width="100%"
+          height="100%"
+          frameBorder={0}
+          style={{ border: 0 }}
+          src={embedUrl}
+          allowFullScreen
+          referrerPolicy="no-referrer-when-downgrade"
+        />
       </div>
     );
   }
@@ -89,4 +108,3 @@ export default function MapInner({ locationName, zoom = 12 }: MapProps) {
     </div>
   );
 }
-

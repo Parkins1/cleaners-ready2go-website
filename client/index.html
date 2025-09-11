@@ -46,6 +46,8 @@
       .hero-media{width:100%;aspect-ratio:16/9}
     </style>
     <!-- Static JSON-LD for non-JS crawlers: LocalBusiness -->
+    <!-- Expose Maps API key to runtime as a meta tag fallback (Vite replaces %VITE_*% in HTML) -->
+    <meta name="maps-api-key" content="%VITE_GOOGLE_MAPS_API_KEY%" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
