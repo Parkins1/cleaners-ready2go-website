@@ -5,6 +5,8 @@ import Icon, { type IconName } from '@/components/ui/icon';
 
 export interface IconCardProps {
   iconSrc?: string;
+  iconAlt?: string;
+  iconTitle?: string;
   iconName?: IconName;
   icon?: React.ReactNode;
   title: string;
@@ -14,7 +16,7 @@ export interface IconCardProps {
   bulletIcon?: IconName;
 }
 
-export default function IconCard({ iconSrc, iconName, icon, title, items, className, children, bulletIcon }: IconCardProps) {
+export default function IconCard({ iconSrc, iconAlt, iconTitle, iconName, icon, title, items, className, children, bulletIcon }: IconCardProps) {
   const iconNode = icon
     ? (
         <div className="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-accent text-white">
@@ -31,7 +33,8 @@ export default function IconCard({ iconSrc, iconName, icon, title, items, classN
     ? (
         <OptimizedImage
           src={iconSrc}
-          alt={title}
+          alt={iconAlt || title}
+          title={iconTitle}
           className="w-16 h-16 object-contain mb-4"
           width={64}
           height={64}

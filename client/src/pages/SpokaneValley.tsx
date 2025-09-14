@@ -33,7 +33,8 @@ export default function SpokaneValley() {
   const pageDetails = {
     locationName: "Spokane Valley",
     heroImage: heroImage,
-    heroAlt: "House cleaning services in Spokane Valley, WA—Cleaners Ready 2 Go",
+    heroAlt: "A beautiful house in Spokane, representing our house cleaning services.",
+    heroTitle: "Spokane House Cleaning",
     heroImgSrcSet: `${hero480} 480w, ${hero768} 768w, ${hero1024} 1024w`,
     heroSources: [{ type: 'image/avif', srcSet: `${hero480Avif} 480w, ${hero768Avif} 768w, ${hero1024Avif} 1024w` }],
     heroWidth: 1392,
@@ -126,12 +127,12 @@ export default function SpokaneValley() {
           <div className="max-w-5xl mx-auto px-6">
             <div className="rounded-xl border border-slate-300 bg-white p-4 sm:p-6 shadow-sm">
               <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md sm:gap-xl text-sm">
-                <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-accent flex-none" />Instant online pricing   no surprise fees</li>
-                <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-accent flex-none" />Color‑coded microfiber system to help reduce cross‑contamination</li>
-                <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-accent flex-none" />Photo-verified results after every clean</li>
-                <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-accent flex-none" />Background-checked team</li>
-                <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-accent flex-none" />EPA-registered options available</li>
-                <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-accent flex-none" />Flexible arrival windows</li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold flex-none" />Instant online pricing   no surprise fees</li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold flex-none" />Color‑coded microfiber system to help reduce cross‑contamination</li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold flex-none" />Photo-verified results after every clean</li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold flex-none" />Background-checked team</li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold flex-none" />EPA-registered options available</li>
+                <li className="flex items-start"><Icon name="CheckCircle" className="mt-0.5 mr-2 h-4 w-4 text-brand-gold flex-none" />Flexible arrival windows</li>
               </ul>
             </div>
           </div>
@@ -181,7 +182,7 @@ export default function SpokaneValley() {
               <p className="text-text mt-2">
                 Expect more time invested in build-up areas under appliances (when accessible), tile/grout lines, and hard-to-reach trim. It pairs well with a follow-up recurring plan for easier maintenance.
               </p>
-              <ul className="mt-4 space-y-2">
+              <ul className="mt-.4 space-y-2">
                 <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-brand-gold mr-2" />Thorough bath and kitchen degrease and descale focus</li>
                 <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-brand-gold mr-2" />Baseboards, switch plates, door frames detailed</li>
                 <li className="flex items-center"><Icon name="CheckCircle" className="w-4 h-4 text-brand-gold mr-2" />Interior glass and mirrors polished for clarity</li>
@@ -223,22 +224,22 @@ export default function SpokaneValley() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-xl text-center">
               <div>
-                <Icon name="ShieldCheck" className="mx-auto h-12 w-12 text-accent" />
+                <Icon name="ShieldCheck" className="mx-auto h-12 w-12 text-brand-gold" />
                 <h3 className="text-lg font-bold mt-4">Local Presence</h3>
                 <p className="text-sm">Our office off Sprague Ave lets us reach Greenacres or Veradale quickly.</p>
               </div>
               <div>
-                <Icon name="Leaf" className="mx-auto h-12 w-12 text-accent" />
+                <Icon name="Leaf" className="mx-auto h-12 w-12 text-brand-gold" />
                 <h3 className="text-lg font-bold mt-4">Licensed & Insured</h3>
                 <p className="text-sm">Proper coverage gives homeowners added peace of mind.</p>
               </div>
               <div>
-                <Icon name="Sparkles" className="mx-auto h-12 w-12 text-accent" />
+                <Icon name="Sparkles" className="mx-auto h-12 w-12 text-brand-gold" />
                 <h3 className="text-lg font-bold mt-4">Evidence-Based Products</h3>
                 <p className="text-sm">We select EPA-registered or third-party-certified solutions whenever possible and follow manufacturer directions for effective use.</p>
               </div>
               <div>
-                <Icon name="Users" className="mx-auto h-12 w-12 text-accent" />
+                <Icon name="Users" className="mx-auto h-12 w-12 text-brand-gold" />
                 <h3 className="text-lg font-bold mt-4">Transparent Pricing</h3>
                 <p className="text-sm">Flat rates based on square footage; any add-ons are quoted before work begins.</p>
               </div>
@@ -374,7 +375,7 @@ export default function SpokaneValley() {
                   <AccordionContent>{faq.a}</AccordionContent>
                 </AccordionItem>
               ))}
-            </Accordion>
+            </Accordion>.
           </div>
         ),
       },

@@ -1,4 +1,4 @@
- // llm:content-card-migrated
+  // llm:content-card-migrated
  // llm:cta-migrated
  import { Button } from "@/components/ui/button";
  import { useModal } from "@/components/modal/ModalProvider";
@@ -73,6 +73,8 @@ export default function Home() {
 
       <HeroSection
         image={heroImage}
+        imageAlt="A beautiful house in Spokane, representing our house cleaning services."
+        imageTitle="Spokane House Cleaning"
         title={
           <h1 className="hero-title">
             Expert <span className="text-brand-gold">House Cleaning</span> in Spokane, WA
@@ -273,7 +275,7 @@ export default function Home() {
             <Accordion type="single" collapsible className="w-full rounded-xl bg-white/50 shadow-sm divide-y divide-gray-100">
             {faqs.map((f, i) => (
               <AccordionItem key={i} value={`item-${i + 1}`}>
-                <AccordionTrigger className="text-left py-4 px-4"><h3>Do house cleaners in Spokane bring their own supplies?</h3></AccordionTrigger>
+                <AccordionTrigger className="text-left py-4 px-4">{f.q}</AccordionTrigger>
                 <AccordionContent className="px-4 pb-4">{f.a}</AccordionContent>
               </AccordionItem>
             ))}

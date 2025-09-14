@@ -19,6 +19,7 @@ interface LocationPageTemplateProps {
   locationName: string;
   heroImage: string;
   heroAlt?: string;
+  heroTitle?: string;
   heroImgSrcSet?: string;
   heroSources?: { type: string; srcSet: string; sizes?: string }[];
   heroWidth?: number;
@@ -49,6 +50,7 @@ export default function LocationPageTemplate({
   locationName,
   heroImage,
   heroAlt,
+  heroTitle,
   heroImgSrcSet,
   heroSources,
   heroWidth,
@@ -100,6 +102,7 @@ export default function LocationPageTemplate({
       <HeroSection
         image={heroImage}
         imageAlt={heroAlt || `House cleaning in ${locationName}, WA`}
+        imageTitle={heroTitle}
         title={<h1 className="hero-title">Professional <span className="text-brand-gold">House Cleaning</span> in {locationName}, WA</h1>}
         subtitle={<p className="text-lg lg:text-xl text-slate-100/95 mb-8">Locally owned—Licensed & insured—Satisfaction-focused service</p>}
         actions={<Button onClick={() => open('quote')} variant="primary">Request Your FREE Quote</Button>}
@@ -127,7 +130,14 @@ export default function LocationPageTemplate({
       {/* Map Section */}
       <section className="py-section bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <Map locationName={locationName} />
+          <Map
+            locationName={locationName}
+            highlightPlaceIds={[
+              "ChIJ5TCOcRa1nlQRQoFIoW8oAQE",
+              "ChIJnVOY0xTWnlQROwWj7KXK1hA",
+              "ChIJa5iiHgncnlQRvDqDQbzvC5o",
+            ]}
+          />
         </div>
       </section>
 

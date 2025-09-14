@@ -105,22 +105,11 @@ export function FourStepGrid({ steps, cardClassName = "h-full" }: { steps: FourS
         return (
           <Card key={i} className={cardClassName}>
             <CardContent className="p-6">
-              <div className="flex items-center mb-4">
-                {s.iconName ? (
-                  <Icon name={s.iconName as any} className="w-8 h-8 mr-4 text-brand-gold" />
-                ) : null}
-                <h3 className="text-lg font-semibold text-text font-outfit">
-                  {numberPart ? (
-                    <>
-                      <span className="text-brand-gold mr-1">{numberPart}</span>
-                      <span>{restTitle}</span>
-                    </>
-                  ) : (
-                    s.title
-                  )}
-                </h3>
-              </div>
-              <p className="text-sm text-text/90">{s.body}</p>
+              {numberPart && (
+                <span className="text-brand-gold font-bold text-2xl">{numberPart}</span>
+              )}
+              <h3 className="text-lg font-semibold text-text font-outfit mt-2">{restTitle}</h3>
+              <p className="text-sm text-text/90 mt-1">{s.body}</p>
             </CardContent>
           </Card>
         );
@@ -145,7 +134,7 @@ export function FourStepSection({
   return (
     <section id={id} className={sectionClassName} aria-labelledby={`${id}-title`}>
       <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-12">
-        <h2 id={`${id}-title`} className="text-3xl lg:text-4xl font-bold text-text mb-xl">
+        <h2 id={`${id}-title`} className="text-3xl lg:text-4xl font-bold text-text mb-xl text-center">
           {title}
         </h2>
         <FourStepGrid steps={steps} />

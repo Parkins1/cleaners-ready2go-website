@@ -11,6 +11,7 @@ export default function ServiceCard({
   href,
   img,
   imgAlt,
+  imgTitle,
   imgSrcSet,
   sources,
   imgWidth,
@@ -39,7 +40,7 @@ export default function ServiceCard({
       <OptimizedImage
         src={img}
         alt={imgAlt || `${title} in Spokane area`}
-        className="absolute inset-0 h-full w-full object-cover brightness-[.85] object-center sm:object-[center_30%]"
+        title={imgTitle}
         priority={false}
         lazy={true}
         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

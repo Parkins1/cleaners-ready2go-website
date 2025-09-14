@@ -112,6 +112,8 @@ export default function MoveOut() {
       {/* HERO */}
       <HeroSection
         image={heroMove}
+        imageAlt="A beautiful house in Spokane, representing our house cleaning services."
+        imageTitle="Spokane House Cleaning"
         title={<h1 className="text-4xl lg:text-6xl font-bold text-white drop-shadow-sm mb-4">Move-Out Cleaning in Spokane Valley, WA</h1>}
         subtitle={<p className="text-lg lg:text-xl text-slate-100/95 mb-8">Keep your deposit. Pass inspection. Move on. Licensed local pros delivering fast, inspection-ready results for your home.</p>}
         actions={
@@ -312,7 +314,14 @@ export default function MoveOut() {
           <h2 className="text-3xl lg:text-4xl font-bold text-text text-center mb-10">
             Our Service Area
           </h2>
-          <Map locationName="Spokane, WA" />
+          <Map
+            locationName="Spokane, WA"
+            highlightPlaceIds={[
+              "ChIJ5TCOcRa1nlQRQoFIoW8oAQE",
+              "ChIJnVOY0xTWnlQROwWj7KXK1hA",
+              "ChIJa5iiHgncnlQRvDqDQbzvC5o",
+            ]}
+          />
         </div>
       </section>
 

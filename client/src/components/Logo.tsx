@@ -22,7 +22,8 @@ function Logo() {
         width={96}
         height={96}
         lazy={false}
-        alt="Cleaners Ready 2 Go - Professional Cleaning Services"
+        alt="The official logo for Cleaners Ready2Go."
+        title="Cleaners Ready2Go Logo"
         imgClassName="h-24 w-auto drop-shadow-lg"
       />
     </div>

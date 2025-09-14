@@ -26,7 +26,8 @@ export const serviceCatalog: Record<string, Omit<ServiceCardProps, "className">>
       "Routine dusting, vacuuming, mopping, bathroom sanitization, and kitchen cleaning. Ideal for weekly, bi-weekly, or monthly upkeep.",
     href: "/residential",
     img: residentialCardImg,
-    imgAlt: "Residential house cleaning services in Spokane, Spokane Valley, and Liberty Lake",
+    imgAlt: "Image for our residential cleaning service, showing a clean and inviting home.",
+    imgTitle: "Residential Cleaning Service Card",
     imgSrcSet: `${res480} 480w, ${res768} 768w, ${res1024} 1024w`,
     sources: [
       { type: 'image/avif', srcSet: `${res480Avif} 480w, ${res768Avif} 768w, ${res1024Avif} 1024w` },
@@ -42,7 +43,8 @@ export const serviceCatalog: Record<string, Omit<ServiceCardProps, "className">>
       "Meticulous care beyond maintenance: baseboards, blinds, behind appliances, grout, and more. Perfect before hosting or seasonally.",
     href: "/deep-cleaning",
     img: residentialCardImg,
-    imgAlt: "Deep house cleaning services in Spokane and Spokane Valley",
+    imgAlt: "Image for our residential cleaning service, showing a clean and inviting home.",
+    imgTitle: "Residential Cleaning Service Card",
     imgSrcSet: `${res480} 480w, ${res768} 768w, ${res1024} 1024w`,
     sources: [
       { type: 'image/avif', srcSet: `${res480Avif} 480w, ${res768Avif} 768w, ${res1024Avif} 1024w` },
@@ -58,7 +60,8 @@ export const serviceCatalog: Record<string, Omit<ServiceCardProps, "className">>
       "Comprehensive cabinets, appliances, fixtures, floors, and surfaces ideal for renters, property managers, and homeowners in transition.",
     href: "/move-out",
     img: moveOutCardImg,
-    imgAlt: "Move-in and move-out cleaning in Spokane, Liberty Lake, and Spokane Valley",
+    imgAlt: "Image for our move-out cleaning service, showing a clean and empty room.",
+    imgTitle: "Move-Out Cleaning Service Card",
     imgSrcSet: `${mv480} 480w, ${mv768} 768w, ${mv1024} 1024w`,
     sources: [
       { type: 'image/avif', srcSet: `${mv480Avif} 480w, ${mv768Avif} 768w, ${mv1024Avif} 1024w` },
@@ -74,7 +77,8 @@ export const serviceCatalog: Record<string, Omit<ServiceCardProps, "className">>
       "Flexible, efficient cleaning tailored to apartment living. Keep your space consistently tidy with packages that fit your lifestyle.",
     href: "/apartment-cleaning",
     img: residentialCardImg,
-    imgAlt: "Apartment cleaning services in Spokane area",
+    imgAlt: "Image for our residential cleaning service, showing a clean and inviting home.",
+    imgTitle: "Residential Cleaning Service Card",
     imgSrcSet: `${res480} 480w, ${res768} 768w, ${res1024} 1024w`,
     sources: [
       { type: 'image/avif', srcSet: `${res480Avif} 480w, ${res768Avif} 768w, ${res1024Avif} 1024w` },

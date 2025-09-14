@@ -7,6 +7,7 @@ export interface ServiceCardProps {
   href: string;
   img: string;
   imgAlt?: string;
+  imgTitle?: string;
   /** Optional responsive srcset for the image */
   imgSrcSet?: string;
   /** Optional <picture> sources (e.g., AVIF) */

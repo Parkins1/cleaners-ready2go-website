@@ -28,7 +28,8 @@ export default function LibertyLake() {
   const pageDetails = {
     locationName: "Liberty Lake",
     heroImage: heroLiberty,
-    heroAlt: 'House cleaning services in Liberty Lake, WA—Cleaners Ready 2 Go',
+    heroAlt: 'A beautiful house in Spokane, representing our house cleaning services.',
+    heroTitle: 'Spokane House Cleaning',
     heroImgSrcSet: `${hero480} 480w, ${hero768} 768w, ${hero1024} 1024w`,
     heroSources: [{ type: 'image/avif', srcSet: `${hero480Avif} 480w, ${hero768Avif} 768w, ${hero1024Avif} 1024w` }],
     heroWidth: 1392,

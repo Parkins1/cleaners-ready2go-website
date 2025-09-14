@@ -26,7 +26,8 @@ export default function Footer() {
                 sizes="112px"
                 width={112}
                 height={112}
-                alt="Cleaners Ready 2 Go Logo"
+                alt="The official logo for Cleaners Ready2Go."
+                title="Cleaners Ready2Go Logo"
                 imgClassName="h-28 w-auto"
               />
             </div>

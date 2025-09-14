@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 interface OptimizedImageProps {
   src: string;
   alt: string;
+  title?: string;
   className?: string;
   imgClassName?: string;
   style?: React.CSSProperties;
@@ -23,6 +24,7 @@ interface OptimizedImageProps {
 export function OptimizedImage({
   src,
   alt,
+  title,
   className,
   imgClassName,
   style,
@@ -109,6 +111,7 @@ export function OptimizedImage({
           ref={imgRef}
           src={src}
           alt={alt}
+          title={title}
           className={cn(
             'w-full h-full object-cover transition-opacity duration-300',
             {
@@ -125,7 +128,12 @@ export function OptimizedImage({
           sizes={sizes}
           width={width}
           height={height}
-          {...(fetchpriority !== undefined && { fetchPriority: fetchpriority })}
+          {
+            // Use lowercase attribute name; React forwards unknown lowercase attributes without warnings
+            ...(fetchpriority !== undefined
+              ? ({ ['fetchpriority']: fetchpriority } as any)
+              : {})
+          }
         />
       </picture>
     </div>

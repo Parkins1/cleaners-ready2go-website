@@ -97,7 +97,8 @@ export default function ApartmentCleaning() {
       {/* Hero */}
       <HeroSection
         image={heroApartmentWebp}
-        imageAlt="Apartment cleaning in Spokane, WA"
+        imageAlt="A clean and modern apartment living room in Spokane, showcasing the quality of our cleaning services."
+        imageTitle="Spokane Apartment Cleaning"
         title={
           <h1 className="text-4xl lg:text-6xl font-bold text-white drop-shadow-sm mb-4">
             <span className="text-brand-gold">Apartment Cleaning</span> in Spokane That Fits Your Life
@@ -138,26 +139,36 @@ export default function ApartmentCleaning() {
             <IconCard
               iconSrc={iconMoveOut}
               title="Move-Out & End-of-Lease Cleaning"
+              iconTitle="Move-Out Cleaning Service"
+              iconAlt="Icon representing our move-out cleaning service for apartments."
               items={["Deposit-friendly cleaning based on landlord checklists"]}
             />
             <IconCard
               iconSrc={iconMoveIn}
               title="Move-In Cleaning"
+              iconTitle="Move-In Cleaning Service"
+              iconAlt="Icon representing our move-in cleaning service for apartments."
               items={["Sanitized kitchens, bathrooms, and surfaces before you unpack"]}
             />
             <IconCard
               iconSrc={iconRecurring}
               title="Recurring Apartment Cleaning"
+              iconTitle="Recurring Cleaning Service"
+              iconAlt="Icon representing our recurring apartment cleaning service."
               items={["Weekly, bi-weekly, or monthly to keep things fresh"]}
             />
             <IconCard
               iconSrc={iconDeepClean}
               title="Deep Cleaning"
+              iconTitle="Deep Clean Service"
+              iconAlt="Icon representing our deep cleaning service for apartments."
               items={["Beyond surface-level: grout, baseboards, and inside appliances"]}
             />
             <IconCard
               iconSrc={iconEco}
               title="Eco-Friendly Options"
+              iconTitle="Eco-Friendly Cleaning"
+              iconAlt="Icon representing our eco-friendly apartment cleaning service."
               items={["Pet-safe, kid-safe products available on request"]}
             />
           </div>
@@ -264,7 +275,8 @@ export default function ApartmentCleaning() {
             <ContentCard>
               <OptimizedImage
                 src={photoKitchenWebp}
-                alt="Apartment kitchen cleaning"
+                alt="A modern and clean kitchen in a Spokane apartment."
+                title="Spokane Apartment Kitchen"
                 className="w-full h-40 md:h-48 rounded-lg object-cover"
                 sizes="(max-width: 768px) 100vw, 33vw"
                 imgSrcSet={`${photoKitchen480Webp} 480w, ${photoKitchen768Webp} 768w, ${photoKitchen1024Webp} 1024w`}
@@ -284,7 +296,8 @@ export default function ApartmentCleaning() {
             <ContentCard>
               <OptimizedImage
                 src={photoBathroomWebp}
-                alt="Apartment bathroom cleaning"
+                alt="A clean and sparkling bathroom in a Spokane apartment."
+                title="Spokane Apartment Bathroom"
                 className="w-full h-40 md:h-48 rounded-lg object-cover"
                 sizes="(max-width: 768px) 100vw, 33vw"
                 imgSrcSet={`${photoBathroom480Webp} 480w, ${photoBathroom768Webp} 768w, ${photoBathroom1024Webp} 1024w`}
@@ -304,7 +317,8 @@ export default function ApartmentCleaning() {
             <ContentCard>
               <OptimizedImage
                 src={photoBedroomWebp}
-                alt="Apartment bedroom cleaning"
+                alt="A tidy and clean bedroom in a Spokane apartment."
+                title="Spokane Apartment Bedroom"
                 className="w-full h-40 md:h-48 rounded-lg object-cover"
                 sizes="(max-width: 768px) 100vw, 33vw"
                 imgSrcSet={`${photoBedroom480Webp} 480w, ${photoBedroom768Webp} 768w, ${photoBedroom1024Webp} 1024w`}
@@ -334,7 +348,8 @@ export default function ApartmentCleaning() {
           <div>
             <OptimizedImage
               src={lifestylePhotoWebp}
-              alt="Spokane apartment lifestyle — tidy living room and kitchen"
+              alt="A stylish and clean living area in a Spokane apartment, reflecting a modern lifestyle."
+              title="Spokane Apartment Living"
               className="w-full h-auto rounded-xl shadow"
               placeholder="blur"
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -368,14 +383,22 @@ export default function ApartmentCleaning() {
           <h2 className="text-3xl lg:text-4xl font-bold text-text text-center mb-10">
             Our Service Area
           </h2>
-          <Map locationName="Spokane, WA" />
+            <Map
+              locationName="Spokane, WA"
+              highlightPlaceIds={[
+                "ChIJ5TCOcRa1nlQRQoFIoW8oAQE",
+                "ChIJnVOY0xTWnlQROwWj7KXK1hA",
+                "ChIJa5iiHgncnlQRvDqDQbzvC5o",
+              ]}
+            />
         </div>
       </section>
 
       {/* Final CTA using hero image */}
       <HeroSection
         image={heroApartmentWebp}
-        imageAlt="Request a free apartment cleaning quote in Spokane"
+        imageTitle="Spokane Apartment Cleaning"
+        imageAlt="A clean and modern apartment living room in Spokane, showcasing the quality of our cleaning services."
         title={<h2 className="text-3xl lg:text-5xl font-bold text-white drop-shadow-sm mb-4">Ready for a Consistently Clean Apartment?</h2>}
         subtitle={<p className="text-slate-100/95">Call, text, or request your free quote now.</p>}
         actions={

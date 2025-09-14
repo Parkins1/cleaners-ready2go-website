@@ -52,6 +52,13 @@ export default function DeepCleaning() {
     { q: "Do you clean offices and commercial spaces?", a: "Yes. We provide deep cleaning for clinics, boutiques, and offices up to 10,000 sq ft." },
   ];
 
+  const benefits = [
+    { q: "Healthier indoor air", a: "Spokane’s pine pollen season means allergens cling to carpet fibers and HVAC vents. Our HEPA vacuums and microfiber cloths trap microscopic particles before they reach your lungs." },
+    { q: "Save time & sanity", a: "A detailed DIY scrub can swallow an entire weekend. Our multi-tech teams finish in hours, freeing you to hike Riverside State Park or catch a Spokane Indians game instead of scrubbing grout." },
+    { q: "Protect your investment", a: "Regular deep cleaning extends the life of stainless appliances, stone counters, and hardwood floors by removing abrasive debris that causes premature wear." },
+    { q: "Impress guests & buyers", a: "Whether you’re hosting Thanksgiving or listing your home, a professional deep clean creates photos that pop and first impressions that last." }
+  ];
+
   const path = "/deep-cleaning";
 
   return (
@@ -90,7 +97,9 @@ export default function DeepCleaning() {
       {/* HERO */}
       <HeroSection
         image={heroDeep}
-        title={<h1 className="text-4xl lg:text-6xl font-bold text-white drop-shadow-sm mb-4">Deep Cleaning Spokane, WA</h1>}
+        imageAlt="A beautiful house in Spokane, representing our house cleaning services."
+        imageTitle="Spokane House Cleaning"
+        title={<h1 className="text-4xl lg:text-6xl font-bold text-white drop-shadow-sm mb-4"><span className="text-brand-gold">Deep Cleaning</span> Spokane, WA</h1>}
         subtitle={<p className="text-lg lg:text-xl text-slate-100/95 mb-8">Local, insured pros delivering wall-to-wall shine on your schedule.</p>}
         actions={
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -131,7 +140,9 @@ export default function DeepCleaning() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-xl mt-8">
             <IconCard
               iconSrc={iconKitchen}
-              title="Kitchen Revival"
+              title="Kitchen Cleaning"
+              iconTitle="Kitchen Cleaning"
+              iconAlt="Icon representing our kitchen cleaning service."
               items={[
                 "Meticulously clean appliance interiors and exteriors including refrigerator, stove, and microwave",
                 "Remove grime, sticky spills, and unpleasant odors",
@@ -143,7 +154,9 @@ export default function DeepCleaning() {
             />
             <IconCard
               iconSrc={iconBathroom}
-              title="Bathroom Detox"
+              title="Bathroom Cleaning"
+              iconTitle="Bathroom Cleaning"
+              iconAlt="Icon representing our bathroom cleaning service."
               items={[
                 "Sanitize toilets including hard-to-reach hinges",
                 "Scrub bathtubs, showers, tracks, doors, and glass until free of soap scum",
@@ -156,7 +169,9 @@ export default function DeepCleaning() {
             />
             <IconCard
               iconSrc={iconDustFreeFan}
-              title="Whole-Home Detailing"
+              title="Dust-Free Fan Cleaning"
+              iconTitle="Dust-Free Fan Cleaning"
+              iconAlt="Icon representing our service for cleaning dust-free fans."
               items={[
                 "Remove dust, pollen, and cobwebs from ceiling fans, light fixtures, high corners, and all surfaces",
                 "Walls spot-cleaned for marks and scuffs",
@@ -168,7 +183,9 @@ export default function DeepCleaning() {
             />
             <IconCard
               iconSrc={iconVacuumedCarpet}
-              title="Floor Refresh"
+              title="Vacuumed Carpet"
+              iconTitle="Vacuumed Carpet"
+              iconAlt="Icon representing our carpet vacuuming service."
               items={[
                 "Hard floors vacuumed, mopped, and polished to remove residue and streaks",
                 "Carpets and rugs rigorously vacuumed for dirt and allergens",
@@ -179,7 +196,9 @@ export default function DeepCleaning() {
             />
             <IconCard
               iconSrc={iconCabinetInteriors}
-              title="Cabinet & Storage Cleaning"
+              title="Cabinet Interiors Cleaning"
+              iconTitle="Cabinet Interiors Cleaning"
+              iconAlt="Icon representing our cabinet interiors cleaning service."
               items={[
                 "Remove built-up dust, crumbs, and debris from both interiors and exteriors",
                 "Pay special attention to storage spaces, drawers, closets, and cabinet surfaces",
@@ -191,7 +210,9 @@ export default function DeepCleaning() {
             />
             <IconCard
               iconSrc={iconBaseboards}
-              title="All Surfaces and Detailed Areas"
+              title="Baseboard Cleaning"
+              iconTitle="Baseboard Cleaning"
+              iconAlt="Icon representing our baseboard cleaning service."
               items={[
                 "Attention to baseboards, moldings, vents, registers, doorknobs, electrical plates, and high-traffic touchpoints",
                 "Living rooms, bedrooms, hallways, and laundry rooms refreshed",
@@ -284,10 +305,18 @@ export default function DeepCleaning() {
               <li key={c} className="flex items-center gap-2 px-2">
                 <Icon
                   name="MapPin"
-                  className={`w-4 h-4 ${["Spokane", "Spokane Valley", "Liberty Lake"].includes(c) ? "text-accent" : "text-gray-400"}`}
+                  className={`w-4 h-4 ${[
+                    "Spokane",
+                    "Spokane Valley",
+                    "Liberty Lake",
+                  ].includes(c) ? "text-accent" : "text-gray-400"}`}
                   aria-hidden="true"
                 />
-                <span className={`${["Spokane", "Spokane Valley", "Liberty Lake"].includes(c) ? "text-accent font-semibold" : ""}`}>{c}</span>
+                <span className={`${[
+                  "Spokane",
+                  "Spokane Valley",
+                  "Liberty Lake",
+                ].includes(c) ? "text-accent font-semibold" : ""}`}>{c}</span>
               </li>
             ))}
           </ul>
@@ -332,12 +361,18 @@ export default function DeepCleaning() {
 
       {/* BENEFITS */}
       <section className="py-section bg-surface">
-        <div className="max-w-5xl mx-auto px-6 space-y-4">
-          <h2 className="text-3xl lg:text-4xl font-bold text-text">The Benefits of Professional Deep Cleaning</h2>
-          <p><strong>Healthier indoor air.</strong> Spokane’s pine pollen season means allergens cling to carpet fibers and HVAC vents. Our HEPA vacuums and microfiber cloths trap microscopic particles before they reach your lungs.</p>
-          <p><strong>Save time & sanity.</strong> A detailed DIY scrub can swallow an entire weekend. Our multi-tech teams finish in hours, freeing you to hike Riverside State Park or catch a Spokane Indians game instead of scrubbing grout.</p>
-          <p><strong>Protect your investment.</strong> Regular deep cleaning extends the life of stainless appliances, stone counters, and hardwood floors by removing abrasive debris that causes premature wear.</p>
-          <p><strong>Impress guests & buyers.</strong> Whether you’re hosting Thanksgiving or listing your home, a professional deep clean creates photos that pop and first impressions that last.</p>
+        <div className="max-w-3xl mx-auto px-6">
+          <h2 className="text-3xl lg:text-4xl font-bold text-text text-center mb-6">The Benefits of Professional Deep Cleaning</h2>
+          <Accordion type="single" collapsible className="w-full">
+            {benefits.map((b, i) => (
+              <AccordionItem key={i} value={`benefit-${i + 1}`}>
+                <AccordionTrigger className="text-left">{b.q}</AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-sm text-text/90">{b.a}</p>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 
@@ -350,7 +385,14 @@ export default function DeepCleaning() {
           <h2 className="text-3xl lg:text-4xl font-bold text-text text-center mb-10">
             Our Service Area
           </h2>
-          <Map locationName="Spokane, WA" />
+          <Map
+            locationName="Spokane, WA"
+            highlightPlaceIds={[
+              "ChIJ5TCOcRa1nlQRQoFIoW8oAQE",
+              "ChIJnVOY0xTWnlQROwWj7KXK1hA",
+              "ChIJa5iiHgncnlQRvDqDQbzvC5o",
+            ]}
+          />
         </div>
       </section>
 

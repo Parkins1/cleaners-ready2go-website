@@ -54,7 +54,8 @@ function About() {
                 sizes="112px"
                 width={112}
                 height={112}
-                alt="Cleaners Ready 2 Go Logo"
+                alt="The official logo for Cleaners Ready2Go."
+                title="Cleaners Ready2Go Logo"
                 imgClassName="h-28 w-auto"
               />
             </div>
@@ -66,7 +67,8 @@ function About() {
             <div>
               <img 
                 src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                alt="Professional house cleaning team in a Spokane Valley home" 
+                alt="A professional cleaning team from Cleaners Ready2Go working together in a bright, modern home in Spokane Valley." 
+                title="Cleaners Ready2Go Professional Cleaning Team" 
                 className="rounded-xl shadow-lg w-full h-auto" 
               />
             </div>

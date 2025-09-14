@@ -11,6 +11,7 @@ import { OptimizedImage } from '@/components/ui/optimized-image';
 interface HeroSectionProps {
   image: string;
   imageAlt?: string;
+  imageTitle?: string;
   darkOverlay?: boolean;
   title: React.ReactNode;
   subtitle?: React.ReactNode;
@@ -44,6 +45,7 @@ interface HeroSectionProps {
 export default function HeroSection({
   image,
   imageAlt,
+  imageTitle,
   darkOverlay = true,
   title,
   subtitle,
@@ -86,6 +88,7 @@ export default function HeroSection({
           <OptimizedImage
             src={image}
             alt={imageAlt || ""}
+            title={imageTitle}
             // Wrapper fills the box; image absolutely covers it
             className="h-full w-full"
             imgClassName="absolute inset-0 h-full w-full object-cover"
@@ -123,6 +126,7 @@ export default function HeroSection({
       <OptimizedImage
         src={image}
         alt={imageAlt || ""}
+        title={imageTitle}
         className="absolute inset-0 h-full w-full object-cover"
         style={{
           objectPosition: focal as any,

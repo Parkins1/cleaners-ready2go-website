@@ -1,0 +1,153 @@
+{
+  "variant": "light",
+  "backgroundColor": "#f5f5f5",
+  "monochrome": false,
+  "styles": [
+    {
+      "id": "natural.base",
+      "geometry": {
+        "visible": true,
+        "fillColor": "#f5f5f5",
+        "fillOpacity": 1
+      }
+    },
+    {
+      "id": "natural.land",
+      "geometry": {
+        "visible": true,
+        "fillColor": "#f5f5f5",
+        "fillOpacity": 1
+      }
+    },
+    {
+      "id": "natural.water",
+      "geometry": {
+        "visible": true,
+        "fillColor": "#c9c9c9",
+        "fillOpacity": 1
+      },
+      "label": {
+        "visible": true,
+        "textFillColor": "#9e9e9e",
+        "textFillOpacity": 1,
+        "textStrokeColor": "#f5f5f5",
+        "textStrokeOpacity": 1
+      }
+    },
+    {
+      "id": "pointOfInterest",
+      "geometry": {
+        "visible": true,
+        "fillColor": "#eeeeee",
+        "fillOpacity": 1
+      },
+      "label": {
+        "visible": false,
+        "textFillColor": "#757575",
+        "textFillOpacity": 1,
+        "textStrokeColor": "#f5f5f5",
+        "textStrokeOpacity": 1
+      }
+    },
+    {
+      "id": "pointOfInterest.recreation.park",
+      "geometry": {
+        "visible": true,
+        "fillColor": "#e5e5e5",
+        "fillOpacity": 1
+      },
+      "label": {
+        "visible": false,
+        "textFillColor": "#9e9e9e",
+        "textFillOpacity": 1,
+        "textStrokeColor": "#f5f5f5",
+        "textStrokeOpacity": 1
+      }
+    },
+    {
+      "id": "infrastructure.roadNetwork.road",
+      "geometry": {
+        "visible": true,
+        "strokeColor": "#CFAE51",
+        "strokeOpacity": 1,
+        "strokeWeight": 1
+      }
+    },
+    {
+      "id": "infrastructure.roadNetwork.road.arterial",
+      "geometry": {
+        "visible": true,
+        "strokeColor": "#CFAE51",
+        "strokeOpacity": 1,
+        "strokeWeight": 1.25
+      },
+      "label": {
+        "visible": true,
+        "textFillColor": "#757575",
+        "textFillOpacity": 1,
+        "textStrokeColor": "#f5f5f5",
+        "textStrokeOpacity": 1
+      }
+    },
+    {
+      "id": "infrastructure.roadNetwork.road.highway",
+      "geometry": {
+        "visible": true,
+        "strokeColor": "#CFAE51",
+        "strokeOpacity": 1,
+        "strokeWeight": 1.5
+      },
+      "label": {
+        "visible": true,
+        "textFillColor": "#616161",
+        "textFillOpacity": 1,
+        "textStrokeColor": "#f5f5f5",
+        "textStrokeOpacity": 1
+      }
+    },
+    {
+      "id": "infrastructure.roadNetwork.road.local",
+      "geometry": {
+        "visible": true,
+        "strokeColor": "#CFAE51",
+        "strokeOpacity": 1,
+        "strokeWeight": 0.75
+      },
+      "label": {
+        "visible": true,
+        "textFillColor": "#9e9e9e",
+        "textFillOpacity": 1,
+        "textStrokeColor": "#f5f5f5",
+        "textStrokeOpacity": 1
+      }
+    },
+    {
+      "id": "infrastructure.railwayTrack",
+      "geometry": {
+        "visible": true,
+        "strokeColor": "#e5e5e5",
+        "strokeOpacity": 1,
+        "strokeWeight": 1
+      }
+    },
+    {
+      "id": "infrastructure.transitStation",
+      "label": {
+        "visible": false
+      }
+    },
+    {
+      "id": "political.landParcel",
+      "geometry": {
+        "visible": true
+      }
+    },
+    {
+      "id": "political.border",
+      "geometry": {
+        "visible": true,
+        "color": "#CFAE51"
+      }
+    }
+  ]
+}

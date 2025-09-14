@@ -21,6 +21,10 @@ import TrustSignalsSection from "@/components/TrustSignals/TrustSignalsSection";
 import { brand } from "@/config/brand";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import iconKitchen from "@/assets/icon_kitchen.webp";
+import iconDustControl from "@/assets/icon_dust_control.webp";
+import iconCrossContamination from "@/assets/icon_cross_contamination.webp";
+import iconTimeScopePredictable from "@/assets/icon_time_scope_predictable.webp";
+import iconTeamFriendlyProfessional from "@/assets/icon_team_friendly_professional.webp";
 import PackagesSection from "@/components/Sections/PackagesSection";
 import { FourStepSection } from "@/components/Sections";
 import Map from '@/components/Map/Map';
@@ -65,6 +69,8 @@ export default function Residential() {
       {/* Hero */}
       <HeroSection
         image={residentialCardImg}
+        imageAlt="Image for our residential cleaning service, showing a clean and inviting home."
+        imageTitle="Residential Cleaning Service Card"
         title={
           <h1 className="text-5xl lg:text-7xl font-bold text-white drop-shadow-sm mb-4">
             Residential Cleaning That Elevates <span className="text-brand-gold">Your Home</span>
@@ -404,8 +410,10 @@ export default function Residential() {
             
             {/* Allergy‑Aware Dust Control */}
             <IconCard
-              iconSrc={iconKitchen} // Placeholder until icon is available
+              iconSrc={iconDustControl} // Placeholder until icon is available
               title="Allergy‑Aware Dust Control"
+              iconTitle="Allergy-Aware Dust Control"
+              iconAlt="Icon representing our dust control methods for a healthier home."
               items={[
                 "HEPA filtration + microfiber = less airborne dust, better capture, cleaner air feel in your home."
               ]}
@@ -413,8 +421,10 @@ export default function Residential() {
             
             {/* Cross‑Contamination Controls */}
             <IconCard
-              iconSrc={iconKitchen} // Placeholder until icon is available
+              iconSrc={iconCrossContamination} // Placeholder until icon is available
               title="Cross‑Contamination Controls"
+              iconTitle="Cross-Contamination Prevention"
+              iconAlt="Icon representing our cleaning process that prevents cross-contamination."
               items={[
                 "Bathroom to kitchen? Never the same cloths. Color coding and tool sequencing keep clean zones clean."
               ]}
@@ -422,8 +432,10 @@ export default function Residential() {
             
             {/* Predictable Time & Scope */}
             <IconCard
-              iconSrc={iconKitchen} // Placeholder until icon is available
+              iconSrc={iconTimeScopePredictable} // Placeholder until icon is available
               title="Predictable Time & Scope"
+              iconTitle="Predictable Time and Scope"
+              iconAlt="Icon representing our commitment to a predictable time and scope for our cleaning services."
               items={[
                 "Digital checklists, realistic windows, and consistent teams reduce surprises and deliver repeatable quality."
               ]}
@@ -431,8 +443,10 @@ export default function Residential() {
             
             {/* Friendly, Professional Teams */}
             <IconCard
-              iconSrc={iconKitchen} // Placeholder until icon is available
+              iconSrc={iconTeamFriendlyProfessional} // Placeholder until icon is available
               title="Friendly, Professional Teams"
+              iconTitle="Friendly and Professional Team"
+              iconAlt="Icon representing our friendly and professional cleaning team."
               items={[
                 "Background‑checked, uniformed, coached for hospitality as well as skill."
               ]}
@@ -531,7 +545,14 @@ export default function Residential() {
           <h2 className="text-3xl lg:text-4xl font-bold text-text text-center mb-10">
             Our Service Area
           </h2>
-          <Map locationName="Spokane, WA" />
+          <Map
+            locationName="Spokane, WA"
+            highlightPlaceIds={[
+              "ChIJ5TCOcRa1nlQRQoFIoW8oAQE", // Spokane, WA
+              "ChIJnVOY0xTWnlQROwWj7KXK1hA", // Spokane Valley, WA
+              "ChIJa5iiHgncnlQRvDqDQbzvC5o", // Liberty Lake, WA
+            ]}
+          />
         </div>
       </section>
 
