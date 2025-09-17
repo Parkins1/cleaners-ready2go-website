@@ -62,8 +62,13 @@ import photoBedroom480Avif from "@/assets/photo_spokane_apartment_bedroom-480.av
 import photoBedroom768Avif from "@/assets/photo_spokane_apartment_bedroom-768.avif";
 import photoBedroom1024Avif from "@/assets/photo_spokane_apartment_bedroom-1024.avif";
 
+import { generateServicePageData } from "@/utils/mapDataGenerator";
+import { services } from "@/config/serviceAreas";
+
 export default function ApartmentCleaning() {
   const { open } = useModal();
+  const apartmentCleaningService = services.find(s => s.name === 'Apartment Cleaning');
+  const mapProps = generateServicePageData(apartmentCleaningService!);
 
   return (
     <>
@@ -383,14 +388,12 @@ export default function ApartmentCleaning() {
           <h2 className="text-3xl lg:text-4xl font-bold text-text text-center mb-10">
             Our Service Area
           </h2>
-            <Map
-              locationName="Spokane, WA"
-              highlightPlaceIds={[
-                "ChIJ5TCOcRa1nlQRQoFIoW8oAQE",
-                "ChIJnVOY0xTWnlQROwWj7KXK1hA",
-                "ChIJa5iiHgncnlQRvDqDQbzvC5o",
-              ]}
-            />
+          <Map
+            locationName={mapProps.locationName}
+            markers={mapProps.markers}
+            highlightPlaceIds={mapProps.highlightPlaceIds}
+            infoWindowTemplate={mapProps.infoWindowTemplate}
+          />
         </div>
       </section>
 

@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { useState } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,6 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { useActivePath } from "./useActivePath";
 import { NavItem, NavChild } from "./types"; // Centralized NavItem and NavChild types
+import { useClickAway } from "@/hooks/useClickAway";
 
 interface DesktopNavigationProps {
   navItems: NavItem[];
@@ -15,13 +17,20 @@ interface DesktopNavigationProps {
 
 export default function DesktopNavigation({ navItems }: DesktopNavigationProps) {
   const { isActive } = useActivePath();
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+
+  const ref = useClickAway<HTMLDivElement>(() => setOpenMenu(null));
 
   return (
-    <div className="hidden md:flex items-center space-x-6">
+    <div className="hidden md:flex items-center space-x-6" ref={ref}>
       {navItems.map((item) => {
         if (item.children?.length) {
           return (
-            <DropdownMenu key={item.label}>
+            <DropdownMenu
+              key={item.label}
+              open={openMenu === item.label}
+              onOpenChange={(isOpen) => setOpenMenu(isOpen ? item.label : null)}
+            >
               <DropdownMenuTrigger
                 className={`text-sm font-medium transition-colors ${
                   item.label === "Services" || item.label === "Location"

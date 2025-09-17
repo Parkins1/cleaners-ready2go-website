@@ -15,6 +15,8 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { FourStepGrid } from "@/components/Sections";
 
+import { generateLocationPageData } from "@/utils/mapDataGenerator";
+
 /**
  * Liberty Lake location page
  * - Re-uses core visual components from the site via LocationPageTemplate:
@@ -24,6 +26,7 @@ import { FourStepGrid } from "@/components/Sections";
  */
 export default function LibertyLake() {
   const { open } = useModal();
+  const mapProps = generateLocationPageData('LIBERTY_LAKE');
 
   const pageDetails = {
     locationName: "Liberty Lake",
@@ -433,5 +436,5 @@ export default function LibertyLake() {
     ],
   };
 
-    return <LocationPageTemplate {...pageDetails} />;
+    return <LocationPageTemplate {...pageDetails} mapProps={mapProps} />;
 }

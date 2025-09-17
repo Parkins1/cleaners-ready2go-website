@@ -11,7 +11,10 @@ import ContentCard from '@/components/ContentCard/ContentCard';
 import Icon from "@/components/ui/icon";
 import CarouselCompact from '@/components/Carousel/CarouselCompact';
 
+import { generateLocationPageData } from '@/utils/mapDataGenerator';
+
 export default function Greenacres() {
+  const mapProps = generateLocationPageData('SPOKANE_VALLEY');
   const pageDetails = {
     locationName: 'Greenacres',
     heroImage: heroImage,
@@ -272,5 +275,5 @@ export default function Greenacres() {
     ],
   };
 
-    return <LocationPageTemplate {...pageDetails} />;
+    return <LocationPageTemplate {...pageDetails} mapProps={mapProps} />;
 }

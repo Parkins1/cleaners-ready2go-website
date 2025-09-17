@@ -15,6 +15,8 @@ import { makeWebPage, makeBreadcrumb, makeService } from "@/components/seo/schem
 import { site } from "@/config/site";
 import Map from '@/components/Map/Map';
 
+import { MarkerData } from '@/types/map';
+
 interface LocationPageTemplateProps {
   locationName: string;
   heroImage: string;
@@ -25,6 +27,12 @@ interface LocationPageTemplateProps {
   heroWidth?: number;
   heroHeight?: number;
   introText: string;
+  mapProps: {
+    locationName?: string;
+    markers: MarkerData[];
+    highlightPlaceIds: string[];
+    infoWindowTemplate: (marker: MarkerData) => React.ReactNode;
+  };
   /** Optional: the route path for this page (e.g. "/locations/spokane"). If omitted, a slug will be inferred. */
   currentPath?: string;
   services?: {
@@ -62,6 +70,7 @@ export default function LocationPageTemplate({
   serviceCardIds,
   ctaVariant = 'gold',
   currentPath,
+  mapProps,
 }: LocationPageTemplateProps) {
   const { open } = useModal();
   const inferredPath = `/locations/${locationName.toLowerCase().replace(/\s+/g, '-')}`;
@@ -131,12 +140,10 @@ export default function LocationPageTemplate({
       <section className="py-section bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <Map
-            locationName={locationName}
-            highlightPlaceIds={[
-              "ChIJ5TCOcRa1nlQRQoFIoW8oAQE",
-              "ChIJnVOY0xTWnlQROwWj7KXK1hA",
-              "ChIJa5iiHgncnlQRvDqDQbzvC5o",
-            ]}
+            locationName={mapProps.locationName ?? `${locationName}, WA`}
+            markers={mapProps.markers}
+            highlightPlaceIds={mapProps.highlightPlaceIds}
+            infoWindowTemplate={mapProps.infoWindowTemplate}
           />
         </div>
       </section>

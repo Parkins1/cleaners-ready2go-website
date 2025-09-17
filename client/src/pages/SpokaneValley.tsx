@@ -16,8 +16,11 @@ import hero480Avif from "@/assets/spokane-house-cleaning-480.avif";
 import hero768Avif from "@/assets/spokane-house-cleaning-768.avif";
 import hero1024Avif from "@/assets/spokane-house-cleaning-1024.avif";
 
+import { generateLocationPageData } from '@/utils/mapDataGenerator';
+
 export default function SpokaneValley() {
   const { open } = useModal();
+  const mapProps = generateLocationPageData('SPOKANE_VALLEY');
 
   const faqs = [
     { q: "Do I need to be home?", a: "No. Provide a code or key; we text arrival and departure photos for your records." },
@@ -422,5 +425,5 @@ export default function SpokaneValley() {
     ],
   };
 
-  return <LocationPageTemplate {...pageDetails} />;
+  return <LocationPageTemplate {...pageDetails} mapProps={mapProps} />;
 }

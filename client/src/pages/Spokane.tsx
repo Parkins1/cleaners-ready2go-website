@@ -14,7 +14,11 @@ import CarouselCompact from '@/components/Carousel/CarouselCompact';
 import { Card, CardContent } from '@/components/ui/card';
 import { FourStepGrid } from "@/components/Sections";
 
+import { generateLocationPageData } from '@/utils/mapDataGenerator';
+
 export default function Spokane() {
+
+  const mapProps = generateLocationPageData('SPOKANE');
 
   const processSteps = [
     {
@@ -418,5 +422,5 @@ export default function Spokane() {
     ctaVariant: 'default',
   };
 
-  return <LocationPageTemplate {...pageDetails} />;
+  return <LocationPageTemplate {...pageDetails} mapProps={mapProps} />;
 }

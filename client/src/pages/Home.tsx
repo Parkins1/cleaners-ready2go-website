@@ -73,8 +73,6 @@ export default function Home() {
 
       <HeroSection
         image={heroImage}
-        imageAlt="A beautiful house in Spokane, representing our house cleaning services."
-        imageTitle="Spokane House Cleaning"
         title={
           <h1 className="hero-title">
             Expert <span className="text-brand-gold">House Cleaning</span> in Spokane, WA

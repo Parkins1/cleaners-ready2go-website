@@ -1,7 +1,10 @@
 import React, { Suspense } from 'react';
+import type { MarkerData } from '@/types/map';
+
+export type { MarkerData } from '@/types/map';
 
 export interface MapProps {
-  locationName: string; // e.g., "Spokane, WA"
+  locationName?: string; // defaults to Spokane, WA if omitted
   zoom?: number;
   className?: string;
   highlightLocalities?: string[]; // names to highlight boundaries for (e.g., ["Spokane, WA", "Spokane Valley, WA"]) 
@@ -14,6 +17,8 @@ export interface MapProps {
     fillOpacity?: number;
   };
   minZoomAfterFit?: number; // clamp zoom after fitBounds so boundaries are visible
+  markers?: MarkerData[];
+  infoWindowTemplate?: (marker: MarkerData) => React.ReactNode;
 }
 
 // Lazy‑load the heavy Google Maps code to keep initial bundle lean

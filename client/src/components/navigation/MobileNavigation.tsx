@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { useActivePath } from "./useActivePath";
 import Icon from "@/components/ui/icon";
 import { NavItem, NavChild } from "./types"; // Centralized NavItem and NavChild types
+import { useClickAway } from "@/hooks/useClickAway";
 
 interface MobileNavigationProps {
   navItems: NavItem[];
@@ -17,8 +18,10 @@ export default function MobileNavigation({ navItems }: MobileNavigationProps) {
   const toggleSection = (label: string) =>
     setExpanded((prev) => ({ ...prev, [label]: !prev[label] }));
 
+  const ref = useClickAway<HTMLDivElement>(() => setIsOpen(false));
+
   return (
-    <div className="relative md:hidden">
+    <div className="relative md:hidden" ref={ref}>
       {/* Toggle */}
       <button
         onClick={() => setIsOpen((v) => !v)}

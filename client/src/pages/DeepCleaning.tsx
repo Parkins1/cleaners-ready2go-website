@@ -1,7 +1,4 @@
-// llm:cta-migrated
-// llm:brand-config-migrated
-// llm:callout-banner-migrated
-// llm:cta-migrated
+import React from 'react';
 import Icon from "@/components/ui/icon";
 import { Button } from "@/components/ui/button";
 import { useModal } from "@/components/modal/ModalProvider";
@@ -20,7 +17,6 @@ import CalloutBanner from "@/components/CalloutBanner/CalloutBanner";
 import { brand } from "@/config/brand";
 import { SEO } from "@/components/seo/SEO";
 import IconCard from "@/components/IconCard/IconCard";
-// Import icon images instead of passing alias strings so Vite resolves URLs
 import iconKitchen from "@/assets/icon_kitchen.webp";
 import iconBathroom from "@/assets/icon_bathroom.webp";
 import iconDustFreeFan from "@/assets/icon_dust_free_fan.webp";
@@ -30,11 +26,17 @@ import iconBaseboards from "@/assets/icon_baseboards.webp";
 import JsonLd from "@/components/seo/JsonLd";
 import { makeWebPage, makeService, makeFAQPage, makeBreadcrumb } from "@/components/seo/schema";
 import { site } from "@/config/site";
-import Map from '@/components/Map/Map';
+import Map, { type MarkerData } from '@/components/Map/Map';
 import { FourStepSection } from "@/components/Sections";
+
+import { generateServicePageData } from "@/utils/mapDataGenerator";
+import { services } from "@/config/serviceAreas";
 
 export default function DeepCleaning() {
   const { open } = useModal();
+  const deepCleaningService = services.find(s => s.name === 'Deep Cleaning');
+  const mapProps = generateServicePageData(deepCleaningService!);
+
   
 
   const cityList = brand.serviceAreas.cities;
@@ -69,7 +71,6 @@ export default function DeepCleaning() {
         canonical={`${site.url}${path}`}
         keywords="deep cleaning Spokane, Spokane deep cleaning services, Spokane Valley house cleaning, eco-friendly deep clean Spokane, move-out cleaning Spokane WA"
       />
-      {/* JSON-LD: LocalBusiness, WebPage, Service, Breadcrumbs, FAQPage */}
       <JsonLd
         data={[
           makeWebPage({
@@ -94,7 +95,6 @@ export default function DeepCleaning() {
         ]}
       />
 
-      {/* HERO */}
       <HeroSection
         image={heroDeep}
         imageAlt="A beautiful house in Spokane, representing our house cleaning services."
@@ -116,7 +116,6 @@ export default function DeepCleaning() {
         sources={[{ type: 'image/avif', srcSet: `${mv480Avif} 480w, ${mv768Avif} 768w, ${mv1024Avif} 1024w` }]}
       />
 
-      {/* INTRO */}
       <section className="py-section bg-white">
         <div className="max-w-5xl mx-auto px-6 space-y-6">
           <p>
@@ -133,7 +132,6 @@ export default function DeepCleaning() {
         </div>
       </section>
 
-      {/* INCLUDES */}
       <section id="includes" className="py-section bg-surface">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6 text-center">What's Included in Our Spokane Deep Cleaning</h2>
@@ -229,7 +227,6 @@ export default function DeepCleaning() {
         </div>
       </section>
 
-      {/* PROCESS */}
       <FourStepSection
         sectionClassName="py-section bg-process-radial"
         title="Our Four‑Step System (Built for Consistency)"
@@ -261,7 +258,6 @@ export default function DeepCleaning() {
         ]}
       />
 
-      {/* WHY US */}
       <TrustSignalsSection
         title={
           <>Why Spokane Homeowners Trust Cleaners Ready 2 Go</>
@@ -288,18 +284,13 @@ export default function DeepCleaning() {
         ]}
       />
 
-      {/* SERVICE AREA */}
       <section className="py-section bg-service-band">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-2 text-center">Proudly Serving Spokane County & Beyond</h2>
-
-          {/* subtle gradient bar under headline */}
           <div className="flex justify-center" aria-hidden="true">
             <span className="block h-1 w-28 rounded-full bg-gradient-to-r from-accent to-accent-dark" />
           </div>
-
           <p className="text-center mt-4">We bring sparkling results to:</p>
-
           <ul className="flex flex-wrap justify-center gap-xl mt-3 text-text">
             {cityList.map((c) => (
               <li key={c} className="flex items-center gap-2 px-2">
@@ -320,12 +311,10 @@ export default function DeepCleaning() {
               </li>
             ))}
           </ul>
-
           <p className="mt-4 text-center">If you’re within a 25-mile radius of Riverfront Park, we’ve got you covered.</p>
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
       <section className="py-section bg-white">
         <div className="max-w-4xl mx-auto px-6 space-y-6">
           <h2 className="text-3xl lg:text-4xl font-bold text-text text-center">Real Reviews From Your Neighbors</h2>
@@ -344,7 +333,6 @@ export default function DeepCleaning() {
         </div>
       </section>
 
-      {/* FAQ */}
       <section className="py-section bg-white">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-3xl lg:text-4xl font-bold text-text text-center mb-6">Deep Cleaning FAQ</h2>
@@ -359,7 +347,6 @@ export default function DeepCleaning() {
         </div>
       </section>
 
-      {/* BENEFITS */}
       <section className="py-section bg-surface">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-3xl lg:text-4xl font-bold text-text text-center mb-6">The Benefits of Professional Deep Cleaning</h2>
@@ -376,40 +363,42 @@ export default function DeepCleaning() {
         </div>
       </section>
 
-      
-      {/* end JSON-LD */}
-
-      {/* Map Section */}
       <section className="py-section bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl lg:text-4xl font-bold text-text text-center mb-10">
             Our Service Area
           </h2>
           <Map
-            locationName="Spokane, WA"
-            highlightPlaceIds={[
-              "ChIJ5TCOcRa1nlQRQoFIoW8oAQE",
-              "ChIJnVOY0xTWnlQROwWj7KXK1hA",
-              "ChIJa5iiHgncnlQRvDqDQbzvC5o",
-            ]}
+            locationName={mapProps.locationName}
+            markers={mapProps.markers}
+            highlightPlaceIds={mapProps.highlightPlaceIds}
+            infoWindowTemplate={mapProps.infoWindowTemplate}
+            highlightOptions={{
+              strokeColor: "#CFAE51", // Brand gold
+              strokeWeight: 3,       // Thicker outline for visibility
+              strokeOpacity: 1,      // Fully opaque stroke
+              fillColor: "#CFAE51",  // Brand gold fill
+              fillOpacity: 0.15,     // Slightly more visible fill
+            }}
+            minZoomAfterFit={10}      // Ensure all areas are visible
+            zoom={10}                 // Initial zoom level
+            className="w-full h-[500px]" // Slightly larger map for clarity
           />
         </div>
       </section>
 
-      {/* Bottom CTA */}
       <CalloutBanner
         title="Ready for a True Deep Clean?"
         body={<>
           Enjoy a fresher, healthier home with detailed, eco‑conscious deep cleaning. Get a fast, tailored quote.
         </>}
-        variant="gold"
+        variant="default"
         actions={
           <Button onClick={() => open("quote")} variant="primary">
             Get My Free Quote
           </Button>
         }
       />
-
     </>
   );
 }

@@ -25,7 +25,10 @@ export async function setupVite(app: Express, server: Server) {
   };
 
   // Lazy import Vite and its config only in development to avoid bundling them
-  const [{ createServer: createViteServer, createLogger }, { default: viteConfig }] = await Promise.all([
+  const [
+    { createServer: createViteServer, createLogger, loadEnv },
+    { default: viteConfig },
+  ] = await Promise.all([
     import("vite"),
     import("../vite.config.js"),
   ]);
@@ -53,6 +56,25 @@ export async function setupVite(app: Express, server: Server) {
     server: serverOptions,
     appType: "custom",
   });
+
+  const mode = vite.config.mode || (process.env.NODE_ENV === "production" ? "production" : "development");
+  const envDir =
+    resolvedViteConfig.envDir ||
+    resolvedViteConfig.root ||
+    path.resolve(import.meta.dirname, "..");
+  const loadedEnv = loadEnv(mode, envDir, "");
+
+  for (const [key, value] of Object.entries(loadedEnv)) {
+    if (!key.startsWith("VITE_")) continue;
+
+    const viteEnv = vite.config.env as Record<string, string | undefined>;
+    if (viteEnv[key] === undefined) {
+      viteEnv[key] = value;
+    }
+    if (process.env[key] === undefined) {
+      process.env[key] = value;
+    }
+  }
 
   app.use(vite.middlewares);
 
